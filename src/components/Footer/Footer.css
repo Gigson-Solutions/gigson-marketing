@@ -1,0 +1,111 @@
+.footer{
+    background: linear-gradient(to right, #7874f441 , #f4f3ef );
+    padding: .7rem 1rem;
+    margin: 3rem 0 0;
+}
+.footer-nav-links{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    color: #3C3C3B; 
+    padding: .7rem 0;
+}
+.footer-mid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3rem .5rem 1rem 0;
+    border-bottom: 1px solid #3c3c3bcc;
+}
+.footer-icon {
+    width: 2.125rem;
+    padding-bottom: 1rem;
+    color: #3C3C3B;
+}
+.logo-footer{
+    width: 7.875rem;
+    padding-bottom: 1rem;
+}
+.footer-policy{
+    margin: 1rem .5rem 1rem 0;
+}
+.footer-policy-links{
+    padding-top: .5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+.language-link{
+    font-weight: 100;
+    color: #3C3C3B; 
+}
+.spam-lng{
+    color: #3c3c3b7c;
+}
+@media(min-width:56.25rem){
+    .footer{
+        padding: .7rem 2rem;
+    }
+    .footer-nav-links{
+        position: relative;
+        margin: 2rem 0 8rem;
+        display: flex;
+        gap: 3.5rem;
+        color: #3C3C3B; 
+        padding: .7rem 0;
+        font-size: 20px;
+        font-style: normal;
+    }
+    .language-link{
+        position: absolute;
+        top: .7rem;
+        right: 0;
+    }
+    .footer-mid{
+        padding-bottom: 1rem ;    
+    }
+    .logo-footer{        
+        width: 15%;
+    }
+    .footer-policy{
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 0 3rem ;
+        font-size: 1.2em;
+    }
+    .footer-policy-links{
+        padding-top: .5rem;
+        display: flex;
+        gap: 2.5rem;
+        padding-top: 0;
+    }
+    .footer{
+        overflow-x: hidden;
+    }
+}
+@media (min-width: 90rem) {
+    .footer{
+        padding: .7rem 4rem;
+    }
+    .footer-nav-links{
+        gap: 6.6rem;
+    }
+    .footer-icon {
+        width: 3.55rem;
+        padding-bottom: 0;
+    }
+    .footer-policy-links{
+        gap: 5rem;
+    }
+}
+@media (min-width: 121rem) {
+    .footer{
+        padding: .7rem 0;
+    }
+    .footer-maxwidth{
+        margin: 0 auto;
+        max-width: 115rem;
+    }
+    .footer-policy-links{
+        gap: 6rem;
+    }
+}

@@ -1,0 +1,303 @@
+.div-about-hero{
+    height: calc(100vh - 6rem);
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.about-bg{
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 4rem;
+    z-index: -1;
+    background: url('../../assets/aboutBg.svg') no-repeat;
+    background-size: contain;
+    background-position: 50% 0;
+}
+.about-bg:before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(0deg, #F4F3EF 0%, #ffffff00 100%);
+}
+.about-belive-max{
+    background-color: #E3E1EE;
+    padding: 2rem 1rem 2.5rem;
+}
+.div-svg-about{
+    border-bottom: 1px solid #3c3c3b93;
+    padding: 2rem 0 .5rem;
+}
+.svg-about-circ{
+    margin-left: -.3rem;
+}
+.about-section-need{
+    margin: 1rem 1rem 0;
+    position: relative;
+}
+.about-hero-h1{
+    margin: 0 auto;
+    max-width: 30rem;
+    font-size: 1.5em;
+    text-align: center;
+    font-size: 2.25rem;
+    color: #3c3c3b;
+    line-height: 2.375rem;
+    padding: 0 1.5rem;    
+}
+.about-span-hero, .about-span{
+    color: #7874F4;
+}
+.about-span{
+    font-size: 1.25rem;
+    margin: 0 .2rem;
+}
+.about-hero-h2{
+    font-size: 2em;
+    line-height: 2.375rem;  
+    color: #3C3C3B;
+    padding: 1rem 0;
+}
+.about-h3{
+    color: #3C3C3B;
+    font-size: 1.5rem;
+}
+.about-hero-p{
+    margin: 0 auto;
+    max-width: 35rem;
+    text-align: center;    
+    font-size: 1rem;
+    color: #868685;
+    line-height: 1.375rem;
+    padding: 1rem 2rem 0;
+    text-wrap: balance;
+}
+.about-believe-p{
+    color: #868685;
+    font-size: 1rem;
+    margin: 1rem 0;
+    max-width: 40rem;
+}
+.about-hero-btn {
+    font-size: .875rem;
+    color: #7874F4;
+    margin: 8.3rem auto 0;
+}
+.about-hero-need-h2{
+    margin: 5.5rem 0 1rem;
+    font-size: 2rem;
+    display: -webkit-box;
+}
+.about-need-p{
+    color: #3C3C3B;
+    font-size: 1rem;
+    margin: 1rem 0 3rem;
+}
+.about-div-specialist {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+}
+.about-need-h3{
+    font-size: 1rem;
+    color: #3C3C3B;
+}
+.about-need-p1{
+    color: #7874F4;
+    font-size: .875rem;
+    text-transform: uppercase;
+}
+.about-button-container{
+    display: flex;
+    align-items: center; 
+}
+.about-button-contact{
+    font-size: .875rem;
+    color: #7874F4;
+    margin: 4rem auto 0;
+}
+.about-background-image-DgPrd{
+    position: absolute;
+    top: -6rem;
+    right: .5rem;
+    width: 60vw;
+    max-width: 20rem;
+    opacity: .6;
+}
+@media (min-width: 56.25rem){
+    .div-about-hero{
+        height: calc(100vh - 9rem);
+        margin-top: 9rem;
+    }
+    .about-hero-h1{
+        font-size: 2.7em;
+        line-height: 2.8rem;
+    }
+    .about-hero-p{
+        font-size: 1.25em;
+        line-height: 1.75rem;
+        padding: 1.5rem .5rem 0;
+    }
+    .div-about-belive{
+        display: flex;
+        justify-content: space-between;
+    }
+    .about-belive-max{
+        padding: 3rem 2.5rem 4rem;
+    }
+    .about-hero-h2{
+        padding: 1rem 0;
+        font-size: 3.1rem;
+    }
+    .about-section-need{
+        margin: 3rem 2.5rem 0;
+    }
+    .div-about-belive article{
+        width: 30%;
+    }
+    .about-h3{
+        font-size: 2em;
+    }
+    .about-believe-p{
+        font-size: 1.05rem;
+    }
+    .about-div-specialist {
+        padding: 4rem 0 inherit;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .about-hero-need-h2{
+        font-size: 2.8em;
+        max-width: 30rem;
+    }
+    .about-need-p{
+        font-size: 1.6rem;
+        max-width: 43rem;
+    }
+    .about-need-h3{
+        font-size: 2.1em;
+    }
+    .about-need-p1{
+        padding-top: .5rem;
+        font-size: 1.2em;
+    }
+    .about-background-image-DgPrd{
+        top: -3rem;
+        right: 3.5rem;
+        max-width: 25rem;
+    }
+    .about-hero-btn{
+        margin: 3.5rem auto 0;
+    }
+    .about-bg{
+        top: 2rem;
+        height: 90%;
+    }
+    .about-bg:before{
+        all: unset;
+    }
+}   
+@media (min-width: 90rem){
+    .div-about-belive{
+        gap: 4rem;
+    }
+    .about-belive-max{
+        padding: 3rem 4rem;
+    }
+    .about-hero-h2{
+        padding: 2rem 0;
+        font-size: 3.1rem;
+    }
+    .about-section-need{
+        margin: 1rem 4rem 0;
+    }
+    .div-about-belive article{
+        width: 28rem;
+    }
+    .about-h3{
+        font-size: 2.5em;
+    }
+    .about-believe-p{
+        font-size: 1.15em;
+    }
+    .about-hero-btn, .about-button-contact{
+        font-size: 1.25rem;
+    }
+    .about-hero-need-h2{
+        font-size: 3.44rem;
+        line-height: 3.75rem;
+        max-width: 34rem;
+    }
+    .about-need-p{
+        font-size: 1.88rem;
+        max-width: 60rem;
+        text-wrap: balance;
+        margin-top: 2rem;
+    }
+    .about-need-h3{
+        font-size: 2.1em;
+    }
+    .about-need-p1{
+        padding-top: .5rem;
+        font-size: 1.2em;
+    }
+    .about-div-specialist {
+        padding: 3rem 0 2rem;
+    }
+}
+
+@media (min-width: 120rem){
+    .about-belive-max{
+        padding: 2rem 4rem 4rem;
+    }
+    .about-section-need{
+        margin: 1rem 0rem 0;
+    }
+    .about-hero-h2{
+        padding: 3rem 0;
+        font-size: 3.5rem;
+    }
+    .div-about-belive article{
+        width: 32rem;
+    }
+    .about-h3{
+        font-size: 2.6em;
+    }
+    .about-believe-p{
+        font-size: 1.3em;
+    }
+    .div-svg-about > img{
+        width: 4.5rem;
+    }
+    .about-section-need{
+        padding: 2rem 4rem;
+    }
+    .about-background-image-DgPrd{
+        top: 1rem;
+        right: 5rem;
+        max-width: 30rem;
+    }
+    .about-div-specialist {
+        grid-template-columns: repeat(3, 32rem);
+    }
+}
+@media (min-width: 121rem){
+    .div-about-belive, .about-hero-h2, .about-section-need{
+        padding: inherit 0;
+        max-width: 115rem;
+        margin: 0 auto;
+    }
+    .about-section-need{
+        padding: 2rem 0;
+        margin: 1rem auto 0;
+    }
+
+}

@@ -1,0 +1,57 @@
+.contactd-content{
+    overflow: hidden;
+    
+}
+.contact-img{
+    text-align: right;
+    margin: 0 1.3rem 5rem 0 ;
+}
+.Bgcont{
+    object-fit: cover;
+    margin: 0;
+    max-width: 375px;
+    width: 46%;
+    position: relative;
+    top: 5.5rem;
+}
+
+@media(min-width: 60rem){
+    .contact-img{
+        text-align: right;
+        margin: 0 1.3rem 0 ;
+    }
+    .Bgcont{
+        width: 23%;
+
+    }
+    .contact-content{
+        max-width: 120rem;
+        max-height: 120rem;
+    }
+}
+
+@media(min-width: 120rem){
+    .contact-img{
+        text-align: right;
+        margin: 0 1.3rem 0 ;
+    }
+    .Bgcont{
+        width: 23%;
+
+    }
+    .contact-content{
+        margin: 0 0 0 -2.5rem;
+        max-width: 110rem;
+        max-height: 110rem;
+    }
+}
+
+@media(min-width: 120.75rem){
+    .contact-content{
+        margin: 0 auto;
+        padding: 0 2.5rem;
+        max-width: 120rem;
+
+    }
+}
+
