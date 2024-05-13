@@ -1,0 +1,36 @@
+image: node:18.12-alpine
+
+definitions:
+  steps:
+    - step: &build
+        name: Build application
+        caches:
+          - node
+        script:
+          - npm install
+          - npm run build
+        artifacts:
+          - dist/**
+    - step: &deploy
+        name: Deploy to CloudFront
+        image: amazon/aws-cli:2.2.47
+        clone:
+          enabled: false
+        script:
+          - aws s3 sync dist/ s3://$BUCKET_NAME
+          - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/index.html"
+pipelines:
+  pull-requests:
+    '**': #this runs as default for any branch not elsewhere defined
+      - step:
+          <<: *build
+      - step:
+          <<: *deploy
+          deployment: Production
+  branches:
+    main:
+      - step:
+          <<: *build
+      - step:
+          <<: *deploy
+          deployment: Production
