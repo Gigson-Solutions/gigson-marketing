@@ -20,9 +20,9 @@ const Form = () => {
                 <label className='input-container-label'>and I'm interested in</label>
                     <select type="text" name='service' required placeholder='Service'>
                         <option value="">Service</option>
-                        <option value="1">Software engineering services</option>
-                        <option value="2">Cibersecurity services</option>
-                        <option value="3">Consulting services</option>
+                        <option value="Software engineering services">Software engineering services</option>
+                        <option value="Cybersecurity services">Cybersecurity services</option>
+                        <option value="Consulting services">Consulting services</option>
                     </select>
                 </div>
                 <div className='input-container'>
