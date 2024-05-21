@@ -10,7 +10,7 @@ const Form = () => {
     <section className='form-section'>
         <h2 className='form-h2'>Ready to help you</h2>
 
-        <form className='form' action="https://formsubmit.co/hola@martatorre.dev" method="POST">
+        <form className='form' action="https://formsubmit.co/hola@somosgigson.com" method="POST">
             <div className="form-container">
                 <div className='input-container'>
                     <label className='input-container-label'>My name is</label>
