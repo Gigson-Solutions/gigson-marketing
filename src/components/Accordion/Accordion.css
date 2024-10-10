@@ -1,0 +1,294 @@
+.accordion-container {
+   max-width: 105rem;
+   margin-block: -1px;
+   border: 1px solid #7874f4;
+   border-radius: 1.25rem;
+   cursor: pointer;
+}
+.accordions-container:last-child .accordion-container,
+.accordions-ct:last-child .accordion-container {
+   margin-bottom: 0;
+}
+
+.cases .accordion-container {
+   padding-block: 1rem;
+   padding-inline: 1rem;
+}
+
+.cases-dropdown-solution p,
+.cases-dropdown-challenge,
+.cases-dropdown-features li,
+.cases-dropdown-tools li {
+   font-size: 1rem;
+}
+
+.faqs-section .accordion-svg {
+   display: flex;
+   align-items: center;
+}
+
+.faqs-section .accordion-svg svg {
+   width: 1.25rem;
+   height: auto;
+}
+
+.accordion-btn {
+   width: 100%;
+
+   text-align: start;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 0.5rem;
+   color: #3c3c3b;
+   cursor: pointer;
+}
+.accordion-title {
+   font-size: 1.5rem;
+   max-width: 90%;
+}
+.accordion-content {
+   height: 0;
+   font-size: 0.9em;
+   color: #3b3b3b;
+
+   overflow: hidden;
+   opacity: 0;
+   transition: 350ms ease-in-out;
+}
+.accordion-show-content {
+   margin-top: 1rem;
+   min-height: 2rem;
+   height: fit-content;
+   opacity: 1;
+}
+.accordion-content-text {
+   font-size: 1rem;
+   overflow-y: hidden;
+   color: #717171;
+   padding-bottom: 1rem;
+}
+.cases-dropdown-subtitle {
+   font-size: 1.25em;
+   color: #3b3b3b;
+   padding: 1rem 0 0.5rem;
+   border-top: 1px solid;
+}
+.cases-dropdown-challenge {
+   max-width: 55rem;
+   margin-right: 2rem;
+
+   color: #868685;
+}
+.without-border {
+   padding: 0 0 2rem;
+   border-top: none;
+}
+.oadljkgvbadojgbaed {
+   margin-bottom: 1rem;
+   padding: 1rem 0 2rem;
+   border-bottom: 1px solid #868685;
+}
+
+.cases-dropdown-features > h4 {
+   margin-top: 2rem;
+   margin-bottom: 0.5rem;
+}
+
+.accordion-content-text ul {
+   display: flex;
+   flex-direction: column;
+   gap: 0.4rem;
+}
+
+.cases-dropdown-solution p {
+   margin-bottom: 0.8rem;
+}
+
+.cases-dropdown-features > h4,
+.cases-dropdown-solution h4 {
+   color: #7874f4;
+   text-transform: uppercase;
+   padding-bottom: 0.5rem;
+}
+.cases-dropdown-features > ul > div,
+.cases-dropdown-tools > div {
+   max-width: 40rem;
+   display: flex;
+   gap: 0.3rem;
+   margin-left: 1rem;
+}
+
+.cases-dropdown-features li,
+.cases-dropdown-tools li {
+   color: #868685;
+   list-style: disc;
+}
+.cases-dropdown-solution {
+   max-width: 40rem;
+   padding: 1rem 0;
+   color: #868685;
+}
+.cases-dropdown-solution p {
+   max-width: 55rem;
+}
+.accordion-svg {
+   flex-shrink: 0;
+   margin-left: 0.5rem;
+   width: 1.1875rem;
+   height: 1.1875rem;
+}
+.cases-why-gigson-btn {
+   margin-top: 2rem;
+   color: #7874f4;
+   text-transform: uppercase;
+   height: fit-content;
+}
+
+.cases-cta-acordion {
+   font-size: 1rem;
+   margin: 1rem 0 0;
+   padding: 1.5rem 1rem 1.5rem;
+   background-color: #eeedf0;
+   color: black;
+   border-radius: 1.25rem;
+   border: 1px solid #7874f4;
+   gap: 2rem;
+}
+
+@media (min-width: 50rem) {
+   .accordion-svg {
+      width: 2rem;
+      height: 2rem;
+   }
+}
+@media (min-width: 64rem) {
+   .accordion-title {
+      font-size: 2.1875rem;
+   }
+   .accordion-content-text {
+      padding-bottom: 1rem;
+   }
+
+   .cases-why-gigson-btn {
+      margin-top: 0;
+      color: #7874f4;
+      text-wrap: nowrap;
+   }
+   .div-cta {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-inline: 1%;
+   }
+   .div-cta > p {
+      max-width: 100%;
+      margin-right: 2rem;
+      text-wrap: initial;
+      font-size: 1.25rem;
+   }
+
+   .oadljkgvbadojgbaed,
+   .without-border {
+      max-width: none;
+      display: grid;
+      grid-template-columns: calc(50% - 2rem) 50%;
+      gap: 1rem;
+   }
+   .cases-dropdown-solution p,
+   .cases-dropdown-challenge,
+   .cases-dropdown-features li,
+   .cases-dropdown-tools li {
+      font-size: 1.25rem;
+   }
+   .cases-dropdown-solution {
+      overflow: hidden;
+      max-width: none;
+      display: grid;
+      grid-template-columns: calc(50% - 2rem) 50%;
+      gap: 1rem;
+   }
+
+   .cases-dropdown-features > h4 {
+      margin-top: 0;
+   }
+
+   .accordion-container {
+      text-wrap: initial;
+   }
+}
+@media (min-width: 65rem) {
+   .cases .accordion-container {
+      padding-inline: 2.81rem;
+      padding-block: 2.31rem;
+   }
+}
+@media (min-width: 82rem) {
+   .faqs-section .accordion-svg svg {
+      width: 1.0625rem;
+   }
+
+   .accordion-svg {
+      width: 2.375rem;
+      height: 2.375rem;
+   }
+}
+
+@media (min-width: 85rem) {
+   .cases .accordion-content-text {
+      padding-bottom: 0;
+   }
+   .accordion-content-text {
+      padding-bottom: 1rem;
+   }
+}
+
+@media (min-width: 90rem) {
+   .accordion-content-text {
+      font-size: 1.25rem;
+   }
+   .accordion-container {
+      /* padding: 0.5rem 2rem 1.5rem; */
+   }
+
+   .cases-dropdown-solution h4,
+   .cases-dropdown-features h4 {
+      font-size: 1.3rem;
+   }
+   .cases-dropdown-solution p,
+   .cases-dropdown-challenge {
+      max-width: 70rem;
+   }
+
+   .cases-dropdown-subtitle {
+      font-size: 1.4em;
+   }
+
+   .div-cta > p {
+      text-wrap: balance;
+   }
+
+   .div-cta {
+      margin-inline: 2rem;
+   }
+}
+
+@media (min-width: 100rem) {
+   .div-cta > p {
+      text-wrap: initial;
+      margin-right: 8rem;
+   }
+}
+
+@media (min-width: 121rem) {
+   .accordion-container {
+      margin: -1px auto;
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   .cases-dropdown-challenge {
+      margin-right: 0;
+   }
+}

@@ -1,65 +1,81 @@
-.button-main{
-    padding: .5rem 1.5625rem;
-    border: .0625rem solid #7874F4;
-    border-radius: 2rem;
-    cursor: pointer;
+.button-main {
+   padding: 0.5rem 1.25rem;
+   border: 0.0313rem solid #7874f4;
+   border-radius: 2rem;
+   cursor: pointer;
+   color: #7874f4;
+   font-size: 0.875rem;
 }
-.button-main:hover{
-    transition: .2s linear;
-    background-color: #E3E1EE;
-    color: #7874F4;
+.hero-btn,
+.home-services-btn,
+.form-btn-send,
+.why-gigson-btn {
+   margin: 1.3rem auto;
 }
-.hero-btn, .home-services-btn, .form-btn-send, .why-gigson-btn{
-    font-size: .875rem;
-    color: #7874F4;
-    margin: 1.3rem auto;
+.home-services-btn,
+.why-gigson-btn {
+   margin: 2rem 0 0;
 }
-.home-services-btn, .why-gigson-btn{
-    margin: 2rem 0 0;
+.form-btn-budget {
+   font-size: 1.25rem;
+   padding: 0.4rem 0.9rem;
+   color: #3c3c3b;
+   border: 0.0625rem solid #000;
+   border-radius: 2rem;
+   cursor: pointer;
 }
-.form-btn-budget{
-    font-size: 1.25rem;
-    padding: .4rem .9rem;
-    color: #3C3C3B;
-    border: .0625rem solid #000;
-    border-radius: 2rem;
-    cursor: pointer;
+.form-btn-budget:hover {
+   transition: 0.2s linear;
+   background-color: #e3e1ee;
+   color: #7874f4;
 }
-.form-btn-budget:hover{
-    transition: .2s linear;
-    background-color: #E3E1EE;
-    color: #7874F4;
+.filters-btn {
+   font-size: 0.9rem;
+   padding: 0.3rem 0.8rem;
+   color: #3c3c3b;
+   border: 0.0625rem solid #3c3c3bbd;
 }
-.form-btn-send{
-    margin: 1rem 0 1rem;
+.filter-btn-active {
+   transition: 0.2s linear;
+   background-color: #e3e1ee;
+   color: #7874f4;
 }
-@media(min-width: 40rem){
-    .button-main{
-        padding: .65rem 2rem;
-    }
-    /* .form-btn-budget{
-        font-size: 1.25rem;
-        padding: .4rem .9rem;
-    } */
-    .hero-btn, .home-services-btn, .form-btn-send{
-        font-size: 1.1em;
-    }
-    .home-services-btn{
-        max-width: 20rem;
-    }
+.form-btn-send {
+   margin: 1rem 0 1rem;
 }
-@media(min-width: 56.25rem){
-    .button-main{
-        padding: .7rem 2.2rem;
-    }
-    /* .form-btn-budget{
-        font-size: 1.25rem;
-        padding: .4rem .9rem;
-    } */
-    .hero-btn, .home-services-btn, .form-btn-send{
-        font-size: 1.1em;
-    }
-    .form-btn-send{
-        margin: .5rem 0 1rem;
-    }
+
+@media (min-width: 36.25rem) {
+   .button-main {
+      font-size: 1.25rem;
+   }
+
+   .button-main:hover {
+      transition: 0.2s linear;
+      background-color: #e3e1ee;
+      color: #7874f4;
+   }
+}
+
+@media (min-width: 56.25rem) {
+   .button-main {
+      padding: 0.75rem 1.5625rem;
+   }
+
+   .form-btn-send {
+      margin: 0.5rem 0 1rem;
+   }
+   .filters-btn {
+      padding: 0.45rem 1.5rem;
+   }
+}
+
+@media (min-width: 100rem) {
+   .home-services-btn {
+      max-width: 20rem;
+   }
+
+   .filters-btn {
+      font-size: 1em;
+      padding: 0.4rem 1.2rem;
+   }
 }

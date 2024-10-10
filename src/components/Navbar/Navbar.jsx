@@ -1,65 +1,66 @@
-import { useState } from 'react';
-import logoImg from '../../assets/Logo.svg';
-import { Link, NavLink } from 'react-router-dom';
-import './Navbar.css';
+import { useState } from "react";
+import logoImg from "../../assets/Logo.svg";
+import { Link, NavLink } from "react-router-dom";
+import LanguageSelector from "../LanguageSelector/LanguageSelector.jsx";
+import { useTranslation } from "react-i18next";
+import "./Navbar.css";
+import mesh from "../../assets/mesh-gradient.svg"
+import mesh2 from "../../assets/mesh-gradient-7.webp"
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+   const { t } = useTranslation();
 
-  const menuLinks = [
-    {name: 'ABOUT ',  link:'about'},
-    {name: 'SERVICES',  link:'services'},
-    {name: 'CASES',     link:'cases'},
-    {name: 'FAQs',      link:'faqs'},
-    {name: 'CONTACT US',   link:'contact'},
-  ]
+   const { about, services, cases, faqs, contact } = t("menu");
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-  
-  const closeMobileMenu = () => setIsMobileMenuOpen(false);
-  
-  return (
-    <header className='header'>
-      <div className='div-header'>
-        <Link to='/'>
-          <img 
-            className='logo-header' 
-            src={logoImg} 
-            alt="Logo Gigson Solutions"
-          />
-        </Link>
-        <nav className={`hamburger-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-          <input id="menuToggle" type="checkbox" checked={isMobileMenuOpen} onChange={toggleMobileMenu} />
-          <label className="menu-btn" htmlFor="menuToggle">
-            <span></span>
-          </label>
-          <ul className="menu-box">
-            <Link to='/' onClick={closeMobileMenu}>
-              <img 
-                className='logo-header-hamburger' 
-                src={logoImg} 
-                alt="Logo Gigson Solutions"
-              />
+   const menuLinks = [
+      { name: services, link: "services" },
+      { name: cases, link: "cases" },
+      { name: about, link: "about" },
+      { name: faqs, link: "faqs" },
+      { name: contact, link: "contact" },
+   ];
+
+   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+   const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+   return (
+      <header className="header">
+         <div className="div-header">
+            <Link to="/">
+               <img className="logo-header" src={logoImg} alt="Logo Gigson Solutions" />
             </Link>
-            {menuLinks.map(({name,link}, index) => 
+            <nav className={`hamburger-menu ${isMobileMenuOpen ? "open" : ""}`}>
+               <input id="menuToggle" type="checkbox" checked={isMobileMenuOpen} onChange={toggleMobileMenu} />
+               <label className="menu-btn" htmlFor="menuToggle">
+                  <span></span>
+               </label>
 
-                  <li key={index}>
-                      <NavLink 
-                        className="menu-item" 
-                        to={link} 
-                        onClick={closeMobileMenu}
-                      >{name}</NavLink>
-                  </li>
+               <div className="menu-box">
+                  {/*  Mobile Hamburger */}
+                  <Link to="/" onClick={closeMobileMenu}>
+                     <img className="logo-header-hamburger" src={logoImg} alt="Logo Gigson Solutions" />
+                  </Link>
 
-            )}            
-                  <li>
-                      <Link className="menu-item"  to='error' onClick={closeMobileMenu}>EN / <span className='spam-lng'>ES</span></Link>
-                  </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  );
+                  <img className="mesh" src={mesh} alt="" />
+
+                  <div className="border-nav"></div>
+                  <ul>
+                     {menuLinks.map(({ name, link }, index) => (
+                        <li key={index}>
+                           <NavLink className="menu-item" to={link} onClick={closeMobileMenu}>
+                              {name}
+                           </NavLink>
+                        </li>
+                     ))}
+                     <LanguageSelector />
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </header>
+   );
 };
 
 export default Navbar;
