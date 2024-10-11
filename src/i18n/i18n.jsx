@@ -592,7 +592,7 @@ i18n
                home: {
                   heroH1: "Tecnología para <span>impulsar</span> tu negocio<span>.</span>",
                   heroP: "SOLUCIONES A MEDIDA PARA NEGOCIOS COMPLEJOS",
-                  heroBtn: "CONTACTÁNOS",
+                  heroBtn: "CONTÁCTANOS",
                   heroScroll: "SEGUIR EXPLORANDO",
                   servicesTitle:
                      "Productos <span>a medida</span> para cualquier negocio ·",
