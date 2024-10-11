@@ -11,7 +11,7 @@
 
 .div-button-about-svg {
    position: relative;
-   top: -13rem;
+   top: -5rem;
    text-align: center;
 }
 
@@ -163,6 +163,12 @@
    max-width: 20rem;
    opacity: 0.6;
 }
+@media (min-width: 40rem) {
+   .div-button-about-svg {
+      top: -7rem;
+   }
+}
+
 @media (min-width: 56.25rem) {
    .div-button-about-svg {
       position: relative;
