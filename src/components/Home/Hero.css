@@ -116,11 +116,11 @@
    .hero-img {
       align-self: flex-end;
       order: 2;
-      right: -6rem;
+      right: -2rem;
       min-height: unset;
       max-width: 35rem;
       max-height: unset;
-      width: 62%;
+      width: 52%;
       height: 75%;
    }
    .hero-godown {
@@ -164,10 +164,10 @@
    }
    .hero-img {
       max-width: unset;
-      width: 57%;
+      width: 50%;
       height: 67%;
       margin-top: 0;
-      right: -5rem;
+      right: -2.5rem;
       top: 7.4rem;
    }
    .hero-text {
@@ -178,6 +178,21 @@
       bottom: 5%;
    }
 }
+
+@media (min-width: 85rem) {
+   .hero-img {
+      right: -6rem;
+      width: 57%;
+   }
+}
+
+@media (min-width: 90rem) {
+   .hero-img {
+      right: -8rem;
+      width: 57%;
+   }
+}
+
 
 @media (min-width: 100rem) {
    .hero-godown {
@@ -193,7 +208,6 @@
    }
    .hero-img {
       max-height: unset;
-      width: 50%;
       height: 70%;
       margin-top: 0;
    }
