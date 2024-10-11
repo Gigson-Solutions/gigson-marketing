@@ -161,7 +161,7 @@
    right: -1.5rem;
    width: 60vw;
    max-width: 20rem;
-   opacity: 0.6;
+   opacity: 0.2;
 }
 @media (min-width: 40rem) {
    .div-button-about-svg {
@@ -291,6 +291,12 @@
    }
 }
 
+@media (min-width: 75rem) {
+   .about-background-image-DgPrd {
+      opacity: .4;
+   }
+}
+
 @media (min-width: 81.25rem) {
    .about-button-contact {
       font-size: 1.25rem;
@@ -339,9 +345,6 @@
       margin-top: 2rem;
    }
 
-   .about-background-image-DgPrd {
-      opacity: 1;
-   }
    .about-need-h3 {
       font-size: 2.1em;
    }
