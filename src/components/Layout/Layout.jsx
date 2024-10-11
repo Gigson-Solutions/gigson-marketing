@@ -1,24 +1,22 @@
-import Navbar from '../Navbar/Navbar'
-import Footer from '../Footer/Footer'
-import { Outlet, useLocation } from 'react-router-dom'
-import { useEffect } from 'react';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
+import ScrollTop from "../../hooks/ScrollTop";
+import CookieBanner from "../../CookieBanner"; // Importamos el nuevo componente
 
 const Layout = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0,0)
-  }, [pathname])
-
-  return (
-    <>
-        <Navbar />
-        <main>
+   return (
+      <ScrollTop>
+         <Navbar />
+         <main>
             <Outlet />
-        </main>
-        <Footer />
-    </>
-  )
-}
+         </main>
+         <Footer />
+         <CookieBanner /> {/* Incluimos el banner de cookies */}
+      </ScrollTop>
+   );
+};
 
-export default Layout
+export default Layout;
+// dda

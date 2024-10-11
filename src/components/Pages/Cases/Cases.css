@@ -1,0 +1,126 @@
+.hero-cases {
+   position: relative;
+   text-align: center;
+   margin: 5rem 0 2rem;
+   padding: 0 1rem;
+   overflow: hidden;
+}
+
+.faqs-section {
+   margin-bottom: 2.625rem !important;
+}
+
+.cases-img {
+   max-width: 55rem;
+   height: 100%;
+   width: 100%;
+   object-fit: contain;
+   opacity: 0.14;
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: -1;
+}
+.hero-cases-h1 {
+   max-width: 23rem;
+   margin: auto;
+   font-size: 2em;
+   line-height: 2.4rem;
+   padding-top: 0.3rem;
+   color: #3c3c3b;
+   text-wrap: ballance;
+}
+.hero-cases-h1 > span {
+   color: #7874f4;
+}
+.hero-cases-p {
+   font-size: 1em;
+   color: #3c3c3b;
+   margin-top: 1rem;
+   margin: 1rem auto 0;
+   text-wrap: ballance;
+   max-width: 25rem;
+}
+.cases-filters-title {
+   font-size: 1.25em;
+   text-align: center;
+   margin-bottom: 2rem;
+}
+.cases-container-filters {
+   max-width: 35rem;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 0.7rem 0.5rem;
+   margin: 1.5rem auto;
+}
+.cases-reset-filters {
+   margin: 2rem auto;
+   color: #7874f4;
+   cursor: pointer;
+}
+
+.accordions-container {
+   margin-top: 3rem;
+}
+
+.about-button-contact {
+   display: flex;
+   width: fit-content;
+   margin: 3rem auto;
+}
+
+@media (min-width: 57rem) {
+   .case-selector-flex {
+      padding-inline: 0;
+   }
+   .faqs-section {
+      margin-bottom: 5.25rem !important;
+   }
+}
+
+@media (min-width: 70.25rem) {
+   .hero-cases {
+      margin: 7rem 2rem 2rem;
+   }
+   .cases-img {
+      height: 27rem;
+      max-width: 40rem;
+      top: -2rem;
+   }
+   .hero-cases-h1 {
+      max-width: 38rem;
+      margin: 0 auto;
+      font-size: 3.4em;
+      line-height: 1.15em;
+   }
+   .cases-container-filters {
+      gap: 0.9rem 0.6rem;
+      margin: 0 auto 2.5rem;
+   }
+   .cases-filters-title {
+      font-size: 1.875em;
+      margin-bottom: 2.5rem;
+   }
+   .cases-reset-filters {
+      margin: 2rem auto;
+   }
+}
+@media (min-width: 90rem) {
+   .hero-cases {
+      margin: 7rem 2rem 3rem;
+      padding: 0 4rem;
+   }
+   .cases-img {
+      top: -3rem;
+      left: 48%;
+      height: 32rem;
+      max-width: 60rem;
+   }
+   .hero-cases-p {
+      margin-top: 1.5rem;
+      font-size: 1.1em;
+      max-width: 35rem;
+   }
+}

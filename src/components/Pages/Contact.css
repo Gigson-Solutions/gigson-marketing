@@ -1,57 +1,66 @@
-.contactd-content{
-    overflow: hidden;
-    
+.contactd-content {
+   overflow: hidden;
+   min-height: 100vh;
 }
-.contact-img{
-    text-align: right;
-    margin: 0 1.3rem 5rem 0 ;
+.contact-img {
+   text-align: right;
+   margin: 0 1.3rem 5rem 0;
 }
-.Bgcont{
-    object-fit: cover;
-    margin: 0;
-    max-width: 375px;
-    width: 46%;
-    position: relative;
-    top: 5.5rem;
-}
-
-@media(min-width: 60rem){
-    .contact-img{
-        text-align: right;
-        margin: 0 1.3rem 0 ;
-    }
-    .Bgcont{
-        width: 23%;
-
-    }
-    .contact-content{
-        max-width: 120rem;
-        max-height: 120rem;
-    }
+.Bgcont {
+   object-fit: cover;
+   margin: 0;
+   width: 9.375rem;
+   height: 9.375rem;
+   position: relative;
+   top: 5.5rem;
+   z-index: -1;
 }
 
-@media(min-width: 120rem){
-    .contact-img{
-        text-align: right;
-        margin: 0 1.3rem 0 ;
-    }
-    .Bgcont{
-        width: 23%;
-
-    }
-    .contact-content{
-        margin: 0 0 0 -2.5rem;
-        max-width: 110rem;
-        max-height: 110rem;
-    }
+@media (min-width: 37.5rem) {
+   .Bgcont {
+      width: 11.375rem;
+      height: 11.375rem;
+   }
+}
+@media (min-width: 60rem) {
+   .contact-img {
+      text-align: right;
+      margin: 0 1.3rem 0;
+   }
+   .Bgcont {
+      width: 14.375rem;
+      height: 14.375rem;;
+      margin-bottom: -8rem;
+   }
+   .contact-content {
+      min-height: initial;
+      max-width: 120rem;
+   }
+}
+@media (min-width: 78.125rem) {
+   .Bgcont {
+      width: 18.375rem;
+      height: 18.375rem;;
+   }
+}
+@media (min-width: 100rem) {
 }
 
-@media(min-width: 120.75rem){
-    .contact-content{
-        margin: 0 auto;
-        padding: 0 2.5rem;
-        max-width: 120rem;
+@media (min-width: 120rem) {
+   .contact-img {
+      text-align: right;
+      margin: 0 1.3rem 0;
+   }
 
-    }
+   .contact-content {
+      margin: 0;
+      max-width: 120rem;
+   }
 }
 
+@media (min-width: 120.75rem) {
+   .contact-content {
+      margin: 0 auto;
+      min-height: fit-content;
+   }
+}
