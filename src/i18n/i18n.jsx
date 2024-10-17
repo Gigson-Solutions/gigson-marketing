@@ -27,8 +27,7 @@ i18n
                   heroP: "BUILDING TAILORED SOFTWARE SOLUTIONS",
                   heroBtn: "CONTACT US",
                   heroScroll: "GO DOWN TO EXPORE",
-                  servicesTitle:
-                     "Tailored <span>solutions</span> for any business ·",
+                  servicesTitle: "Tailored <span>solutions</span> for any business ·",
                   servicesP: {
                      p1: "We are focused to leverage the technology to  your business, connecting and making it secure to align needs and business goals.",
                      p2: "And if your solution does not exist yet, let's build it together.",
@@ -575,6 +574,12 @@ i18n
                   pc_4_6:
                      "Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación.",
                },
+               cookiesBanner: {
+                  h2: "WE ALSO HAVE COOKIES",
+                  p: "We use our own and third-party cookies to analyze our services and show you advertising related to your preferences based on a profile created from your browsing habits (for example, pages visited). You can accept or reject them in the following buttons.",
+                  btnAccept: "Accept",
+                  btnDenie: "Decline",
+               },
             },
          },
          es: {
@@ -594,8 +599,7 @@ i18n
                   heroP: "SOLUCIONES A MEDIDA PARA NEGOCIOS COMPLEJOS",
                   heroBtn: "CONTÁCTANOS",
                   heroScroll: "SEGUIR EXPLORANDO",
-                  servicesTitle:
-                     "Productos <span>a medida</span> para cualquier negocio ·",
+                  servicesTitle: "Productos <span>a medida</span> para cualquier negocio ·",
                   servicesP: {
                      p1: "Nos dedicamos a aprovechar al máximo las herramientas de software que ya utilizas, conectándolas entre sí, optimizándolas para que rindan más y alineándolas con las necesidades reales de tu negocio.",
                      p2: "Y si lo que necesitas aún no existe... lo creamos para ti.",
@@ -1141,6 +1145,12 @@ i18n
                   pc_4_5: "En ningún caso tratamos datos especialmente protegidos:",
                   pc_4_6:
                      "Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación.",
+               },
+               cookiesBanner: {
+                  h2: "TAMBIÉN TENEMOS COOKIES",
+                  p: "Utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarte publicidad relacionada con tus preferencias en base a un perfil elaborado a partir de tus hábitos de navegación (por ejemplo, páginas visitadas). Puedes aceptarlas o rechazarlas en los siguientes botones.",
+                  btnAccept: "ACEPTAR",
+                  btnDenie: "RECHAZAR",
                },
             },
          },
