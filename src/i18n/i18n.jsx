@@ -577,8 +577,8 @@ i18n
                cookiesBanner: {
                   h2: "WE ALSO HAVE COOKIES",
                   p: "We use our own and third-party cookies to analyze our services and show you advertising related to your preferences based on a profile created from your browsing habits (for example, pages visited). You can accept or reject them in the following buttons.",
-                  btnAccept: "Accept",
-                  btnDenie: "Decline",
+                  btnAccept: "ACCEPT",
+                  btnDenie: "DECLINE",
                },
             },
          },
