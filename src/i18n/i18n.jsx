@@ -279,6 +279,30 @@ i18n
                      ],
                      tags: ["Design Studio", "Creative Agency", "eCommerce"],
                      need: ["Customer Management", "Project and Task Management", "Centralize information"],
+                  },{
+                     title: "Integrated Platform for Creative Agencies",
+                     subTitle: "",
+                     challenge:
+                        "Implement a solution that integrates project management tools, CRM, and task management for creative agencies. The aim is to improve campaign planning, creative resource management, and client communication.",
+                     features: [
+                        "Centralized management of projects and clients.",
+                        "CRM integration for tracking clients and business opportunities.",
+                        "Task management and collaboration tools for creative teams.",
+                        "Real-time visualization of project progress and resource allocation.",
+                        "Performance analysis of campaigns and projects.",
+                     ],
+                     solution:
+                        "The integration of tools such as Adobe Creative Cloud (content creation), Trello (task management), Slack (communication and collaboration), and Salesforce (CRM) provides a robust platform for campaign and project management. This solution allows for better planning, tracking, and analysis of creative activities, ensuring smooth communication with clients.",
+                     tools: [
+                        "Adobe Creative Cloud: For creating and editing creative content, including graphic design, video, and other digital media.",
+                        "Trello: For task and project management, allowing for visual organization and tracking of task progress.",
+                        "Slack: For real-time communication and collaboration among team members, facilitating coordination and idea exchange.",
+                        "Salesforce: For customer relationship management, tracking of business opportunities, and marketing automation.",
+                        "Zapier: For the integration and automation of workflows between different tools, ensuring efficient data synchronization.",
+                        "Google Analytics: For data analysis and evaluation of campaign and creative project performance.",
+                     ],
+                     tags: ["Design Studio", "Creative Agency", "eCommerce"],
+                     need: ["Customer Management", "Project and Task Management", "Centralize information"],
                   },
                ],
                faqsDropdown: [
@@ -828,6 +852,30 @@ i18n
                      need: ["Mejorar la seguridad", "Evitar errores manuales", "Centralizar información"],
                   },
                   {
+                     title: "Plataforma Integrada para Agencias Creativas",
+                     subTitle: "",
+                     challenge:
+                        "Implementar una solución que integre herramientas de gestión de proyectos, CRM, y gestión de tareas para agencias creativas. El objetivo es mejorar la planificación de campañas, la gestión de recursos creativos y la comunicación con clientes.",
+                     features: [
+                        "Gestión centralizada de proyectos y clientes.",
+                        "Integración de CRM para seguimiento de clientes y oportunidades de negocio.",
+                        "Herramientas de gestión de tareas y colaboración para equipos creativos.",
+                        "Visualización en tiempo real del progreso de los proyectos y asignación de recursos.",
+                        "Análisis de desempeño de campañas y proyectos.",
+                     ],
+                     solution:
+                        "Solución La integración de herramientas como Adobe Creative Cloud (creación de contenido), Trello (gestión de tareas), Slack (comunicación y colaboración), y Salesforce (CRM) proporciona una plataforma robusta para la gestión de campañas y proyectos. Esta solución permite una mejor planificación, seguimiento y análisis de las actividades creativas, asegurando una comunicación fluida con los clientes.",
+                     tools: [
+                        "Adobe Creative Cloud: Para la creación y edición de contenido creativo, incluyendo diseño gráfico, video y otros medios digitales.",
+                        "Trello: Para la gestión de tareas y proyectos, permitiendo la organización visual y el seguimiento del progreso de cada tarea.",
+                        "Slack: Para la comunicación y colaboración en tiempo real entre los miembros del equipo, facilitando la coordinación y el intercambio de ideas.",
+                        "Salesforce: Para la gestión de relaciones con clientes, seguimiento de oportunidades de negocio y automatización de marketing.",
+                        "Zapier: Para la integración y automatización de flujos de trabajo entre las distintas herramientas, asegurando una sincronización de datos eficiente.",
+                        "Google Analytics: Para el análisis de datos y la evaluación del rendimiento de campañas y proyectos creativos.",
+                     ],
+                     tags: ["Estudio diseño", "Agencia creativa", "eCommerce"],
+                     need: ["Gestión de clientes", "Gestión de proyectos y tareas", "Centralizar información"],
+                  },{
                      title: "Plataforma Integrada para Agencias Creativas",
                      subTitle: "",
                      challenge:

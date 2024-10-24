@@ -36,7 +36,7 @@
 /*  TODO: Testar entre sticky ou sem   */
 .services-cards {
    position: sticky;
-   top: -34rem;
+   top: -60rem;
    left: 0;
    min-height: fit-content;
    width: 100%;
@@ -118,6 +118,11 @@
 .why-gigson p {
    font-size: 1.25em;
    max-width: 32rem;
+}
+@media (min-width: 24.375rem) {
+   .services-cards {
+      top: -34rem;
+   }
 }
 @media (min-width: 39.25rem) {
    .services-cards {
