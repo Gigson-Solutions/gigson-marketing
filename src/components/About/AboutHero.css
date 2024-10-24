@@ -414,5 +414,8 @@
    .div-button-about-svg {
       display: none;
    }
-  
+   
+   .div-about-hero {
+      height: fit-content;
+   }
 }
