@@ -27,7 +27,7 @@
    height: 140%;
    width: 140%;
    position: absolute;
-   top: 3rem;
+   top: 0;
    left: -4rem;
    z-index: -1;
    background: url("../../assets/aboutBg.svg") no-repeat;
@@ -163,9 +163,14 @@
    max-width: 20rem;
    opacity: 0.2;
 }
+
 @media (min-width: 40rem) {
    .div-button-about-svg {
       top: -7rem;
+   }
+
+   .about-bg {
+      top: 1rem;
    }
 }
 
@@ -293,7 +298,7 @@
 
 @media (min-width: 75rem) {
    .about-background-image-DgPrd {
-      opacity: .4;
+      opacity: 0.4;
    }
 }
 
