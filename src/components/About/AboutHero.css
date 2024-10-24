@@ -409,3 +409,10 @@
       overflow: hidden;
    }
 }
+
+@media screen and (max-height: 34.375rem) {
+   .div-button-about-svg {
+      display: none;
+   }
+  
+}
