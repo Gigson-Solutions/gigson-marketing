@@ -201,12 +201,7 @@
       flex-shrink: 0;
       stroke-width: 1px;
    }
-   .hero-godown-a {
-      width: fit-content;
-      height: 35px;
-      justify-content: center;
-      flex-shrink: 0;
-   }
+
    .logo-header-hamburger {
       display: none;
    }

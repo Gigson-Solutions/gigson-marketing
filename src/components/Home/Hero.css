@@ -215,7 +215,7 @@
 
 @media (min-width: 100rem) {
    .hero-godown {
-      bottom: 9%;
+      bottom: 6%;
    }
 }
 
@@ -232,6 +232,10 @@
    }
    .hero-text {
       bottom: 13%;
+   }
+
+   .hero-godown {
+      bottom: 8%;
    }
 }
 
