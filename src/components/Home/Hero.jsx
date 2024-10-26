@@ -24,20 +24,18 @@ function Hero() {
                </div>
             </header>
             <footer className="hero-godown">
-               <Link
-                  to="/#"
+               <div
                   onClick={(e) => {
                      e.preventDefault();
                      const el = document.querySelector("#homeServices");
                      el.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="hero-godown-a"
                >
-                  {heroScroll}
-               </Link>
-               <svg className="icon-godown" viewBox="0 0 19 8" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 0.999999L8.92332 6.59293C9.26904 6.83697 9.73096 6.83697 10.0767 6.59293L18 1" stroke="#7874f4" />
-               </svg>
+                  <p className="hero-godown-a">{heroScroll}</p>
+                  <svg className="icon-godown" viewBox="0 0 19 8" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M1 0.999999L8.92332 6.59293C9.26904 6.83697 9.73096 6.83697 10.0767 6.59293L18 1" stroke="#7874f4" />
+                  </svg>
+               </div>
             </footer>
          </section>
       </div>

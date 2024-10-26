@@ -48,10 +48,15 @@
    left: 0;
    bottom: 1rem;
    font-size: 0.9em;
-}
-.hero-godown {
    color: #7874f4;
 }
+
+.hero-godown > div {
+   cursor: pointer;
+   width: fit-content;
+   margin-inline: auto;
+}
+
 .icon-godown {
    margin-top: 0.45rem;
    fill: none;
@@ -109,6 +114,14 @@
       position: relative;
    }
 
+   .hero-godown > div {
+      cursor: pointer;
+      width: fit-content;
+      margin-inline: initial;
+      display: flex;
+      gap: 1.0625rem;
+   }
+
    .hero-top-content {
       height: 90%;
       justify-content: flex-start;
@@ -128,16 +141,23 @@
       position: relative;
       justify-content: flex-end;
       order: 2;
+
       gap: 1rem;
       bottom: 3%;
    }
    .hero-godown-a {
       order: 2;
    }
+   .hero-godown > div {
+      display: flex;
+      align-items: center;
+   }
    .icon-godown {
       order: 1;
       width: 1.25rem;
       fill: none;
+      height: fit-content;
+      margin-top: 0;
    }
    .hero-text {
       text-align: left;
@@ -192,7 +212,6 @@
       width: 57%;
    }
 }
-
 
 @media (min-width: 100rem) {
    .hero-godown {
