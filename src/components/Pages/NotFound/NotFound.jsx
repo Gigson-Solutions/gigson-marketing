@@ -16,21 +16,21 @@ const NotFound = () => {
             <div className="home-services-bg not_home-services-bg">
                <img src={bg} alt="" />
             </div>
+            <div className="wrapper">
+               <section className="not-div-about-hero">
+                  <h2 className="not-h1" id>
+                     <Trans i18nKey={title} components={{ span: <span /> }} />
+                  </h2>
+                  <h3 className="not-h3">
+                     <Trans i18nKey={title2} />
+                  </h3>
+                  <p className="not-p">{description}</p>
 
-            <section className="not-div-about-hero">
-               <h2 className="not-h1" id>
-                  <Trans i18nKey={title} components={{ span: <span /> }} />
-               </h2>
-               <h3 className="not-h3">
-                  <Trans i18nKey={title2} />
-               </h3>
-               <p className="not-p">{description}</p>
-
-               <Link to="/" className="not-hero-btn button-main">
-                  {cta}
-               </Link>
-            </section>
-
+                  <Link to="/" className="not-hero-btn button-main">
+                     {cta}
+                  </Link>
+               </section>
+            </div>
             <div className="home-text-container  not_home-text-container">
                <div className="services-h2-animation">
                   <h2 className="not-home-services-h2">
