@@ -184,7 +184,7 @@ i18n
                casesDropdown: [
                   {
                      title: "CRM & ERP Integration",
-                     subTitle: "CRM and ERP Integration for Architecture and Interior Design",
+
                      challenge:
                         "Develop a solution that integrates the current Enterprise Resource Planning (ERP) system with a Customer Relationship Management (CRM) system for the architecture and interior design sector. The challenge was to synchronize the management of B2B and B2C accounts with projects at a single point, improving operational efficiency, resource allocation accuracy, and providing a unified view of project conceptualization, design, and execution.",
                      features: [
@@ -209,7 +209,7 @@ i18n
                   },
                   {
                      title: "Budget Configurator",
-                     subTitle: "",
+
                      challenge:
                         "Develop a system for creating and calculating customized budgets for construction and logistics projects that integrates efficiently with the existing ERP. The goal was to streamline budget creation, allowing for different configurations and increasing data processing speed to improve decision-making, client justifications, and financial planning.",
                      features: [
@@ -233,7 +233,7 @@ i18n
                   },
                   {
                      title: "End2End Tool Integration for eCommerce",
-                     subTitle: "",
+
                      challenge:
                         "Create and develop an API Orchestrator that integrates ERP, CMS, different marketplaces, and Third-Party Logistics (3PL) providers for the Dropshipping and Logistics industry. The goal is to improve operational efficiency and customer experience by simplifying the management of purchases, sales, and logistics.",
                      features: [
@@ -257,31 +257,7 @@ i18n
                   },
                   {
                      title: "Integrated Platform for Creative Agencies",
-                     subTitle: "",
-                     challenge:
-                        "Implement a solution that integrates project management tools, CRM, and task management for creative agencies. The aim is to improve campaign planning, creative resource management, and client communication.",
-                     features: [
-                        "Centralized management of projects and clients.",
-                        "CRM integration for tracking clients and business opportunities.",
-                        "Task management and collaboration tools for creative teams.",
-                        "Real-time visualization of project progress and resource allocation.",
-                        "Performance analysis of campaigns and projects.",
-                     ],
-                     solution:
-                        "The integration of tools such as Adobe Creative Cloud (content creation), Trello (task management), Slack (communication and collaboration), and Salesforce (CRM) provides a robust platform for campaign and project management. This solution allows for better planning, tracking, and analysis of creative activities, ensuring smooth communication with clients.",
-                     tools: [
-                        "Adobe Creative Cloud: For creating and editing creative content, including graphic design, video, and other digital media.",
-                        "Trello: For task and project management, allowing for visual organization and tracking of task progress.",
-                        "Slack: For real-time communication and collaboration among team members, facilitating coordination and idea exchange.",
-                        "Salesforce: For customer relationship management, tracking of business opportunities, and marketing automation.",
-                        "Zapier: For the integration and automation of workflows between different tools, ensuring efficient data synchronization.",
-                        "Google Analytics: For data analysis and evaluation of campaign and creative project performance.",
-                     ],
-                     tags: ["Design Studio", "Creative Agency", "eCommerce"],
-                     need: ["Customer Management", "Project and Task Management", "Centralize information"],
-                  },{
-                     title: "Integrated Platform for Creative Agencies",
-                     subTitle: "",
+
                      challenge:
                         "Implement a solution that integrates project management tools, CRM, and task management for creative agencies. The aim is to improve campaign planning, creative resource management, and client communication.",
                      features: [
@@ -780,7 +756,7 @@ i18n
                casesDropdown: [
                   {
                      title: "Integración CRM & ERP",
-                     subTitle: "Integración CRM y ERP para Arquitectura e Interiorismo",
+
                      challenge:
                         "Desarrollar una solución que integre el actual sistema de planificación de recursos empresariales (ERP) con un sistema de gestión de las relaciones con el cliente (CRM) para el sector de arquitectura e interiorismo. El reto consistió en sincronizar la gestión de cuentas B2B y B2C con los proyectos en un solo punto, mejorando la eficiencia operativa, la exactitud en la asignación de recursos y proporcionando una visión unificada de la conceptualización, diseño y ejecución de los proyectos.",
                      features: [
@@ -805,7 +781,7 @@ i18n
                   },
                   {
                      title: "Configurador de Presupuestos",
-                     subTitle: "",
+
                      challenge:
                         "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente. El objetivo era agilizar la creación de presupuestos, permitiendo diferentes configuraciones y aumentando el tiempo de procesado de la información con el fin de mejorar la toma de decisiones, justificaciones a cliente y la planificación financiera.",
                      features: [
@@ -829,7 +805,7 @@ i18n
                   },
                   {
                      title: "Integración de herramientas End2End para eCommerce",
-                     subTitle: "",
+
                      challenge:
                         "Crear y desarrollar una integración de APIs que integre ERP, CMS, diferentes marketplaces y proveedores de Third-Party Logistics (3PLs) para la industria de Dropshipping y Logística. El objetivo es mejorar la eficiencia operativa y la experiencia del cliente al simplificar la gestión de compras, ventas y logística.",
                      features: [
@@ -853,31 +829,7 @@ i18n
                   },
                   {
                      title: "Plataforma Integrada para Agencias Creativas",
-                     subTitle: "",
-                     challenge:
-                        "Implementar una solución que integre herramientas de gestión de proyectos, CRM, y gestión de tareas para agencias creativas. El objetivo es mejorar la planificación de campañas, la gestión de recursos creativos y la comunicación con clientes.",
-                     features: [
-                        "Gestión centralizada de proyectos y clientes.",
-                        "Integración de CRM para seguimiento de clientes y oportunidades de negocio.",
-                        "Herramientas de gestión de tareas y colaboración para equipos creativos.",
-                        "Visualización en tiempo real del progreso de los proyectos y asignación de recursos.",
-                        "Análisis de desempeño de campañas y proyectos.",
-                     ],
-                     solution:
-                        "Solución La integración de herramientas como Adobe Creative Cloud (creación de contenido), Trello (gestión de tareas), Slack (comunicación y colaboración), y Salesforce (CRM) proporciona una plataforma robusta para la gestión de campañas y proyectos. Esta solución permite una mejor planificación, seguimiento y análisis de las actividades creativas, asegurando una comunicación fluida con los clientes.",
-                     tools: [
-                        "Adobe Creative Cloud: Para la creación y edición de contenido creativo, incluyendo diseño gráfico, video y otros medios digitales.",
-                        "Trello: Para la gestión de tareas y proyectos, permitiendo la organización visual y el seguimiento del progreso de cada tarea.",
-                        "Slack: Para la comunicación y colaboración en tiempo real entre los miembros del equipo, facilitando la coordinación y el intercambio de ideas.",
-                        "Salesforce: Para la gestión de relaciones con clientes, seguimiento de oportunidades de negocio y automatización de marketing.",
-                        "Zapier: Para la integración y automatización de flujos de trabajo entre las distintas herramientas, asegurando una sincronización de datos eficiente.",
-                        "Google Analytics: Para el análisis de datos y la evaluación del rendimiento de campañas y proyectos creativos.",
-                     ],
-                     tags: ["Estudio diseño", "Agencia creativa", "eCommerce"],
-                     need: ["Gestión de clientes", "Gestión de proyectos y tareas", "Centralizar información"],
-                  },{
-                     title: "Plataforma Integrada para Agencias Creativas",
-                     subTitle: "",
+
                      challenge:
                         "Implementar una solución que integre herramientas de gestión de proyectos, CRM, y gestión de tareas para agencias creativas. El objetivo es mejorar la planificación de campañas, la gestión de recursos creativos y la comunicación con clientes.",
                      features: [
