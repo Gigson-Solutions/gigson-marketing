@@ -33,7 +33,7 @@
 .hero-services-h1 > span {
    color: #7874f4;
 }
-/*  TODO: Testar entre sticky ou sem   */
+
 .services-cards {
    position: sticky;
    top: -60rem;
@@ -45,6 +45,10 @@
    border-radius: 2rem;
    border: 1px solid #7874f4;
 }
+.services-card-0 {
+   top: -25rem;
+}
+
 .services-card-1 {
    background-color: hsla(47, 18%, 94%, 1);
    background-image: radial-gradient(at 13% 90%, hsla(46, 16%, 94%, 1) 0px, transparent 80%),
@@ -119,9 +123,27 @@
    font-size: 1.25em;
    max-width: 32rem;
 }
+@media (min-width: 22.5rem) {
+   .services-card-0 {
+      top: -30vh;
+   }
+   .services-card-1 {
+      top: -36rem;
+   }
+}
+
 @media (min-width: 24.375rem) {
    .services-cards {
       top: -34rem;
+   }
+   .services-card-0 {
+      top: -18vh;
+   }
+}
+
+@media (min-width: 33.75rem) {
+   .services-card-0 {
+      top: -2vh;
    }
 }
 @media (min-width: 39.25rem) {
@@ -129,6 +151,12 @@
       top: -18rem;
    }
 }
+@media (min-width: 48.875rem) {
+   .services-card-0 {
+      top: 3rem;
+   }
+}
+
 @media (min-width: 56.25rem) {
    .hero-services {
       margin: 14rem 0 9rem;
@@ -223,6 +251,10 @@
    .services-cards-p {
       height: 7rem;
    }
+
+   .services-card-1 {
+      top: -5rem;
+   }
 }
 @media (min-width: 76.4375rem) {
    .services-cards-top h2 {
@@ -277,7 +309,7 @@
       flex-basis: 66%;
    }
    .services-cards {
-      top: 7rem;
+      top: 6rem;
       width: 100%;
    }
    .services-cards > footer {
