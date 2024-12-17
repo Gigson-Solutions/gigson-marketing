@@ -4,12 +4,12 @@ import { useTranslation } from "react-i18next";
 const LanguageSelector = () => {
    const { i18n } = useTranslation();
    const changeLanguage = (lng) => {
-      i18n.changeLanguage(lng);
+      i18n.changeLanguage(lng); 
    };
 
    useEffect(() => {
-      console.log(i18n.language);
-   }, []);
+      document.documentElement.lang = i18n.language;
+   }, [i18n.language]);
 
    return (
       <div style={{ display: "flex", alignItems: "center" }}>
