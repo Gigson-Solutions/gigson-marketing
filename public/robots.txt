@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /*/feed/
+Disallow: /*?s=
+Disallow: /*/*/*/feed.xml
+Disallow: /?*
+Sitemap: https://gigsonsolutions.com/sitemap.xml
