@@ -90,7 +90,7 @@ i18n
                      cards: [
                         {
                            title: "Security Assessment",
-                           description: "Vulnerabilities analysis, Remediation report, Application Security Assessments",
+                           description: "Vulnerabily & risk assessment, Remediation report, Application Security Assessments",
                         },
                         {
                            title: "Training",
@@ -109,7 +109,7 @@ i18n
                      cards: [
                         {
                            title: "Cloud Provider",
-                           description: "Amazon AWS, Microsoft Azure, GCP.",
+                           description: "AWS, Microsoft Azure, GCP.",
                         },
                         {
                            title: "Containers & Orchestration",
@@ -117,14 +117,14 @@ i18n
                         },
                         {
                            title: "CI/CD",
-                           description: "Jenkins, GitLab, GitHub, Git.",
+                           description: "Jenkins, GitLab, GitHub Actions, Git.",
                         },
                         {
                            title: "Database",
-                           description: "Oracle, MySQL, Mango DB, PostgresSQl, MS SQL & others.",
+                           description: "Oracle, MySQL, Mango DB, PostgresSQL, MS SQL & others.",
                         },
                         {
-                           title: "Services",
+                           title: "Messaging & Data Streaming",
                            description: "RabbitMQ, Apache Kafka, Apache, Redis, ELK stack & others.",
                         },
                         {
@@ -140,11 +140,11 @@ i18n
                      cards: [
                         {
                            title: "CTO As A Service",
-                           description: "Vulnerabilities analysis, Remediation report, Application Security Assessments",
+                           description: "Outsourcing of technical and business leadership for engineering and product areas.",
                         },
                         {
                            title: "Project Management",
-                           description: "Project execution, Risk Analysis, Providers management.",
+                           description: "Project supervision, Risk Analysis, Vendor Management.",
                         },
                         {
                            title: "Product Management",
@@ -681,7 +681,7 @@ i18n
                      cards: [
                         {
                            title: "Proveedor de Nube",
-                           description: "Amazon AWS, Microsoft Azure, GCP.",
+                           description: "AWS, Microsoft Azure, GCP.",
                         },
                         {
                            title: "Contenedores y Orquestación",
@@ -693,10 +693,10 @@ i18n
                         },
                         {
                            title: "Base de Datos",
-                           description: "Oracle, MySQL, Mango DB, PostgresSQl, MS SQL y otros.",
+                           description: "Oracle, MySQL, Mango DB, PostgresSQL, MS SQL y otros.",
                         },
                         {
-                           title: "Servicios",
+                           title: "Mensajería y Data Streaming",
                            description: "RabbitMQ, Apache Kafka, Apache, Redis, ELK stack y otros.",
                         },
                         {
@@ -712,7 +712,7 @@ i18n
                      cards: [
                         {
                            title: "CTO como Servicio",
-                           description: "Análisis de vulnerabilidades, Informe de remediación, Evaluaciones de seguridad de aplicaciones.",
+                           description: "Liderazgo técnico y de negocio para las áreas de ingeniería y producto.",
                         },
                         {
                            title: "Gestión de Proyectos",
