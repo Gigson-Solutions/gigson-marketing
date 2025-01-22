@@ -20,9 +20,9 @@ const Form = ({ customClass }) => {
                   <label className="input-container-label ">{service.label}</label>
                   <select type="text" name="service" required placeholder={service.placeholder}>
                      <option value="">{service.placeholder}</option>
-                     <option value="1">{service.services[0]}</option>
-                     <option value="2">{service.services[1]}</option>
-                     <option value="3">{service.services[2]}</option>
+                     <option value={service.services[0]}>{service.services[0]}</option>
+                     <option value={service.services[1]}>{service.services[1]}</option>
+                     <option value={service.services[2]}>{service.services[2]}</option>
                   </select>
                </div>
                <div className="input-container">
