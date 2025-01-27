@@ -121,7 +121,7 @@ i18n
                         },
                         {
                            title: "Database",
-                           description: "Oracle, MySQL, Mango DB, PostgresSQL, MS SQL & others.",
+                           description: "Oracle, MySQL, MongoDB, PostgresSQL, MS SQL & others.",
                         },
                         {
                            title: "Messaging & Data Streaming",
@@ -129,7 +129,7 @@ i18n
                         },
                         {
                            title: "Monitoring",
-                           description: "Prometheus, Datalog, Grafana,Azure monitor, Amazon CloudWatch, Zabbix & others.",
+                           description: "Prometheus, Datalog, Grafana, Azure monitor, Amazon CloudWatch, Zabbix & others.",
                         },
                      ],
                   },
@@ -693,7 +693,7 @@ i18n
                         },
                         {
                            title: "Base de Datos",
-                           description: "Oracle, MySQL, Mango DB, PostgresSQL, MS SQL y otros.",
+                           description: "Oracle, MySQL, MongoDB, PostgresSQL, MS SQL y otros.",
                         },
                         {
                            title: "Mensajería y Data Streaming",
