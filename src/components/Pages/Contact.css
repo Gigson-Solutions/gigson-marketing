@@ -29,7 +29,7 @@
    }
    .Bgcont {
       width: 14.375rem;
-      height: 14.375rem;;
+      height: 14.375rem;
       margin-bottom: -8rem;
    }
    .contact-content {
@@ -40,7 +40,7 @@
 @media (min-width: 78.125rem) {
    .Bgcont {
       width: 18.375rem;
-      height: 18.375rem;;
+      height: 18.375rem;
    }
 }
 @media (min-width: 100rem) {

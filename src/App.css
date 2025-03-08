@@ -1,23 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
 
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+
+@theme {
+   --spacing-contained: 1120px;
+
+   /* colors */
+   --color-dark-primary: #3C3C3B;
+   --color-purple-accents: #7874F4;
+
+   /* typography */
+   --text-title1: 90px;
+   --text-title1--line-height: 100%;
+   --text-title1--letter-spacing: 0;
+   --text-title1--font-weight: 400;
+
+   --text-title2: 35px;
+   --text-title2--line-height: 35px;
+   --text-title2--letter-spacing: 0;
+   --text-title2--font-weight: 400;
+
+   --text-body1: 20px;
+   --text-body1--line-height: 28px;
+   --text-body1--letter-spacing: 0;
+   --text-body1--font-weight: 700;
+
+   --text-body2: 16px;
+   --text-body2--line-height: 20px;
+   --text-body2--letter-spacing: 0;
+   --text-body2--font-weight: 400;
+}
+
+
 * {
-   margin: 0;
-   padding: 0;
-   border: 0;
-   box-sizing: border-box;
-   vertical-align: baseline;
    font-family: "DM Sans", sans-serif;
 }
-img,
-video,
-iframe,
-picture,
-figure {
-   max-width: 100%;
-}
-a {
-   display: inline-block;
-}
+
 li {
    list-style: none;
 }
@@ -25,30 +47,6 @@ html {
    scroll-behavior: smooth;
 }
 
-html,
-body {
-   width: 100%;
-   min-height: 100%;
-   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-a,
-span,
-strong,
-i {
-   font-size: 1em;
-   font-weight: inherit;
-   font-style: inherit;
-   text-decoration: none;
-   color: inherit;
-}
 form,
 input,
 textarea,
@@ -62,16 +60,15 @@ label {
    display: block;
    color: inherit;
 }
-svg {
-   width: 100%;
 
-   fill: currentColor;
-   padding: 0;
-}
 
 :root {
    --global-padding: 1.4rem;
    --max-width-xl: 88.875rem;
+}
+
+.mt-fixed-navbar {
+   margin-top: 91px;
 }
 
 main > * {
