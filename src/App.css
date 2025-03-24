@@ -11,6 +11,8 @@
 
    /* colors */
    --color-dark-primary: #3C3C3B;
+   --color-dark-medium: #868685;
+
    --color-purple-accents: #7874F4;
 
    /* typography */
@@ -30,9 +32,14 @@
    --text-body1--font-weight: 700;
 
    --text-body2: 16px;
-   --text-body2--line-height: 20px;
+   --text-body2--line-height: 28px;
    --text-body2--letter-spacing: 0;
    --text-body2--font-weight: 400;
+
+   --text-button: 20px;
+   --text-button--line-height: 22px;
+   --text-button--letter-spacing: 0;
+   --text-button--font-weight: 400;
 }
 
 
