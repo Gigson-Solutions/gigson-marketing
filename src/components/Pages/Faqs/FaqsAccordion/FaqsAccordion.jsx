@@ -16,7 +16,7 @@ export const FaqsAccordion = ({ question, answer, isOpen, onClick, cta, isLast }
                      {isLast && (
                         <div className="faq-button-wrapper">
                            <Link to="/contact" className="about-hero-btn button-main">
-                              {cta}
+                              {cta && cta}
                            </Link>
                         </div>
                      )}
