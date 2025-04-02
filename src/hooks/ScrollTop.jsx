@@ -8,7 +8,6 @@ function ScrollTop({ children }) {
          top: 0,
          behavior: "instant",
       });
-      console.log("Mudei");
    }, [location]);
    return <>{children}</>;
 }

@@ -555,7 +555,7 @@
     "solutionsApplications": {
       "titleDark": "Soluciones y aplicación de",
       "titleColored": "tecnología en eficiencia logística",
-      "supTitle": "La digitalización y automatización permite alcanzar una eficiencia logística superior. Así podemos optimizar o integrar la tecnología en logística de tu empresa",
+      "subTitle": "La digitalización y automatización permite alcanzar una eficiencia logística superior. Así podemos optimizar o integrar la tecnología en logística de tu empresa",
       "containers": [
         {
           "title": "Desarrollo e integración de software",
@@ -585,6 +585,71 @@
             {
               "title": "Automatización de procesos y ciberseguridad",
               "description": "Reduce errores humanos y mejora la productividad en almacenes y centros de distribución. Además, garantizamos un entorno seguro con soluciones a medida en ciberseguridad, protegiendo la infraestructura tecnológica y los datos críticos de la empresa."
+            }
+          ]
+        },
+        {
+          "title": "Digitalización de procesos",
+          "description": "La transformación digital en logística no solo mejora la eficiencia operativa, sino que también facilita la toma de decisiones estratégicas. La digitalización permite centralizar la información, reducir la dependencia de procesos manuales y mejorar la comunicación entre todas las áreas de la empresa.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Transformación digital y soluciones omnicanal",
+              "description": "Mejor sincronización entre sus canales de venta, distribución y atención al cliente. La digitalización permite gestionar pedidos de manera integrada, optimizar la cadena de suministro y mejorar la experiencia del usuario final."
+            },
+            {
+              "title": "Gemelos digitales",
+              "description": "La implementación de gemelos digitales en logística permite crear réplicas virtuales de almacenes, centros de distribución y procesos operativos. Con esta tecnología, es posible simular escenarios, predecir fallos y optimizar operaciones antes de su ejecución en el mundo real."
+            },
+            {
+              "title": "Administración logística virtual",
+              "description": "La gestión de la cadena de suministro a través de soluciones virtuales permite un control preciso de los flujos de mercancías y recursos, además de monitorizar inventarios, coordinar envíos y optimizar procesos en tiempo real."
+            },
+            {
+              "title": "Gestión de empleados",
+              "description": "Como consultoría logística y tecnológica, la digitalización también impacta en la gestión de personal. Sistemas de control de tareas, planificación de turnos y análisis de productividad permiten una asignación más eficiente de los recursos humanos."
+            },
+            {
+              "title": "Consultoría tecnológica",
+              "description": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar, implementar y optimizar herramientas digitales que se alineen con los objetivos del negocio, asegurando un crecimiento sostenible y escalable."
+            }
+          ]
+        }
+      ]
+    },
+    "improveAreas": {
+      "title" : "Areas we improve",
+      "areas": [
+        {
+          "title": "Geatión de inventarios",
+          "faqs": [
+            {
+              "question": "Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
             }
           ]
         }
