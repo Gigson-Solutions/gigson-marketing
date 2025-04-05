@@ -15,7 +15,7 @@ const ImproveAreas = ({title, areas}) => {
     const handleClickFaqItem = (index) => setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
 
     return (
-        <section className="py-30">
+        <div className="py-30">
             <div className="max-w-8xl mx-auto px-landing flex flex-col">
                 <h3 className="text-bigTag uppercase text-purple-accents mb-4 md:mb-6">
                     {title}
@@ -46,7 +46,7 @@ const ImproveAreas = ({title, areas}) => {
                     })}
                 </div>
             </div>
-        </section>)
+        </div>)
 }
 
 export default ImproveAreas

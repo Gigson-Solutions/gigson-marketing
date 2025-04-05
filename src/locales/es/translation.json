@@ -786,6 +786,27 @@
           ]
         }
       ]
+    },
+    "howWeWork": {
+      "title": "¿Cómo trabajamos?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
+        },
+        {
+          "title": "Diseño y arquitectura",
+          "description": "Definición de requisitos, creación de un prototipo y diseño de integraciones con sistemas actuales."
+        },
+        {
+          "title": "Implementación",
+          "description": "Programación, pruebas funcionales, integración con plataformas externas y despliegue en producción."
+        },
+        {
+          "title": "Soporte y mantenimiento",
+          "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
+        }
+      ]
     }
   }
 }

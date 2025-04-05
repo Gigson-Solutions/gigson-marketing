@@ -1,4 +1,5 @@
-import useCasesBgGradient from '../../../assets/casos-de-uso-bg-gradient-1.svg';
+import solutionsApplicationsBgGradient from '../../../assets/solutions-applications-bg-gradients-1.svg';
+
 
 const getCardNr = (index) => String(index).padStart(2, '0');
 
@@ -16,7 +17,7 @@ const SolutionsApplications = ({ containers, titleDark, titleColored, subTitle }
 
     return (
         <section className="py-30" style={{
-            backgroundImage: `url(${useCasesBgGradient}`,
+            backgroundImage: `url(${solutionsApplicationsBgGradient}`,
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover'
@@ -38,7 +39,7 @@ const SolutionsApplications = ({ containers, titleDark, titleColored, subTitle }
                         const initialTwoCards = cards.slice(0, 2);
                         const remainingCards = cards.slice(2);
 
-                        const mainCardClass = isPairContainer ? 'md:order-last md:rounded-r-[16px]' : 'md:order-first md:rounded-l-[16px]';
+                        const mainCardClass = isPairContainer ? 'md:order-last md:rounded-tr-4xl' : 'md:order-first md:rounded-tl-4xl';
 
                         const cardNr = getCardNr(index + 1)
 
@@ -46,12 +47,12 @@ const SolutionsApplications = ({ containers, titleDark, titleColored, subTitle }
                             <div key={index}>
                                 <div className="flex flex-col md:flex-row gap-10 mb-10">
                                     <div
-                                        className={`flex-3 rounded-[8px] bg-gradient-to-b from-[#6180D6] to-[#5F60D6] text-white px-4 py-8 ${mainCardClass}`}>
+                                        className={`flex-3 rounded-2xl bg-gradient-to-b from-[#7874F4] to-[#5E5BC6] text-white px-4 py-8 ${mainCardClass}`}>
                                         <p className="text-smallTag uppercase">{type}</p>
                                         <p className="text-h3">{cardNr}. {title}</p>
                                     </div>
                                     <div className="flex flex-col gap-12 flex-8">
-                                        <p className="text-body1 md:mt-10">{description}</p>
+                                        <p className="text-bigTag md:mt-10">{description}</p>
                                         <div className="flex flex-col md:flex-row gap-6">
                                             {initialTwoCards.map(({title, description}, index) => {
                                                 const cardNr = getCardNr(index + 1);
