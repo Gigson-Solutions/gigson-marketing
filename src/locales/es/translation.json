@@ -807,6 +807,26 @@
           "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
         }
       ]
+    },
+    "digitalProduct": {
+      "titleDark": "¿Qué necesito para hacer un",
+      "titleColored": "producto digital",
+      "description": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
+      "buttonText": "Podemos ayudarte",
+      "cards": [
+        {
+          "title": "Ingeniería de software",
+          "description": "Desde integrar diferentes herramientas, desarrollar nuevas características y productos hasta monitorear y mantener un producto, estamos listos para ello. Nuestro equipo de ingeniería de software está compuesto por desarrolladores, arquitectos y testers para construir necesidades con tecnología de actual."
+        },
+        {
+          "title": "Ciberseguridad",
+          "description": "La seguridad de la información ya no está en la hoja de ruta. La ciberseguridad es una NECESIDAD en todos los negocios y todas las empresas deben tener el conocimiento, las herramientas y los procesos para evitar o minimizar los ataques."
+        },
+        {
+          "title": "Consultoría tecnologica",
+          "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
+        }
+      ]
     }
   }
 }
