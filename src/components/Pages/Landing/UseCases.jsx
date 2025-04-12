@@ -1,5 +1,5 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Pagination} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -7,6 +7,7 @@ import logoSmallCard from '../../../assets/casos-de-uso-img-1.svg';
 import logoBigCard from '../../../assets/casos-de-uso-img-1-big.svg';
 import ButtonIconLink from "../../../shared/ui/ButtonIconLink.jsx";
 import ButtonLink from "../../../shared/ui/ButtonLink.jsx";
+import {useTranslation} from "react-i18next";
 
 const buttonHref = '#';
 
@@ -45,43 +46,49 @@ const Card = ({title, logoSrc, isLastCard, supTitle, description, buttonText, bu
     )
 }
 
-const UseCases = ({title, description, cards}) => {
+const UseCases = () => {
+
+    const {t} = useTranslation();
+    const {
+        useCases: {cards, title, description},
+    } = t("services_v2");
 
     return (
         <div className="pt-30 pb-0 md:py-30">
             <div
                 className="max-w-8xl mx-auto px-landing hidden md:flex flex-col flex-wrap md:flex-row lg:grid md:grid-cols-3 gap-x-4 gap-y-6">
-                <TitleBox title={title} description={description} />
+                <TitleBox title={title} description={description}/>
 
-                    {cards?.map(({title, supTitle, description, buttonText}, index) => {
+                {cards?.map(({title, supTitle, description, buttonText}, index) => {
 
-                        const isLastCard = index === cards.length - 1;
+                    const isLastCard = index === cards.length - 1;
 
-                        const logoSrc = isLastCard ? logoBigCard : logoSmallCard;
+                    const logoSrc = isLastCard ? logoBigCard : logoSmallCard;
 
-                        return (
-                            <Card key={index} isLastCard={isLastCard} description={description} buttonText={buttonText}
-                                  title={title} buttonHref={buttonHref} logoSrc={logoSrc} supTitle={supTitle}/>
-                        )
+                    return (
+                        <Card key={index} isLastCard={isLastCard} description={description} buttonText={buttonText}
+                              title={title} buttonHref={buttonHref} logoSrc={logoSrc} supTitle={supTitle}/>
+                    )
 
-                    })}
+                })}
             </div>
 
             <div className="md:hidden max-w-8xl mx-auto px-landing">
                 <div className="mb-10">
-                    <TitleBox title={title} description={description} />
+                    <TitleBox title={title} description={description}/>
                 </div>
                 <Swiper
                     modules={[Pagination]}
-                    pagination={{ clickable: true }}
+                    pagination={{clickable: true}}
                     spaceBetween={16}
                     slidesPerView={1}
                 >
-                    { cards?.map(({title, supTitle, description, buttonText}, index) => {
+                    {cards?.map(({title, supTitle, description, buttonText}, index) => {
                         return (
                             <SwiperSlide key={index}>
                                 <Card isLastCard={false} description={description} buttonText={buttonText}
-                                      title={title} buttonHref={buttonHref} logoSrc={logoSmallCard} supTitle={supTitle}/>
+                                      title={title} buttonHref={buttonHref} logoSrc={logoSmallCard}
+                                      supTitle={supTitle}/>
                             </SwiperSlide>
                         )
                     })}

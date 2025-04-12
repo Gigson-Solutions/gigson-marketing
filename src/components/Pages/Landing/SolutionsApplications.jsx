@@ -1,4 +1,5 @@
 import solutionsApplicationsBgGradient from '../../../assets/solutions-applications-bg-gradients-1.svg';
+import {Trans, useTranslation} from "react-i18next";
 
 
 const getCardNr = (index) => String(index).padStart(2, '0');
@@ -13,7 +14,16 @@ const Card = ({title, description, cardNr, className}) => {
     )
 }
 
-const SolutionsApplications = ({ containers, titleDark, titleColored, subTitle }) => {
+const SolutionsApplications = () => {
+
+    const {t} = useTranslation();
+    const {
+        solutionsApplications: {
+            title,
+            containers,
+            subTitle
+        },
+    } = t("services_v2");
 
     return (
         <section className="py-30" style={{
@@ -24,9 +34,13 @@ const SolutionsApplications = ({ containers, titleDark, titleColored, subTitle }
         }}>
             <div className="max-w-8xl mx-auto px-landing flex flex-col">
                 <div className="mb-15 max-w-[800px]">
-                    <h3 className="text-h2">
-                        <span className="text-purple-accents">{titleDark} </span>
-                        <span>{titleColored}</span>
+                    <h3 className="text-h2 text-dark-primary">
+                        <Trans
+                            i18nKey={title}
+                            components={{
+                                span: <span className="text-purple-accents" />
+                            }}
+                        />
                     </h3>
                     <p className="text-subtitle text-dark-primary">{subTitle}</p>
                 </div>

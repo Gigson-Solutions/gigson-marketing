@@ -520,10 +520,9 @@
   "services_v2":{
     "hero": {
       "suptitle":"Logística y fulfillment ",
-      "titleDark":"Tecnología en logística y",
-      "titleColored": "consultoría de intralogística",
+      "title": "Tecnología en logística y <span>consultoría de intralogística</span>",
       "description": "La tecnología en logística puede ser un desafío si no se cuenta con el asesoramiento adecuado. En Gigson Solutions, te ayudamos a integrar soluciones tecnológicas sin fricciones, asegurando que se adapten a la estructura del negocio.",
-      "subTitle": "CÓMO PODEMOS AYUDARTE"
+      "buttonText": "CÓMO PODEMOS AYUDARTE"
     },
     "useCases": {
       "title": "Casos de uso",
@@ -553,8 +552,7 @@
       ]
     },
     "solutionsApplications": {
-      "titleDark": "Soluciones y aplicación de",
-      "titleColored": "tecnología en eficiencia logística",
+      "title": "Soluciones y aplicación de <span>tecnología en eficiencia logística</span>",
       "subTitle": "La digitalización y automatización permite alcanzar una eficiencia logística superior. Así podemos optimizar o integrar la tecnología en logística de tu empresa",
       "containers": [
         {
@@ -809,8 +807,7 @@
       ]
     },
     "digitalProduct": {
-      "titleDark": "¿Qué necesito para hacer un",
-      "titleColored": "producto digital",
+      "title": "¿Qué necesito para hacer un <span>producto digital</span>?",
       "description": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
       "buttonText": "Podemos ayudarte",
       "cards": [

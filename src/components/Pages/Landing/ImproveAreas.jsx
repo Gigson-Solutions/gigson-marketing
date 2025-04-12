@@ -1,7 +1,13 @@
 import {useState} from "react";
 import {FaqsAccordion} from "../Faqs/FaqsAccordion/FaqsAccordion.jsx";
+import {useTranslation} from "react-i18next";
 
-const ImproveAreas = ({title, areas}) => {
+const ImproveAreas = () => {
+    const {t} = useTranslation();
+    const {
+        improveAreas: {title, areas},
+    } = t("services_v2");
+
     const [faqsIndex, setFaqsIndex] = useState(0);
     const [activeIndex, setActiveIndex] = useState(null);
 
@@ -39,7 +45,8 @@ const ImproveAreas = ({title, areas}) => {
                     {visibleFaqs.map(({question, answer}, index) => {
                         return (
                             <div key={index}>
-                                <FaqsAccordion answer={answer} question={question} onClick={() => handleClickFaqItem(index)}
+                                <FaqsAccordion answer={answer} question={question}
+                                               onClick={() => handleClickFaqItem(index)}
                                                isOpen={activeIndex === index}/>
                             </div>
                         )

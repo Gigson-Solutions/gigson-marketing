@@ -1,5 +1,6 @@
 import logo from '../../../assets/FormasServices.png';
 import ButtonIconLink from "../../../shared/ui/ButtonIconLink.jsx";
+import {useTranslation} from "react-i18next";
 
 
 const Method = ({href, title, description, isInnerMethod, isFirstCard}) => {
@@ -32,7 +33,12 @@ const Method = ({href, title, description, isInnerMethod, isFirstCard}) => {
     )
 }
 
-const HowWeWork = ({methods, title}) => {
+const HowWeWork = () => {
+
+    const {t} = useTranslation();
+    const {
+        howWeWork: {title, methods},
+    } = t("services_v2");
 
     const firstMethod = methods.slice(0, 1);
 
