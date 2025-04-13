@@ -7,19 +7,17 @@ import imgOne from '../../../assets/digital-product-img-1.png';
 import imgTwo from '../../../assets/digital-product-img-2.png';
 import imgThree from '../../../assets/digital-product-img-3.png';
 
-import ButtonIconLink from "../../../shared/ui/ButtonIconLink.jsx";
-import ButtonLink from "../../../shared/ui/ButtonLink.jsx";
+import {ButtonIconLink} from "../../../shared/ui/ButtonIcon.jsx";
+import {ButtonLink} from "../../../shared/ui/Button.jsx";
 import {Trans, useTranslation} from "react-i18next";
 
 const buttonLink = '/contact';
 
-const cardsAttributes = [{
-    buttonIconLink: "", imgSrc: imgOne,
-}, {
-    buttonIconLink: "", imgSrc: imgTwo,
-}, {
-    buttonIconLink: "", imgSrc: imgThree,
-}]
+const cardsAttributes = [
+    { buttonIconLink: "", imgSrc: imgOne },
+    { buttonIconLink: "", imgSrc: imgTwo },
+    { buttonIconLink: "", imgSrc: imgThree }
+]
 
 
 const Card = ({title, imgSrc, buttonIconLink, description}) => {
@@ -59,7 +57,7 @@ const DigitalProduct = () => {
                     <Trans
                         i18nKey={title}
                         components={{
-                            span: <span className="text-purple-accents" />
+                            span: <span className="text-purple-accents"/>
                         }}
                     />
                 </h3>

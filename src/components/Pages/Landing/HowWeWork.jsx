@@ -1,5 +1,4 @@
 import logo from '../../../assets/FormasServices.png';
-import ButtonIconLink from "../../../shared/ui/ButtonIconLink.jsx";
 import {useTranslation} from "react-i18next";
 
 
@@ -17,14 +16,14 @@ const Method = ({href, title, description, isInnerMethod, isFirstCard}) => {
                     <h4 className="text-h4 text-purple-accents">{title}</h4>
                     <div className="flex items-start justify-between gap-x-10">
                         <p className="text-body text-purple-accents">{description}</p>
-                        <ButtonIconLink href={href} outlined outlinedColor={buttonClass}/>
+                        {/*<ButtonIconLink href={href} outlined outlinedColor={buttonClass}/>*/}
                     </div>
                 </>
             ) : (
                 <>
                     <div className="flex items-center justify-between">
                         <h4 className="text-h4 text-white">{title}</h4>
-                        <ButtonIconLink href={href} outlined outlinedColor={buttonClass}/>
+                        {/*<ButtonIconLink href={href} outlined outlinedColor={buttonClass}/>*/}
                     </div>
                     <p className="hidden lg:block text-body text-white">{description}</p>
                 </>

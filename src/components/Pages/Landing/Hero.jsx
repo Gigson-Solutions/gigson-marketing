@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import ButtonLink from "../../../shared/ui/ButtonLink";
+import {ButtonLink} from "../../../shared/ui/Button.jsx";
 import {Trans, useTranslation} from "react-i18next";
 
 const buttonLink = '/contact'

@@ -531,23 +531,139 @@
         {
           "title": "Asignación automática de rutas según disponibilidad de plantilla y vehículos",
           "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente"
-        },
-        {
-          "title": "Asignación automática de rutas según disponibilidad de plantilla y vehículos",
-          "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente"
-        },
-        {
-          "title": "Asignación automática de rutas según disponibilidad de plantilla y vehículos",
-          "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente"
+          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente",
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Integración de herramientas End2End para eCommerce",
+            "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
+            "subtitle": "Desafío",
+            "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+            "cardsBoxTitle": "Funcionalidades",
+            "cards": [
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              }
+            ],
+            "footerTitle": "Solución",
+            "footerDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+          }
         },
         {
           "title": "Asignación automática de rutas según disponibilidad de plantilla y vehículos",
           "supTitle": "Desafío",
           "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente",
-          "buttonText": "Mostrar caso"
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Integración de herramientas End2End para eCommerce",
+            "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
+            "subtitle": "Desafío",
+            "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+            "cardsBoxTitle": "Funcionalidades",
+            "cards": [
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              }
+            ],
+            "footerTitle": "Solución",
+            "footerDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+          }
+        },
+        {
+          "title": "Asignación automática de rutas según disponibilidad de plantilla y vehículos",
+          "supTitle": "Desafío",
+          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente",
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Integración de herramientas End2End para eCommerce",
+            "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
+            "subtitle": "Desafío",
+            "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+            "cardsBoxTitle": "Funcionalidades",
+            "cards": [
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              }
+            ],
+            "footerTitle": "Solución",
+            "footerDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+          }
+        },
+        {
+          "title": "Asignación automática de rutas según disponibilidad de plantilla y vehículos",
+          "supTitle": "Desafío",
+          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente",
+          "buttonText": "Mostrar caso",
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Integración de herramientas End2End para eCommerce",
+            "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
+            "subtitle": "Desafío",
+            "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+            "cardsBoxTitle": "Funcionalidades",
+            "cards": [
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              },
+              {
+                "title": "Cruce de datos",
+                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              }
+            ],
+            "footerTitle": "Solución",
+            "footerDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+          }
         }
       ]
     },
