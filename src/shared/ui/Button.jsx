@@ -10,7 +10,7 @@ const ButtonLink = ({ text, link, outlined, className }) => {
     const boxClass = getBoxClass(outlined);
 
     return (
-        <Link to={link} className={`${boxClass} text-button rounded-full py-3 px-6 hover:opacity-80 ${className}`}>
+        <Link to={link} className={`${boxClass} text center text-button rounded-full py-3 px-6 hover:opacity-80 ${className}`}>
             {text}
         </Link>
     );
@@ -20,7 +20,7 @@ const Button = ({ text, onClick, outlined, className }) => {
     const boxClass = getBoxClass(outlined);
 
     return (
-        <span role="button" onClick={onClick} className={`${boxClass} cursor-pointer text-button rounded-full py-3 px-6 hover:opacity-80 ${className}`}>
+        <span role="button" onClick={onClick} className={`${boxClass} text-center  cursor-pointer text-button rounded-full py-3 px-6 hover:opacity-80 ${className}`}>
             {text}
         </span>
     );

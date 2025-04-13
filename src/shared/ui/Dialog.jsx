@@ -1,5 +1,17 @@
+import {useEffect} from "react";
+
 const Dialog = ({ isOpen, onClose, children, size = "lg" }) => {
     if (!isOpen) return null;
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add("overflow-hidden");
+        } else {
+            document.body.classList.remove("overflow-hidden");
+        }
+
+        return () => document.body.classList.remove("overflow-hidden");
+    }, [isOpen]);
 
     const sizeClass = {
         sm: "max-w-xl",

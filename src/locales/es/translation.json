@@ -733,6 +733,9 @@
     },
     "improveAreas": {
       "title" : "Areas we improve",
+      "filtersText": "Filtros",
+      "applyFiltersText": "Aplicar filtros",
+      "filtersClearAllText": "Limpiar todo",
       "areas": [
         {
           "summary": "Gestión de inventarios",

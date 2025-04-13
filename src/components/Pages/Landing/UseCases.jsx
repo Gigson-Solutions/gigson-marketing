@@ -11,7 +11,7 @@ import iconFour from '../../../assets/use-cases-icon-4.svg';
 import {ButtonIcon} from "../../../shared/ui/ButtonIcon.jsx";
 import {Button} from "../../../shared/ui/Button.jsx";
 import {useTranslation} from "react-i18next";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import Dialog from "../../../shared/ui/Dialog.jsx";
 
 const cardsIcons = [iconOne, iconTwo, iconThree, iconFour];
@@ -123,15 +123,6 @@ const UseCases = () => {
 
     const handleOnCloseDialog = () => setShowDialog(null);
 
-    useEffect(() => {
-        if (showDialog) {
-            document.body.classList.add("overflow-hidden");
-        } else {
-            document.body.classList.remove("overflow-hidden");
-        }
-
-        return () => document.body.classList.remove("overflow-hidden");
-    }, [showDialog]);
 
     return (
             <>
