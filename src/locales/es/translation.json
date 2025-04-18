@@ -536,29 +536,72 @@
             "backButtonText": "Casos de uso",
             "title": "Integración de herramientas End2End para eCommerce",
             "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
-            "subtitle": "Desafío",
-            "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
-            "cardsBoxTitle": "Funcionalidades",
-            "cards": [
+            "challengeText": "Desafío",
+            "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "TMS",
+                "description": "Geotab & Google Maps API"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "RRHH",
+                "description": "Personio"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "ERP",
+                "description": "Holded"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "Frontend",
+                "description": "React"
+              },
+              {
+                "title": "Backend",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "DB",
+                "description": "PostgressSQL"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "WhatsApp Business API"
+              },
+              {
+                "title": "Reporting",
+                "description": "Looker"
               }
             ],
-            "footerTitle": "Solución",
-            "footerDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Disponibilidad del personal",
+                "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+              },
+              {
+                "title": "Asignación de rutas",
+                "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+              },
+              {
+                "title": "Panel de control",
+                "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+              },
+              {
+                "title": "Optimización de la carga del vehículo",
+                "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+              },
+              {
+                "title": "Automatización de reportes de productividad",
+                "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
 
           }
         },
@@ -570,31 +613,75 @@
             "backButtonText": "Casos de uso",
             "title": "Integración de herramientas End2End para eCommerce",
             "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
-            "subtitle": "Desafío",
-            "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
-            "cardsBoxTitle": "Funcionalidades",
-            "cards": [
+            "challengeText": "Desafío",
+            "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "TMS",
+                "description": "Geotab & Google Maps API"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "RRHH",
+                "description": "Personio"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "ERP",
+                "description": "Holded"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "Frontend",
+                "description": "React"
+              },
+              {
+                "title": "Backend",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "DB",
+                "description": "PostgressSQL"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "WhatsApp Business API"
+              },
+              {
+                "title": "Reporting",
+                "description": "Looker"
               }
             ],
-            "footerTitle": "Solución",
-            "footerDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Disponibilidad del personal",
+                "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+              },
+              {
+                "title": "Asignación de rutas",
+                "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+              },
+              {
+                "title": "Panel de control",
+                "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+              },
+              {
+                "title": "Optimización de la carga del vehículo",
+                "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+              },
+              {
+                "title": "Automatización de reportes de productividad",
+                "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
 
           }
+
         },
         {
           "title": "Visibilidad a tiempo",
@@ -604,31 +691,75 @@
             "backButtonText": "Casos de uso",
             "title": "Integración de herramientas End2End para eCommerce",
             "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
-            "subtitle": "Desafío",
-            "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
-            "cardsBoxTitle": "Funcionalidades",
-            "cards": [
+            "challengeText": "Desafío",
+            "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "TMS",
+                "description": "Geotab & Google Maps API"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "RRHH",
+                "description": "Personio"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "ERP",
+                "description": "Holded"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "Frontend",
+                "description": "React"
+              },
+              {
+                "title": "Backend",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "DB",
+                "description": "PostgressSQL"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "WhatsApp Business API"
+              },
+              {
+                "title": "Reporting",
+                "description": "Looker"
               }
             ],
-            "footerTitle": "Solución",
-            "footerDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Disponibilidad del personal",
+                "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+              },
+              {
+                "title": "Asignación de rutas",
+                "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+              },
+              {
+                "title": "Panel de control",
+                "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+              },
+              {
+                "title": "Optimización de la carga del vehículo",
+                "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+              },
+              {
+                "title": "Automatización de reportes de productividad",
+                "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
 
           }
+
         },
         {
           "title": "Integración de herramientas End2End para ecommerce",
@@ -639,31 +770,691 @@
             "backButtonText": "Casos de uso",
             "title": "Integración de herramientas End2End para eCommerce",
             "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
-            "subtitle": "Desafío",
-            "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
-            "cardsBoxTitle": "Funcionalidades",
-            "cards": [
+            "challengeText": "Desafío",
+            "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "TMS",
+                "description": "Geotab & Google Maps API"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "RRHH",
+                "description": "Personio"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "ERP",
+                "description": "Holded"
               },
               {
-                "title": "Cruce de datos",
-                "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+                "title": "Frontend",
+                "description": "React"
+              },
+              {
+                "title": "Backend",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "DB",
+                "description": "PostgressSQL"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "WhatsApp Business API"
+              },
+              {
+                "title": "Reporting",
+                "description": "Looker"
               }
             ],
-            "footerTitle": "Solución",
-            "footerDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Disponibilidad del personal",
+                "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+              },
+              {
+                "title": "Asignación de rutas",
+                "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+              },
+              {
+                "title": "Panel de control",
+                "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+              },
+              {
+                "title": "Optimización de la carga del vehículo",
+                "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+              },
+              {
+                "title": "Automatización de reportes de productividad",
+                "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
 
           }
+
+        }
+      ]
+    },
+    "improveAreas": {
+      "title" : "Áreas",
+      "filtersText": "Filtros",
+      "applyFiltersText": "Aplicar filtros",
+      "filtersClearAllText": "Limpiar todo",
+      "areas": [
+        {
+          "summary": "Gestión de inventarios",
+          "faqs": [
+            {
+              "question": "Gestión de inventarios Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": {
+                "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+                "technologiesText": "Tecnologías",
+                "technologies": [
+                  {
+                    "title": "TMS",
+                    "description": "Geotab & Google Maps API"
+                  },
+                  {
+                    "title": "RRHH",
+                    "description": "Personio"
+                  },
+                  {
+                    "title": "ERP",
+                    "description": "Holded"
+                  },
+                  {
+                    "title": "Frontend",
+                    "description": "React"
+                  },
+                  {
+                    "title": "Backend",
+                    "description": "Node.js + Python"
+                  },
+                  {
+                    "title": "DB",
+                    "description": "PostgressSQL"
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "WhatsApp Business API"
+                  },
+                  {
+                    "title": "Reporting",
+                    "description": "Looker"
+                  }
+                ],
+                "functionalitiesText": "Funcionalidades",
+                "functionalities": [
+                  {
+                    "title": "Disponibilidad del personal",
+                    "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                  },
+                  {
+                    "title": "Asignación de rutas",
+                    "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                  },
+                  {
+                    "title": "Panel de control",
+                    "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                  },
+                  {
+                    "title": "Optimización de la carga del vehículo",
+                    "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+                  },
+                  {
+                    "title": "Automatización de reportes de productividad",
+                    "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                  }
+                ],
+                "solutionText": "Solución",
+                "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+              }
+            }
+          ]
+        },
+        {
+          "summary": "Gestión manual de presupuestos",
+          "faqs": [
+            {
+              "question": "Gestión de inventarios Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": {
+                "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+                "technologiesText": "Tecnologías",
+                "technologies": [
+                  {
+                    "title": "TMS",
+                    "description": "Geotab & Google Maps API"
+                  },
+                  {
+                    "title": "RRHH",
+                    "description": "Personio"
+                  },
+                  {
+                    "title": "ERP",
+                    "description": "Holded"
+                  },
+                  {
+                    "title": "Frontend",
+                    "description": "React"
+                  },
+                  {
+                    "title": "Backend",
+                    "description": "Node.js + Python"
+                  },
+                  {
+                    "title": "DB",
+                    "description": "PostgressSQL"
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "WhatsApp Business API"
+                  },
+                  {
+                    "title": "Reporting",
+                    "description": "Looker"
+                  }
+                ],
+                "functionalitiesText": "Funcionalidades",
+                "functionalities": [
+                  {
+                    "title": "Disponibilidad del personal",
+                    "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                  },
+                  {
+                    "title": "Asignación de rutas",
+                    "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                  },
+                  {
+                    "title": "Panel de control",
+                    "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                  },
+                  {
+                    "title": "Optimización de la carga del vehículo",
+                    "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+                  },
+                  {
+                    "title": "Automatización de reportes de productividad",
+                    "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                  }
+                ],
+                "solutionText": "Solución",
+                "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+              }
+            }
+          ]
+        },
+        {
+          "summary": "Visibilidad en operaciones",
+          "faqs": [
+            {
+              "question": "Gestión de inventarios Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": {
+                "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+                "technologiesText": "Tecnologías",
+                "technologies": [
+                  {
+                    "title": "TMS",
+                    "description": "Geotab & Google Maps API"
+                  },
+                  {
+                    "title": "RRHH",
+                    "description": "Personio"
+                  },
+                  {
+                    "title": "ERP",
+                    "description": "Holded"
+                  },
+                  {
+                    "title": "Frontend",
+                    "description": "React"
+                  },
+                  {
+                    "title": "Backend",
+                    "description": "Node.js + Python"
+                  },
+                  {
+                    "title": "DB",
+                    "description": "PostgressSQL"
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "WhatsApp Business API"
+                  },
+                  {
+                    "title": "Reporting",
+                    "description": "Looker"
+                  }
+                ],
+                "functionalitiesText": "Funcionalidades",
+                "functionalities": [
+                  {
+                    "title": "Disponibilidad del personal",
+                    "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                  },
+                  {
+                    "title": "Asignación de rutas",
+                    "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                  },
+                  {
+                    "title": "Panel de control",
+                    "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                  },
+                  {
+                    "title": "Optimización de la carga del vehículo",
+                    "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+                  },
+                  {
+                    "title": "Automatización de reportes de productividad",
+                    "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                  }
+                ],
+                "solutionText": "Solución",
+                "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+              }
+            }
+          ]
+        },
+        {
+          "summary": "Sostenibilidad",
+          "faqs": [
+            {
+              "question": "Gestión de inventarios Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": {
+                "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+                "technologiesText": "Tecnologías",
+                "technologies": [
+                  {
+                    "title": "TMS",
+                    "description": "Geotab & Google Maps API"
+                  },
+                  {
+                    "title": "RRHH",
+                    "description": "Personio"
+                  },
+                  {
+                    "title": "ERP",
+                    "description": "Holded"
+                  },
+                  {
+                    "title": "Frontend",
+                    "description": "React"
+                  },
+                  {
+                    "title": "Backend",
+                    "description": "Node.js + Python"
+                  },
+                  {
+                    "title": "DB",
+                    "description": "PostgressSQL"
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "WhatsApp Business API"
+                  },
+                  {
+                    "title": "Reporting",
+                    "description": "Looker"
+                  }
+                ],
+                "functionalitiesText": "Funcionalidades",
+                "functionalities": [
+                  {
+                    "title": "Disponibilidad del personal",
+                    "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                  },
+                  {
+                    "title": "Asignación de rutas",
+                    "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                  },
+                  {
+                    "title": "Panel de control",
+                    "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                  },
+                  {
+                    "title": "Optimización de la carga del vehículo",
+                    "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+                  },
+                  {
+                    "title": "Automatización de reportes de productividad",
+                    "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                  }
+                ],
+                "solutionText": "Solución",
+                "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+              }
+            }
+          ]
+        },
+        {
+          "summary": "Optimización de procesos manuales",
+          "faqs": [
+            {
+              "question": "Gestión de inventarios Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": {
+                "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+                "technologiesText": "Tecnologías",
+                "technologies": [
+                  {
+                    "title": "TMS",
+                    "description": "Geotab & Google Maps API"
+                  },
+                  {
+                    "title": "RRHH",
+                    "description": "Personio"
+                  },
+                  {
+                    "title": "ERP",
+                    "description": "Holded"
+                  },
+                  {
+                    "title": "Frontend",
+                    "description": "React"
+                  },
+                  {
+                    "title": "Backend",
+                    "description": "Node.js + Python"
+                  },
+                  {
+                    "title": "DB",
+                    "description": "PostgressSQL"
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "WhatsApp Business API"
+                  },
+                  {
+                    "title": "Reporting",
+                    "description": "Looker"
+                  }
+                ],
+                "functionalitiesText": "Funcionalidades",
+                "functionalities": [
+                  {
+                    "title": "Disponibilidad del personal",
+                    "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                  },
+                  {
+                    "title": "Asignación de rutas",
+                    "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                  },
+                  {
+                    "title": "Panel de control",
+                    "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                  },
+                  {
+                    "title": "Optimización de la carga del vehículo",
+                    "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+                  },
+                  {
+                    "title": "Automatización de reportes de productividad",
+                    "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                  }
+                ],
+                "solutionText": "Solución",
+                "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+              }
+            }
+          ]
+        },
+        {
+          "summary": "Optimización de rutas y recursos",
+          "faqs": [
+            {
+              "question": "Gestión de inventarios Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": {
+                "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+                "technologiesText": "Tecnologías",
+                "technologies": [
+                  {
+                    "title": "TMS",
+                    "description": "Geotab & Google Maps API"
+                  },
+                  {
+                    "title": "RRHH",
+                    "description": "Personio"
+                  },
+                  {
+                    "title": "ERP",
+                    "description": "Holded"
+                  },
+                  {
+                    "title": "Frontend",
+                    "description": "React"
+                  },
+                  {
+                    "title": "Backend",
+                    "description": "Node.js + Python"
+                  },
+                  {
+                    "title": "DB",
+                    "description": "PostgressSQL"
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "WhatsApp Business API"
+                  },
+                  {
+                    "title": "Reporting",
+                    "description": "Looker"
+                  }
+                ],
+                "functionalitiesText": "Funcionalidades",
+                "functionalities": [
+                  {
+                    "title": "Disponibilidad del personal",
+                    "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                  },
+                  {
+                    "title": "Asignación de rutas",
+                    "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                  },
+                  {
+                    "title": "Panel de control",
+                    "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                  },
+                  {
+                    "title": "Optimización de la carga del vehículo",
+                    "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+                  },
+                  {
+                    "title": "Automatización de reportes de productividad",
+                    "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                  }
+                ],
+                "solutionText": "Solución",
+                "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+              }
+            }
+          ]
+        },
+        {
+          "summary": "Eficiencia en el almacén",
+          "faqs": [
+            {
+              "question": "Gestión de inventarios Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": {
+                "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+                "technologiesText": "Tecnologías",
+                "technologies": [
+                  {
+                    "title": "TMS",
+                    "description": "Geotab & Google Maps API"
+                  },
+                  {
+                    "title": "RRHH",
+                    "description": "Personio"
+                  },
+                  {
+                    "title": "ERP",
+                    "description": "Holded"
+                  },
+                  {
+                    "title": "Frontend",
+                    "description": "React"
+                  },
+                  {
+                    "title": "Backend",
+                    "description": "Node.js + Python"
+                  },
+                  {
+                    "title": "DB",
+                    "description": "PostgressSQL"
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "WhatsApp Business API"
+                  },
+                  {
+                    "title": "Reporting",
+                    "description": "Looker"
+                  }
+                ],
+                "functionalitiesText": "Funcionalidades",
+                "functionalities": [
+                  {
+                    "title": "Disponibilidad del personal",
+                    "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                  },
+                  {
+                    "title": "Asignación de rutas",
+                    "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                  },
+                  {
+                    "title": "Panel de control",
+                    "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                  },
+                  {
+                    "title": "Optimización de la carga del vehículo",
+                    "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+                  },
+                  {
+                    "title": "Automatización de reportes de productividad",
+                    "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                  }
+                ],
+                "solutionText": "Solución",
+                "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+              }
+            }
+          ]
+        },
+        {
+          "summary": "Integración de herramientas",
+          "faqs": [
+            {
+              "question": "Gestión de inventarios Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": {
+                "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+                "technologiesText": "Tecnologías",
+                "technologies": [
+                  {
+                    "title": "TMS",
+                    "description": "Geotab & Google Maps API"
+                  },
+                  {
+                    "title": "RRHH",
+                    "description": "Personio"
+                  },
+                  {
+                    "title": "ERP",
+                    "description": "Holded"
+                  },
+                  {
+                    "title": "Frontend",
+                    "description": "React"
+                  },
+                  {
+                    "title": "Backend",
+                    "description": "Node.js + Python"
+                  },
+                  {
+                    "title": "DB",
+                    "description": "PostgressSQL"
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "WhatsApp Business API"
+                  },
+                  {
+                    "title": "Reporting",
+                    "description": "Looker"
+                  }
+                ],
+                "functionalitiesText": "Funcionalidades",
+                "functionalities": [
+                  {
+                    "title": "Disponibilidad del personal",
+                    "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                  },
+                  {
+                    "title": "Asignación de rutas",
+                    "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                  },
+                  {
+                    "title": "Notificaciones",
+                    "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                  },
+                  {
+                    "title": "Panel de control",
+                    "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                  },
+                  {
+                    "title": "Optimización de la carga del vehículo",
+                    "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+                  },
+                  {
+                    "title": "Automatización de reportes de productividad",
+                    "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                  }
+                ],
+                "solutionText": "Solución",
+                "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
+
+              }
+            }
+          ]
         }
       ]
     },
@@ -726,278 +1517,6 @@
             {
               "title": "Consultoría tecnológica",
               "description": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar, implementar y optimizar herramientas digitales que se alineen con los objetivos del negocio, asegurando un crecimiento sostenible y escalable."
-            }
-          ]
-        }
-      ]
-    },
-    "improveAreas": {
-      "title" : "Áreas",
-      "filtersText": "Filtros",
-      "applyFiltersText": "Aplicar filtros",
-      "filtersClearAllText": "Limpiar todo",
-      "areas": [
-        {
-          "summary": "Gestión de inventarios",
-          "faqs": [
-            {
-              "question": "Gestión de inventarios Automatización de la gestión de tarifas y productos de proveedores",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            }
-          ]
-        },
-        {
-          "summary": "Gestión manual de presupuestos",
-          "faqs": [
-            {
-              "question": "Gestión manual de presupuestos Automatización de la gestión de tarifas y productos de proveedores",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            }
-          ]
-        },
-        {
-          "summary": "Visibilidad en operaciones",
-          "faqs": [
-            {
-              "question": "Visibilidad en operaciones Automatización de la gestión de tarifas y productos de proveedores",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            }
-          ]
-        },
-        {
-          "summary": "Sostenibilidad",
-          "faqs": [
-            {
-              "question": "Sostenibilidad Automatización de la gestión de tarifas y productos de proveedores",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            }
-          ]
-        },
-        {
-          "summary": "Optimización de procesos manuales",
-          "faqs": [
-            {
-              "question": "Optimización de procesos manuales Automatización de la gestión de tarifas y productos de proveedores",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            }
-          ]
-        },
-        {
-          "summary": "Optimización de rutas y recursos",
-          "faqs": [
-            {
-              "question": "Optimización de procesos manuales Automatización de la gestión de tarifas y productos de proveedores",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            }
-          ]
-        },
-        {
-          "summary": "Eficiencia en el almacén",
-          "faqs": [
-            {
-              "question": "Optimización de procesos manuales Automatización de la gestión de tarifas y productos de proveedores",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            }
-          ]
-        },
-        {
-          "summary": "Integración de herramientas",
-          "faqs": [
-            {
-              "question": "Optimización de procesos manuales Automatización de la gestión de tarifas y productos de proveedores",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
-            },
-            {
-              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
             }
           ]
         }

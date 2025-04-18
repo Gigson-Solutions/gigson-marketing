@@ -99,22 +99,71 @@ const FaqFilters = ({ areas, onFilterClick, activeFilterIndexes }) => {
     );
 };
 
+const AccordionContent = ({ challengeDescription, technologiesText, technologies, functionalitiesText, functionalities, solutionText, solutionDescription}) => {
+
+    return (
+        <div className="flex flex-col pt-6 pb-10 md:px-6 text-dark-medium">
+            <p className="text-body mb-6 md:mb-10">{challengeDescription}</p>
+
+            <div className="mb-6 md:mb-10">
+                <p className="text-purple-accents text-subtitle mb-1">{functionalitiesText}</p>
+                <ul className="ml-6">
+                    {functionalities.map(({title, description}, index) => (
+                            <li key={index} className="text-body text-dark-primary !list-disc">
+                                <p className="text-body text-dark-medium">
+                                    <span className="font-bold text-dark-primary mr-2">{title}</span>
+                                    <span>{description}</span>
+                                </p>
+                            </li>
+                        )
+                    )}
+                </ul>
+            </div>
+
+
+            <div className="flex flex-col md:flex-row gap-10">
+                <div className="flex-1">
+                    <p className="text-subtitle text-purple-accents">{solutionText}</p>
+                    <p className="text-body text-dark-medium">{solutionDescription}</p>
+                </div>
+
+                <div className="flex-1">
+                    <p className="text-purple-accents text-subtitle mb-1">{technologiesText}</p>
+                    <ul className="ml-6">
+                        {technologies.map(({title, description}, index) => (
+                                <li key={index} className="text-body text-dark-primary !list-disc">
+                                    <p className="text-body text-dark-medium">
+                                        <span className="font-bold text-dark-primary mr-2">{title}</span>
+                                        <span>{description}</span>
+                                    </p>
+                                </li>
+                            )
+                        )}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    )
+}
+
 const FaqList = ({ visibleFaqs, activeFaqIndex, onFaqClick }) => {
     return (
         <div>
             {visibleFaqs?.map(({ faqs }, areaIndex) =>
                 faqs.map(({ question, answer }, faqIndex) => {
+
                     const accordionKey = `${areaIndex}-${faqIndex}`;
                     return (
                         <div key={accordionKey}>
                             <FaqsAccordion
-                                answer={answer}
                                 question={question}
                                 onClick={() => {
                                     onFaqClick(accordionKey);
                                 }}
-                                isOpen={activeFaqIndex === accordionKey}
-                            />
+                                isOpen={activeFaqIndex === accordionKey}>
+                                <AccordionContent {...answer} />
+                            </FaqsAccordion>
                         </div>
                     );
                 })

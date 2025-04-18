@@ -7,6 +7,7 @@ import iconOne from '../../../assets/use-cases-icon-1.svg';
 import iconTwo from '../../../assets/use-cases-icon-2.svg';
 import iconThree from '../../../assets/use-cases-icon-3.svg';
 import iconFour from '../../../assets/use-cases-icon-4.svg';
+import iconBlockquote from '../../../assets/usecases-blockquote-icon.svg';
 
 import {ButtonIcon} from "../../../shared/ui/ButtonIcon.jsx";
 import {Button} from "../../../shared/ui/Button.jsx";
@@ -62,31 +63,50 @@ const Card = ({title, logoSrc, isLastCard, supTitle, description, buttonText, di
 }
 
 
-const DialogContent = ({backButtonText, title, subtitle, description, quote, cardsBoxTitle, cards, footerTitle, footerDescription, onClose}) => {
+const DialogContent = ({ backButtonText, title, challengeText, challengeDescription, quote, technologiesText, technologies, functionalitiesText, functionalities, solutionText, solutionDescription, onClose}) => {
 
     return (
-        <div className="flex flex-col pt-6 pb-10 md:px-6">
+        <div className="flex flex-col pt-6 pb-10 md:px-6 text-dark-primary">
             <div className="flex flex-col mb-6 md:mb-20">
-                <div className="md:flex md:flex-row md:gap-x-10 mb-6 md:mb-15">
-                    <div className="flex flex-col">
-                        <p className="flex items-center gap-2 text-body text-dark-medium uppercase cursor-pointer hover:opacity-80 mb-6 md:mb-15" onClick={onClose}>
-                            <span><Arrow /></span>
-                            {backButtonText}
-                        </p>
-                        <h4 className="text-h3 text-dark-primary">{title}</h4>
-                    </div>
-                    <p className="hidden lg:block text-purple-accents text-[48px] leading-[50px] text-right">
-                        {quote}
+                <div className="flex flex-row flex-wrap items-start justify-between gap-x-10 mb-6 md:mb-16">
+                    <p className="flex items-center gap-2 text-body text-dark-medium uppercase cursor-pointer hover:opacity-80" onClick={onClose}>
+                        <span><Arrow /></span>
+                        {backButtonText}
+                    </p>
+                    <p className="hidden md:block max-w-[600px] text-purple-accents text-h3 text-right">
+                        <span className="inline-block mr-6">
+                            <img src={iconBlockquote} alt="blockquote"/>
+                        </span>
+                        <span>{quote}</span>
                     </p>
                 </div>
-                <p className="text-purple-accents text-subtitle uppercase">{subtitle}</p>
-                <p className="text-body text-dark-primary">{description}</p>
+                <div className="flex flex-col md:flex-row gap-6">
+                    <div className="flex-9/12">
+                        <h4 className="text-h3 text-dark-primary max-w-[500px] mb-6 md:mb-16">{title}</h4>
+                        <p className="text-purple-accents text-subtitle uppercase mb-2">{challengeText}</p>
+                        <p className="text-body text-dark-primary">{challengeDescription}</p>
+                    </div>
+                    <div className="flex-3/12 justify-self-end">
+                        <p className="text-purple-accents text-subtitle mb-1">{technologiesText}</p>
+                        <ul className="ml-6">
+                            {technologies.map(({title, description}, index) => (
+                                <li key={index} className="text-body text-dark-primary !list-disc">
+                                    <p className="text-body text-dark-medium">
+                                        <span className="font-bold text-dark-primary mr-2">{title}</span>
+                                        <span>{description}</span>
+                                    </p>
+                                </li>
+                                )
+                            )}
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div className="flex flex-col mb-6 md:mb-12">
-                <p className="text-body text-purple-accents uppercase mb-6">{cardsBoxTitle}</p>
+                <p className="text-body text-purple-accents uppercase mb-6">{functionalitiesText}</p>
                 <div className="flex flex-col md:grid md:grid-cols-3 md:gap-4">
-                    {cards.map(({title, description}, index) => {
+                    {functionalities.map(({title, description}, index) => {
                         const cardNr = getCardNr(index + 1);
 
                         return (
@@ -103,8 +123,8 @@ const DialogContent = ({backButtonText, title, subtitle, description, quote, car
             <div className="flex flex-col md:flex-row justify-center md:gap-x-10 border-t-2 border-t-purple-accents pt-6 md:pt-10">
                 <img src={iconOne} className="max-h-[141px] ml-auto" alt={`${title}-img`}/>
                 <div className="flex flex-col gap-4">
-                    <p className="text-subtitle text-purple-accents">{footerTitle}</p>
-                    <p className="text-body text-dark-primary">{footerDescription}</p>
+                    <p className="text-subtitle text-purple-accents">{solutionText}</p>
+                    <p className="text-body text-dark-primary">{solutionDescription}</p>
                 </div>
             </div>
 
