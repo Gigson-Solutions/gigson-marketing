@@ -119,6 +119,14 @@ label {
    color: inherit;
 }
 
+a {
+   display: inline-block;
+}
+
+svg {
+   display: inline;
+}
+
 .mt-fixed-navbar {
    margin-top: 91px;
 }
