@@ -24,7 +24,7 @@
    height: 3px;
 }
 .div-header {
-   padding: 1rem 0 0.5rem;
+   /*padding: 1rem 0 0.5rem;*/
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -111,26 +111,48 @@
    height: 100%;
    font-size: 1.3em;
    background: #f4f3ef;
-   /* background: url(../../assets/mesh-gradient.svg) no-repeat; 
+   /* background: url(../../assets/mesh-gradient.svg) no-repeat;
    background-size: cover;*/
    color: #333;
    transition: 0.3s linear;
 }
+
+
+.menu-item {
+   display: inline-block;
+   color: #3C3C3B;
+   text-decoration: none;
+   font-size: 18px;
+   line-height: 22px;
+   font-weight: 400;
+   padding: 13px 24px;
+   border-radius: 100px;
+   transition: background-color 0.3s ease, color 0.3s ease;
+   cursor: pointer;
+}
+
 .menu-item:hover,
 .menu-item.active {
-   color: #7874f4;
+   background-color: #7874F4;
+   color: #fff;
+}
+
+@media (min-width: 1040px) and (max-width: 1240px) {
+   .menu-item {
+      padding: 9px 14px;
+   }
 }
 
 .menu-box ul {
    display: flex;
    flex-direction: column;
-   gap: 3.1rem;
+   gap: 10px;
    justify-content: center;
    align-items: center;
 }
 @media (min-width: 24.375rem) {
    .div-header {
-      padding: 2rem 0 0.7rem;
+      padding: 2rem 0;
    }
    .menu-box {
       gap: 2.25rem;
@@ -138,9 +160,6 @@
    }
 }
 @media (min-width: 40rem) {
-   .div-header {
-      padding: 1.5rem 0 0.8rem;
-   }
    .open .mesh {
       left: -12rem;
    }
@@ -163,9 +182,7 @@
       font-size: 1.0625rem;
       font-weight: 500;
    }
-   .div-header {
-      padding-bottom: 1rem;
-   }
+
    .logo-header {
       width: 10rem;
    }
@@ -183,7 +200,7 @@
    .menu-box ul {
       all: unset;
       display: flex;
-      gap: 3.0625rem;
+      gap: 10px;
    }
    /* .hero-btn{
         display: inline-flex;
@@ -206,11 +223,7 @@
       display: none;
    }
 }
-@media (min-width: 74rem) {
-   .menu-box ul {
-      gap: 4.0625rem;
-   }
-}
+
 @media (min-width: 90rem) {
    .menu-box {
       gap: 4.5rem;

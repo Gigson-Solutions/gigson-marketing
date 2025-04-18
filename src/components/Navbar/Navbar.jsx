@@ -55,7 +55,9 @@ const Navbar = () => {
                            </NavLink>
                         </li>
                      ))}
-                     <LanguageSelector />
+                     <li className="flex items-center xl:ml-6">
+                        <LanguageSelector />
+                     </li>
                   </ul>
                </div>
             </nav>
