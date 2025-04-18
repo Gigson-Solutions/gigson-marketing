@@ -22,8 +22,8 @@ const getCardNr = (index) => String(index).padStart(2, '0');
 
 const Arrow = () => {
     return (
-        <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 17.5L1.76978 9.72701C1.35194 9.33239 1.35194 8.66761 1.76978 8.27299L10 0.499999" stroke="#868685" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg className="!block" width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 17.5L1.76978 9.72701C1.35194 9.33239 1.35194 8.66761 1.76978 8.27299L10 0.499999" stroke="#868685" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
 
     )
@@ -47,7 +47,7 @@ const Card = ({title, logoSrc, isLastCard, supTitle, description, buttonText, di
     return (
         <div
             className="h-full md:h-auto md:flex-1 flex flex-col gap-11 lg:last:col-span-2 bg-white rounded-lg p-6">
-            <img src={logoSrc} className="max-h-[141px] ml-auto" alt={`${title}-img`}/>
+            <img src={logoSrc} className="!block max-h-[141px] ml-auto" alt={`${title}-img`}/>
             <h3 className="text-h4 flex-auto">{title}</h3>
             <div className="flex flex-row flex-wrap items-end gap-8">
                 <div className="flex-1">
@@ -76,7 +76,7 @@ const DialogContent = ({ backButtonText, title, challengeText, challengeDescript
                     </p>
                     <p className="hidden md:block max-w-[600px] text-purple-accents text-h3 text-right">
                         <span className="inline-block mr-6">
-                            <img src={iconBlockquote} alt="blockquote"/>
+                            <img className="!block" src={iconBlockquote} alt="blockquote"/>
                         </span>
                         <span>{quote}</span>
                     </p>

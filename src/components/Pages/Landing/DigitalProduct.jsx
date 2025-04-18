@@ -25,7 +25,7 @@ const Card = ({title, imgSrc, description}) => {
         <div className="flex flex-wrap lg:flex-nowrap items-end justify-between gap-4 lg:gap-x-20">
             <div className="w-full lg:w-auto">
                 <img src={imgSrc}
-                     className="max-h-[89px] max-w-[89px] lg:max-h-[120px] lg:max-w-[120px] object-contain opacity-40"
+                     className="!block max-h-[89px] max-w-[89px] lg:max-h-[120px] lg:max-w-[120px] object-contain opacity-40"
                      alt={`${title}-img`}/>
             </div>
             <h3 className="text-h5 text-purple-accents">{title}</h3>

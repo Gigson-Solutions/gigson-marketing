@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const PrimarySvg = () => {
     return (
         <svg
+            className="!block"
             width="19"
             height="18"
             viewBox="0 0 19 18"
@@ -23,6 +24,7 @@ const PrimarySvg = () => {
 const OutlinedSvg = ({ color }) => {
     return (
         <svg
+            className="!block"
             width="42"
             height="40"
             viewBox="0 0 42 40"
