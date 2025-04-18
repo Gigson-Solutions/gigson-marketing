@@ -21,7 +21,7 @@ const cardsAttributes = [
 
 
 const Card = ({title, imgSrc, description}) => {
-    return (<div className="md:flex-1 flex flex-col gap-6 h-hull bg-purple-light-a rounded-lg p-4">
+    return (<div className="h-full md:h-auto md:flex-1 flex flex-col gap-6 h-hull bg-purple-light-a rounded-lg p-4">
         <div className="flex flex-wrap lg:flex-nowrap items-end justify-between gap-4 lg:gap-x-20">
             <div className="w-full lg:w-auto">
                 <img src={imgSrc}
@@ -77,9 +77,11 @@ const DigitalProduct = () => {
                     {cards?.map(({title, supTitle, description, buttonText}, index) => {
                         const {imgSrc} = cardsAttributes[index];
 
-                        return (<SwiperSlide key={index}>
-                            <Card key={index} title={title} description={description} imgSrc={imgSrc}/>
-                        </SwiperSlide>)
+                        return (
+                            <SwiperSlide key={index}>
+                                <Card key={index} title={title} description={description} imgSrc={imgSrc}/>
+                            </SwiperSlide>
+                        )
                     })}
                 </Swiper>
             </div>

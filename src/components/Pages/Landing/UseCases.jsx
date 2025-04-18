@@ -2,6 +2,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Pagination} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import "../../slider.css";
 
 import iconOne from '../../../assets/use-cases-icon-1.svg';
 import iconTwo from '../../../assets/use-cases-icon-2.svg';
@@ -45,7 +46,7 @@ const Card = ({title, logoSrc, isLastCard, supTitle, description, buttonText, di
 
     return (
         <div
-            className="md:flex-1 flex flex-col gap-11 lg:last:col-span-2 bg-white rounded-lg p-6">
+            className="h-full md:h-auto md:flex-1 flex flex-col gap-11 lg:last:col-span-2 bg-white rounded-lg p-6">
             <img src={logoSrc} className="max-h-[141px] ml-auto" alt={`${title}-img`}/>
             <h3 className="text-h4 flex-auto">{title}</h3>
             <div className="flex flex-row flex-wrap items-end gap-8">
@@ -112,7 +113,7 @@ const DialogContent = ({ backButtonText, title, challengeText, challengeDescript
                         return (
                             <div className="flex flex-col border-t pb-8">
                                 <span className="text-bigTag text-purple-accents">{cardNr}</span>
-                                <h4 className="text-h4 text-dark-primary mb-6">{title}</h4>
+                                <h4 className="text-h4 text-dark-primary mb-6 md:min-h-[120px]">{title}</h4>
                                 <p className="hidden md:block text-body text-dark-medium">{description}</p>
                             </div>
                         )
