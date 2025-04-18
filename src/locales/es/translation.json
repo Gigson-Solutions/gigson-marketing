@@ -519,19 +519,19 @@
   },
   "services_v2":{
     "hero": {
-      "suptitle":"Logística y fulfillment ",
-      "title": "Tecnología en logística y <span>consultoría de intralogística</span>",
+      "suptitle":"Logística y fulfillment",
+      "title": "Tecnología y consultoría <span>en logística</span>",
       "description": "La tecnología en logística puede ser un desafío si no se cuenta con el asesoramiento adecuado. En Gigson Solutions, te ayudamos a integrar soluciones tecnológicas sin fricciones, asegurando que se adapten a la estructura del negocio.",
-      "buttonText": "CÓMO PODEMOS AYUDARTE"
+      "buttonText": "Como podemos ayudarte"
     },
     "useCases": {
       "title": "Casos de uso",
-      "description": "Fusce justo tellus, dapibus vel elit in, pretium blandit erat. Donec laoreet mi nec semper interdum. Duis elementum dolor ante, a ornare tellus ultrices eget.",
+      "description": "Descubre cómo hemos ayudado a empresas a resolver desafíos logísticos complejos mediante soluciones tecnológicas personalizadas. Cada caso refleja nuestro compromiso con la eficiencia, la integración y los resultados medibles.",
       "cards": [
         {
-          "title": "Asignación automática de rutas según disponibilidad de plantilla y vehículos",
+          "title": "Optimización de Rutas con TMS Básico",
           "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente",
+          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente.",
           "dialog": {
             "backButtonText": "Casos de uso",
             "title": "Integración de herramientas End2End para eCommerce",
@@ -563,9 +563,9 @@
           }
         },
         {
-          "title": "Asignación automática de rutas según disponibilidad de plantilla y vehículos",
+          "title": "Reduce los tiempos muertos: organiza, optimiza, entrega.",
           "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente",
+          "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento, manual y propenso a errores.",
           "dialog": {
             "backButtonText": "Casos de uso",
             "title": "Integración de herramientas End2End para eCommerce",
@@ -597,9 +597,9 @@
           }
         },
         {
-          "title": "Asignación automática de rutas según disponibilidad de plantilla y vehículos",
+          "title": "Visibilidad a tiempo",
           "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente",
+          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente.",
           "dialog": {
             "backButtonText": "Casos de uso",
             "title": "Integración de herramientas End2End para eCommerce",
@@ -631,9 +631,9 @@
           }
         },
         {
-          "title": "Asignación automática de rutas según disponibilidad de plantilla y vehículos",
+          "title": "Integración de herramientas End2End para ecommerce",
           "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente",
+          "description": "Crear y desarrollar una integración de APIs que integre ERP, CMS, diferentes marketplaces y proveedores de Third-Party Logistics (3PLs) para la industria de Dropshipping y Logística. El objetivo es mejorar la eficiencia operativa y la experiencia del cliente al simplificar la gestión de compras, ventas y logística.",
           "buttonText": "Mostrar caso",
           "dialog": {
             "backButtonText": "Casos de uso",
@@ -668,8 +668,8 @@
       ]
     },
     "solutionsApplications": {
-      "title": "Soluciones y aplicación de <span>tecnología en eficiencia logística</span>",
-      "subTitle": "La digitalización y automatización permite alcanzar una eficiencia logística superior. Así podemos optimizar o integrar la tecnología en logística de tu empresa",
+      "title": "Soluciones y aplicación de <span>tecnología en las operaciones logísticas</span>",
+      "subTitle": "La digitalización y automatización permite alcanzar una eficiencia logística superior. Así podemos optimizar o integrar la tecnología en logística de tu empresa.",
       "containers": [
         {
           "title": "Desarrollo e integración de software",
@@ -732,7 +732,7 @@
       ]
     },
     "improveAreas": {
-      "title" : "Areas we improve",
+      "title" : "Áreas",
       "filtersText": "Filtros",
       "applyFiltersText": "Aplicar filtros",
       "filtersClearAllText": "Limpiar todo",
@@ -901,6 +901,105 @@
               "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
             }
           ]
+        },
+        {
+          "summary": "Optimización de rutas y recursos",
+          "faqs": [
+            {
+              "question": "Optimización de procesos manuales Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            }
+          ]
+        },
+        {
+          "summary": "Eficiencia en el almacén",
+          "faqs": [
+            {
+              "question": "Optimización de procesos manuales Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            }
+          ]
+        },
+        {
+          "summary": "Integración de herramientas",
+          "faqs": [
+            {
+              "question": "Optimización de procesos manuales Automatización de la gestión de tarifas y productos de proveedores",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            },
+            {
+              "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+              "answer": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar."
+            }
+          ]
         }
       ]
     },
@@ -928,7 +1027,7 @@
     "digitalProduct": {
       "title": "¿Qué necesito para hacer un <span>producto digital</span>?",
       "description": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
-      "buttonText": "Podemos ayudarte",
+      "buttonText": "Como podemos ayudarte",
       "cards": [
         {
           "title": "Ingeniería de software",

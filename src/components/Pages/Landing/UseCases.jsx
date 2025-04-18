@@ -29,7 +29,7 @@ const Arrow = () => {
 
 const TitleBox = ({title, description}) => {
     return (
-        <div className="md:flex-auto flex flex-col gap-4 text-right">
+        <div className="md:col-span-2 lg:col-span-1 flex flex-col gap-4 text-right">
             <h3 className="text-bigTag uppercase text-purple-accents">{title}</h3>
             <p className="text-body text-dark-primary">{description}</p>
         </div>
@@ -44,18 +44,18 @@ const Card = ({title, logoSrc, isLastCard, supTitle, description, buttonText, di
 
     return (
         <div
-            className="md:flex-1 flex flex-col gap-11 last:col-span-2 bg-white rounded-lg p-6 pb-14">
+            className="md:flex-1 flex flex-col gap-11 lg:last:col-span-2 bg-white rounded-lg p-6">
             <img src={logoSrc} className="max-h-[141px] ml-auto" alt={`${title}-img`}/>
             <h3 className="text-h4 flex-auto">{title}</h3>
             <div className="flex flex-row flex-wrap items-end gap-8">
-                <div className={`flex-1 ${isLastCard ? 'pr-20' : ''}`}>
-                    <div className="flex items-center gap-2 justify-between">
+                <div className="flex-1">
+                    <div className="flex items-center gap-2 justify-between mb-2">
                         <p className="text-bigTag text-purple-accents">{supTitle}</p>
                         {!isLastCard && <ButtonIcon onClick={dialogHandleClick}/>}
+                        {isLastCard && <Button text={buttonText} onClick={dialogHandleClick}/>}
                     </div>
                     <p className="text-body text-dark-medium">{description}</p>
                 </div>
-                {isLastCard && <Button text={buttonText} onClick={dialogHandleClick}/>}
             </div>
         </div>
     )
@@ -126,9 +126,9 @@ const UseCases = () => {
 
     return (
             <>
-                <div className="pt-30 pb-0 md:py-30">
+                <div className="pt-12 lg:pt-40 pb-14 lg:pb-0">
                     <div
-                        className="max-w-8xl mx-auto px-landing hidden md:flex flex-col flex-wrap md:flex-row lg:grid md:grid-cols-3 gap-x-4 gap-y-6">
+                        className="max-w-8xl mx-auto px-landing hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">
                         <TitleBox title={title} description={description}/>
 
                         {cards?.map((cardProps, index) => {

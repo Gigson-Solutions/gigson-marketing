@@ -65,29 +65,15 @@ const useFaqVisibility = (areas) => {
 
 const FilterBadge = ({ isActive, summary, onClick }) => {
 
+    const boxClass = isActive ? 'bg-purple-light-b' : '';
+
     return (
         <div
-            className="group flex items-center justify-center w-fit py-1 px-4 pr-3 rounded-full border-[0.5px] border-dark-primary cursor-pointer hover:opacity-80"
+            className={`group flex items-center justify-center w-fit py-1 px-4 pr-3 rounded-full border-[0.5px] border-dark-primary cursor-pointer hover:opacity-80 ${boxClass}`}
             onClick={onClick}
         >
             <p className="flex items-center text-subtitle text-dark-primary">
                 {summary}
-                <div className="w-[24px] h-[24px] flex items-center justify-center ml-2">
-                    {isActive ? (
-                        <>
-                            <span className="group-hover:hidden">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 9L12 15L18 9" stroke="#3C3C3B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </span>
-                            <span className="hidden group-hover:block">
-                                <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9.8 6.2L6.2 9.8M6.2 6.2L9.8 9.8M14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8Z" stroke="#3C3C3B" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </span>
-                        </>
-                    ) : null}
-                </div>
             </p>
         </div>
     );
@@ -168,7 +154,7 @@ const ImproveAreas = () => {
 
     return (
         <>
-            <div className="py-30">
+            <div className="pt-14 lg:pt-40 pb-6 lg:pb-20">
                 <div className="max-w-8xl mx-auto px-landing flex flex-col">
                     <div className="flex flex-row items-center justify-between mb-4 md:mb-6">
                         <h3 className="text-bigTag uppercase text-purple-accents">{title}</h3>
