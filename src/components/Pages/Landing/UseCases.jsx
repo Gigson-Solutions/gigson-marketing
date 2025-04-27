@@ -12,7 +12,7 @@ import iconBlockquote from '../../../assets/usecases-blockquote-icon.svg';
 
 import {ButtonIcon} from "../../../shared/ui/ButtonIcon.jsx";
 import {Button} from "../../../shared/ui/Button.jsx";
-import {useTranslation} from "react-i18next";
+import {Trans, useTranslation} from "react-i18next";
 import {useState} from "react";
 import Dialog from "../../../shared/ui/Dialog.jsx";
 
@@ -114,7 +114,14 @@ const DialogContent = ({ backButtonText, title, challengeText, challengeDescript
                             <div className="flex flex-col border-t pb-8">
                                 <span className="text-bigTag text-purple-accents">{cardNr}</span>
                                 <h4 className="text-h4 text-dark-primary mb-6 md:min-h-[120px]">{title}</h4>
-                                <p className="hidden md:block text-body text-dark-medium">{description}</p>
+                                <p className="hidden md:block text-body text-dark-medium">
+                                    <Trans
+                                        i18nKey={description}
+                                        components={{
+                                            span: <span className="font-bold text-dark-primary" />
+                                        }}
+                                    />
+                                </p>
                             </div>
                         )
                     })}

@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import {Trans, useTranslation} from "react-i18next";
 import Dialog from "../../../shared/ui/Dialog.jsx";
 import { Button } from "../../../shared/ui/Button.jsx";
 import {FaqsAccordion} from "../Faqs/FaqsAccordion/FaqsAccordion.jsx";
+import chevronDownIcon from "../../../assets/chevron-down.svg";
+import timesCircleIcon from "../../../assets/times-circle.svg";
 
 const useFaqVisibility = (areas) => {
     const [visibleFaqs, setVisibleFaqs] = useState([areas[0]]);
@@ -63,35 +65,49 @@ const useFaqVisibility = (areas) => {
     };
 };
 
-const FilterBadge = ({ isActive, summary, onClick }) => {
+const FilterBadge = ({ isActive, isMobile, summary, onClick, endAdornment }) => {
 
-    const boxClass = isActive ? 'bg-purple-light-b' : '';
+    const boxBgClass = isActive ? 'bg-purple-light-b' : '';
+
+    const boxPaddingClass = endAdornment ? 'pr-3' : '';
+
+    const textClass = isMobile ? 'text-h5' : 'text-subtitle';
 
     return (
         <div
-            className={`group flex items-center justify-center w-fit py-1 px-4 pr-3 rounded-full border-[0.5px] border-dark-primary cursor-pointer hover:opacity-80 ${boxClass}`}
+            className={`group flex items-center justify-center w-fit py-1 px-4 ${boxPaddingClass} rounded-full border-[0.5px] border-dark-primary cursor-pointer hover:opacity-80 ${boxBgClass}`}
             onClick={onClick}
         >
-            <p className="flex items-center text-subtitle text-dark-primary">
+            <p className={`flex items-center text-dark-primary ${textClass}`}>
                 {summary}
+                {endAdornment && (
+                    <img src={endAdornment} alt="chevron" className="ml-2" />
+                )}
             </p>
         </div>
     );
 };
 
-const FaqFilters = ({ areas, onFilterClick, activeFilterIndexes }) => {
+const FaqFilters = ({ areas, onFilterClick, activeFilterIndexes, isMobile }) => {
+
+    const boxClass = isMobile ? 'gap-2' : 'gap-4 mb-10 md:mb-12 lg:mb-16';
 
     return (
-        <div className="flex flex-col md:flex-row flex-wrap gap-4 mb-10 md:mb-12 lg:mb-16">
+        <div className={`flex flex-col md:flex-row flex-wrap ${boxClass}`}>
             {areas.map(({ summary }, index) => {
                 const isActive = activeFilterIndexes.includes(index);
+                const hasMultipleActiveItems = activeFilterIndexes.length > 1 ;
+
+                if(isMobile && !isActive) return null;
 
                 return (
                     <FilterBadge
                         key={index}
+                        isMobile={isMobile}
                         isActive={isActive}
                         summary={summary}
                         onClick={() => onFilterClick(index)}
+                        {...isMobile && hasMultipleActiveItems && { endAdornment: timesCircleIcon} }
                     />
                 );
             })}
@@ -112,7 +128,14 @@ const AccordionContent = ({ challengeDescription, technologiesText, technologies
                             <li key={index} className="text-body text-dark-primary !list-disc">
                                 <p className="text-body text-dark-medium">
                                     <span className="font-bold text-dark-primary mr-2">{title}</span>
-                                    <span>{description}</span>
+                                    <span>
+                                        <Trans
+                                            i18nKey={description}
+                                            components={{
+                                                span: <span className="font-bold text-dark-primary" />
+                                            }}
+                                        />
+                                    </span>
                                 </p>
                             </li>
                         )
@@ -223,9 +246,21 @@ const ImproveAreas = () => {
                             activeFilterIndexes={activeFilterIndexes}
                         />
                     </div>
-                    <div className="flex flex-row md:hidden items-center justify-between w-full self-start mb-10">
-                        <FilterBadge isActive={true} isHovered={false} summary={filtersText} onClick={() => setDialogOpen(true)} />
-                        {hasMultipleFilters && <ResetFiltersButton onClick={resetFilters} text={filtersClearAllText} />}
+                    <div className="flex flex-col md:hidden items-start justify-between w-full self-start mb-10">
+                        <div className="flex flex-row md:hidden items-center justify-between w-full self-start mb-4">
+                            <FilterBadge summary={filtersText} endAdornment={chevronDownIcon} onClick={() => setDialogOpen(true)} />
+
+                            {hasMultipleFilters && <ResetFiltersButton onClick={resetFilters} text={filtersClearAllText} />}
+                        </div>
+                        <FaqFilters
+                            isMobile
+                            areas={areas}
+                            onFilterClick={(index) => {
+                                toggleFaqVisibility(index);
+                                toggleActiveFilterIndex(index);
+                            }}
+                            activeFilterIndexes={activeFilterIndexes}
+                        />
                     </div>
 
                     <FaqList visibleFaqs={visibleFaqs} activeFaqIndex={activeFaqIndex} onFaqClick={toggleActiveFaqIndex} />
