@@ -525,320 +525,277 @@
       "buttonText": "Como podemos ayudarte"
     },
     "useCases": {
-      "title": "Casos de uso",
+      "title": "Casos clave",
       "description": "Descubre cómo hemos ayudado a empresas a resolver desafíos logísticos complejos mediante soluciones tecnológicas personalizadas. Cada caso refleja nuestro compromiso con la eficiencia, la integración y los resultados medibles.",
       "cards": [
         {
-          "title": "Optimización de Rutas con TMS Básico",
+          "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
           "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente.",
+          "description": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
           "dialog": {
             "backButtonText": "Casos de uso",
-            "title": "Integración de herramientas End2End para eCommerce",
-            "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
+            "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
+            "quote": "",
             "challengeText": "Desafío",
-            "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
-            "technologiesText": "Tecnologías",
-            "technologies": [
-              {
-                "title": "TMS",
-                "description": "Geotab & Google Maps API"
-              },
-              {
-                "title": "RRHH",
-                "description": "Personio"
-              },
-              {
-                "title": "ERP",
-                "description": "Holded"
-              },
-              {
-                "title": "Frontend",
-                "description": "React"
-              },
-              {
-                "title": "Backend",
-                "description": "Node.js + Python"
-              },
-              {
-                "title": "DB",
-                "description": "PostgressSQL"
-              },
-              {
-                "title": "Notificaciones",
-                "description": "WhatsApp Business API"
-              },
-              {
-                "title": "Reporting",
-                "description": "Looker"
-              }
-            ],
+            "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
             "functionalitiesText": "Funcionalidades",
             "functionalities": [
               {
-                "title": "Disponibilidad del personal",
-                "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                "title": "Fichaje a través de WhatsApp",
+                "description": "Los empleados pueden registrar su inicio y fin de jornada, descansos y actividades directamente enviando un mensaje a un bot automatizado en WhatsApp."
               },
               {
-                "title": "Asignación de rutas",
-                "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                "title": "Reconocimiento de ubicación",
+                "description": "Validación de la ubicación del fichaje para garantizar que se realiza en los puntos designados (oficinas, almacenes o rutas autorizadas)."
               },
               {
-                "title": "Notificaciones",
-                "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                "title": "Integración con sistemas de nóminas",
+                "description": "Conexión directa con el software de gestión de nóminas para sincronizar automáticamente las horas trabajadas, horas extras y días de descanso."
               },
               {
-                "title": "Panel de control",
-                "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                "title": "Panel de supervisión",
+                "description": "Herramienta para los gestores que permite visualizar los registros en tiempo real, generar reportes y corregir incidencias."
               },
               {
-                "title": "Optimización de la carga del vehículo",
-                "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
-              },
-              {
-                "title": "Automatización de reportes de productividad",
-                "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                "title": "Alertas automáticas",
+                "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales."
               }
             ],
             "solutionText": "Solución",
-            "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
-
+            "solutionDescription": "Desarrollamos un sistema de fichaje basado en WhatsApp que se conecta directamente al software de nóminas de Martínez Marcos. Esto permitió automatizar el registro de horas, eliminando errores manuales y garantizando el cumplimiento normativo. Además, la solución es accesible y fácil de usar para los empleados, lo que aumentó la tasa de cumplimiento de fichajes en un 100%.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Chat",
+                "description": "Whatsapp Business API + Twilio"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js"
+              },
+              {
+                "title": "Dashboard",
+                "description": "React + Looker Studio"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded y Odoo"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Twilio + email"
+              }
+            ]
           }
         },
         {
-          "title": "Reduce los tiempos muertos: organiza, optimiza, entrega.",
+          "title": "Controla tus ventas: desde tu web hasta El Corte Inglés",
           "supTitle": "Desafío",
-          "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento, manual y propenso a errores.",
+          "description": "La empresa vende a través de múltiples canales: tienda online, marketplaces como Amazon, y puntos de venta físicos y digitales de terceros. La falta de control directo sobre inventarios y ventas en estos canales genera desconexión, sobreventas, retrasos en envíos y una experiencia fragmentada tanto para el equipo interno como para el cliente final.",
           "dialog": {
             "backButtonText": "Casos de uso",
-            "title": "Integración de herramientas End2End para eCommerce",
-            "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
+            "title": "Controla tus ventas: desde tu web hasta El Corte Inglés",
+            "quote": "",
             "challengeText": "Desafío",
-            "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
-            "technologiesText": "Tecnologías",
-            "technologies": [
-              {
-                "title": "TMS",
-                "description": "Geotab & Google Maps API"
-              },
-              {
-                "title": "RRHH",
-                "description": "Personio"
-              },
-              {
-                "title": "ERP",
-                "description": "Holded"
-              },
-              {
-                "title": "Frontend",
-                "description": "React"
-              },
-              {
-                "title": "Backend",
-                "description": "Node.js + Python"
-              },
-              {
-                "title": "DB",
-                "description": "PostgressSQL"
-              },
-              {
-                "title": "Notificaciones",
-                "description": "WhatsApp Business API"
-              },
-              {
-                "title": "Reporting",
-                "description": "Looker"
-              }
-            ],
+            "challengeDescription": "La empresa vende a través de múltiples canales: tienda online, marketplaces como Amazon, y puntos de venta físicos y digitales de terceros. La falta de control directo sobre inventarios y ventas en estos canales genera desconexión, sobreventas, retrasos en envíos y una experiencia fragmentada tanto para el equipo interno como para el cliente final..",
             "functionalitiesText": "Funcionalidades",
             "functionalities": [
               {
-                "title": "Disponibilidad del personal",
-                "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                "title": "Integración multicanal",
+                "description": "Conexión entre tienda online, marketplaces y sistemas de inventario externos mediante API, permitiendo sincronización bidireccional de stock y pedidos."
               },
               {
-                "title": "Asignación de rutas",
-                "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                "title": "Panel de control centralizado",
+                "description": "Visualización de inventarios, pedidos y ventas desde una interfaz única, con filtros por canal, categoría y estado."
               },
               {
-                "title": "Notificaciones",
-                "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                "title": "Alertas automáticas de stock",
+                "description": "Notificaciones configurables por producto, canal o almacén para anticiparse a roturas de inventario."
               },
               {
-                "title": "Panel de control",
-                "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
-              },
-              {
-                "title": "Optimización de la carga del vehículo",
-                "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
-              },
-              {
-                "title": "Automatización de reportes de productividad",
-                "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                "title": "Gestión de devoluciones unificada",
+                "description": "Recepción y tratamiento de devoluciones desde todos los canales en una única interfaz conectada con operadores logísticos y ERP."
               }
             ],
             "solutionText": "Solución",
-            "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
-
+            "solutionDescription": "Se desarrolló una integración multicanal que conecta todas las plataformas de venta con el ERP, permitiendo sincronizar pedidos e inventarios en tiempo real. Esta solución mejoró la precisión en la gestión de stock, redujo las incidencias por sobreventa y facilitó el control centralizado del rendimiento de cada canal. Además, se unificó la gestión de devoluciones, agilizando su procesamiento y trazabilidad.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Integraciones multicanal",
+                "description": "Shopify API, Amazon SP-API, Mirakl API"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded y Odoo"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Visualización",
+                "description": "Power BI + Looker Studio"
+              },
+              {
+                "title": "Automatización de flujos",
+                "description": "Make.com + cron jobs"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Twilio + WhatsApp Business API"
+              },
+              {
+                "title": "Gestión de devoluciones",
+                "description": "APIs de operadores logísticos de SEUR y Correos Express"
+              }
+            ]
           }
-
         },
         {
-          "title": "Visibilidad a tiempo",
+          "title": "Evita roturas de stock: optimiza tu reabastecimiento",
           "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente.",
+          "description": "Una empresa distribuidora del sector de materiales de construcción enfrentaba dificultades para planificar correctamente su reabastecimiento de stock. La falta de herramientas predictivas provocaba acumulaciones excesivas de inventario en productos de baja rotación y, al mismo tiempo, desabastecimientos en productos críticos, afectando la eficiencia operativa, la rentabilidad y la capacidad de respuesta ante sus clientes B2B.",
           "dialog": {
             "backButtonText": "Casos de uso",
-            "title": "Integración de herramientas End2End para eCommerce",
-            "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
+            "title": "Evita roturas de stock: optimiza tu reabastecimiento",
+            "quote": "",
             "challengeText": "Desafío",
-            "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
-            "technologiesText": "Tecnologías",
-            "technologies": [
-              {
-                "title": "TMS",
-                "description": "Geotab & Google Maps API"
-              },
-              {
-                "title": "RRHH",
-                "description": "Personio"
-              },
-              {
-                "title": "ERP",
-                "description": "Holded"
-              },
-              {
-                "title": "Frontend",
-                "description": "React"
-              },
-              {
-                "title": "Backend",
-                "description": "Node.js + Python"
-              },
-              {
-                "title": "DB",
-                "description": "PostgressSQL"
-              },
-              {
-                "title": "Notificaciones",
-                "description": "WhatsApp Business API"
-              },
-              {
-                "title": "Reporting",
-                "description": "Looker"
-              }
-            ],
+            "challengeDescription": "Una empresa distribuidora del sector de materiales de construcción enfrentaba dificultades para planificar correctamente su reabastecimiento de stock. La falta de herramientas predictivas provocaba acumulaciones excesivas de inventario en productos de baja rotación y, al mismo tiempo, desabastecimientos en productos críticos, afectando la eficiencia operativa, la rentabilidad y la capacidad de respuesta ante sus clientes B2B..",
             "functionalitiesText": "Funcionalidades",
             "functionalities": [
               {
-                "title": "Disponibilidad del personal",
-                "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                "title": "Análisis de históricos de venta",
+                "description": "Evaluación automática de consumos en diferentes períodos (mensual, trimestral, anual)."
               },
               {
-                "title": "Asignación de rutas",
-                "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                "title": "Matriz dinámica ABC",
+                "description": "Clasificación continua de productos para priorizar pedidos según importancia estratégica."
               },
               {
-                "title": "Notificaciones",
-                "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                "title": "Alertas de reabastecimiento inteligente",
+                "description": "Recomendaciones de compra basadas en plazos de entrega, rotación y niveles mínimos configurables."
               },
               {
-                "title": "Panel de control",
-                "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                "title": "Gestión de estacionalidad",
+                "description": "Ajustes automáticos de previsiones en base a patrones de demanda detectados en años anteriores."
               },
               {
-                "title": "Optimización de la carga del vehículo",
-                "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
-              },
-              {
-                "title": "Automatización de reportes de productividad",
-                "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                "title": "Panel de sugerencias de compra",
+                "description": "Dashboard donde el equipo de compras puede validar, ajustar y lanzar órdenes de compra sugeridas."
               }
             ],
             "solutionText": "Solución",
-            "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
-
+            "solutionDescription": "Se desarrolló un sistema de planificación inteligente de reabastecimiento basado en reglas de negocio configurables por tipo de producto y cliente, sin necesidad de implementar un motor de predicción pesado o complejo. El sistema analiza ventas históricas, plazos de reposición y estacionalidad, y sugiere cantidades óptimas de compra mediante alertas semanales. Además, se incorporó una matriz ABC dinámica que clasifica los productos según su impacto en facturación y frecuencia de venta, ayudando a priorizar el reabastecimiento de forma práctica y eficiente.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Análisis predictivo ligero",
+                "description": "Python"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Python (FastAPI) + Node.js"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Integración con ERP",
+                "description": "Odoo + Holded via API REST"
+              },
+              {
+                "title": "Dashboard de compras",
+                "description": "Power BI Embedded"
+              }
+            ]
           }
-
         },
         {
-          "title": "Integración de herramientas End2End para ecommerce",
+          "title": "Configurador de Presupuestos",
           "supTitle": "Desafío",
-          "description": "Crear y desarrollar una integración de APIs que integre ERP, CMS, diferentes marketplaces y proveedores de Third-Party Logistics (3PLs) para la industria de Dropshipping y Logística. El objetivo es mejorar la eficiencia operativa y la experiencia del cliente al simplificar la gestión de compras, ventas y logística.",
-          "buttonText": "Mostrar caso",
+          "buttonText": "Ver caso",
+          "description": "Elaborar un sistema de cálculo de presupuestos personalizados que se integre de forma eficiente con el ERP existente (Holded) mediante API. El objetivo era agilizar la creación de presupuestos complejos, permitiendo diferentes configuraciones y simulaciones, para facilitar la toma de decisiones, justificar propuestas frente al cliente y mejorar la planificación financiera de proyectos en sectores como la construcción o la logística.",
           "dialog": {
             "backButtonText": "Casos de uso",
-            "title": "Integración de herramientas End2End para eCommerce",
-            "quote": "Asignación de rutas sin complicaciones: más rápido, más eficiente.",
+            "title": "Configurador de Presupuestos",
+            "quote": "",
             "challengeText": "Desafío",
-            "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento y propenso a errores. Los gestores debían analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
-            "technologiesText": "Tecnologías",
-            "technologies": [
-              {
-                "title": "TMS",
-                "description": "Geotab & Google Maps API"
-              },
-              {
-                "title": "RRHH",
-                "description": "Personio"
-              },
-              {
-                "title": "ERP",
-                "description": "Holded"
-              },
-              {
-                "title": "Frontend",
-                "description": "React"
-              },
-              {
-                "title": "Backend",
-                "description": "Node.js + Python"
-              },
-              {
-                "title": "DB",
-                "description": "PostgressSQL"
-              },
-              {
-                "title": "Notificaciones",
-                "description": "WhatsApp Business API"
-              },
-              {
-                "title": "Reporting",
-                "description": "Looker"
-              }
-            ],
+            "challengeDescription": "Elaborar un sistema de cálculo de presupuestos personalizados que se integre de forma eficiente con el ERP existente (Holded) mediante API. El objetivo era agilizar la creación de presupuestos complejos, permitiendo diferentes configuraciones y simulaciones, para facilitar la toma de decisiones, justificar propuestas frente al cliente y mejorar la planificación financiera de proyectos en sectores como la construcción o la logística..",
             "functionalitiesText": "Funcionalidades",
             "functionalities": [
               {
-                "title": "Disponibilidad del personal",
-                "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                "title": "Presupuestos configurables por variables",
+                "description": "Materiales, mano de obra, alquiler de maquinaria, logística y gastos generales."
               },
               {
-                "title": "Asignación de rutas",
-                "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                "title": "Plantillas por tipo de proyecto",
+                "description": "Distintos modelos adaptables según el tipo de construcción o servicio."
               },
               {
-                "title": "Notificaciones",
-                "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                "title": "Integración de precios en tiempo real",
+                "description": "Conexión vía API con catálogos de proveedores para mantener actualizados los importes."
               },
               {
-                "title": "Panel de control",
-                "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                "title": "Simulador de escenarios",
+                "description": "Evaluación de alternativas de ejecución, materiales o proveedores para medir su impacto económico."
               },
               {
-                "title": "Optimización de la carga del vehículo",
-                "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+                "title": "Análisis de presupuestos históricos",
+                "description": "Comparativas con proyectos anteriores para detectar desviaciones y afinar previsiones."
               },
               {
-                "title": "Automatización de reportes de productividad",
-                "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                "title": "Exportación y validación de presupuestos",
+                "description": "Generación de presupuestos en PDF o Excel, integrados en la ficha del proyecto en el ERP para compartir con cliente."
               }
             ],
             "solutionText": "Solución",
-            "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales."
-
+            "solutionDescription": "Desarrollamos una WebApp integrada vía API con Holded que actúa como un configurador de presupuestos totalmente dinámico. Esta solución permite al equipo crear, comparar y validar presupuestos complejos en minutos, con acceso a catálogos actualizados y herramientas de simulación financiera. Los presupuestos pueden exportarse, compartirse y sincronizarse con el ERP, optimizando la visibilidad financiera de cada proyecto y mejorando la precisión en el seguimiento de costes.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Front-end (WebApp de presupuestos)",
+                "description": "React.js, autocompletado de materiales, simuladores interactivos"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js (Express) para el motor de cálculo"
+              },
+              {
+                "title": "Integraciones",
+                "description": "<span>APIs REST de Holded, webhooks</span> para sincronización en tiempo real"
+              },
+              {
+                "title": "Infraestructura cloud",
+                "description": "AWS (EC2, S3, RDS, Lambda), Docker + GitHub Actions"
+              },
+              {
+                "title": "Business Intelligence",
+                "description": "Looker Studio"
+              },
+              {
+                "title": "Seguridad y privacidad",
+                "description": "Autenticación JWT y encriptación de datos sensibles en tránsito (HTTPS) y en reposo. Cumplimiento de GDPR, ISO/IEC 27001 en la infraestructura"
+              }
+            ]
           }
-
         }
       ]
     },

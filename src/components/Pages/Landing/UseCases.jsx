@@ -74,20 +74,24 @@ const DialogContent = ({ backButtonText, title, challengeText, challengeDescript
                         <span><Arrow /></span>
                         {backButtonText}
                     </p>
-                    <p className="hidden md:block max-w-[600px] text-purple-accents text-h3 text-right">
+                    {!!quote && (
+                        <p className="hidden md:block max-w-[600px] text-purple-accents text-h3 text-right">
                         <span className="inline-block mr-6">
                             <img className="!block" src={iconBlockquote} alt="blockquote"/>
                         </span>
-                        <span>{quote}</span>
-                    </p>
+                            <span>{quote}</span>
+                        </p>
+                    )}
                 </div>
                 <div className="flex flex-col md:flex-row gap-6">
-                    <div className="flex-9/12">
-                        <h4 className="text-h3 text-dark-primary max-w-[500px] mb-6 md:mb-16">{title}</h4>
-                        <p className="text-purple-accents text-subtitle uppercase mb-2">{challengeText}</p>
-                        <p className="text-body text-dark-primary">{challengeDescription}</p>
+                    <div className="flex-8/12 flex flex-col">
+                        <h4 className="flex-auto text-h3 text-dark-primary max-w-[600px] mb-6 md:mb-16">{title}</h4>
+                        <div>
+                            <p className="text-purple-accents text-subtitle uppercase mb-2">{challengeText}</p>
+                            <p className="text-body text-dark-primary">{challengeDescription}</p>
+                        </div>
                     </div>
-                    <div className="flex-3/12 justify-self-end">
+                    <div className="flex-4/12 justify-self-end flex flex-col justify-end">
                         <p className="text-purple-accents text-subtitle mb-1">{technologiesText}</p>
                         <ul className="ml-6">
                             {technologies.map(({title, description}, index) => (
@@ -111,7 +115,7 @@ const DialogContent = ({ backButtonText, title, challengeText, challengeDescript
                         const cardNr = getCardNr(index + 1);
 
                         return (
-                            <div className="flex flex-col border-t pb-8">
+                            <div key={index} className="flex flex-col border-t pb-8">
                                 <span className="text-bigTag text-purple-accents">{cardNr}</span>
                                 <h4 className="text-h4 text-dark-primary mb-6 md:min-h-[120px]">{title}</h4>
                                 <p className="hidden md:block text-body text-dark-medium">
