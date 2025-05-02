@@ -44,7 +44,7 @@ const Footer = () => {
                <span href="">Developed by gigson © 2024 </span>
                <ul className="footer-policy-links">
                   <li>
-                     <Link to="/policity">{legal}</Link>
+                     <Link to="/policy">{legal}</Link>
                   </li>
                   <li>
                      <Link to="/cookies">{cookies}</Link>

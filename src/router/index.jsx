@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
             element: <Landing />,
          },
          {
-            path: "policity",
+            path: "policy",
             element: <Policity />,
          },
          {
