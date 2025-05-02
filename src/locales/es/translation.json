@@ -804,331 +804,333 @@
       "filtersText": "Filtros",
       "applyFiltersText": "Aplicar filtros",
       "filtersClearAllText": "Limpiar todo",
-      "areas": [
+      "painPoints": [
         {
-          "summary": "Asignación de rutas sin complicaciones: más rápido, más eficiente",
-          "faqs": [
-            {
-              "question": "Asignación de rutas sin complicaciones: más rápido, más eficiente",
-              "answer": {
-                "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento, manual y propenso a errores. La directora de operaciones debía analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
-                "solutionText": "Solución",
-                "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales.",
-                "functionalitiesText": "Funcionalidades",
-                "functionalities": [
-                  {
-                    "title": "Disponibilidad del personal",
-                    "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
-                  },
-                  {
-                    "title": "Asignación de rutas",
-                    "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
-                  },
-                  {
-                    "title": "Notificaciones",
-                    "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
-                  },
-                  {
-                    "title": "Panel de control",
-                    "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
-                  },
-                  {
-                    "title": "Optimización de la carga del vehículo",
-                    "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
-                  },
-                  {
-                    "title": "Automatización de reportes de productividad",
-                    "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
-                  }
-                ],
-                "technologiesText": "Tecnologías",
-                "technologies": [
-                  {
-                    "title": "TMS",
-                    "description": "Geotab & Google Maps API"
-                  },
-                  {
-                    "title": "RRHH",
-                    "description": "Personio"
-                  },
-                  {
-                    "title": "ERP",
-                    "description": "Holded"
-                  },
-                  {
-                    "title": "Front-end",
-                    "description": "React"
-                  },
-                  {
-                    "title": "Back-end",
-                    "description": "Node.js + Python"
-                  },
-                  {
-                    "title": "Base de datos",
-                    "description": "PostgreSQL"
-                  },
-                  {
-                    "title": "Notificaciones",
-                    "description": "WhatsApp Business API"
-                  },
-                  {
-                    "title": "Reporting",
-                    "description": "Looker"
-                  }
-                ]
-              }
-            }
-          ]
+          "type": "A",
+          "name": "Optimización de recursos"
         },
         {
-          "summary": "Transparencia en cada kilómetro",
-          "faqs": [
-            {
-              "question": "Transparencia en cada kilómetro",
-              "answer": {
-                "challengeDescription": "Con una flota en crecimiento, nuestro cliente buscaba reducir su huella de carbono para cumplir con objetivos internos de sostenibilidad, mejorar su imagen frente a clientes B2B y reguladores, y proporcionar transparencia en sus operaciones. Sin herramientas para calcular emisiones, optimizar rutas y ofrecer reportes detallados a los clientes, las operaciones del transporte eran ineficiencientes y sin visibilidad.",
-                "solutionText": "Solución",
-                "solutionDescription": "Se implementó un módulo integral de sostenibilidad que no solo calcula y reduce las emisiones de CO₂, sino que también permite a los clientes acceder a sus reportes desde un portal personalizado. Esto brindó mayor transparencia y confianza a los clientes, quienes ahora pueden ver el impacto ambiental de sus envíos. Como resultado, Martínez Marcos redujo las emisiones en un 15%, mejoró su eficiencia operativa y fortaleció las relaciones con sus clientes al ofrecer un enfoque más transparente y responsable.",
-                "functionalitiesText": "Funcionalidades",
-                "functionalities": [
-                  {
-                    "title": "Cálculo de huella de carbono",
-                    "description": "Herramienta que mide las emisiones de CO₂ por trayecto en función del tipo de vehículo y combustible."
-                  },
-                  {
-                    "title": "Optimización de rutas sostenibles",
-                    "description": "Identificación de trayectos que reduzcan kilómetros recorridos y optimicen el uso del combustible."
-                  },
-                  {
-                    "title": "Portal de cliente",
-                    "description": "Acceso directo y transparente para que los clientes consulten sus reportes de emisiones, rutas utilizadas y métricas sostenibles en tiempo real."
-                  },
-                  {
-                    "title": "Reportes automatizados",
-                    "description": "Generación de reportes personalizados sobre emisiones, que los clientes pueden descargar desde el portal para sus propios análisis o regulaciones."
-                  },
-                  {
-                    "title": "Simulación de escenarios",
-                    "description": "Evaluación de rutas alternativas para identificar ahorros potenciales en emisiones y costos."
-                  }
-                ],
-                "technologiesText": "Tecnologías",
-                "technologies": [
-                  {
-                    "title": "Cálculo de emisiones",
-                    "description": "EcoTransitIT"
-                  },
-                  {
-                    "title": "Front-end",
-                    "description": "React"
-                  },
-                  {
-                    "title": "Back-end",
-                    "description": "Node.js + Python"
-                  },
-                  {
-                    "title": "Base de datos",
-                    "description": "PostgreSQL"
-                  },
-                  {
-                    "title": "Visualización",
-                    "description": "PowerBI + Looker Studio"
-                  }
-                ]
-              }
-            }
-          ]
+          "type": "B",
+          "name": "Automatización procesos manuales"
         },
         {
-          "summary": "Reduce los tiempos muertos: organiza, optimiza, entrega",
-          "faqs": [
-            {
-              "question": "Reduce los tiempos muertos: organiza, optimiza, entrega",
-              "answer": {
-                "challengeDescription": "Normalmente, los transportistas se enfrentan tiempos de espera prolongados para cargar y descargar, lo que afecta la productividad y genera costos adicionales. La falta de una gestión eficiente en los puntos de carga provoca saturaciones y retrasos.",
-                "solutionText": "Solución",
-                "solutionDescription": "Implementamos un sistema de gestión de citas que optimiza el flujo de transportistas en los puntos de carga y descarga, reduciendo los tiempos de espera en un 32%. Esto mejoró tanto la productividad de la flota, como la satisfacción de los conductores y los clientes.",
-                "functionalitiesText": "Funcionalidades",
-                "functionalities": [
-                  {
-                    "title": "Gestión de citas de carga (Time Slot Management)",
-                    "description": "Sistema que permite agendar horarios específicos para evitar congestiones en los puntos de carga y descarga."
-                  },
-                  {
-                    "title": "Notificaciones en tiempo real",
-                    "description": "Alertas a transportistas y almacén sobre cambios o actualizaciones en las citas."
-                  },
-                  {
-                    "title": "Optimización del flujo operativo",
-                    "description": "Herramientas para priorizar cargas urgentes y distribuir conductores de manera eficiente."
-                  },
-                  {
-                    "title": "Reportes de productividad",
-                    "description": "Métricas sobre el uso de los puntos de carga y tiempos de carga/descarga promedio."
-                  }
-                ],
-                "technologiesText": "Tecnologías",
-                "technologies": [
-                  {
-                    "title": "Front-end",
-                    "description": "React"
-                  },
-                  {
-                    "title": "Back-end",
-                    "description": "Node.js + Python"
-                  },
-                  {
-                    "title": "Calendario",
-                    "description": "Google Calendar API"
-                  },
-                  {
-                    "title": "Notificaciones",
-                    "description": "WhatsApp Business API"
-                  },
-                  {
-                    "title": "Reporting",
-                    "description": "Looker Studio"
-                  },
-                  {
-                    "title": "Algoritmos",
-                    "description": "Control de solapamientos y validación de ventanas horarias"
-                  }
-                ]
-              }
-            }
-          ]
+          "type": "C",
+          "name": "Sostenibilidad"
         },
         {
-          "summary": "Acceso total para tus clientes: transparencia y confianza en cada entrega",
-          "faqs": [
-            {
-              "question": "Acceso total para tus clientes: transparencia y confianza en cada entrega",
-              "answer": {
-                "challengeDescription": "El proceso de recepción de mobiliario de lujo se enfrentaba a problemas en la validación del estado, calidad y características del producto. La falta de evidencias en la recepción y manipulación de productos dificultaban las reclamaciones con proveedores y aseguradoras y generaba problemas logísticos. Además, los clientes no tenían acceso directo a información visual y registros sobre el estado de los productos.",
-                "solutionText": "Solución",
-                "solutionDescription": "Implementamos un sistema integral de validación en la recepción del mobiliario de lujo, con una mesa de validación que incluye grabación automatizada y una conexión directa al sistema de gestión de almacenes. Además, se desarrolló un portal para clientes que les permite acceder a las grabaciones y reportes en tiempo real, facilitando la comunicación y gestión de reclamaciones con los proveedores. Como resultado, se mejoró la trazabilidad del 100% de los productos, reduciendo los tiempos de resolución de incidencias en un 50% y aumentando la satisfacción del cliente en un 40%.",
-                "functionalitiesText": "Funcionalidades",
-                "functionalities": [
-                  {
-                    "title": "Mesa de validación",
-                    "description": "Verificación física y digital del mobiliario (dimensiones, acabados, materiales)."
-                  },
-                  {
-                    "title": "Sistema de grabación automatizado",
-                    "description": "Captura de imágenes y video durante la recepción."
-                  },
-                  {
-                    "title": "Portal de cliente",
-                    "description": "Acceso a grabaciones e informes en tiempo real."
-                  },
-                  {
-                    "title": "Checklist digital",
-                    "description": "Validación estructurada de atributos conectada al ERP."
-                  },
-                  {
-                    "title": "Integración con almacén",
-                    "description": "Sincronización con el sistema de inventario para reflejar estado y ubicación."
-                  },
-                  {
-                    "title": "Reportes automatizados",
-                    "description": "Generación de informes visuales para uso interno y externo."
-                  }
-                ],
-                "technologiesText": "Tecnologías",
-                "technologies": [
-                  {
-                    "title": "Captura multimedia",
-                    "description": "Cámara IP + software de grabación programada"
-                  },
-                  {
-                    "title": "Front-end",
-                    "description": "React"
-                  },
-                  {
-                    "title": "Back-end",
-                    "description": "Node.js + Python"
-                  },
-                  {
-                    "title": "Base de datos",
-                    "description": "PostgreSQL"
-                  },
-                  {
-                    "title": "ERP",
-                    "description": "Odoo / SAP Business One"
-                  },
-                  {
-                    "title": "Visualización y portal:",
-                    "description": "Power BI + WebApp personalizada para clientes"
-                  },
-                  {
-                    "title": "Integración",
-                    "description": "Amphora Logistics"
-                  }
-                ]
-              }
-            }
-          ]
+          "type": "D",
+          "name": "Visibilidad de datos"
         },
         {
-          "summary": "Centralización de órdenes de trabajo para operaciones complejas",
-          "faqs": [
-            {
-              "question": "Centralización de órdenes de trabajo para operaciones complejas",
-              "answer": {
-                "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
-                "solutionText": "Solución",
-                "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
-                "functionalitiesText": "Funcionalidades",
-                "functionalities": [
-                  {
-                    "title": "Plataforma centralizada de órdenes",
-                    "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
-                  },
-                  {
-                    "title": "Flujos de trabajo visuales",
-                    "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
-                  },
-                  {
-                    "title": "Actualización automática de estados",
-                    "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
-                  },
-                  {
-                    "title": "Alertas inteligentes",
-                    "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
-                  },
-                  {
-                    "title": "Historial completo de actividad",
-                    "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
-                  }
-                ],
-                "technologiesText": "Tecnologías",
-                "technologies": [
-                  {
-                    "title": "Plataforma de flujos de trabajo",
-                    "description": "Trello-like custom (React + DnD libraries)"
-                  },
-                  {
-                    "title": "Front-end",
-                    "description": "React"
-                  },
-                  {
-                    "title": "Back-end",
-                    "description": "Node.js + Python (FastAPI)"
-                  },
-                  {
-                    "title": "Base de datos",
-                    "description": "PostgreSQL en AWS"
-                  },
-                  {
-                    "title": "Automatización de notificaciones",
-                    "description": "Firebase Cloud Messaging + email (SendGrid)"
-                  }
-                ]
-              }
-            }
-          ]
+          "type": "E",
+          "name": "Cumplir regulación"
         }
-      ]
+      ],
+      "faqs": [
+        {
+          "types": ["A", "B", "C"],
+          "question": "Asignación de rutas sin complicaciones: más rápido, más eficiente",
+          "answer": {
+            "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento, manual y propenso a errores. La directora de operaciones debía analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+            "solutionText": "Solución",
+            "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Disponibilidad del personal",
+                "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+              },
+              {
+                "title": "Asignación de rutas",
+                "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+              },
+              {
+                "title": "Panel de control",
+                "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+              },
+              {
+                "title": "Optimización de la carga del vehículo",
+                "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+              },
+              {
+                "title": "Automatización de reportes de productividad",
+                "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "TMS",
+                "description": "Geotab & Google Maps API"
+              },
+              {
+                "title": "RRHH",
+                "description": "Personio"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "WhatsApp Business API"
+              },
+              {
+                "title": "Reporting",
+                "description": "Looker"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B", "C", "D"],
+          "question": "Transparencia en cada kilómetro",
+          "answer": {
+            "challengeDescription": "Con una flota en crecimiento, nuestro cliente buscaba reducir su huella de carbono para cumplir con objetivos internos de sostenibilidad, mejorar su imagen frente a clientes B2B y reguladores, y proporcionar transparencia en sus operaciones. Sin herramientas para calcular emisiones, optimizar rutas y ofrecer reportes detallados a los clientes, las operaciones del transporte eran ineficiencientes y sin visibilidad.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se implementó un módulo integral de sostenibilidad que no solo calcula y reduce las emisiones de CO₂, sino que también permite a los clientes acceder a sus reportes desde un portal personalizado. Esto brindó mayor transparencia y confianza a los clientes, quienes ahora pueden ver el impacto ambiental de sus envíos. Como resultado, Martínez Marcos redujo las emisiones en un 15%, mejoró su eficiencia operativa y fortaleció las relaciones con sus clientes al ofrecer un enfoque más transparente y responsable.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Cálculo de huella de carbono",
+                "description": "Herramienta que mide las emisiones de CO₂ por trayecto en función del tipo de vehículo y combustible."
+              },
+              {
+                "title": "Optimización de rutas sostenibles",
+                "description": "Identificación de trayectos que reduzcan kilómetros recorridos y optimicen el uso del combustible."
+              },
+              {
+                "title": "Portal de cliente",
+                "description": "Acceso directo y transparente para que los clientes consulten sus reportes de emisiones, rutas utilizadas y métricas sostenibles en tiempo real."
+              },
+              {
+                "title": "Reportes automatizados",
+                "description": "Generación de reportes personalizados sobre emisiones, que los clientes pueden descargar desde el portal para sus propios análisis o regulaciones."
+              },
+              {
+                "title": "Simulación de escenarios",
+                "description": "Evaluación de rutas alternativas para identificar ahorros potenciales en emisiones y costos."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Cálculo de emisiones",
+                "description": "EcoTransitIT"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Visualización",
+                "description": "PowerBI + Looker Studio"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["A", "D"],
+          "question": "Reduce los tiempos muertos: organiza, optimiza, entrega",
+          "answer": {
+            "challengeDescription": "Normalmente, los transportistas se enfrentan tiempos de espera prolongados para cargar y descargar, lo que afecta la productividad y genera costos adicionales. La falta de una gestión eficiente en los puntos de carga provoca saturaciones y retrasos.",
+            "solutionText": "Solución",
+            "solutionDescription": "Implementamos un sistema de gestión de citas que optimiza el flujo de transportistas en los puntos de carga y descarga, reduciendo los tiempos de espera en un 32%. Esto mejoró tanto la productividad de la flota, como la satisfacción de los conductores y los clientes.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Gestión de citas de carga (Time Slot Management)",
+                "description": "Sistema que permite agendar horarios específicos para evitar congestiones en los puntos de carga y descarga."
+              },
+              {
+                "title": "Notificaciones en tiempo real",
+                "description": "Alertas a transportistas y almacén sobre cambios o actualizaciones en las citas."
+              },
+              {
+                "title": "Optimización del flujo operativo",
+                "description": "Herramientas para priorizar cargas urgentes y distribuir conductores de manera eficiente."
+              },
+              {
+                "title": "Reportes de productividad",
+                "description": "Métricas sobre el uso de los puntos de carga y tiempos de carga/descarga promedio."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Calendario",
+                "description": "Google Calendar API"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "WhatsApp Business API"
+              },
+              {
+                "title": "Reporting",
+                "description": "Looker Studio"
+              },
+              {
+                "title": "Algoritmos",
+                "description": "Control de solapamientos y validación de ventanas horarias"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B", "D", "E"],
+          "question": "Acceso total para tus clientes: transparencia y confianza en cada entrega",
+          "answer": {
+            "challengeDescription": "El proceso de recepción de mobiliario de lujo se enfrentaba a problemas en la validación del estado, calidad y características del producto. La falta de evidencias en la recepción y manipulación de productos dificultaban las reclamaciones con proveedores y aseguradoras y generaba problemas logísticos. Además, los clientes no tenían acceso directo a información visual y registros sobre el estado de los productos.",
+            "solutionText": "Solución",
+            "solutionDescription": "Implementamos un sistema integral de validación en la recepción del mobiliario de lujo, con una mesa de validación que incluye grabación automatizada y una conexión directa al sistema de gestión de almacenes. Además, se desarrolló un portal para clientes que les permite acceder a las grabaciones y reportes en tiempo real, facilitando la comunicación y gestión de reclamaciones con los proveedores. Como resultado, se mejoró la trazabilidad del 100% de los productos, reduciendo los tiempos de resolución de incidencias en un 50% y aumentando la satisfacción del cliente en un 40%.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Mesa de validación",
+                "description": "Verificación física y digital del mobiliario (dimensiones, acabados, materiales)."
+              },
+              {
+                "title": "Sistema de grabación automatizado",
+                "description": "Captura de imágenes y video durante la recepción."
+              },
+              {
+                "title": "Portal de cliente",
+                "description": "Acceso a grabaciones e informes en tiempo real."
+              },
+              {
+                "title": "Checklist digital",
+                "description": "Validación estructurada de atributos conectada al ERP."
+              },
+              {
+                "title": "Integración con almacén",
+                "description": "Sincronización con el sistema de inventario para reflejar estado y ubicación."
+              },
+              {
+                "title": "Reportes automatizados",
+                "description": "Generación de informes visuales para uso interno y externo."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Captura multimedia",
+                "description": "Cámara IP + software de grabación programada"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "ERP",
+                "description": "Odoo / SAP Business One"
+              },
+              {
+                "title": "Visualización y portal:",
+                "description": "Power BI + WebApp personalizada para clientes"
+              },
+              {
+                "title": "Integración",
+                "description": "Amphora Logistics"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B"],
+          "question": "Centralización de órdenes de trabajo para operaciones complejas",
+          "answer": {
+            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Plataforma centralizada de órdenes",
+                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
+              },
+              {
+                "title": "Flujos de trabajo visuales",
+                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
+              },
+              {
+                "title": "Actualización automática de estados",
+                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
+              },
+              {
+                "title": "Alertas inteligentes",
+                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
+              },
+              {
+                "title": "Historial completo de actividad",
+                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Plataforma de flujos de trabajo",
+                "description": "Trello-like custom (React + DnD libraries)"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL en AWS"
+              },
+              {
+                "title": "Automatización de notificaciones",
+                "description": "Firebase Cloud Messaging + email (SendGrid)"
+              }
+            ]
+          }
+        }
+        ]
     },
     "solutionsApplications": {
       "title": "Soluciones y aplicación de <span>tecnología en las operaciones logísticas</span>",

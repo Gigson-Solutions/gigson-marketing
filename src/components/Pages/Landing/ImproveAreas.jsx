@@ -6,66 +6,46 @@ import {FaqsAccordion} from "../Faqs/FaqsAccordion/FaqsAccordion.jsx";
 import chevronDownIcon from "../../../assets/chevron-down.svg";
 import timesCircleIcon from "../../../assets/times-circle.svg";
 
-const useFaqVisibility = (areas) => {
-    const [visibleFaqs, setVisibleFaqs] = useState([areas[0]]);
-    const [activeFilterIndexes, setActiveFilterIndexes] = useState([0]);
-    const [activeFaqIndex, setActiveFaqIndex] = useState();
+const useFaqVisibility = (painPoints) => {
+    const [selectedPainPoints, setSelectedPainPoints] = useState([painPoints[0].type]);
+    const [tempSelectedPainPoints, setTempSelectedPainPoints] = useState(selectedPainPoints);
 
-    const toggleFaqVisibility = (index) => {
-        setVisibleFaqs((prevVisibleFaqs) => {
-            const selectedArea = areas[index];
-            const areaIndex = prevVisibleFaqs.findIndex((area) => area.summary === selectedArea.summary);
-
-            if (areaIndex !== -1) {
-                if (prevVisibleFaqs.length > 1) {
-                    const updatedFaqs = [...prevVisibleFaqs];
-                    updatedFaqs.splice(areaIndex, 1);
-                    return updatedFaqs;
-                }
-                return prevVisibleFaqs;
+    const toggleChipsState = (type) => {
+        setSelectedPainPoints((prevSelected) => {
+            if (prevSelected.includes(type)) {
+                return prevSelected.filter((item) => item !== type);
             } else {
-                return [...prevVisibleFaqs, selectedArea];
+                return [...prevSelected, type];
             }
         });
     };
 
-    const toggleActiveFilterIndex = (index) => {
-        setActiveFilterIndexes((prevIndexes) => {
-            if (prevIndexes.includes(index)) {
-                if (prevIndexes.length > 1) {
-                    return prevIndexes.filter((i) => i !== index);
-                }
-                    return prevIndexes;
+    const toggleTempChipsState = (type) => {
+        setTempSelectedPainPoints((prevSelected) => {
+            if (prevSelected.includes(type)) {
+                return prevSelected.filter((item) => item !== type);
             } else {
-                return [...prevIndexes, index];
+                return [...prevSelected, type];
             }
         });
-    };
-
-    const toggleActiveFaqIndex = (index) => setActiveFaqIndex((prevIndex) => (prevIndex === index ? null : index));
-
-    const applyFaqVisibilityFilter = () => {
-        setVisibleFaqs(activeFilterIndexes.map((filterIndex) => areas[filterIndex]));
     };
 
     const resetFilters = () => {
-        setVisibleFaqs([areas[0]]);
-        setActiveFilterIndexes([0]);
+        setSelectedPainPoints([painPoints[0].type]);
+        setTempSelectedPainPoints([painPoints[0].type])
     };
 
     return {
-        visibleFaqs,
-        activeFilterIndexes,
-        toggleFaqVisibility,
-        toggleActiveFilterIndex,
-        activeFaqIndex,
-        toggleActiveFaqIndex,
-        applyFaqVisibilityFilter,
-        resetFilters,
+        tempSelectedPainPoints,
+        selectedPainPoints,
+        setSelectedPainPoints,
+        toggleChipsState,
+        toggleTempChipsState,
+        resetFilters
     };
 };
 
-const FilterBadge = ({ isActive, isMobile, summary, onClick, endAdornment }) => {
+const Chip = ({ isActive, isMobile, name, onClick, endAdornment }) => {
 
     const boxBgClass = isActive ? 'bg-purple-light-b' : '';
 
@@ -79,7 +59,7 @@ const FilterBadge = ({ isActive, isMobile, summary, onClick, endAdornment }) => 
             onClick={onClick}
         >
             <p className={`flex items-center text-dark-primary ${textClass}`}>
-                {summary}
+                {name}
                 {endAdornment && (
                     <img src={endAdornment} alt="chevron" className="ml-2" />
                 )}
@@ -88,25 +68,25 @@ const FilterBadge = ({ isActive, isMobile, summary, onClick, endAdornment }) => 
     );
 };
 
-const FaqFilters = ({ areas, onFilterClick, activeFilterIndexes, isMobile }) => {
+const PainPointsChips = ({  painPoints, selectedPainPoints, onFilterClick, isMobile }) => {
 
     const boxClass = isMobile ? 'gap-2' : 'gap-4 mb-10 md:mb-12 lg:mb-16';
 
     return (
         <div className={`flex flex-col md:flex-row flex-wrap ${boxClass}`}>
-            {areas.map(({ summary }, index) => {
-                const isActive = activeFilterIndexes.includes(index);
-                const hasMultipleActiveItems = activeFilterIndexes.length > 1 ;
+            {painPoints.map(({ type, name }, index) => {
+                const isActive = selectedPainPoints.includes(type);
+                const hasMultipleActiveItems = selectedPainPoints.length > 1 ;
 
                 if(isMobile && !isActive) return null;
 
                 return (
-                    <FilterBadge
+                    <Chip
                         key={index}
                         isMobile={isMobile}
                         isActive={isActive}
-                        summary={summary}
-                        onClick={() => onFilterClick(index)}
+                        name={name}
+                        onClick={() => onFilterClick(type)}
                         {...isMobile && hasMultipleActiveItems && { endAdornment: timesCircleIcon} }
                     />
                 );
@@ -170,27 +150,29 @@ const AccordionContent = ({ challengeDescription, technologiesText, technologies
     )
 }
 
-const FaqList = ({ visibleFaqs, activeFaqIndex, onFaqClick }) => {
+const FaqList = ({ faqs, selectedPainPoints,  activeFaqIndex, onFaqClick }) => {
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const handleItemClick = (index) => setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+
     return (
         <div>
-            {visibleFaqs?.map(({ faqs }, areaIndex) =>
-                faqs.map(({ question, answer }, faqIndex) => {
+            {faqs.map(({ question, answer, types }, faqIndex) => {
+                const isVisible = types.some(type => selectedPainPoints.includes(type));
+                const boxClass = isVisible ? 'block' : 'hidden';
 
-                    const accordionKey = `${areaIndex}-${faqIndex}`;
-                    return (
-                        <div key={accordionKey}>
-                            <FaqsAccordion
-                                question={question}
-                                onClick={() => {
-                                    onFaqClick(accordionKey);
-                                }}
-                                isOpen={activeFaqIndex === accordionKey}>
-                                <AccordionContent {...answer} />
-                            </FaqsAccordion>
-                        </div>
-                    );
-                })
-            )}
+                return (
+                    <div key={faqIndex} className={boxClass}>
+                        <FaqsAccordion
+                            question={question}
+                            isOpen={activeIndex === faqIndex}
+                            onClick={() => handleItemClick(faqIndex)}
+                        >
+                            <AccordionContent {...answer} />
+                        </FaqsAccordion>
+                    </div>
+                );
+            })}
         </div>
     );
 };
@@ -206,23 +188,21 @@ const ResetFiltersButton = ({ onClick, text }) => {
 const ImproveAreas = () => {
     const { t } = useTranslation();
     const {
-        improveAreas: { title, areas, filtersText, filtersClearAllText, applyFiltersText },
+        improveAreas: { title, painPoints, faqs, filtersText, filtersClearAllText, applyFiltersText },
     } = t("services_v2");
 
     const {
-        visibleFaqs,
-        activeFilterIndexes,
-        toggleActiveFilterIndex,
-        toggleFaqVisibility,
-        activeFaqIndex,
-        toggleActiveFaqIndex,
-        applyFaqVisibilityFilter,
-        resetFilters,
-    } = useFaqVisibility(areas);
+        tempSelectedPainPoints,
+        selectedPainPoints,
+        toggleTempChipsState,
+        toggleChipsState,
+        setSelectedPainPoints,
+        resetFilters
+    } = useFaqVisibility(painPoints);
 
     const [dialogOpen, setDialogOpen] = useState(false);
 
-    const hasMultipleFilters = activeFilterIndexes.length > 1;
+    const hasMultipleFilters = selectedPainPoints.length > 1;
 
     return (
         <>
@@ -237,33 +217,32 @@ const ImproveAreas = () => {
                         )}
                     </div>
                     <div className="hidden md:block">
-                        <FaqFilters
-                            areas={areas}
-                            onFilterClick={(index) => {
-                                toggleFaqVisibility(index);
-                                toggleActiveFilterIndex(index);
+                        <PainPointsChips
+                            selectedPainPoints={selectedPainPoints}
+                            painPoints={painPoints}
+                            onFilterClick={(type) => {
+                                toggleChipsState(type);
                             }}
-                            activeFilterIndexes={activeFilterIndexes}
                         />
                     </div>
                     <div className="flex flex-col md:hidden items-start justify-between w-full self-start mb-10">
                         <div className="flex flex-row md:hidden items-center justify-between w-full self-start mb-4">
-                            <FilterBadge summary={filtersText} endAdornment={chevronDownIcon} onClick={() => setDialogOpen(true)} />
+                            <Chip name={filtersText} endAdornment={chevronDownIcon} onClick={() => setDialogOpen(true)} />
 
                             {hasMultipleFilters && <ResetFiltersButton onClick={resetFilters} text={filtersClearAllText} />}
                         </div>
-                        <FaqFilters
+                        <PainPointsChips
                             isMobile
-                            areas={areas}
-                            onFilterClick={(index) => {
-                                toggleFaqVisibility(index);
-                                toggleActiveFilterIndex(index);
+                            selectedPainPoints={selectedPainPoints}
+                            painPoints={painPoints}
+                            onFilterClick={(type) => {
+                                toggleChipsState(type);
+                                toggleTempChipsState(type)
                             }}
-                            activeFilterIndexes={activeFilterIndexes}
                         />
                     </div>
 
-                    <FaqList visibleFaqs={visibleFaqs} activeFaqIndex={activeFaqIndex} onFaqClick={toggleActiveFaqIndex} />
+                    <FaqList faqs={faqs} selectedPainPoints={selectedPainPoints} activeFaqIndex={null} onFaqClick={null} />
                 </div>
             </div>
             {dialogOpen && (
@@ -271,18 +250,18 @@ const ImproveAreas = () => {
                     <div className="flex flex-col">
                         <p className="text-subtitle text-dark-primary mb-4">{filtersText}</p>
                         <div className="mb-20">
-                            <FaqFilters
-                                areas={areas}
-                                onFilterClick={(index) => {
-                                    toggleActiveFilterIndex(index);
+                            <PainPointsChips
+                                selectedPainPoints={tempSelectedPainPoints}
+                                painPoints={painPoints}
+                                onFilterClick={(type) => {
+                                    toggleTempChipsState(type);
                                 }}
-                                activeFilterIndexes={activeFilterIndexes}
                             />
                         </div>
                         <Button
                             text={applyFiltersText}
                             onClick={() => {
-                                applyFaqVisibilityFilter();
+                                setSelectedPainPoints(tempSelectedPainPoints)
                                 setDialogOpen(false);
                             }}
                         />
