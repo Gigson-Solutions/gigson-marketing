@@ -11,10 +11,11 @@ const Navbar = () => {
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
    const { t } = useTranslation();
 
-   const { about, services, cases, faqs, contact } = t("menu");
+   const { about, services, cases, faqs, contact, news } = t("menu");
 
    const menuLinks = [
       { name: services, link: "services" },
+      { name: news, link: "landing" },
       { name: cases, link: "cases" },
       { name: about, link: "about" },
       { name: faqs, link: "faqs" },
@@ -54,7 +55,9 @@ const Navbar = () => {
                            </NavLink>
                         </li>
                      ))}
-                     <LanguageSelector />
+                     <li className="flex items-center xl:ml-6">
+                        <LanguageSelector />
+                     </li>
                   </ul>
                </div>
             </nav>

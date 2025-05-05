@@ -1,0 +1,1240 @@
+{
+  "menu":{
+    "about":"NOSOTROS",
+    "services":"SERVICIOS",
+    "news":"LANDING",
+    "cases":"CASOS",
+    "faqs":"FAQs",
+    "contact":"CONTÁCTANOS",
+    "legal":"Política legal",
+    "cookies":"Política de cookies",
+    "notice":"Aviso legal"
+  },
+  "home":{
+    "heroH1":"Tecnología para <span>impulsar</span> tu negocio<span>.</span>",
+    "heroP":"SOLUCIONES A MEDIDA PARA NEGOCIOS COMPLEJOS",
+    "heroBtn":"CONTÁCTANOS",
+    "heroScroll":"SEGUIR EXPLORANDO",
+    "servicesTitle":"Productos <span>a medida</span> para cualquier negocio ·",
+    "servicesP":{
+      "p1":"Nos dedicamos a aprovechar al máximo las herramientas de software que ya utilizas, conectándolas entre sí, optimizándolas para que rindan más y alineándolas con las necesidades reales de tu negocio.",
+      "p2":"Y si lo que necesitas aún no existe... lo creamos para ti."
+    },
+    "servicesBtn":"NUESTROS SERVICIOS"
+  },
+  "ctas":{
+    "contact":"CONTÁCTANOS",
+    "talk":"¿HABLAMOS?"
+  },
+  "caseswhygigson":{
+    "wth2":"¿Qué puede hacer Gigson Solutions por tu negocio?",
+    "wp1":"En Gigson Solutions, creemos que la tecnología debería impulsar tu negocio hacia adelante, no limitarlo.",
+    "wp2":"Aquí hay algunos ejemplos de lo que podemos hacer por ti.",
+    "wlink":"VER CASOS"
+  },
+  "whyservices":{
+    "sth2":"Simplificando un mundo innecesariamente complejo.",
+    "slink":"VER SERVICIOS"
+  },
+  "about":{
+    "title":"Somos un equipo de profesionales expertos con más de <span>9 años</span> de experiencia.",
+    "description":"Contamos con todos los perfiles necesarios para el desarrollo de un producto digital, y con diferentes partners en ámbitos específicos para complementar las solución all-in-one.",
+    "cta":"HABLEMOS",
+    "titleH2":"Descubre lo que nos mueve",
+    "belive":{
+      "t1":"Calidad",
+      "t2":"Compromiso",
+      "t3":"Facilidad",
+      "p1":"Independientemente de si estamos desarrollando una prueba de concepto o un producto final, implementaremos diferentes estándares de calidad de producto y de gestión de proyectos para asegurarnos de que cada producto cumpla y supere las expectativas.",
+      "p2":"Podrás elegir el tipo de compromiso que quieras tener con nosotros. Estaremos siempre a tu lado para acompañarte en cualquier fase, no obstante si no quieres continuar, nos encargaremos del cierre y del traspaso necesario cumpliendo con toda legalidad vigente.",
+      "p3":"Sabemos que hablar con un desarrollador no es fácil. Con nosotros hablaras con un consultor de negocios con conocimiento técnico para entender tus necesidades y validar su viabilidad técnica a la vez."
+    },
+    "need":{
+      "t":"¿Qué necesito para hacer un <span>producto digital</span>?",
+      "d":"Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
+      "specialist1":"DIRECTOR DE ORQUESTA",
+      "specialist2":"PICACÓDIGO PARA TODO",
+      "specialist3":"LÍDER TÉCNICO",
+      "specialist4":"PICACÓDIGO OCULTO",
+      "specialist5":"ESTRATEGA",
+      "specialist6":"PICACÓDIGO A LA VISTA",
+      "specialist7":"VALIDACIÓN",
+      "specialist8":"DISEÑADOR DEL USO",
+      "specialist9":"PROTEGE EL PRODUCTO",
+      "label":"*No todos estos roles son necesarios en todos los productos. Dependiendo de tus necesidades, puede que los roles sean diferente.",
+      "cta2":"CONTÁCTANOS"
+    }
+  },
+  "service":{
+    "serviceH1":"Descubre todos <span>nuestros servicios</span>",
+    "serviceP":"SOLUCIONES A MEDIDA PARA NEGOCIOS COMPLEJOS"
+  },
+  "serviceCard":[
+    {
+      "title":"Servicios de ciberseguridad",
+      "description":"La seguridad de la información ya no está en la hoja de ruta. La ciberseguridad es una NECESIDAD en todos los negocios y todas las empresas deben tener el conocimiento, las herramientas y los procesos para evitar o minimizar los ataques.",
+      "cards":[
+        {
+          "title":"Evaluación de Seguridad",
+          "description":"Análisis de vulnerabilidades, Informe de remediación, Evaluaciones de seguridad de aplicaciones."
+        },
+        {
+          "title":"Capacitación",
+          "description":"Capacitación sobre phishing y seguridad de la información."
+        },
+        {
+          "title":"Transformaciones de Seguridad",
+          "description":"Evaluaciones del estado actual y futuro, transformación de TI."
+        }
+      ]
+    },
+    {
+      "title":"Servicios de ingeniería de software",
+      "description":"Desde integrar diferentes herramientas, desarrollar nuevas características y productos hasta monitorear y mantener un producto, nuestro equipo está listo para ello. Nuestro equipo de ingeniería de software está compuesto por desarrolladores, arquitectos y testers para construir cualquier necesidad con las mejores tecnologías de vanguardia.",
+      "cards":[
+        {
+          "title":"Proveedor de Nube",
+          "description":"AWS, Microsoft Azure, GCP."
+        },
+        {
+          "title":"Contenedores y Orquestación",
+          "description":"Docker, K8s, WPAR y otros."
+        },
+        {
+          "title":"CI/CD",
+          "description":"Jenkins, GitLab, GitHub, Git."
+        },
+        {
+          "title":"Base de Datos",
+          "description":"Oracle, MySQL, MongoDB, PostgresSQL, MS SQL y otros."
+        },
+        {
+          "title":"Mensajería y Data Streaming",
+          "description":"RabbitMQ, Apache Kafka, Apache, Redis, ELK stack y otros."
+        },
+        {
+          "title":"Monitoreo",
+          "description":"Prometheus, Datalog, Grafana, Azure monitor, Amazon CloudWatch, Zabbix y otros."
+        }
+      ]
+    },
+    {
+      "title":"Servicios de consultoría",
+      "description":"Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva.",
+      "cards":[
+        {
+          "title":"CTO como Servicio",
+          "description":"Liderazgo técnico y de negocio para las áreas de ingeniería y producto."
+        },
+        {
+          "title":"Gestión de Proyectos",
+          "description":"Ejecución de proyectos, Análisis de riesgos, Gestión de proveedores."
+        },
+        {
+          "title":"Gestión de Productos",
+          "description":"Visión general de E2E, Gestión de SLAs."
+        },
+        {
+          "title":"Consultoría Tecnológica",
+          "description":"Consultas técnicas sobre lenguajes, arquitecturas y soluciones."
+        },
+        {
+          "title":"Consultoría UX/UI",
+          "description":"Consultoría de experiencia de usuario e interfaz de usuario."
+        }
+      ]
+    }
+  ],
+  "whyChooseService":{
+    "whyTitle":"¿Por qué elegir gigson solutions?",
+    "whyDescription":"En gigson solutions pensamos que la tecnología debería impulsar tu negocio, no limitarlo."
+  },
+  "cases":{
+    "heroH1":"¿Cómo podemos ayudarte a alcanzar tus objetivos?",
+    "heroP":"Contesta las siguientes preguntas y observa las mejores soluciones para tu sector.",
+    "tagTitle":"¿Cuál es tu sector?",
+    "needTitle":"¿Cuál es tu necesidad actual?",
+    "resetFilters":"BORRAR FILTROS",
+    "featuresTitle":"Funcionalidades",
+    "solutionTitle":"Solución",
+    "toolsTitle":"Especificaciones"
+  },
+  "casesctaacordion":{
+    "pcasesctaacordion":"Este esquema te proporciona una base sólida para desarrollar un caso de estudio detallado que puedes adaptar y expandir según tus necesidades específicas.",
+    "talk":"¿HABLAMOS?"
+  },
+  "faqsH1":"¿Preguntas?<br><span>Las resolvemos</span>",
+  "casesDropdown":[
+    {
+      "title":"Integración CRM & ERP",
+      "challenge":"Desarrollar una solución que integre el actual sistema de planificación de recursos empresariales (ERP) con un sistema de gestión de las relaciones con el cliente (CRM) para el sector de arquitectura e interiorismo. El reto consistió en sincronizar la gestión de cuentas B2B y B2C con los proyectos en un solo punto, mejorando la eficiencia operativa, la exactitud en la asignación de recursos y proporcionando una visión unificada de la conceptualización, diseño y ejecución de los proyectos.",
+      "features":[
+        "Gestión unificada de clientes y proyectos entre CRM y ERP.",
+        "Panel de control integrado para seguimiento en tiempo real del progreso de los proyectos dando visibilidad al cliente y reporte horario interno.",
+        "Automatización de facturación y seguimiento de cuentas por cobrar dentro del flujo de trabajo de proyectos.",
+        "Coordinación de compras y presupuestos a través de la plataforma de ERP integrada.",
+        "Análisis de rentabilidad de proyectos y gestión de cartera de servicios."
+      ],
+      "solution":"Solución La integración de HubSpot (CRM) con Asana (gestión de proyectos) y Holded (ERP) proporciona una solución completa para la gestión de proyectos de arquitectura e interiorismo. La solución permitió a los usuarios tener una visión completa del ciclo de vida del cliente y los proyectos, desde la adquisición del cliente hasta la entrega final del proyecto y posventa.",
+      "tools":[
+        "HubSpot: para la gestión avanzada de relaciones con clientes y marketing automatizado.",
+        "Asana: para la planificación detallada de proyectos y seguimiento de tareas.",
+        "Holded: para el manejo eficiente de operaciones financieras y contables, compras y gestión de inventarios.",
+        "Integraciones API personalizadas para sincronizar datos entre sistemas.",
+        "Dashboards personalizados para reportes y análisis de desempeño.",
+        "Seguridad de datos de nivel empresarial y cumplimiento de GDPR."
+      ],
+      "tags":[
+        "Estudio diseño",
+        "Agencia creativa",
+        "Construcción"
+      ],
+      "need":[
+        "Gestión de clientes",
+        "Gestión de proyectos y tareas"
+      ]
+    },
+    {
+      "title":"Configurador de Presupuestos",
+      "challenge":"Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente. El objetivo era agilizar la creación de presupuestos, permitiendo diferentes configuraciones y aumentando el tiempo de procesado de la información con el fin de mejorar la toma de decisiones, justificaciones a cliente y la planificación financiera.",
+      "features":[
+        "Creación de presupuestos dinámicos basados en variables de proyecto como materiales, mano de obra, maquinaria y logística.",
+        "Plantillas personalizables para diferentes tipos de construcciones y servicios logísticos.",
+        "Integración de catálogos de proveedores y precios en tiempo real.",
+        "Herramientas de análisis para comparar presupuestos y costos históricos.",
+        "Simulación de escenarios para evaluar el impacto de diferentes variables en el presupuesto final."
+      ],
+      "solution":"La integración del configurador de presupuestos basado en una WebApp e integrado Odoo proporciona una plataforma ágil y potente para la gestión financiera de proyectos de construcción y logística. Conectando con el ERP existente, esta solución permite crear, validar y exportar los presupuestos externamente para comunicar las finanzas de los proyectos a Odoo.",
+      "tools":[
+        "Odoo: para la gestión y configuración detallada de presupuestos, aprovechando su flexibilidad y módulos personalizables.",
+        "AWS: para la infraestructura de computación en la nube, garantizando escalabilidad, seguridad y alta disponibilidad.",
+        "Módulos de Inteligencia de Negocio para la visualización de datos y toma de decisiones basada en análisis avanzados.",
+        "APIs para la integración de datos de proveedores externos y actualizaciones de precios en tiempo real.",
+        "Cumplimiento de estándares de seguridad internacionales y políticas de privacidad de datos."
+      ],
+      "tags":[
+        "Estudio diseño",
+        "Agencia creativa",
+        "Logística",
+        "Construcción"
+      ],
+      "need":[
+        "Mejorar rentabilidad de servicios",
+        "Centralizar información"
+      ]
+    },
+    {
+      "title":"Integración de herramientas End2End para eCommerce",
+      "challenge":"Crear y desarrollar una integración de APIs que integre ERP, CMS, diferentes marketplaces y proveedores de Third-Party Logistics (3PLs) para la industria de Dropshipping y Logística. El objetivo es mejorar la eficiencia operativa y la experiencia del cliente al simplificar la gestión de compras, ventas y logística.",
+      "features":[
+        "Interfaz única para gestionar operaciones en diferentes plataformas de comercio electrónico y marketplaces.",
+        "Integración de ERP para una gestión eficiente de los recursos y el inventario.",
+        "Conexión con 3PLs para optimizar el proceso de envío y entrega.",
+        "Herramientas analíticas avanzadas a través de Google Looker para la toma de decisiones basada en datos.",
+        "Sincronización en tiempo real de pedidos y existencias entre mercados y el sistema de gestión."
+      ],
+      "solution":"La implementación de un Orquestador de API unificado que conecta Odoo (ERP), Prestashop (CMS), Huboo (3PL), y Amazon Selling Central, permite una visión completa del proceso de comercio electrónico. Esta solución facilita la automatización y sincronización entre plataformas, asegurando una gestión fluida y transparente de extremo a extremo.",
+      "tools":[
+        "Odoo como sistema ERP para la administración centralizada de la empresa.",
+        "Prestashop para la gestión de contenidos y tiendas online.",
+        "Huboo como sistema de gestión de logística y envíos.",
+        "Amazon Selling Central para la integración con el marketplace de Amazon.",
+        "Google Looker para análisis de datos y reportes avanzados."
+      ],
+      "tags":[
+        "Logística",
+        "Fabricación",
+        "eCommerce"
+      ],
+      "need":[
+        "Mejorar la seguridad",
+        "Evitar errores manuales",
+        "Centralizar información"
+      ]
+    },
+    {
+      "title":"Plataforma Integrada para Agencias Creativas",
+      "challenge":"Implementar una solución que integre herramientas de gestión de proyectos, CRM, y gestión de tareas para agencias creativas. El objetivo es mejorar la planificación de campañas, la gestión de recursos creativos y la comunicación con clientes.",
+      "features":[
+        "Gestión centralizada de proyectos y clientes.",
+        "Integración de CRM para seguimiento de clientes y oportunidades de negocio.",
+        "Herramientas de gestión de tareas y colaboración para equipos creativos.",
+        "Visualización en tiempo real del progreso de los proyectos y asignación de recursos.",
+        "Análisis de desempeño de campañas y proyectos."
+      ],
+      "solution":"Solución La integración de herramientas como Adobe Creative Cloud (creación de contenido), Trello (gestión de tareas), Slack (comunicación y colaboración), y Salesforce (CRM) proporciona una plataforma robusta para la gestión de campañas y proyectos. Esta solución permite una mejor planificación, seguimiento y análisis de las actividades creativas, asegurando una comunicación fluida con los clientes.",
+      "tools":[
+        "Adobe Creative Cloud: Para la creación y edición de contenido creativo, incluyendo diseño gráfico, video y otros medios digitales.",
+        "Trello: Para la gestión de tareas y proyectos, permitiendo la organización visual y el seguimiento del progreso de cada tarea.",
+        "Slack: Para la comunicación y colaboración en tiempo real entre los miembros del equipo, facilitando la coordinación y el intercambio de ideas.",
+        "Salesforce: Para la gestión de relaciones con clientes, seguimiento de oportunidades de negocio y automatización de marketing.",
+        "Zapier: Para la integración y automatización de flujos de trabajo entre las distintas herramientas, asegurando una sincronización de datos eficiente.",
+        "Google Analytics: Para el análisis de datos y la evaluación del rendimiento de campañas y proyectos creativos."
+      ],
+      "tags":[
+        "Estudio diseño",
+        "Agencia creativa",
+        "eCommerce"
+      ],
+      "need":[
+        "Gestión de clientes",
+        "Gestión de proyectos y tareas",
+        "Centralizar información"
+      ]
+    }
+  ],
+  "faqsDropdown":[
+    {
+      "title":"Producto digital"
+    },
+    {
+      "question":"¿Qué es un producto digital a medida?",
+      "answer":"Un producto digital cumple las necesidades de los usuarios, los objetivos de negocio y las oportunidades del mercado, para ofrecer la mejor solución al cliente. Se diferencia de las soluciones estándar en que se adapta a los procesos y herramientas específicas del cliente, ofreciendo una mayor flexibilidad y eficiencia."
+    },
+    {
+      "question":"¿Cómo os aseguráis de entender lo que necesito?",
+      "answer":"Nuestro proceso comienza con reuniones de descubrimiento y análisis en las que profundizamos en los casos de uso para asegurarnos que comprendemos todas las necesidades antes de empezar el desarrollo."
+    },
+    {
+      "question":"¿Por qué elegir una solución de software a medida en lugar de una estándar?",
+      "answer":"Las soluciones estándar suelen ser genéricas para cualquier tipo de negocio, suelen incluir funciones innecesarias que complican su uso y no se suelen “integrar” fácilmente con otras soluciones que ya se tengan integradas. Una solución a medida se diseña para integrarse perfectamente con su manera de trabajar, mejorando la productividad y la eficiencia."
+    },
+    {
+      "question":"¿Tendré soporte y mantenimiento cuando acabe el desarrollo?",
+      "answer":"¡Por supuesto! Si quieres que nosotros nos encarguemos del mantenimiento y soporte, lo haremos ya que tenemos un equipo dedicado a ello donde estaremos encantados de solucionar todos los problemas que puedan surgir."
+    },
+    {
+      "title":"Propiedad"
+    },
+    {
+      "question":"¿Quién desarrollará mi solución?",
+      "answer":"En gigson solutions contamos con diferentes colaboradres especializados en cada parte del proceso para dar un servicio completo y adaptado a las necesidades del cliente como: desarrollo software, usabilidad, marketing y gráfico, legal etc."
+    },
+    {
+      "question":"¿Seré propietario de mi solución?",
+      "answer":"Si quieres, podrás ser el único propietario del producto que desarrollemos para obtener una ventaja competitiva."
+    },
+    {
+      "title":"Desarrollo del producto"
+    },
+    {
+      "question":"¿Qué diferencia hay entre Gigson Solutions y contratar a un desarrollador?",
+      "answer":"La principal diferencia es que un desarrollador implementará lo que tu pienses, definas y priorices. En raras ocasiones se preguntará aspectos como si es lo que realmente necesita el negocio, el modelo de pricing o en la seguridad de la información."
+    },
+    {
+      "question":"¿Cómo se maneja la seguridad y la privacidad en los nuevos productos?",
+      "answer":"La seguridad y la privacidad son una prioridad en todas nuestras soluciones. Adoptamos prácticas de codificación segura y podemos certificar los productos que desarrollamos siguiendo estándares como GDPR, SOC2 o HIPAA."
+    },
+    {
+      "question":"¿Puedo coordinar yo mismo el desarrollo del producto?",
+      "answer":"Sí, no obstante no lo recomendamos ya que la falta de experiencia en la gestión de equipos técnicos puede conducir a malentendidos en la comunicación, una mala gestión de riesgos y de recursos."
+    },
+    {
+      "question":"¿Nos hemos dejado algo por contestar?",
+      "answer":"Estaremos encantados de resolverte cualquier otra cuestión. Puedes contactarnos en info@gigsonsolutions.com o a través de nuestro formulario.",
+      "cta":"¿Hablamos?"
+    }
+  ],
+  "form":{
+    "title":"Estamos listos para ayudarte",
+    "name":{
+      "label":"Mi nombre es",
+      "placeholder":"Nombre y apellido"
+    },
+    "service":{
+      "label":"y estoy interesado en",
+      "placeholder":"Servicio",
+      "services":[
+        "Desarrollo software",
+        "Ciberseguridad",
+        "Consultoría tecnológica"
+      ]
+    },
+    "budget":{
+      "label":"El presupuesto para mi proyecto es",
+      "placeholder":"No sé"
+    },
+    "email":{
+      "label":"Me puedes contactar en este email",
+      "placeholder":"nombre@ejemplo.com"
+    },
+    "details":{
+      "label":"Te cuento más sobre mi proyecto",
+      "placeholder":"Detalles del proyecto (opcional)"
+    },
+    "checkbox":{
+      "first":"He leído la ",
+      "second":"política legal",
+      "third":" y acepto el procesamiento de mi información personal."
+    },
+    "send":"ENVIAR SOLICITUD"
+  },
+  "notFound":{
+    "title":"<span>Oops... </span>",
+    "title2":"Parece que nos hemos perdido",
+    "cta":"VOLVER A LA HOME",
+    "description":"La página que buscas parece que ya no está diponible",
+    "banner404":"error 404"
+  },
+  "policity":{
+    "h2_1":"Política de protección de datos",
+    "h3_1":"1. OBJETO Y ACEPTACIÓN",
+    "pc_1_1":"El presente aviso legal regula el uso del sitio web www.somosgigson.com (en adelante, LA WEB), del que es titular Gigson (en adelante, EL PROPIETARIO DE LA WEB).",
+    "pc_1_2":"La navegación por el sitio web de EL PROPIETARIO DE LA WEB atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, que pueden sufrir modificaciones.",
+    "pc_1_3":"El usuario se obliga a hacer un uso correcto del sitio web de conformidad con las leyes, la buena fe, el orden público, los usos del tráfico y el presente Aviso Legal. El usuario responderá frente a EL PROPIETARIO DE LA WEB o frente a terceros, de cualesquiera daños y perjuicios que pudieran causarse como consecuencia del incumplimiento de dicha obligación.",
+    "h3_2":"2. IDENTIFICACIÓN Y COMUNICACIONES",
+    "pc_2_1":"EL PROPIETARIO DE LA WEB, en cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, le informa que:",
+    "pc_2_2":"Su denominación social es: Awesomely OÜ",
+    "pc_2_3":"Número de VAT: EE102613528",
+    "pc_2_4":"Su domicilio social está en: Lootsa Tn 2a Harju, 11415, Tallinn, Estonia",
+    "pc_2_5":"Para comunicarse con nosotros, ponemos a su disposición diferentes medios de contacto que detallamos a continuación:",
+    "pc_2_6":"Teléfono: +34630840225",
+    "pc_2_7":"Email: hello@awesomelygroup.com",
+    "pc_2_8":"Todas las notificaciones y comunicaciones entre los usuarios y EL PROPIETARIO DE LA WEB se considerarán eficaces, a todos los efectos, cuando se realicen a través de correo postal o cualquier otro medio de los detallados anteriormente.",
+    "h3_3":"3. CONDICIONES DE ACCESO Y UTILIZACIÓN",
+    "pc_3_1":"El sitio web y sus servicios son de acceso libre y gratuito, no obstante, EL PROPIETARIO DE LA WEB condiciona la utilización de algunos de los servicios ofrecidos en su web a la previa cumplimentación del correspondiente formulario.",
+    "pc_3_2":"El usuario garantiza la autenticidad y actualidad de todos aquellos datos que comunique a EL PROPIETARIO DE LA WEB y será el único responsable de las manifestaciones falsas o inexactas que realice.",
+    "pc_3_3":"El usuario se compromete expresamente a hacer un uso adecuado de los contenidos y servicios de EL PROPIETARIO DE LA WEB y a no emplearlos para, entre otros:",
+    "ps_3_1":"1. Difundir contenidos delictivos, violentos, pornográficos, racistas, xenófobo, ofensivos, de apología del terrorismo o, en general, contrarios a la ley o al orden público.",
+    "ps_3_2":"2. Introducir en la red virus informáticos o realizar actuaciones susceptibles de alterar, estropear, interrumpir o generar errores o daños en los documentos electrónicos, datos o sistemas físicos y lógicos de EL PROPIETARIO DE LA WEB o de terceras personas; así como obstaculizar el acceso de otros usuarios al sitio web y a sus servicios mediante el consumo masivo de los recursos informáticos a través de los cuales EL PROPIETARIO DE LA WEB presta sus servicios.",
+    "ps_3_3":"3. Intentar acceder a las cuentas de correo electrónico de otros usuarios o a áreas restringidas de los sistemas informáticos de EL PROPIETARIO DE LA WEB o de terceros y, en su caso, extraer información.",
+    "ps_3_4":"4. Vulnerar los derechos de propiedad intelectual o industrial, así como violar la confidencialidad de la información de EL PROPIETARIO DE LA WEB o de terceros.",
+    "ps_3_5":"5. Suplantar la identidad de otro usuario, de las administraciones públicas o de un tercero.",
+    "ps_3_6":"6. Reproducir, copiar, distribuir, poner a disposición de, o cualquier otra forma de comunicación pública, transformar o modificar los contenidos, a menos que se cuente con la autorización del titular de los correspondientes derechos o ello resulte legalmente permitido.",
+    "ps_3_7":"7. Recabar datos con finalidad publicitaria y de remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial sin que medie su previa solicitud o consentimiento.",
+    "pc_3_4":"Todos los contenidos del sitio web, como textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a EL PROPIETARIO DE LA WEB, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso de la web.",
+    "pc_3_5":"En definitiva, los usuarios que accedan a este sitio web pueden visualizar los contenidos y efectuar, en su caso, copias privadas autorizadas siempre que los elementos reproducidos no sean cedidos posteriormente a terceros, ni se instalen a servidores conectados a redes, ni sean objeto de ningún tipo de explotación.",
+    "pc_3_6":"Asimismo, todas las marcas, nombres comerciales o signos distintivos de cualquier clase que aparecen en el sitio web son propiedad de EL PROPIETARIO DE LA WEB, sin que pueda entenderse que el uso o acceso al mismo atribuya al usuario derecho alguno sobre los mismos.",
+    "pc_3_7":"La distribución, modificación, cesión o comunicación pública de los contenidos y cualquier otro acto que no haya sido expresamente autorizado por el titular de los derechos de explotación quedan prohibidos.",
+    "pc_3_8":"El establecimiento de un hiperenlace no implica en ningún caso la existencia de relaciones entre EL PROPIETARIO DE LA WEB y el propietario del sitio web en la que se establezca, ni la aceptación y aprobación por parte de EL PROPIETARIO DE LA WEB de sus contenidos o servicios. Aquellas personas que se propongan establecer un hiperenlace previamente deberán solicitar autorización por escrito a EL PROPIETARIO DE LA WEB.",
+    "pc_3_9":"En todo caso, el hiperenlace únicamente permitirá el acceso a la home-page o página de inicio de nuestro sitio web, asimismo deberá abstenerse de realizar manifestaciones o indicaciones falsas, inexactas o incorrectas sobre EL PROPIETARIO DE LA WEB, o incluir contenidos ilícitos, contrarios a las buenas costumbres y al orden público.",
+    "pc_3_10":"EL PROPIETARIO DE LA WEB no se responsabiliza del uso que cada usuario le dé a los materiales puestos a disposición en este sitio web ni de las actuaciones que realice en base a los mismos.",
+    "h3_4":"4. POLÍTICA DE PRIVACIDAD",
+    "pc_4_1":"Quién es el Responsable de tratamiento de sus datos:",
+    "pc_4_2":"El responsable de tratamiento se encuentra identificado en el expositivo 1 de este Aviso Legal.",
+    "pc_4_3":"Qué tipo de datos tenemos sobre su persona y cómo los hemos obtenido",
+    "pc_4_4":"Las categorías de datos personales que tratamos de clientes y proveedores son:",
+    "ps_4_1":"1. Datos de identificación",
+    "ps_4_2":"2. Direcciones postales o electrónicas",
+    "ps_4_3":"3. Información comercial",
+    "ps_4_4":"4. Datos económicos y de transacciones",
+    "pc_4_5":"En ningún caso tratamos datos especialmente protegidos:",
+    "pc_4_6":"Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación."
+  },
+  "notice":{
+    "h2_1":"Política de protección de datos",
+    "h3_1":"1. OBJETO Y ACEPTACIÓN",
+    "pc_1_1":"El presente aviso legal regula el uso del sitio web www.somosgigson.com (en adelante, LA WEB), del que es titular Gigson (en adelante, EL PROPIETARIO DE LA WEB).",
+    "pc_1_2":"La navegación por el sitio web de EL PROPIETARIO DE LA WEB atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, que pueden sufrir modificaciones.",
+    "pc_1_3":"El usuario se obliga a hacer un uso correcto del sitio web de conformidad con las leyes, la buena fe, el orden público, los usos del tráfico y el presente Aviso Legal. El usuario responderá frente a EL PROPIETARIO DE LA WEB o frente a terceros, de cualesquiera daños y perjuicios que pudieran causarse como consecuencia del incumplimiento de dicha obligación.",
+    "h3_2":"2. IDENTIFICACIÓN Y COMUNICACIONES",
+    "pc_2_1":"EL PROPIETARIO DE LA WEB, en cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, le informa que:",
+    "pc_2_2":"Su denominación social es: Awesomely OÜ",
+    "pc_2_3":"Número de VAT: EE102613528",
+    "pc_2_4":"Su domicilio social está en: Lootsa Tn 2a Harju, 11415, Tallinn, Estonia",
+    "pc_2_5":"Para comunicarse con nosotros, ponemos a su disposición diferentes medios de contacto que detallamos a continuación:",
+    "pc_2_6":"Teléfono: +34630840225",
+    "pc_2_7":"Email: hello@awesomelygroup.com",
+    "pc_2_8":"Todas las notificaciones y comunicaciones entre los usuarios y EL PROPIETARIO DE LA WEB se considerarán eficaces, a todos los efectos, cuando se realicen a través de correo postal o cualquier otro medio de los detallados anteriormente.",
+    "h3_3":"3. CONDICIONES DE ACCESO Y UTILIZACIÓN",
+    "pc_3_1":"El sitio web y sus servicios son de acceso libre y gratuito, no obstante, EL PROPIETARIO DE LA WEB condiciona la utilización de algunos de los servicios ofrecidos en su web a la previa cumplimentación del correspondiente formulario.",
+    "pc_3_2":"El usuario garantiza la autenticidad y actualidad de todos aquellos datos que comunique a EL PROPIETARIO DE LA WEB y será el único responsable de las manifestaciones falsas o inexactas que realice.",
+    "pc_3_3":"El usuario se compromete expresamente a hacer un uso adecuado de los contenidos y servicios de EL PROPIETARIO DE LA WEB y a no emplearlos para, entre otros:",
+    "ps_3_1":"1. Difundir contenidos delictivos, violentos, pornográficos, racistas, xenófobo, ofensivos, de apología del terrorismo o, en general, contrarios a la ley o al orden público.",
+    "ps_3_2":"2. Introducir en la red virus informáticos o realizar actuaciones susceptibles de alterar, estropear, interrumpir o generar errores o daños en los documentos electrónicos, datos o sistemas físicos y lógicos de EL PROPIETARIO DE LA WEB o de terceras personas; así como obstaculizar el acceso de otros usuarios al sitio web y a sus servicios mediante el consumo masivo de los recursos informáticos a través de los cuales EL PROPIETARIO DE LA WEB presta sus servicios.",
+    "ps_3_3":"3. Intentar acceder a las cuentas de correo electrónico de otros usuarios o a áreas restringidas de los sistemas informáticos de EL PROPIETARIO DE LA WEB o de terceros y, en su caso, extraer información.",
+    "ps_3_4":"4. Vulnerar los derechos de propiedad intelectual o industrial, así como violar la confidencialidad de la información de EL PROPIETARIO DE LA WEB o de terceros.",
+    "ps_3_5":"5. Suplantar la identidad de otro usuario, de las administraciones públicas o de un tercero.",
+    "ps_3_6":"6. Reproducir, copiar, distribuir, poner a disposición de, o cualquier otra forma de comunicación pública, transformar o modificar los contenidos, a menos que se cuente con la autorización del titular de los correspondientes derechos o ello resulte legalmente permitido.",
+    "ps_3_7":"7. Recabar datos con finalidad publicitaria y de remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial sin que medie su previa solicitud o consentimiento.",
+    "pc_3_4":"Todos los contenidos del sitio web, como textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a EL PROPIETARIO DE LA WEB, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso de la web.",
+    "pc_3_5":"En definitiva, los usuarios que accedan a este sitio web pueden visualizar los contenidos y efectuar, en su caso, copias privadas autorizadas siempre que los elementos reproducidos no sean cedidos posteriormente a terceros, ni se instalen a servidores conectados a redes, ni sean objeto de ningún tipo de explotación.",
+    "pc_3_6":"Asimismo, todas las marcas, nombres comerciales o signos distintivos de cualquier clase que aparecen en el sitio web son propiedad de EL PROPIETARIO DE LA WEB, sin que pueda entenderse que el uso o acceso al mismo atribuya al usuario derecho alguno sobre los mismos.",
+    "pc_3_7":"La distribución, modificación, cesión o comunicación pública de los contenidos y cualquier otro acto que no haya sido expresamente autorizado por el titular de los derechos de explotación quedan prohibidos.",
+    "pc_3_8":"El establecimiento de un hiperenlace no implica en ningún caso la existencia de relaciones entre EL PROPIETARIO DE LA WEB y el propietario del sitio web en la que se establezca, ni la aceptación y aprobación por parte de EL PROPIETARIO DE LA WEB de sus contenidos o servicios. Aquellas personas que se propongan establecer un hiperenlace previamente deberán solicitar autorización por escrito a EL PROPIETARIO DE LA WEB.",
+    "pc_3_9":"En todo caso, el hiperenlace únicamente permitirá el acceso a la home-page o página de inicio de nuestro sitio web, asimismo deberá abstenerse de realizar manifestaciones o indicaciones falsas, inexactas o incorrectas sobre EL PROPIETARIO DE LA WEB, o incluir contenidos ilícitos, contrarios a las buenas costumbres y al orden público.",
+    "pc_3_10":"EL PROPIETARIO DE LA WEB no se responsabiliza del uso que cada usuario le dé a los materiales puestos a disposición en este sitio web ni de las actuaciones que realice en base a los mismos.",
+    "h3_4":"4. POLÍTICA DE PRIVACIDAD",
+    "pc_4_1":"Quién es el Responsable de tratamiento de sus datos:",
+    "pc_4_2":"El responsable de tratamiento se encuentra identificado en el expositivo 1 de este Aviso Legal.",
+    "pc_4_3":"Qué tipo de datos tenemos sobre su persona y cómo los hemos obtenido",
+    "pc_4_4":"Las categorías de datos personales que tratamos de clientes y proveedores son:",
+    "ps_4_1":"1. Datos de identificación",
+    "ps_4_2":"2. Direcciones postales o electrónicas",
+    "ps_4_3":"3. Información comercial",
+    "ps_4_4":"4. Datos económicos y de transacciones",
+    "pc_4_5":"En ningún caso tratamos datos especialmente protegidos:",
+    "pc_4_6":"Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación."
+  },
+  "cookies":{
+    "h2_1":"Política de protección de datos",
+    "h3_1":"1. OBJETO Y ACEPTACIÓN",
+    "pc_1_1":"El presente aviso legal regula el uso del sitio web www.somosgigson.com (en adelante, LA WEB), del que es titular Gigson (en adelante, EL PROPIETARIO DE LA WEB).",
+    "pc_1_2":"La navegación por el sitio web de EL PROPIETARIO DE LA WEB atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, que pueden sufrir modificaciones.",
+    "pc_1_3":"El usuario se obliga a hacer un uso correcto del sitio web de conformidad con las leyes, la buena fe, el orden público, los usos del tráfico y el presente Aviso Legal. El usuario responderá frente a EL PROPIETARIO DE LA WEB o frente a terceros, de cualesquiera daños y perjuicios que pudieran causarse como consecuencia del incumplimiento de dicha obligación.",
+    "h3_2":"2. IDENTIFICACIÓN Y COMUNICACIONES",
+    "pc_2_1":"EL PROPIETARIO DE LA WEB, en cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, le informa que:",
+    "pc_2_2":"Su denominación social es: Awesomely OÜ",
+    "pc_2_3":"Número de VAT: EE102613528",
+    "pc_2_4":"Su domicilio social está en: Lootsa Tn 2a Harju, 11415, Tallinn, Estonia",
+    "pc_2_5":"Para comunicarse con nosotros, ponemos a su disposición diferentes medios de contacto que detallamos a continuación:",
+    "pc_2_6":"Teléfono: +34630840225",
+    "pc_2_7":"Email: hello@awesomelygroup.com",
+    "pc_2_8":"Todas las notificaciones y comunicaciones entre los usuarios y EL PROPIETARIO DE LA WEB se considerarán eficaces, a todos los efectos, cuando se realicen a través de correo postal o cualquier otro medio de los detallados anteriormente.",
+    "h3_3":"3. CONDICIONES DE ACCESO Y UTILIZACIÓN",
+    "pc_3_1":"El sitio web y sus servicios son de acceso libre y gratuito, no obstante, EL PROPIETARIO DE LA WEB condiciona la utilización de algunos de los servicios ofrecidos en su web a la previa cumplimentación del correspondiente formulario.",
+    "pc_3_2":"El usuario garantiza la autenticidad y actualidad de todos aquellos datos que comunique a EL PROPIETARIO DE LA WEB y será el único responsable de las manifestaciones falsas o inexactas que realice.",
+    "pc_3_3":"El usuario se compromete expresamente a hacer un uso adecuado de los contenidos y servicios de EL PROPIETARIO DE LA WEB y a no emplearlos para, entre otros:",
+    "ps_3_1":"1. Difundir contenidos delictivos, violentos, pornográficos, racistas, xenófobo, ofensivos, de apología del terrorismo o, en general, contrarios a la ley o al orden público.",
+    "ps_3_2":"2. Introducir en la red virus informáticos o realizar actuaciones susceptibles de alterar, estropear, interrumpir o generar errores o daños en los documentos electrónicos, datos o sistemas físicos y lógicos de EL PROPIETARIO DE LA WEB o de terceras personas; así como obstaculizar el acceso de otros usuarios al sitio web y a sus servicios mediante el consumo masivo de los recursos informáticos a través de los cuales EL PROPIETARIO DE LA WEB presta sus servicios.",
+    "ps_3_3":"3. Intentar acceder a las cuentas de correo electrónico de otros usuarios o a áreas restringidas de los sistemas informáticos de EL PROPIETARIO DE LA WEB o de terceros y, en su caso, extraer información.",
+    "ps_3_4":"4. Vulnerar los derechos de propiedad intelectual o industrial, así como violar la confidencialidad de la información de EL PROPIETARIO DE LA WEB o de terceros.",
+    "ps_3_5":"5. Suplantar la identidad de otro usuario, de las administraciones públicas o de un tercero.",
+    "ps_3_6":"6. Reproducir, copiar, distribuir, poner a disposición de, o cualquier otra forma de comunicación pública, transformar o modificar los contenidos, a menos que se cuente con la autorización del titular de los correspondientes derechos o ello resulte legalmente permitido.",
+    "ps_3_7":"7. Recabar datos con finalidad publicitaria y de remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial sin que medie su previa solicitud o consentimiento.",
+    "pc_3_4":"Todos los contenidos del sitio web, como textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a EL PROPIETARIO DE LA WEB, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso de la web.",
+    "pc_3_5":"En definitiva, los usuarios que accedan a este sitio web pueden visualizar los contenidos y efectuar, en su caso, copias privadas autorizadas siempre que los elementos reproducidos no sean cedidos posteriormente a terceros, ni se instalen a servidores conectados a redes, ni sean objeto de ningún tipo de explotación.",
+    "pc_3_6":"Asimismo, todas las marcas, nombres comerciales o signos distintivos de cualquier clase que aparecen en el sitio web son propiedad de EL PROPIETARIO DE LA WEB, sin que pueda entenderse que el uso o acceso al mismo atribuya al usuario derecho alguno sobre los mismos.",
+    "pc_3_7":"La distribución, modificación, cesión o comunicación pública de los contenidos y cualquier otro acto que no haya sido expresamente autorizado por el titular de los derechos de explotación quedan prohibidos.",
+    "pc_3_8":"El establecimiento de un hiperenlace no implica en ningún caso la existencia de relaciones entre EL PROPIETARIO DE LA WEB y el propietario del sitio web en la que se establezca, ni la aceptación y aprobación por parte de EL PROPIETARIO DE LA WEB de sus contenidos o servicios. Aquellas personas que se propongan establecer un hiperenlace previamente deberán solicitar autorización por escrito a EL PROPIETARIO DE LA WEB.",
+    "pc_3_9":"En todo caso, el hiperenlace únicamente permitirá el acceso a la home-page o página de inicio de nuestro sitio web, asimismo deberá abstenerse de realizar manifestaciones o indicaciones falsas, inexactas o incorrectas sobre EL PROPIETARIO DE LA WEB, o incluir contenidos ilícitos, contrarios a las buenas costumbres y al orden público.",
+    "pc_3_10":"EL PROPIETARIO DE LA WEB no se responsabiliza del uso que cada usuario le dé a los materiales puestos a disposición en este sitio web ni de las actuaciones que realice en base a los mismos.",
+    "h3_4":"4. POLÍTICA DE PRIVACIDAD",
+    "pc_4_1":"Quién es el Responsable de tratamiento de sus datos:",
+    "pc_4_2":"El responsable de tratamiento se encuentra identificado en el expositivo 1 de este Aviso Legal.",
+    "pc_4_3":"Qué tipo de datos tenemos sobre su persona y cómo los hemos obtenido",
+    "pc_4_4":"Las categorías de datos personales que tratamos de clientes y proveedores son:",
+    "ps_4_1":"1. Datos de identificación",
+    "ps_4_2":"2. Direcciones postales o electrónicas",
+    "ps_4_3":"3. Información comercial",
+    "ps_4_4":"4. Datos económicos y de transacciones",
+    "pc_4_5":"En ningún caso tratamos datos especialmente protegidos:",
+    "pc_4_6":"Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación."
+  },
+  "cookiesBanner":{
+    "h2":"TAMBIÉN TENEMOS COOKIES",
+    "p":"Utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarte publicidad relacionada con tus preferencias en base a un perfil elaborado a partir de tus hábitos de navegación (por ejemplo, páginas visitadas). Puedes aceptarlas o rechazarlas en los siguientes botones.",
+    "btnAccept":"ACEPTAR",
+    "btnDenie":"RECHAZAR"
+  },
+  "services_v2":{
+    "hero": {
+      "suptitle":"Logística y fulfillment",
+      "title": "Tecnología y consultoría <span>en logística</span>",
+      "description": "La tecnología en logística puede ser un desafío si no se cuenta con el asesoramiento adecuado. En Gigson Solutions, te ayudamos a integrar soluciones tecnológicas sin fricciones, asegurando que se adapten a la estructura del negocio.",
+      "buttonText": "Como podemos ayudarte"
+    },
+    "useCases": {
+      "title": "Casos clave",
+      "description": "Descubre cómo hemos ayudado a empresas a resolver desafíos logísticos complejos mediante soluciones tecnológicas personalizadas. Cada caso refleja nuestro compromiso con la eficiencia, la integración y los resultados medibles.",
+      "cards": [
+        {
+          "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
+          "supTitle": "Desafío",
+          "description": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Fichaje a través de WhatsApp",
+                "description": "Los empleados pueden registrar su inicio y fin de jornada, descansos y actividades directamente enviando un mensaje a un bot automatizado en WhatsApp."
+              },
+              {
+                "title": "Reconocimiento de ubicación",
+                "description": "Validación de la ubicación del fichaje para garantizar que se realiza en los puntos designados (oficinas, almacenes o rutas autorizadas)."
+              },
+              {
+                "title": "Integración con sistemas de nóminas",
+                "description": "Conexión directa con el software de gestión de nóminas para sincronizar automáticamente las horas trabajadas, horas extras y días de descanso."
+              },
+              {
+                "title": "Panel de supervisión",
+                "description": "Herramienta para los gestores que permite visualizar los registros en tiempo real, generar reportes y corregir incidencias."
+              },
+              {
+                "title": "Alertas automáticas",
+                "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Desarrollamos un sistema de fichaje basado en WhatsApp que se conecta directamente al software de nóminas de Martínez Marcos. Esto permitió automatizar el registro de horas, eliminando errores manuales y garantizando el cumplimiento normativo. Además, la solución es accesible y fácil de usar para los empleados, lo que aumentó la tasa de cumplimiento de fichajes en un 100%.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Chat",
+                "description": "Whatsapp Business API + Twilio"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js"
+              },
+              {
+                "title": "Dashboard",
+                "description": "React + Looker Studio"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded y Odoo"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Twilio + email"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Controla tus ventas: desde tu web hasta El Corte Inglés",
+          "supTitle": "Desafío",
+          "description": "La empresa vende a través de múltiples canales: tienda online, marketplaces como Amazon, y puntos de venta físicos y digitales de terceros. La falta de control directo sobre inventarios y ventas en estos canales genera desconexión, sobreventas, retrasos en envíos y una experiencia fragmentada tanto para el equipo interno como para el cliente final.",
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Controla tus ventas: desde tu web hasta El Corte Inglés",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "La empresa vende a través de múltiples canales: tienda online, marketplaces como Amazon, y puntos de venta físicos y digitales de terceros. La falta de control directo sobre inventarios y ventas en estos canales genera desconexión, sobreventas, retrasos en envíos y una experiencia fragmentada tanto para el equipo interno como para el cliente final..",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Integración multicanal",
+                "description": "Conexión entre tienda online, marketplaces y sistemas de inventario externos mediante API, permitiendo sincronización bidireccional de stock y pedidos."
+              },
+              {
+                "title": "Panel de control centralizado",
+                "description": "Visualización de inventarios, pedidos y ventas desde una interfaz única, con filtros por canal, categoría y estado."
+              },
+              {
+                "title": "Alertas automáticas de stock",
+                "description": "Notificaciones configurables por producto, canal o almacén para anticiparse a roturas de inventario."
+              },
+              {
+                "title": "Gestión de devoluciones unificada",
+                "description": "Recepción y tratamiento de devoluciones desde todos los canales en una única interfaz conectada con operadores logísticos y ERP."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Se desarrolló una integración multicanal que conecta todas las plataformas de venta con el ERP, permitiendo sincronizar pedidos e inventarios en tiempo real. Esta solución mejoró la precisión en la gestión de stock, redujo las incidencias por sobreventa y facilitó el control centralizado del rendimiento de cada canal. Además, se unificó la gestión de devoluciones, agilizando su procesamiento y trazabilidad.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Integraciones multicanal",
+                "description": "Shopify API, Amazon SP-API, Mirakl API"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded y Odoo"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Visualización",
+                "description": "Power BI + Looker Studio"
+              },
+              {
+                "title": "Automatización de flujos",
+                "description": "Make.com + cron jobs"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Twilio + WhatsApp Business API"
+              },
+              {
+                "title": "Gestión de devoluciones",
+                "description": "APIs de operadores logísticos de SEUR y Correos Express"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Evita roturas de stock: optimiza tu reabastecimiento",
+          "supTitle": "Desafío",
+          "description": "Una empresa distribuidora del sector de materiales de construcción enfrentaba dificultades para planificar correctamente su reabastecimiento de stock. La falta de herramientas predictivas provocaba acumulaciones excesivas de inventario en productos de baja rotación y, al mismo tiempo, desabastecimientos en productos críticos, afectando la eficiencia operativa, la rentabilidad y la capacidad de respuesta ante sus clientes B2B.",
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Evita roturas de stock: optimiza tu reabastecimiento",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "Una empresa distribuidora del sector de materiales de construcción enfrentaba dificultades para planificar correctamente su reabastecimiento de stock. La falta de herramientas predictivas provocaba acumulaciones excesivas de inventario en productos de baja rotación y, al mismo tiempo, desabastecimientos en productos críticos, afectando la eficiencia operativa, la rentabilidad y la capacidad de respuesta ante sus clientes B2B..",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Análisis de históricos de venta",
+                "description": "Evaluación automática de consumos en diferentes períodos (mensual, trimestral, anual)."
+              },
+              {
+                "title": "Matriz dinámica ABC",
+                "description": "Clasificación continua de productos para priorizar pedidos según importancia estratégica."
+              },
+              {
+                "title": "Alertas de reabastecimiento inteligente",
+                "description": "Recomendaciones de compra basadas en plazos de entrega, rotación y niveles mínimos configurables."
+              },
+              {
+                "title": "Gestión de estacionalidad",
+                "description": "Ajustes automáticos de previsiones en base a patrones de demanda detectados en años anteriores."
+              },
+              {
+                "title": "Panel de sugerencias de compra",
+                "description": "Dashboard donde el equipo de compras puede validar, ajustar y lanzar órdenes de compra sugeridas."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Se desarrolló un sistema de planificación inteligente de reabastecimiento basado en reglas de negocio configurables por tipo de producto y cliente, sin necesidad de implementar un motor de predicción pesado o complejo. El sistema analiza ventas históricas, plazos de reposición y estacionalidad, y sugiere cantidades óptimas de compra mediante alertas semanales. Además, se incorporó una matriz ABC dinámica que clasifica los productos según su impacto en facturación y frecuencia de venta, ayudando a priorizar el reabastecimiento de forma práctica y eficiente.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Análisis predictivo ligero",
+                "description": "Python"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Python (FastAPI) + Node.js"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Integración con ERP",
+                "description": "Odoo + Holded via API REST"
+              },
+              {
+                "title": "Dashboard de compras",
+                "description": "Power BI Embedded"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Configurador de Presupuestos",
+          "supTitle": "Desafío",
+          "buttonText": "Ver caso",
+          "description": "Elaborar un sistema de cálculo de presupuestos personalizados que se integre de forma eficiente con el ERP existente (Holded) mediante API. El objetivo era agilizar la creación de presupuestos complejos, permitiendo diferentes configuraciones y simulaciones, para facilitar la toma de decisiones, justificar propuestas frente al cliente y mejorar la planificación financiera de proyectos en sectores como la construcción o la logística.",
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Configurador de Presupuestos",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "Elaborar un sistema de cálculo de presupuestos personalizados que se integre de forma eficiente con el ERP existente (Holded) mediante API. El objetivo era agilizar la creación de presupuestos complejos, permitiendo diferentes configuraciones y simulaciones, para facilitar la toma de decisiones, justificar propuestas frente al cliente y mejorar la planificación financiera de proyectos en sectores como la construcción o la logística..",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Presupuestos configurables por variables",
+                "description": "Materiales, mano de obra, alquiler de maquinaria, logística y gastos generales."
+              },
+              {
+                "title": "Plantillas por tipo de proyecto",
+                "description": "Distintos modelos adaptables según el tipo de construcción o servicio."
+              },
+              {
+                "title": "Integración de precios en tiempo real",
+                "description": "Conexión vía API con catálogos de proveedores para mantener actualizados los importes."
+              },
+              {
+                "title": "Simulador de escenarios",
+                "description": "Evaluación de alternativas de ejecución, materiales o proveedores para medir su impacto económico."
+              },
+              {
+                "title": "Análisis de presupuestos históricos",
+                "description": "Comparativas con proyectos anteriores para detectar desviaciones y afinar previsiones."
+              },
+              {
+                "title": "Exportación y validación de presupuestos",
+                "description": "Generación de presupuestos en PDF o Excel, integrados en la ficha del proyecto en el ERP para compartir con cliente."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Desarrollamos una WebApp integrada vía API con Holded que actúa como un configurador de presupuestos totalmente dinámico. Esta solución permite al equipo crear, comparar y validar presupuestos complejos en minutos, con acceso a catálogos actualizados y herramientas de simulación financiera. Los presupuestos pueden exportarse, compartirse y sincronizarse con el ERP, optimizando la visibilidad financiera de cada proyecto y mejorando la precisión en el seguimiento de costes.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Front-end (WebApp de presupuestos)",
+                "description": "React.js, autocompletado de materiales, simuladores interactivos"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js (Express) para el motor de cálculo"
+              },
+              {
+                "title": "Integraciones",
+                "description": "<span>APIs REST de Holded, webhooks</span> para sincronización en tiempo real"
+              },
+              {
+                "title": "Infraestructura cloud",
+                "description": "AWS (EC2, S3, RDS, Lambda), Docker + GitHub Actions"
+              },
+              {
+                "title": "Business Intelligence",
+                "description": "Looker Studio"
+              },
+              {
+                "title": "Seguridad y privacidad",
+                "description": "Autenticación JWT y encriptación de datos sensibles en tránsito (HTTPS) y en reposo. Cumplimiento de GDPR, ISO/IEC 27001 en la infraestructura"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "improveAreas": {
+      "title" : "Áreas",
+      "filtersText": "Filtros",
+      "applyFiltersText": "Aplicar filtros",
+      "filtersClearAllText": "Limpiar todo",
+      "painPoints": [
+        {
+          "type": "A",
+          "name": "Optimización de recursos"
+        },
+        {
+          "type": "B",
+          "name": "Automatización procesos manuales"
+        },
+        {
+          "type": "C",
+          "name": "Sostenibilidad"
+        },
+        {
+          "type": "D",
+          "name": "Visibilidad de datos"
+        },
+        {
+          "type": "E",
+          "name": "Cumplir regulación"
+        }
+      ],
+      "faqs": [
+        {
+          "types": ["A", "B", "C"],
+          "question": "Asignación de rutas sin complicaciones: más rápido, más eficiente",
+          "answer": {
+            "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento, manual y propenso a errores. La directora de operaciones debía analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+            "solutionText": "Solución",
+            "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Disponibilidad del personal",
+                "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+              },
+              {
+                "title": "Asignación de rutas",
+                "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+              },
+              {
+                "title": "Panel de control",
+                "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+              },
+              {
+                "title": "Optimización de la carga del vehículo",
+                "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
+              },
+              {
+                "title": "Automatización de reportes de productividad",
+                "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "TMS",
+                "description": "Geotab & Google Maps API"
+              },
+              {
+                "title": "RRHH",
+                "description": "Personio"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "WhatsApp Business API"
+              },
+              {
+                "title": "Reporting",
+                "description": "Looker"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B", "C", "D"],
+          "question": "Transparencia en cada kilómetro",
+          "answer": {
+            "challengeDescription": "Con una flota en crecimiento, nuestro cliente buscaba reducir su huella de carbono para cumplir con objetivos internos de sostenibilidad, mejorar su imagen frente a clientes B2B y reguladores, y proporcionar transparencia en sus operaciones. Sin herramientas para calcular emisiones, optimizar rutas y ofrecer reportes detallados a los clientes, las operaciones del transporte eran ineficiencientes y sin visibilidad.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se implementó un módulo integral de sostenibilidad que no solo calcula y reduce las emisiones de CO₂, sino que también permite a los clientes acceder a sus reportes desde un portal personalizado. Esto brindó mayor transparencia y confianza a los clientes, quienes ahora pueden ver el impacto ambiental de sus envíos. Como resultado, Martínez Marcos redujo las emisiones en un 15%, mejoró su eficiencia operativa y fortaleció las relaciones con sus clientes al ofrecer un enfoque más transparente y responsable.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Cálculo de huella de carbono",
+                "description": "Herramienta que mide las emisiones de CO₂ por trayecto en función del tipo de vehículo y combustible."
+              },
+              {
+                "title": "Optimización de rutas sostenibles",
+                "description": "Identificación de trayectos que reduzcan kilómetros recorridos y optimicen el uso del combustible."
+              },
+              {
+                "title": "Portal de cliente",
+                "description": "Acceso directo y transparente para que los clientes consulten sus reportes de emisiones, rutas utilizadas y métricas sostenibles en tiempo real."
+              },
+              {
+                "title": "Reportes automatizados",
+                "description": "Generación de reportes personalizados sobre emisiones, que los clientes pueden descargar desde el portal para sus propios análisis o regulaciones."
+              },
+              {
+                "title": "Simulación de escenarios",
+                "description": "Evaluación de rutas alternativas para identificar ahorros potenciales en emisiones y costos."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Cálculo de emisiones",
+                "description": "EcoTransitIT"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Visualización",
+                "description": "PowerBI + Looker Studio"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["A", "D"],
+          "question": "Reduce los tiempos muertos: organiza, optimiza, entrega",
+          "answer": {
+            "challengeDescription": "Normalmente, los transportistas se enfrentan tiempos de espera prolongados para cargar y descargar, lo que afecta la productividad y genera costos adicionales. La falta de una gestión eficiente en los puntos de carga provoca saturaciones y retrasos.",
+            "solutionText": "Solución",
+            "solutionDescription": "Implementamos un sistema de gestión de citas que optimiza el flujo de transportistas en los puntos de carga y descarga, reduciendo los tiempos de espera en un 32%. Esto mejoró tanto la productividad de la flota, como la satisfacción de los conductores y los clientes.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Gestión de citas de carga (Time Slot Management)",
+                "description": "Sistema que permite agendar horarios específicos para evitar congestiones en los puntos de carga y descarga."
+              },
+              {
+                "title": "Notificaciones en tiempo real",
+                "description": "Alertas a transportistas y almacén sobre cambios o actualizaciones en las citas."
+              },
+              {
+                "title": "Optimización del flujo operativo",
+                "description": "Herramientas para priorizar cargas urgentes y distribuir conductores de manera eficiente."
+              },
+              {
+                "title": "Reportes de productividad",
+                "description": "Métricas sobre el uso de los puntos de carga y tiempos de carga/descarga promedio."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Calendario",
+                "description": "Google Calendar API"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "WhatsApp Business API"
+              },
+              {
+                "title": "Reporting",
+                "description": "Looker Studio"
+              },
+              {
+                "title": "Algoritmos",
+                "description": "Control de solapamientos y validación de ventanas horarias"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B", "D", "E"],
+          "question": "Acceso total para tus clientes: transparencia y confianza en cada entrega",
+          "answer": {
+            "challengeDescription": "El proceso de recepción de mobiliario de lujo se enfrentaba a problemas en la validación del estado, calidad y características del producto. La falta de evidencias en la recepción y manipulación de productos dificultaban las reclamaciones con proveedores y aseguradoras y generaba problemas logísticos. Además, los clientes no tenían acceso directo a información visual y registros sobre el estado de los productos.",
+            "solutionText": "Solución",
+            "solutionDescription": "Implementamos un sistema integral de validación en la recepción del mobiliario de lujo, con una mesa de validación que incluye grabación automatizada y una conexión directa al sistema de gestión de almacenes. Además, se desarrolló un portal para clientes que les permite acceder a las grabaciones y reportes en tiempo real, facilitando la comunicación y gestión de reclamaciones con los proveedores. Como resultado, se mejoró la trazabilidad del 100% de los productos, reduciendo los tiempos de resolución de incidencias en un 50% y aumentando la satisfacción del cliente en un 40%.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Mesa de validación",
+                "description": "Verificación física y digital del mobiliario (dimensiones, acabados, materiales)."
+              },
+              {
+                "title": "Sistema de grabación automatizado",
+                "description": "Captura de imágenes y video durante la recepción."
+              },
+              {
+                "title": "Portal de cliente",
+                "description": "Acceso a grabaciones e informes en tiempo real."
+              },
+              {
+                "title": "Checklist digital",
+                "description": "Validación estructurada de atributos conectada al ERP."
+              },
+              {
+                "title": "Integración con almacén",
+                "description": "Sincronización con el sistema de inventario para reflejar estado y ubicación."
+              },
+              {
+                "title": "Reportes automatizados",
+                "description": "Generación de informes visuales para uso interno y externo."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Captura multimedia",
+                "description": "Cámara IP + software de grabación programada"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "ERP",
+                "description": "Odoo / SAP Business One"
+              },
+              {
+                "title": "Visualización y portal:",
+                "description": "Power BI + WebApp personalizada para clientes"
+              },
+              {
+                "title": "Integración",
+                "description": "Amphora Logistics"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B"],
+          "question": "Centralización de órdenes de trabajo para operaciones complejas",
+          "answer": {
+            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Plataforma centralizada de órdenes",
+                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
+              },
+              {
+                "title": "Flujos de trabajo visuales",
+                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
+              },
+              {
+                "title": "Actualización automática de estados",
+                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
+              },
+              {
+                "title": "Alertas inteligentes",
+                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
+              },
+              {
+                "title": "Historial completo de actividad",
+                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Plataforma de flujos de trabajo",
+                "description": "Trello-like custom (React + DnD libraries)"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL en AWS"
+              },
+              {
+                "title": "Automatización de notificaciones",
+                "description": "Firebase Cloud Messaging + email (SendGrid)"
+              }
+            ]
+          }
+        }
+        ]
+    },
+    "solutionsApplications": {
+      "title": "Soluciones y aplicación de <span>tecnología en las operaciones logísticas</span>",
+      "subTitle": "La digitalización y automatización permite alcanzar una eficiencia logística superior. Así podemos optimizar o integrar la tecnología en logística de tu empresa.",
+      "containers": [
+        {
+          "title": "Desarrollo e integración de software",
+          "description": "Integración de software en logística y desarrollo de soluciones tecnológicas a medida que aseguran la fluidez necesaria con los sistemas existentes y maximiza el rendimiento de la infraestructura. Algunos ejemplos:",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Implementación de software WMS/TMS/SGA",
+              "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+            },
+            {
+              "title": "Desarrollo de software a medida para logística",
+              "description": "Cada empresa tiene necesidades logísticas únicas. Desarrollamos soluciones personalizadas, adaptadas a la estructura del negocio y diseñadas para mejorar la gestión de la cadena de suministro, la optimización de rutas y la automatización de procesos."
+            },
+            {
+              "title": "Integración de ERP y sistemas de gestión logística",
+              "description": "Clave para centralizar la información y mejorar la toma de decisiones. Unificamos datos y procesos, permitiendo una visión global del negocio y optimizando la gestión de recursos."
+            },
+            {
+              "title": "Implementación de RFID y tecnologías de trazabilidad",
+              "description": "Las tecnologías de trazabilidad mejoran la precisión en la gestión de inventario, reduce pérdidas y aumenta la eficiencia en toda la cadena de suministro."
+            },
+            {
+              "title": "Aplicación de inteligencia artificial en la logística",
+              "description": "Optimizar la planificación logística, para maximizar el rendimiento de cada fase del proceso logístico."
+            },
+            {
+              "title": "Automatización de procesos y ciberseguridad",
+              "description": "Reduce errores humanos y mejora la productividad en almacenes y centros de distribución. Además, garantizamos un entorno seguro con soluciones a medida en ciberseguridad, protegiendo la infraestructura tecnológica y los datos críticos de la empresa."
+            }
+          ]
+        },
+        {
+          "title": "Digitalización de procesos",
+          "description": "La transformación digital en logística no solo mejora la eficiencia operativa, sino que también facilita la toma de decisiones estratégicas. La digitalización permite centralizar la información, reducir la dependencia de procesos manuales y mejorar la comunicación entre todas las áreas de la empresa.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Transformación digital y soluciones omnicanal",
+              "description": "Mejor sincronización entre sus canales de venta, distribución y atención al cliente. La digitalización permite gestionar pedidos de manera integrada, optimizar la cadena de suministro y mejorar la experiencia del usuario final."
+            },
+            {
+              "title": "Gemelos digitales",
+              "description": "La implementación de gemelos digitales en logística permite crear réplicas virtuales de almacenes, centros de distribución y procesos operativos. Con esta tecnología, es posible simular escenarios, predecir fallos y optimizar operaciones antes de su ejecución en el mundo real."
+            },
+            {
+              "title": "Administración logística virtual",
+              "description": "La gestión de la cadena de suministro a través de soluciones virtuales permite un control preciso de los flujos de mercancías y recursos, además de monitorizar inventarios, coordinar envíos y optimizar procesos en tiempo real."
+            },
+            {
+              "title": "Gestión de empleados",
+              "description": "Como consultoría logística y tecnológica, la digitalización también impacta en la gestión de personal. Sistemas de control de tareas, planificación de turnos y análisis de productividad permiten una asignación más eficiente de los recursos humanos."
+            },
+            {
+              "title": "Consultoría tecnológica",
+              "description": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar, implementar y optimizar herramientas digitales que se alineen con los objetivos del negocio, asegurando un crecimiento sostenible y escalable."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "¿Cómo trabajamos?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
+        },
+        {
+          "title": "Diseño y arquitectura",
+          "description": "Definición de requisitos, creación de un prototipo y diseño de integraciones con sistemas actuales."
+        },
+        {
+          "title": "Implementación",
+          "description": "Programación, pruebas funcionales, integración con plataformas externas y despliegue en producción."
+        },
+        {
+          "title": "Soporte y mantenimiento",
+          "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "¿Qué necesito para hacer un <span>producto digital</span>?",
+      "description": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
+      "buttonText": "Como podemos ayudarte",
+      "cards": [
+        {
+          "title": "Ingeniería de software",
+          "description": "Desde integrar diferentes herramientas, desarrollar nuevas características y productos hasta monitorear y mantener un producto, estamos listos para ello. Nuestro equipo de ingeniería de software está compuesto por desarrolladores, arquitectos y testers para construir necesidades con tecnología de actual."
+        },
+        {
+          "title": "Ciberseguridad",
+          "description": "La seguridad de la información ya no está en la hoja de ruta. La ciberseguridad es una NECESIDAD en todos los negocios y todas las empresas deben tener el conocimiento, las herramientas y los procesos para evitar o minimizar los ataques."
+        },
+        {
+          "title": "Consultoría tecnologica",
+          "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
+        }
+      ]
+    }
+  }
+}

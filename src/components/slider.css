@@ -1,0 +1,12 @@
+.swiper-slide {
+    height: auto;
+}
+
+.swiper-wrapper{
+    padding-bottom: 45px;
+}
+
+
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 0px!important;
+}

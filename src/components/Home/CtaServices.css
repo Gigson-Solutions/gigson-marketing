@@ -53,6 +53,7 @@
    width: 23%;
    height: auto;
    filter: contrast(50);
+   margin-left: auto;
 }
 
 @media (min-width: 37.5rem) {

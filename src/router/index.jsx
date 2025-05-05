@@ -5,6 +5,7 @@ import Services from "../components/Services/Services";
 import Cases from "../components/Pages/Cases/Cases";
 import Faqs from "../components/Pages/Faqs/Faqs";
 import Contact from "../components/Pages/Contact";
+import Landing from "../components/Pages/Landing/Landing";
 import NotFound from "../components/Pages/NotFound/NotFound";
 import Policity from "../components/Pages/Policity";
 import CookiesPage from "../components/Pages/CookiesPage";
@@ -44,7 +45,11 @@ export const router = createBrowserRouter([
             element: <Contact />,
          },
          {
-            path: "policity",
+            path: "landing",
+            element: <Landing />,
+         },
+         {
+            path: "policy",
             element: <Policity />,
          },
          {

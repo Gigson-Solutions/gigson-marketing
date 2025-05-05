@@ -65,10 +65,10 @@ const Form = ({ customClass }) => {
                      {checkbox.first}
                      <Link
                         className="legal-policity-form"
-                        to="/policity"
+                        to="/policy"
                         onClick={(e) => {
                            e.preventDefault(); // Previene la navegación normal del <Link>
-                           window.open("/policity", "_blank");
+                           window.open("/policy", "_blank");
                         }}
                      >
                         {checkbox.second}

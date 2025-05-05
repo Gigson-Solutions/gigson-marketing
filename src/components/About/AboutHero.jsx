@@ -35,17 +35,15 @@ const AboutHero = () => {
       <>
          <section className="div-about-hero">
             <div className="about-bg"></div>
-            <div className="div-content-hero-h1-p-l-svg">
+            <div className="text-center">
                <h1 className="about-hero-h1">
                   <Trans i18nKey={title} components={{ span: <span /> }} />
                </h1>
-               <p className="about-hero-p">{description}</p>
+               <p className="about-hero-p mb-8">{description}</p>
 
-               <div className="div-button-about">
                   <Link to="/contact" className="about-hero-btn button-main">
                      {cta}
                   </Link>
-               </div>
             </div>
          </section>
          <div className="div-button-about-svg">
@@ -53,7 +51,7 @@ const AboutHero = () => {
                onClick={() => {
                   const el = document.querySelector(".about-bellow").scrollIntoView({ behavior: "smooth" });
                }}
-            
+
                className="icon-godown"
                viewBox="0 0 19 8"
                xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +59,7 @@ const AboutHero = () => {
                <path d="M1 0.999999L8.92332 6.59293C9.26904 6.83697 9.73096 6.83697 10.0767 6.59293L18 1" stroke="#7874f4" />
             </svg>
          </div>
-            
+
          <div className="about-bellow" style={{top: "-6rem", position: "relative"}}></div>
          <div className="about-belive-max">
             <div className="wrapper">
