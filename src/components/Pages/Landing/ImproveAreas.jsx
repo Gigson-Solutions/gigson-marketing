@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import {Trans, useTranslation} from "react-i18next";
 import Dialog from "../../../shared/ui/Dialog.jsx";
 import { Button } from "../../../shared/ui/Button.jsx";
@@ -7,12 +7,26 @@ import chevronDownIcon from "../../../assets/chevron-down.svg";
 import timesCircleIcon from "../../../assets/times-circle.svg";
 
 const useFaqVisibility = (painPoints) => {
-    const [selectedPainPoints, setSelectedPainPoints] = useState([painPoints[0].type]);
-    const [tempSelectedPainPoints, setTempSelectedPainPoints] = useState(selectedPainPoints);
+    const defaultPainPoints = painPoints.map((point) => point.type);
+
+    const [initialChipsState, setInitialChipsState] = useState(true)
+    const [selectedPainPoints, setSelectedPainPoints] = useState(defaultPainPoints);
+    const [tempSelectedPainPoints, setTempSelectedPainPoints] = useState([]);
 
     const toggleChipsState = (type) => {
+
+        if(initialChipsState) {
+            setSelectedPainPoints([])
+        }
+
         setSelectedPainPoints((prevSelected) => {
+
             if (prevSelected.includes(type)) {
+                if(prevSelected.length === 1) {
+                    setInitialChipsState(true);
+                    return defaultPainPoints;
+                }
+
                 return prevSelected.filter((item) => item !== type);
             } else {
                 return [...prevSelected, type];
@@ -21,8 +35,15 @@ const useFaqVisibility = (painPoints) => {
     };
 
     const toggleTempChipsState = (type) => {
+
         setTempSelectedPainPoints((prevSelected) => {
+
             if (prevSelected.includes(type)) {
+                if(prevSelected.length === 1) {
+                    setInitialChipsState(true);
+                    return defaultPainPoints;
+                }
+
                 return prevSelected.filter((item) => item !== type);
             } else {
                 return [...prevSelected, type];
@@ -31,8 +52,9 @@ const useFaqVisibility = (painPoints) => {
     };
 
     const resetFilters = () => {
-        setSelectedPainPoints([painPoints[0].type]);
-        setTempSelectedPainPoints([painPoints[0].type])
+        setInitialChipsState(true)
+        setSelectedPainPoints(defaultPainPoints);
+        setTempSelectedPainPoints([]);
     };
 
     return {
@@ -41,7 +63,10 @@ const useFaqVisibility = (painPoints) => {
         setSelectedPainPoints,
         toggleChipsState,
         toggleTempChipsState,
-        resetFilters
+        initialChipsState,
+        setInitialChipsState,
+        resetFilters,
+        defaultPainPoints
     };
 };
 
@@ -68,17 +93,14 @@ const Chip = ({ isActive, isMobile, name, onClick, endAdornment }) => {
     );
 };
 
-const PainPointsChips = ({  painPoints, selectedPainPoints, onFilterClick, isMobile }) => {
+const PainPointsChips = ({  painPoints, selectedPainPoints, initialChipState, onFilterClick, isMobile, isDialog }) => {
 
     const boxClass = isMobile ? 'gap-2' : 'gap-4 mb-10 md:mb-12 lg:mb-16';
 
     return (
         <div className={`flex flex-col md:flex-row flex-wrap ${boxClass}`}>
             {painPoints.map(({ type, name }, index) => {
-                const isActive = selectedPainPoints.includes(type);
-                const hasMultipleActiveItems = selectedPainPoints.length > 1 ;
-
-                if(isMobile && !isActive) return null;
+                const isActive = (isDialog && selectedPainPoints.includes(type)) || (!isDialog && selectedPainPoints.includes(type) && !initialChipState);
 
                 return (
                     <Chip
@@ -87,7 +109,7 @@ const PainPointsChips = ({  painPoints, selectedPainPoints, onFilterClick, isMob
                         isActive={isActive}
                         name={name}
                         onClick={() => onFilterClick(type)}
-                        {...isMobile && hasMultipleActiveItems && { endAdornment: timesCircleIcon} }
+                        {...isMobile &&  { endAdornment: timesCircleIcon} }
                     />
                 );
             })}
@@ -197,12 +219,15 @@ const ImproveAreas = () => {
         toggleTempChipsState,
         toggleChipsState,
         setSelectedPainPoints,
-        resetFilters
+        initialChipsState,
+        setInitialChipsState,
+        resetFilters,
+        defaultPainPoints
     } = useFaqVisibility(painPoints);
 
     const [dialogOpen, setDialogOpen] = useState(false);
 
-    const hasMultipleFilters = selectedPainPoints.length > 1;
+    const hasMultipleFilters = selectedPainPoints.length > 0 &&  !initialChipsState;
 
     return (
         <>
@@ -218,10 +243,13 @@ const ImproveAreas = () => {
                     </div>
                     <div className="hidden md:block">
                         <PainPointsChips
+                            initialChipState={initialChipsState}
                             selectedPainPoints={selectedPainPoints}
                             painPoints={painPoints}
                             onFilterClick={(type) => {
+                                setInitialChipsState(false)
                                 toggleChipsState(type);
+                                toggleTempChipsState(type)
                             }}
                         />
                     </div>
@@ -231,15 +259,31 @@ const ImproveAreas = () => {
 
                             {hasMultipleFilters && <ResetFiltersButton onClick={resetFilters} text={filtersClearAllText} />}
                         </div>
-                        <PainPointsChips
-                            isMobile
-                            selectedPainPoints={selectedPainPoints}
-                            painPoints={painPoints}
-                            onFilterClick={(type) => {
-                                toggleChipsState(type);
-                                toggleTempChipsState(type)
-                            }}
-                        />
+
+                        <div className={`flex flex-col md:flex-row flex-wrap gap-2`}>
+                            {painPoints.filter(({type}) => selectedPainPoints.includes(type)).map(({ type, name }, index) => {
+
+                                if(initialChipsState) return null;
+
+                                return (
+                                    <Chip
+                                        key={index}
+                                        isMobile
+                                        isActive
+                                        name={name}
+                                        onClick={() =>{
+                                            if(selectedPainPoints.length === 1) {
+                                                resetFilters()
+                                                return;
+                                            }
+                                            toggleChipsState(type);
+                                            toggleTempChipsState(type)
+                                        }}
+                                        endAdornment={timesCircleIcon}
+                                    />
+                                );
+                            })}
+                        </div>
                     </div>
 
                     <FaqList faqs={faqs} selectedPainPoints={selectedPainPoints} activeFaqIndex={null} onFaqClick={null} />
@@ -251,6 +295,8 @@ const ImproveAreas = () => {
                         <p className="text-subtitle text-dark-primary mb-4">{filtersText}</p>
                         <div className="mb-20">
                             <PainPointsChips
+                                isDialog
+                                initialChipState={initialChipsState}
                                 selectedPainPoints={tempSelectedPainPoints}
                                 painPoints={painPoints}
                                 onFilterClick={(type) => {
@@ -261,7 +307,14 @@ const ImproveAreas = () => {
                         <Button
                             text={applyFiltersText}
                             onClick={() => {
-                                setSelectedPainPoints(tempSelectedPainPoints)
+                                if(tempSelectedPainPoints.length === 0) {
+                                    setSelectedPainPoints(defaultPainPoints)
+                                    setInitialChipsState(true);
+                                }else {
+                                    setSelectedPainPoints(tempSelectedPainPoints)
+                                    setInitialChipsState(false);
+                                }
+
                                 setDialogOpen(false);
                             }}
                         />
