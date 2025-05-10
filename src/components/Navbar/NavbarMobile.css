@@ -1,12 +1,8 @@
-.open .mesh {
-    position: absolute;
-    z-index: -1;
-    width: 66.0625rem;
-    height: 66.0625rem;
-    top: -2.6875rem;
-    left: -24rem;
-    max-width: initial;
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
 }
+
 
 .border-nav {
     width: 85%;
@@ -84,7 +80,7 @@
     top: 0;
     right: -100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     flex-direction: column;
@@ -92,17 +88,22 @@
     width: 100%;
     height: 100%;
     font-size: 1.3em;
-    background: #f4f3ef;
+    background-image: url("../../assets/mesh-gradient-v2.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
     color: #333;
     transition: 0.3s linear;
 }
 
 .menu-box--mobile ul.menu-items {
     display: flex;
+    width: 100%;
     flex-direction: column;
-    gap: 10px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    gap: 10px;
+    overflow-y: auto;
 }
 
 @media (min-width: 24.375rem) {
@@ -111,76 +112,56 @@
         font-size: 1.5em;
     }
 }
-@media (min-width: 40rem) {
-    .open .mesh {
-        left: -12rem;
-    }
-}
-
-@media (min-width: 55rem) {
-    .open .mesh {
-        left: -22rem;
-        width: 140%;
-    }
-}
 
 @media (min-width: 65rem) {
     .navbar-mobile {
         display: none;
     }
 }
+.menu-box--mobile .dropdown {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+}
 
-/*.menu-item.has-dropdown > a {*/
-/*    cursor: pointer;*/
-/*}*/
+.menu-box--mobile .menu-item.has-dropdown .dropdown.visible {
+    display: flex;
+}
 
+.menu-box--mobile .dropdown .menu-item__child__link {
+    width: 100%;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 300;
+    padding-block: 8px;
+}
 
-/*.dropdown {*/
-/*    position: absolute;*/
-/*    top: 100%;*/
-/*    left: 0;*/
-/*    display: none;*/
-/*    flex-direction: column;*/
-/*    background-color: #f4f3ef;*/
-/*    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
-/*    border-radius: 8px;*/
-/*    padding: 0.5rem 0;*/
-/*    z-index: 10;*/
-/*    min-width: 10rem;*/
-/*}*/
+.menu-box--mobile .dropdown .menu-item__child:first-child {
+    padding-top: 16px;
+}
 
+.menu-box--mobile .menu-item:has(  .menu-item__link.active),
+.menu-box--mobile .menu-item:has(  .menu-item__child__link.active) .menu-item__link {
+    background-color: #7874F4;
+    color: #fff;
+}
 
-/*.dropdown li {*/
-/*    padding: 0.5rem 1rem;*/
-/*}*/
+.menu-box--mobile .menu-item:has(  .menu-item__link.active),
+.menu-box--mobile .menu-item:has( .menu-item__child__link.active) .menu-item--chevron-down > path {
+    stroke: white;
+}
 
-/*.dropdown li a {*/
-/*    color: #3c3c3b;*/
-/*    text-decoration: none;*/
-/*    font-size: 0.875rem;*/
-/*    transition: background-color 0.3s ease, color 0.3s ease;*/
-/*}*/
+.menu-box--mobile .menu-item:not(.has-dropdown) {
+    border-radius: 100px;
+    overflow: hidden;
+}
 
-/*.dropdown li a:hover {*/
-/*    background-color: #7874f4;*/
-/*    color: #fff;*/
-/*}*/
-
-/*.menu-item:hover .dropdown {*/
-/*    display: flex;*/
-/*}*/
-
-/*.menu-item.has-dropdown .dropdown.visible {*/
-/*    display: flex;*/
-/*}*/
-
-/*@media (max-width: 65rem) {*/
-/*    .dropdown {*/
-/*        position: static;*/
-/*        display: none;*/
-/*    }*/
-
-/*    .menu-item.has-dropdown .dropdown.visible {*/
-/*        display: flex;*/
-/*    }*/
-/*}*/
+.menu-box--mobile .menu-item__link {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    padding: 13px 24px;
+    border-radius: 100px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
