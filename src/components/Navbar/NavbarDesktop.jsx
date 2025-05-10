@@ -1,16 +1,12 @@
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import LanguageSelector from "../LanguageSelector/LanguageSelector.jsx";
+
+import chevronDownIcon from "../../assets/chevron-down-purple-accent.svg";
 
 import "./NavbarDesktop.css";
 
 
 const NavbarDesktop = ({ menu }) => {
-    const [activeDropdown, setActiveDropdown] = useState(null);
-
-    const toggleDropdown = (index) => {
-        setActiveDropdown(activeDropdown === index ? null : index);
-    };
 
 
     return (
@@ -23,27 +19,33 @@ const NavbarDesktop = ({ menu }) => {
                         <li
                             key={index}
                             className={`menu-item ${children ? "has-dropdown" : ""}`}
-                            onClick={() => {
-                                toggleDropdown(index)
-                            }}
                         >
-                            <NavLink to={link || "#"}>
-                                {name}
-                            </NavLink>
-                            {children && (
-                                <ul
-                                    className="dropdown">
-                                    {children.map((child, childIndex) => (
-                                        <li key={childIndex}>
-                                            <NavLink
-                                                to={child.link}
-                                                // onClick={closeMobileMenu}
-                                            >
-                                                {child.name}
-                                            </NavLink>
-                                        </li>
-                                    ))}
-                                </ul>
+                            {!children ? (
+                                <NavLink className="menu-item__link" to={link}>
+                                    {name}
+                                </NavLink>
+                            ) : (
+                                <>
+                                    <span className="flex items-center menu-item__link">
+                                        {name}
+                                        <span>
+                                            <img src={chevronDownIcon} alt="chevron" className="ml-4" />
+                                        </span>
+                                    </span>
+                                    <ul
+                                        className="dropdown">
+                                        {children.map((child, childIndex) => (
+                                            <li className="menu-item__child" key={childIndex}>
+                                                <NavLink
+                                                    className="menu-item__child__link"
+                                                    to={child.link}
+                                                >
+                                                    {child.name}
+                                                </NavLink>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </>
                             )}
                         </li>
                     ))}
