@@ -6,6 +6,7 @@ import mesh from "../../assets/mesh-gradient.svg";
 import LanguageSelector from "../LanguageSelector/LanguageSelector.jsx";
 
 import "./NavbarMobile.css";
+import chevronDownPurpleIcon from "../../assets/chevron-down-purple-accent.svg";
 
 
 const NavbarMobile = ({ menu }) => {
@@ -40,39 +41,36 @@ const NavbarMobile = ({ menu }) => {
                         <li
                             key={index}
                             className={`menu-item ${children ? "has-dropdown" : ""}`}
-                            onMouseEnter={() => !isMobileMenuOpen && setActiveDropdown(index)}
-                            onMouseLeave={() => !isMobileMenuOpen && setActiveDropdown(null)}
                             onClick={() => {
                                 isMobileMenuOpen && toggleDropdown(index)
                             }}
                         >
-                            <NavLink
-                                to={link || "#"}
-                                onClick={() => {
-                                    // if (children) toggleDropdown(index);
-                                    // else closeMobileMenu();
-                                    closeMobileMenu();
-                                }}
-                            >
-                                {name}
-                            </NavLink>
-                            {children && (
-                                <ul
-                                    className={`dropdown ${
-                                        activeDropdown === index ? "visible" : ""
-                                    }`}
-                                >
-                                    {children.map((child, childIndex) => (
-                                        <li key={childIndex}>
-                                            <NavLink
-                                                to={child.link}
-                                                // onClick={closeMobileMenu}
-                                            >
-                                                {child.name}
-                                            </NavLink>
-                                        </li>
-                                    ))}
-                                </ul>
+                            {!children ? (
+                                <NavLink className="menu-item__link" to={link}>
+                                    {name}
+                                </NavLink>
+                            ) : (
+                                <>
+                                    <span className="flex items-center menu-item__link">
+                                        {name}
+                                        <span>
+                                            <img src={chevronDownPurpleIcon} alt="chevron" className="menu-item__link--chevron-purple ml-4" />
+                                        </span>
+                                    </span>
+                                    <ul
+                                        className="dropdown">
+                                        {children.map((child, childIndex) => (
+                                            <li className="menu-item__child" key={childIndex}>
+                                                <NavLink
+                                                    className="menu-item__child__link"
+                                                    to={child.link}
+                                                >
+                                                    {child.name}
+                                                </NavLink>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </>
                             )}
                         </li>
                     ))}

@@ -1,9 +1,17 @@
 import { NavLink } from "react-router-dom";
 import LanguageSelector from "../LanguageSelector/LanguageSelector.jsx";
 
-import chevronDownIcon from "../../assets/chevron-down-purple-accent.svg";
 
 import "./NavbarDesktop.css";
+
+const ChevronDown = () => {
+    return (
+        <svg className="menu-item--chevron-down ml-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9L12 15L18 9" stroke="#3C3C3B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+
+    )
+}
 
 
 const NavbarDesktop = ({ menu }) => {
@@ -28,9 +36,7 @@ const NavbarDesktop = ({ menu }) => {
                                 <>
                                     <span className="flex items-center menu-item__link">
                                         {name}
-                                        <span>
-                                            <img src={chevronDownIcon} alt="chevron" className="ml-4" />
-                                        </span>
+                                        <ChevronDown />
                                     </span>
                                     <ul
                                         className="dropdown">
