@@ -23,28 +23,16 @@ const NavbarDesktop = ({ menu }) => {
                         <li
                             key={index}
                             className={`menu-item ${children ? "has-dropdown" : ""}`}
-                            onMouseEnter={() => !isMobileMenuOpen && setActiveDropdown(index)}
-                            onMouseLeave={() => !isMobileMenuOpen && setActiveDropdown(null)}
                             onClick={() => {
-                                isMobileMenuOpen && toggleDropdown(index)
+                                toggleDropdown(index)
                             }}
                         >
-                            <NavLink
-                                to={link || "#"}
-                                onClick={() => {
-                                    // if (children) toggleDropdown(index);
-                                    // else closeMobileMenu();
-                                    closeMobileMenu();
-                                }}
-                            >
+                            <NavLink to={link || "#"}>
                                 {name}
                             </NavLink>
                             {children && (
                                 <ul
-                                    className={`dropdown ${
-                                        activeDropdown === index ? "visible" : ""
-                                    }`}
-                                >
+                                    className="dropdown">
                                     {children.map((child, childIndex) => (
                                         <li key={childIndex}>
                                             <NavLink

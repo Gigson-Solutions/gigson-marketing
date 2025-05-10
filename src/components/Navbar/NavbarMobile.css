@@ -130,56 +130,57 @@
     }
 }
 
-.menu-item.has-dropdown > a {
-    cursor: pointer;
-}
-
-.dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    flex-direction: column;
-    background-color: #f4f3ef;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 0.5rem 0;
-    z-index: 10;
-    min-width: 10rem;
-}
+/*.menu-item.has-dropdown > a {*/
+/*    cursor: pointer;*/
+/*}*/
 
 
-.dropdown li {
-    padding: 0.5rem 1rem;
-}
+/*.dropdown {*/
+/*    position: absolute;*/
+/*    top: 100%;*/
+/*    left: 0;*/
+/*    display: none;*/
+/*    flex-direction: column;*/
+/*    background-color: #f4f3ef;*/
+/*    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+/*    border-radius: 8px;*/
+/*    padding: 0.5rem 0;*/
+/*    z-index: 10;*/
+/*    min-width: 10rem;*/
+/*}*/
 
-.dropdown li a {
-    color: #3c3c3b;
-    text-decoration: none;
-    font-size: 0.875rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-.dropdown li a:hover {
-    background-color: #7874f4;
-    color: #fff;
-}
+/*.dropdown li {*/
+/*    padding: 0.5rem 1rem;*/
+/*}*/
 
-.menu-item:hover .dropdown {
-    display: flex;
-}
+/*.dropdown li a {*/
+/*    color: #3c3c3b;*/
+/*    text-decoration: none;*/
+/*    font-size: 0.875rem;*/
+/*    transition: background-color 0.3s ease, color 0.3s ease;*/
+/*}*/
 
-.menu-item.has-dropdown .dropdown.visible {
-    display: flex;
-}
+/*.dropdown li a:hover {*/
+/*    background-color: #7874f4;*/
+/*    color: #fff;*/
+/*}*/
 
-@media (max-width: 65rem) {
-    .dropdown {
-        position: static;
-        display: none;
-    }
+/*.menu-item:hover .dropdown {*/
+/*    display: flex;*/
+/*}*/
 
-    .menu-item.has-dropdown .dropdown.visible {
-        display: flex;
-    }
-}
+/*.menu-item.has-dropdown .dropdown.visible {*/
+/*    display: flex;*/
+/*}*/
+
+/*@media (max-width: 65rem) {*/
+/*    .dropdown {*/
+/*        position: static;*/
+/*        display: none;*/
+/*    }*/
+
+/*    .menu-item.has-dropdown .dropdown.visible {*/
+/*        display: flex;*/
+/*    }*/
+/*}*/

@@ -33,7 +33,11 @@
    cursor: pointer;
 }
 
-.menu-item:hover,
+.menu-item:hover {
+   background-color: transparent;
+   color: var(--color-purple-accents);
+}
+
 .menu-item.active {
    background-color: #7874F4;
    color: #fff;
