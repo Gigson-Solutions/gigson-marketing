@@ -69,14 +69,15 @@ const NavbarMobile = ({ menu }) => {
                                         <ChevronDown />
                                     </span>
                                     <ul className={`dropdown ${activeDropdown === index ? "visible" : ""}`}>
-                                        {children.map((child, childIndex) => (
+                                        {children.map(({ link, name }, childIndex) => (
                                             <li className="menu-item__child" key={childIndex}>
                                                 <NavLink
                                                     className="menu-item__child__link"
-                                                    to={child.link}
+                                                    to={link}
                                                     onClick={closeMobileMenu}
+                                                    end
                                                 >
-                                                    {child.name}
+                                                    {name}
                                                 </NavLink>
                                             </li>
                                         ))}

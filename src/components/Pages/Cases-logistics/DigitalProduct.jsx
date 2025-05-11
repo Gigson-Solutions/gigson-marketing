@@ -42,7 +42,7 @@ const DigitalProduct = () => {
         digitalProduct: {
             title, buttonText, description, cards
         },
-    } = t("services_v2");
+    } = t("cases-logistics");
 
     return (<section className="py-14 lg:py-40">
         <div

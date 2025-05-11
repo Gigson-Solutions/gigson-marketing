@@ -61,7 +61,7 @@
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color: #3c3c3b;
+    background-color: var(--color-dark-primary);
     transition: 0.25s linear;
 }
 
@@ -92,7 +92,7 @@
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    color: #333;
+    color: var(--color-dark-primary);
     transition: 0.3s linear;
 }
 
@@ -143,7 +143,7 @@
 
 .menu-box--mobile .menu-item:has(  .menu-item__link.active),
 .menu-box--mobile .menu-item:has(  .menu-item__child__link.active) .menu-item__link {
-    background-color: #7874F4;
+    background-color: var(--color-purple-accents);
     color: #fff;
 }
 
@@ -164,4 +164,10 @@
     padding: 13px 24px;
     border-radius: 100px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.menu-box--mobile .menu-item__child__link.active {
+    color: var(--color-purple-accents);
 }

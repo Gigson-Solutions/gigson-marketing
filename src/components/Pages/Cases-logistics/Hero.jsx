@@ -9,7 +9,7 @@ const Hero = () => {
     const {t} = useTranslation();
     const {
         hero: { title, suptitle,  description, buttonText}
-    } = t("services_v2");
+    } = t("cases-logistics");
 
     return (
         <section className="mt-fixed-navbar pt-14 lg:pt-40 pb-36 lg:pb-23">

@@ -31,7 +31,7 @@ const HowWeWork = () => {
     const {t} = useTranslation();
     const {
         howWeWork: {title, methods},
-    } = t("services_v2");
+    } = t("cases-logistics");
 
     const firstMethod = methods.slice(0, 1);
 

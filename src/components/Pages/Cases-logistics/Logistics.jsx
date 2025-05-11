@@ -8,7 +8,7 @@ import ImproveAreas from "./ImproveAreas.jsx";
 import HowWeWork from "./HowWeWork.jsx";
 import DigitalProduct from "./DigitalProduct.jsx";
 
-const Landing = () => {
+const Logistics = () => {
 
     return (
         <>
@@ -29,4 +29,4 @@ const Landing = () => {
     )
 }
 
-export default Landing;
+export default Logistics;

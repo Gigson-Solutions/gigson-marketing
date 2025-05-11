@@ -6,7 +6,7 @@
     display: flex;
     gap: 2.2rem;
     font-size: 0.9625rem;
-    color: #3c3c3b;
+    color: var(--color-dark-primary);
 }
 
 .menu-box--desktop ul.menu-items {
@@ -40,6 +40,12 @@
     position: relative;
 }
 
+.menu-box--desktop .menu-item__link {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
 .menu-box--desktop .menu-item:hover,
 .menu-box--desktop .has-dropdown.menu-item:hover {
     background-color: transparent;
@@ -52,7 +58,7 @@
 
 .menu-box--desktop .menu-item:has(  .menu-item__link.active),
 .menu-box--desktop .menu-item:has(  .menu-item__child__link.active) {
-    background-color: #7874F4;
+    background-color: var(--color-purple-accents);
     color: #fff;
 }
 
@@ -84,9 +90,11 @@
     border-radius: 0 0 16px 16px;
     z-index: 10;
     min-width: 193px;
+    overflow: hidden;
 }
 
-.menu-box--desktop .dropdown .menu-item__child:hover {
+.menu-box--desktop .dropdown .menu-item__child:hover,
+.menu-box--desktop .menu-item__child__link.active {
     background-color: var(--color-purple-light-b);
 }
 

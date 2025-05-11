@@ -34,19 +34,20 @@ const NavbarDesktop = ({ menu }) => {
                                 </NavLink>
                             ) : (
                                 <>
-                                    <span className="flex items-center menu-item__link">
+                                    <span className="menu-item__link">
                                         {name}
                                         <ChevronDown />
                                     </span>
                                     <ul
                                         className="dropdown">
-                                        {children.map((child, childIndex) => (
+                                        {children.map(({ link, name }, childIndex) => (
                                             <li className="menu-item__child" key={childIndex}>
                                                 <NavLink
                                                     className="menu-item__child__link"
-                                                    to={child.link}
+                                                    to={link}
+                                                    end
                                                 >
-                                                    {child.name}
+                                                    {name}
                                                 </NavLink>
                                             </li>
                                         ))}

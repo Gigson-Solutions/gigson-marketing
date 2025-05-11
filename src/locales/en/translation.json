@@ -2,13 +2,14 @@
   "menu":{
     "services":"SERVICES",
     "news":"LANDING",
-    "cases":"CASES",
+    "cases":"Cases",
     "about":"ABOUT",
     "faqs":"FAQs",
     "contact":"CONTACT US",
     "legal":"Legal Policy",
     "cookies":"Cookies Policy",
-    "notice":"Legal Notice"
+    "notice":"Legal Notice",
+    "logistics": "Logistics"
   },
   "home":{
     "heroH1":"Making technology <span>boost</span> your business<span>.</span>",
@@ -517,7 +518,7 @@
     "btnAccept":"ACCEPT",
     "btnDenie":"DECLINE"
   },
-  "services_v2":{
+  "cases-logistics":{
     "hero": {
       "suptitle":"Logosticts & fullfilment",
       "title": "Tech & logistics <span>consulting</span>",
