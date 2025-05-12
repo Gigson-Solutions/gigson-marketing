@@ -1,0 +1,173 @@
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+.border-nav {
+    width: 85%;
+    border-bottom: #3c3c3b 1px solid;
+    height: 3px;
+}
+
+.logo-header-hamburger {
+    margin: 0;
+    padding: 0;
+    width: 12rem;
+}
+
+.navbar-mobile {
+    display: flex;
+}
+
+#menuToggle {
+    display: none;
+    opacity: 0;
+}
+
+#menuToggle:checked ~ .menu-btn > span {
+    transform: rotate(45deg);
+}
+
+#menuToggle:checked ~ .menu-btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menuToggle:checked ~ .menu-btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menuToggle:checked ~ .menu-box--mobile {
+    visibility: visible;
+    right: 0;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 1.125rem;
+    height: 1.1875rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-dark-primary);
+    transition: 0.25s linear;
+}
+
+.menu-btn > span::before {
+    content: "";
+    top: -0.5rem;
+}
+
+.menu-btn > span::after {
+    content: "";
+    top: 0.5rem;
+}
+
+.menu-box--mobile {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    height: 100%;
+    font-size: 1.3em;
+    background-image: url("../../assets/mesh-gradient-v2.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    color: var(--color-dark-primary);
+    transition: 0.3s linear;
+}
+
+.menu-box--mobile ul.menu-items {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+@media (min-width: 24.375rem) {
+    .menu-box--mobile {
+        gap: 2.25rem;
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 65rem) {
+    .navbar-mobile {
+        display: none;
+    }
+}
+.menu-box--mobile .dropdown {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu-box--mobile .menu-item.has-dropdown .dropdown.visible {
+    display: flex;
+}
+
+.menu-box--mobile .dropdown .menu-item__child__link {
+    width: 100%;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 300;
+    padding-block: 8px;
+}
+
+.menu-box--mobile .dropdown .menu-item__child:first-child {
+    padding-top: 16px;
+}
+
+.menu-box--mobile .menu-item:has(  .menu-item__link.active),
+.menu-box--mobile .menu-item:has(  .menu-item__child__link.active) .menu-item__link {
+    background-color: var(--color-purple-accents);
+    color: #fff;
+}
+
+.menu-box--mobile .menu-item:has(  .menu-item__link.active),
+.menu-box--mobile .menu-item:has( .menu-item__child__link.active) .menu-item--chevron-down > path {
+    stroke: white;
+}
+
+.menu-box--mobile .menu-item:not(.has-dropdown) {
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.menu-box--mobile .menu-item__link {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    padding: 13px 24px;
+    border-radius: 100px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.menu-box--mobile .menu-item__child__link.active {
+    color: var(--color-purple-accents);
+}

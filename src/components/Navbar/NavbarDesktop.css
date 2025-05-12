@@ -1,0 +1,117 @@
+.navbar-desktop {
+    display: none;
+}
+
+.menu-box--desktop {
+    display: flex;
+    gap: 2.2rem;
+    font-size: 0.9625rem;
+    color: var(--color-dark-primary);
+}
+
+.menu-box--desktop ul.menu-items {
+    display: flex;
+    gap: 10px;
+}
+
+@media (min-width: 65rem) {
+    .navbar-desktop {
+        display: block;
+    }
+}
+
+@media (min-width: 90rem) {
+    .menu-box--desktop {
+        gap: 4.5rem;
+    }
+}
+
+.menu-box--desktop .menu-item {
+    display: inline-block;
+    color: var(--color-dark-primary);
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+    padding: 13px 24px;
+    border-radius: 100px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-box--desktop .menu-item__link {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.menu-box--desktop .menu-item:hover,
+.menu-box--desktop .has-dropdown.menu-item:hover {
+    background-color: transparent;
+    color: var(--color-purple-accents);
+}
+
+.menu-box--desktop .has-dropdown.menu-item:hover .menu-item--chevron-down > path {
+    stroke: var(--color-purple-accents);
+}
+
+.menu-box--desktop .menu-item:has(  .menu-item__link.active),
+.menu-box--desktop .menu-item:has(  .menu-item__child__link.active) {
+    background-color: var(--color-purple-accents);
+    color: #fff;
+}
+
+.menu-box--desktop .menu-item:has(  .menu-item__link.active),
+.menu-box--desktop .menu-item:has( .menu-item__child__link.active) .menu-item--chevron-down > path {
+    stroke: white;
+}
+
+@media (min-width: 1040px) and (max-width: 1240px) {
+    .menu-box--desktop .menu-item {
+        padding: 9px 14px;
+    }
+}
+
+@media (min-width: 65rem) {
+    .menu-box--desktop .menu-item {
+        font-size: 1.0625rem;
+        font-weight: 500;
+    }
+}
+
+.menu-box--desktop .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-purple-light-a);
+    border-radius: 0 0 16px 16px;
+    z-index: 10;
+    min-width: 193px;
+    overflow: hidden;
+}
+
+.menu-box--desktop .dropdown .menu-item__child:hover,
+.menu-box--desktop .menu-item__child__link.active {
+    background-color: var(--color-purple-light-b);
+}
+
+.menu-box--desktop .dropdown .menu-item__child:last-child {
+    border-radius: 0 0 16px 16px;
+}
+
+.menu-box--desktop .dropdown .menu-item__child__link {
+    width: 100%;
+    color: var(--color-purple-accents);
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 300;
+    padding: 16px;
+}
+
+.menu-box--desktop .menu-item:hover .dropdown {
+    display: flex;
+}

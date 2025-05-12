@@ -149,7 +149,7 @@ const UseCases = () => {
     const {t} = useTranslation();
     const {
         useCases: {cards, title, description},
-    } = t("services_v2");
+    } = t("cases-logistics");
 
     const [showDialog, setShowDialog] = useState(null);
 

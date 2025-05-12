@@ -3,12 +3,13 @@
     "about":"NOSOTROS",
     "services":"SERVICIOS",
     "news":"LANDING",
-    "cases":"CASOS",
+    "cases":"Casos",
     "faqs":"FAQs",
     "contact":"CONTÁCTANOS",
     "legal":"Política legal",
     "cookies":"Política de cookies",
-    "notice":"Aviso legal"
+    "notice":"Aviso legal",
+    "logistics": "Logística"
   },
   "home":{
     "heroH1":"Tecnología para <span>impulsar</span> tu negocio<span>.</span>",
@@ -517,7 +518,7 @@
     "btnAccept":"ACEPTAR",
     "btnDenie":"RECHAZAR"
   },
-  "services_v2":{
+  "cases-logistics":{
     "hero": {
       "suptitle":"Logística y fulfillment",
       "title": "Tecnología y consultoría <span>en logística</span>",

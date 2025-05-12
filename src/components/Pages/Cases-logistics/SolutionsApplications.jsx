@@ -23,7 +23,7 @@ const SolutionsApplications = () => {
             containers,
             subTitle
         },
-    } = t("services_v2");
+    } = t("cases-logistics");
 
     return (
         <section className="py-10 lg:py-25" style={{

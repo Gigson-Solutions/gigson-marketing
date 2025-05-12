@@ -211,7 +211,7 @@ const ImproveAreas = () => {
     const { t } = useTranslation();
     const {
         improveAreas: { title, painPoints, faqs, filtersText, filtersClearAllText, applyFiltersText },
-    } = t("services_v2");
+    } = t("cases-logistics");
 
     const {
         tempSelectedPainPoints,

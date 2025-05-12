@@ -5,12 +5,12 @@ import Services from "../components/Services/Services";
 import Cases from "../components/Pages/Cases/Cases";
 import Faqs from "../components/Pages/Faqs/Faqs";
 import Contact from "../components/Pages/Contact";
-import Landing from "../components/Pages/Landing/Landing";
+import CasesLogistics from "../components/Pages/Cases-logistics/Logistics";
 import NotFound from "../components/Pages/NotFound/NotFound";
 import Policity from "../components/Pages/Policity";
 import CookiesPage from "../components/Pages/CookiesPage";
 
-import { createBrowserRouter } from "react-router-dom";
+import {createBrowserRouter, Outlet} from "react-router-dom";
 import "../App.css";
 import Notice from "../components/Pages/Notice";
 
@@ -30,7 +30,17 @@ export const router = createBrowserRouter([
          },
          {
             path: "cases",
-            element: <Cases />,
+            element: <Outlet />,
+            children: [
+               {
+                  index: true,
+                  element: <Cases />,
+               },
+               {
+                  path: "tecnologia-logistica",
+                  element: <CasesLogistics />,
+               }
+            ]
          },
          {
             path: "about",
@@ -43,10 +53,6 @@ export const router = createBrowserRouter([
          {
             path: "contact",
             element: <Contact />,
-         },
-         {
-            path: "landing",
-            element: <Landing />,
          },
          {
             path: "policy",
