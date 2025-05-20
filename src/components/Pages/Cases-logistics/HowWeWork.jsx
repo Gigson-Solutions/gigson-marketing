@@ -1,4 +1,4 @@
-import logo from '../../../assets/FormasServices.png';
+import logo from '../../../assets/box.gif';
 import {useTranslation} from "react-i18next";
 
 
@@ -43,9 +43,9 @@ const HowWeWork = () => {
                 </h3>
 
                 <div className="flex flex-col lg:flex-row flex-wrap gap-10">
-                    <div className="bg-purple-light flex flex-col items-center justify-center flex-8 lg:order-2">
+                    <div className="flex flex-col items-center justify-center flex-8 lg:order-2">
                         <div className="flex justify-center items-center w-full h-full p-6">
-                            <img className="!block lg:max-w-[50%]" src={logo} alt="discover logo"/>
+                            <img className="!block" src={logo} alt="discover logo"/>
                         </div>
 
                         {firstMethod.map(({title, description}, index) => {
