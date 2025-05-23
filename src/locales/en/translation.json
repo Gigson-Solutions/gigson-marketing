@@ -520,14 +520,14 @@
   },
   "cases-logistics":{
     "hero": {
-      "suptitle":"Logosticts & fullfilment",
+      "suptitle":"LOGISTICS & FULFILLMENT",
       "title": "Tech & logistics <span>consulting</span>",
       "description": "Technology in logistics can be a challenge without the right guidance. At Gigson Solutions, we help you integrate seamless tech solutions, ensuring they fit the structure of your business.",
-      "buttonText": "Como podemos ayudarte"
+      "buttonText": "How we help"
     },
     "useCases": {
       "title": "Key cases",
-      "description": "Discover how we've helped companies solve complex logistics challenges through customized tech solutions. Each case reflects our commitment to efficiency, integration, and measurable results.",
+      "description": "Discover how we've helped companies solve complex logistics challenges through customized tech solutions. Each case reflects our commitment to efficiency, integration, and measurable results",
       "cards": [
         {
           "title": "Timesheet made easy with WhatsApp",
@@ -564,7 +564,7 @@
             ],
             "solutionText": "Solution",
             "solutionDescription": "We built a WhatsApp-based clock-in system that links directly to Martínez Marcos’s payroll software. The solution automates time tracking, removes manual errors, and guarantees compliance. Its ease of use boosted the clock-in completion rate to 100 %.",
-            "technologiesText": "Technologías",
+            "technologiesText": "Technologies",
             "technologies": [
               {
                 "title": "Chat",
@@ -862,7 +862,7 @@
                 "description": "Auto-generated reports that track system efficiency (kilometers driven, resources used, and time per delivery)."
               }
             ],
-            "technologiesText": "Tecnologías",
+            "technologiesText": "Technologies",
             "technologies": [
               {
                 "title": "TMS",
@@ -929,7 +929,7 @@
                 "description": "Evaluates alternative routes to identify potential emission and cost savings."
               }
             ],
-            "technologiesText": "Tecnologías",
+            "technologiesText": "Technologies",
             "technologies": [
               {
                 "title": "Emissions calculation",
@@ -980,7 +980,7 @@
                 "description": "Metrics on dock-door utilization and average loading/unloading times."
               }
             ],
-            "technologiesText": "Tecnologías",
+            "technologiesText": "Technologies",
             "technologies": [
               {
                 "title": "Front-end",
@@ -1043,7 +1043,7 @@
                 "description": "Generates visual reports for internal and external use."
               }
             ],
-            "technologiesText": "Tecnologías",
+            "technologiesText": "Technologies",
             "technologies": [
               {
                 "title": "Multimedia capture",
@@ -1106,7 +1106,7 @@
                 "description": "Logs of status changes, timestamps, and responsible parties for internal traceability and audits."
               }
             ],
-            "technologiesText": "Tecnologías",
+            "technologiesText": "Technologies",
             "technologies": [
               {
                 "title": "Workflow platform",
