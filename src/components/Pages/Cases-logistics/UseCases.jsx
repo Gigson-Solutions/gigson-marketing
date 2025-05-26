@@ -32,7 +32,7 @@ const Arrow = () => {
 const TitleBox = ({title, description}) => {
     return (
         <div className="md:col-span-2 lg:col-span-1 flex flex-col gap-4 text-right">
-            <h3 className="text-bigTag uppercase text-purple-accents">{title}</h3>
+            <h2 className="text-bigTag uppercase text-purple-accents">{title}</h2>
             <p className="text-body text-dark-primary">{description}</p>
         </div>
     )
