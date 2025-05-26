@@ -16,7 +16,7 @@ const Navbar = () => {
       {
          name: cases,
          children: [
-            { name: logistics, link: "/cases/tecnologia-logistica" }
+            { name: logistics, link: "/cases/logistics-technology" }
          ],
       },
       { name: about, link: "about" },
