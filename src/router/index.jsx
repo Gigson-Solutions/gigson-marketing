@@ -37,7 +37,7 @@ export const router = createBrowserRouter([
                   element: <Cases />,
                },
                {
-                  path: "tecnologia-logistica",
+                  path: "logistics-technology",
                   element: <CasesLogistics />,
                }
             ]
