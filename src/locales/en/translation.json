@@ -2,7 +2,7 @@
   "menu":{
     "services":"SERVICES",
     "news":"LANDING",
-    "cases":"Cases",
+    "cases":"CASES",
     "about":"ABOUT",
     "faqs":"FAQs",
     "contact":"CONTACT US",
@@ -15,7 +15,7 @@
     "heroH1":"Making technology <span>boost</span> your business<span>.</span>",
     "heroP":"BUILDING TAILORED SOFTWARE SOLUTIONS",
     "heroBtn":"CONTACT US",
-    "heroScroll":"GO DOWN TO EXPORE",
+    "heroScroll":"GO DOWN TO EXPLORE",
     "servicesTitle":"Tailored <span>solutions</span> for any business ·",
     "servicesP":{
       "p1":"We are focused to leverage the technology to  your business, connecting and making it secure to align needs and business goals.",
@@ -347,7 +347,7 @@
       "placeholder":"Service",
       "services":[
         "Software engineering services",
-        "Cibersecurity services",
+        "Cybersecurity services",
         "Consulting services"
       ]
     },
