@@ -9,16 +9,17 @@ import NavbarMobile from "./NavbarMobile.jsx";
 const Navbar = () => {
    const { t } = useTranslation();
 
-   const { about, services, cases, faqs, contact, news, logistics } = t("menu");
+   const { about, services, cases, faqs, contact, news, logistics, industries } = t("menu");
 
    const menuLinks = [
       { name: services, link: "services" },
       {
-         name: cases,
+         name: industries,
          children: [
-            { name: logistics, link: "/cases/logistics-technology" }
+            { name: logistics, link: "/industries/logistics-technology" }
          ],
       },
+      { name: cases, link: "cases" },
       { name: about, link: "about" },
       { name: faqs, link: "faqs" },
       { name: contact, link: "contact" },

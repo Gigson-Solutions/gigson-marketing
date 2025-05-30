@@ -20,18 +20,21 @@ const cardsAttributes = [
 ]
 
 
-const Card = ({title, imgSrc, description}) => {
-    return (<div className="h-full md:h-auto md:flex-1 flex flex-col gap-6 h-hull bg-purple-light-a rounded-lg p-4">
-        <div className="flex flex-wrap lg:flex-nowrap items-end justify-between gap-4 lg:gap-x-20">
-            <div className="w-full lg:w-auto">
-                <img src={imgSrc}
-                     className="!block max-h-[89px] max-w-[89px] lg:max-h-[120px] lg:max-w-[120px] object-contain opacity-40"
-                     alt={`${title}-img`}/>
+const Card = ({title, imgSrc, description, cardNr}) => {
+    return (
+        <div className="h-full md:h-auto md:flex-1 flex flex-col gap-6 h-hull bg-purple-light-a rounded-lg p-4">
+            <p className="text-smallTag text-dark-primary mb-10">{cardNr}</p>
+            <div className="flex flex-col gap-4 lg:gap-x-20">
+                <div className="w-full lg:w-auto">
+                    <img src={imgSrc}
+                         className="!block max-h-[89px] max-w-[89px] lg:max-h-[120px] lg:max-w-[120px] object-contain opacity-40"
+                         alt={`${title}-img`}/>
+                </div>
+                <h3 className="flex items-center text-h5 text-purple-accents max-w-1/2 min-h-[72px]">{title}</h3>
             </div>
-            <h3 className="text-h5 text-purple-accents">{title}</h3>
+            <p className="text-body text-[#737272]">{description}</p>
         </div>
-        <p className="text-body text-[#737272]">{description}</p>
-    </div>)
+    )
 }
 
 
@@ -64,7 +67,7 @@ const DigitalProduct = () => {
 
                     const { imgSrc} = cardsAttributes[index];
 
-                    return (<Card key={index} title={title} description={description} imgSrc={imgSrc}/>)
+                    return (<Card key={index} title={title} description={description} imgSrc={imgSrc} cardNr={index +1 }/>)
 
                 })}
             </div>
