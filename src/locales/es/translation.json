@@ -197,7 +197,7 @@
       ]
     },
     {
-      "title":"Configurador de Presupuestos",
+      "title":"Configurador de presupuestos",
       "challenge":"Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente. El objetivo era agilizar la creación de presupuestos, permitiendo diferentes configuraciones y aumentando el tiempo de procesado de la información con el fin de mejorar la toma de decisiones, justificaciones a cliente y la planificación financiera.",
       "features":[
         "Creación de presupuestos dinámicos basados en variables de proyecto como materiales, mano de obra, maquinaria y logística.",
@@ -731,13 +731,13 @@
           }
         },
         {
-          "title": "Configurador de Presupuestos",
+          "title": "Configurador de presupuestos",
           "supTitle": "Desafío",
           "buttonText": "Ver caso",
           "description": "Elaborar un sistema de cálculo de presupuestos personalizados que se integre de forma eficiente con el ERP existente (Holded) mediante API. El objetivo era agilizar la creación de presupuestos complejos, permitiendo diferentes configuraciones y simulaciones, para facilitar la toma de decisiones, justificar propuestas frente al cliente y mejorar la planificación financiera de proyectos en sectores como la construcción o la logística.",
           "dialog": {
             "backButtonText": "Casos de uso",
-            "title": "Configurador de Presupuestos",
+            "title": "Configurador de presupuestos",
             "quote": "",
             "challengeText": "Desafío",
             "challengeDescription": "Elaborar un sistema de cálculo de presupuestos personalizados que se integre de forma eficiente con el ERP existente (Holded) mediante API. El objetivo era agilizar la creación de presupuestos complejos, permitiendo diferentes configuraciones y simulaciones, para facilitar la toma de decisiones, justificar propuestas frente al cliente y mejorar la planificación financiera de proyectos en sectores como la construcción o la logística..",
