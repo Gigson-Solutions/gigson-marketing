@@ -5,7 +5,7 @@ import Services from "../components/Services/Services";
 import Cases from "../components/Pages/Cases/Cases";
 import Faqs from "../components/Pages/Faqs/Faqs";
 import Contact from "../components/Pages/Contact";
-import CasesLogistics from "../components/Pages/Cases-logistics/Logistics";
+import Logistics from "../components/Pages/Logistics/Logistics";
 import NotFound from "../components/Pages/NotFound/NotFound";
 import Policity from "../components/Pages/Policity";
 import CookiesPage from "../components/Pages/CookiesPage";
@@ -29,18 +29,18 @@ export const router = createBrowserRouter([
             element: <Services />,
          },
          {
-            path: "cases",
+            path: "industries",
             element: <Outlet />,
             children: [
                {
-                  index: true,
-                  element: <Cases />,
-               },
-               {
                   path: "logistics-technology",
-                  element: <CasesLogistics />,
+                  element: <Logistics />,
                }
             ]
+         },
+         {
+            path: "cases",
+            element: <Cases />,
          },
          {
             path: "about",

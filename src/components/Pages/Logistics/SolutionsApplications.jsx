@@ -6,7 +6,7 @@ const getCardNr = (index) => String(index).padStart(2, '0');
 
 const Card = ({title, description, cardNr, className}) => {
     return (
-        <div className={`flex-1 flex flex-col border-t border-t-dark-primary pb-4 md:pb-12 ${className}`}>
+        <div className={`flex-1 flex flex-col border-t-[0.5px] border-t-dark-primary pb-4 md:pb-12 ${className}`}>
             <span className="text-bigTag text-purple-accents">{cardNr}</span>
             <h4 className="text-h4 text-dark-primary md:mb-6">{title}</h4>
             <p className="hidden md:block text-body text-dark-medium">{description}</p>
