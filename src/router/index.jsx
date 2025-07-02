@@ -10,66 +10,41 @@ import NotFound from "../components/Pages/NotFound/NotFound";
 import Policity from "../components/Pages/Policity";
 import CookiesPage from "../components/Pages/CookiesPage";
 
-import {createBrowserRouter, Outlet} from "react-router-dom";
+import {createBrowserRouter, Navigate, Outlet} from "react-router-dom";
 import "../App.css";
 import Notice from "../components/Pages/Notice";
+import { ROUTE_SLUGS, DEFAULT_LANG } from "./routerSlugs"
+
+const generateRoutes = (lang) => {
+  const slugs = ROUTE_SLUGS[lang];
+  const langPrefix = lang === DEFAULT_LANG ? '' : `/${lang}`;
+
+  return {
+    path: langPrefix || '/',
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: slugs.services, element: <Services /> },
+      {
+        path: slugs.industries,
+        children: [
+          { path: slugs.logistics, element: <Logistics /> },
+        ],
+      },
+      { path: slugs.cases, element: <Cases /> },
+      { path: slugs.about, element: <AboutHero /> },
+      { path: slugs.faqs, element: <Faqs /> },
+      { path: slugs.contact, element: <Contact /> },
+      { path: slugs.policy, element: <Policity /> },
+      { path: slugs.notice, element: <Notice /> },
+      { path: slugs.cookies, element: <CookiesPage /> },
+      { path: '*', element: <NotFound /> },
+    ],
+  };
+};
 
 export const router = createBrowserRouter([
-   {
-      path: "/",
-      element: <Layout />, // Aquí ya se utiliza Layout
-      errorElement: <NotFound />,
-      children: [
-         {
-            path: "/",
-            element: <Home />,
-         },
-         {
-            path: "services",
-            element: <Services />,
-         },
-         {
-            path: "industries",
-            element: <Outlet />,
-            children: [
-               {
-                  path: "logistics-technology",
-                  element: <Logistics />,
-               }
-            ]
-         },
-         {
-            path: "cases",
-            element: <Cases />,
-         },
-         {
-            path: "about",
-            element: <AboutHero />,
-         },
-         {
-            path: "faqs",
-            element: <Faqs />,
-         },
-         {
-            path: "contact",
-            element: <Contact />,
-         },
-         {
-            path: "policy",
-            element: <Policity />,
-         },
-         {
-            path: "notice",
-            element: <Notice />,
-         },
-         {
-            path: "cookies",
-            element: <CookiesPage />,
-         },
-         {
-            path: "*",
-            element: <NotFound />,
-         },
-      ],
-   },
+   generateRoutes("en"),
+   generateRoutes("es"),
+   { path: "*", element: <NotFound /> },
 ]);

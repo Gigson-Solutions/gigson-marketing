@@ -5,14 +5,19 @@ import enTranslation from "../locales/en/translation.json";
 import esTranslation from "../locales/es/translation.json";
 
 i18n
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    .init({
-       debug: false,
-       fallbackLng: "en",
-       returnObjects: true,
-       resources: {
-          en: { translation: enTranslation },
-          es: { translation: esTranslation }
-       }
-    });
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    debug: false,
+    fallbackLng: "en",
+    returnObjects: true,
+    detection: {
+      order: ['path'],
+      lookupFromPathIndex: 0,
+      caches: []
+    },
+    resources: {
+      en: { translation: enTranslation },
+      es: { translation: esTranslation }
+    }
+  });
