@@ -3,6 +3,7 @@ import LanguageSelector from "../LanguageSelector/LanguageSelector.jsx";
 
 
 import "./NavbarDesktop.css";
+import { getLocalizedPath } from "../../shared/utils/getLocalizedPath.js";
 
 const ChevronDown = () => {
     return (
@@ -16,7 +17,6 @@ const ChevronDown = () => {
 
 const NavbarDesktop = ({ menu }) => {
 
-
     return (
         <nav className="navbar-desktop">
 
@@ -29,7 +29,7 @@ const NavbarDesktop = ({ menu }) => {
                             className={`menu-item ${children ? "has-dropdown" : ""}`}
                         >
                             {!children ? (
-                                <NavLink className="menu-item__link" to={link}>
+                                <NavLink className="menu-item__link" to={link} end>
                                     {name}
                                 </NavLink>
                             ) : (

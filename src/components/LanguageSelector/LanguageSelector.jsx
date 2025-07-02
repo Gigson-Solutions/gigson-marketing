@@ -1,29 +1,63 @@
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
+import { ROUTE_SLUGS, DEFAULT_LANG, SUPPORTED_LANGS } from "../../router/routerSlugs";
 
 const LanguageSelector = () => {
+   const location = useLocation();
+   const navigate = useNavigate();
    const { i18n } = useTranslation();
-   const changeLanguage = (lng) => {
-      i18n.changeLanguage(lng);
-   };
 
-   useEffect(() => {
-      document.documentElement.lang = i18n.language;
-   }, [i18n.language]);
+   const currentPath = location.pathname;
+   const segments = currentPath.split("/").filter(Boolean);
+
+   const currentLang = SUPPORTED_LANGS.includes(segments[0])
+      ? segments[0]
+      : DEFAULT_LANG;
+
+   const targetLang = currentLang === "en" ? "es" : "en";
+
+   const pathSegments = SUPPORTED_LANGS.includes(segments[0])
+      ? segments.slice(1)
+      : segments;
+
+   const sourceSlugs = ROUTE_SLUGS[currentLang];
+   const targetSlugs = ROUTE_SLUGS[targetLang];
+
+   const invertedSource = Object.entries(sourceSlugs).reduce((acc, [key, val]) => {
+      acc[val] = key;
+      return acc;
+   }, {});
+
+   const translatedSegments = pathSegments.map((seg) => {
+      const key = invertedSource[seg];
+      return key ? targetSlugs[key] : seg;
+   });
+
+   const newPath =
+      targetLang === DEFAULT_LANG
+         ? `/${translatedSegments.join("/")}`
+         : translatedSegments.join("/") === ""
+            ? `/${targetLang}`
+            :
+            `/${targetLang}/${translatedSegments.join("/")}`;
+
+   const switchLanguage = () => {
+      i18n.changeLanguage(targetLang);
+      document.documentElement.lang = i18n.language
+      navigate(newPath);
+   };
 
    return (
       <div style={{ display: "flex", alignItems: "center" }}>
-         <ul style={{ cursor: "pointer" }}>
-            <li className={i18n.language.includes("en") && "spam-lng"} onClick={() => changeLanguage("en")}>
-               EN
-            </li>
-         </ul>
-         <span style={{ marginInline: ".3rem" }}>/</span>
-         <ul style={{ cursor: "pointer" }}>
-            <li className={i18n.language.includes("es") && "spam-lng"} onClick={() => changeLanguage("es")}>
-               ES
-            </li>
-         </ul>
+         {SUPPORTED_LANGS.map((lang, index) => (
+            <div key={lang} className="flex items-center">
+               <button
+                  onClick={switchLanguage}
+                  className={`cursor-pointer uppercase ${lang === currentLang ? "spam-lng" : ""}`}
+               >{lang}</button>
+               {index < SUPPORTED_LANGS.length - 1 && <span className="mx-1">/</span>}
+            </div>
+         ))}
       </div>
    );
 };
