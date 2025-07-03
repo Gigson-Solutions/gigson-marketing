@@ -32,7 +32,7 @@ const CookieBanner = () => {
 
    return (
       <div className="cookie-banner">
-         <h2>{h2}</h2>
+         <p>{h2}</p>
          <p>{p}</p>
          <div className="cookie-buttons">
             <button onClick={handleAccept}>{btnAccept}</button>

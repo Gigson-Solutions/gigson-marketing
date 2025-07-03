@@ -25,12 +25,7 @@ const generateRoutes = (lang) => {
     children: [
       { index: true, element: <Home /> },
       { path: slugs.services, element: <Services /> },
-      {
-        path: slugs.industries,
-        children: [
-          { path: slugs.logistics, element: <Logistics /> },
-        ],
-      },
+      { path: slugs.logistics,element: <Logistics /> },
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },
