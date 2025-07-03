@@ -24,12 +24,7 @@ const Navbar = () => {
 
    const menuLinks = [
       { name: services, link: ROUTE_SLUGS[currentLang].services },
-      {
-         name: industries,
-         children: [
-            { name: logistics, link: `${ROUTE_SLUGS[currentLang].industries}/${ROUTE_SLUGS[currentLang].logistics}`},
-         ],
-      },
+      { name: logistics, link: ROUTE_SLUGS[currentLang].logistics },
       { name: cases, link: ROUTE_SLUGS[currentLang].cases },
       { name: about, link: ROUTE_SLUGS[currentLang].about },
       { name: faqs, link: ROUTE_SLUGS[currentLang].faqs },
@@ -38,15 +33,15 @@ const Navbar = () => {
 
 
    return (
-       <header className="header">
-          <div className="div-header">
-             <Link to="/">
-                <img className="logo-header" src={logoImg} alt="Logo Gigson Solutions" />
-             </Link>
-             <NavbarDesktop menu={menuLinks} />
-             <NavbarMobile menu={menuLinks} />
-          </div>
-       </header>
+      <header className="header">
+         <div className="div-header">
+            <Link to="/">
+               <img className="logo-header" src={logoImg} alt="Logo Gigson Solutions" />
+            </Link>
+            <NavbarDesktop menu={menuLinks} />
+            <NavbarMobile menu={menuLinks} />
+         </div>
+      </header>
    );
 };
 
