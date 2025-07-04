@@ -32,7 +32,7 @@ const Arrow = () => {
 const TitleBox = ({title, description}) => {
     return (
         <div className="md:col-span-2 lg:col-span-1 flex flex-col gap-4 text-right">
-            <h2 className="text-bigTag uppercase text-purple-accents">{title}</h2>
+            <p className="text-bigTag uppercase text-purple-accents">{title}</p>
             <p className="text-body text-dark-primary">{description}</p>
         </div>
     )
@@ -48,7 +48,7 @@ const Card = ({title, logoSrc, isLastCard, supTitle, description, buttonText, di
         <div
             className="h-full md:h-auto md:flex-1 flex flex-col gap-11 lg:last:col-span-2 bg-white rounded-lg p-6 lg:last:[&_h3]:min-h-[126px]">
             <img src={logoSrc} className="!block max-h-[141px] ml-auto" alt={`${title}-img`}/>
-            <h3 className="text-h4 text-[28px] min-h-[126px] text-dark-primary">{title}</h3>
+            <span className="text-h4 text-[28px] min-h-[126px] text-dark-primary">{title}</span>
             <div className="flex flex-row flex-wrap items-start gap-8">
                 <div className="flex-1">
                     <div className="flex items-center gap-2 justify-between mb-2">
