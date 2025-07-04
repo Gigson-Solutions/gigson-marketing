@@ -19,7 +19,8 @@ const Hero = () => {
                     <Trans
                         i18nKey={title}
                         components={{
-                            span: <span className="text-purple-accents" />
+                            span: <span className="text-purple-accents" />,
+                            br: <br />
                         }}
                     />
                 </h1>

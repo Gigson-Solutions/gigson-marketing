@@ -234,7 +234,7 @@ const ImproveAreas = () => {
             <div className="pt-14 lg:pt-40 pb-6 lg:pb-20">
                 <div className="max-w-8xl mx-auto px-landing flex flex-col">
                     <div className="flex flex-row items-center justify-between mb-4 md:mb-6">
-                        <h3 className="text-bigTag uppercase text-purple-accents">{title}</h3>
+                        <span className="text-bigTag uppercase text-purple-accents">{title}</span>
                         {hasMultipleFilters && (
                             <div className="hidden md:block">
                                 <ResetFiltersButton onClick={resetFilters} text={filtersClearAllText} />
