@@ -13,6 +13,7 @@ const Logistics = () => {
     const { t } = useTranslation();
 
     const { title, metadescription} = t("cases-logistics");
+
     return (
         <>
             <Helmet>

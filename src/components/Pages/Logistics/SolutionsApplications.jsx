@@ -34,14 +34,14 @@ const SolutionsApplications = () => {
         }}>
             <div className="max-w-8xl mx-auto px-landing flex flex-col text-dark-primary">
                 <div className="mb-6 lg:mb-10">
-                    <h3 className="text-h2 text-dark-primary mb-4">
+                    <h2 className="text-h2 text-dark-primary mb-4">
                         <Trans
                             i18nKey={title}
                             components={{
                                 span: <span className="text-purple-accents" />
                             }}
                         />
-                    </h3>
+                    </h2>
                     <p className="text-subtitle text-dark-primary">{subTitle}</p>
                 </div>
 
@@ -63,7 +63,7 @@ const SolutionsApplications = () => {
                                     <div
                                         className={`bg-gradient-to-b from-[#7874F4] to-[#5E5BC6] text-white px-2 md:px-4 py-8 rounded-t-4xl rounded-b-lg mb-6 md:mb-0  ${mainCardClass}`}>
                                         <p className="text-smallTag uppercase">{type}</p>
-                                        <p className="text-h3 mb-4 md:mb-0">{cardNr}. {title}</p>
+                                        <h3 className="text-h3 mb-4 md:mb-0">{cardNr}. {title}</h3>
                                         <p className="md:hidden px-2 text-bigTag md:mt-10">{description}</p>
                                     </div>
                                     <div className="flex flex-col gap-12 col-span-2">
