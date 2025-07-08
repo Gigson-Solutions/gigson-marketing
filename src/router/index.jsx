@@ -9,6 +9,7 @@ import Logistics from "../components/Pages/Logistics/Logistics";
 import NotFound from "../components/Pages/NotFound/NotFound";
 import Policity from "../components/Pages/Policity";
 import CookiesPage from "../components/Pages/CookiesPage";
+import Technology from "../components/Pages/Technology/Technology";
 
 import {createBrowserRouter, Navigate, Outlet} from "react-router-dom";
 import "../App.css";
@@ -29,6 +30,7 @@ const generateRoutes = (lang) => {
         path: slugs.industries,
         children: [
           { path: slugs.logistics, element: <Logistics /> },
+          { path: slugs.technology, element: <Technology />},
         ],
       },
       { path: slugs.cases, element: <Cases /> },
