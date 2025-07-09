@@ -1,5 +1,5 @@
-import Hero from "./Hero.jsx";
-import UseCases from "./UseCases.jsx";
+import Hero from "../../../shared/ui/Hero.jsx";
+import UseCases from "../../../shared/ui/UseCases.jsx";
 import useCasesBgGradient from '../../../assets/casos-de-uso-bg-gradient-1.svg';
 
 import SolutionsApplications from "../../../shared/ui/SolutionsApplications.jsx";
@@ -12,14 +12,21 @@ import { useTranslation } from "react-i18next";
 const Logistics = () => {
     const { t } = useTranslation();
 
-    const { title, metadescription} = t("cases-logistics");
+    const { title, metadescription, suptitle,  description, buttonText} = t("cases-logistics");
+     
     return (
         <>
             <Helmet>
                 <title>{title}</title>
                 <meta name="description" content={metadescription} />
             </Helmet>
-            <Hero />
+            <Hero
+                Title= {title}
+                Suptitle={suptitle}
+                Description={description}
+                ButtonText={buttonText}
+             
+            />
             <section style={{
                 backgroundImage: `url(${useCasesBgGradient}`,
                 backgroundPosition: 'center center',
