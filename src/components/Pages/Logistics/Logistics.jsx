@@ -1,7 +1,6 @@
-
+import Hero from "../../../shared/ui/Hero.jsx";
 import UseCases from "../../../shared/ui/UseCases.jsx";
 import useCasesBgGradient from '../../../assets/casos-de-uso-bg-gradient-1.svg';
-import Hero from "../../../shared/ui/Hero.jsx";
 
 import SolutionsApplications from "../../../shared/ui/SolutionsApplications.jsx";
 import ImproveAreas from "../../../shared/ui/ImproveAreas.jsx";
@@ -22,7 +21,7 @@ const Logistics = () => {
             br: <br />
         }}
     />
-
+     
     return (
         <>
             <Helmet>
@@ -47,3 +46,4 @@ const Logistics = () => {
 };
 
 export default Logistics;
+
