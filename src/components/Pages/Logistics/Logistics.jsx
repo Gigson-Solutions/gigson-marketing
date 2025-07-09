@@ -2,10 +2,10 @@ import Hero from "./Hero.jsx";
 import UseCases from "./UseCases.jsx";
 import useCasesBgGradient from '../../../assets/casos-de-uso-bg-gradient-1.svg';
 
-import SolutionsApplications from "./SolutionsApplications.jsx";
-import ImproveAreas from "./ImproveAreas.jsx";
-import HowWeWork from "./HowWeWork.jsx";
-import DigitalProduct from "./DigitalProduct.jsx";
+import SolutionsApplications from "../../../shared/ui/SolutionsApplications.jsx";
+import ImproveAreas from "../../../shared/ui/ImproveAreas.jsx";
+import HowWeWork from "../../../shared/ui/HowWeWork.jsx";
+import DigitalProduct from "../../../shared/ui/DigitalProduct.jsx";
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from "react-i18next";
 

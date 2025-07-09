@@ -1,4 +1,4 @@
-import solutionsApplicationsBgGradient from '../../../assets/solutions-applications-bg-gradients-1.svg';
+import solutionsApplicationsBgGradient from '../../assets/solutions-applications-bg-gradients-1.svg';
 import {Trans, useTranslation} from "react-i18next";
 
 

@@ -1,4 +1,4 @@
-import logo from '../../../assets/FormasServices.png';
+import logo from '../../assets/FormasServices.png';
 import {useTranslation} from "react-i18next";
 
 
