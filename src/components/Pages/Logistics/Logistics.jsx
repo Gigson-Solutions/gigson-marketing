@@ -19,11 +19,11 @@ const Logistics = () => {
     const Title =  <Trans
                         i18nKey={hero.title}
                         components={{
-                            span: <span className="block text-purple-accents" />
+                            span: <span className="text-purple-accents" />,
+                            br: <br />
                         }}
                     />
      
-                    console.log('Title: ', Title)
     return (
         <>
             <Helmet>
