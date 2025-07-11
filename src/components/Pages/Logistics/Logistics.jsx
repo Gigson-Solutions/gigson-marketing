@@ -7,28 +7,36 @@ import ImproveAreas from "../../../shared/ui/ImproveAreas.jsx";
 import HowWeWork from "../../../shared/ui/HowWeWork.jsx";
 import DigitalProduct from "../../../shared/ui/DigitalProduct.jsx";
 import { Helmet } from 'react-helmet-async'
-import { Trans, useTranslation } from "react-i18next";
-
+import {Trans, useTranslation } from "react-i18next";
 const Logistics = () => {
     const { t } = useTranslation();
+    
 
-    const { title, metadescription, hero } = t("cases-logistics");
+    const { title, metadescription, hero} = t("cases-logistics");
+    const { suptitle, description, buttonText } = hero;
+    console.log('logistic: ', title, buttonText)
 
-    const Title = <Trans
-        i18nKey={hero.title}
-        components={{
-            span: <span className="text-purple-accents" />,
-            br: <br />
-        }}
-    />
+    const Title =  <Trans
+                        i18nKey={hero.title}
+                        components={{
+                            span: <span className="block text-purple-accents" />
+                        }}
+                    />
      
+                    console.log('Title: ', Title)
     return (
         <>
             <Helmet>
                 <title>{title}</title>
                 <meta name="description" content={metadescription} />
             </Helmet>
-            <Hero title={Title} description={hero.description} suptitle={hero.suptitle} buttonText={hero.buttonText}/>
+            <Hero
+                title={Title}
+                suptitle={suptitle}
+                description={description}
+                buttonText={buttonText}
+             
+            />
             <section style={{
                 backgroundImage: `url(${useCasesBgGradient}`,
                 backgroundPosition: 'center center',
