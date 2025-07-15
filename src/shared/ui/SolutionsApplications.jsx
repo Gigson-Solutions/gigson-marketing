@@ -1,10 +1,10 @@
 import solutionsApplicationsBgGradient from '../../assets/solutions-applications-bg-gradients-1.svg';
-import {Trans, useTranslation} from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 
 const getCardNr = (index) => String(index).padStart(2, '0');
 
-const Card = ({title, description, cardNr, className}) => {
+const Card = ({ title, description, cardNr, className }) => {
     return (
         <div className={`flex-1 flex flex-col border-t-[0.5px] border-t-dark-primary pb-4 md:pb-12 ${className}`}>
             <span className="text-bigTag text-purple-accents">{cardNr}</span>
@@ -14,16 +14,7 @@ const Card = ({title, description, cardNr, className}) => {
     )
 }
 
-const SolutionsApplications = () => {
-
-    const {t} = useTranslation();
-    const {
-        solutionsApplications: {
-            title,
-            containers,
-            subTitle
-        },
-    } = t("cases-logistics");
+const SolutionsApplications = ({ title, subTitle, containers }) => {
 
     return (
         <section className="py-10 lg:py-25" style={{
@@ -46,7 +37,7 @@ const SolutionsApplications = () => {
                 </div>
 
                 <div className="flex flex-col gap-y-10">
-                    {containers?.map(({title, description, type, cards}, index) => {
+                    {containers?.map(({ title, description, type, cards }, index) => {
 
                         const isPairContainer = (index + 1) % 2 === 0;
 
@@ -69,23 +60,23 @@ const SolutionsApplications = () => {
                                     <div className="flex flex-col gap-12 col-span-2">
                                         <p className="hidden md:block text-bigTag md:mt-10">{description}</p>
                                         <div className="flex flex-col md:flex-row gap-6">
-                                            {initialTwoCards.map(({title, description}, index) => {
+                                            {initialTwoCards.map(({ title, description }, index) => {
                                                 const cardNr = getCardNr(index + 1);
 
                                                 return (
                                                     <Card key={index} title={title} description={description}
-                                                          cardNr={cardNr}/>
+                                                        cardNr={cardNr} />
                                                 )
                                             })}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="flex flex-col md:grid md:grid-cols-3 gap-6">
-                                    {remainingCards.map(({title, description}, index) => {
+                                    {remainingCards.map(({ title, description }, index) => {
                                         const flexCardIndex = index + 3;
                                         const cardNr = getCardNr(flexCardIndex)
 
-                                        const isLongCard = flexCardIndex % 6 === 0;
+                                        const isLongCard = flexCardIndex % 6 === 0 || remainingCards.length === 1;
 
                                         return (
                                             <Card

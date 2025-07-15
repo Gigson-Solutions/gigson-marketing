@@ -7,23 +7,22 @@ import ImproveAreas from "../../../shared/ui/ImproveAreas.jsx";
 import HowWeWork from "../../../shared/ui/HowWeWork.jsx";
 import DigitalProduct from "../../../shared/ui/DigitalProduct.jsx";
 import { Helmet } from 'react-helmet-async'
-import {Trans, useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 const Logistics = () => {
     const { t } = useTranslation();
-    
 
-    const { title, metadescription, hero} = t("cases-logistics");
+
+    const { title, metadescription, hero, solutionsApplications } = t("cases-logistics");
     const { suptitle, description, buttonText } = hero;
-    console.log('logistic: ', title, buttonText)
 
-    const Title =  <Trans
-                        i18nKey={hero.title}
-                        components={{
-                            span: <span className="text-purple-accents" />,
-                            br: <br />
-                        }}
-                    />
-     
+    const Title = <Trans
+        i18nKey={hero.title}
+        components={{
+            span: <span className="text-purple-accents" />,
+            br: <br />
+        }}
+    />
+
     return (
         <>
             <Helmet>
@@ -35,7 +34,7 @@ const Logistics = () => {
                 suptitle={suptitle}
                 description={description}
                 buttonText={buttonText}
-             
+
             />
             <section style={{
                 backgroundImage: `url(${useCasesBgGradient}`,
@@ -46,7 +45,7 @@ const Logistics = () => {
                 <UseCases />
                 <ImproveAreas />
             </section>
-            <SolutionsApplications />
+            <SolutionsApplications title={solutionsApplications.title} subTitle={solutionsApplications.subTitle} containers={solutionsApplications.containers} />
             <HowWeWork />
             <DigitalProduct />
         </>
