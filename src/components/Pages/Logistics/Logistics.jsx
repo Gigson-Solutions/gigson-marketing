@@ -1,18 +1,17 @@
-import Hero from "./Hero.jsx";
-import UseCases from "./UseCases.jsx";
+import Hero from "../../../shared/ui/Hero.jsx";
+import UseCases from "../../../shared/ui/UseCases.jsx";
 import useCasesBgGradient from '../../../assets/casos-de-uso-bg-gradient-1.svg';
 
-import SolutionsApplications from "./SolutionsApplications.jsx";
-import ImproveAreas from "./ImproveAreas.jsx";
-import HowWeWork from "./HowWeWork.jsx";
-import DigitalProduct from "./DigitalProduct.jsx";
+import SolutionsApplications from "../../../shared/ui/SolutionsApplications.jsx";
+import ImproveAreas from "../../../shared/ui/ImproveAreas.jsx";
+import HowWeWork from "../../../shared/ui/HowWeWork.jsx";
+import DigitalProduct from "../../../shared/ui/DigitalProduct.jsx";
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from "react-i18next";
-
 const Logistics = () => {
     const { t } = useTranslation();
 
-    const { title, metadescription} = t("cases-logistics");
+    const { title, metadescription, hero, solutionsApplications, useCases, improveAreas, howWeWork, digitalProduct } = t("cases-logistics");
 
     return (
         <>
@@ -20,21 +19,22 @@ const Logistics = () => {
                 <title>{title}</title>
                 <meta name="description" content={metadescription} />
             </Helmet>
-            <Hero />
+            <Hero {...hero}/>
             <section style={{
                 backgroundImage: `url(${useCasesBgGradient}`,
                 backgroundPosition: 'center center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover'
             }}>
-                <UseCases />
-                <ImproveAreas />
+                <UseCases {...useCases} />
+                <ImproveAreas {...improveAreas} />
             </section>
-            <SolutionsApplications />
-            <HowWeWork />
-            <DigitalProduct />
+            <SolutionsApplications {...solutionsApplications} />
+            <HowWeWork {...howWeWork} />
+            <DigitalProduct {...digitalProduct}/>
         </>
     )
 };
 
 export default Logistics;
+

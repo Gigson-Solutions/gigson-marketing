@@ -3,12 +3,12 @@ import {Pagination} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import imgOne from '../../../assets/digital-product-img-1.png';
-import imgTwo from '../../../assets/digital-product-img-2.png';
-import imgThree from '../../../assets/digital-product-img-3.png';
+import imgOne from '../../assets/digital-product-img-1.png';
+import imgTwo from '../../assets/digital-product-img-2.png';
+import imgThree from '../../assets/digital-product-img-3.png';
 
-import {ButtonIconLink} from "../../../shared/ui/ButtonIcon.jsx";
-import {ButtonLink} from "../../../shared/ui/Button.jsx";
+import {ButtonIconLink} from "./ButtonIcon.jsx";
+import {ButtonLink} from "./Button.jsx";
 import {Trans, useTranslation} from "react-i18next";
 
 const buttonLink = '/contact';
@@ -38,14 +38,7 @@ const Card = ({title, imgSrc, description, cardNr}) => {
 }
 
 
-const DigitalProduct = () => {
-
-    const {t} = useTranslation();
-    const {
-        digitalProduct: {
-            title, buttonText, description, cards
-        },
-    } = t("cases-logistics");
+const DigitalProduct = ({ title, buttonText, description, cards }) => {
 
     return (<section className="py-14 lg:py-40">
         <div

@@ -1,6 +1,4 @@
-import logo from '../../../assets/FormasServices.png';
-import {useTranslation} from "react-i18next";
-
+import logo from '../../assets/FormasServices.png';
 
 const Method = ({ title, description, isInnerMethod, isFirstCard}) => {
     const boxClass = `${isInnerMethod ? 'flex lg:hidden border-dark-primary self-start' : 'border-white'} ${isFirstCard ? 'hidden lg:flex' : 'flex'}`;
@@ -26,13 +24,7 @@ const Method = ({ title, description, isInnerMethod, isFirstCard}) => {
     )
 }
 
-const HowWeWork = () => {
-
-    const {t} = useTranslation();
-    const {
-        howWeWork: {title, methods},
-    } = t("cases-logistics");
-
+const HowWeWork = ({title, methods}) => {
     const firstMethod = methods.slice(0, 1);
 
     return (

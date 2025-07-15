@@ -1,10 +1,10 @@
-import {useEffect, useState} from "react";
-import {Trans, useTranslation} from "react-i18next";
-import Dialog from "../../../shared/ui/Dialog.jsx";
-import { Button } from "../../../shared/ui/Button.jsx";
-import {FaqsAccordion} from "../Faqs/FaqsAccordion/FaqsAccordion.jsx";
-import chevronDownIcon from "../../../assets/chevron-down.svg";
-import timesCircleIcon from "../../../assets/times-circle.svg";
+import {useState} from "react";
+import {Trans} from "react-i18next";
+import Dialog from "./Dialog.jsx";
+import { Button } from "./Button.jsx";
+import {FaqsAccordion} from "../../components/Pages/Faqs/FaqsAccordion/FaqsAccordion.jsx";
+import chevronDownIcon from "../../assets/chevron-down.svg";
+import timesCircleIcon from "../../assets/times-circle.svg";
 
 const useFaqVisibility = (painPoints) => {
     const defaultPainPoints = painPoints.map((point) => point.type);
@@ -207,12 +207,7 @@ const ResetFiltersButton = ({ onClick, text }) => {
     );
 };
 
-const ImproveAreas = () => {
-    const { t } = useTranslation();
-    const {
-        improveAreas: { title, painPoints, faqs, filtersText, filtersClearAllText, applyFiltersText },
-    } = t("cases-logistics");
-
+const ImproveAreas = ({ title, painPoints, faqs, filtersText, filtersClearAllText, applyFiltersText }) => {
     const {
         tempSelectedPainPoints,
         selectedPainPoints,

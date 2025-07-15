@@ -2,19 +2,19 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Pagination} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import "../../slider.css";
+import "../../components/slider.css";
 
-import iconOne from '../../../assets/use-cases-icon-1.svg';
-import iconTwo from '../../../assets/use-cases-icon-2.svg';
-import iconThree from '../../../assets/use-cases-icon-3.svg';
-import iconFour from '../../../assets/use-cases-icon-4.svg';
-import iconBlockquote from '../../../assets/usecases-blockquote-icon.svg';
+import iconOne from '../../assets/use-cases-icon-1.svg';
+import iconTwo from '../../assets/use-cases-icon-2.svg';
+import iconThree from '../../assets/use-cases-icon-3.svg';
+import iconFour from '../../assets/use-cases-icon-4.svg';
+import iconBlockquote from '../../assets/usecases-blockquote-icon.svg';
 
-import {ButtonIcon} from "../../../shared/ui/ButtonIcon.jsx";
-import {Button} from "../../../shared/ui/Button.jsx";
-import {Trans, useTranslation} from "react-i18next";
+import {ButtonIcon} from "./ButtonIcon.jsx";
+import {Button} from "./Button.jsx";
+import {Trans} from "react-i18next";
 import {useState} from "react";
-import Dialog from "../../../shared/ui/Dialog.jsx";
+import Dialog from "./Dialog.jsx";
 
 const cardsIcons = [iconOne, iconTwo, iconThree, iconFour];
 
@@ -144,18 +144,10 @@ const DialogContent = ({ backButtonText, title, challengeText, challengeDescript
     )
 }
 
-const UseCases = () => {
-
-    const {t} = useTranslation();
-    const {
-        useCases: {cards, title, description},
-    } = t("cases-logistics");
-
+const UseCases = ({cards, title, description}) => {
     const [showDialog, setShowDialog] = useState(null);
 
     const handleOnCloseDialog = () => setShowDialog(null);
-
-
     return (
             <>
                 <div className="pt-12 lg:pt-40 pb-14 lg:pb-0">
