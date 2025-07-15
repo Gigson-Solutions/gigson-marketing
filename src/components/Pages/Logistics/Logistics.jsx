@@ -7,7 +7,7 @@ import ImproveAreas from "../../../shared/ui/ImproveAreas.jsx";
 import HowWeWork from "../../../shared/ui/HowWeWork.jsx";
 import DigitalProduct from "../../../shared/ui/DigitalProduct.jsx";
 import { Helmet } from 'react-helmet-async'
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 const Logistics = () => {
     const { t } = useTranslation();
 
