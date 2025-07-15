@@ -1,18 +1,39 @@
 import solutionsApplicationsBgGradient from '../../assets/solutions-applications-bg-gradients-1.svg';
-import { Trans, useTranslation } from "react-i18next";
-
+import { Trans } from "react-i18next";
+import { useState } from "react";
+import chevronDownIcon from "../../assets/chevron-down.svg";
 
 const getCardNr = (index) => String(index).padStart(2, '0');
 
 const Card = ({ title, description, cardNr, className }) => {
     return (
-        <div className={`flex-1 flex flex-col border-t-[0.5px] border-t-dark-primary pb-4 md:pb-12 ${className}`}>
+        <div className={`hidden flex-1 md:flex flex-col border-t-[0.5px] border-t-dark-primary pb-4 md:pb-12 ${className}`}>
             <span className="text-bigTag text-purple-accents">{cardNr}</span>
             <h4 className="text-h4 text-dark-primary md:mb-6">{title}</h4>
-            <p className="hidden md:block text-body text-dark-medium">{description}</p>
+            <p className="block text-body text-dark-medium">{description}</p>
         </div>
     )
 }
+
+const CardMobile = ({ title, description, cardNr, className }) => {
+    const [open, setOpen] = useState(false);
+    return (
+        <div className={`md:hidden flex-1 flex flex-col border-t-[0.5px] border-t-dark-primary pb-4 md:pb-12 ${className}`}>
+            <button onClick={() => setOpen(prev => !prev)} className="cursor-pointer flex">
+                <div className='flex flex-col gap-2 text-left'>
+                    <span className="text-bigTag text-purple-accents">{cardNr}</span>
+                    <div className='flex items-center gap-2'>
+                        <h4 className="text-h4 text-dark-primary">{title}</h4>
+                        <img src={chevronDownIcon} alt="chevron down icon" className={`h-7 transition-transform ${open ? 'rotate-180' : ''}`} />
+                    </div>
+                    <p className={`${open ? 'block' : 'hidden'} text-body text-dark-medium`}>{description}</p>
+
+                </div>
+            </button>
+        </div>
+    )
+};
+
 
 const SolutionsApplications = ({ title, subTitle, containers }) => {
 
@@ -63,15 +84,18 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
                                             {initialTwoCards.map(({ title, description }, index) => {
                                                 const cardNr = getCardNr(index + 1);
 
-                                                return (
-                                                    <Card key={index} title={title} description={description}
+                                                return (<div key={index}>
+                                                    <Card title={title} description={description}
                                                         cardNr={cardNr} />
+                                                    <CardMobile key={index} title={title} description={description}
+                                                        cardNr={cardNr} />
+                                                </div>
                                                 )
                                             })}
                                         </div>
                                     </div>
                                 </div>
-                                <div className="flex flex-col md:grid md:grid-cols-3 gap-6">
+                                <div className={`flex flex-col md:grid ${remainingCards.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'}  gap-6`}>
                                     {remainingCards.map(({ title, description }, index) => {
                                         const flexCardIndex = index + 3;
                                         const cardNr = getCardNr(flexCardIndex)
