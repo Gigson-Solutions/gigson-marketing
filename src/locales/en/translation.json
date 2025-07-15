@@ -1171,6 +1171,48 @@
             }
           ]
         },
+          {
+          "title": "Route and last‑mile optimisation",
+          "description": "Efficient transport and distribution are vital for faster deliveries and lower operating costs. Smart route planning and last‑mile management get the most out of every trip and lift the end‑customer experience. We design and integrate tech solutions for this:",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Route‑optimisation software",
+              "description": "Smart route planning cuts delivery times and logistics costs. We deploy advanced optimisation tools and real‑time data analysis to keep in‑house transport as efficient as possible."
+            },
+            {
+              "title": "Last‑mile resource management via digital WhatsApp Business",
+              "description": "Last‑mile delivery needs flexible, accessible tools. We weave WhatsApp communication into the process to tighten coordination among drivers, customers and warehouses, making it easy to track deliveries and solve issues fast."
+            },
+            {
+              "title": "Tech solutions for reverse logistics",
+              "description": "Reverse logistics handles returns, recycling and relocation efficiently. We roll out digital solutions that automate and streamline the returns process."
+            },
+            {
+              "title": "Last‑mile process automation  ",
+              "description": "From auto‑assigning drivers to fine‑tuning delivery schedules, last‑mile automation boosts productivity and cuts errors. We integrate systems that make deliveries more efficient and demand‑responsive."
+            }
+          ]
+        },
+          {
+          "title": "Warehouse efficiency and automation",
+          "description": "Thanks to warehouse technology and automation, we can speed up the flow of goods and keep inventory under tighter control.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Custom warehouse‑management software",
+              "description": "Using tailored or specialized software lets you handle receiving, storage and shipping smoothly. It streamlines product location, stock checks and real‑time traceability."
+            },
+            {
+              "title": "Automation with AGVs, AMRs and mobile robots",
+              "description": "Autonomous transport systems improve movement inside the warehouse. Smart tech gives you more accurate load handling and cuts operating times sharply."
+            },
+            {
+              "title": "Warehouse optimisation",
+              "description": "Re‑thinking space and processes boosts warehouse performance. From redesigning the layout to adding pick‑to‑light or voice‑picking tools, every tweak makes logistics run more smoothly."
+            }
+          ]
+        },
         {
           "title": "Process digitalization",
           "description": "Digital transformation in logistics not only improves operational efficiency but also facilitates strategic decision-making. Digitalization allows for centralized information, reduces reliance on manual processes, and improves communication across departments.",
