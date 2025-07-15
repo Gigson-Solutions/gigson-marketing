@@ -22,7 +22,7 @@ const CardMobile = ({ title, description, cardNr, className }) => {
             <button onClick={() => setOpen(prev => !prev)} className="cursor-pointer flex">
                 <div className='flex flex-col gap-2 text-left'>
                     <span className="text-bigTag text-purple-accents">{cardNr}</span>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center justify-between gap-2'>
                         <h4 className="text-h4 text-dark-primary">{title}</h4>
                         <img src={chevronDownIcon} alt="chevron down icon" className={`h-7 transition-transform ${open ? 'rotate-180' : ''}`} />
                     </div>
