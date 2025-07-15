@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import {Trans, useTranslation} from "react-i18next";
+import {useState} from "react";
+import {Trans} from "react-i18next";
 import Dialog from "./Dialog.jsx";
 import { Button } from "./Button.jsx";
 import {FaqsAccordion} from "../../components/Pages/Faqs/FaqsAccordion/FaqsAccordion.jsx";
@@ -207,12 +207,7 @@ const ResetFiltersButton = ({ onClick, text }) => {
     );
 };
 
-const ImproveAreas = () => {
-    const { t } = useTranslation();
-    const {
-        improveAreas: { title, painPoints, faqs, filtersText, filtersClearAllText, applyFiltersText },
-    } = t("cases-logistics");
-
+const ImproveAreas = ({ title, painPoints, faqs, filtersText, filtersClearAllText, applyFiltersText }) => {
     const {
         tempSelectedPainPoints,
         selectedPainPoints,

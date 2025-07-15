@@ -38,14 +38,7 @@ const Card = ({title, imgSrc, description, cardNr}) => {
 }
 
 
-const DigitalProduct = () => {
-
-    const {t} = useTranslation();
-    const {
-        digitalProduct: {
-            title, buttonText, description, cards
-        },
-    } = t("cases-logistics");
+const DigitalProduct = ({ title, buttonText, description, cards }) => {
 
     return (<section className="py-14 lg:py-40">
         <div

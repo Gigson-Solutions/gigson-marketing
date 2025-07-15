@@ -11,17 +11,7 @@ import { Trans, useTranslation } from "react-i18next";
 const Logistics = () => {
     const { t } = useTranslation();
 
-
-    const { title, metadescription, hero, solutionsApplications } = t("cases-logistics");
-    const { suptitle, description, buttonText } = hero;
-
-    const Title = <Trans
-        i18nKey={hero.title}
-        components={{
-            span: <span className="text-purple-accents" />,
-            br: <br />
-        }}
-    />
+    const { title, metadescription, hero, solutionsApplications, useCases, improveAreas, howWeWork, digitalProduct } = t("cases-logistics");
 
     return (
         <>
@@ -29,25 +19,19 @@ const Logistics = () => {
                 <title>{title}</title>
                 <meta name="description" content={metadescription} />
             </Helmet>
-            <Hero
-                title={Title}
-                suptitle={suptitle}
-                description={description}
-                buttonText={buttonText}
-
-            />
+            <Hero {...hero}/>
             <section style={{
                 backgroundImage: `url(${useCasesBgGradient}`,
                 backgroundPosition: 'center center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover'
             }}>
-                <UseCases />
-                <ImproveAreas />
+                <UseCases {...useCases} />
+                <ImproveAreas {...improveAreas} />
             </section>
-            <SolutionsApplications title={solutionsApplications.title} subTitle={solutionsApplications.subTitle} containers={solutionsApplications.containers} />
-            <HowWeWork />
-            <DigitalProduct />
+            <SolutionsApplications {...solutionsApplications} />
+            <HowWeWork {...howWeWork} />
+            <DigitalProduct {...digitalProduct}/>
         </>
     )
 };

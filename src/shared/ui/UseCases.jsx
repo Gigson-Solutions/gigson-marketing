@@ -12,7 +12,7 @@ import iconBlockquote from '../../assets/usecases-blockquote-icon.svg';
 
 import {ButtonIcon} from "./ButtonIcon.jsx";
 import {Button} from "./Button.jsx";
-import {Trans, useTranslation} from "react-i18next";
+import {Trans} from "react-i18next";
 import {useState} from "react";
 import Dialog from "./Dialog.jsx";
 
@@ -144,18 +144,10 @@ const DialogContent = ({ backButtonText, title, challengeText, challengeDescript
     )
 }
 
-const UseCases = () => {
-
-    const {t} = useTranslation();
-    const {
-        useCases: {cards, title, description},
-    } = t("cases-logistics");
-
+const UseCases = ({cards, title, description}) => {
     const [showDialog, setShowDialog] = useState(null);
 
     const handleOnCloseDialog = () => setShowDialog(null);
-
-
     return (
             <>
                 <div className="pt-12 lg:pt-40 pb-14 lg:pb-0">
