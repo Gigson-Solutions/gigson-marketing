@@ -7,11 +7,9 @@ import NavbarDesktop from "./NavbarDesktop.jsx";
 import NavbarMobile from "./NavbarMobile.jsx";
 import { ROUTE_SLUGS, DEFAULT_LANG, SUPPORTED_LANGS } from "../../router/routerSlugs.js";
 
-
 const Navbar = () => {
    const { t } = useTranslation();
    const location = useLocation();
-   const { i18n } = useTranslation();
 
    const currentPath = location.pathname;
    const segments = currentPath.split("/").filter(Boolean);
@@ -20,17 +18,16 @@ const Navbar = () => {
       ? segments[0]
       : DEFAULT_LANG;
 
-   const { about, services, cases, faqs, contact, news, logistics, industries } = t("menu");
+   const { about, services, cases, faqs, contact, industries, logistics } = t("menu");
 
    const menuLinks = [
       { name: services, link: ROUTE_SLUGS[currentLang].services },
-      { name: logistics, link: ROUTE_SLUGS[currentLang].logistics },
+      { name: industries, children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics },] },
       { name: cases, link: ROUTE_SLUGS[currentLang].cases },
       { name: about, link: ROUTE_SLUGS[currentLang].about },
       { name: faqs, link: ROUTE_SLUGS[currentLang].faqs },
       { name: contact, link: ROUTE_SLUGS[currentLang].contact },
    ];
-
 
    return (
       <header className="header">
