@@ -524,7 +524,7 @@
     "metadescription": "Optimiza tu cadena logística con soluciones tecnológicas a medida: más eficiencia, trazabilidad y control sin depender de grandes integradores.",
     "hero": {
       "suptitle":"LOGÍSTICA Y FULFILLMENT",
-      "title": "<span>Tecnología</span>  en logística <br/> y consultoría de <span>intralogística</span> ",
+      "title": "<span>Tecnología</span> en logística <br/> y consultoría de <span>intralogística</span> ",
       "description": "La tecnología en logística puede ser un desafío si no se cuenta con el asesoramiento adecuado. En Gigson Solutions, te ayudamos a integrar soluciones tecnológicas sin fricciones, asegurando que se adapten a la estructura del negocio.",
       "buttonText": "Como podemos ayudarte"
     },
@@ -1168,6 +1168,52 @@
             {
               "title": "Automatización de procesos y ciberseguridad",
               "description": "Reduce errores humanos y mejora la productividad en almacenes y centros de distribución. Además, garantizamos un entorno seguro con soluciones a medida en ciberseguridad, protegiendo la infraestructura tecnológica y los datos críticos de la empresa."
+            }
+          ]
+        },
+        {
+          "title": "Digitalización de procesos",
+          "description": "La transformación digital en logística no solo mejora la eficiencia operativa, sino que también facilita la toma de decisiones estratégicas. La digitalización permite centralizar la información, reducir la dependencia de procesos manuales y mejorar la comunicación entre todas las áreas de la empresa.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Transformación digital y soluciones omnicanal",
+              "description": "Mejor sincronización entre sus canales de venta, distribución y atención al cliente. La digitalización permite gestionar pedidos de manera integrada, optimizar la cadena de suministro y mejorar la experiencia del usuario final."
+            },
+            {
+              "title": "Gemelos digitales",
+              "description": "La implementación de gemelos digitales en logística permite crear réplicas virtuales de almacenes, centros de distribución y procesos operativos. Con esta tecnología, es posible simular escenarios, predecir fallos y optimizar operaciones antes de su ejecución en el mundo real."
+            },
+            {
+              "title": "Administración logística virtual",
+              "description": "La gestión de la cadena de suministro a través de soluciones virtuales permite un control preciso de los flujos de mercancías y recursos, además de monitorizar inventarios, coordinar envíos y optimizar procesos en tiempo real."
+            },
+            {
+              "title": "Gestión de empleados",
+              "description": "Como consultoría logística y tecnológica, la digitalización también impacta en la gestión de personal. Sistemas de control de tareas, planificación de turnos y análisis de productividad permiten una asignación más eficiente de los recursos humanos."
+            },
+            {
+              "title": "Consultoría tecnológica",
+              "description": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar, implementar y optimizar herramientas digitales que se alineen con los objetivos del negocio, asegurando un crecimiento sostenible y escalable."
+            }
+          ]
+        },
+         {
+          "title": "Eficiencia y automatización de almacenes",
+          "description": "Gracias a la implementación de tecnología y automatización en almacenes podemos optimizar el flujo de mercancías y mejorar la gestión del inventario.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Desarrollo de software para la gestión de almacenes",
+              "description": "El uso de software especializado o a medida permite controlar de manera eficiente la recepción, almacenamiento y distribución de mercancías. Se optimizan procesos como la ubicación de productos, el control de stock y la trazabilidad en tiempo real."
+            },
+            {
+              "title": "Automatización con AGV, AMR y robótica móvil",
+              "description": "Los sistemas de transporte autónomos mejoran la movilidad dentro del almacén, un uso de la tecnología eficiente permite una mayor precisión en la manipulación de cargas y una reducción significativa en los tiempos de operación."
+            },
+            {
+              "title": "Optimización de almacenes",
+              "description": "La implementación de estrategias de optimización de espacios y procesos permite mejorar el rendimiento de los almacenes. Desde la reorganización del layout hasta la integración de tecnologías como pick-to-light y voice picking, cada mejora contribuye a una mayor eficiencia en la gestión logística."
             }
           ]
         },

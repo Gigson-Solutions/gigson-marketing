@@ -3,7 +3,6 @@ import LanguageSelector from "../LanguageSelector/LanguageSelector.jsx";
 
 
 import "./NavbarDesktop.css";
-import { getLocalizedPath } from "../../shared/utils/getLocalizedPath.js";
 
 const ChevronDown = () => {
     return (
