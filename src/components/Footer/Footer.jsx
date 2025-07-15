@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-policy">
-               <span href="">Developed by gigson © 2024 </span>
+               <span href="">Developed by Gigson © 2024 </span>
                <ul className="footer-policy-links">
                   <li>
                      <Link to="/policy">{legal}</Link>
