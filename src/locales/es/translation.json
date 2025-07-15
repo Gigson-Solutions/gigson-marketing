@@ -1172,29 +1172,25 @@
           ]
         },
         {
-          "title": "Digitalización de procesos",
-          "description": "La transformación digital en logística no solo mejora la eficiencia operativa, sino que también facilita la toma de decisiones estratégicas. La digitalización permite centralizar la información, reducir la dependencia de procesos manuales y mejorar la comunicación entre todas las áreas de la empresa.",
+          "title": "Optimización de rutas y última milla",
+          "description": ".La eficiencia en el transporte y la distribución es clave para mejorar los tiempos de entrega y reducir costos operativos en la logística. La optimización de rutas y la gestión de la última milla permiten maximizar el rendimiento de cada trayecto, y mejorar la experiencia del cliente final. Desarrollamos e integramos soluciones tecnológicas para ello:",
           "type": "Aplicación",
           "cards": [
             {
-              "title": "Transformación digital y soluciones omnicanal",
-              "description": "Mejor sincronización entre sus canales de venta, distribución y atención al cliente. La digitalización permite gestionar pedidos de manera integrada, optimizar la cadena de suministro y mejorar la experiencia del usuario final."
+              "title": "Desarrollo e integración de software de optimización de rutas",
+              "description": "La planificación de rutas inteligentes permite reducir tiempos de entrega y costes logísticos. Implementamos software avanzado de optimización de rutas, y análisis de datos en tiempo real, para garantizar la máxima eficiencia intralogística."
             },
             {
-              "title": "Gemelos digitales",
-              "description": "La implementación de gemelos digitales en logística permite crear réplicas virtuales de almacenes, centros de distribución y procesos operativos. Con esta tecnología, es posible simular escenarios, predecir fallos y optimizar operaciones antes de su ejecución en el mundo real."
+              "title": "Gestión de recursos en última milla a través de WhatsApps digitales",
+              "description": "La última milla es un desafío logístico que requiere soluciones flexibles y accesibles. Integramos herramientas de comunicación en WhatsApp para mejorar la coordinación entre transportistas, clientes y almacenes, facilitando el seguimiento de entregas y la resolución rápida de incidencias."
             },
             {
-              "title": "Administración logística virtual",
-              "description": "La gestión de la cadena de suministro a través de soluciones virtuales permite un control preciso de los flujos de mercancías y recursos, además de monitorizar inventarios, coordinar envíos y optimizar procesos en tiempo real."
+              "title": "Soluciones tecnológicas para logística inversa",
+              "description": "La logística inversa es esencial para gestionar devoluciones, reciclaje y reubicación de productos de manera eficiente. Implementamos soluciones digitales que automatizan y optimizan los procesos de devolución."
             },
             {
-              "title": "Gestión de empleados",
-              "description": "Como consultoría logística y tecnológica, la digitalización también impacta en la gestión de personal. Sistemas de control de tareas, planificación de turnos y análisis de productividad permiten una asignación más eficiente de los recursos humanos."
-            },
-            {
-              "title": "Consultoría tecnológica",
-              "description": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar, implementar y optimizar herramientas digitales que se alineen con los objetivos del negocio, asegurando un crecimiento sostenible y escalable."
+              "title": "Automatización de procesos de última milla",
+              "description": "Desde la asignación automática de repartidores hasta la optimización de tiempos de entrega, la automatización en última milla permite aumentar la productividad y minimizar errores. Integramos sistemas para gestionar entregas de forma más eficiente y adaptada a la demanda."
             }
           ]
         },
