@@ -29,6 +29,9 @@ const Construction = () => {
                 <UseCases {...useCases} />
                 <ImproveAreas {...improveAreas} />
             </section>
+            <SolutionsApplications {...solutionsApplications} />
+            <HowWeWork {...howWeWork} />
+            <DigitalProduct {...digitalProduct}/>
           
         </>
     )
