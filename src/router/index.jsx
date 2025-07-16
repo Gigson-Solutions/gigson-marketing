@@ -13,6 +13,18 @@ import CTO from '../components/Pages/CTO/CTO';
 import ConsultoriaTec from '../components/Pages/ConsultoriaTec/ConsultoriaTec';
 import Software from '../components/Pages/Software/Software';
 import Cibersecurity from '../components/Pages/Cibersecurity/Cibersecurity';
+import Layout from "../components/Layout/Layout";
+import Home from "../components/Home/Home";
+import AboutHero from "../components/About/AboutHero";
+import Services from "../components/Services/Services";
+import Cases from "../components/Pages/Cases/Cases";
+import Faqs from "../components/Pages/Faqs/Faqs";
+import Contact from "../components/Pages/Contact";
+import Logistics from "../components/Pages/Logistics/Logistics";
+import NotFound from "../components/Pages/NotFound/NotFound";
+import Policity from "../components/Pages/Policity";
+import CookiesPage from "../components/Pages/CookiesPage";
+import Construction from "../components/Pages/Construction/Construction";
 
 import {Navigate, Outlet, createBrowserRouter} from 'react-router-dom';
 import '../App.css';
@@ -34,6 +46,7 @@ const generateRoutes = (lang) => {
       {path: slugs.software, element: <Software/>},
       { path: slugs.ConsultoriaTec,element: <ConsultoriaTec/> },
       { path: slugs.cibersecurity,element: <Cibersecurity/> },
+      { path: slugs.construction,element: <Construction /> },
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },

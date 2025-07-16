@@ -14,7 +14,8 @@
     "CTO" : "CTO as a service",
     "software": "Ingenieria software",
     "tech_consulting": "Consultoría tecnologica",
-    "cibersecurity" : "Ciberseguridad"
+    "cibersecurity" : "Ciberseguridad",
+    "construction": "tecnologia-construccion"
   },
   "hero_link": "/es/contacto",
   "home":{
@@ -2714,6 +2715,8 @@
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
         }
       ]
+      "description": "Digitalizar una constructora no es solo implantar un software de gestión de obras: es alinear herramientas, procesos y equipos. En Gigson Solutions, te ayudamos a integrar tecnología sin fricciones, adaptada a los ritmos, retos y particularidades del sector construcción.nes, asegurando que se adapten a la estructura del negocio. ",
+      "buttonText": "Como podemos ayudarte"
     }
   }
 }
