@@ -10,7 +10,8 @@
     "legal":"Legal Policy",
     "cookies":"Cookies Policy",
     "notice":"Legal Notice",
-    "logistics": "Logistics"
+    "logistics": "Logistics",
+    "construction": "construction-technology"
   },
   "home":{
     "heroH1":"Making technology <span>boost</span> your business<span>.</span>",
@@ -1282,5 +1283,10 @@
         }
       ]
     }
+  },
+  "cases-construction" :{
+    "title": "Logistics & Intralogistics Technology  | Gigson Solutions",
+    "metadescription": "Optimize your supply chain with tailored tech solutions: greater efficiency, traceability, and control—no need for big-name integrators."
+   
   }
 }

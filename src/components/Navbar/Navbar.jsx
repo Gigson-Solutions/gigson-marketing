@@ -18,11 +18,12 @@ const Navbar = () => {
       ? segments[0]
       : DEFAULT_LANG;
 
-   const { about, services, cases, faqs, contact, industries, logistics } = t("menu");
+   const { about, services, cases, faqs, contact, industries, logistics, construction } = t("menu");
 
    const menuLinks = [
       { name: services, link: ROUTE_SLUGS[currentLang].services },
-      { name: industries, children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics },] },
+      { name: industries, children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics },
+                                     { name: construction, link: ROUTE_SLUGS[currentLang].construction } ] },
       { name: cases, link: ROUTE_SLUGS[currentLang].cases },
       { name: about, link: ROUTE_SLUGS[currentLang].about },
       { name: faqs, link: ROUTE_SLUGS[currentLang].faqs },
