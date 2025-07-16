@@ -30,7 +30,7 @@ const Card = ({title, imgSrc, description, cardNr}) => {
                          className="!block max-h-[89px] max-w-[89px] lg:max-h-[120px] lg:max-w-[120px] object-contain opacity-40"
                          alt={`${title}-img`}/>
                 </div>
-                <h3 className="flex items-center text-h5 text-purple-accents max-w-1/2 min-h-[72px]">{title}</h3>
+                <p className="flex items-center text-h5 text-purple-accents max-w-1/2 min-h-[72px]">{title}</p>
             </div>
             <p className="text-body text-[#737272]">{description}</p>
         </div>
@@ -44,14 +44,14 @@ const DigitalProduct = ({ title, buttonText, description, cards }) => {
         <div
             className="max-w-8xl mx-auto px-landing">
             <div className="mb-15 flex items-baseline flex-col md:flex-row flex-wrap gap-6">
-                <h3 className="max-w-[800px] text-h2 text-dark-primary md:order-1 md:mr-auto">
+                <p className="max-w-[800px] text-h2 text-dark-primary md:order-1 md:mr-auto">
                     <Trans
                         i18nKey={title}
                         components={{
                             span: <span className="text-purple-accents"/>
                         }}
                     />
-                </h3>
+                </p>
                 <p className="text-subtitle text-dark-primary md:order-3">{description}</p>
                 <ButtonLink link={buttonLink} className="md:order-2" text={buttonText} outlined/>
             </div>
