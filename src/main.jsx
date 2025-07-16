@@ -6,14 +6,16 @@ import { useTranslation } from 'react-i18next'
 import { HelmetProvider } from 'react-helmet-async'
 import './i18n/i18n.jsx'
 
+const LANGS = ['en', 'es'];
+
 const AppWrapper = () => {
   const { i18n } = useTranslation();
 
   React.useEffect(() => {
-    if (!i18n.language) {
+    const lang = i18n.language;
+    if (!LANGS.includes(lang)) {
       i18n.changeLanguage('en');
     }
-
     document.documentElement.lang = i18n.language;
 
   }, [i18n])
