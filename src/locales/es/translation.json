@@ -1563,100 +1563,96 @@
       "painPoints": [
         {
           "type": "A",
-          "name": "Optimización de recursos"
+          "name": "Gestion de inventarios"
         },
         {
           "type": "B",
-          "name": "Automatización procesos manuales"
+          "name": "Gestión manual de presupuestos"
         },
         {
           "type": "C",
-          "name": "Sostenibilidad"
+          "name": "Visibilidad en operaciones"
         },
         {
           "type": "D",
-          "name": "Visibilidad de datos"
+          "name": "Sostenibilidad"
         },
         {
           "type": "E",
-          "name": "Cumplir regulación"
+          "name": "Optimización de procesos manuales"
+        },
+        {
+          "type": "F",
+          "name": "Optimización de rutas y recursos"
+        },
+        {
+          "type": "G",
+          "name": "Eficiencia en el almacén"
+        },
+        {
+          "type": "H",
+          "name": "Integración de herramientas"
         }
       ],
       "faqs": [
         {
           "types": ["A", "B", "C"],
-          "question": "Asignación de rutas sin complicaciones: más rápido, más eficiente",
+          "question": "Automatización de la gestión de tarifas y productos de proveedores",
           "answer": {
-            "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento, manual y propenso a errores. La directora de operaciones debía analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
+            "challengeDescription": "Esteba Maderas trabaja con proveedores variados que envían sus tarifas y catálogos en formatos diferentes, como PDF o Excel. La actualización manual de precios y la introducción de nuevos productos en el ERP genera errores, consume tiempo y retrasa la generación de presupuestos precisos",
             "solutionText": "Solución",
-            "solutionDescription": "Diseñamos un sistema integrado que automatiza la asignación de rutas y recursos al cruzar datos de disponibilidad del personal y de la flota con las características de cada entrega. Este sistema optimiza la capacidad de carga, prioriza entregas según la urgencia y garantiza que las asignaciones cumplan con normativas de descanso y seguridad. Los resultados: una reducción del 25% en el tiempo dedicado a la planificación, una mejora del 15% en la utilización de recursos y un 20% más de entregas puntuales.",
+            "solutionDescription": "Implementamos un sistema que automatiza la extracción de datos de tarifas y catálogos, conectándolo directamente al ERP de Esteba Maderas. Esto permitió reducir los tiempos de actualización en un 70% y garantizar que las tarifas y productos estén siempre actualizados en la herramienta de generación de presupuestos. Además, los errores en los precios ofrecidos a los clientes disminuyeron en un 40%.",
             "functionalitiesText": "Funcionalidades",
             "functionalities": [
               {
-                "title": "Disponibilidad del personal",
-                "description": "Sistema automatizado que tiene en cuenta horarios, descansos y certificaciones con la flota disponible según tipos de vehículos, capacidad de carga y estado operativo."
+                "title": "",
+                "description": "Parseo automatizado de documentos: Herramienta que extrae información de tarifas y catálogos en PDF o Excel para convertirlos en datos estructurados."
               },
               {
-                "title": "Asignación de rutas",
-                "description": "Gestión de rutas según el <span>volumen y tipo de entrega</span> (tamaño del pedido, mudanza, mercancías peligrosas, etc.)."
+                "title": "",
+                "description": "Integración directa con el ERP: Actualización automática de precios, productos y condiciones comerciales en el sistema de gestión."
               },
               {
-                "title": "Notificaciones",
-                "description": "Generación de notificaciones automáticas para los conductores y gestores una vez asignadas las rutas."
+                "title": "",
+                "description": "Validación previa de datos: Interfaz que permite revisar y aprobar los datos parseados antes de la actualización final."
               },
               {
-                "title": "Panel de control",
-                "description": "Dashboard en tiempo real que permite reprogramar rutas en caso de imprevistos (estrado del tráfico, prioridades de última hora, averías, etc.)."
+                "title": "",
+                "description": "Sincronización con la herramienta de presupuestos: Conexión entre los precios actualizados y la herramienta de generación de presupuestos dinámicos, asegurando precisión en las ofertas al cliente."
               },
               {
-                "title": "Optimización de la carga del vehículo",
-                "description": "Ajustar automáticamente el tipo y número de vehículos asignados según el volumen total y peso de las entregas, maximizando la capacidad de carga."
-              },
-              {
-                "title": "Automatización de reportes de productividad",
-                "description": "Reportes automáticos que miden la eficiencia del sistema (kilómetros recorridos, recursos utilizados y tiempo por entrega)."
+                "title": "",
+                "description": "Notificaciones automáticas: Alertas sobre cambios importantes en tarifas o condiciones para mantener a los equipos informados."
               }
             ],
             "technologiesText": "Tecnologías",
             "technologies": [
               {
-                "title": "TMS",
-                "description": "Geotab & Google Maps API"
+                "title": "Odoo",
+                "description": "como sistema ERP para la administración centralizada de la empresa."
               },
               {
-                "title": "RRHH",
-                "description": "Personio"
+                "title": "Prestashop",
+                "description": "para la gestión de contenidos y tiendas online."
               },
               {
-                "title": "ERP",
-                "description": "Holded"
+                "title": "Huboo",
+                "description": "como sistema de gestión de logística y envíos."
               },
               {
-                "title": "Front-end",
-                "description": "React"
+                "title": "Amazon Selling Central",
+                "description": "para la integración con el marketplace de Amazon."
               },
               {
-                "title": "Back-end",
-                "description": "Node.js + Python"
-              },
-              {
-                "title": "Base de datos",
-                "description": "PostgreSQL"
-              },
-              {
-                "title": "Notificaciones",
-                "description": "WhatsApp Business API"
-              },
-              {
-                "title": "Reporting",
-                "description": "Looker"
+                "title": "Google Looker",
+                "description": "para análisis de datos y reportes avanzados."
               }
             ]
           }
         },
         {
           "types": ["B", "C", "D"],
-          "question": "Transparencia en cada kilómetro",
+          "question": "Logística sostenible y reducción de emisiones con portal de cliente",
           "answer": {
             "challengeDescription": "Con una flota en crecimiento, nuestro cliente buscaba reducir su huella de carbono para cumplir con objetivos internos de sostenibilidad, mejorar su imagen frente a clientes B2B y reguladores, y proporcionar transparencia en sus operaciones. Sin herramientas para calcular emisiones, optimizar rutas y ofrecer reportes detallados a los clientes, las operaciones del transporte eran ineficiencientes y sin visibilidad.",
             "solutionText": "Solución",
@@ -1711,7 +1707,7 @@
         },
         {
           "types": ["A", "D"],
-          "question": "Reduce los tiempos muertos: organiza, optimiza, entrega",
+          "question": "Automatización de la gestión de tarifas y productos de proveedores",
           "answer": {
             "challengeDescription": "Normalmente, los transportistas se enfrentan tiempos de espera prolongados para cargar y descargar, lo que afecta la productividad y genera costos adicionales. La falta de una gestión eficiente en los puntos de carga provoca saturaciones y retrasos.",
             "solutionText": "Solución",
@@ -1766,7 +1762,7 @@
         },
         {
           "types": ["B", "D", "E"],
-          "question": "Acceso total para tus clientes: transparencia y confianza en cada entrega",
+          "question": "Logística sostenible y reducción de emisiones con portal de cliente",
           "answer": {
             "challengeDescription": "El proceso de recepción de mobiliario de lujo se enfrentaba a problemas en la validación del estado, calidad y características del producto. La falta de evidencias en la recepción y manipulación de productos dificultaban las reclamaciones con proveedores y aseguradoras y generaba problemas logísticos. Además, los clientes no tenían acceso directo a información visual y registros sobre el estado de los productos.",
             "solutionText": "Solución",
@@ -1833,7 +1829,172 @@
         },
         {
           "types": ["B"],
-          "question": "Centralización de órdenes de trabajo para operaciones complejas",
+          "question": "Automatización de la gestión de tarifas y productos de proveedores",
+          "answer": {
+            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Plataforma centralizada de órdenes",
+                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
+              },
+              {
+                "title": "Flujos de trabajo visuales",
+                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
+              },
+              {
+                "title": "Actualización automática de estados",
+                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
+              },
+              {
+                "title": "Alertas inteligentes",
+                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
+              },
+              {
+                "title": "Historial completo de actividad",
+                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Plataforma de flujos de trabajo",
+                "description": "Trello-like custom (React + DnD libraries)"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL en AWS"
+              },
+              {
+                "title": "Automatización de notificaciones",
+                "description": "Firebase Cloud Messaging + email (SendGrid)"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B"],
+          "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+          "answer": {
+            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Plataforma centralizada de órdenes",
+                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
+              },
+              {
+                "title": "Flujos de trabajo visuales",
+                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
+              },
+              {
+                "title": "Actualización automática de estados",
+                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
+              },
+              {
+                "title": "Alertas inteligentes",
+                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
+              },
+              {
+                "title": "Historial completo de actividad",
+                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Plataforma de flujos de trabajo",
+                "description": "Trello-like custom (React + DnD libraries)"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL en AWS"
+              },
+              {
+                "title": "Automatización de notificaciones",
+                "description": "Firebase Cloud Messaging + email (SendGrid)"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B"],
+          "question": "Automatización de la gestión de tarifas y productos de proveedores",
+          "answer": {
+            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Plataforma centralizada de órdenes",
+                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
+              },
+              {
+                "title": "Flujos de trabajo visuales",
+                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
+              },
+              {
+                "title": "Actualización automática de estados",
+                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
+              },
+              {
+                "title": "Alertas inteligentes",
+                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
+              },
+              {
+                "title": "Historial completo de actividad",
+                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Plataforma de flujos de trabajo",
+                "description": "Trello-like custom (React + DnD libraries)"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL en AWS"
+              },
+              {
+                "title": "Automatización de notificaciones",
+                "description": "Firebase Cloud Messaging + email (SendGrid)"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B"],
+          "question": "Automatización de la gestión de tarifas y productos de proveedores",
           "answer": {
             "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
             "solutionText": "Solución",
@@ -1889,108 +2050,106 @@
         ]
     },
     "solutionsApplications": {
-      "title": "Soluciones y aplicación de <span>tecnología en las operaciones logísticas</span>",
-      "subTitle": "La digitalización y automatización permite alcanzar una eficiencia logística superior. Así podemos optimizar o integrar la tecnología en logística de tu empresa.",
+      "title": "Transformación y digitalización <span> de la construcción </span>",
+      "subTitle": "Trabajamos con constructoras porque no solo entendemos las herramientas, también entendemos los problemas propios de un sector con muchas particularidades, personal muy cualificado, con una gran barrera tecnológica, donde cuesta cambiar, y donde se dedica demasiado tiempo a procesos repetitivos que no aportan valor. Aportamos nuestra experiencia como consultora tecnológica para ayudarte a integrar soluciones digitales que se adapten a tu forma de trabajar, no al revés.",
       "containers": [
         {
-          "title": "Desarrollo e integración de software",
-          "description": "Integración de software en logística y desarrollo de soluciones tecnológicas a medida que aseguran la fluidez necesaria con los sistemas existentes y maximiza el rendimiento de la infraestructura. Algunos ejemplos:",
+          "title": "Desarrollo e integración de software para constructoras",
+          "description": "La tecnología sólo funciona si se adapta a los procesos reales de tu empresa. Diseñamos e integramos software teniendo en cuenta cómo se gestiona una obra en la práctica: con equipos diversos, cambios constantes, plazos ajustados y herramientas que muchas veces no se comunican entre sí. Nuestro objetivo es ayudarte a conectar y optimizar tus sistemas para que todo fluya.",
           "type": "Aplicación",
           "cards": [
             {
-              "title": "Implementación de software WMS/TMS/SGA",
-              "description": "Sistema automatizado que cruza la disponibilidad de la plantilla (horarios, descansos y certificaciones) con la flota disponible (tipos de vehículos, capacidad de carga y estado operativo)."
+              "title": "Integración de ERP, BIM y herramientas de gestión de obra ",
+              "description": "Unificamos tus sistemas para que puedas planificar, ejecutar y controlar desde un único entorno conectado. Integramos herramientas como ERP, BIM y software de planificación para que la información fluya sin duplicidades ni errores."
             },
             {
-              "title": "Desarrollo de software a medida para logística",
-              "description": "Cada empresa tiene necesidades logísticas únicas. Desarrollamos soluciones personalizadas, adaptadas a la estructura del negocio y diseñadas para mejorar la gestión de la cadena de suministro, la optimización de rutas y la automatización de procesos."
+              "title": "Desarrollo de software a medida para planificación, ejecución y control",
+              "description": "Creamos soluciones a medida cuando los productos estándar no se ajustan a tus necesidades. Desde aplicaciones internas hasta herramientas de control de avance o dashboards de obra, desarrollamos tecnología con foco en el uso real y el retorno operativo."
             },
             {
-              "title": "Integración de ERP y sistemas de gestión logística",
-              "description": "Clave para centralizar la información y mejorar la toma de decisiones. Unificamos datos y procesos, permitiendo una visión global del negocio y optimizando la gestión de recursos."
+              "title": "Conexión entre herramientas como Presto, Revit, MS Project o Navisworks",
+              "description": "Hacemos que tus herramientas actuales trabajen juntas. Automatizamos el intercambio de datos entre Presto, Revit, MS Project y otras plataformas para evitar tareas manuales, errores de versión y pérdida de información."
             },
             {
-              "title": "Implementación de RFID y tecnologías de trazabilidad",
-              "description": "Las tecnologías de trazabilidad mejoran la precisión en la gestión de inventario, reduce pérdidas y aumenta la eficiencia en toda la cadena de suministro."
-            },
-            {
-              "title": "Aplicación de inteligencia artificial en la logística",
-              "description": "Optimizar la planificación logística, para maximizar el rendimiento de cada fase del proceso logístico."
-            },
-            {
-              "title": "Automatización de procesos y ciberseguridad",
-              "description": "Reduce errores humanos y mejora la productividad en almacenes y centros de distribución. Además, garantizamos un entorno seguro con soluciones a medida en ciberseguridad, protegiendo la infraestructura tecnológica y los datos críticos de la empresa."
+              "title": "Soluciones personalizadas para digitalizar procesos o coordinar proyectos",
+              "description": "Analizamos tus flujos y diseñamos soluciones específicas para mejorar la coordinación entre equipos, la trazabilidad de decisiones o la supervisión de proyectos desde la oficina, la obra o el móvil"
             }
           ]
         },
         {
-          "title": "Optimización de rutas y última milla",
-          "description": ".La eficiencia en el transporte y la distribución es clave para mejorar los tiempos de entrega y reducir costos operativos en la logística. La optimización de rutas y la gestión de la última milla permiten maximizar el rendimiento de cada trayecto, y mejorar la experiencia del cliente final. Desarrollamos e integramos soluciones tecnológicas para ello:",
+          "title": "Control de costes, planificación eficiente y gestión de obras",
+          "description": "En construcción, el margen está en los detalles: saber con precisión cuánto cuesta cada fase, si se están cumpliendo los plazos y qué impacto tiene cada cambio. La tecnología puede darte ese control, pero solo si está bien implementada y adaptada a tu forma de trabajar. Te ayudamos a conectar la planificación con la realidad de la obra y a tomar decisiones con información fiable y actualizada.",
           "type": "Aplicación",
           "cards": [
             {
-              "title": "Desarrollo e integración de software de optimización de rutas",
-              "description": "La planificación de rutas inteligentes permite reducir tiempos de entrega y costes logísticos. Implementamos software avanzado de optimización de rutas, y análisis de datos en tiempo real, para garantizar la máxima eficiencia intralogística."
+              "title": "Control de costes, planificación digital y gestión de plazos",
+              "description": "Implantamos sistemas que te permiten controlar el presupuesto en tiempo real y conectar la planificación con la ejecución. Ya no se trata solo de tener un cronograma: se trata de saber cómo afecta cada desviación a tus márgenes y poder anticiparse."
             },
             {
-              "title": "Gestión de recursos en última milla a través de WhatsApps digitales",
-              "description": "La última milla es un desafío logístico que requiere soluciones flexibles y accesibles. Integramos herramientas de comunicación en WhatsApp para mejorar la coordinación entre transportistas, clientes y almacenes, facilitando el seguimiento de entregas y la resolución rápida de incidencias."
+              "title": "Automatización de seguimiento de cambios en proyecto y obra",
+              "description": "Cuando cambias un material o ajustas una partida, todo el proyecto se ve impactado. Automatizamos el seguimiento de esos cambios para que su impacto quede registrado, evaluado y comunicado a tiempo. Sin correos sueltos ni decisiones que se pierden."
             },
             {
-              "title": "Soluciones tecnológicas para logística inversa",
-              "description": "La logística inversa es esencial para gestionar devoluciones, reciclaje y reubicación de productos de manera eficiente. Implementamos soluciones digitales que automatizan y optimizan los procesos de devolución."
-            },
-            {
-              "title": "Automatización de procesos de última milla",
-              "description": "Desde la asignación automática de repartidores hasta la optimización de tiempos de entrega, la automatización en última milla permite aumentar la productividad y minimizar errores. Integramos sistemas para gestionar entregas de forma más eficiente y adaptada a la demanda."
+              "title": "Trazabilidad de decisiones, materiales y presupuestos",
+              "description": "Diseñamos sistemas que permiten rastrear cada decisión, justificar cada partida y vincular proveedores con sus costes e impacto en obra. Pero no solo se trata de registrar: el valor está en generar reporting claro y accionable, que permita tomar decisiones basadas en datos reales y actualizados. Así se evitan sobrecostes, malentendidos y retrasos, y se gana en control y transparencia durante todo el proyecto."
             }
           ]
         },
          {
-          "title": "Eficiencia y automatización de almacenes",
-          "description": "Gracias a la implementación de tecnología y automatización en almacenes podemos optimizar el flujo de mercancías y mejorar la gestión del inventario.",
+          "title": "Transformación digital y automatización de procesos",
+          "description": "Digitalizar no es solo cuestión de software, sino de estrategia. Automatizamos tareas repetitivas, digitalizamos documentación clave y te ayudamos a introducir tecnologías cuando tienen un impacto real en la obra o en la gestión.",
           "type": "Aplicación",
           "cards": [
-            {
-              "title": "Desarrollo de software para la gestión de almacenes",
-              "description": "El uso de software especializado o a medida permite controlar de manera eficiente la recepción, almacenamiento y distribución de mercancías. Se optimizan procesos como la ubicación de productos, el control de stock y la trazabilidad en tiempo real."
-            },
-            {
-              "title": "Automatización con AGV, AMR y robótica móvil",
-              "description": "Los sistemas de transporte autónomos mejoran la movilidad dentro del almacén, un uso de la tecnología eficiente permite una mayor precisión en la manipulación de cargas y una reducción significativa en los tiempos de operación."
-            },
-            {
-              "title": "Optimización de almacenes",
-              "description": "La implementación de estrategias de optimización de espacios y procesos permite mejorar el rendimiento de los almacenes. Desde la reorganización del layout hasta la integración de tecnologías como pick-to-light y voice picking, cada mejora contribuye a una mayor eficiencia en la gestión logística."
-            }
+           
           ]
         },
         {
-          "title": "Digitalización de procesos",
-          "description": "La transformación digital en logística no solo mejora la eficiencia operativa, sino que también facilita la toma de decisiones estratégicas. La digitalización permite centralizar la información, reducir la dependencia de procesos manuales y mejorar la comunicación entre todas las áreas de la empresa.",
+          "title": "Soporte y gestión del cambio",
+          "description": "No solo entregamos tecnología: te acompañamos durante todo el proceso de adopción para que el cambio sea real y sostenible. Formamos a tu equipo en el uso práctico de las soluciones, adaptadas a su día a día. Nos involucramos en la gestión del cambio, ayudando a que los procesos se integren con naturalidad y los equipos los hagan suyos.  Y una vez implantadas las herramientas, seguimos ahí: ofreciendo soporte continuo, resolviendo dudas y ajustando lo que haga falta para que la transformación digital no se quede a medio camino.",
           "type": "Aplicación",
           "cards": [
-            {
-              "title": "Transformación digital y soluciones omnicanal",
-              "description": "Mejor sincronización entre sus canales de venta, distribución y atención al cliente. La digitalización permite gestionar pedidos de manera integrada, optimizar la cadena de suministro y mejorar la experiencia del usuario final."
-            },
-            {
-              "title": "Gemelos digitales",
-              "description": "La implementación de gemelos digitales en logística permite crear réplicas virtuales de almacenes, centros de distribución y procesos operativos. Con esta tecnología, es posible simular escenarios, predecir fallos y optimizar operaciones antes de su ejecución en el mundo real."
-            },
-            {
-              "title": "Administración logística virtual",
-              "description": "La gestión de la cadena de suministro a través de soluciones virtuales permite un control preciso de los flujos de mercancías y recursos, además de monitorizar inventarios, coordinar envíos y optimizar procesos en tiempo real."
-            },
-            {
-              "title": "Gestión de empleados",
-              "description": "Como consultoría logística y tecnológica, la digitalización también impacta en la gestión de personal. Sistemas de control de tareas, planificación de turnos y análisis de productividad permiten una asignación más eficiente de los recursos humanos."
-            },
-            {
-              "title": "Consultoría tecnológica",
-              "description": "La adopción de nuevas tecnologías requiere un enfoque estratégico. La consultoría especializada en digitalización logística ayuda a seleccionar, implementar y optimizar herramientas digitales que se alineen con los objetivos del negocio, asegurando un crecimiento sostenible y escalable."
-            }
+          
           ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "¿Cómo trabajamos?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
+        },
+        {
+          "title": "Diseño y arquitectura",
+          "description": "Definición de requisitos, creación de un prototipo y diseño de integraciones con sistemas actuales."
+        },
+        {
+          "title": "Implementación",
+          "description": "Programación, pruebas funcionales, integración con plataformas externas y despliegue en producción."
+        },
+        {
+          "title": "Soporte y mantenimiento",
+          "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "¿Qué necesito para hacer un <span>producto digital</span>?",
+      "description": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
+      "buttonText": "Como podemos ayudarte",
+      "cards": [
+        {
+          "title": "Ingeniería de software",
+          "description": "Desde integrar diferentes herramientas, desarrollar nuevas características y productos hasta monitorear y mantener un producto, estamos listos para ello. Nuestro equipo de ingeniería de software está compuesto por desarrolladores, arquitectos y testers para construir necesidades con tecnología de actual."
+        },
+        {
+          "title": "Ciberseguridad",
+          "description": "La seguridad de la información ya no está en la hoja de ruta. La ciberseguridad es una NECESIDAD en todos los negocios y todas las empresas deben tener el conocimiento, las herramientas y los procesos para evitar o minimizar los ataques."
+        },
+        {
+          "title": "Consultoría tecnologica",
+          "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
         }
       ]
     }
