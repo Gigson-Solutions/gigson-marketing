@@ -20,6 +20,15 @@ const Construction = () => {
                 <meta name="description" content={metadescription} />
             </Helmet>
             <Hero {...hero}/>
+             <section style={{
+                backgroundImage: `url(${useCasesBgGradient}`,
+                backgroundPosition: 'center center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover'
+            }}>
+                <UseCases {...useCases} />
+                <ImproveAreas {...improveAreas} />
+            </section>
           
         </>
     )
