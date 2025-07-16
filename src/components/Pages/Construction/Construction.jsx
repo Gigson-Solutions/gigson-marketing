@@ -1,4 +1,5 @@
 import Hero from "../../../shared/ui/Hero.jsx";
+import Brand from "../../../shared/ui/Brand.jsx";
 import UseCases from "../../../shared/ui/UseCases.jsx";
 import useCasesBgGradient from '../../../assets/casos-de-uso-bg-gradient-1.svg';
 
@@ -11,7 +12,7 @@ import { useTranslation } from "react-i18next";
 const Construction = () => {
     const { t } = useTranslation();
 
-    const { title, metadescription, hero, solutionsApplications, useCases, improveAreas, howWeWork, digitalProduct } = t("cases-construction");
+    const { title, metadescription, hero, solutionsApplications, useCases, improveAreas, howWeWork, digitalProduct, brand } = t("cases-construction");
 
     return (
         <>
@@ -32,6 +33,7 @@ const Construction = () => {
             <SolutionsApplications {...solutionsApplications} />
             <HowWeWork {...howWeWork} />
             <DigitalProduct {...digitalProduct}/>
+            <Brand { ...brand}/>
           
         </>
     )

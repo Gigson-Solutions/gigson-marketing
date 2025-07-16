@@ -2152,6 +2152,10 @@
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
         }
       ]
+    },
+    "brand" : {
+      "title" : "Trusted by <span> Great Brands </span>",
+      "description" : "Descubre nuestros clientes y lo que hacemos por ellos"
     }
   }
 }
