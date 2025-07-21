@@ -4,9 +4,9 @@ import {Trans, useTranslation} from "react-i18next";
 
 
 
-const logoNames = [ 'Caritas.png', 'STK.png',  'EuropcarGroup.png', 'Logo.png', 
-                    'A6.png', 'Elogia.png',  'KMM.png','Viko.png',  'Adock.png',
-                    'Modare.png', 'SpainRevealed_Gisgson.png','Brandtia.png',   'Tarboz.png'
+const logoNames = [ 'Caritas.svg', 'STK.svg',  'EuropcarGroup.svg', 'Logo.svg', 
+                    'A6.svg', 'Elogia.svg',  'KMM.svg','Viko.svg',  'Adock.svg',
+                    'Modare.svg', 'SpainRevealed_Gisgson.svg','Brandtia.svg',   'Tarboz.svg'
                     ];
 
 const LogoGrid = () => {
@@ -17,7 +17,7 @@ const LogoGrid = () => {
           key={index}
           src={`/src/assets/brands/${name}`} 
           alt={`Logo ${index + 1}`}
-          className="max-w-full  h-[30px] lg:h-[46px] object-contain lg:p-2"
+          className="max-w-full  h-[30px] lg:h-[55px] object-contain lg:p-2"
         />
       ))}
     </div>
