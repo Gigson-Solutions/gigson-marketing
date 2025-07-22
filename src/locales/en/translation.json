@@ -2053,63 +2053,63 @@
         ]
     },
     "solutionsApplications": {
-      "title": "Transformación y digitalización <span> de la construcción </span>",
-      "subTitle": "Trabajamos con constructoras porque no solo entendemos las herramientas, también entendemos los problemas propios de un sector con muchas particularidades, personal muy cualificado, con una gran barrera tecnológica, donde cuesta cambiar, y donde se dedica demasiado tiempo a procesos repetitivos que no aportan valor. Aportamos nuestra experiencia como consultora tecnológica para ayudarte a integrar soluciones digitales que se adapten a tu forma de trabajar, no al revés.",
+      "title": "Transformation and digitalization of <br/> <span> Construction </span>",
+      "subTitle": "We work with construction companies because we don’t just understand the tools—they do too—we understand the specific challenges of a sector with many particularities, highly qualified personnel, significant technological barriers, resistance to change, and too much time spent on repetitive processes that don’t add value. We bring our expertise as a tech consultancy to help you integrate digital solutions that adapt to how you work—not the other way around.",
       "containers": [
         {
-          "title": "Desarrollo e integración de software para constructoras",
-          "description": "La tecnología sólo funciona si se adapta a los procesos reales de tu empresa. Diseñamos e integramos software teniendo en cuenta cómo se gestiona una obra en la práctica: con equipos diversos, cambios constantes, plazos ajustados y herramientas que muchas veces no se comunican entre sí. Nuestro objetivo es ayudarte a conectar y optimizar tus sistemas para que todo fluya.",
-          "type": "Aplicación",
+          "title": "Software Development and Integration for Building Companies",
+          "description": "Technology only works if it adapts to your company’s real processes. We design and integrate software considering how a construction site is managed in practice: diverse teams, constant changes, tight deadlines, and tools that often don’t talk to each other. Our goal is to help you connect and optimize your systems so everything flows seamlessly.",
+          "type": "Application",
           "cards": [
             {
-              "title": "Integración de ERP, BIM y herramientas de gestión de obra ",
-              "description": "Unificamos tus sistemas para que puedas planificar, ejecutar y controlar desde un único entorno conectado. Integramos herramientas como ERP, BIM y software de planificación para que la información fluya sin duplicidades ni errores."
+              "title": "ERP, BIM and Project Management tools integration",
+              "description": "We unify your systems so you can plan, execute, and control everything from a single connected environment. We integrate tools like ERP, BIM, and planning software so that information flows without duplication or errors."
             },
             {
-              "title": "Desarrollo de software a medida para planificación, ejecución y control",
-              "description": "Creamos soluciones a medida cuando los productos estándar no se ajustan a tus necesidades. Desde aplicaciones internas hasta herramientas de control de avance o dashboards de obra, desarrollamos tecnología con foco en el uso real y el retorno operativo."
+              "title": "Custom software for Planning, Execution and Control",
+              "description": "We build custom solutions when standard products don’t meet your needs. From internal apps to on-site progress tracking tools or dashboard systems, we develop tech with a focus on real use and operational return."
             },
             {
-              "title": "Conexión entre herramientas como Presto, Revit, MS Project o Navisworks",
-              "description": "Hacemos que tus herramientas actuales trabajen juntas. Automatizamos el intercambio de datos entre Presto, Revit, MS Project y otras plataformas para evitar tareas manuales, errores de versión y pérdida de información."
+              "title": "Connections end-to-end with Presto, Revit, MS Project or Navisworks",
+              "description": "We make your current tools work together. We automate data exchanges between Presto, Revit, MS Project and other platforms to avoid manual work, version mismatches or data loss."
             },
             {
-              "title": "Soluciones personalizadas para digitalizar procesos o coordinar proyectos",
-              "description": "Analizamos tus flujos y diseñamos soluciones específicas para mejorar la coordinación entre equipos, la trazabilidad de decisiones o la supervisión de proyectos desde la oficina, la obra o el móvil"
+              "title": "Custom solutions to digitalize processes and projects",
+              "description": "We analyze your workflows and design specific solutions to improve team coordination, traceability of decisions, and project oversight from the office, the site, or your phone."
             }
           ]
         },
         {
-          "title": "Control de costes, planificación eficiente y gestión de obras",
-          "description": "En construcción, el margen está en los detalles: saber con precisión cuánto cuesta cada fase, si se están cumpliendo los plazos y qué impacto tiene cada cambio. La tecnología puede darte ese control, pero solo si está bien implementada y adaptada a tu forma de trabajar. Te ayudamos a conectar la planificación con la realidad de la obra y a tomar decisiones con información fiable y actualizada.",
-          "type": "Aplicación",
+          "title": "Cost control, efficient planning and Site Management",
+          "description": "In construction, margin lies in the details: knowing exactly how much each phase costs, whether deadlines are being met, and what impact each change has. Technology can give you that control—if it’s properly implemented and adapted to your way of working.  We help you connect planning with the on-site reality so you can make decisions based on reliable, up-to-date information.",
+          "type": "Application",
           "cards": [
             {
-              "title": "Control de costes, planificación digital y gestión de plazos",
-              "description": "Implantamos sistemas que te permiten controlar el presupuesto en tiempo real y conectar la planificación con la ejecución. Ya no se trata solo de tener un cronograma: se trata de saber cómo afecta cada desviación a tus márgenes y poder anticiparse."
+              "title": "Cost control, digital planning and deadline management",
+              "description": "We implement systems that let you track your budget in real time and link planning with execution. It's no longer just about having a schedule: it’s about knowing how each deviation affects your margins so you can anticipate and act."
             },
             {
-              "title": "Automatización de seguimiento de cambios en proyecto y obra",
-              "description": "Cuando cambias un material o ajustas una partida, todo el proyecto se ve impactado. Automatizamos el seguimiento de esos cambios para que su impacto quede registrado, evaluado y comunicado a tiempo. Sin correos sueltos ni decisiones que se pierden."
+              "title": "Task and milestones tracking and Site Changes",
+              "description": "When you change a material or adjust a line item, the entire project is affected. We automate the tracking of those changes so their impact is recorded, evaluated, and communicated in time—no loose emails or lost decisions."
             },
             {
-              "title": "Trazabilidad de decisiones, materiales y presupuestos",
-              "description": "Diseñamos sistemas que permiten rastrear cada decisión, justificar cada partida y vincular proveedores con sus costes e impacto en obra. Pero no solo se trata de registrar: el valor está en generar reporting claro y accionable, que permita tomar decisiones basadas en datos reales y actualizados. Así se evitan sobrecostes, malentendidos y retrasos, y se gana en control y transparencia durante todo el proyecto."
+              "title": "Traceability of decisions, materials and budgets",
+              "description": "We design systems that let you trace every decision, justify each cost, and link suppliers to both their prices and impact on-site. But it’s not just about logging data—it’s about creating clear, actionable reporting to support real-time decision-making.  This prevents overruns, misunderstandings and delays, and gives you full control and transparency across the project lifecycle."
             }
           ]
         },
          {
-          "title": "Transformación digital y automatización de procesos",
-          "description": "Digitalizar no es solo cuestión de software, sino de estrategia. Automatizamos tareas repetitivas, digitalizamos documentación clave y te ayudamos a introducir tecnologías cuando tienen un impacto real en la obra o en la gestión.",
-          "type": "Aplicación",
+          "title": "Digital transformation and Process Automation",
+          "description": "Going digital isn’t just about software—it’s about strategy. We automate repetitive tasks, digitize key documentation, and help you introduce technologies only when they make a real impact on-site or in management.",
+          "type": "Application",
           "cards": [
            
           ]
         },
         {
           "title": "Soporte y gestión del cambio",
-          "description": "No solo entregamos tecnología: te acompañamos durante todo el proceso de adopción para que el cambio sea real y sostenible. Formamos a tu equipo en el uso práctico de las soluciones, adaptadas a su día a día. Nos involucramos en la gestión del cambio, ayudando a que los procesos se integren con naturalidad y los equipos los hagan suyos.  Y una vez implantadas las herramientas, seguimos ahí: ofreciendo soporte continuo, resolviendo dudas y ajustando lo que haga falta para que la transformación digital no se quede a medio camino.",
-          "type": "Aplicación",
+          "description": "Once the solutions are in place, we stay with you.  We help your team adopt the new systems, solve issues as they arise, and ensure tools are used consistently.  Our support ensures long-term success, avoiding unfinished transitions or poorly adopted solutions.",
+          "type": "Application",
           "cards": [
           
           ]
