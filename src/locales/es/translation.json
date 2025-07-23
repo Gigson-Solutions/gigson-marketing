@@ -2851,65 +2851,69 @@
           }
         },
         {
-          "title": "Visibilidad a tiempo",
+          "title": " Motor de presupuestos",
           "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente  ",
+          "description": "Sistema de presupuestos personalizados conectado por API a Holded para crear cotizaciones complejas con configuraciones y simulaciones en proyectos de construcción y logística.",
           "dialog": {
             "backButtonText": "Casos de uso",
-            "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
+            "title": "Motor de presupuestos",
             "quote": "",
             "challengeText": "Desafío",
-            "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
+            "challengeDescription": "Elaborar un sistema de cálculo de presupuestos personalizados que se integre de forma eficiente con el ERP existente (Holded) mediante API. El objetivo era agilizar la creación de presupuestos complejos, permitiendo diferentes configuraciones y simulaciones, para facilitar la toma de decisiones, justificar propuestas frente al cliente y mejorar la planificación financiera de proyectos en sectores como la construcción o la logística.",
             "functionalitiesText": "Funcionalidades",
             "functionalities": [
               {
-                "title": "Fichaje a través de WhatsApp",
-                "description": "Los empleados pueden registrar su inicio y fin de jornada, descansos y actividades directamente enviando un mensaje a un bot automatizado en WhatsApp."
+                "title": "Presupuestos configurables por variables:",
+                "description": " Materiales, mano de obra, alquiler de maquinaria, logística y gastos generales."
               },
               {
-                "title": "Reconocimiento de ubicación",
-                "description": "Validación de la ubicación del fichaje para garantizar que se realiza en los puntos designados (oficinas, almacenes o rutas autorizadas)."
+                "title": "Plantillas por tipo de proyecto: ",
+                "description": "Distintos modelos adaptables según el tipo de construcción o servicio."
               },
               {
-                "title": "Integración con sistemas de nóminas",
-                "description": "Conexión directa con el software de gestión de nóminas para sincronizar automáticamente las horas trabajadas, horas extras y días de descanso."
+                "title": "Integración de precios en tiempo real: ",
+                "description": "Conexión vía API con catálogos de proveedores para mantener actualizados los importes."
               },
               {
-                "title": "Panel de supervisión",
-                "description": "Herramienta para los gestores que permite visualizar los registros en tiempo real, generar reportes y corregir incidencias."
+                "title": "Análisis de presupuestos históricos: ",
+                "description": "Comparativas con proyectos anteriores para detectar desviaciones y afinar previsiones."
               },
               {
                 "title": "Alertas automáticas",
                 "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales."
+              },
+              {
+                "title": "Exportación y validación de presupuestos:",
+                "description": "Generación de presupuestos en PDF o Excel, integrados en la ficha del proyecto en el ERP para compartir con cliente."
               }
             ],
             "solutionText": "Solución",
-            "solutionDescription": "Desarrollamos un sistema de fichaje basado en WhatsApp que se conecta directamente al software de nóminas de Martínez Marcos. Esto permitió automatizar el registro de horas, eliminando errores manuales y garantizando el cumplimiento normativo. Además, la solución es accesible y fácil de usar para los empleados, lo que aumentó la tasa de cumplimiento de fichajes en un 100%.",
+            "solutionDescription": "Desarrollamos una WebApp integrada vía API con Holded que actúa como un configurador de presupuestos totalmente dinámico. Esta solución permite al equipo crear, comparar y validar presupuestos complejos en minutos, con acceso a catálogos actualizados y herramientas de simulación financiera. Los presupuestos pueden exportarse, compartirse y sincronizarse con el ERP, optimizando la visibilidad financiera de cada proyecto y mejorando la precisión en el seguimiento de costes.",
             "technologiesText": "Tecnologías",
             "technologies": [
               {
-                "title": "Chat",
-                "description": "Whatsapp Business API + Twilio"
+                "title": "Frontend (WebApp de presupuestos):",
+                "description": "React.js, autocompletado de materiales, simuladores interactivos."
               },
               {
-                "title": "Back-end",
-                "description": "Node.js"
+                "title": "Backend",
+                "description": "Node.js (Express) para el motor de cálcul"
               },
               {
-                "title": "Dashboard",
-                "description": "React + Looker Studio"
+                "title": "Integraciones:",
+                "description": " APIs REST de Holded, webhooks para sincronización en tiempo real"
               },
               {
-                "title": "Base de datos",
-                "description": "PostgreSQL"
+                "title": "Infraestructura cloud:",
+                "description": "AWS (EC2, S3, RDS, Lambda), Docker + GitHub Actions"
               },
               {
-                "title": "ERP",
-                "description": "Holded y Odoo"
+                "title": "Business Inteligence:",
+                "description": "Looker Studio"
               },
               {
-                "title": "Notificaciones",
-                "description": "Twilio + email"
+                "title": "Seguridad y privacidad:",
+                "description": "Autenticación JWT y encriptación de datos sensibles en tránsito (HTTPS) y en reposo. Cumplimiento de GDPR, ISO/IEC 27001 en la infraestructura."
               }
             ]
           }

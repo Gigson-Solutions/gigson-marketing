@@ -1429,65 +1429,69 @@
           }
         },
         {
-          "title": "Visibilidad a tiempo",
+          "title": "Budget engine",
           "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente  ",
+          "description": "Custom budgeting system connected via API to Holded to generate complex quotations with configurations and simulations for construction and logistics projects.",
           "dialog": {
-            "backButtonText": "Casos de uso",
-            "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
+            "backButtonText": "Use Cases",
+            "title": "Budget engine",
             "quote": "",
             "challengeText": "Desafío",
-            "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
-            "functionalitiesText": "Funcionalidades",
+            "challengeDescription": "Create a system for calculating customized quotes that integrates efficiently with the existing ERP (Holded) via API. The goal was to speed up the creation of complex quotes—allowing different configurations and simulations—to support decision-making, justify proposals to clients, and improve financial planning for projects in sectors such as construction and logistics.",
+            "functionalitiesText": "Features",
             "functionalities": [
               {
-                "title": "Fichaje a través de WhatsApp",
-                "description": "Los empleados pueden registrar su inicio y fin de jornada, descansos y actividades directamente enviando un mensaje a un bot automatizado en WhatsApp."
+                "title": "Variable-driven quotes. ",
+                "description": "Configure materials, labor, equipment rental, logistics, and overhead."
               },
               {
-                "title": "Reconocimiento de ubicación",
-                "description": "Validación de la ubicación del fichaje para garantizar que se realiza en los puntos designados (oficinas, almacenes o rutas autorizadas)."
+                "title": "Project-type templates.",
+                "description": " Adaptable models tailored to each construction or service scenario."
               },
               {
-                "title": "Integración con sistemas de nóminas",
-                "description": "Conexión directa con el software de gestión de nóminas para sincronizar automáticamente las horas trabajadas, horas extras y días de descanso."
+                "title": "Real-time pricing integration.",
+                "description": "API connections to supplier catalogs keep prices current."
               },
               {
-                "title": "Panel de supervisión",
-                "description": "Herramienta para los gestores que permite visualizar los registros en tiempo real, generar reportes y corregir incidencias."
+                "title": "Scenario simulator.",
+                "description": " Evaluate alternative execution methods, materials, or suppliers and measure their financial impact."
               },
               {
-                "title": "Alertas automáticas",
-                "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales."
+                "title": "Historical-quote analysis.",
+                "description": "Compare against past projects to spot deviations and refine forecasts."
+              },
+              {
+                "title": "Quote export & validation.",
+                "description": " Generate PDFs or Excel files and sync them to the project record in the ERP for client sharing."
               }
             ],
-            "solutionText": "Solución",
-            "solutionDescription": "Desarrollamos un sistema de fichaje basado en WhatsApp que se conecta directamente al software de nóminas de Martínez Marcos. Esto permitió automatizar el registro de horas, eliminando errores manuales y garantizando el cumplimiento normativo. Además, la solución es accesible y fácil de usar para los empleados, lo que aumentó la tasa de cumplimiento de fichajes en un 100%.",
-            "technologiesText": "Tecnologías",
+            "solutionText": "Solution",
+            "solutionDescription": "We built a WebApp that connects to Holded through its API and acts as a fully dynamic quote configurator. The tool lets the team create, compare, and validate complex quotes in minutes, with access to up-to-date catalogs and financial-simulation features. Quotes can be exported, shared, and synced with the ERP, boosting financial visibility for each project and improving cost-tracking accuracy.",
+            "technologiesText": "Technologies",
             "technologies": [
               {
-                "title": "Chat",
-                "description": "Whatsapp Business API + Twilio"
+                "title": "Front-end (quote WebApp)",
+                "description": "React.js with material autocomplete and interactive simulators"
               },
               {
-                "title": "Back-end",
-                "description": "Node.js"
+                "title": "Back-end.",
+                "description": "Node.js (Express) calculation engine"
               },
               {
-                "title": "Dashboard",
-                "description": "React + Looker Studio"
+                "title": "Integrations",
+                "description": "Holded REST APIs & webhooks for real-time sync"
               },
               {
-                "title": "Base de datos",
-                "description": "PostgreSQL"
+                "title": "Cloud infrastructure. ",
+                "description": "AWS (EC2, S3, RDS, Lambda) with Docker & GitHub Actions"
               },
               {
-                "title": "ERP",
-                "description": "Holded y Odoo"
+                "title": "Business Intelligence.",
+                "description": " Looker Studio"
               },
               {
-                "title": "Notificaciones",
-                "description": "Twilio + email"
+                "title" : "Security & privacy",
+                "description" : "JWT authentication and encryption of sensitive data in transit (HTTPS) and at rest, GDPR compliance, ISO/IEC 27001-certified infrastructure"
               }
             ]
           }
