@@ -1362,65 +1362,65 @@
           }
         },
       {
-          "title": "Reduce los tiempos muertos: organiza, optimiza, entrega.",
+          "title": "Integración de productos en BIM para proyectos de arquitectura y construcción",
           "supTitle": "Desafío",
-          "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento, manual y propenso a errores. ",
+          "description": "Integración de modelos de productos para facilitar su uso en Revit y mejorar la colaboración con estudios de arquitectura y promotores. ",
           "dialog": {
             "backButtonText": "Casos de uso",
-            "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
+            "title": "Integración de productos en BIM para proyectos de arquitectura y construcción",
             "quote": "",
             "challengeText": "Desafío",
-            "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
+            "challengeDescription": "Muchos clientes trabajaban con Revit pero no tenían acceso a las familias BIM de los productos. Debían crearlas manualmente, lo que ralentizaba el diseño y dificultaba la adopción de los materiales del fabricante.",
             "functionalitiesText": "Funcionalidades",
             "functionalities": [
               {
-                "title": "Fichaje a través de WhatsApp",
-                "description": "Los empleados pueden registrar su inicio y fin de jornada, descansos y actividades directamente enviando un mensaje a un bot automatizado en WhatsApp."
+                "title": "Generación de familias BIM paramétricas",
+                "description": "con acabados, medidas y atributos"
               },
               {
-                "title": "Reconocimiento de ubicación",
-                "description": "Validación de la ubicación del fichaje para garantizar que se realiza en los puntos designados (oficinas, almacenes o rutas autorizadas)."
+                "title": "Integración directa en Revit ",
+                "description": "a través de catálogos descargables"
               },
               {
-                "title": "Integración con sistemas de nóminas",
-                "description": "Conexión directa con el software de gestión de nóminas para sincronizar automáticamente las horas trabajadas, horas extras y días de descanso."
+                "title": "Actualización en tiempo real",
+                "description": "desde el ERP (precios y stock)"
               },
               {
-                "title": "Panel de supervisión",
-                "description": "Herramienta para los gestores que permite visualizar los registros en tiempo real, generar reportes y corregir incidencias."
+                "title": "Buscador de productos BIM",
+                "description": "con filtros por material, tamaño, etc."
               },
               {
-                "title": "Alertas automáticas",
-                "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales."
+                "title": "Reportes técnicos automáticos",
+                "description": "generados desde los modelos BIM"
               }
             ],
             "solutionText": "Solución",
-            "solutionDescription": "Desarrollamos un sistema de fichaje basado en WhatsApp que se conecta directamente al software de nóminas de Martínez Marcos. Esto permitió automatizar el registro de horas, eliminando errores manuales y garantizando el cumplimiento normativo. Además, la solución es accesible y fácil de usar para los empleados, lo que aumentó la tasa de cumplimiento de fichajes en un 100%.",
+            "solutionDescription": "Desarrollamos un sistema de integración BIM que transforma los productos en familias paramétricas listas para usar en Revit. Se publicaron en un portal de búsqueda para clientes y se sincronizan automáticamente con los datos del ERP sobre disponibilidad, especificaciones y precios. Esto aumentó la adopción de los productos en los proyectos y mejoró la colaboración con los técnicos.",
             "technologiesText": "Tecnologías",
             "technologies": [
               {
-                "title": "Chat",
-                "description": "Whatsapp Business API + Twilio"
+                "title": "Herramientas BIM:",
+                "description": "Autodesk Revit + Revit API"
               },
               {
-                "title": "Back-end",
-                "description": "Node.js"
+                "title": "Archivos generados:",
+                "description": ".RFA, .RVT"
               },
               {
-                "title": "Dashboard",
-                "description": "React + Looker Studio"
+                "title": "Backend: ",
+                "description": "Python, Dynamo y C#"
               },
               {
-                "title": "Base de datos",
-                "description": "PostgreSQL"
+                "title": "Integración con ERP",
+                "description": "Odoo"
               },
               {
-                "title": "ERP",
-                "description": "Holded y Odoo"
+                "title": "Portal de cliente:",
+                "description": "WebApp en React + ElasticSearch"
               },
               {
-                "title": "Notificaciones",
-                "description": "Twilio + email"
+                "title": "Seguridad:",
+                "description": "Infraestructura cloud con acceso seguro y cumplimiento GDPR"
               }
             ]
           }
