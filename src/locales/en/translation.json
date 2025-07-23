@@ -1284,5 +1284,879 @@
         }
       ]
     }
-  }
+  },
+  "cases-construction" :{
+    "title": "Logistics & Intralogistics Technology  | Gigson Solutions",
+    "metadescription": "Optimize your supply chain with tailored tech solutions: greater efficiency, traceability, and control—no need for big-name integrators.",
+    "hero": {
+      "suptitle":"LOGÍSTICA Y FULFILLMENT",
+      "title": "Consultoría tecnológica <br> <span> en construcción </span>",
+      "description": "Digitalizar una constructora no es solo implantar un software de gestión de obras: es alinear herramientas, procesos y equipos. En Gigson Solutions, te ayudamos a integrar tecnología sin fricciones, adaptada a los ritmos, retos y particularidades del sector construcción.nes, asegurando que se adapten a la estructura del negocio. ",
+      "buttonText": "Como podemos ayudarte"
+    },
+    "useCases": {
+      "title": "Casos clave",
+      "description": "Descubre cómo hemos ayudado a empresas a resolver desafíos logísticos complejos mediante soluciones tecnológicas personalizadas. Cada caso refleja nuestro compromiso con la eficiencia, la integración y los resultados medibles.",
+      "cards": [
+        {
+          "title": "Optimización de Rutas con TMS Básico",
+          "supTitle": "Desafío",
+          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente ",
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Fichaje a través de WhatsApp",
+                "description": "Los empleados pueden registrar su inicio y fin de jornada, descansos y actividades directamente enviando un mensaje a un bot automatizado en WhatsApp."
+              },
+              {
+                "title": "Reconocimiento de ubicación",
+                "description": "Validación de la ubicación del fichaje para garantizar que se realiza en los puntos designados (oficinas, almacenes o rutas autorizadas)."
+              },
+              {
+                "title": "Integración con sistemas de nóminas",
+                "description": "Conexión directa con el software de gestión de nóminas para sincronizar automáticamente las horas trabajadas, horas extras y días de descanso."
+              },
+              {
+                "title": "Panel de supervisión",
+                "description": "Herramienta para los gestores que permite visualizar los registros en tiempo real, generar reportes y corregir incidencias."
+              },
+              {
+                "title": "Alertas automáticas",
+                "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Desarrollamos un sistema de fichaje basado en WhatsApp que se conecta directamente al software de nóminas de Martínez Marcos. Esto permitió automatizar el registro de horas, eliminando errores manuales y garantizando el cumplimiento normativo. Además, la solución es accesible y fácil de usar para los empleados, lo que aumentó la tasa de cumplimiento de fichajes en un 100%.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Chat",
+                "description": "Whatsapp Business API + Twilio"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js"
+              },
+              {
+                "title": "Dashboard",
+                "description": "React + Looker Studio"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded y Odoo"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Twilio + email"
+              }
+            ]
+          }
+        },
+      {
+          "title": "Reduce los tiempos muertos: organiza, optimiza, entrega.",
+          "supTitle": "Desafío",
+          "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento, manual y propenso a errores. ",
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Fichaje a través de WhatsApp",
+                "description": "Los empleados pueden registrar su inicio y fin de jornada, descansos y actividades directamente enviando un mensaje a un bot automatizado en WhatsApp."
+              },
+              {
+                "title": "Reconocimiento de ubicación",
+                "description": "Validación de la ubicación del fichaje para garantizar que se realiza en los puntos designados (oficinas, almacenes o rutas autorizadas)."
+              },
+              {
+                "title": "Integración con sistemas de nóminas",
+                "description": "Conexión directa con el software de gestión de nóminas para sincronizar automáticamente las horas trabajadas, horas extras y días de descanso."
+              },
+              {
+                "title": "Panel de supervisión",
+                "description": "Herramienta para los gestores que permite visualizar los registros en tiempo real, generar reportes y corregir incidencias."
+              },
+              {
+                "title": "Alertas automáticas",
+                "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Desarrollamos un sistema de fichaje basado en WhatsApp que se conecta directamente al software de nóminas de Martínez Marcos. Esto permitió automatizar el registro de horas, eliminando errores manuales y garantizando el cumplimiento normativo. Además, la solución es accesible y fácil de usar para los empleados, lo que aumentó la tasa de cumplimiento de fichajes en un 100%.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Chat",
+                "description": "Whatsapp Business API + Twilio"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js"
+              },
+              {
+                "title": "Dashboard",
+                "description": "React + Looker Studio"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded y Odoo"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Twilio + email"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Visibilidad a tiempo",
+          "supTitle": "Desafío",
+          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente  ",
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Fichaje a través de WhatsApp",
+                "description": "Los empleados pueden registrar su inicio y fin de jornada, descansos y actividades directamente enviando un mensaje a un bot automatizado en WhatsApp."
+              },
+              {
+                "title": "Reconocimiento de ubicación",
+                "description": "Validación de la ubicación del fichaje para garantizar que se realiza en los puntos designados (oficinas, almacenes o rutas autorizadas)."
+              },
+              {
+                "title": "Integración con sistemas de nóminas",
+                "description": "Conexión directa con el software de gestión de nóminas para sincronizar automáticamente las horas trabajadas, horas extras y días de descanso."
+              },
+              {
+                "title": "Panel de supervisión",
+                "description": "Herramienta para los gestores que permite visualizar los registros en tiempo real, generar reportes y corregir incidencias."
+              },
+              {
+                "title": "Alertas automáticas",
+                "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Desarrollamos un sistema de fichaje basado en WhatsApp que se conecta directamente al software de nóminas de Martínez Marcos. Esto permitió automatizar el registro de horas, eliminando errores manuales y garantizando el cumplimiento normativo. Además, la solución es accesible y fácil de usar para los empleados, lo que aumentó la tasa de cumplimiento de fichajes en un 100%.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Chat",
+                "description": "Whatsapp Business API + Twilio"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js"
+              },
+              {
+                "title": "Dashboard",
+                "description": "React + Looker Studio"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded y Odoo"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Twilio + email"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Integración de herramientas End2End para ecommerce",
+          "supTitle": "Desafío",
+          "description": "Crear y desarrollar una integración de APIs que integre ERP, CMS, diferentes marketplaces y proveedores de Third-Party Logistics (3PLs) para la industria de Dropshipping y Logística. El objetivo es mejorar la eficiencia operativa y la experiencia del cliente al simplificar la gestión de compras, ventas y logística.",
+          "dialog": {
+            "backButtonText": "Casos de uso",
+            "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Fichaje a través de WhatsApp",
+                "description": "Los empleados pueden registrar su inicio y fin de jornada, descansos y actividades directamente enviando un mensaje a un bot automatizado en WhatsApp."
+              },
+              {
+                "title": "Reconocimiento de ubicación",
+                "description": "Validación de la ubicación del fichaje para garantizar que se realiza en los puntos designados (oficinas, almacenes o rutas autorizadas)."
+              },
+              {
+                "title": "Integración con sistemas de nóminas",
+                "description": "Conexión directa con el software de gestión de nóminas para sincronizar automáticamente las horas trabajadas, horas extras y días de descanso."
+              },
+              {
+                "title": "Panel de supervisión",
+                "description": "Herramienta para los gestores que permite visualizar los registros en tiempo real, generar reportes y corregir incidencias."
+              },
+              {
+                "title": "Alertas automáticas",
+                "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Desarrollamos un sistema de fichaje basado en WhatsApp que se conecta directamente al software de nóminas de Martínez Marcos. Esto permitió automatizar el registro de horas, eliminando errores manuales y garantizando el cumplimiento normativo. Además, la solución es accesible y fácil de usar para los empleados, lo que aumentó la tasa de cumplimiento de fichajes en un 100%.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Chat",
+                "description": "Whatsapp Business API + Twilio"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js"
+              },
+              {
+                "title": "Dashboard",
+                "description": "React + Looker Studio"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded y Odoo"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "Twilio + email"
+              }
+            ]
+          }
+        }
+       ]
+    },
+     "improveAreas": {
+      "title" : "Áreas",
+      "filtersText": "Filtros",
+      "applyFiltersText": "Aplicar filtros",
+      "filtersClearAllText": "Limpiar todo",
+      "painPoints": [
+        {
+          "type": "A",
+          "name": "Gestion de inventarios"
+        },
+        {
+          "type": "B",
+          "name": "Gestión manual de presupuestos"
+        },
+        {
+          "type": "C",
+          "name": "Visibilidad en operaciones"
+        },
+        {
+          "type": "D",
+          "name": "Sostenibilidad"
+        },
+        {
+          "type": "E",
+          "name": "Optimización de procesos manuales"
+        },
+        {
+          "type": "F",
+          "name": "Optimización de rutas y recursos"
+        },
+        {
+          "type": "G",
+          "name": "Eficiencia en el almacén"
+        },
+        {
+          "type": "H",
+          "name": "Integración de herramientas"
+        }
+      ],
+      "faqs": [
+        {
+          "types": ["A", "B", "C"],
+          "question": "Automatización de la gestión de tarifas y productos de proveedores",
+          "answer": {
+            "challengeDescription": "Esteba Maderas trabaja con proveedores variados que envían sus tarifas y catálogos en formatos diferentes, como PDF o Excel. La actualización manual de precios y la introducción de nuevos productos en el ERP genera errores, consume tiempo y retrasa la generación de presupuestos precisos",
+            "solutionText": "Solución",
+            "solutionDescription": "Implementamos un sistema que automatiza la extracción de datos de tarifas y catálogos, conectándolo directamente al ERP de Esteba Maderas. Esto permitió reducir los tiempos de actualización en un 70% y garantizar que las tarifas y productos estén siempre actualizados en la herramienta de generación de presupuestos. Además, los errores en los precios ofrecidos a los clientes disminuyeron en un 40%.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "",
+                "description": "Parseo automatizado de documentos: Herramienta que extrae información de tarifas y catálogos en PDF o Excel para convertirlos en datos estructurados."
+              },
+              {
+                "title": "",
+                "description": "Integración directa con el ERP: Actualización automática de precios, productos y condiciones comerciales en el sistema de gestión."
+              },
+              {
+                "title": "",
+                "description": "Validación previa de datos: Interfaz que permite revisar y aprobar los datos parseados antes de la actualización final."
+              },
+              {
+                "title": "",
+                "description": "Sincronización con la herramienta de presupuestos: Conexión entre los precios actualizados y la herramienta de generación de presupuestos dinámicos, asegurando precisión en las ofertas al cliente."
+              },
+              {
+                "title": "",
+                "description": "Notificaciones automáticas: Alertas sobre cambios importantes en tarifas o condiciones para mantener a los equipos informados."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Odoo",
+                "description": "como sistema ERP para la administración centralizada de la empresa."
+              },
+              {
+                "title": "Prestashop",
+                "description": "para la gestión de contenidos y tiendas online."
+              },
+              {
+                "title": "Huboo",
+                "description": "como sistema de gestión de logística y envíos."
+              },
+              {
+                "title": "Amazon Selling Central",
+                "description": "para la integración con el marketplace de Amazon."
+              },
+              {
+                "title": "Google Looker",
+                "description": "para análisis de datos y reportes avanzados."
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B", "C", "D"],
+          "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+          "answer": {
+            "challengeDescription": "Con una flota en crecimiento, nuestro cliente buscaba reducir su huella de carbono para cumplir con objetivos internos de sostenibilidad, mejorar su imagen frente a clientes B2B y reguladores, y proporcionar transparencia en sus operaciones. Sin herramientas para calcular emisiones, optimizar rutas y ofrecer reportes detallados a los clientes, las operaciones del transporte eran ineficiencientes y sin visibilidad.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se implementó un módulo integral de sostenibilidad que no solo calcula y reduce las emisiones de CO₂, sino que también permite a los clientes acceder a sus reportes desde un portal personalizado. Esto brindó mayor transparencia y confianza a los clientes, quienes ahora pueden ver el impacto ambiental de sus envíos. Como resultado, Martínez Marcos redujo las emisiones en un 15%, mejoró su eficiencia operativa y fortaleció las relaciones con sus clientes al ofrecer un enfoque más transparente y responsable.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Cálculo de huella de carbono",
+                "description": "Herramienta que mide las emisiones de CO₂ por trayecto en función del tipo de vehículo y combustible."
+              },
+              {
+                "title": "Optimización de rutas sostenibles",
+                "description": "Identificación de trayectos que reduzcan kilómetros recorridos y optimicen el uso del combustible."
+              },
+              {
+                "title": "Portal de cliente",
+                "description": "Acceso directo y transparente para que los clientes consulten sus reportes de emisiones, rutas utilizadas y métricas sostenibles en tiempo real."
+              },
+              {
+                "title": "Reportes automatizados",
+                "description": "Generación de reportes personalizados sobre emisiones, que los clientes pueden descargar desde el portal para sus propios análisis o regulaciones."
+              },
+              {
+                "title": "Simulación de escenarios",
+                "description": "Evaluación de rutas alternativas para identificar ahorros potenciales en emisiones y costos."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Cálculo de emisiones",
+                "description": "EcoTransitIT"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Visualización",
+                "description": "PowerBI + Looker Studio"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["A", "D"],
+          "question": "Automatización de la gestión de tarifas y productos de proveedores",
+          "answer": {
+            "challengeDescription": "Normalmente, los transportistas se enfrentan tiempos de espera prolongados para cargar y descargar, lo que afecta la productividad y genera costos adicionales. La falta de una gestión eficiente en los puntos de carga provoca saturaciones y retrasos.",
+            "solutionText": "Solución",
+            "solutionDescription": "Implementamos un sistema de gestión de citas que optimiza el flujo de transportistas en los puntos de carga y descarga, reduciendo los tiempos de espera en un 32%. Esto mejoró tanto la productividad de la flota, como la satisfacción de los conductores y los clientes.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Gestión de citas de carga (Time Slot Management)",
+                "description": "Sistema que permite agendar horarios específicos para evitar congestiones en los puntos de carga y descarga."
+              },
+              {
+                "title": "Notificaciones en tiempo real",
+                "description": "Alertas a transportistas y almacén sobre cambios o actualizaciones en las citas."
+              },
+              {
+                "title": "Optimización del flujo operativo",
+                "description": "Herramientas para priorizar cargas urgentes y distribuir conductores de manera eficiente."
+              },
+              {
+                "title": "Reportes de productividad",
+                "description": "Métricas sobre el uso de los puntos de carga y tiempos de carga/descarga promedio."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Calendario",
+                "description": "Google Calendar API"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "WhatsApp Business API"
+              },
+              {
+                "title": "Reporting",
+                "description": "Looker Studio"
+              },
+              {
+                "title": "Algoritmos",
+                "description": "Control de solapamientos y validación de ventanas horarias"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B", "D", "E"],
+          "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+          "answer": {
+            "challengeDescription": "El proceso de recepción de mobiliario de lujo se enfrentaba a problemas en la validación del estado, calidad y características del producto. La falta de evidencias en la recepción y manipulación de productos dificultaban las reclamaciones con proveedores y aseguradoras y generaba problemas logísticos. Además, los clientes no tenían acceso directo a información visual y registros sobre el estado de los productos.",
+            "solutionText": "Solución",
+            "solutionDescription": "Implementamos un sistema integral de validación en la recepción del mobiliario de lujo, con una mesa de validación que incluye grabación automatizada y una conexión directa al sistema de gestión de almacenes. Además, se desarrolló un portal para clientes que les permite acceder a las grabaciones y reportes en tiempo real, facilitando la comunicación y gestión de reclamaciones con los proveedores. Como resultado, se mejoró la trazabilidad del 100% de los productos, reduciendo los tiempos de resolución de incidencias en un 50% y aumentando la satisfacción del cliente en un 40%.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Mesa de validación",
+                "description": "Verificación física y digital del mobiliario (dimensiones, acabados, materiales)."
+              },
+              {
+                "title": "Sistema de grabación automatizado",
+                "description": "Captura de imágenes y video durante la recepción."
+              },
+              {
+                "title": "Portal de cliente",
+                "description": "Acceso a grabaciones e informes en tiempo real."
+              },
+              {
+                "title": "Checklist digital",
+                "description": "Validación estructurada de atributos conectada al ERP."
+              },
+              {
+                "title": "Integración con almacén",
+                "description": "Sincronización con el sistema de inventario para reflejar estado y ubicación."
+              },
+              {
+                "title": "Reportes automatizados",
+                "description": "Generación de informes visuales para uso interno y externo."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Captura multimedia",
+                "description": "Cámara IP + software de grabación programada"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "ERP",
+                "description": "Odoo / SAP Business One"
+              },
+              {
+                "title": "Visualización y portal:",
+                "description": "Power BI + WebApp personalizada para clientes"
+              },
+              {
+                "title": "Integración",
+                "description": "Amphora Logistics"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B"],
+          "question": "Automatización de la gestión de tarifas y productos de proveedores",
+          "answer": {
+            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Plataforma centralizada de órdenes",
+                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
+              },
+              {
+                "title": "Flujos de trabajo visuales",
+                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
+              },
+              {
+                "title": "Actualización automática de estados",
+                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
+              },
+              {
+                "title": "Alertas inteligentes",
+                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
+              },
+              {
+                "title": "Historial completo de actividad",
+                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Plataforma de flujos de trabajo",
+                "description": "Trello-like custom (React + DnD libraries)"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL en AWS"
+              },
+              {
+                "title": "Automatización de notificaciones",
+                "description": "Firebase Cloud Messaging + email (SendGrid)"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B"],
+          "question": "Logística sostenible y reducción de emisiones con portal de cliente",
+          "answer": {
+            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Plataforma centralizada de órdenes",
+                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
+              },
+              {
+                "title": "Flujos de trabajo visuales",
+                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
+              },
+              {
+                "title": "Actualización automática de estados",
+                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
+              },
+              {
+                "title": "Alertas inteligentes",
+                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
+              },
+              {
+                "title": "Historial completo de actividad",
+                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Plataforma de flujos de trabajo",
+                "description": "Trello-like custom (React + DnD libraries)"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL en AWS"
+              },
+              {
+                "title": "Automatización de notificaciones",
+                "description": "Firebase Cloud Messaging + email (SendGrid)"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B"],
+          "question": "Automatización de la gestión de tarifas y productos de proveedores",
+          "answer": {
+            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Plataforma centralizada de órdenes",
+                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
+              },
+              {
+                "title": "Flujos de trabajo visuales",
+                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
+              },
+              {
+                "title": "Actualización automática de estados",
+                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
+              },
+              {
+                "title": "Alertas inteligentes",
+                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
+              },
+              {
+                "title": "Historial completo de actividad",
+                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Plataforma de flujos de trabajo",
+                "description": "Trello-like custom (React + DnD libraries)"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL en AWS"
+              },
+              {
+                "title": "Automatización de notificaciones",
+                "description": "Firebase Cloud Messaging + email (SendGrid)"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B"],
+          "question": "Automatización de la gestión de tarifas y productos de proveedores",
+          "answer": {
+            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
+            "solutionText": "Solución",
+            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Plataforma centralizada de órdenes",
+                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
+              },
+              {
+                "title": "Flujos de trabajo visuales",
+                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
+              },
+              {
+                "title": "Actualización automática de estados",
+                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
+              },
+              {
+                "title": "Alertas inteligentes",
+                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
+              },
+              {
+                "title": "Historial completo de actividad",
+                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
+              }
+            ],
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Plataforma de flujos de trabajo",
+                "description": "Trello-like custom (React + DnD libraries)"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos",
+                "description": "PostgreSQL en AWS"
+              },
+              {
+                "title": "Automatización de notificaciones",
+                "description": "Firebase Cloud Messaging + email (SendGrid)"
+              }
+            ]
+          }
+        }
+        ]
+    },
+    "solutionsApplications": {
+      "title": "Transformación y digitalización <span> de la construcción </span>",
+      "subTitle": "Trabajamos con constructoras porque no solo entendemos las herramientas, también entendemos los problemas propios de un sector con muchas particularidades, personal muy cualificado, con una gran barrera tecnológica, donde cuesta cambiar, y donde se dedica demasiado tiempo a procesos repetitivos que no aportan valor. Aportamos nuestra experiencia como consultora tecnológica para ayudarte a integrar soluciones digitales que se adapten a tu forma de trabajar, no al revés.",
+      "containers": [
+        {
+          "title": "Desarrollo e integración de software para constructoras",
+          "description": "La tecnología sólo funciona si se adapta a los procesos reales de tu empresa. Diseñamos e integramos software teniendo en cuenta cómo se gestiona una obra en la práctica: con equipos diversos, cambios constantes, plazos ajustados y herramientas que muchas veces no se comunican entre sí. Nuestro objetivo es ayudarte a conectar y optimizar tus sistemas para que todo fluya.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Integración de ERP, BIM y herramientas de gestión de obra ",
+              "description": "Unificamos tus sistemas para que puedas planificar, ejecutar y controlar desde un único entorno conectado. Integramos herramientas como ERP, BIM y software de planificación para que la información fluya sin duplicidades ni errores."
+            },
+            {
+              "title": "Desarrollo de software a medida para planificación, ejecución y control",
+              "description": "Creamos soluciones a medida cuando los productos estándar no se ajustan a tus necesidades. Desde aplicaciones internas hasta herramientas de control de avance o dashboards de obra, desarrollamos tecnología con foco en el uso real y el retorno operativo."
+            },
+            {
+              "title": "Conexión entre herramientas como Presto, Revit, MS Project o Navisworks",
+              "description": "Hacemos que tus herramientas actuales trabajen juntas. Automatizamos el intercambio de datos entre Presto, Revit, MS Project y otras plataformas para evitar tareas manuales, errores de versión y pérdida de información."
+            },
+            {
+              "title": "Soluciones personalizadas para digitalizar procesos o coordinar proyectos",
+              "description": "Analizamos tus flujos y diseñamos soluciones específicas para mejorar la coordinación entre equipos, la trazabilidad de decisiones o la supervisión de proyectos desde la oficina, la obra o el móvil"
+            }
+          ]
+        },
+        {
+          "title": "Control de costes, planificación eficiente y gestión de obras",
+          "description": "En construcción, el margen está en los detalles: saber con precisión cuánto cuesta cada fase, si se están cumpliendo los plazos y qué impacto tiene cada cambio. La tecnología puede darte ese control, pero solo si está bien implementada y adaptada a tu forma de trabajar. Te ayudamos a conectar la planificación con la realidad de la obra y a tomar decisiones con información fiable y actualizada.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Control de costes, planificación digital y gestión de plazos",
+              "description": "Implantamos sistemas que te permiten controlar el presupuesto en tiempo real y conectar la planificación con la ejecución. Ya no se trata solo de tener un cronograma: se trata de saber cómo afecta cada desviación a tus márgenes y poder anticiparse."
+            },
+            {
+              "title": "Automatización de seguimiento de cambios en proyecto y obra",
+              "description": "Cuando cambias un material o ajustas una partida, todo el proyecto se ve impactado. Automatizamos el seguimiento de esos cambios para que su impacto quede registrado, evaluado y comunicado a tiempo. Sin correos sueltos ni decisiones que se pierden."
+            },
+            {
+              "title": "Trazabilidad de decisiones, materiales y presupuestos",
+              "description": "Diseñamos sistemas que permiten rastrear cada decisión, justificar cada partida y vincular proveedores con sus costes e impacto en obra. Pero no solo se trata de registrar: el valor está en generar reporting claro y accionable, que permita tomar decisiones basadas en datos reales y actualizados. Así se evitan sobrecostes, malentendidos y retrasos, y se gana en control y transparencia durante todo el proyecto."
+            }
+          ]
+        },
+         {
+          "title": "Transformación digital y automatización de procesos",
+          "description": "Digitalizar no es solo cuestión de software, sino de estrategia. Automatizamos tareas repetitivas, digitalizamos documentación clave y te ayudamos a introducir tecnologías cuando tienen un impacto real en la obra o en la gestión.",
+          "type": "Aplicación",
+          "cards": [
+           
+          ]
+        },
+        {
+          "title": "Soporte y gestión del cambio",
+          "description": "No solo entregamos tecnología: te acompañamos durante todo el proceso de adopción para que el cambio sea real y sostenible. Formamos a tu equipo en el uso práctico de las soluciones, adaptadas a su día a día. Nos involucramos en la gestión del cambio, ayudando a que los procesos se integren con naturalidad y los equipos los hagan suyos.  Y una vez implantadas las herramientas, seguimos ahí: ofreciendo soporte continuo, resolviendo dudas y ajustando lo que haga falta para que la transformación digital no se quede a medio camino.",
+          "type": "Aplicación",
+          "cards": [
+          
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "¿Cómo trabajamos?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
+        },
+        {
+          "title": "Diseño y arquitectura",
+          "description": "Definición de requisitos, creación de un prototipo y diseño de integraciones con sistemas actuales."
+        },
+        {
+          "title": "Implementación",
+          "description": "Programación, pruebas funcionales, integración con plataformas externas y despliegue en producción."
+        },
+        {
+          "title": "Soporte y mantenimiento",
+          "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "¿Qué necesito para hacer un <span>producto digital</span>?",
+      "description": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
+      "buttonText": "Como podemos ayudarte",
+      "cards": [
+        {
+          "title": "Ingeniería de software",
+          "description": "Desde integrar diferentes herramientas, desarrollar nuevas características y productos hasta monitorear y mantener un producto, estamos listos para ello. Nuestro equipo de ingeniería de software está compuesto por desarrolladores, arquitectos y testers para construir necesidades con tecnología de actual."
+        },
+        {
+          "title": "Ciberseguridad",
+          "description": "La seguridad de la información ya no está en la hoja de ruta. La ciberseguridad es una NECESIDAD en todos los negocios y todas las empresas deben tener el conocimiento, las herramientas y los procesos para evitar o minimizar los ataques."
+        },
+        {
+          "title": "Consultoría tecnologica",
+          "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
+        }
+      ]
+    }
+  },
+  "brand" : {
+      "title" : "Trusted by <span> Great Brands </span>",
+      "description" : "Descubre nuestros clientes y lo que hacemos por ellos"
+    }
 }
