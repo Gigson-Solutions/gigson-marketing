@@ -1,6 +1,6 @@
-import './Hero.css'
-import Button from './Button'
-import heroImg from '../assets/Imagen-esfera-hexagono.png'
+import './Hero.css';
+import Button from './Button';
+import heroImg from '../assets/Imagen-esfera-hexagono.png';
 
 function Hero() {
   return (
@@ -11,10 +11,10 @@ function Hero() {
       <Button name='ABOUT US' classStyle='hero-btn' />
       <a className='hero-godown'>GO DOWN TO EXPLORE</a>
       <svg className='icon-godown' viewBox="0 0 19 8" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 0.999999L8.92332 6.59293C9.26904 6.83697 9.73096 6.83697 10.0767 6.59293L18 1" stroke="#7874F4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M1 0.999999L8.92332 6.59293C9.26904 6.83697 9.73096 6.83697 10.0767 6.59293L18 1" stroke="#7874F4" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

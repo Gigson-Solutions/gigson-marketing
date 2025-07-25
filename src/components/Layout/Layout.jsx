@@ -1,9 +1,9 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
-import ScrollTop from "../../hooks/ScrollTop";
-import CookieBanner from "../../CookieBanner"; // Importamos el nuevo componente
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
+import ScrollTop from '../../hooks/ScrollTop';
+import CookieBanner from '../../CookieBanner'; // Importamos el nuevo componente
 
 const Layout = () => {
    return (

@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./CtaServices.css";
-import cono from "../../assets/Cono.svg";
-import cubo from "../../assets/Cubo.svg";
-import { Trans, useTranslation } from "react-i18next";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './CtaServices.css';
+import cono from '../../assets/Cono.svg';
+import cubo from '../../assets/Cubo.svg';
+import { Trans, useTranslation } from 'react-i18next';
 
 export const CtaServices = () => {
    const { t } = useTranslation();
-   const { sth2, slink } = t("whyservices");
+   const { sth2, slink } = t('whyservices');
    return (
       <div className="wrapper">
          <div className="cta-why-gigson">

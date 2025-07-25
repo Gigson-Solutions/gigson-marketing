@@ -1,7 +1,7 @@
 import solutionsApplicationsBgGradient from '../../assets/solutions-applications-bg-gradients-1.svg';
-import { Trans } from "react-i18next";
-import { useState } from "react";
-import chevronDownIcon from "../../assets/chevron-down.svg";
+import { Trans } from 'react-i18next';
+import { useState } from 'react';
+import chevronDownIcon from '../../assets/chevron-down.svg';
 
 const getCardNr = (index) => String(index).padStart(2, '0');
 
@@ -12,8 +12,8 @@ const Card = ({ title, description, cardNr, className }) => {
             <h4 className="text-h4 text-dark-primary md:mb-6">{title}</h4>
             <p className="block text-body text-dark-medium">{description}</p>
         </div>
-    )
-}
+    );
+};
 
 const CardMobile = ({ title, description, cardNr, className }) => {
     const [open, setOpen] = useState(false);
@@ -31,7 +31,7 @@ const CardMobile = ({ title, description, cardNr, className }) => {
                 </div>
             </button>
         </div>
-    )
+    );
 };
 
 
@@ -67,7 +67,7 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
 
                         const mainCardClass = isPairContainer ? 'md:order-last md:rounded-tr-4xl md:rounded-tl-lg lg:ml-14' : 'md:order-first md:rounded-tl-4xl md:rounded-tr-lg lg:mr-14';
 
-                        const cardNr = getCardNr(index + 1)
+                        const cardNr = getCardNr(index + 1);
 
                         return (
                             <div key={index}>
@@ -90,7 +90,7 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
                                                     <CardMobile key={index} title={title} description={description}
                                                         cardNr={cardNr} />
                                                 </div>
-                                                )
+                                                );
                                             })}
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
                                 <div className={`flex flex-col md:grid ${remainingCards.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'}  gap-6`}>
                                     {remainingCards.map(({ title, description }, index) => {
                                         const flexCardIndex = index + 3;
-                                        const cardNr = getCardNr(flexCardIndex)
+                                        const cardNr = getCardNr(flexCardIndex);
 
                                         const isLongCard = flexCardIndex % 6 === 0 || remainingCards.length === 1;
 
@@ -114,12 +114,12 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
                                     })}
                                 </div>
                             </div>
-                        )
+                        );
 
                     })}
                 </div>
             </div>
-        </section>)
-}
+        </section>);
+};
 
-export default SolutionsApplications
+export default SolutionsApplications;

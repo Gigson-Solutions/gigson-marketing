@@ -1,14 +1,14 @@
-import "./AboutHero.css";
-import cubeSvg from "../../assets/cubo1.svg";
-import piraSvg from "../../assets/tri1.svg";
-import circSvg from "../../assets/circunferencia1.svg";
-import triaSvg from "../../assets/Trianguloycirculo.png";
-import { Link } from "react-router-dom";
-import { Trans, useTranslation } from "react-i18next";
+import './AboutHero.css';
+import cubeSvg from '../../assets/cubo1.svg';
+import piraSvg from '../../assets/tri1.svg';
+import circSvg from '../../assets/circunferencia1.svg';
+import triaSvg from '../../assets/Trianguloycirculo.png';
+import { Link } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
 
 const AboutHero = () => {
    const { t } = useTranslation();
-   const { title, description, cta, titleH2, belive, need } = t("about");
+   const { title, description, cta, titleH2, belive, need } = t('about');
    const { t1, t2, t3, p1, p2, p3 } = belive;
    const { specialist1, specialist2, specialist3, specialist4, specialist5, specialist6, specialist7, specialist8, specialist9, label, cta2 } =
       need;
@@ -20,15 +20,15 @@ const AboutHero = () => {
    ];
 
    const dataSpecialist = [
-      { title: "Product Manager", desc: specialist1 },
-      { title: "FullStack", desc: specialist2 },
-      { title: "Solution Architect", desc: specialist3 },
-      { title: "Backend Developer", desc: specialist4 },
-      { title: "Business Analyst", desc: specialist5 },
-      { title: "Frontend Developer", desc: specialist6 },
-      { title: "Quality Assurance", desc: specialist7 },
-      { title: "UX/UI Designer", desc: specialist8 },
-      { title: "Security Engineer", desc: specialist9 },
+      { title: 'Product Manager', desc: specialist1 },
+      { title: 'FullStack', desc: specialist2 },
+      { title: 'Solution Architect', desc: specialist3 },
+      { title: 'Backend Developer', desc: specialist4 },
+      { title: 'Business Analyst', desc: specialist5 },
+      { title: 'Frontend Developer', desc: specialist6 },
+      { title: 'Quality Assurance', desc: specialist7 },
+      { title: 'UX/UI Designer', desc: specialist8 },
+      { title: 'Security Engineer', desc: specialist9 },
    ];
 
    return (
@@ -49,7 +49,7 @@ const AboutHero = () => {
          <div className="div-button-about-svg">
             <svg
                onClick={() => {
-                  const el = document.querySelector(".about-bellow").scrollIntoView({ behavior: "smooth" });
+                  const el = document.querySelector('.about-bellow').scrollIntoView({ behavior: 'smooth' });
                }}
 
                className="icon-godown"
@@ -60,7 +60,7 @@ const AboutHero = () => {
             </svg>
          </div>
 
-         <div className="about-bellow" style={{top: "-6rem", position: "relative"}}></div>
+         <div className="about-bellow" style={{top: '-6rem', position: 'relative'}}></div>
          <div className="about-belive-max">
             <div className="wrapper">
                <h2 className="about-hero-h2">{titleH2}</h2>
@@ -79,7 +79,7 @@ const AboutHero = () => {
                </section>
             </div>
          </div>
-         <div className="wrapper" style={{overflowX: "hidden"}}>
+         <div className="wrapper" style={{overflowX: 'hidden'}}>
             <section className="about-section-need">
                <img className="about-background-image-DgPrd" src={triaSvg} alt="tria" /> {}
                <h2 className="about-hero-need-h2">

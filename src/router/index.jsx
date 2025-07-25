@@ -1,19 +1,19 @@
-import Layout from "../components/Layout/Layout";
-import Home from "../components/Home/Home";
-import AboutHero from "../components/About/AboutHero";
-import Services from "../components/Services/Services";
-import Cases from "../components/Pages/Cases/Cases";
-import Faqs from "../components/Pages/Faqs/Faqs";
-import Contact from "../components/Pages/Contact";
-import Logistics from "../components/Pages/Logistics/Logistics";
-import NotFound from "../components/Pages/NotFound/NotFound";
-import Policity from "../components/Pages/Policity";
-import CookiesPage from "../components/Pages/CookiesPage";
+import Layout from '../components/Layout/Layout';
+import Home from '../components/Home/Home';
+import AboutHero from '../components/About/AboutHero';
+import Services from '../components/Services/Services';
+import Cases from '../components/Pages/Cases/Cases';
+import Faqs from '../components/Pages/Faqs/Faqs';
+import Contact from '../components/Pages/Contact';
+import Logistics from '../components/Pages/Logistics/Logistics';
+import NotFound from '../components/Pages/NotFound/NotFound';
+import Policity from '../components/Pages/Policity';
+import CookiesPage from '../components/Pages/CookiesPage';
 
-import {createBrowserRouter, Navigate, Outlet} from "react-router-dom";
-import "../App.css";
-import Notice from "../components/Pages/Notice";
-import { ROUTE_SLUGS, DEFAULT_LANG } from "./routerSlugs"
+import {createBrowserRouter, Navigate, Outlet} from 'react-router-dom';
+import '../App.css';
+import Notice from '../components/Pages/Notice';
+import { ROUTE_SLUGS, DEFAULT_LANG } from './routerSlugs';
 
 const generateRoutes = (lang) => {
   const slugs = ROUTE_SLUGS[lang];
@@ -39,7 +39,7 @@ const generateRoutes = (lang) => {
 };
 
 export const router = createBrowserRouter([
-   generateRoutes("en"),
-   generateRoutes("es"),
-   { path: "*", element: <NotFound /> },
+   generateRoutes('en'),
+   generateRoutes('es'),
+   { path: '*', element: <NotFound /> },
 ]);

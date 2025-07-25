@@ -1,12 +1,12 @@
-import "./Hero.css";
-import "../Button.css";
-import heroImg from "../../assets/Imagen-esfera-hexagono.png";
-import { Link } from "react-router-dom";
-import { Trans, useTranslation } from "react-i18next";
+import './Hero.css';
+import '../Button.css';
+import heroImg from '../../assets/Imagen-esfera-hexagono.png';
+import { Link } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
 
 function Hero() {
    const { t } = useTranslation();
-   const { heroH1, heroP, heroBtn, heroScroll } = t("home");
+   const { heroH1, heroP, heroBtn, heroScroll } = t('home');
 
    return (
       <div className="wrapper">
@@ -27,8 +27,8 @@ function Hero() {
                <div
                   onClick={(e) => {
                      e.preventDefault();
-                     const el = document.querySelector("#homeServices");
-                     el.scrollIntoView({ behavior: "smooth" });
+                     const el = document.querySelector('#homeServices');
+                     el.scrollIntoView({ behavior: 'smooth' });
                   }}
                >
                   <p className="hero-godown-a">{heroScroll}</p>

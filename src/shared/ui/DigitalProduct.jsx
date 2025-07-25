@@ -7,9 +7,9 @@ import imgOne from '../../assets/digital-product-img-1.png';
 import imgTwo from '../../assets/digital-product-img-2.png';
 import imgThree from '../../assets/digital-product-img-3.png';
 
-import {ButtonIconLink} from "./ButtonIcon.jsx";
-import {ButtonLink} from "./Button.jsx";
-import {Trans, useTranslation} from "react-i18next";
+import {ButtonIconLink} from './ButtonIcon.jsx';
+import {ButtonLink} from './Button.jsx';
+import {Trans, useTranslation} from 'react-i18next';
 
 const buttonLink = '/contact';
 
@@ -17,7 +17,7 @@ const cardsAttributes = [
     { imgSrc: imgOne },
     { imgSrc: imgTwo },
     { imgSrc: imgThree }
-]
+];
 
 
 const Card = ({title, imgSrc, description, cardNr}) => {
@@ -34,8 +34,8 @@ const Card = ({title, imgSrc, description, cardNr}) => {
             </div>
             <p className="text-body text-[#737272]">{description}</p>
         </div>
-    )
-}
+    );
+};
 
 
 const DigitalProduct = ({ title, buttonText, description, cards }) => {
@@ -60,7 +60,7 @@ const DigitalProduct = ({ title, buttonText, description, cards }) => {
 
                     const { imgSrc} = cardsAttributes[index];
 
-                    return (<Card key={index} title={title} description={description} imgSrc={imgSrc} cardNr={index +1 }/>)
+                    return (<Card key={index} title={title} description={description} imgSrc={imgSrc} cardNr={index +1 }/>);
 
                 })}
             </div>
@@ -77,12 +77,12 @@ const DigitalProduct = ({ title, buttonText, description, cards }) => {
                             <SwiperSlide key={index}>
                                 <Card key={index} title={title} description={description} imgSrc={imgSrc}/>
                             </SwiperSlide>
-                        )
+                        );
                     })}
                 </Swiper>
             </div>
         </div>
-    </section>)
-}
+    </section>);
+};
 
-export default DigitalProduct
+export default DigitalProduct;

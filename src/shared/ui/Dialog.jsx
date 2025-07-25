@@ -1,22 +1,22 @@
-import {useEffect} from "react";
+import {useEffect} from 'react';
 
-const Dialog = ({ isOpen, onClose, children, size = "lg" }) => {
+const Dialog = ({ isOpen, onClose, children, size = 'lg' }) => {
     if (!isOpen) return null;
 
     useEffect(() => {
         if (isOpen) {
-            document.body.classList.add("overflow-hidden");
+            document.body.classList.add('overflow-hidden');
         } else {
-            document.body.classList.remove("overflow-hidden");
+            document.body.classList.remove('overflow-hidden');
         }
 
-        return () => document.body.classList.remove("overflow-hidden");
+        return () => document.body.classList.remove('overflow-hidden');
     }, [isOpen]);
 
     const sizeClass = {
-        sm: "max-w-xl",
-        md: "max-w-4xl",
-        lg: "max-w-7xl",
+        sm: 'max-w-xl',
+        md: 'max-w-4xl',
+        lg: 'max-w-7xl',
     };
 
     return (

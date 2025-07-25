@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const PrimarySvg = () => {
     return (
@@ -52,7 +52,7 @@ const OutlinedSvg = ({ color }) => {
 };
 
 const getBoxClass = (outlined) => {
-    return outlined ? "" : "bg-purple-accents";
+    return outlined ? '' : 'bg-purple-accents';
 };
 
 const ButtonIconLink = ({ href, outlined, outlinedColor }) => {
