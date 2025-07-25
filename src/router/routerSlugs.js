@@ -1,6 +1,6 @@
 const DEFAULT_LANG = 'en';
 
-const SUPPORTED_LANGS = ["en", "es"];
+const SUPPORTED_LANGS = ['en', 'es'];
 
 const ROUTE_SLUGS = {
   en: {
@@ -31,4 +31,4 @@ const ROUTE_SLUGS = {
   },
 };
 
-export { ROUTE_SLUGS, DEFAULT_LANG, SUPPORTED_LANGS }
+export { ROUTE_SLUGS, DEFAULT_LANG, SUPPORTED_LANGS };

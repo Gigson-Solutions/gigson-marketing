@@ -1,20 +1,20 @@
-import logoFooter from "../../assets/LogoFooter.svg";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import "./Footer.css";
-import LanguageSelector from "../LanguageSelector/LanguageSelector";
+import logoFooter from '../../assets/LogoFooter.svg';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import './Footer.css';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 const Footer = () => {
    const { t } = useTranslation();
 
-   const { about, services, cases, faqs, contact, legal, cookies, notice } = t("menu");
+   const { about, services, cases, faqs, contact, legal, cookies, notice } = t('menu');
 
    const menuLinks = [
-      { name: services, link: "services" },
-      { name: cases, link: "cases" },
-      { name: about, link: "about" },
-      { name: faqs, link: "faqs" },
-      { name: contact, link: "contact" },
+      { name: services, link: 'services' },
+      { name: cases, link: 'cases' },
+      { name: about, link: 'about' },
+      { name: faqs, link: 'faqs' },
+      { name: contact, link: 'contact' },
    ];
 
    return (

@@ -1,6 +1,6 @@
-import { useTranslation } from "react-i18next";
-import { useLocation, useNavigate } from "react-router-dom";
-import { ROUTE_SLUGS, DEFAULT_LANG, SUPPORTED_LANGS } from "../../router/routerSlugs";
+import { useTranslation } from 'react-i18next';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { ROUTE_SLUGS, DEFAULT_LANG, SUPPORTED_LANGS } from '../../router/routerSlugs';
 
 const LanguageSelector = () => {
    const location = useLocation();
@@ -8,13 +8,13 @@ const LanguageSelector = () => {
    const { i18n } = useTranslation();
 
    const currentPath = location.pathname;
-   const segments = currentPath.split("/").filter(Boolean);
+   const segments = currentPath.split('/').filter(Boolean);
 
    const currentLang = SUPPORTED_LANGS.includes(segments[0])
       ? segments[0]
       : DEFAULT_LANG;
 
-   const targetLang = currentLang === "en" ? "es" : "en";
+   const targetLang = currentLang === 'en' ? 'es' : 'en';
 
    const pathSegments = SUPPORTED_LANGS.includes(segments[0])
       ? segments.slice(1)
@@ -35,25 +35,25 @@ const LanguageSelector = () => {
 
    const newPath =
       targetLang === DEFAULT_LANG
-         ? `/${translatedSegments.join("/")}`
-         : translatedSegments.join("/") === ""
+         ? `/${translatedSegments.join('/')}`
+         : translatedSegments.join('/') === ''
             ? `/${targetLang}`
             :
-            `/${targetLang}/${translatedSegments.join("/")}`;
+            `/${targetLang}/${translatedSegments.join('/')}`;
 
    const switchLanguage = () => {
       i18n.changeLanguage(targetLang);
-      document.documentElement.lang = i18n.language
+      document.documentElement.lang = i18n.language;
       navigate(newPath);
    };
 
    return (
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
          {SUPPORTED_LANGS.map((lang, index) => (
             <div key={lang} className="flex items-center">
                <button
                   onClick={switchLanguage}
-                  className={`cursor-pointer uppercase ${lang === currentLang ? "spam-lng" : ""}`}
+                  className={`cursor-pointer uppercase ${lang === currentLang ? 'spam-lng' : ''}`}
                >{lang}</button>
                {index < SUPPORTED_LANGS.length - 1 && <span className="mx-1">/</span>}
             </div>

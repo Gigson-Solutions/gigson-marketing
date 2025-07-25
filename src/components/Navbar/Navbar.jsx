@@ -1,24 +1,24 @@
-import logoImg from "../../assets/Logo.svg";
-import { Link, useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import logoImg from '../../assets/Logo.svg';
+import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-import "./NavbarHeader.css";
-import NavbarDesktop from "./NavbarDesktop.jsx";
-import NavbarMobile from "./NavbarMobile.jsx";
-import { ROUTE_SLUGS, DEFAULT_LANG, SUPPORTED_LANGS } from "../../router/routerSlugs.js";
+import './NavbarHeader.css';
+import NavbarDesktop from './NavbarDesktop.jsx';
+import NavbarMobile from './NavbarMobile.jsx';
+import { ROUTE_SLUGS, DEFAULT_LANG, SUPPORTED_LANGS } from '../../router/routerSlugs.js';
 
 const Navbar = () => {
    const { t } = useTranslation();
    const location = useLocation();
 
    const currentPath = location.pathname;
-   const segments = currentPath.split("/").filter(Boolean);
+   const segments = currentPath.split('/').filter(Boolean);
 
    const currentLang = SUPPORTED_LANGS.includes(segments[0])
       ? segments[0]
       : DEFAULT_LANG;
 
-   const { about, services, cases, faqs, contact, industries, logistics } = t("menu");
+   const { about, services, cases, faqs, contact, industries, logistics } = t('menu');
 
    const menuLinks = [
       { name: services, link: ROUTE_SLUGS[currentLang].services },

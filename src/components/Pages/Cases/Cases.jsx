@@ -1,9 +1,9 @@
-import { useState } from "react";
-import CasesBg from "../../../assets/CasesBg.png";
-import { Trans, useTranslation } from "react-i18next";
-import { Accordion } from "../../Accordion/Accordion";
-import { Link } from "react-router-dom";
-import "./Cases.css";
+import { useState } from 'react';
+import CasesBg from '../../../assets/CasesBg.png';
+import { Trans, useTranslation } from 'react-i18next';
+import { Accordion } from '../../Accordion/Accordion';
+import { Link } from 'react-router-dom';
+import './Cases.css';
 
 const Cases = () => {
    const [activeIndex, setActiveIndex] = useState(null);
@@ -15,9 +15,9 @@ const Cases = () => {
    const [selectedNeeds, setSelectedNeeds] = useState([]);
 
    const { t } = useTranslation();
-   const { heroH1, heroP, featuresTitle, tagTitle, needTitle, resetFilters, solutionTitle, toolsTitle } = t("cases");
-   const cases = t("casesDropdown");
-   const { contact } = t("ctas");
+   const { heroH1, heroP, featuresTitle, tagTitle, needTitle, resetFilters, solutionTitle, toolsTitle } = t('cases');
+   const cases = t('casesDropdown');
+   const { contact } = t('ctas');
 
    const uniqueTags = [...new Set(cases.map(({ tags }) => tags).flat())];
    const uniqueNeeds = [...new Set(cases.map(({ need }) => need).flat())];
@@ -67,7 +67,7 @@ const Cases = () => {
                <button
                   key={tag}
                   onClick={() => handleTagFilter(tag)}
-                  className={`button-main filters-btn ${selectedTags.includes(tag) && "filter-btn-active"}`}
+                  className={`button-main filters-btn ${selectedTags.includes(tag) && 'filter-btn-active'}`}
                >
                   {tag}
                </button>
@@ -80,7 +80,7 @@ const Cases = () => {
                <button
                   key={need}
                   onClick={() => handleNeedFilter(need)}
-                  className={`button-main filters-btn ${selectedNeeds.includes(need) && "filter-btn-active"}`}
+                  className={`button-main filters-btn ${selectedNeeds.includes(need) && 'filter-btn-active'}`}
                >
                   {need}
                </button>

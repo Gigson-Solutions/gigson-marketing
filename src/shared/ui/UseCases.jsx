@@ -2,7 +2,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Pagination} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import "../../components/slider.css";
+import '../../components/slider.css';
 
 import iconOne from '../../assets/use-cases-icon-1.svg';
 import iconTwo from '../../assets/use-cases-icon-2.svg';
@@ -10,11 +10,11 @@ import iconThree from '../../assets/use-cases-icon-3.svg';
 import iconFour from '../../assets/use-cases-icon-4.svg';
 import iconBlockquote from '../../assets/usecases-blockquote-icon.svg';
 
-import {ButtonIcon} from "./ButtonIcon.jsx";
-import {Button} from "./Button.jsx";
-import {Trans} from "react-i18next";
-import {useState} from "react";
-import Dialog from "./Dialog.jsx";
+import {ButtonIcon} from './ButtonIcon.jsx';
+import {Button} from './Button.jsx';
+import {Trans} from 'react-i18next';
+import {useState} from 'react';
+import Dialog from './Dialog.jsx';
 
 const cardsIcons = [iconOne, iconTwo, iconThree, iconFour];
 
@@ -26,8 +26,8 @@ const Arrow = () => {
             <path d="M10 17.5L1.76978 9.72701C1.35194 9.33239 1.35194 8.66761 1.76978 8.27299L10 0.499999" stroke="#868685" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
 
-    )
-}
+    );
+};
 
 const TitleBox = ({title, description}) => {
     return (
@@ -35,14 +35,14 @@ const TitleBox = ({title, description}) => {
             <p className="text-bigTag uppercase text-purple-accents">{title}</p>
             <p className="text-body text-dark-primary">{description}</p>
         </div>
-    )
-}
+    );
+};
 
 const Card = ({title, logoSrc, isLastCard, supTitle, description, buttonText, dialog, onClickDialog}) => {
 
     const dialogHandleClick = () =>{
-        onClickDialog(dialog)
-    }
+        onClickDialog(dialog);
+    };
 
     return (
         <div
@@ -60,8 +60,8 @@ const Card = ({title, logoSrc, isLastCard, supTitle, description, buttonText, di
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 
 const DialogContent = ({ backButtonText, title, challengeText, challengeDescription, quote, technologiesText, technologies, functionalitiesText, functionalities, solutionText, solutionDescription, onClose}) => {
@@ -127,7 +127,7 @@ const DialogContent = ({ backButtonText, title, challengeText, challengeDescript
                                     />
                                 </p>
                             </div>
-                        )
+                        );
                     })}
                 </div>
             </div>
@@ -141,8 +141,8 @@ const DialogContent = ({ backButtonText, title, challengeText, challengeDescript
             </div>
 
         </div>
-    )
-}
+    );
+};
 
 const UseCases = ({cards, title, description}) => {
     const [showDialog, setShowDialog] = useState(null);
@@ -163,7 +163,7 @@ const UseCases = ({cards, title, description}) => {
 
                             return (
                                 <Card key={index} {...cardProps} isLastCard={isLastCard} logoSrc={logoSrc} onClickDialog={setShowDialog} />
-                            )
+                            );
 
                         })}
                     </div>
@@ -184,7 +184,7 @@ const UseCases = ({cards, title, description}) => {
                                     <SwiperSlide key={index}>
                                         <Card {...cardProps} isLastCard={false} logoSrc={logoSrc} onClickDialog={setShowDialog}/>
                                     </SwiperSlide>
-                                )
+                                );
                             })}
                         </Swiper>
                     </div>
@@ -199,7 +199,7 @@ const UseCases = ({cards, title, description}) => {
                     </Dialog>
                 )}
             </>
-    )
-}
+    );
+};
 
-export default UseCases
+export default UseCases;

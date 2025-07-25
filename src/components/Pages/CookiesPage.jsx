@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { Trans, useTranslation } from "react-i18next";
-import "./Contact.css";
-import "../Form.css";
-import "./Policity.css";
+import { Trans, useTranslation } from 'react-i18next';
+import './Contact.css';
+import '../Form.css';
+import './Policity.css';
 
 const CookiesPage = () => {
    const { t } = useTranslation();
@@ -51,7 +51,7 @@ const CookiesPage = () => {
       ps_4_4,
       pc_4_5,
       pc_4_6,
-   } = t("cookies");
+   } = t('cookies');
    return (
       <div className="wrapper">
          <div className="policity-main">

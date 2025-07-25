@@ -1,14 +1,14 @@
-import React from "react";
-import "./Homecases.css";
-import cubeSvg from "../../assets/cubo-about.svg";
-import piraSvg from "../../assets/Piramide-about.svg";
-import circSvg from "../../assets/circulo-about.svg";
-import { Link } from "react-router-dom";
-import { Trans, useTranslation } from "react-i18next";
-import { useState } from "react";
-import { Accordion } from "../../components/Accordion/Accordion.jsx";
-import "../Pages/Cases/Cases.css";
-import "../Pages/Cases/Cases.jsx";
+import React from 'react';
+import './Homecases.css';
+import cubeSvg from '../../assets/cubo-about.svg';
+import piraSvg from '../../assets/Piramide-about.svg';
+import circSvg from '../../assets/circulo-about.svg';
+import { Link } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import { Accordion } from '../../components/Accordion/Accordion.jsx';
+import '../Pages/Cases/Cases.css';
+import '../Pages/Cases/Cases.jsx';
 
 const HomeCases = () => {
    const [activeIndex, setActiveIndex] = useState(null);
@@ -17,7 +17,7 @@ const HomeCases = () => {
       setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
    };
    const { t } = useTranslation();
-   const { title, description, cta, titleH2, belive, need } = t("about");
+   const { title, description, cta, titleH2, belive, need } = t('about');
    const { t1, t2, t3, p1, p2, p3 } = belive;
    const { specialist1, specialist2, specialist3, specialist4, specialist5, specialist6, specialist7, specialist8, specialist9, label, cta2 } =
       need;
@@ -29,25 +29,25 @@ const HomeCases = () => {
    ];
 
    const dataSpecialist = [
-      { title: "Product Manager", desc: specialist1 },
-      { title: "FullStack", desc: specialist2 },
-      { title: "Solution Architect", desc: specialist3 },
-      { title: "Backend Developer", desc: specialist4 },
-      { title: "Business Analyst", desc: specialist5 },
-      { title: "Frontend Developer", desc: specialist6 },
-      { title: "Quality Assurance", desc: specialist7 },
-      { title: "UX/UI Designer", desc: specialist8 },
-      { title: "Security Engineer", desc: specialist9 },
+      { title: 'Product Manager', desc: specialist1 },
+      { title: 'FullStack', desc: specialist2 },
+      { title: 'Solution Architect', desc: specialist3 },
+      { title: 'Backend Developer', desc: specialist4 },
+      { title: 'Business Analyst', desc: specialist5 },
+      { title: 'Frontend Developer', desc: specialist6 },
+      { title: 'Quality Assurance', desc: specialist7 },
+      { title: 'UX/UI Designer', desc: specialist8 },
+      { title: 'Security Engineer', desc: specialist9 },
    ];
 
-   const { wth2, wp1, wp2, wlink } = t("caseswhygigson");
+   const { wth2, wp1, wp2, wlink } = t('caseswhygigson');
 
    const [selectedTags, setSelectedTags] = useState([]);
    const [selectedNeeds, setSelectedNeeds] = useState([]);
 
-   const { heroH1, heroP, featuresTitle, tagTitle, needTitle, resetFilters, solutionTitle, toolsTitle } = t("cases");
-   const cases = t("casesDropdown");
-   const { contact } = t("ctas");
+   const { heroH1, heroP, featuresTitle, tagTitle, needTitle, resetFilters, solutionTitle, toolsTitle } = t('cases');
+   const cases = t('casesDropdown');
+   const { contact } = t('ctas');
 
    const uniqueTags = [...new Set(cases.map(({ tags }) => tags).flat())];
    const uniqueNeeds = [...new Set(cases.map(({ need }) => need).flat())];
@@ -115,7 +115,7 @@ const HomeCases = () => {
                         <button
                            key={tag}
                            onClick={() => handleTagFilter(tag)}
-                           className={`button-main filters-btn ${selectedTags.includes(tag) && "filter-btn-active"}`}
+                           className={`button-main filters-btn ${selectedTags.includes(tag) && 'filter-btn-active'}`}
                         >
                            {tag}
                         </button>
@@ -128,7 +128,7 @@ const HomeCases = () => {
                         <button
                            key={need}
                            onClick={() => handleNeedFilter(need)}
-                           className={`button-main filters-btn ${selectedNeeds.includes(need) && "filter-btn-active"}`}
+                           className={`button-main filters-btn ${selectedNeeds.includes(need) && 'filter-btn-active'}`}
                         >
                            {need}
                         </button>

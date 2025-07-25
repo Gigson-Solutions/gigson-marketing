@@ -21,8 +21,8 @@ const Method = ({ title, description, isInnerMethod, isFirstCard}) => {
                 </>
             )}
         </div>
-    )
-}
+    );
+};
 
 const HowWeWork = ({title, methods}) => {
     const firstMethod = methods.slice(0, 1);
@@ -43,7 +43,7 @@ const HowWeWork = ({title, methods}) => {
                         {firstMethod.map(({title, description}, index) => {
                             return (
                                 <Method key={index} isInnerMethod title={title} description={description}/>
-                            )
+                            );
                         })}
                     </div>
                     <div className="flex flex-col gap-y-6 flex-4 md:order-1">
@@ -52,12 +52,12 @@ const HowWeWork = ({title, methods}) => {
 
                             return (
                                 <Method key={index} title={title} description={description} isFirstCard={isFirstCard}/>
-                            )
+                            );
                         })}
                     </div>
                 </div>
             </div>
-        </section>)
-}
+        </section>);
+};
 
-export default HowWeWork
+export default HowWeWork;

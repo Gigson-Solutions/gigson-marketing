@@ -1,14 +1,14 @@
-import heroImg from "../../assets/HeroServices.png";
-import { Link } from "react-router-dom";
-import { Trans, useTranslation } from "react-i18next";
-import "./Services.css";
+import heroImg from '../../assets/HeroServices.png';
+import { Link } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
+import './Services.css';
 
 const Services = () => {
    const { t } = useTranslation();
-   const { serviceH1, serviceP } = t("service");
-   const servicesData = t("serviceCard");
-   const { whyTitle, whyDescription } = t("whyChooseService");
-   const { talk } = t("ctas");
+   const { serviceH1, serviceP } = t('service');
+   const servicesData = t('serviceCard');
+   const { whyTitle, whyDescription } = t('whyChooseService');
+   const { talk } = t('ctas');
 
    return (
       <div className="wrapper">
