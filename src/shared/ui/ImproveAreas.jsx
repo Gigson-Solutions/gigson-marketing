@@ -109,7 +109,7 @@ const PainPointsChips = ({  painPoints, selectedPainPoints, initialChipState, on
                         isActive={isActive}
                         name={name}
                         onClick={() => onFilterClick(type)}
-                        {...isMobile &&  { endAdornment: timesCircleIcon} }
+                        {...isMobile &&  { endAdornment: timesCircleIcon}}
                     />
                 );
             })}

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ROUTE_SLUGS, DEFAULT_LANG, SUPPORTED_LANGS } from '../../router/routerSlugs';
+import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from '../../router/routerSlugs';
 
 const LanguageSelector = () => {
    const location = useLocation();

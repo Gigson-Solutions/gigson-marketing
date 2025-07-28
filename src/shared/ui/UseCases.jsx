@@ -189,7 +189,7 @@ const UseCases = ({cards, title, description}) => {
                         </Swiper>
                     </div>
                 </div>
-                { showDialog && (
+                {showDialog && (
                     <Dialog
                         isOpen={showDialog}
                         onClose={handleOnCloseDialog}

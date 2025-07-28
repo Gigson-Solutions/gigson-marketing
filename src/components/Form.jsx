@@ -76,8 +76,8 @@ const Form = ({ customClass }) => {
                      {checkbox.third}
                   </label>
                </div>
-               <input type="hidden" name="_captcha" value="false"></input>
-               <input type="hidden" name="_template" value="box"></input>
+               <input type="hidden" name="_captcha" value="false" />
+               <input type="hidden" name="_template" value="box" />
             </div>
             <Button type="submit" name={send} classStyle="form-btn-send" />
          </form>

@@ -40,7 +40,7 @@ const NavbarMobile = ({ menu }) => {
         <nav className={`navbar-mobile hamburger-menu ${isMobileMenuOpen ? 'open' : ''}`}>
             <input id="menuToggle" type="checkbox" checked={isMobileMenuOpen} onChange={toggleMobileMenu} />
             <label className="menu-btn" htmlFor="menuToggle">
-                <span></span>
+                <span />
             </label>
 
             <div className="menu-box--mobile">
@@ -48,7 +48,7 @@ const NavbarMobile = ({ menu }) => {
                     <img className="logo-header-hamburger" src={logoImg} alt="Logo Gigson Solutions" />
                 </Link>
 
-                <div className="border-nav"></div>
+                <div className="border-nav" />
                 <ul className="menu-items">
                     {menu.map(({ name, link, children }, index) => (
                         <li

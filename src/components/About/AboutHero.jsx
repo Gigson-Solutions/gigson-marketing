@@ -34,7 +34,7 @@ const AboutHero = () => {
    return (
       <>
          <section className="div-about-hero">
-            <div className="about-bg"></div>
+            <div className="about-bg" />
             <div className="text-center">
                <h1 className="about-hero-h1">
                   <Trans i18nKey={title} components={{ span: <span /> }} />
@@ -60,7 +60,7 @@ const AboutHero = () => {
             </svg>
          </div>
 
-         <div className="about-bellow" style={{top: '-6rem', position: 'relative'}}></div>
+         <div className="about-bellow" style={{top: '-6rem', position: 'relative'}} />
          <div className="about-belive-max">
             <div className="wrapper">
                <h2 className="about-hero-h2">{titleH2}</h2>

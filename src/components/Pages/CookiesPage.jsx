@@ -185,7 +185,7 @@ const CookiesPage = () => {
             <p className="p-comun">
                <Trans i18nKey={pc_4_6} />
             </p>
-            <p className="p-comun"></p>
+            <p className="p-comun" />
          </div>
       </div>
    );
