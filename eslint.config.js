@@ -20,7 +20,6 @@ export default defineConfig([
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
 
-  // 🔧 Configuración extra para detectar versión de React
   {
     settings: {
       react: {
@@ -32,8 +31,8 @@ export default defineConfig([
         'quotes': ['error', 'single'],
         'no-extra-semi': 'error',
         'no-unused-vars': ['warn', { 'argsIgnorePattern': '^_' }],
-        'react/self-closing-comp': 'error', // autofixea <div></div> -> <div />
-        'react/jsx-boolean-value': ['error', 'never'], // autofixea props como <Component visible={true} />
+        'react/self-closing-comp': 'error', 
+        'react/jsx-boolean-value': ['error', 'never'], 
         'react/jsx-curly-spacing': ['error', { 'when': 'never', 'children': true }],
         'sort-imports': ['error', {
               'ignoreCase': false,
