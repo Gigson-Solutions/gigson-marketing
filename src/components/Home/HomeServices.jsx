@@ -11,7 +11,7 @@ function HomeServices() {
 
    return (
       <section className="home-services" id="homeServices">
-         <div className="home-services-bg"></div>
+         <div className="home-services-bg" />
 
          <div className="home-text-container">
             <div className="services-h2-animation">

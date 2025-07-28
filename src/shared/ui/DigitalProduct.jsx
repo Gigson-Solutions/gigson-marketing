@@ -60,7 +60,7 @@ const DigitalProduct = ({ title, buttonText, description, cards }) => {
 
                     const { imgSrc} = cardsAttributes[index];
 
-                    return (<Card key={index} title={title} description={description} imgSrc={imgSrc} cardNr={index +1 }/>);
+                    return (<Card key={index} title={title} description={description} imgSrc={imgSrc} cardNr={index +1}/>);
 
                 })}
             </div>

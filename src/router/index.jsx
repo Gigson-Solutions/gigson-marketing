@@ -10,10 +10,10 @@ import NotFound from '../components/Pages/NotFound/NotFound';
 import Policity from '../components/Pages/Policity';
 import CookiesPage from '../components/Pages/CookiesPage';
 
-import {createBrowserRouter, Navigate, Outlet} from 'react-router-dom';
+import {Navigate, Outlet, createBrowserRouter} from 'react-router-dom';
 import '../App.css';
 import Notice from '../components/Pages/Notice';
-import { ROUTE_SLUGS, DEFAULT_LANG } from './routerSlugs';
+import { DEFAULT_LANG, ROUTE_SLUGS } from './routerSlugs';
 
 const generateRoutes = (lang) => {
   const slugs = ROUTE_SLUGS[lang];

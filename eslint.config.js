@@ -28,13 +28,20 @@ export default defineConfig([
       },
     },
      rules: {
-        "semi": ["error", "always"],
-        "quotes": ["error", "single"],
-        "no-extra-semi": "error",
-        "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
-        "react/self-closing-comp": "error", // autofixea <div></div> -> <div />
-        "react/jsx-boolean-value": ["error", "never"], // autofixea props como <Component visible={true} />
-        "react/jsx-curly-spacing": ["error", { "when": "never", "children": true }],
+        'semi': ['error', 'always'],
+        'quotes': ['error', 'single'],
+        'no-extra-semi': 'error',
+        'no-unused-vars': ['warn', { 'argsIgnorePattern': '^_' }],
+        'react/self-closing-comp': 'error', // autofixea <div></div> -> <div />
+        'react/jsx-boolean-value': ['error', 'never'], // autofixea props como <Component visible={true} />
+        'react/jsx-curly-spacing': ['error', { 'when': 'never', 'children': true }],
+        'sort-imports': ['error', {
+              'ignoreCase': false,
+              'ignoreDeclarationSort': false,
+              'ignoreMemberSort': false,
+              'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single'],
+              'allowSeparatedGroups': false
+          }],
     }
   },
 ]);

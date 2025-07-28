@@ -20,7 +20,7 @@ export const Accordion = ({ title, challenge, features, solution, tools, feature
 
    return (
       <>
-         <div ref={accordionRef} style={{position: 'relative', top: '-6rem'}}></div>
+         <div ref={accordionRef} style={{position: 'relative', top: '-6rem'}} />
          <div onClick={handleCLick} className="accordion-container">
             <button className="accordion-btn">
                <span className="accordion-title">{title}</span>
@@ -35,7 +35,7 @@ export const Accordion = ({ title, challenge, features, solution, tools, feature
                         <ul>
                            {features.map((feature, i) => (
                               <div key={i}>
-                                 <span></span>
+                                 <span />
                                  <li>{feature}</li>
                               </div>
                            ))}
@@ -50,7 +50,7 @@ export const Accordion = ({ title, challenge, features, solution, tools, feature
                      <ul className="cases-dropdown-tools">
                         {tools.map((tool, i) => (
                            <div key={i}>
-                              <span></span>
+                              <span />
                               <li>{tool}</li>
                            </div>
                         ))}
