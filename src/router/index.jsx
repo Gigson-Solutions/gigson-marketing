@@ -9,6 +9,7 @@ import Logistics from "../components/Pages/Logistics/Logistics";
 import NotFound from "../components/Pages/NotFound/NotFound";
 import Policity from "../components/Pages/Policity";
 import CookiesPage from "../components/Pages/CookiesPage";
+import Retail from "../components/Pages/Retail";
 
 import {createBrowserRouter, Navigate, Outlet} from "react-router-dom";
 import "../App.css";
@@ -26,6 +27,7 @@ const generateRoutes = (lang) => {
       { index: true, element: <Home /> },
       { path: slugs.services, element: <Services /> },
       { path: slugs.logistics,element: <Logistics /> },
+      {path: slugs.retail, element: <Retail />},
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },
