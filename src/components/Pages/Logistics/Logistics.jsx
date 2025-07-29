@@ -1,17 +1,17 @@
-import Hero from "../../../shared/ui/Hero.jsx";
-import UseCases from "../../../shared/ui/UseCases.jsx";
-import useCasesBgGradient from '../../../assets/casos-de-uso-bg-gradient-1.svg';
+import Hero from 'shared/Hero.jsx';
+import UseCases from 'shared/UseCases.jsx';
+import useCasesBgGradient from 'assets/casos-de-uso-bg-gradient-1.svg';
 
-import SolutionsApplications from "../../../shared/ui/SolutionsApplications.jsx";
-import ImproveAreas from "../../../shared/ui/ImproveAreas.jsx";
-import HowWeWork from "../../../shared/ui/HowWeWork.jsx";
-import DigitalProduct from "../../../shared/ui/DigitalProduct.jsx";
-import { Helmet } from 'react-helmet-async'
-import { useTranslation } from "react-i18next";
+import SolutionsApplications from 'shared/SolutionsApplications.jsx';
+import ImproveAreas from 'shared/ImproveAreas.jsx';
+import HowWeWork from 'shared/HowWeWork.jsx';
+import DigitalProduct from 'shared/DigitalProduct.jsx';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 const Logistics = () => {
     const { t } = useTranslation();
 
-    const { title, metadescription, hero, solutionsApplications, useCases, improveAreas, howWeWork, digitalProduct } = t("cases-logistics");
+    const { title, metadescription, hero, solutionsApplications, useCases, improveAreas, howWeWork, digitalProduct } = t('cases-logistics');
 
     return (
         <>
@@ -33,7 +33,7 @@ const Logistics = () => {
             <HowWeWork {...howWeWork} />
             <DigitalProduct {...digitalProduct}/>
         </>
-    )
+    );
 };
 
 export default Logistics;

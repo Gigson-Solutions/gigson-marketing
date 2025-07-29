@@ -1,24 +1,24 @@
-import React from "react";
-import { Trans, useTranslation } from "react-i18next";
-import homeServicesImg from "../../assets/FormasServices.png";
-import { Link } from "react-router-dom";
-import "./HomeServices.css";
-import { genArray } from "../../hooks/genArray";
+import React from 'react';
+import { Trans, useTranslation } from 'react-i18next';
+import homeServicesImg from '../../assets/FormasServices.png';
+import { Link } from 'react-router-dom';
+import './HomeServices.css';
+import { genArray } from '../../hooks/genArray';
 
 function HomeServices() {
    const { t } = useTranslation();
-   const { servicesTitle, servicesP, servicesBtn } = t("home");
+   const { servicesTitle, servicesP, servicesBtn } = t('home');
 
    return (
       <section className="home-services" id="homeServices">
-         <div className="home-services-bg"></div>
+         <div className="home-services-bg" />
 
          <div className="home-text-container">
             <div className="services-h2-animation">
                <h2 className="home-services-h2">
                   {genArray(10).map((v, k) => (
                      <>
-                        <Trans key={k} i18nKey={servicesTitle} components={{ span: <span /> }} />{" "}
+                        <Trans key={k} i18nKey={servicesTitle} components={{ span: <span /> }} />{' '}
                      </>
                   ))}
                </h2>

@@ -1,11 +1,11 @@
-import "./Form.css";
-import Button from "./Button.jsx";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import './Form.css';
+import Button from './Button.jsx';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Form = ({ customClass }) => {
    const { t } = useTranslation();
-   const { title, name, service, budget, email, details, send, checkbox } = t("form");
+   const { title, name, service, budget, email, details, send, checkbox } = t('form');
 
    return (
       <section className={`${customClass} form-section`}>
@@ -68,7 +68,7 @@ const Form = ({ customClass }) => {
                         to="/policy"
                         onClick={(e) => {
                            e.preventDefault(); // Previene la navegación normal del <Link>
-                           window.open("/policy", "_blank");
+                           window.open('/policy', '_blank');
                         }}
                      >
                         {checkbox.second}
@@ -76,8 +76,8 @@ const Form = ({ customClass }) => {
                      {checkbox.third}
                   </label>
                </div>
-               <input type="hidden" name="_captcha" value="false"></input>
-               <input type="hidden" name="_template" value="box"></input>
+               <input type="hidden" name="_captcha" value="false" />
+               <input type="hidden" name="_template" value="box" />
             </div>
             <Button type="submit" name={send} classStyle="form-btn-send" />
          </form>

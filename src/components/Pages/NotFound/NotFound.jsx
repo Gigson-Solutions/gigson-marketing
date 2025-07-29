@@ -1,14 +1,14 @@
-import { Trans, useTranslation } from "react-i18next";
-import bg from "../../../assets/mesh-gradient-2.png";
-import { Link } from "react-router-dom";
-import "../../Home/HomeServices.css";
-import React from "react";
-import { genArray } from "../../../hooks/genArray";
-import "./NotFound.css";
+import { Trans, useTranslation } from 'react-i18next';
+import bg from '../../../assets/mesh-gradient-2.png';
+import { Link } from 'react-router-dom';
+import '../../Home/HomeServices.css';
+import React from 'react';
+import { genArray } from '../../../hooks/genArray';
+import './NotFound.css';
 
 const NotFound = () => {
    const { t } = useTranslation();
-   const { banner404, title, title2, description, cta } = t("notFound");
+   const { banner404, title, title2, description, cta } = t('notFound');
 
    return (
       <div className="div">
@@ -37,7 +37,7 @@ const NotFound = () => {
                      {genArray(20).map((v, k) => (
                         <>
                            <Trans i18nKey={banner404} components={{ span: <span /> }} />
-                           {" . "}
+                           {' . '}
                         </>
                      ))}
                   </h2>

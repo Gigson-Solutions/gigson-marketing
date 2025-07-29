@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { AccordionAnimation } from "../../../Accordion/AccordionAnimation";
+import { Link } from 'react-router-dom';
+import { AccordionAnimation } from '../../../Accordion/AccordionAnimation';
 
 export const FaqsAccordion = ({ question, answer, isOpen, onClick, cta, isLast, children }) => {
    if (!question) return null;
@@ -14,7 +14,7 @@ export const FaqsAccordion = ({ question, answer, isOpen, onClick, cta, isLast, 
              <span className="accordion-title faqs">{question}</span>
              <AccordionAnimation accordionOpen={isOpen} faqs="faqs" />
           </button>
-          <div className={`accordion-content ${isOpen ? "accordion-show-content" : ""}`}>
+          <div className={`accordion-content ${isOpen ? 'accordion-show-content' : ''}`}>
              <div className="accordion-content-text">
                 {children || answer}
                 {isLast && (

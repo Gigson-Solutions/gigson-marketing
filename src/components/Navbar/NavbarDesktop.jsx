@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
-import LanguageSelector from "../LanguageSelector/LanguageSelector.jsx";
+import { NavLink } from 'react-router-dom';
+import LanguageSelector from '../LanguageSelector/LanguageSelector.jsx';
 
 
-import "./NavbarDesktop.css";
+import './NavbarDesktop.css';
 
 const ChevronDown = () => {
     return (
@@ -10,8 +10,8 @@ const ChevronDown = () => {
             <path d="M6 9L12 15L18 9" stroke="#3C3C3B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
 
-    )
-}
+    );
+};
 
 
 const NavbarDesktop = ({ menu }) => {
@@ -25,7 +25,7 @@ const NavbarDesktop = ({ menu }) => {
                     {menu.map(({ name, link, children }, index) => (
                         <li
                             key={index}
-                            className={`menu-item ${children ? "has-dropdown" : ""}`}
+                            className={`menu-item ${children ? 'has-dropdown' : ''}`}
                         >
                             {!children ? (
                                 <NavLink className="menu-item__link" to={link} end>
@@ -61,7 +61,7 @@ const NavbarDesktop = ({ menu }) => {
                 </ul>
             </div>
         </nav>
-    )
-}
+    );
+};
 
 export default NavbarDesktop;

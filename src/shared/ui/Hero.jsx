@@ -1,7 +1,7 @@
-import { ButtonLink } from "./Button.jsx";
-import { Trans, useTranslation } from "react-i18next";
+import { ButtonLink } from './Button.jsx';
+import { Trans, useTranslation } from 'react-i18next';
 
-const buttonLink = '/contact'
+const buttonLink = '/contact';
 
 const Hero = ({title, suptitle, description , buttonText }) => {
 
@@ -11,7 +11,7 @@ const Hero = ({title, suptitle, description , buttonText }) => {
             span: <span className="text-purple-accents" />,
             br: <br />
         }}
-    />
+    />;
 
     return (
         <section className="mt-fixed-navbar pt-14 lg:pt-23 pb-36 lg:pb-23">
@@ -24,7 +24,7 @@ const Hero = ({title, suptitle, description , buttonText }) => {
                 <ButtonLink link={buttonLink} text={buttonText} outlined/>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Hero

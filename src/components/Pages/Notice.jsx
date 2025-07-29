@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { Trans, useTranslation } from "react-i18next";
-import "./Contact.css";
-import "../Form.css";
-import "./Policity.css";
+import { Trans, useTranslation } from 'react-i18next';
+import './Contact.css';
+import '../Form.css';
+import './Policity.css';
 
 const Notice = () => {
    const { t } = useTranslation();
@@ -51,7 +51,7 @@ const Notice = () => {
       ps_4_4,
       pc_4_5,
       pc_4_6,
-   } = t("notice");
+   } = t('notice');
    return (
       <div className="wrapper">
          <div className="policity-main">
@@ -185,7 +185,7 @@ const Notice = () => {
             <p className="p-comun">
                <Trans i18nKey={pc_4_6} />
             </p>
-            <p className="p-comun"></p>
+            <p className="p-comun" />
          </div>
       </div>
    );

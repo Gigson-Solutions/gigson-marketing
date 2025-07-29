@@ -20,7 +20,7 @@ const Navbar = () => {
       <nav className={`hamburger-menu ${isMobileMenuOpen ? 'open' : ''}`}>
         <input id="menu__toggle" type="checkbox" checked={isMobileMenuOpen} onChange={toggleMobileMenu} />
         <label className="menu__btn" htmlFor="menu__toggle">
-          <span></span>
+          <span />
         </label>
         <ul className="menu__box">
           <li><Link className="menu__item" to='/' onClick={closeMobileMenu}>SERVICES</Link></li>

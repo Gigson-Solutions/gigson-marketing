@@ -1,22 +1,22 @@
-import {useState} from "react";
-import {Trans} from "react-i18next";
-import Dialog from "./Dialog.jsx";
-import { Button } from "./Button.jsx";
-import {FaqsAccordion} from "../../components/Pages/Faqs/FaqsAccordion/FaqsAccordion.jsx";
-import chevronDownIcon from "../../assets/chevron-down.svg";
-import timesCircleIcon from "../../assets/times-circle.svg";
+import {useState} from 'react';
+import {Trans} from 'react-i18next';
+import Dialog from './Dialog.jsx';
+import { Button } from './Button.jsx';
+import {FaqsAccordion} from '../../components/Pages/Faqs/FaqsAccordion/FaqsAccordion.jsx';
+import chevronDownIcon from '../../assets/chevron-down.svg';
+import timesCircleIcon from '../../assets/times-circle.svg';
 
 const useFaqVisibility = (painPoints) => {
     const defaultPainPoints = painPoints.map((point) => point.type);
 
-    const [initialChipsState, setInitialChipsState] = useState(true)
+    const [initialChipsState, setInitialChipsState] = useState(true);
     const [selectedPainPoints, setSelectedPainPoints] = useState(defaultPainPoints);
     const [tempSelectedPainPoints, setTempSelectedPainPoints] = useState([]);
 
     const toggleChipsState = (type) => {
 
         if(initialChipsState) {
-            setSelectedPainPoints([])
+            setSelectedPainPoints([]);
         }
 
         setSelectedPainPoints((prevSelected) => {
@@ -52,7 +52,7 @@ const useFaqVisibility = (painPoints) => {
     };
 
     const resetFilters = () => {
-        setInitialChipsState(true)
+        setInitialChipsState(true);
         setSelectedPainPoints(defaultPainPoints);
         setTempSelectedPainPoints([]);
     };
@@ -109,7 +109,7 @@ const PainPointsChips = ({  painPoints, selectedPainPoints, initialChipState, on
                         isActive={isActive}
                         name={name}
                         onClick={() => onFilterClick(type)}
-                        {...isMobile &&  { endAdornment: timesCircleIcon} }
+                        {...isMobile &&  { endAdornment: timesCircleIcon}}
                     />
                 );
             })}
@@ -169,8 +169,8 @@ const AccordionContent = ({ challengeDescription, technologiesText, technologies
             </div>
 
         </div>
-    )
-}
+    );
+};
 
 const FaqList = ({ faqs, selectedPainPoints,  activeFaqIndex, onFaqClick }) => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -242,9 +242,9 @@ const ImproveAreas = ({ title, painPoints, faqs, filtersText, filtersClearAllTex
                             selectedPainPoints={selectedPainPoints}
                             painPoints={painPoints}
                             onFilterClick={(type) => {
-                                setInitialChipsState(false)
+                                setInitialChipsState(false);
                                 toggleChipsState(type);
-                                toggleTempChipsState(type)
+                                toggleTempChipsState(type);
                             }}
                         />
                     </div>
@@ -255,7 +255,7 @@ const ImproveAreas = ({ title, painPoints, faqs, filtersText, filtersClearAllTex
                             {hasMultipleFilters && <ResetFiltersButton onClick={resetFilters} text={filtersClearAllText} />}
                         </div>
 
-                        <div className={`flex flex-col md:flex-row flex-wrap gap-2`}>
+                        <div className={'flex flex-col md:flex-row flex-wrap gap-2'}>
                             {painPoints.filter(({type}) => selectedPainPoints.includes(type)).map(({ type, name }, index) => {
 
                                 if(initialChipsState) return null;
@@ -268,11 +268,11 @@ const ImproveAreas = ({ title, painPoints, faqs, filtersText, filtersClearAllTex
                                         name={name}
                                         onClick={() =>{
                                             if(selectedPainPoints.length === 1) {
-                                                resetFilters()
+                                                resetFilters();
                                                 return;
                                             }
                                             toggleChipsState(type);
-                                            toggleTempChipsState(type)
+                                            toggleTempChipsState(type);
                                         }}
                                         endAdornment={timesCircleIcon}
                                     />
@@ -303,10 +303,10 @@ const ImproveAreas = ({ title, painPoints, faqs, filtersText, filtersClearAllTex
                             text={applyFiltersText}
                             onClick={() => {
                                 if(tempSelectedPainPoints.length === 0) {
-                                    setSelectedPainPoints(defaultPainPoints)
+                                    setSelectedPainPoints(defaultPainPoints);
                                     setInitialChipsState(true);
                                 }else {
-                                    setSelectedPainPoints(tempSelectedPainPoints)
+                                    setSelectedPainPoints(tempSelectedPainPoints);
                                     setInitialChipsState(false);
                                 }
 
