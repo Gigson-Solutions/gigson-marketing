@@ -41,6 +41,7 @@ export default defineConfig([
               'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single'],
               'allowSeparatedGroups': false
           }],
+        'no-warning-comments': ['warn', { terms: [''], location: 'anywhere' }],
     }
   },
 ]);
