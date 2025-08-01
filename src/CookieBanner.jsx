@@ -2,11 +2,18 @@ import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import './CookieBanner.css'; // Añadimos estilos personalizados
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const CookieBanner = () => {
    const [isVisible, setIsVisible] = useState(false);
    const { t } = useTranslation();
-   const { h2, p, btnAccept, btnDenie } = t('cookiesBanner');
+   const { h2, p, btnAccept, btnDenie, btnInfo } = t('cookiesBanner');
+   const navigate = useNavigate();
+   const handleClick = () => {
+      navigate("/cookies");
+   }
+   
+   
 
    useEffect(() => {
       // Verificar si el usuario ya ha aceptado o rechazado las cookies
@@ -37,6 +44,7 @@ const CookieBanner = () => {
          <div className="cookie-buttons">
             <button onClick={handleAccept}>{btnAccept}</button>
             <button onClick={handleReject}>{btnDenie}</button>
+            <button onClick={handleClick}>{btnInfo}</button>
          </div>
       </div>
    );

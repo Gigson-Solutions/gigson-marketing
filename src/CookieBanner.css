@@ -1,7 +1,7 @@
 .cookie-banner {
   position: fixed;
   bottom: 20px;
-  right: 20px; /* Cambiado para alinear el banner a la derecha */
+  left: 20px; /* Cambiado para alinear el banner a la derecha */
   width: auto; /* Ajusta el ancho automáticamente según el contenido */
   max-width: 650px;
   background-color: #F4F3EF;
