@@ -41,6 +41,9 @@ export default defineConfig([
               'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single'],
               'allowSeparatedGroups': false
           }],
+        'no-warning-comments': ['warn', { terms: [''], location: 'anywhere' }],
+        'react/react-in-jsx-scope': 'off',
+        'react/prop-types': 'off',
     }
   },
 ]);
