@@ -1,21 +1,29 @@
-import {Link} from 'react-router-dom';
 import {Trans, useTranslation} from 'react-i18next';
+import caritasImg from 'assets/brands/Caritas.svg';
+import stkImg from 'assets/brands/STK.svg';
+import europcarGroupImg from 'assets/brands/EuropcarGroup.svg';
+import logoImg from 'assets/brands/Logo.svg';
+import a6Img from 'assets/brands/A6.svg';
+import elogiaImg from 'assets/brands/Elogia.svg';
+import kmmImg from 'assets/brands/KMM.svg';
+import vikoImg from 'assets/brands/Viko.svg';
+import adockImg from 'assets/brands/Adock.svg';
+import modareImg from 'assets/brands/Modare.svg';
+import spainRevealedGisgsonImg from 'assets/brands/SpainRevealed_Gisgson.svg';
+import brandtiaImg from 'assets/brands/Brandtia.svg';
+import tarbozImg from 'assets/brands/Tarboz.svg';
 
 
 
-
-const logoNames = [ 'Caritas.svg', 'STK.svg',  'EuropcarGroup.svg', 'Logo.svg', 
-                    'A6.svg', 'Elogia.svg',  'KMM.svg','Viko.svg',  'Adock.svg',
-                    'Modare.svg', 'SpainRevealed_Gisgson.svg','Brandtia.svg',   'Tarboz.svg'
-                    ];
+const logoNames = [ caritasImg, stkImg, europcarGroupImg, logoImg, a6Img, elogiaImg, kmmImg, vikoImg, adockImg, modareImg, spainRevealedGisgsonImg, brandtiaImg, tarbozImg ];
 
 const LogoGrid = () => {
   return (
     <div className="w-full flex flex-wrap gap-x-8 gap-y-6  md:gap-x-2 md:gap-y-6justify-items-center items-center">
-      {logoNames.map((name, index) => (
+      {logoNames.map((img, index) => (
         <img
           key={index}
-          src={`/src/assets/brands/${name}`} 
+          src={img} 
           alt={`Logo ${index + 1}`}
           className="max-w-full  h-[30px] lg:h-[55px] object-contain lg:p-2"
         />
@@ -24,8 +32,7 @@ const LogoGrid = () => {
   );
 };
 
-const Brand = ({title , description}) => {
-    return (
+const Brand = () => (
         <section className="mt-fixed-navbar pt-14 lg:pt-40 pb-36 lg:pb-23">
             <div className="max-w-8xl mx-auto px-landing">
                 <div className="flex flex-col lg:flex-row w-full gap-15">
@@ -33,13 +40,19 @@ const Brand = ({title , description}) => {
                     <div className="  flex flex-col">
                         <p className="text-h2  text-dark-primary mb-4 md:mb-6">
                             <Trans
-                                i18nKey={title}
+                                i18nKey={'brand.brand_title'}
                                 components={{
                                 span: <span className="block text-purple-accents" />,
                                 }}
                             />
                         </p>
-                        <p className="text-dark-primary text-left text-subtitle max-w-contained mb-6 md:mb-10"> {description} </p>
+                        <p className="text-dark-primary text-left text-subtitle max-w-contained mb-6 md:mb-10"> 
+                          <Trans
+                                i18nKey={'brand.brand_description'}
+                                components={{
+                                span: <span className="block text-purple-accents" />,
+                                }}
+                            /> </p>
                     </div>
 
             
@@ -49,10 +62,6 @@ const Brand = ({title , description}) => {
                 </div>
              </div>
         </section>
-        
     );
-
-
-}; 
 
 export default Brand;

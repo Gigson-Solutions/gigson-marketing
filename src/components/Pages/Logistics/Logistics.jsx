@@ -11,9 +11,7 @@ import { useTranslation } from 'react-i18next';
 import Brand from 'shared/Brand.jsx';
 const Logistics = () => {
     const { t } = useTranslation();
-
     const { title, metadescription, hero, solutionsApplications, useCases, improveAreas, howWeWork, digitalProduct } = t('cases-logistics');
-    const brandContent = t('brand');
     
     return (
         <>
@@ -34,8 +32,7 @@ const Logistics = () => {
             <SolutionsApplications {...solutionsApplications} />
             <HowWeWork {...howWeWork} />
             <DigitalProduct {...digitalProduct}/>
-            <Brand {...brandContent} />
-            
+            <Brand />         
         </>
     );
 };
