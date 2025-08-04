@@ -2157,7 +2157,7 @@
     }
   },
   "brand" : {
-      "title" : "Trusted by <span> Great Brands </span>",
-      "description" : "Descubre nuestros clientes y lo que hacemos por ellos"
+      "brand_title" : "Trusted by <span> Great Brands </span>",
+      "brand_description" : "Descubre nuestros clientes y lo que hacemos por ellos"
     }
 }

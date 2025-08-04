@@ -8,11 +8,13 @@ import HowWeWork from 'shared/HowWeWork.jsx';
 import DigitalProduct from 'shared/DigitalProduct.jsx';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import Brand from 'shared/Brand.jsx'
 const Logistics = () => {
     const { t } = useTranslation();
 
     const { title, metadescription, hero, solutionsApplications, useCases, improveAreas, howWeWork, digitalProduct } = t('cases-logistics');
-
+    const brandContent = t('brand');
+    
     return (
         <>
             <Helmet>
@@ -32,6 +34,8 @@ const Logistics = () => {
             <SolutionsApplications {...solutionsApplications} />
             <HowWeWork {...howWeWork} />
             <DigitalProduct {...digitalProduct}/>
+            <Brand {...brandContent} />
+            
         </>
     );
 };
