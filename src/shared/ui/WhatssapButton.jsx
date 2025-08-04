@@ -1,14 +1,24 @@
 import React from "react";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import avatar from "../../assets/avatar.webp"
+import { useTranslation } from 'react-i18next';
 
-import Icon from "../../assets/WhatsApp.svg"
 
-const WhatsappButton = () => {
-    const Number = "34623783507"; 
+const WhatsappButton = () => { 
+    const { t } = useTranslation();
+     
+    const Number = "623783507"; 
     const message = "¡Hola! Quisiera más información."; 
+    const {number , accountName, placeholder, statusmessage, chatMessage} = t("whatsapp");
     
     return (
-       <FloatingWhatsApp  />
+       <FloatingWhatsApp allowClickAway = "true"
+                         avatar = {avatar}
+                         number = {number}
+                         accountName = {accountName}
+                         placeholder = {placeholder}
+                         statusMessage= {statusmessage}
+                         chatMessage= {chatMessage} />
 
     )
 

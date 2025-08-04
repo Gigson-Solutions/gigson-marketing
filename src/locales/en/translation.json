@@ -2158,5 +2158,13 @@
   "brand" : {
       "title" : "Trusted by <span> Great Brands </span>",
       "description" : "Descubre nuestros clientes y lo que hacemos por ellos"
-    }
+    },
+  "whatsapp" : {
+    "number" : "623783507",
+    "accountName" : "Emmelin",
+    "placeholder" : "blablabla",
+    "statusmessage": "Always ready to help",
+    "chatMessage": "Hello there! 🤝 \nHow can we help?"
+
+  }
 }
