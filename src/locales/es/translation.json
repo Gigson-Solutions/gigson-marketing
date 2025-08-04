@@ -516,10 +516,11 @@
     "pc_4_6":"Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación."
   },
   "cookiesBanner":{
-    "h2":"TAMBIÉN TENEMOS COOKIES",
+    "h2":"USAMOS COOKIES",
     "p":"Utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarte publicidad relacionada con tus preferencias en base a un perfil elaborado a partir de tus hábitos de navegación (por ejemplo, páginas visitadas). Puedes aceptarlas o rechazarlas en los siguientes botones.",
     "btnAccept":"ACEPTAR",
-    "btnDenie":"RECHAZAR"
+    "btnDenie":"RECHAZAR",
+    "btnInfo":"+INFO"
   },
   "cases-logistics":{
     "title": "Tecnología en Logística e Intralogística | Gigson Solutions",
