@@ -12,8 +12,8 @@ const CookieBanner = () => {
    const navigate = useNavigate();
 
    const handleClick = () => {
-      navigate("/cookies");
-   }
+      navigate('/cookies');
+   };
 
    useEffect(() => {
       

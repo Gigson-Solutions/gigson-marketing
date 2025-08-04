@@ -1,5 +1,5 @@
-import {Link} from "react-router-dom";
-import {Trans, useTranslation} from "react-i18next";
+import {Link} from 'react-router-dom';
+import {Trans, useTranslation} from 'react-i18next';
 
 
 
@@ -50,9 +50,9 @@ const Brand = ({title , description}) => {
              </div>
         </section>
         
-    )
+    );
 
 
-} 
+}; 
 
-export default Brand
+export default Brand;

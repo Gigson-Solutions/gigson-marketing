@@ -27,4 +27,4 @@ const Hero = ({title, suptitle, description , buttonText }) => {
     );
 };
 
-export default Hero
+export default Hero;

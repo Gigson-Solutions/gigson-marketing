@@ -8,7 +8,7 @@ import HowWeWork from 'shared/HowWeWork.jsx';
 import DigitalProduct from 'shared/DigitalProduct.jsx';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import Brand from 'shared/Brand.jsx'
+import Brand from 'shared/Brand.jsx';
 const Logistics = () => {
     const { t } = useTranslation();
 
