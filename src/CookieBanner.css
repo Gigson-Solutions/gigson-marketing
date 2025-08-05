@@ -1,8 +1,8 @@
 .cookie-banner {
   position: fixed;
   bottom: 20px;
-  left: 20px; /* Cambiado para alinear el banner a la derecha */
-  width: auto; /* Ajusta el ancho automáticamente según el contenido */
+  left: 20px; 
+  width: auto; 
   max-width: 650px;
   background-color: #F4F3EF;
   border: 1px solid #7874F4;
@@ -11,8 +11,7 @@
   padding: 1.25rem 2rem;
   z-index: 1000;
 }
-  
-  .cookie-banner h2 {
+ .cookie-banner h2 {
     margin: 1rem 0 ;
     font-size: 1.25em;
     color: #7874F4;
@@ -40,7 +39,6 @@
     cursor: pointer;
     font-size: 1.25rem;
   }
-  
   .cookie-buttons button:hover {
     color: #7874F4;
   }
@@ -49,3 +47,38 @@
     color: #7874F4;
   }
   
+
+@media (max-width: 600px) {
+  .cookie-banner {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    max-width: calc(100% - 20px);
+    font-size: 0.875rem;
+    max-height: calc(13% - 15px);
+  }
+  .cookie-banner h2 {
+    margin: 1rem 0 ;
+    font-size: 0.875em;
+    color: #7874F4;
+  }
+    
+  .cookie-banner p {
+    max-width: 570px;
+    margin: 0 0 0rem;
+    font-size: 0.8755em;
+    color: #000000;
+  }
+
+  .cookie-buttons button {
+
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    padding: .070rem  0;
+    cursor: pointer;
+    font-size: 1.15rem;
+  }
+}
+  
+ 
