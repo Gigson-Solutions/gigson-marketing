@@ -46,7 +46,7 @@ const LanguageSelector = () => {
       document.documentElement.lang = i18n.language;
       navigate(newPath);
    };
-   const active = "underline decoration-3 decoration-[#7874f4]";
+   const active = "underline decoration-1 decoration-[#7874f4]";
    const noactive = "spam-lng";
 
    return (
