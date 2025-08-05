@@ -46,6 +46,8 @@ const LanguageSelector = () => {
       document.documentElement.lang = i18n.language;
       navigate(newPath);
    };
+   const active = "underline decoration-3 decoration-[#7874f4]";
+   const noactive = "spam-lng";
 
    return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -53,8 +55,7 @@ const LanguageSelector = () => {
             <div key={lang} className="flex items-center">
                <button
                   onClick={switchLanguage}
-                  className={`cursor-pointer uppercase ${lang === currentLang ? 'spam-lng' : ''}
-                              ${lang === currentLang ? '' : 'underline decoration-3 decoration-[#7874f4]'}`}
+                  className={`cursor-pointer uppercase ${lang === currentLang ? noactive : active }`}
                >{lang}</button>
                {index < SUPPORTED_LANGS.length - 1 && <span className="mx-1">/</span>}
             </div>
