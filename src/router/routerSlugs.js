@@ -15,6 +15,7 @@ const ROUTE_SLUGS = {
     policy: 'policy',
     notice: 'notice',
     cookies: 'cookies',
+    CTO: 'CTO',
   },
   es: {
     home: '',
@@ -28,6 +29,7 @@ const ROUTE_SLUGS = {
     policy: 'politica',
     notice: 'aviso-legal',
     cookies: 'cookies',
+    CTO: 'CTO',
   },
 };
 
