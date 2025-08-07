@@ -11,7 +11,7 @@
     "cookies":"Política de cookies",
     "notice":"Aviso legal",
     "logistics": "Logística",
-    "CTO" : "cto-as-service"
+    "ConsultoriaTec": "consultoria-tecnologica"
   },
   "home":{
     "title":"Gigson Solutions | Tecnología para Impulsar tu Negocio",
@@ -2161,108 +2161,92 @@
       "brand_title" : "Trusted by <span> Great Brands </span>",
       "brand_description" : "Descubre nuestros clientes y lo que hacemos por ellos"
     },
-    "CTO":{
-    "title": "CTO as a Service | Gigson Solutions",
-    "metadescription": "Mejora tu estrategia tecnológica, lidera la transformación digital y reduce riesgos operativos con un CTO externo",
+  "consultoriaTec":{
+    "title": "Consultoría Tecnológica para Empresas | Gigson Solutions",
+    "metadescription": "Consultoría tecnológica para empresas que quieren crecer sin fricciones: diagnóstico, estrategia e implementación de soluciones a medida",
     "hero": {
-      "suptitle":"INDUSTRIAS",
-      "title": "CTO as a Service: <span> estrategia tecnológica a medida </span>",
-      "description": "En un contexto donde la tecnología impacta directamente en la eficiencia y la competitividad, muchas pymes se enfrentan a un reto común: necesitan dirección tecnológica estratégica y operativa, pero no pueden asumir la carga financiera ni estructural de incorporar un CTO a tiempo completo. Además, aunque la tecnología no sea su core, la necesitan para operar, crecer y tomar mejores decisiones. Ahí es donde el modelo CTO as a Service cobra todo el sentido. En Gigson Solutions actuamos como partner tecnológico, no solo como consultores. Te ayudamos a definir y ejecutar una estrategia tecnológica que encaje con tu estructura de negocio, sin imponer herramientas ni metodologías genéricas.  Acompañamos a startups, scaleups y empresas consolidadas con un enfoque claro: que la tecnología sea un facilitador, no un freno.",
+      "suptitle":"SERVICES",
+      "title": "Consultoría tecnológica <span> para empresas </span>",
+      "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento",
       "buttonText": "Como podemos ayudarte"
     },
     "solutionsApplications": {
-      "title": "Liderazgo y asesoramiento tecnológico <span> para empresas que quieren crecer sin fricciones </span>",
-      "subTitle": "No todas las compañías necesitan un CTO en plantilla, pero todas necesitan dirección tecnológica de alto nivel. Nuestro servicio de Fractional CTO te ofrece la integración en tu equipo de un director tecnológico para detectar oportunidades, evitar errores y alinear la tecnología con los objetivos de negocio. <np> Desde el primer día, aportamos asesoramiento tecnológico realista y accionable, con impacto directo en la operativa y el crecimiento.",
+      "title": "Asesoramiento tecnológico para empresas que quieren crecer sin fricciones",
+      "subTitle": "Cada empresa tiene su propio contexto, sus procesos y sus desafíos. Por eso nuestro asesoramiento tecnológico no parte de soluciones prefabricadas, sino de entender a fondo tu situación, tus necesidades y tus objetivos de negocio.Nuestro enfoque combina experiencia técnica y conocimiento de negocio para que cada decisión tecnológica sume.",
       "containers": [
         {
-          "title": "Optimización de costes y eficiencia operativa",
-          "description": "Reducir costes sin perder capacidad de respuesta es posible cuando la tecnología se planifica con visión de negocio. Un director tecnológico externo puede ayudarte a identificar las ineficiencias del sistema actual y proponer soluciones sostenibles, no parches temporales.",
+          "title": "Consultoría tecnológica y transformación digital para empresas",
+          "description": "La transformación digital no consiste en acumular herramientas, sino en optimizar la forma en que tu empresa opera, se conecta con sus clientes y crece. Desde la consultoría tecnológica, te ayudamos a abordar este proceso de manera estratégica: evaluamos tus sistemas e integraciones actuales, detectamos oportunidades de mejora y diseñamos soluciones digitales que realmente encajan con tu estructura y tus objetivos de crecimiento",
           "type": "Sector",
           "cards": [
             {
-              "title": "Análisis de costes, optimización, reorganización y escalabilidad",
-              "description": "Realizamos un análisis completo del ecosistema tecnológico: desde licencias hasta recursos humanos y procesos. ¿Dónde se va el dinero? ¿Qué puede automatizarse? ¿Qué herramientas estamos pagando y no le sacamos partido o pueden hacer lo mismo? A partir de ahí, diseñamos un plan de transformación enfocado en escalar de forma ordenada y eficiente."
+              "title": "Diseño de soluciones tecnológicas integradas",
+              "description": "Diseñamos soluciones tecnológicas que no solo resuelven necesidades concretas, sino que se integran de forma natural en tus procesos, equipos y sistemas existentes. Nuestro enfoque es modular y escalable: creamos tecnologías que funcionan hoy y evolucionan contigo mañana, sin generar dependencias ni bloqueos futuros. "
             },
             {
-              "title": "Medición del retorno de inversión en tecnología",
-              "description": "No se trata de implantar por implantar. Evaluamos cada decisión tecnológica con métricas claras: ¿cuánto aporta al negocio? ¿Qué impacto tiene en ingresos, costes o productividad? ¿Nos servirá dentro de x años? Con datos, no con intuiciones ni modas."
+              "title": " Implementación de estrategias de transformación digital para empresas",
+              "description": "Una estrategia digital bien diseñada pierde valor si no se ejecuta correctamente. Te acompañamos en la implementación práctica de tu transformación digital: desde la planificación de cada fase hasta la puesta en marcha y la optimización continua."
             },
             {
-              "title": "Soluciones ágiles e identificación de cuellos de botella",
-              "description": "Una infraestructura tecnológica lenta o mal organizada ralentiza el crecimiento y multiplica errores. Analizamos los flujos clave y trabajamos junto a tu equipo para desbloquear los puntos críticos que impiden escalar o entregar con agilidad."
+              "title": "Partner de confianza para el cambio",
+              "description": "A través de nuestro servicio de outsourcing tecnológico, nos convertimos en tu partner de confianza: te aportamos el conocimiento, la experiencia y la flexibilidad que necesitas para impulsar tu transformación digital, sin aumentar tu estructura interna."
             }
           ]
         },
         {
-          "title": "Visión global e impacto en negocio",
-          "description": "Tener una visión técnica sin contexto empresarial es tan ineficiente como tomar decisiones de negocio sin entender las implicaciones tecnológicas. El valor de un CTO as a Service está en traducir entre estos mundos y anticipar las consecuencias de cada paso.",
-          "type": "Sector",
+          "title": "Desarrollo tecnológico",
+          "description": "Cuando las soluciones estándar no encajan, hace falta un enfoque a medida, por eso diseñamos y desarrollamos tecnología personalizada para resolver necesidades específicas de tu negocio. Siempre desde la funcionalidad y la eficiencia, creando herramientas y plataformas que no solo cubren un vacío en el mercado, sino que también te dan una ventaja competitiva real. Nuestra filosofía: desarrollar lo que necesitas hoy, pensando en lo que vas a necesitar mañana.",
+          "type": "Aplicación",
           "cards": [
             {
-              "title": "Visión estratégica y diagnóstico tecnológico",
-              "description": "Empezamos con una auditoría integral: ¿Qué tecnología hay? ¿Qué objetivos tiene el negocio? ¿Qué brechas existen? Este diagnóstico nos permite construir una hoja de ruta que integra tecnología y estrategia de forma coherente."
+              "title": "Desarrollo de soluciones específicas",
+              "description": "No todas las empresas tienen las mismas necesidades, por ello tenemos que tener diferentes soluciones. Cuando el software o las plataformas comerciales no se adaptan a tus procesos, diseñamos y desarrollamos soluciones tecnológicas específicas, creadas desde cero para resolver tus retos concretos"
             },
             {
-              "title": "Apoyo a dirección en decisiones clave: traducir lenguaje técnico a decisiones de negocio",
-              "description": "Formamos parte activa de la dirección como responsables de la visión tecnológica dentro del comité de decisión. Traducimos el lenguaje técnico a implicaciones estratégicas claras, proponemos rutas posibles y valoramos cada decisión con sus riesgos, costes y beneficios. Porque la tecnología no puede estar en segundo plano: debe estar en la mesa donde se decide el rumbo de la empresa."
+              "title": "Optimización y evolución de toda arquitectura de sistemas",
+              "description": "Analizamos en profundidad tu infraestructura de TI —servidores, bases de datos, microservicios y conexiones— para detectar cuellos de botella, redundancias o vulnerabilidades. A partir de ese diagnóstico, replanteamos la topología de tu ecosistema (incluyendo orquestación de contenedores, balanceo de carga y políticas de backup), aplicando mejoras en rendimiento y seguridad (hardening, encriptación en tránsito y en reposo, control de accesos). Además, adaptamos tu entorno a nuevos volúmenes de datos y requisitos de negocio, migrando componentes a arquitecturas más sostenibles (por ejemplo, a nubes híbridas o modelos serverless) y estableciendo prácticas de DevOps y CI/CD que faciliten futuras iteraciones."
             },
             {
-              "title": "Coordinación transversal con proveedores tecnológicos y órganos de decisión",
-              "description": "La tecnología no vive aislada. Coordinamos con los distintos departamentos internos y externos, alineando a proveedores, desarrolladores y dirección para que todos trabajen con la misma prioridad: cumplir los objetivos de negocio."
+              "title": "Optimización y transformación de sistemas monolíticos",
+              "description": "Los sistemas legacy o mal estructurados pueden lastrar el desempeño y la capacidad de innovación. En Gigson Solutions te acompañamos en la transición de aplicaciones monolíticas hacia arquitecturas basadas en microservicios o contenedores, manteniendo la continuidad operativa. Realizamos análisis de dependencias y refactorización de código, aplicamos patrones de diseño (como CQRS o Event Sourcing) y, de ser necesario, sustituimos módulos obsoletos por servicios modernos con escalabilidad horizontal. Todo el proceso se lleva a cabo con un plan de despliegue controlado (blue–green deployment o canary releases) para minimizar riesgos y asegurar la disponibilidad ininterrumpida de la plataforma."
             }
           ]
         },
          {
-          "title": "Estrategia tecnológica, planificación e innovacióne",
-          "description": "La estrategia tecnológica de una empresa no puede ser reactiva: necesita anticipar cambios, integrar innovación y asegurar que cada decisión técnica aporte valor real. Con nuestro servicio de CTO as a Service, tu empresa evoluciona, no solo sobrevive.",
-          "type": "sector",
+          "title": "Integración de sistemas y mejora de procesos",
+          "description": "Un ecosistema tecnológico desconectado genera ineficiencias, errores y pérdidas de tiempo. En Gigson Solutions te ayudamos a integrar tus sistemas y optimizar tus procesos para que toda tu infraestructura trabaje de manera coordinada, ágil y segura.",
+          "type": "Aplicación",
           "cards": [
             {
-              "title": " Auditoría/Diseño de arquitectura tecnológica",
-              "description": "Una arquitectura débil limita el crecimiento. Diseñamos o auditamos tu arquitectura tecnológica asegurando que soporte el presente y escale hacia el futuro, integrando buenas prácticas de modularidad, seguridad y eficiencia."
+              "title": " Soluciones tecnológicas que conectan y optimizan tus herramientas actuales",
+              "description": "Muchas empresas trabajan con múltiples herramientas que no se comunican entre sí. Diseñamos soluciones que conectan tus plataformas, aplicaciones y sistemas internos, eliminando silos de información y mejorando la trazabilidad de los datos."
             },
             {
-              "title": "Implementación de buenas prácticas de seguridad",
-              "description": "La ciberseguridad ya no es opcional. Asesoramos en políticas de seguridad, para proteger los datos, los accesos y los sistemas, reduciendo riesgos legales, operativos y reputacionales"
+              "title": "Automatización de procesos críticos para ganar eficiencia",
+              "description": "Identificamos procesos repetitivos, críticos o propensos a errores y los automatizamos de forma segura y controlada. La automatización te permite liberar recursos, reducir costes, minimizar errores y centrar tus esfuerzos en tareas de mayor valor estratégico. Cada automatización se adapta a tu flujo de trabajo real, no al revés"
             },
             {
-              "title": "Consultoría en cumplimiento y normativas",
-              "description": "La ciberseguridad ya no es opcional. Asesoramos en políticas de seguridad, para proteger los datos, los accesos y los sistemas, reduciendo riesgos legales, operativos y reputacionales."
-            },
-            {
-              "title": "Gestión de proveedores y recursos tecnológicos",
-              "description": "Negociamos, coordinamos y auditamos proveedores tecnológicos para garantizar que lo que contratas se entrega, y que los recursos se utilizan de manera eficiente. Sin sobrecostes ocultos ni dependencias innecesarias."
-            },
-            {
-              "title": "Observación de tendencias del sector y scouting tecnológico",
-              "description": "Identificar antes que actuar. Nos mantenemos al tanto de las tendencias, tecnologías emergentes y cambios regulatorios para detectar oportunidades o amenazas antes que la competencia."
-            },
-            {
-              "title": "Optimización y migración a la nube o arquitecturas híbridas",
-              "description": "Optimizamos infraestructuras existentes y, si es necesario, planificamos migraciones a entornos cloud o híbridos, asegurando coste, rendimiento y escalabilidad, siempre en función de los objetivos.º"
+              "title": "Análisis y mejora de la arquitectura tecnológica",
+              "description": "Realizamos un análisis profundo de tu arquitectura tecnológica actual para detectar puntos débiles, redundancias y oportunidades de mejora."
             }
           ]
         },
         {
-          "title": "Liderazgo y desarrollo de equipos técnicos",
-          "description": "Tener la mejor estrategia tecnológica no sirve de nada sin un equipo capaz de ejecutarla. El CTO as a Service de Gigson Solutions no solo define el camino, sino que lidera la creación de equipos sólidos y alineados con la visión de tu empresa.",
-          "type": "Sector",
+          "title": "Consultoría IT: auditoría y estrategia tecnológica",
+          "description": "Una buena estrategia tecnológica empieza con un diagnóstico realista. Analizamos en profundidad tu infraestructura IT, detectamos riesgos y áreas de mejora, y diseñamos un plan tecnológico alineado con tus objetivos de negocio.",
+          "type": "Aplicación",
           "cards": [
             {
-              "title": "Definición de cultura tecnológica y visión compartida",
-              "description": "Creamos una cultura tecnológica basada en la colaboración, la responsabilidad y la excelencia técnica. No se trata solo de desarrollo, sino de entender cómo cada tecnología impacta en los resultados de la empresa."
+              "title": "Auditoría técnica y de seguridad informática",
+              "description": "Realizamos auditorías técnicas y de seguridad para identificar vulnerabilidades, ineficiencias y riesgos ocultos en tu infraestructura actual."
             },
             {
-              "title": "Alineación del hiring técnico con los valores de la empresa",
-              "description": "Contratar perfiles técnicos no es cuestión de acumular CVs. Definimos el perfil adecuado para cada etapa de crecimiento, asegurándonos de que las nuevas incorporaciones compartan la filosofía de la empresa y potencien el equipo actual."
+              "title": "Definición de estrategia tecnológica alineada a tus objetivos de negocio",
+              "description": "Te ayudamos a definir una hoja de ruta tecnológica realista, escalable y completamente alineada con tus metas de negocio. Así cada inversión en tecnología se convierte en una palanca real de crecimiento, no en un gasto."
             },
             {
-              "title": "Escalado ágil de equipos de desarrollo",
-              "description": "A medida que el negocio crece, el equipo debe escalar sin perder agilidad. Diseñamos estrategias de crecimiento escalonado, priorizando la organización por objetivos, la autonomía y la calidad técnica."
-            },
-            {
-              "title": "Formación y liderazgo tecnológico",
-              "description": "Formamos y acompañamos a los equipos en la adopción de nuevas tecnologías, metodologías ágiles y buenas prácticas de desarrollo. Un equipo bien liderado y formado es la mejor inversión tecnológica que puede hacer una empresa."
+              "title": "Gestión y coordinación con proveedores tecnológicos externos",
+              "description": "Contar con múltiples proveedores tecnológicos no debería convertirse en un problema de gestión. Coordinamos, supervisamos y optimizamos la relación con tus proveedores externos para asegurar que cada solución, servicio o integración sume valor real a tu proyecto. Nos aseguramos de que todos los actores trabajen alineados con tu visión y tus necesidades."
             }
           ]
         }

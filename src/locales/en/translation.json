@@ -11,7 +11,7 @@
     "cookies":"Cookies Policy",
     "notice":"Legal Notice",
     "logistics": "Logistics",
-    "CTO": "cto-as-service"
+    "ConsultoriaTec": "technology-consulting"
   },
   "home":{
     "title": "Gigson Solutions | Tech Boosting your Business",
@@ -2161,108 +2161,92 @@
       "brand_title" : "Trusted by <span> Great Brands </span>",
       "brand_description" : "Meet our clients and discover how we create value for them."
     },
-    "CTO":{
-    "title": "CTO as a Service | Gigson Solutions",
-    "metadescription": " Upgrade your tech strategy, lead digital transformation, and reduce operational risks with an external CTO.",
+    "consultoriaTec":{
+    "title": "Technology Consulting for Businesses | Gigson Solutions",
+    "metadescription": "Technology consulting for businesses that want to scale smoothly: diagnosis, strategy, and tailored solution implementation.",
     "hero": {
       "suptitle":"SERVICES",
-      "title": "CTO as a Service: <span> custom tech strategy </span>",
-      "description": "In a world where technology directly impacts efficiency and competitiveness, many SMEs face a common challenge: they need strategic and operational tech leadership, but can’t afford the financial and structural burden of hiring a full-time CTO. And even if technology isn’t their core, they need it to operate, grow, and make better decisions. That’s where the CTO as a Service model makes total sense. At Gigson Solutions, we act as a technology partner—not just consultants. We help you define and execute a tech strategy that fits your business structure, without imposing generic tools or methodologies. We support startups, scaleups and established companies with one clear focus: making technology a driver, not a blocker.",
+      "title": "Technology consulting for <span> business </span>",
+      "description": "At Gigson Solutions, we believe technology shouldn’t limit us—it should help us reach business goals.  Our business tech consulting service is designed to analyze, transform, optimize, and evolve your company with tailored solutions—without friction, without improvisation, and with a clear, external, and objective vision of the future. Diagnosis, strategy, and action—all in one partner.  We support you from the analysis of your current situation to the definition and execution of tech projects that drive your growth.",
       "buttonText": "How we can help you"
     },
     "solutionsApplications": {
       "title": "Tech leadership and advisory <span> for frictionless growing companies.</span>",
-      "subTitle": "Not all companies need a full-time CTO, but all need high-level tech direction. Our Fractional CTO service integrates a tech leader into your team to detect opportunities, avoid mistakes, and align technology with your business goals. From day one, we deliver realistic, actionable tech advice—with direct impact on operations and growth.",
+      "subTitle": "Every company has its own context, processes, and challenges. That’s why our technology consulting doesn’t rely on off-the-shelf solutions, but on gaining a deep understanding of your situation, needs, and business goals. Our approach blends technical expertise with business insight to ensure every tech decision adds real value.",
       "containers": [
         {
-          "title": "Cost optimization & operational efficiency",
-          "description": "Reducing costs without losing responsiveness is possible when technology is planned with business vision. An external CTO can help identify inefficiencies in your current setup and suggest sustainable solutions—not just quick fixes.",
-          "type": "Sector",
+          "title": "Technology Consulting & Digital Transformation",
+          "description": "Digital transformation isn’t about piling up tools—it’s about optimizing how your business operates, connects with clients, and grows. Through tech consulting, we help you tackle this process strategically: we evaluate your current systems and integrations, identify improvement areas, and design digital solutions that truly fit your structure and growth objectives.",
+          "type": "Challenges",
           "cards": [
             {
-              "title": "Cost analysis, optimization, reorganization and scalability",
-              "description": "We perform a full audit of your tech ecosystem—from licenses to HR and processes. Where’s the money going? What can be automated? What tools are we paying for but not leveraging? We then design a transformation plan focused on scaling efficiently and sustainably."
+              "title": "Design of integrated tech solutions",
+              "description": "We design tech solutions that not only solve specific needs, but also integrate naturally into your processes, teams, and systems. Our approach is modular and scalable: we build tech that works today and grows with you tomorrow—without creating vendor lock-in or future roadblocks."
             },
             {
-              "title": "Measuring tech investment ROI",
-              "description": "This isn’t about tech for tech’s sake. We evaluate each decision using clear metrics: How much value does it bring? What’s the impact on revenue, costs, productivity? Will it still serve us in X years? We work with data, not guesswork or trends."
+              "title": "Implementation of digital transformation strategies",
+              "description": "A well-designed digital strategy loses value if poorly executed. We support the practical implementation of your transformation—from planning each phase to launch and ongoing optimization."
             },
             {
-              "title": "Agile solutions and bottleneck identification",
-              "description": "A slow or poorly organized tech stack slows growth and increases errors.We analyze key flows and help your team unblock the critical friction points that prevent agility and scalability."
+              "title": "Tech outsourcing: your trusted partner for change",
+              "description": "Through our tech outsourcing service, we become your trusted partner—bringing the knowledge, experience, and flexibility you need to drive your digital transformation without increasing internal overhead."
             }
           ]
         },
         {
-          "title": "Global vision & business impact",
-          "description": "Having technical insight without business context is as inefficient as making business decisions without understanding tech implications. The value of a CTO as a Service lies in bridging these worlds and anticipating the impact of each step.",
-          "type": "Sector",
+          "title": "Tech development",
+          "description": "When standard solutions don’t fit, a tailored approach is needed — that’s why we design and develop custom technology to address the specific needs of your business.  Always focused on functionality and efficiency, we create tools and platforms that not only fill a gap in the market but also give you a real competitive advantage.  Our philosophy: build what you need today, with tomorrow’s needs in mind.",
+          "type": "Challenges",
           "cards": [
             {
-              "title": "Strategic vision and tech diagnosis",
-              "description": "We start with a full audit: What tech is in place?What are your business goals?What gaps exist? This lets us build a roadmap where tech and strategy are integrated cohesively."
+              "title": "Development of tailored tech solutions",
+              "description": "Not all companies have the same needs—so we don’t offer one-size-fits-all solutions. When commercial software or platforms don’t adapt to your processes, we design and develop custom tech solutions from scratch to solve your specific challenges."
             },
             {
-              "title": "C-level support in key decisions: translating tech into business terms",
-              "description": "We actively participate in your executive team, owning the tech vision at decision level. We translate technical language into strategic options, propose actionable paths and evaluate every decision by its risks, costs, and potential impact.Tech shouldn’t be an afterthought—it belongs at the table where the future is decided."
+              "title": "Optimization and evolution of system architecture",
+              "description": "We perform an in-depth analysis of your IT infrastructure—servers, databases, microservices, and connections—to detect bottlenecks, vulnerabilities, and redundancies. Based on that diagnosis, we redesign your architecture, improving performance and security (hardening, encryption in transit and at rest, access control), and prepare it for scalability. We adapt your environment to new data volumes and business requirements, migrate components to cloud or hybrid architectures, and establish DevOps and CI/CD practices for future iteration."
             },
             {
-              "title": "Cross-functional coordination with tech providers & decision makers",
-              "description": "Tech doesn’t live in isolation. We coordinate across internal and external teams—aligning providers, developers and executives—to ensure everyone is focused on one thing: achieving business goals."
+              "title": "Optimization and transformation of monolithic systems",
+              "description": "Legacy or poorly structured systems can drag down performance and innovation. We help you migrate from monolithic applications to modern architectures (e.g., microservices or containers) while ensuring operational continuity. We analyze dependencies and refactor code, replacing obsolete modules with scalable, efficient components—using blue-green deployment or canary releases to minimize risk."
             }
           ]
         },
          {
-          "title": "Tech strategy, planning & innovation",
-          "description": "A company’s tech strategy can’t be reactive. It needs to anticipate change, integrate innovation, and ensure every decision adds real value.With our CTO as a Service, your company doesn’t just survive—it evolves.",
-          "type": "sector",
+          "title": "System integration & process improvement",
+          "description": "A disconnected tech ecosystem causes inefficiencies, errors, and wasted time. At Gigson Solutions, we help you integrate your systems and optimize your processes so your infrastructure works in a coordinated, agile, and secure way.",
+          "type": "Challenges",
           "cards": [
             {
-              "title": " Tech architecture design & audit",
-              "description": "A weak architecture limits growth.We design or audit your systems to ensure they support your present and scale for the future—incorporating best practices in modularity, security, and efficiency."
+              "title": "Tech solutions that connect and optimize your current tools",
+              "description": "Many companies work with multiple tools that don’t communicate. We design solutions that connect platforms, apps, and internal systems—eliminating silos and enabling true collaboration across tools."
             },
             {
-              "title": "Security best practices",
-              "description": "Cybersecurity is no longer optional.We advise on security policies to protect data, access, and systems—reducing legal, operational and reputational risks."
+              "title": "Automation of critical processes for efficiency",
+              "description": "We identify repetitive, error-prone processes and automate them safely and effectively.  This allows you to free up resources, reduce costs, minimize errors, and focus on high-value tasks.  Every automation is adapted to your actual workflows—not the other way around."
             },
             {
-              "title": "Consultoría en cumplimiento y normativas",
-              "description": "We help adapt your tech stack to relevant standards: GDPR, ISO27001, NIS2, or any sector-specific regulation.Compliance should not be a barrier—it should be a natural part of growth."
-            },
-            {
-              "title": "Vendor & tech resource management",
-              "description": "We negotiate, coordinate and audit vendors to make sure what's promised is delivered—and that tech resources are used efficiently.No hidden costs. No unnecessary dependencies."
-            },
-            {
-              "title": "Trend monitoring & tech scouting",
-              "description": "Spot before others act. We stay on top of emerging technologies, market trends and regulatory shifts to detect opportunities or threats early."
-            },
-            {
-              "title": "Cloud & hybrid architecture migration",
-              "description": "We optimize existing infrastructure and, when needed, plan migrations to cloud or hybrid environments—ensuring cost-effectiveness, scalability, and performance aligned with your goals."
+              "title": "Architecture analysis & optimization",
+              "description": "We conduct a deep audit of your current tech architecture to detect weaknesses, redundancies, and improvement opportunities."
             }
           ]
         },
         {
-          "title": "Technical leadership & team development",
-          "description": "Having the best tech strategy means nothing without a team capable of executing it. Gigson Solutions' CTO as a Service not only defines the roadmap but also leads the creation of strong, aligned teams that share your company’s vision.",
-          "type": "Sector",
+          "title": "IT Consulting: Audit & Tech Strategy",
+          "description": "A strong tech strategy starts with a realistic diagnosis. We analyze your IT infrastructure in depth, detect risks and areas for improvement, and design a tech plan aligned with your business goals.",
+          "type": "Challenges",
           "cards": [
             {
-              "title": "Defining Tech Culture",
-              "description": "We foster a tech culture built on collaboration, accountability, and technical excellence.It’s not just about development—it’s about understanding how each technology impacts business outcomes."
+              "title": "Technical & cybersecurity audit",
+              "description": "We conduct technical and security audits to identify vulnerabilities, inefficiencies, and hidden risks in your current infrastructure."
             },
             {
-              "title": "Aligning tech hiring with company values",
-              "description": "Hiring tech talent isn’t about collecting CVs.We define the right profile for each growth stage, ensuring that new hires share your company’s philosophy and strengthen the existing team."
+              "title": "Defining a tech strategy aligned with your business goals",
+              "description": "We help you define a realistic, scalable roadmap fully aligned with your business objectives. So that every tech investment becomes a growth driver—not a sunk cost."
             },
             {
-              "title": "Agile scaling of development teams",
-              "description": "As the business grows, the team must scale without losing agility.We design phased growth strategies, prioritizing goal-based organization, autonomy, and technical quality."
-            },
-            {
-              "title": "Training & Tech Leadership",
-              "description": "We train and mentor teams in adopting new technologies, agile methodologies, and development best practices.A well-led, well-trained team is the best tech investment a company can make."
+              "title": "Management & coordination of external tech providers",
+              "description": "Having multiple tech providers shouldn’t become a management headache. We coordinate, supervise, and optimize your relationships with external vendors to ensure each solution or service brings real value. We make sure everyone involved is aligned with your vision and needs."
             }
           ]
         }

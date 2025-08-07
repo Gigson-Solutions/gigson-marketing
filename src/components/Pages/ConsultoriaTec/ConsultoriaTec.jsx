@@ -10,9 +10,9 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import Brand from 'shared/Brand.jsx';
 
-const CTO = () => {
+const ConsultoriaTec = () => {
     const { t } = useTranslation();
-    const { title, metadescription, hero, solutionsApplications, howWeWork, digitalProduct } = t('CTO');
+    const { title, metadescription, hero, solutionsApplications, howWeWork, digitalProduct } = t('consultoriaTec');
     
     return (
         <>
@@ -29,4 +29,4 @@ const CTO = () => {
     );
 };
 
-export default CTO;
+export default ConsultoriaTec;

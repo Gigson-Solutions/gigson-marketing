@@ -9,7 +9,7 @@ import Logistics from '../components/Pages/Logistics/Logistics';
 import NotFound from '../components/Pages/NotFound/NotFound';
 import Policity from '../components/Pages/Policity';
 import CookiesPage from '../components/Pages/CookiesPage';
-import CTO from '../components/Pages/CTO/CTO'
+import ConsultoriaTec from '../components/Pages/ConsultoriaTec/ConsultoriaTec';
 
 import {Navigate, Outlet, createBrowserRouter} from 'react-router-dom';
 import '../App.css';
@@ -27,7 +27,7 @@ const generateRoutes = (lang) => {
       { index: true, element: <Home /> },
       { path: slugs.services, element: <Services /> },
       { path: slugs.logistics,element: <Logistics /> },
-      { path: slugs.CTO,element: <CTO/> },
+      { path: slugs.ConsultoriaTec,element: <ConsultoriaTec/> },
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },
