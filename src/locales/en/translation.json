@@ -11,7 +11,7 @@
     "cookies":"Cookies Policy",
     "notice":"Legal Notice",
     "logistics": "Logistics",
-    "CTO": "CTO"
+    "CTO": "cto-as-service"
   },
   "home":{
     "title": "Gigson Solutions | Tech Boosting your Business",
@@ -2162,8 +2162,8 @@
       "brand_description" : "Meet our clients and discover how we create value for them."
     },
     "CTO":{
-    "title": "Tecnología en Logística e Intralogística | Gigson Solutions",
-    "metadescription": "Optimiza tu cadena logística con soluciones tecnológicas a medida: más eficiencia, trazabilidad y control sin depender de grandes integradores.",
+    "title": "CTO as a Service | Gigson Solutions",
+    "metadescription": " Upgrade your tech strategy, lead digital transformation, and reduce operational risks with an external CTO.",
     "hero": {
       "suptitle":"SERVICES",
       "title": "CTO as a Service: <span> custom tech strategy </span>",

@@ -21,9 +21,8 @@ const Navbar = () => {
    const { about, services, cases, faqs, contact, industries, logistics, CTO } = t('menu');
 
    const menuLinks = [
-      { name: services, link: ROUTE_SLUGS[currentLang].services },
-      { name: industries, children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics },
-                                     { name: CTO, link: ROUTE_SLUGS[currentLang].CTO },] },
+      { name: services, link: ROUTE_SLUGS[currentLang].services ,children: [ { name: CTO, link: ROUTE_SLUGS[currentLang].CTO },]},
+      { name: industries, children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics },] },
       { name: cases, link: ROUTE_SLUGS[currentLang].cases },
       { name: about, link: ROUTE_SLUGS[currentLang].about },
       { name: faqs, link: ROUTE_SLUGS[currentLang].faqs },
