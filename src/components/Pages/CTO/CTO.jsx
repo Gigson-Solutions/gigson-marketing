@@ -12,11 +12,14 @@ import Brand from 'shared/Brand.jsx';
 
 const CTO = () => {
     const { t } = useTranslation();
-    const { hero, solutionsApplications, howWeWork, digitalProduct } = t('CTO');
+    const { title, metadescription, hero, solutionsApplications, howWeWork, digitalProduct } = t('CTO');
     
     return (
         <>
-            
+            <Helmet>
+                <title>{title}</title>
+                <meta name="description" content={metadescription} />
+            </Helmet>
             <Hero {...hero}/>
             <SolutionsApplications {...solutionsApplications} />
             <HowWeWork {...howWeWork} />
