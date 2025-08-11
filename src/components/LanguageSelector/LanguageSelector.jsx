@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from '../../router/routerSlugs';
-import './LanguageSelector.css'
+
 
 const LanguageSelector = () => {
    const location = useLocation();
@@ -48,7 +48,7 @@ const LanguageSelector = () => {
       navigate(newPath);
    };
    
-   const active = "short-underline";
+   const active = "";
    const noactive = "spam-lng";
 
    return (
@@ -58,7 +58,11 @@ const LanguageSelector = () => {
                <button
                   onClick={switchLanguage}
                   className={`cursor-pointer uppercase ${lang === currentLang ? active : noactive }`}
-               >{lang}</button>
+
+               >{lang}
+                  {lang === currentLang && (<div className="border-b-[0.15vw] border-[#7874f4] w-fit mx-auto px-2 "> </div>
+          )}
+               </button>
                {index < SUPPORTED_LANGS.length - 1 && <span className="mx-1">/</span>}
             </div>
          ))}
