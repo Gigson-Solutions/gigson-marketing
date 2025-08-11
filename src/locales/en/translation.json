@@ -2157,7 +2157,16 @@
     }
   },
   "brand" : {
-      "brand_title" : "Trusted by <span> Great Brands </span>",
-      "brand_description" : "Meet our clients and discover how we create value for them."
-    }
+      "title" : "Trusted by <span> Great Brands </span>",
+      "description" : "Descubre nuestros clientes y lo que hacemos por ellos"
+    },
+  "whatsapp" : {
+    "phoneNumber" : "623783507",
+    "accountName" : "Emmelin",
+    "placeholder" : "Hi",
+    "statusmessage": "Always ready to help",
+    "chatMessage": "Hello I'm Emmelin! Account Manager of Gigson Solutions, What can I help you with?"
+
+  }
+
 }

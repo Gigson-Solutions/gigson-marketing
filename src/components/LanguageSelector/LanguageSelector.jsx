@@ -47,7 +47,7 @@ const LanguageSelector = () => {
       document.documentElement.lang = i18n.language;
       navigate(newPath);
    };
-
+  
    return (
       <div className='cursor-pointer' style={{ display: 'flex', alignItems: 'center' }}>
          {SUPPORTED_LANGS.map((lang, index) => {

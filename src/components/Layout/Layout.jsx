@@ -3,7 +3,8 @@ import { Outlet } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import ScrollTop from '../../hooks/ScrollTop';
-import CookieBanner from '../../CookieBanner'; // Importamos el nuevo componente
+import CookieBanner from '../../CookieBanner'; 
+import Whatsapp from '../../shared/ui/WhatssapButton';
 
 const Layout = () => {
    return (
@@ -14,6 +15,7 @@ const Layout = () => {
          </main>
          <Footer />
          <CookieBanner /> {/* Incluimos el banner de cookies */}
+         <Whatsapp />
       </ScrollTop>
    );
 };
