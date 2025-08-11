@@ -1,27 +1,17 @@
-import React from "react";
-import { FloatingWhatsApp } from "react-floating-whatsapp";
-import avatar from "../../assets/avatar.jpg"
+import { FloatingWhatsApp } from 'react-floating-whatsapp';
+import avatar from '../../assets/avatar.jpg';
 import { useTranslation } from 'react-i18next';
 
-
-const WhatsappButton = () => { 
+const WhatsappButton = () => {
     const { t } = useTranslation();
-     
-    const {number , accountName, placeholder, statusmessage, chatMessage} = t("whatsapp");
-    
+    const whatsappData = t('whatsapp');
+
     return (
-       <FloatingWhatsApp allowClickAway = "true"
-                         avatar = {avatar}
-                         number = {number}
-                         accountName = {accountName}
-                         placeholder = {placeholder}
-                         statusMessage= {statusmessage}
-                         chatMessage= {chatMessage} />
+        <FloatingWhatsApp allowClickAway
+            avatar={avatar}
+            {...whatsappData}
+        />
+    );
+};
 
-    )
-
-
-
-}
-
-export default WhatsappButton
+export default WhatsappButton;

@@ -2161,9 +2161,9 @@
       "description" : "Descubre nuestros clientes y lo que hacemos por ellos"
     },
   "whatsapp" : {
-    "number" : "623783507",
+    "phoneNumber" : "623783507",
     "accountName" : "Emmelin",
-    "placeholder" : "Hii",
+    "placeholder" : "Hi",
     "statusmessage": "Always ready to help",
     "chatMessage": "Hello I'm Emmelin! Account Manager of Gigson Solutions, What can I help you with?"
 
