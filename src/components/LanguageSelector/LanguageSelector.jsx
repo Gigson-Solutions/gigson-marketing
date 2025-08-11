@@ -1,6 +1,6 @@
-import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from '../../router/routerSlugs';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 
 const LanguageSelector = () => {
@@ -47,25 +47,24 @@ const LanguageSelector = () => {
       document.documentElement.lang = i18n.language;
       navigate(newPath);
    };
-   
-   const active = "";
-   const noactive = "spam-lng";
 
    return (
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-         {SUPPORTED_LANGS.map((lang, index) => (
-            <div key={lang} className="flex items-center">
-               <button
-                  onClick={switchLanguage}
-                  className={`cursor-pointer uppercase ${lang === currentLang ? active : noactive }`}
+      <div className='cursor-pointer' style={{ display: 'flex', alignItems: 'center' }}>
+         {SUPPORTED_LANGS.map((lang, index) => {
+            const isActive = lang === currentLang;
+            return (
+               <div key={lang} className="flex items-center cursor-pointer">
+                  <button
+                     onClick={switchLanguage}
+                     className={`cursor-pointer uppercase ${isActive && 'spam-lng'}`}
 
-               >{lang}
-                  {lang === currentLang && (<div className="border-b-[0.15vw] border-[#7874f4] w-fit mx-auto px-2 "> </div>
-          )}
-               </button>
-               {index < SUPPORTED_LANGS.length - 1 && <span className="mx-1">/</span>}
-            </div>
-         ))}
+                  >{lang}
+                     <div className={`border-b-2 ${isActive ? 'border-[#7874f4]' : 'border-transparent'} w-fit mx-auto px-2 `}> </div>
+                  </button>
+                  {index < SUPPORTED_LANGS.length - 1 && <span className="mx-1">/</span>}
+               </div>
+            );
+         })}
       </div>
    );
 };
