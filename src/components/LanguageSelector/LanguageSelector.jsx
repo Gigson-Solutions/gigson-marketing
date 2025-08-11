@@ -46,20 +46,23 @@ const LanguageSelector = () => {
       document.documentElement.lang = i18n.language;
       navigate(newPath);
    };
-   const active = "underline decoration-1 decoration-[#7874f4]";
-   const noactive = "spam-lng";
+  
 
    return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
-         {SUPPORTED_LANGS.map((lang, index) => (
+         {SUPPORTED_LANGS.map((lang, index) => {
+             const isActive = lang === currentLang;
+            return(
             <div key={lang} className="flex items-center">
                <button
                   onClick={switchLanguage}
-                  className={`cursor-pointer uppercase ${lang === currentLang ? noactive : active }`}
-               >{lang}</button>
+                  className={`h-6 cursor-pointer uppercase ${isActive && 'spam-lng'}`}
+               >{lang}{isActive && <div className='border-b-2 border-[#7874f4]' />}</button>
+
                {index < SUPPORTED_LANGS.length - 1 && <span className="mx-1">/</span>}
             </div>
-         ))}
+         );
+         })}
       </div>
    );
 };

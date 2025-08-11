@@ -33,6 +33,7 @@ const Logistics = () => {
             <HowWeWork {...howWeWork} />
             <DigitalProduct {...digitalProduct}/>
             <Brand />         
+
         </>
     );
 };
