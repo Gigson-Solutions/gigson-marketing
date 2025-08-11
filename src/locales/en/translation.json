@@ -11,6 +11,7 @@
     "cookies":"Cookies Policy",
     "notice":"Legal Notice",
     "logistics": "Logistics",
+    "CTO": "CTO as a service",
     "tech_consulting": "technology consulting"
   },
   "home":{
@@ -1141,7 +1142,7 @@
       ]
     },
     "solutionsApplications": {
-      "title": "Solutions and applications of technology <span>tecnología in logistics operations</span>",
+      "title": "Solutions and applications of <span>technology in logistics operations</span>",
       "subTitle": "Digitalization and automations enable superior logistics efficiency. This is how we can optimize or integrate technology into your company’s logistics.",
       "containers": [
         {
@@ -2161,7 +2162,163 @@
       "brand_title" : "Trusted by <span> Great Brands </span>",
       "brand_description" : "Meet our clients and discover how we create value for them."
     },
-    "consultoriaTec":{
+    "CTO":{
+    "title": "CTO as a Service | Gigson Solutions",
+    "metadescription": " Upgrade your tech strategy, lead digital transformation, and reduce operational risks with an external CTO.",
+    "hero": {
+      "suptitle":"SERVICES",
+      "title": "CTO as a Service: <span> custom tech strategy </span>",
+      "description": "In a world where technology directly impacts efficiency and competitiveness, many SMEs face a common challenge: they need strategic and operational tech leadership, but can’t afford the financial and structural burden of hiring a full-time CTO. And even if technology isn’t their core, they need it to operate, grow, and make better decisions. That’s where the CTO as a Service model makes total sense. At Gigson Solutions, we act as a technology partner—not just consultants. We help you define and execute a tech strategy that fits your business structure, without imposing generic tools or methodologies. We support startups, scaleups and established companies with one clear focus: making technology a driver, not a blocker.",
+      "buttonText": "How we can help you"
+    },
+    "solutionsApplications": {
+      "title": "Tech leadership and advisory <span> for frictionless growing companies.</span>",
+      "subTitle": "Not all companies need a full-time CTO, but all need high-level tech direction. Our Fractional CTO service integrates a tech leader into your team to detect opportunities, avoid mistakes, and align technology with your business goals. From day one, we deliver realistic, actionable tech advice—with direct impact on operations and growth.",
+      "containers": [
+        {
+          "title": "Cost optimization & operational efficiency",
+          "description": "Reducing costs without losing responsiveness is possible when technology is planned with business vision. An external CTO can help identify inefficiencies in your current setup and suggest sustainable solutions—not just quick fixes.",
+          "type": "Sector",
+          "cards": [
+            {
+              "title": "Cost analysis, optimization, reorganization and scalability",
+              "description": "We perform a full audit of your tech ecosystem—from licenses to HR and processes. Where’s the money going? What can be automated? What tools are we paying for but not leveraging? We then design a transformation plan focused on scaling efficiently and sustainably."
+            },
+            {
+              "title": "Measuring tech investment ROI",
+              "description": "This isn’t about tech for tech’s sake. We evaluate each decision using clear metrics: How much value does it bring? What’s the impact on revenue, costs, productivity? Will it still serve us in X years? We work with data, not guesswork or trends."
+            },
+            {
+              "title": "Agile solutions and bottleneck identification",
+              "description": "A slow or poorly organized tech stack slows growth and increases errors.We analyze key flows and help your team unblock the critical friction points that prevent agility and scalability."
+            }
+          ]
+        },
+        {
+          "title": "Global vision & business impact",
+          "description": "Having technical insight without business context is as inefficient as making business decisions without understanding tech implications. The value of a CTO as a Service lies in bridging these worlds and anticipating the impact of each step.",
+          "type": "Sector",
+          "cards": [
+            {
+              "title": "Strategic vision and tech diagnosis",
+              "description": "We start with a full audit: What tech is in place?What are your business goals?What gaps exist? This lets us build a roadmap where tech and strategy are integrated cohesively."
+            },
+            {
+              "title": "C-level support in key decisions: translating tech into business terms",
+              "description": "We actively participate in your executive team, owning the tech vision at decision level. We translate technical language into strategic options, propose actionable paths and evaluate every decision by its risks, costs, and potential impact.Tech shouldn’t be an afterthought—it belongs at the table where the future is decided."
+            },
+            {
+              "title": "Cross-functional coordination with tech providers & decision makers",
+              "description": "Tech doesn’t live in isolation. We coordinate across internal and external teams—aligning providers, developers and executives—to ensure everyone is focused on one thing: achieving business goals."
+            }
+          ]
+        },
+         {
+          "title": "Tech strategy, planning & innovation",
+          "description": "A company’s tech strategy can’t be reactive. It needs to anticipate change, integrate innovation, and ensure every decision adds real value.With our CTO as a Service, your company doesn’t just survive—it evolves.",
+          "type": "sector",
+          "cards": [
+            {
+              "title": " Tech architecture design & audit",
+              "description": "A weak architecture limits growth.We design or audit your systems to ensure they support your present and scale for the future—incorporating best practices in modularity, security, and efficiency."
+            },
+            {
+              "title": "Security best practices",
+              "description": "Cybersecurity is no longer optional.We advise on security policies to protect data, access, and systems—reducing legal, operational and reputational risks."
+            },
+            {
+              "title": "Compliance & Regulatory Consulting",
+              "description": "We help adapt your tech stack to relevant standards: GDPR, ISO27001, NIS2, or any sector-specific regulation.Compliance should not be a barrier—it should be a natural part of growth."
+            },
+            {
+              "title": "Vendor & tech resource management",
+              "description": "We negotiate, coordinate and audit vendors to make sure what's promised is delivered—and that tech resources are used efficiently.No hidden costs. No unnecessary dependencies."
+            },
+            {
+              "title": "Trend monitoring & tech scouting",
+              "description": "Spot before others act. We stay on top of emerging technologies, market trends and regulatory shifts to detect opportunities or threats early."
+            },
+            {
+              "title": "Cloud & hybrid architecture migration",
+              "description": "We optimize existing infrastructure and, when needed, plan migrations to cloud or hybrid environments—ensuring cost-effectiveness, scalability, and performance aligned with your goals."
+            }
+          ]
+        },
+        {
+          "title": "Technical leadership & team development",
+          "description": "Having the best tech strategy means nothing without a team capable of executing it. Gigson Solutions' CTO as a Service not only defines the roadmap but also leads the creation of strong, aligned teams that share your company’s vision.",
+          "type": "Sector",
+          "cards": [
+            {
+              "title": "Defining Tech Culture",
+              "description": "We foster a tech culture built on collaboration, accountability, and technical excellence.It’s not just about development—it’s about understanding how each technology impacts business outcomes."
+            },
+            {
+              "title": "Aligning tech hiring with company values",
+              "description": "Hiring tech talent isn’t about collecting CVs.We define the right profile for each growth stage, ensuring that new hires share your company’s philosophy and strengthen the existing team."
+            },
+            {
+              "title": "Agile scaling of development teams",
+              "description": "As the business grows, the team must scale without losing agility.We design phased growth strategies, prioritizing goal-based organization, autonomy, and technical quality."
+            },
+            {
+              "title": "Training & Tech Leadership",
+              "description": "We train and mentor teams in adopting new technologies, agile methodologies, and development best practices.A well-led, well-trained team is the best tech investment a company can make."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How do we work?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identifying needs, mapping processes, and defining objectives."
+        },
+        {
+          "title": "Design and architecture",
+          "description": "Defining requirements, creating a prototype, and designing integrations with current systems."
+        },
+        {
+          "title": "Implementation",
+          "description": "Programming, functional testing, integration with external platforms, and deployment to production."
+        },
+        {
+          "title": "Support and maintenance",
+          "description": "Monitoring KPIs, providing support, maintenance, and improvements based on business evolution."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "What do I need to create a <span>digital product</span>?",
+      "description": "Thinking that developing a digital product is a common or straightforward project poses a considerable risk. This type of product requires detailed attention in every aspect, managed by experts.",
+      "buttonText": "How can we help you",
+      "cards": [
+        {
+          "title": "Software engineering",
+          "description": "From integrating different tools and developing new features and products to monitoring and maintaining a product — we’re ready for it. Our software engineering team is made up of developers, architects, and testers who build solutions with cutting-edge technology."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Information security is no longer optional — cybersecurity is a NECESSITY for every business. All companies must have the knowledge, tools, and processes to prevent or minimize attacks."
+        },
+        {
+          "title": "Technology consulting",
+          "description": "Our team of software engineers, architects, and experienced developers uses the best technologies adapted to your industry. Gigson Solutions is your trusted partner in software development. We understand that behind every line of code lies an opportunity to gain a competitive advantage."
+        }
+      ]
+    }
+  },
+  "whatsapp" : {
+    "phoneNumber" : "623783507",
+    "accountName" : "Emmelin",
+    "placeholder" : "Hi",
+    "statusmessage": "Always ready to help",
+    "chatMessage": "Hello I'm Emmelin! Account Manager of Gigson Solutions, What can I help you with?"
+
+  },
+  "consultoriaTec":{
     "title": "Technology Consulting for Businesses | Gigson Solutions",
     "metadescription": "Technology consulting for businesses that want to scale smoothly: diagnosis, strategy, and tailored solution implementation.",
     "hero": {

@@ -18,10 +18,10 @@ const Navbar = () => {
       ? segments[0]
       : DEFAULT_LANG;
 
-   const { about, services, cases, faqs, contact, industries, logistics, tech_consulting } = t('menu');
+   const { about, services, cases, faqs, contact, industries, logistics, CTO, tech_consulting } = t('menu');
 
    const menuLinks = [
-      { name: services, link: ROUTE_SLUGS[currentLang].services ,children: [ { name: tech_consulting, link: ROUTE_SLUGS[currentLang].ConsultoriaTec },]},
+      { name: services, link: ROUTE_SLUGS[currentLang].services ,children: [ { name: CTO, link: ROUTE_SLUGS[currentLang].CTO }, { name: tech_consulting, link: ROUTE_SLUGS[currentLang].ConsultoriaTec },]},
       { name: industries, children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics },] },
       { name: cases, link: ROUTE_SLUGS[currentLang].cases },
       { name: about, link: ROUTE_SLUGS[currentLang].about },
