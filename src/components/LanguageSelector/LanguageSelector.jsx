@@ -56,7 +56,7 @@ const LanguageSelector = () => {
                <div key={lang} className="flex items-center cursor-pointer">
                   <button
                      onClick={switchLanguage}
-                     className={`cursor-pointer uppercase ${isActive && 'spam-lng'}`}
+                     className={`cursor-pointer uppercase ${!isActive && 'spam-lng'}`}
 
                   >{lang}
                      <div className={`border-b-2 ${isActive ? 'border-[#7874f4]' : 'border-transparent'} w-fit mx-auto px-2 `}> </div>
