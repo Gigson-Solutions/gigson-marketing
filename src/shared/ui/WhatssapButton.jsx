@@ -7,11 +7,24 @@ const WhatsappButton = () => {
     const whatsappData = t('whatsapp');
 
     return (
-        <FloatingWhatsApp allowClickAway
-            avatar={avatar}
-            {...whatsappData}
-        />
-    );
+    <>
+      <style>{`
+        
+        .floating-whatsapp-button::after {
+          animation: none !important;
+          box-shadow: none !important;
+          content: '' !important; 
+        }
+      `}</style>
+
+      <FloatingWhatsApp
+        allowClickAway
+        avatar={avatar}
+        {...whatsappData}
+       
+      />
+    </>
+  );
 };
 
 export default WhatsappButton;
