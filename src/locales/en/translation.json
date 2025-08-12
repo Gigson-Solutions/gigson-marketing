@@ -11,7 +11,8 @@
     "cookies":"Cookies Policy",
     "notice":"Legal Notice",
     "logistics": "Logistics",
-    "CTO": "CTO as a service"
+    "CTO": "CTO as a service",
+    "tech_consulting": "Technology consulting"
   },
   "home":{
     "title": "Gigson Solutions | Tech Boosting your Business",
@@ -2316,5 +2317,137 @@
     "statusmessage": "Always ready to help",
     "chatMessage": "Hello I'm Emmelin! Account Manager of Gigson Solutions, What can I help you with?"
 
+  },
+  "consultoriaTec":{
+    "title": "Technology Consulting for Businesses | Gigson Solutions",
+    "metadescription": "Technology consulting for businesses that want to scale smoothly: diagnosis, strategy, and tailored solution implementation.",
+    "hero": {
+      "suptitle":"SERVICES",
+      "title": "Technology consulting for <span> business </span>",
+      "description": "At Gigson Solutions, we believe technology shouldn’t limit us—it should help us reach business goals.  Our business tech consulting service is designed to analyze, transform, optimize, and evolve your company with tailored solutions—without friction, without improvisation, and with a clear, external, and objective vision of the future. Diagnosis, strategy, and action—all in one partner.  We support you from the analysis of your current situation to the definition and execution of tech projects that drive your growth.",
+      "buttonText": "How we can help you"
+    },
+    "solutionsApplications": {
+      "title": "Tech leadership and advisory <span> for frictionless growing companies.</span>",
+      "subTitle": "Every company has its own context, processes, and challenges. That’s why our technology consulting doesn’t rely on off-the-shelf solutions, but on gaining a deep understanding of your situation, needs, and business goals. Our approach blends technical expertise with business insight to ensure every tech decision adds real value.",
+      "containers": [
+        {
+          "title": "Technology Consulting & Digital Transformation",
+          "description": "Digital transformation isn’t about piling up tools—it’s about optimizing how your business operates, connects with clients, and grows. Through tech consulting, we help you tackle this process strategically: we evaluate your current systems and integrations, identify improvement areas, and design digital solutions that truly fit your structure and growth objectives.",
+          "type": "Challenges",
+          "cards": [
+            {
+              "title": "Design of integrated tech solutions",
+              "description": "We design tech solutions that not only solve specific needs, but also integrate naturally into your processes, teams, and systems. Our approach is modular and scalable: we build tech that works today and grows with you tomorrow—without creating vendor lock-in or future roadblocks."
+            },
+            {
+              "title": "Implementation of digital transformation strategies",
+              "description": "A well-designed digital strategy loses value if poorly executed. We support the practical implementation of your transformation—from planning each phase to launch and ongoing optimization."
+            },
+            {
+              "title": "Tech outsourcing: your trusted partner for change",
+              "description": "Through our tech outsourcing service, we become your trusted partner—bringing the knowledge, experience, and flexibility you need to drive your digital transformation without increasing internal overhead."
+            }
+          ]
+        },
+        {
+          "title": "Tech development",
+          "description": "When standard solutions don’t fit, a tailored approach is needed — that’s why we design and develop custom technology to address the specific needs of your business.  Always focused on functionality and efficiency, we create tools and platforms that not only fill a gap in the market but also give you a real competitive advantage.  Our philosophy: build what you need today, with tomorrow’s needs in mind.",
+          "type": "Challenges",
+          "cards": [
+            {
+              "title": "Development of tailored tech solutions",
+              "description": "Not all companies have the same needs—so we don’t offer one-size-fits-all solutions. When commercial software or platforms don’t adapt to your processes, we design and develop custom tech solutions from scratch to solve your specific challenges."
+            },
+            {
+              "title": "Optimization and evolution of system architecture",
+              "description": "We perform an in-depth analysis of your IT infrastructure—servers, databases, microservices, and connections—to detect bottlenecks, vulnerabilities, and redundancies. Based on that diagnosis, we redesign your architecture, improving performance and security (hardening, encryption in transit and at rest, access control), and prepare it for scalability. We adapt your environment to new data volumes and business requirements, migrate components to cloud or hybrid architectures, and establish DevOps and CI/CD practices for future iteration."
+            },
+            {
+              "title": "Optimization and transformation of monolithic systems",
+              "description": "Legacy or poorly structured systems can drag down performance and innovation. We help you migrate from monolithic applications to modern architectures (e.g., microservices or containers) while ensuring operational continuity. We analyze dependencies and refactor code, replacing obsolete modules with scalable, efficient components—using blue-green deployment or canary releases to minimize risk."
+            }
+          ]
+        },
+         {
+          "title": "System integration & process improvement",
+          "description": "A disconnected tech ecosystem causes inefficiencies, errors, and wasted time. At Gigson Solutions, we help you integrate your systems and optimize your processes so your infrastructure works in a coordinated, agile, and secure way.",
+          "type": "Challenges",
+          "cards": [
+            {
+              "title": "Tech solutions that connect and optimize your current tools",
+              "description": "Many companies work with multiple tools that don’t communicate. We design solutions that connect platforms, apps, and internal systems—eliminating silos and enabling true collaboration across tools."
+            },
+            {
+              "title": "Automation of critical processes for efficiency",
+              "description": "We identify repetitive, error-prone processes and automate them safely and effectively.  This allows you to free up resources, reduce costs, minimize errors, and focus on high-value tasks.  Every automation is adapted to your actual workflows—not the other way around."
+            },
+            {
+              "title": "Architecture analysis & optimization",
+              "description": "We conduct a deep audit of your current tech architecture to detect weaknesses, redundancies, and improvement opportunities."
+            }
+          ]
+        },
+        {
+          "title": "IT Consulting: Audit & Tech Strategy",
+          "description": "A strong tech strategy starts with a realistic diagnosis. We analyze your IT infrastructure in depth, detect risks and areas for improvement, and design a tech plan aligned with your business goals.",
+          "type": "Challenges",
+          "cards": [
+            {
+              "title": "Technical & cybersecurity audit",
+              "description": "We conduct technical and security audits to identify vulnerabilities, inefficiencies, and hidden risks in your current infrastructure."
+            },
+            {
+              "title": "Defining a tech strategy aligned with your business goals",
+              "description": "We help you define a realistic, scalable roadmap fully aligned with your business objectives. So that every tech investment becomes a growth driver—not a sunk cost."
+            },
+            {
+              "title": "Management & coordination of external tech providers",
+              "description": "Having multiple tech providers shouldn’t become a management headache. We coordinate, supervise, and optimize your relationships with external vendors to ensure each solution or service brings real value. We make sure everyone involved is aligned with your vision and needs."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How do we work?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identifying needs, mapping processes, and defining objectives."
+        },
+        {
+          "title": "Design and architecture",
+          "description": "Defining requirements, creating a prototype, and designing integrations with current systems."
+        },
+        {
+          "title": "Implementation",
+          "description": "Programming, functional testing, integration with external platforms, and deployment to production."
+        },
+        {
+          "title": "Support and maintenance",
+          "description": "Monitoring KPIs, providing support, maintenance, and improvements based on business evolution."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "What do I need to create a <span>digital product</span>?",
+      "description": "Thinking that developing a digital product is a common or straightforward project poses a considerable risk. This type of product requires detailed attention in every aspect, managed by experts.",
+      "buttonText": "How can we help you",
+      "cards": [
+        {
+          "title": "Software engineering",
+          "description": "From integrating different tools and developing new features and products to monitoring and maintaining a product — we’re ready for it. Our software engineering team is made up of developers, architects, and testers who build solutions with cutting-edge technology."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Information security is no longer optional — cybersecurity is a NECESSITY for every business. All companies must have the knowledge, tools, and processes to prevent or minimize attacks."
+        },
+        {
+          "title": "Technology consulting",
+          "description": "Our team of software engineers, architects, and experienced developers uses the best technologies adapted to your industry. Gigson Solutions is your trusted partner in software development. We understand that behind every line of code lies an opportunity to gain a competitive advantage."
+        }
+      ]
+    }
   }
 }

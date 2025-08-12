@@ -16,6 +16,7 @@ const ROUTE_SLUGS = {
     notice: 'notice',
     cookies: 'cookies',
     CTO: 'cto-as-service',
+    ConsultoriaTec: 'technology-consulting',
   },
   es: {
     home: '',
@@ -30,6 +31,7 @@ const ROUTE_SLUGS = {
     notice: 'aviso-legal',
     cookies: 'cookies',
     CTO: 'cto-as-service',
+    ConsultoriaTec: 'consultoria-tecnologica',
   },
 };
 
