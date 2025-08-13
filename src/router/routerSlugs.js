@@ -17,6 +17,7 @@ const ROUTE_SLUGS = {
     cookies: 'cookies',
     CTO: 'cto-as-service',
     ConsultoriaTec: 'technology-consulting',
+    cibersecurity: 'cybersecurity',
   },
   es: {
     home: '',
@@ -32,6 +33,7 @@ const ROUTE_SLUGS = {
     cookies: 'cookies',
     CTO: 'cto-as-service',
     ConsultoriaTec: 'consultoria-tecnologica',
+    cibersecurity: 'ciberseguridad',
   },
 };
 

@@ -12,7 +12,8 @@
     "notice":"Aviso legal",
     "logistics": "Logística",
     "CTO" : "CTO as a service",
-    "tech_consulting": "Consultoria tecnologica"
+    "tech_consulting": "Consultoria tecnologica",
+    "cibersecurity" : "Ciberseguridad"
   },
   "home":{
     "title":"Gigson Solutions | Tecnología para Impulsar tu Negocio",
@@ -2403,6 +2404,176 @@
             {
               "title": "Gestión y coordinación con proveedores tecnológicos externos",
               "description": "Contar con múltiples proveedores tecnológicos no debería convertirse en un problema de gestión. Coordinamos, supervisamos y optimizamos la relación con tus proveedores externos para asegurar que cada solución, servicio o integración sume valor real a tu proyecto. Nos aseguramos de que todos los actores trabajen alineados con tu visión y tus necesidades."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "¿Cómo trabajamos?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
+        },
+        {
+          "title": "Diseño y arquitectura",
+          "description": "Definición de requisitos, creación de un prototipo y diseño de integraciones con sistemas actuales."
+        },
+        {
+          "title": "Implementación",
+          "description": "Programación, pruebas funcionales, integración con plataformas externas y despliegue en producción."
+        },
+        {
+          "title": "Soporte y mantenimiento",
+          "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "¿Qué necesito para hacer un <span>producto digital</span>?",
+      "description": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
+      "buttonText": "Como podemos ayudarte",
+      "cards": [
+        {
+          "title": "Ingeniería de software",
+          "description": "Desde integrar diferentes herramientas, desarrollar nuevas características y productos hasta monitorear y mantener un producto, estamos listos para ello. Nuestro equipo de ingeniería de software está compuesto por desarrolladores, arquitectos y testers para construir necesidades con tecnología de actual."
+        },
+        {
+          "title": "Ciberseguridad",
+          "description": "La seguridad de la información ya no está en la hoja de ruta. La ciberseguridad es una NECESIDAD en todos los negocios y todas las empresas deben tener el conocimiento, las herramientas y los procesos para evitar o minimizar los ataques."
+        },
+        {
+          "title": "Consultoría tecnologica",
+          "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
+        }
+      ]
+    }
+  },
+  "cibersecurity":{
+    "title": " Ciberseguridad para empresas y pymes | Gigson Solutions",
+    "metadescription": "Somos tus socios tecnológicos para prevenir y mitigar amenazas. Integramos la ciberseguridad como parte estructural del negocio",
+    "hero": {
+      "suptitle":"SERVICES",
+      "title": "Soluciones de ciberseguridad <span> empresarial </span>",
+      "description": "En un entorno digital cada vez más complejo, la ciberseguridad empresarial ya no es una opción, sino una necesidad estratégica. Las amenazas evolucionan constantemente y afectan tanto a grandes corporaciones como a pymes. Desde ataques dirigidos a infraestructuras críticas hasta accesos no autorizados o brechas internas, el riesgo es real y constante. En Gigson Solutions, actuamos como socios tecnológicos para ayudarte a prevenir, detectar y mitigar estas amenazas, integrando la ciberseguridad como parte estructural del negocio. No ofrecemos soluciones genéricas. Nuestra visión se basa en que la tecnología debe adaptarse al contexto real de cada empresa, no al revés. Por eso, diseñamos e implementamos soluciones robustas para aplicaciones e infraestructura de empresas que tienen en cuenta su tamaño, sector, estructura técnica y objetivos de negocio. Desde el análisis de riesgos en ciberseguridad hasta el despliegue de herramientas avanzadas, nuestros consultores en ciberseguridad trabajan para que cada capa de protección esté alineada con tu estrategia y evolucione contigo.",
+      "buttonText": "Como podemos ayudarte"
+    },
+    "solutionsApplications": {
+      "title": "Ciberseguridad para empresas y pymes",
+      "subTitle": "La ciberseguridad para empresas y pymes requiere un enfoque integral que combine tecnología, procesos y personas. Abordamos diferentes tipos de elementos necesarios para proteger tu infraestructura, desde la red hasta los dispositivos, el cloud y las aplicaciones críticas. A continuación, te mostramos cómo diseñamos una estrategia completa adaptada a las necesidades reales de cada organización.",
+      "containers": [
+        {
+          "title": "Seguridad perimetral y de red",
+          "description": "Analizar y proteger el perímetro digital de una empresa es el primer paso para evitar accesos no autorizados y ataques externos. Diseñamos arquitecturas de red seguras, escalables y alineadas con los requisitos operativos de cada organización. Combinamos herramientas avanzadas con un enfoque estratégico para garantizar que la seguridad no limite la operativa del negocio",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Configuración y mantenimiento de firewalls de nueva generación",
+              "description": "Implementamos y gestionamos firewalls inteligentes que no solo bloquean amenazas, sino que se adaptan al comportamiento del tráfico de la red."
+            },
+            {
+              "title": "Sistemas de detección y prevención de intrusos (IDS/IPS)",
+              "description": "Detectamos patrones anómalos y bloqueamos ataques antes de que comprometan los sistemas, reduciendo el tiempo de respuesta ante incidentes."
+            },
+            {
+              "title": "Segmentación de red y control de tráfico interno ",
+              "description": "Dividimos la red en zonas seguras para minimizar el impacto de posibles brechas y controlar con precisión el flujo de información entre departamentos y dispositivos."
+            }
+          ]
+        },
+        {
+          "title": "Ciberseguridad en la nube",
+          "description": "El uso de servicios cloud ha transformado la forma en que operan las empresas, pero también ha abierto nuevas superficies de ataque. En Gigson Solutions diseñamos estrategias específicas de ciberseguridad para entornos cloud, asegurando que tus datos y operaciones estén protegidos sin frenar la escalabilidad ni la agilidad del negocio.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Protección de entornos AWS, Azure y Google Cloud",
+              "description": "Adaptamos las mejores prácticas de seguridad a cada proveedor cloud, asegurando la correcta configuración de servicios y la protección de recursos críticos."
+            },
+            {
+              "title": "Cifrado de datos y gestión de accesos en entornos cloud",
+              "description": "Aplicamos políticas robustas de cifrado y control de accesos para garantizar que solo los usuarios autorizados puedan interactuar con la información sensible."
+            },
+            {
+              "title": "Monitorización continua y control de configuraciones críticas",
+              "description": "Supervisamos los entornos cloud en tiempo real para detectar desviaciones, errores de configuración o accesos sospechosos antes de que se conviertan en amenazas"
+            }
+          ]
+        },
+         {
+          "title": "Seguridad de endpoints",
+          "description": "Cada dispositivo o sistema conectado a tu red representa un posible punto de entrada para amenazas. Implementamos soluciones de seguridad de endpoints que permiten controlar, proteger y supervisar todos los dispositivos de forma centralizada, sin bloquear la operativa diaria.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Protección avanzada en dispositivos con soluciones EDR",
+              "description": "Deployamos soluciones EDR (Endpoint Detection and Response) que monitorizan continuamente la actividad de los dispositivos para detectar y neutralizar comportamientos maliciosos."
+            },
+            {
+              "title": "Gestión centralizada de antivirus, actualizaciones y políticas de acceso",
+              "description": "Unificamos la gestión de la seguridad en todos los endpoints, automatizando actualizaciones, escaneos y políticas de acceso."
+            },
+            {
+              "title": "Prevención de pérdida de datos (DLP) en dispositivos móviles y portátiles ",
+              "description": "Evitamos fugas de información mediante soluciones DLP que controlan cómo se accede, copia o transfiere la información confidencial dentro y fuera de la red corporativa"
+            }
+          ]
+        },
+        {
+          "title": "Ciberseguridad para aplicaciones y sistemas",
+          "description": "Las aplicaciones web, móviles y los sistemas internos son objetivos frecuentes de ataques. Reforzamos la seguridad desde el desarrollo hasta el despliegue, reduciendo vulnerabilidades y garantizando que tus servicios críticos funcionen con integridad y estabilidad.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Análisis de vulnerabilidades en aplicaciones web y móviles",
+              "description": "Identificamos fallos de seguridad antes de que sean explotados, aplicando tests periódicos y metodologías de análisis avanzadas."
+            },
+            {
+              "title": "Revisión de configuraciones y código seguro",
+              "description": "Auditamos configuraciones y buenas prácticas de desarrollo seguro para evitar brechas derivadas de errores comunes o malas implementaciones."
+            },
+            {
+              "title": "Protección frente a ataques a APIs y servicios expuestos",
+              "description": "Blindamos puntos de entrada sensibles, como APIs y servicios externos, mediante autenticación robusta, validación de datos y mecanismos de defensa automatizados"
+            }
+          ]
+        },
+        {
+          "title": "Gestión de identidades y accesos (IAM)",
+          "description": "Controlar quién accede a qué, cuándo y cómo es clave para reducir riesgos internos y externos. Una estrategia sólida de gestión de identidades y accesos permite mantener la trazabilidad, limitar privilegios y proteger los recursos más sensibles de la organización.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": " Implementación de autenticación multifactor (MFA)",
+              "description": "Añadimos capas de seguridad adicionales al acceso de usuarios mediante sistemas MFA, dificultando el uso indebido de credenciales robadas."
+            },
+            {
+              "title": "Control de privilegios y políticas de acceso segmentado",
+              "description": "Definimos reglas claras para que cada usuario solo acceda a lo que realmente necesita, minimizando el riesgo de movimientos laterales dentro de la red."
+            },
+            {
+              "title": "Monitorización y auditoría de accesos en tiempo real",
+              "description": "Supervisamos todos los accesos a sistemas críticos para detectar comportamientos anómalos y responder de forma inmediata ante incidentes sospechosos."
+            }
+          ]
+        },
+        {
+          "title": "Seguridad frente a amenazas internas y externas",
+          "description": "Las amenazas no siempre vienen del exterior. Un acceso indebido, un descuido o un empleado malintencionado pueden poner en riesgo toda la infraestructura. Por eso combinamos soluciones tecnológicas con formación y vigilancia activa para anticiparnos tanto a ataques externos como a vulnerabilidades internas.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Monitorización y detección de amenazas persistentes avanzadas (APT)",
+              "description": "Detectamos patrones de comportamiento anómalos asociados a amenazas complejas y sostenidas en el tiempo, antes de que comprometan activos críticos."
+            },
+            {
+              "title": "Sistemas de control de filtrado de datos y acceso sospechoso",
+              "description": "Aplicamos filtros inteligentes que bloquean el tráfico malicioso, accesos inusuales y la exfiltración de datos desde dentro de la organización."
+            },
+            {
+              "title": "Formación y concienciación en ciberseguridad para empleados",
+              "description": "Capacitamos a los equipos para que reconozcan riesgos comunes, como phishing o malas prácticas, reduciendo el factor humano como vector de ataque."
             }
           ]
         }

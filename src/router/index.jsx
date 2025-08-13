@@ -11,6 +11,7 @@ import Policity from '../components/Pages/Policity';
 import CookiesPage from '../components/Pages/CookiesPage';
 import CTO from '../components/Pages/CTO/CTO'
 import ConsultoriaTec from '../components/Pages/ConsultoriaTec/ConsultoriaTec';
+import Cibersecurity from '../components/Pages/Cibersecurity/Cibersecurity';
 
 import {Navigate, Outlet, createBrowserRouter} from 'react-router-dom';
 import '../App.css';
@@ -30,6 +31,7 @@ const generateRoutes = (lang) => {
       { path: slugs.logistics,element: <Logistics /> },
       { path: slugs.CTO,element: <CTO/> },
       { path: slugs.ConsultoriaTec,element: <ConsultoriaTec/> },
+      { path: slugs.cibersecurity,element: <Cibersecurity/> },
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },
@@ -37,7 +39,8 @@ const generateRoutes = (lang) => {
       { path: slugs.policy, element: <Policity /> },
       { path: slugs.notice, element: <Notice /> },
       { path: slugs.cookies, element: <CookiesPage /> },
-      { path: '*', element: <NotFound /> },
+      { path: '*', element: <NotFound /> },,
+      
     ],
   };
 };
