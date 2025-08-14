@@ -1,6 +1,7 @@
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
 import avatar from '../../assets/avatar.jpg';
 import { useTranslation } from 'react-i18next';
+import './WhatsappButton.css';
 
 const WhatsappButton = () => {
     const { t } = useTranslation();
@@ -11,13 +12,7 @@ const WhatsappButton = () => {
         allowClickAway
         avatar={avatar}
         {...whatsappData}
-        style={{
-          '.floating-whatsapp-button::after': {
-            animation: 'none',
-            boxShadow: 'none',
-            content: ''
-          }
-        }}
+      
       />
   );
 };
