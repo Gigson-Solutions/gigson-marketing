@@ -1,9 +1,22 @@
 import solutionsApplicationsBgGradient from '../../assets/solutions-applications-bg-gradients-1.svg';
 import { Trans } from 'react-i18next';
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import chevronDownIcon from '../../assets/chevron-down.svg';
 
 const getCardNr = (index) => String(index).padStart(2, '0');
+
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
+
+  return isMobile;
+}
 
 const Card = ({ title, description, cardNr, className }) => {
     return (
@@ -84,11 +97,15 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
                                             {initialTwoCards.map(({ title, description }, index) => {
                                                 const cardNr = getCardNr(index + 1);
 
-                                                return (<div key={index}>
-                                                    <Card title={title} description={description}
-                                                        cardNr={cardNr} />
-                                                    <CardMobile key={index} title={title} description={description}
-                                                        cardNr={cardNr} />
+                                               const isMobile = useIsMobile();
+
+                                                return (
+                                                <div key={index}>
+                                                    {isMobile ? (
+                                                     <CardMobile title={title} description={description} cardNr={cardNr} />
+                                                    ) : (
+                                                        <Card title={title} description={description} cardNr={cardNr} />
+                                                    )}
                                                 </div>
                                                 );
                                             })}
