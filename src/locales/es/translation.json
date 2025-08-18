@@ -2168,7 +2168,7 @@
     "hero": {
       "suptitle":"SERVICIO",
       "title": "CTO as a Service: <br> <span> estrategia tecnológica a medida </span>",
-      "description": "En un contexto donde la tecnología impacta directamente en la eficiencia y la competitividad, muchas pymes se enfrentan a un reto común: necesitan dirección tecnológica estratégica y operativa, pero no pueden asumir la carga financiera ni estructural de incorporar un CTO a tiempo completo. Además, aunque la tecnología no sea su core, la necesitan para operar, crecer y tomar mejores decisiones. Ahí es donde el modelo CTO as a Service cobra todo el sentido. En Gigson Solutions actuamos como partner tecnológico, no solo como consultores. Te ayudamos a definir y ejecutar una estrategia tecnológica que encaje con tu estructura de negocio, sin imponer herramientas ni metodologías genéricas.  Acompañamos a startups, scaleups y empresas consolidadas con un enfoque claro: que la tecnología sea un facilitador, no un freno.",
+      "description": "En un contexto donde la tecnología impacta directamente en la eficiencia y la competitividad, muchas pymes se enfrentan a un reto común: necesitan dirección tecnológica estratégica y operativa, pero no pueden asumir la carga financiera ni estructural de incorporar un CTO a tiempo completo. <br> Además, aunque la tecnología no sea su core, la necesitan para operar, crecer y tomar mejores decisiones. Ahí es donde el modelo CTO as a Service cobra todo el sentido. <br> En Gigson Solutions actuamos como partner tecnológico, no solo como consultores. Te ayudamos a definir y ejecutar una estrategia tecnológica que encaje con tu estructura de negocio, sin imponer herramientas ni metodologías genéricas. <br> Acompañamos a startups, scaleups y empresas consolidadas con un enfoque claro: que la tecnología sea un facilitador, no un freno.",
       "buttonText": "Contactanos"
     },
     "solutionsApplications": {
@@ -2323,7 +2323,7 @@
     "hero": {
       "suptitle":"SERVICIO",
       "title": "Consultoría tecnológica <span> para empresas </span>",
-      "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento",
+      "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. <br> Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. <br>  Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento",
       "buttonText": "Contactanos"
     },
     "solutionsApplications": {
@@ -2333,7 +2333,7 @@
         {
           "title": "Consultoría tecnológica y transformación digital para empresas",
           "description": "La transformación digital no consiste en acumular herramientas, sino en optimizar la forma en que tu empresa opera, se conecta con sus clientes y crece. Desde la consultoría tecnológica, te ayudamos a abordar este proceso de manera estratégica: evaluamos tus sistemas e integraciones actuales, detectamos oportunidades de mejora y diseñamos soluciones digitales que realmente encajan con tu estructura y tus objetivos de crecimiento",
-          "type": "Sector",
+          "type": "Retos",
           "cards": [
             {
               "title": "Diseño de soluciones tecnológicas integradas",
@@ -2352,7 +2352,7 @@
         {
           "title": "Desarrollo tecnológico",
           "description": "Cuando las soluciones estándar no encajan, hace falta un enfoque a medida, por eso diseñamos y desarrollamos tecnología personalizada para resolver necesidades específicas de tu negocio. Siempre desde la funcionalidad y la eficiencia, creando herramientas y plataformas que no solo cubren un vacío en el mercado, sino que también te dan una ventaja competitiva real. Nuestra filosofía: desarrollar lo que necesitas hoy, pensando en lo que vas a necesitar mañana.",
-          "type": "Aplicación",
+          "type": "Retos",
           "cards": [
             {
               "title": "Desarrollo de soluciones específicas",
@@ -2371,7 +2371,7 @@
          {
           "title": "Integración de sistemas y mejora de procesos",
           "description": "Un ecosistema tecnológico desconectado genera ineficiencias, errores y pérdidas de tiempo. En Gigson Solutions te ayudamos a integrar tus sistemas y optimizar tus procesos para que toda tu infraestructura trabaje de manera coordinada, ágil y segura.",
-          "type": "Aplicación",
+          "type": "Retos",
           "cards": [
             {
               "title": " Soluciones tecnológicas que conectan y optimizan tus herramientas actuales",
@@ -2390,7 +2390,7 @@
         {
           "title": "Consultoría IT: auditoría y estrategia tecnológica",
           "description": "Una buena estrategia tecnológica empieza con un diagnóstico realista. Analizamos en profundidad tu infraestructura IT, detectamos riesgos y áreas de mejora, y diseñamos un plan tecnológico alineado con tus objetivos de negocio.",
-          "type": "Aplicación",
+          "type": "Retos",
           "cards": [
             {
               "title": "Auditoría técnica y de seguridad informática",
@@ -2412,7 +2412,7 @@
       "title": "¿Cómo trabajamos?",
       "methods": [
         {
-          "title": "Discovery",
+          "title": "Descubre",
           "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
         },
         {
