@@ -12,7 +12,7 @@
     "notice":"Aviso legal",
     "logistics": "Logística",
     "CTO" : "CTO as a service",
-    "tech_consulting": "Consultoria tecnologica"
+    "tech_consulting": "Consultoría tecnologica"
   },
   "home":{
     "title":"Gigson Solutions | Tecnología para Impulsar tu Negocio",
@@ -531,7 +531,7 @@
       "suptitle":"LOGÍSTICA Y FULFILLMENT",
       "title": "<span>Tecnología</span> en logística <br/> y consultoría de <span>intralogística</span> ",
       "description": "La tecnología en logística puede ser un desafío si no se cuenta con el asesoramiento adecuado. En Gigson Solutions, te ayudamos a integrar soluciones tecnológicas sin fricciones, asegurando que se adapten a la estructura del negocio.",
-      "buttonText": "Como podemos ayudarte"
+      "buttonText": "Contactanos"
     },
     "useCases": {
       "title": "Casos clave",
@@ -1295,7 +1295,7 @@
       "suptitle":"LOGÍSTICA Y FULFILLMENT",
       "title": "Consultoría tecnológica <br> <span> en construcción </span>",
       "description": "Digitalizar una constructora no es solo implantar un software de gestión de obras: es alinear herramientas, procesos y equipos. En Gigson Solutions, te ayudamos a integrar tecnología sin fricciones, adaptada a los ritmos, retos y particularidades del sector construcción.nes, asegurando que se adapten a la estructura del negocio. ",
-      "buttonText": "Como podemos ayudarte"
+      "buttonText": "Contactanos"
     },
     "useCases": {
       "title": "Casos clave",
@@ -2159,17 +2159,17 @@
     }
   },
   "brand" : {
-      "brand_title" : "Trusted by <span> Great Brands </span>",
+      "brand_title" : "Respaldados por <span> grandes marcas </span>",
       "brand_description" : "Descubre nuestros clientes y lo que hacemos por ellos"
     },
     "CTO":{
     "title": "CTO as a Service | Gigson Solutions",
     "metadescription": "Mejora tu estrategia tecnológica, lidera la transformación digital y reduce riesgos operativos con un CTO externo",
     "hero": {
-      "suptitle":"INDUSTRIAS",
-      "title": "CTO as a Service: <span> estrategia tecnológica a medida </span>",
+      "suptitle":"SERVICIO",
+      "title": "CTO as a Service: <br> <span> estrategia tecnológica a medida </span>",
       "description": "En un contexto donde la tecnología impacta directamente en la eficiencia y la competitividad, muchas pymes se enfrentan a un reto común: necesitan dirección tecnológica estratégica y operativa, pero no pueden asumir la carga financiera ni estructural de incorporar un CTO a tiempo completo. Además, aunque la tecnología no sea su core, la necesitan para operar, crecer y tomar mejores decisiones. Ahí es donde el modelo CTO as a Service cobra todo el sentido. En Gigson Solutions actuamos como partner tecnológico, no solo como consultores. Te ayudamos a definir y ejecutar una estrategia tecnológica que encaje con tu estructura de negocio, sin imponer herramientas ni metodologías genéricas.  Acompañamos a startups, scaleups y empresas consolidadas con un enfoque claro: que la tecnología sea un facilitador, no un freno.",
-      "buttonText": "Como podemos ayudarte"
+      "buttonText": "Contactanos"
     },
     "solutionsApplications": {
       "title": "Liderazgo y asesoramiento tecnológico <span> para empresas que quieren crecer sin fricciones </span>",
@@ -2178,7 +2178,7 @@
         {
           "title": "Optimización de costes y eficiencia operativa",
           "description": "Reducir costes sin perder capacidad de respuesta es posible cuando la tecnología se planifica con visión de negocio. Un director tecnológico externo puede ayudarte a identificar las ineficiencias del sistema actual y proponer soluciones sostenibles, no parches temporales.",
-          "type": "Sector",
+          "type": "Retos",
           "cards": [
             {
               "title": "Análisis de costes, optimización, reorganización y escalabilidad",
@@ -2197,7 +2197,7 @@
         {
           "title": "Visión global e impacto en negocio",
           "description": "Tener una visión técnica sin contexto empresarial es tan ineficiente como tomar decisiones de negocio sin entender las implicaciones tecnológicas. El valor de un CTO as a Service está en traducir entre estos mundos y anticipar las consecuencias de cada paso.",
-          "type": "Sector",
+          "type": "Retos",
           "cards": [
             {
               "title": "Visión estratégica y diagnóstico tecnológico",
@@ -2216,7 +2216,7 @@
          {
           "title": "Estrategia tecnológica, planificación e innovacióne",
           "description": "La estrategia tecnológica de una empresa no puede ser reactiva: necesita anticipar cambios, integrar innovación y asegurar que cada decisión técnica aporte valor real. Con nuestro servicio de CTO as a Service, tu empresa evoluciona, no solo sobrevive.",
-          "type": "sector",
+          "type": "Retos",
           "cards": [
             {
               "title": " Auditoría/Diseño de arquitectura tecnológica",
@@ -2247,7 +2247,7 @@
         {
           "title": "Liderazgo y desarrollo de equipos técnicos",
           "description": "Tener la mejor estrategia tecnológica no sirve de nada sin un equipo capaz de ejecutarla. El CTO as a Service de Gigson Solutions no solo define el camino, sino que lidera la creación de equipos sólidos y alineados con la visión de tu empresa.",
-          "type": "Sector",
+          "type": "Retos",
           "cards": [
             {
               "title": "Definición de cultura tecnológica y visión compartida",
@@ -2321,10 +2321,10 @@
     "title": "Consultoría Tecnológica para Empresas | Gigson Solutions",
     "metadescription": "Consultoría tecnológica para empresas que quieren crecer sin fricciones: diagnóstico, estrategia e implementación de soluciones a medida",
     "hero": {
-      "suptitle":"SERVICES",
+      "suptitle":"SERVICIO",
       "title": "Consultoría tecnológica <span> para empresas </span>",
       "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento",
-      "buttonText": "Como podemos ayudarte"
+      "buttonText": "Contactanos"
     },
     "solutionsApplications": {
       "title": "Asesoramiento tecnológico para empresas que quieren crecer sin fricciones",
