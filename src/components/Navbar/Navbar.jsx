@@ -6,6 +6,7 @@ import './NavbarHeader.css';
 import NavbarDesktop from './NavbarDesktop.jsx';
 import NavbarMobile from './NavbarMobile.jsx';
 import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from '../../router/routerSlugs.js';
+import Software from '../Pages/Software/Software.jsx';
 
 const Navbar = () => {
    const { t } = useTranslation();
@@ -18,10 +19,12 @@ const Navbar = () => {
       ? segments[0]
       : DEFAULT_LANG;
 
-   const { about, services, cases, faqs, contact, industries, logistics, CTO, tech_consulting } = t('menu');
+   const { about, services, cases, faqs, contact, industries, logistics, CTO, tech_consulting, software } = t('menu');
 
    const menuLinks = [
-      { name: services, link: ROUTE_SLUGS[currentLang].services ,children: [ { name: CTO, link: ROUTE_SLUGS[currentLang].CTO }, { name: tech_consulting, link: ROUTE_SLUGS[currentLang].ConsultoriaTec },]},
+      { name: services, link: ROUTE_SLUGS[currentLang].services ,children: [ { name: CTO, link: ROUTE_SLUGS[currentLang].CTO }, 
+                                                      { name: tech_consulting, link: ROUTE_SLUGS[currentLang].ConsultoriaTec },
+                                                      { name: software, link: ROUTE_SLUGS[currentLang].software },]},
       { name: industries, children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics },] },
       { name: cases, link: ROUTE_SLUGS[currentLang].cases },
       { name: about, link: ROUTE_SLUGS[currentLang].about },
