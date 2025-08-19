@@ -1,0 +1,5 @@
+.floating-whatsapp-button::after {
+  animation: none !important;
+  box-shadow: none !important;
+  content: '' !important;
+}
