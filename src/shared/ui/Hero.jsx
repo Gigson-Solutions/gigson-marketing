@@ -27,7 +27,7 @@ const Hero = ({title, suptitle, description , buttonText }) => {
                 <h1 className="text-h1 text-dark-primary text-center mb-4 md:mb-6">
                    {Title}
                 </h1>
-                <p className="text-dark-primary whitespace-normal text-subtitle max-w-contained text-left mb-6 md:mb-10">{Description}</p>
+                <p className="text-dark-primary  text-subtitle max-w-contained text-left mb-6 md:mb-10">{Description}</p>
                 <ButtonLink link={buttonLink} text={buttonText} outlined/>
             </div>
         </section>

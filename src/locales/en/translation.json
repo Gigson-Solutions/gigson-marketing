@@ -2168,7 +2168,7 @@
     "hero": {
       "suptitle":"SERVICES",
       "title": "CTO as a Service: <br> <span> custom tech strategy </span>",
-      "description": "In a world where technology directly impacts efficiency and competitiveness, many SMEs face a common challenge: they need strategic and operational tech leadership, but can’t afford the financial and structural burden of hiring a full-time CTO. And even if technology isn’t their core, they need it to operate, grow, and make better decisions. That’s where the CTO as a Service model makes total sense. At Gigson Solutions, we act as a technology partner—not just consultants. We help you define and execute a tech strategy that fits your business structure, without imposing generic tools or methodologies. We support startups, scaleups and established companies with one clear focus: making technology a driver, not a blocker.",
+      "description": "In a world where technology directly impacts efficiency and competitiveness, many SMEs face a common challenge: they need strategic and operational tech leadership, but can’t afford the financial and structural burden of hiring a full-time CTO. <br> And even if technology isn’t their core, they need it to operate, grow, and make better decisions. That’s where the CTO as a Service model makes total sense. <br> At Gigson Solutions, we act as a technology partner—not just consultants. We help you define and execute a tech strategy that fits your business structure, without imposing generic tools or methodologies. We support startups, scaleups and established companies with one clear focus: making technology a driver, not a blocker.",
       "buttonText": "Contact Us"
     },
     "solutionsApplications": {
@@ -2324,7 +2324,7 @@
     "hero": {
       "suptitle":"SERVICES",
       "title": "Technology consulting for <span> business </span>",
-      "description": "At Gigson Solutions, we believe technology shouldn’t limit us—it should help us reach business goals.<br> Our business tech consulting service is designed to analyze, transform, optimize, and evolve your company with tailored solutions—without friction, without improvisation, and with a clear, external, and objective vision of the future. <br> Diagnosis, strategy, and action—all in one partner.  We support you from the analysis of your current situation to the definition and execution of tech projects that drive your growth.",
+      "description": "At Gigson Solutions, we believe technology shouldn’t limit us—it should help us reach business goals.<br> Our business tech consulting service is designed to analyze, transform, optimize, and evolve your company with tailored solutions—without friction, without improvisation, and with a clear, external, and objective vision of the future. <br> Diagnosis, strategy, and action—all in one partner. We support you from the analysis of your current situation to the definition and execution of tech projects that drive your growth.",
       "buttonText": "Contact Us"
     },
     "solutionsApplications": {
@@ -2333,16 +2333,16 @@
       "containers": [
         {
           "title": "Technology Consulting & Digital Transformation",
-          "description": "Digital transformation isn’t about piling up tools—it’s about optimizing how your business operates, connects with clients, and grows. Through tech consulting, we help you tackle this process strategically: we evaluate your current systems and integrations, identify improvement areas, and design digital solutions that truly fit your structure and growth objectives.",
+          "description": "Digital transformation isn’t about piling up tools—it’s about optimizing how your business operates, connects with clients, and grows.Through tech consulting, we help you tackle this process strategically: we evaluate your current systems and integrations, identify improvement areas, and design digital solutions that truly fit your structure and growth objectives.",
           "type": "Challenges",
           "cards": [
             {
               "title": "Design of integrated tech solutions",
-              "description": "We design tech solutions that not only solve specific needs, but also integrate naturally into your processes, teams, and systems. Our approach is modular and scalable: we build tech that works today and grows with you tomorrow—without creating vendor lock-in or future roadblocks."
+              "description": "We design tech solutions that not only solve specific needs, but also integrate naturally into your processes, teams, and systems.Our approach is modular and scalable: we build tech that works today and grows with you tomorrow—without creating vendor lock-in or future roadblocks."
             },
             {
               "title": "Implementation of digital transformation strategies",
-              "description": "A well-designed digital strategy loses value if poorly executed. We support the practical implementation of your transformation—from planning each phase to launch and ongoing optimization."
+              "description": "A well-designed digital strategy loses value if poorly executed.We support the practical implementation of your transformation—from planning each phase to launch and ongoing optimization."
             },
             {
               "title": "Tech outsourcing: your trusted partner for change",
@@ -2352,35 +2352,35 @@
         },
         {
           "title": "Tech development",
-          "description": "When standard solutions don’t fit, a tailored approach is needed — that’s why we design and develop custom technology to address the specific needs of your business.  Always focused on functionality and efficiency, we create tools and platforms that not only fill a gap in the market but also give you a real competitive advantage.  Our philosophy: build what you need today, with tomorrow’s needs in mind.",
+          "description": "When standard solutions don’t fit, a tailored approach is needed — that’s why we design and develop custom technology to address the specific needs of your business. Always focused on functionality and efficiency, we create tools and platforms that not only fill a gap in the market but also give you a real competitive advantage. Our philosophy: build what you need today, with tomorrow’s needs in mind.",
           "type": "Challenges",
           "cards": [
             {
               "title": "Development of tailored tech solutions",
-              "description": "Not all companies have the same needs—so we don’t offer one-size-fits-all solutions. When commercial software or platforms don’t adapt to your processes, we design and develop custom tech solutions from scratch to solve your specific challenges."
+              "description": "Not all companies have the same needs—so we don’t offer one-size-fits-all solutions.When commercial software or platforms don’t adapt to your processes, we design and develop custom tech solutions from scratch to solve your specific challenges."
             },
             {
               "title": "Optimization and evolution of system architecture",
-              "description": "We perform an in-depth analysis of your IT infrastructure—servers, databases, microservices, and connections—to detect bottlenecks, vulnerabilities, and redundancies. Based on that diagnosis, we redesign your architecture, improving performance and security (hardening, encryption in transit and at rest, access control), and prepare it for scalability. We adapt your environment to new data volumes and business requirements, migrate components to cloud or hybrid architectures, and establish DevOps and CI/CD practices for future iteration."
+              "description": "We perform an in-depth analysis of your IT infrastructure—servers, databases, microservices, and connections—to detect bottlenecks, vulnerabilities, and redundancies.Based on that diagnosis, we redesign your architecture, improving performance and security (hardening, encryption in transit and at rest, access control), and prepare it for scalability.We adapt your environment to new data volumes and business requirements, migrate components to cloud or hybrid architectures, and establish DevOps and CI/CD practices for future iteration."
             },
             {
               "title": "Optimization and transformation of monolithic systems",
-              "description": "Legacy or poorly structured systems can drag down performance and innovation. We help you migrate from monolithic applications to modern architectures (e.g., microservices or containers) while ensuring operational continuity. We analyze dependencies and refactor code, replacing obsolete modules with scalable, efficient components—using blue-green deployment or canary releases to minimize risk."
+              "description": "Legacy or poorly structured systems can drag down performance and innovation.We help you migrate from monolithic applications to modern architectures (e.g., microservices or containers) while ensuring operational continuity.We analyze dependencies and refactor code, replacing obsolete modules with scalable, efficient components—using blue-green deployment or canary releases to minimize risk."
             }
           ]
         },
          {
           "title": "System integration & process improvement",
-          "description": "A disconnected tech ecosystem causes inefficiencies, errors, and wasted time. At Gigson Solutions, we help you integrate your systems and optimize your processes so your infrastructure works in a coordinated, agile, and secure way.",
+          "description": "A disconnected tech ecosystem causes inefficiencies, errors, and wasted time.At Gigson Solutions, we help you integrate your systems and optimize your processes so your infrastructure works in a coordinated, agile, and secure way.",
           "type": "Challenges",
           "cards": [
             {
               "title": "Tech solutions that connect and optimize your current tools",
-              "description": "Many companies work with multiple tools that don’t communicate. We design solutions that connect platforms, apps, and internal systems—eliminating silos and enabling true collaboration across tools."
+              "description": "Many companies work with multiple tools that don’t communicate.We design solutions that connect platforms, apps, and internal systems—eliminating silos and enabling true collaboration across tools."
             },
             {
               "title": "Automation of critical processes for efficiency",
-              "description": "We identify repetitive, error-prone processes and automate them safely and effectively.  This allows you to free up resources, reduce costs, minimize errors, and focus on high-value tasks.  Every automation is adapted to your actual workflows—not the other way around."
+              "description": "We identify repetitive, error-prone processes and automate them safely and effectively. This allows you to free up resources, reduce costs, minimize errors, and focus on high-value tasks. Every automation is adapted to your actual workflows—not the other way around."
             },
             {
               "title": "Architecture analysis & optimization",
@@ -2390,7 +2390,7 @@
         },
         {
           "title": "IT Consulting: Audit & Tech Strategy",
-          "description": "A strong tech strategy starts with a realistic diagnosis. We analyze your IT infrastructure in depth, detect risks and areas for improvement, and design a tech plan aligned with your business goals.",
+          "description": "A strong tech strategy starts with a realistic diagnosis.We analyze your IT infrastructure in depth, detect risks and areas for improvement, and design a tech plan aligned with your business goals.",
           "type": "Challenges",
           "cards": [
             {
@@ -2399,11 +2399,11 @@
             },
             {
               "title": "Defining a tech strategy aligned with your business goals",
-              "description": "We help you define a realistic, scalable roadmap fully aligned with your business objectives. So that every tech investment becomes a growth driver—not a sunk cost."
+              "description": "We help you define a realistic, scalable roadmap fully aligned with your business objectives.So that every tech investment becomes a growth driver—not a sunk cost."
             },
             {
               "title": "Management & coordination of external tech providers",
-              "description": "Having multiple tech providers shouldn’t become a management headache. We coordinate, supervise, and optimize your relationships with external vendors to ensure each solution or service brings real value. We make sure everyone involved is aligned with your vision and needs."
+              "description": "Having multiple tech providers shouldn’t become a management headache.We coordinate, supervise, and optimize your relationships with external vendors to ensure each solution or service brings real value.We make sure everyone involved is aligned with your vision and needs."
             }
           ]
         }
