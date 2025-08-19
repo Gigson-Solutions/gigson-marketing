@@ -9,8 +9,9 @@ import Logistics from '../components/Pages/Logistics/Logistics';
 import NotFound from '../components/Pages/NotFound/NotFound';
 import Policity from '../components/Pages/Policity';
 import CookiesPage from '../components/Pages/CookiesPage';
-import CTO from '../components/Pages/CTO/CTO'
+import CTO from '../components/Pages/CTO/CTO';
 import ConsultoriaTec from '../components/Pages/ConsultoriaTec/ConsultoriaTec';
+import Software from '../components/Pages/Software/Software';
 
 import {Navigate, Outlet, createBrowserRouter} from 'react-router-dom';
 import '../App.css';
@@ -29,6 +30,7 @@ const generateRoutes = (lang) => {
       { path: slugs.services, element: <Services /> },
       { path: slugs.logistics,element: <Logistics /> },
       { path: slugs.CTO,element: <CTO/> },
+      {path: slugs.software, element: <Software/>},
       { path: slugs.ConsultoriaTec,element: <ConsultoriaTec/> },
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
