@@ -2451,5 +2451,174 @@
         }
       ]
     }
-  }
-}
+  },
+  "cibersecurity":{
+    "title": "Cybersecurity for Businesses & SMBs | Gigson Solutions",
+    "metadescription": "We’re your technology partner to prevent and mitigate threats. We embed cybersecurity as a core part of your business.",
+    "hero": {
+      "suptitle":"SERVICES",
+      "title": "<span>Enterprise</span> cybersecurity solutions",
+      "description": "In an increasingly complex digital environment, enterprise cybersecurity is no longer optional—it’s a strategic necessity. Threats are constantly evolving and affect both large corporations and SMEs alike. From targeted attacks on critical infrastructures to unauthorized access or internal breaches, the risk is real and constant. At Gigson Solutions, we act as your technology partner, helping you prevent, detect, and mitigate these threats by embedding cybersecurity as a structural part of your business. We don’t offer generic solutions. Our vision is based on the idea that technology should adapt to the real context of each company, not the other way around. That’s why we design and implement robust solutions for applications and infrastructure, tailored to your size, sector, technical structure, and business goals. From cybersecurity risk analysis to the deployment of advanced tools, our consultants ensure that every protection layer is aligned with your strategy and evolves with your business.",
+      "buttonText": "How we can help you"
+    },
+    "solutionsApplications": {
+      "title": "Cybersecurity for companies and SMEs",
+      "subTitle": "Cybersecurity for companies and SMEs requires a comprehensive approach that combines technology, processes, and people.  We address the different elements needed to protect your infrastructure — from the network to devices, the cloud, and critical applications. Below, we show you how we design a complete strategy tailored to the real needs of each organization.",
+      "containers": [
+        {
+          "title": "Perimeter and network security",
+          "description": "Analyzing and protecting a company’s digital perimeter is the first step in preventing unauthorized access and external attacks. We design secure, scalable network architectures aligned with your organization’s operational requirements. We combine advanced tools with a strategic approach to ensure that security doesn’t hinder business operations.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Next-gen firewall configuration and maintenance",
+              "description": "We implement and manage intelligent firewalls that not only block threats but also adapt to network traffic behavior."
+            },
+            {
+              "title": "Intrusion detection and prevention systems (IDS/IPS)",
+              "description": "We detect anomalous patterns and block attacks before they compromise your systems, reducing incident response times."
+            },
+            {
+              "title": "Network segmentation and internal traffic control",
+              "description": "We divide the network into secure zones to minimize the impact of potential breaches and precisely control information flow across departments and devices."
+            }
+          ]
+        },
+        {
+          "title": "Cloud Security",
+          "description": "The use of cloud services has transformed how businesses operate but also introduced new attack surfaces. At Gigson Solutions, we design specific cybersecurity strategies for cloud environments to ensure that your data and operations are protected without limiting scalability or agility.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Protection of AWS, Azure, and Google Cloud environments",
+              "description": "We apply the best security practices to each cloud provider, ensuring proper configuration and protection of critical resources."
+            },
+            {
+              "title": "Data encryption and access control in cloud environments",
+              "description": "We enforce robust encryption and access control policies to ensure that only authorized users can interact with sensitive information."
+            },
+            {
+              "title": "Continuous monitoring and control of critical configurations",
+              "description": "We supervise cloud environments in real time to detect deviations, configuration errors, or suspicious access before they become threats."
+            }
+          ]
+        },
+         {
+          "title": "Endpoint security",
+          "description": "Every device or system connected to your network is a potential entry point for threats. We implement endpoint security solutions that let you control, protect, and monitor all devices in a centralized way—without disrupting daily operations.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Protección avanzada en dispositivos con soluciones EDR",
+              "description": "We deploy Endpoint Detection and Response (EDR) solutions to continuously monitor device activity and neutralize malicious behavior."
+            },
+            {
+              "title": "Centralized antivirus, updates, and access policy management",
+              "description": "We centralize security management across all endpoints, automating updates, scans, and policy enforcement."
+            },
+            {
+              "title": "Data Loss Prevention (DLP) for mobile and portable devices",
+              "description": "We prevent data leaks with DLP tools that control how sensitive information is accessed, copied, or transferred inside and outside your corporate network."
+            }
+          ]
+        },
+        {
+          "title": "Application and system security",
+          "description": "Web apps, mobile apps, and internal systems are frequent targets for attacks. We strengthen security from development to deployment, minimizing vulnerabilities and ensuring critical services operate with integrity and stability.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Vulnerability analysis in web and mobile apps",
+              "description": "We identify security flaws before they are exploited using periodic testing and advanced analysis methods."
+            },
+            {
+              "title": "Configuration and secure code reviews",
+              "description": "We audit configurations and secure development practices to prevent breaches caused by errors or poor implementations."
+            },
+            {
+              "title": "Protection against attacks on APIs and exposed services",
+              "description": "We secure sensitive entry points like APIs and external services through robust authentication, data validation, and automated defenses."
+            }
+          ]
+        },
+        {
+          "title": "Identity and Access Management (IAM)",
+          "description": "Controlling who accesses what, when, and how is essential to reduce internal and external risks. A solid identity and access management strategy helps maintain traceability, limit privileges, and protect your organization’s most sensitive resources.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Implementation of Multi-Factor Authentication (MFA)",
+              "description": "We add extra security layers for user access with MFA systems, making it harder to misuse stolen credentials."
+            },
+            {
+              "title": "Access privilege control and segmentation policies",
+              "description": "We define clear rules to ensure each user accesses only what they truly need, minimizing lateral movement risks within the network."
+            },
+            {
+              "title": "Real-time access monitoring and auditing",
+              "description": "We monitor access to critical systems to detect anomalous behavior and respond immediately to suspicious incidents."
+            }
+          ]
+        },
+        {
+          "title": "Protection Against Internal and External Threatss",
+          "description": "Not all threats come from outside. An unauthorized access, a careless mistake, or a malicious insider can jeopardize your entire infrastructure. That’s why we combine technology solutions with training and active surveillance to anticipate both external attacks and internal vulnerabilities.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Monitoring and detection of advanced persistent threats (APT)",
+              "description": "We detect anomalous behavior patterns linked to complex, long-lasting threats before they compromise critical assets."
+            },
+            {
+              "title": "Data filtering and suspicious access control systems",
+              "description": "We apply intelligent filters that block malicious traffic, unusual access, and data exfiltration attempts from within your organization."
+            },
+            {
+              "title": "Employee cybersecurity awareness and training",
+              "description": "We train teams to recognize common risks like phishing or unsafe practices, reducing human error as an attack vector."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How do we work?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identifying needs, mapping processes, and defining objectives."
+        },
+        {
+          "title": "Design and architecture",
+          "description": "Defining requirements, creating a prototype, and designing integrations with current systems."
+        },
+        {
+          "title": "Implementation",
+          "description": "Programming, functional testing, integration with external platforms, and deployment to production."
+        },
+        {
+          "title": "Support and maintenance",
+          "description": "Monitoring KPIs, providing support, maintenance, and improvements based on business evolution."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "What do I need to create a <span>digital product</span>?",
+      "description": "Thinking that developing a digital product is a common or straightforward project poses a considerable risk. This type of product requires detailed attention in every aspect, managed by experts.",
+      "buttonText": "How can we help you",
+      "cards": [
+        {
+          "title": "Software engineering",
+          "description": "From integrating different tools and developing new features and products to monitoring and maintaining a product — we’re ready for it. Our software engineering team is made up of developers, architects, and testers who build solutions with cutting-edge technology."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Information security is no longer optional — cybersecurity is a NECESSITY for every business. All companies must have the knowledge, tools, and processes to prevent or minimize attacks."
+        },
+        {
+          "title": "Technology consulting",
+          "description": "Our team of software engineers, architects, and experienced developers uses the best technologies adapted to your industry. Gigson Solutions is your trusted partner in software development. We understand that behind every line of code lies an opportunity to gain a competitive advantage."
+        }
+      ]
+    }
+  }}

@@ -6,7 +6,6 @@ import './NavbarHeader.css';
 import NavbarDesktop from './NavbarDesktop.jsx';
 import NavbarMobile from './NavbarMobile.jsx';
 import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from '../../router/routerSlugs.js';
-import Software from '../Pages/Software/Software.jsx';
 
 const Navbar = () => {
    const { t } = useTranslation();

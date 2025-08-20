@@ -25,7 +25,7 @@ const Method = ({ title, description, isInnerMethod, isFirstCard}) => {
 };
 
 const HowWeWork = ({title, methods}) => {
-    const firstMethod = methods.slice(0, 1);
+    const firstMethod = methods?.slice(0, 1);
 
     return (
         <section className="py-14 lg:py-40 bg-gradient-to-br from-[#6d6ff6] via-[#6d6ff6] to-[#e4e5ff]">
@@ -40,7 +40,7 @@ const HowWeWork = ({title, methods}) => {
                             <img className="!block lg:max-w-[50%]" src={logo} alt="discover logo"/>
                         </div>
 
-                        {firstMethod.map(({title, description}, index) => {
+                        {firstMethod?.map(({title, description}, index) => {
                             return (
                                 <Method key={index} isInnerMethod title={title} description={description}/>
                             );
