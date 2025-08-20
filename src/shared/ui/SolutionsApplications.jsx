@@ -1,22 +1,11 @@
 import solutionsApplicationsBgGradient from '../../assets/solutions-applications-bg-gradients-1.svg';
 import { Trans } from 'react-i18next';
-import { useState , useEffect } from 'react';
+import { useState } from 'react';
 import chevronDownIcon from '../../assets/chevron-down.svg';
+import { useBreakpoint } from './hooks/useBreakpoint';
+
 
 const getCardNr = (index) => String(index).padStart(2, '0');
-
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    const handler = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', handler);
-    return () => window.removeEventListener('resize', handler);
-  }, []);
-
-  return isMobile;
-}
 
 const Card = ({ title, description, cardNr, className }) => {
     return (
@@ -49,7 +38,8 @@ const CardMobile = ({ title, description, cardNr, className }) => {
 
 
 const SolutionsApplications = ({ title, subTitle, containers }) => {
-
+    const { isMobile } = useBreakpoint();
+    
     return (
         <section className="py-10 lg:py-25" style={{
             backgroundImage: `url(${solutionsApplicationsBgGradient}`,
@@ -97,7 +87,7 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
                                             {initialTwoCards.map(({ title, description }, index) => {
                                                 const cardNr = getCardNr(index + 1);
 
-                                               const isMobile = useIsMobile();
+                                               
 
                                                 return (
                                                 <div key={index}>
