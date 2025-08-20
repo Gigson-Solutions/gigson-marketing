@@ -19,12 +19,10 @@ const Navbar = () => {
       ? segments[0]
       : DEFAULT_LANG;
 
-   const { about, services, cases, faqs, contact, industries, logistics, CTO, tech_consulting, software } = t('menu');
+   const { about, services, cases, faqs, contact, industries, logistics, CTO, tech_consulting, software, cibersecurity } = t('menu');
 
    const menuLinks = [
-      { name: services, link: ROUTE_SLUGS[currentLang].services ,children: [ { name: CTO, link: ROUTE_SLUGS[currentLang].CTO }, 
-                                                      { name: tech_consulting, link: ROUTE_SLUGS[currentLang].ConsultoriaTec },
-                                                      { name: software, link: ROUTE_SLUGS[currentLang].software },]},
+      { name: services, link: ROUTE_SLUGS[currentLang].services, children: [ { name: CTO, link: ROUTE_SLUGS[currentLang].CTO }, { name: tech_consulting, link: ROUTE_SLUGS[currentLang].ConsultoriaTec }, { name: software, link: ROUTE_SLUGS[currentLang].software }, { name: cibersecurity, link: ROUTE_SLUGS[currentLang].cibersecurity }, ]},
       { name: industries, children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics },] },
       { name: cases, link: ROUTE_SLUGS[currentLang].cases },
       { name: about, link: ROUTE_SLUGS[currentLang].about },
