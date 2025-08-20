@@ -12,6 +12,13 @@ const Hero = ({title, suptitle, description , buttonText }) => {
             br: <br />
         }}
     />;
+     const Description = <Trans
+        i18nKey={description}
+        components={{
+            span: <span className="text-purple-accents" />,
+            br: <br />
+        }}
+    />;
 
     return (
         <section className="mt-fixed-navbar pt-14 lg:pt-23 pb-36 lg:pb-23">
@@ -20,7 +27,7 @@ const Hero = ({title, suptitle, description , buttonText }) => {
                 <h1 className="text-h1 text-dark-primary text-center mb-4 md:mb-6">
                    {Title}
                 </h1>
-                <p className="text-dark-primary text-subtitle max-w-contained text-center mb-6 md:mb-10">{description}</p>
+                <p className="text-dark-primary  text-subtitle max-w-contained text-left mb-6 md:mb-10">{Description}</p>
                 <ButtonLink link={buttonLink} text={buttonText} outlined/>
             </div>
         </section>

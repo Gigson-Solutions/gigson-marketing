@@ -2,6 +2,8 @@ import solutionsApplicationsBgGradient from '../../assets/solutions-applications
 import { Trans } from 'react-i18next';
 import { useState } from 'react';
 import chevronDownIcon from '../../assets/chevron-down.svg';
+import { useBreakpoint } from './hooks/useBreakpoint';
+
 
 const getCardNr = (index) => String(index).padStart(2, '0');
 
@@ -36,7 +38,8 @@ const CardMobile = ({ title, description, cardNr, className }) => {
 
 
 const SolutionsApplications = ({ title, subTitle, containers }) => {
-
+    const { isMobile } = useBreakpoint();
+    
     return (
         <section className="py-10 lg:py-25" style={{
             backgroundImage: `url(${solutionsApplicationsBgGradient}`,
@@ -84,11 +87,15 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
                                             {initialTwoCards.map(({ title, description }, index) => {
                                                 const cardNr = getCardNr(index + 1);
 
-                                                return (<div key={index}>
-                                                    <Card title={title} description={description}
-                                                        cardNr={cardNr} />
-                                                    <CardMobile key={index} title={title} description={description}
-                                                        cardNr={cardNr} />
+                                               
+
+                                                return (
+                                                <div key={index}>
+                                                    {isMobile ? (
+                                                     <CardMobile title={title} description={description} cardNr={cardNr} />
+                                                    ) : (
+                                                        <Card title={title} description={description} cardNr={cardNr} />
+                                                    )}
                                                 </div>
                                                 );
                                             })}

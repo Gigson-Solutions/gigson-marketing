@@ -12,8 +12,8 @@
     "notice":"Aviso legal",
     "logistics": "Logística",
     "CTO" : "CTO as a service",
-    "tech_consulting": "Consultoria tecnologica",
-    "software": "Ingenieria software"
+    "software": "Ingenieria software",
+    "tech_consulting": "Consultoría tecnologica"
   },
   "home":{
     "title":"Gigson Solutions | Tecnología para Impulsar tu Negocio",
@@ -532,7 +532,7 @@
       "suptitle":"LOGÍSTICA Y FULFILLMENT",
       "title": "<span>Tecnología</span> en logística <br/> y consultoría de <span>intralogística</span> ",
       "description": "La tecnología en logística puede ser un desafío si no se cuenta con el asesoramiento adecuado. En Gigson Solutions, te ayudamos a integrar soluciones tecnológicas sin fricciones, asegurando que se adapten a la estructura del negocio.",
-      "buttonText": "Como podemos ayudarte"
+      "buttonText": "Contactanos"
     },
     "useCases": {
       "title": "Casos clave",
@@ -1295,8 +1295,8 @@
     "hero": {
       "suptitle":"LOGÍSTICA Y FULFILLMENT",
       "title": "Consultoría tecnológica <br> <span> en construcción </span>",
-      "description": "Digitalizar una constructora no es solo implantar un software de gestión de obras: es alinear herramientas, procesos y equipos. En Gigson Solutions, te ayudamos a integrar tecnología sin fricciones, adaptada a los ritmos, retos y particularidades del sector construcción.nes, asegurando que se adapten a la estructura del negocio. ",
-      "buttonText": "Como podemos ayudarte"
+      "description": "Digitalizar una constructora no es solo implantar un software de gestión de obras: es alinear herramientas, procesos y equipos. En Gigson Solutions, te ayudamos a integrar tecnología sin fricciones, adaptada a los ritmos, retos y particularidades del sector construcciónes, asegurando que se adapten a la estructura del negocio. ",
+      "buttonText": "Contactanos"
     },
     "useCases": {
       "title": "Casos clave",
@@ -2160,17 +2160,17 @@
     }
   },
   "brand" : {
-      "brand_title" : "Trusted by <span> Great Brands </span>",
+      "brand_title" : "Respaldados por <span> grandes marcas </span>",
       "brand_description" : "Descubre nuestros clientes y lo que hacemos por ellos"
     },
     "CTO":{
     "title": "CTO as a Service | Gigson Solutions",
     "metadescription": "Mejora tu estrategia tecnológica, lidera la transformación digital y reduce riesgos operativos con un CTO externo",
     "hero": {
-      "suptitle":"INDUSTRIAS",
-      "title": "CTO as a Service: <span> estrategia tecnológica a medida </span>",
-      "description": "En un contexto donde la tecnología impacta directamente en la eficiencia y la competitividad, muchas pymes se enfrentan a un reto común: necesitan dirección tecnológica estratégica y operativa, pero no pueden asumir la carga financiera ni estructural de incorporar un CTO a tiempo completo. Además, aunque la tecnología no sea su core, la necesitan para operar, crecer y tomar mejores decisiones. Ahí es donde el modelo CTO as a Service cobra todo el sentido. En Gigson Solutions actuamos como partner tecnológico, no solo como consultores. Te ayudamos a definir y ejecutar una estrategia tecnológica que encaje con tu estructura de negocio, sin imponer herramientas ni metodologías genéricas.  Acompañamos a startups, scaleups y empresas consolidadas con un enfoque claro: que la tecnología sea un facilitador, no un freno.",
-      "buttonText": "Como podemos ayudarte"
+      "suptitle":"SERVICIO",
+      "title": "CTO as a Service: <br> <span> estrategia tecnológica a medida </span>",
+      "description": "En un contexto donde la tecnología impacta directamente en la eficiencia y la competitividad, muchas pymes se enfrentan a un reto común: necesitan dirección tecnológica estratégica y operativa, pero no pueden asumir la carga financiera ni estructural de incorporar un CTO a tiempo completo. <br> Además, aunque la tecnología no sea su core, la necesitan para operar, crecer y tomar mejores decisiones. Ahí es donde el modelo CTO as a Service cobra todo el sentido. <br> En Gigson Solutions actuamos como partner tecnológico, no solo como consultores. Te ayudamos a definir y ejecutar una estrategia tecnológica que encaje con tu estructura de negocio, sin imponer herramientas ni metodologías genéricas. <br> Acompañamos a startups, scaleups y empresas consolidadas con un enfoque claro: que la tecnología sea un facilitador, no un freno.",
+      "buttonText": "Contactanos"
     },
     "solutionsApplications": {
       "title": "Liderazgo y asesoramiento tecnológico <span> para empresas que quieren crecer sin fricciones </span>",
@@ -2179,7 +2179,7 @@
         {
           "title": "Optimización de costes y eficiencia operativa",
           "description": "Reducir costes sin perder capacidad de respuesta es posible cuando la tecnología se planifica con visión de negocio. Un director tecnológico externo puede ayudarte a identificar las ineficiencias del sistema actual y proponer soluciones sostenibles, no parches temporales.",
-          "type": "Sector",
+          "type": "Retos",
           "cards": [
             {
               "title": "Análisis de costes, optimización, reorganización y escalabilidad",
@@ -2198,7 +2198,7 @@
         {
           "title": "Visión global e impacto en negocio",
           "description": "Tener una visión técnica sin contexto empresarial es tan ineficiente como tomar decisiones de negocio sin entender las implicaciones tecnológicas. El valor de un CTO as a Service está en traducir entre estos mundos y anticipar las consecuencias de cada paso.",
-          "type": "Sector",
+          "type": "Retos",
           "cards": [
             {
               "title": "Visión estratégica y diagnóstico tecnológico",
@@ -2217,7 +2217,7 @@
          {
           "title": "Estrategia tecnológica, planificación e innovacióne",
           "description": "La estrategia tecnológica de una empresa no puede ser reactiva: necesita anticipar cambios, integrar innovación y asegurar que cada decisión técnica aporte valor real. Con nuestro servicio de CTO as a Service, tu empresa evoluciona, no solo sobrevive.",
-          "type": "sector",
+          "type": "Retos",
           "cards": [
             {
               "title": " Auditoría/Diseño de arquitectura tecnológica",
@@ -2248,7 +2248,7 @@
         {
           "title": "Liderazgo y desarrollo de equipos técnicos",
           "description": "Tener la mejor estrategia tecnológica no sirve de nada sin un equipo capaz de ejecutarla. El CTO as a Service de Gigson Solutions no solo define el camino, sino que lidera la creación de equipos sólidos y alineados con la visión de tu empresa.",
-          "type": "Sector",
+          "type": "Retos",
           "cards": [
             {
               "title": "Definición de cultura tecnológica y visión compartida",
@@ -2322,10 +2322,10 @@
     "title": "Consultoría Tecnológica para Empresas | Gigson Solutions",
     "metadescription": "Consultoría tecnológica para empresas que quieren crecer sin fricciones: diagnóstico, estrategia e implementación de soluciones a medida",
     "hero": {
-      "suptitle":"SERVICES",
+      "suptitle":"SERVICIO",
       "title": "Consultoría tecnológica <span> para empresas </span>",
-      "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento",
-      "buttonText": "Como podemos ayudarte"
+      "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. <br> Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. <br>  Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento",
+      "buttonText": "Contactanos"
     },
     "solutionsApplications": {
       "title": "Asesoramiento tecnológico para empresas que quieren crecer sin fricciones",
@@ -2334,7 +2334,7 @@
         {
           "title": "Consultoría tecnológica y transformación digital para empresas",
           "description": "La transformación digital no consiste en acumular herramientas, sino en optimizar la forma en que tu empresa opera, se conecta con sus clientes y crece. Desde la consultoría tecnológica, te ayudamos a abordar este proceso de manera estratégica: evaluamos tus sistemas e integraciones actuales, detectamos oportunidades de mejora y diseñamos soluciones digitales que realmente encajan con tu estructura y tus objetivos de crecimiento",
-          "type": "Sector",
+          "type": "Retos",
           "cards": [
             {
               "title": "Diseño de soluciones tecnológicas integradas",
@@ -2353,7 +2353,7 @@
         {
           "title": "Desarrollo tecnológico",
           "description": "Cuando las soluciones estándar no encajan, hace falta un enfoque a medida, por eso diseñamos y desarrollamos tecnología personalizada para resolver necesidades específicas de tu negocio. Siempre desde la funcionalidad y la eficiencia, creando herramientas y plataformas que no solo cubren un vacío en el mercado, sino que también te dan una ventaja competitiva real. Nuestra filosofía: desarrollar lo que necesitas hoy, pensando en lo que vas a necesitar mañana.",
-          "type": "Aplicación",
+          "type": "Retos",
           "cards": [
             {
               "title": "Desarrollo de soluciones específicas",
@@ -2372,7 +2372,7 @@
          {
           "title": "Integración de sistemas y mejora de procesos",
           "description": "Un ecosistema tecnológico desconectado genera ineficiencias, errores y pérdidas de tiempo. En Gigson Solutions te ayudamos a integrar tus sistemas y optimizar tus procesos para que toda tu infraestructura trabaje de manera coordinada, ágil y segura.",
-          "type": "Aplicación",
+          "type": "Retos",
           "cards": [
             {
               "title": " Soluciones tecnológicas que conectan y optimizan tus herramientas actuales",
@@ -2391,7 +2391,7 @@
         {
           "title": "Consultoría IT: auditoría y estrategia tecnológica",
           "description": "Una buena estrategia tecnológica empieza con un diagnóstico realista. Analizamos en profundidad tu infraestructura IT, detectamos riesgos y áreas de mejora, y diseñamos un plan tecnológico alineado con tus objetivos de negocio.",
-          "type": "Aplicación",
+          "type": "Retos",
           "cards": [
             {
               "title": "Auditoría técnica y de seguridad informática",
@@ -2413,7 +2413,101 @@
       "title": "¿Cómo trabajamos?",
       "methods": [
         {
-          "title": "Discovery",
+          "title": "Descubre",
+          "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
+        },
+        {
+          "title": "Diseño y arquitectura",
+          "description": "Definición de requisitos, creación de un prototipo y diseño de integraciones con sistemas actuales."
+        },
+        {
+          "title": "Implementación",
+          "description": "Programación, pruebas funcionales, integración con plataformas externas y despliegue en producción."
+        },
+        {
+          "title": "Soporte y mantenimiento",
+          "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "¿Qué necesito para hacer un <span>producto digital</span>?",
+      "description": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
+      "buttonText": "Como podemos ayudarte",
+      "cards": [
+        {
+          "title": "Ingeniería de software",
+          "description": "Desde integrar diferentes herramientas, desarrollar nuevas características y productos hasta monitorear y mantener un producto, estamos listos para ello. Nuestro equipo de ingeniería de software está compuesto por desarrolladores, arquitectos y testers para construir necesidades con tecnología de actual."
+        },
+        {
+          "title": "Ciberseguridad",
+          "description": "La seguridad de la información ya no está en la hoja de ruta. La ciberseguridad es una NECESIDAD en todos los negocios y todas las empresas deben tener el conocimiento, las herramientas y los procesos para evitar o minimizar los ataques."
+        },
+        {
+          "title": "Consultoría tecnologica",
+          "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
+        }
+      ]
+    }
+  },
+  "software":{
+    "title": "Ingeniería y Desarrollo de software a medida | Gigson Solutions",
+    "metadescription": "Ingeniería de software enfocada en soluciones a medida para empresas. Mucho más que desarrollo, impulsamos tu crecimiento tecnológico",
+    "hero": {
+      "suptitle":"SERVICES",
+      "title": "Desarrollo de software a medida <span> para empresas </span>",
+      "description": "Tener un software que se adapte a tu empresa —y no al revés— marca la diferencia. En Gigson Solutions trabajamos para diseñar, construir y mantener soluciones tecnológicas a medida, preparadas para escalar, integrarse y evolucionar contigo. Desde desarrollar nuevas funcionalidades o productos completos hasta integrar herramientas existentes y asegurar su rendimiento en el tiempo, cubrimos todo el ciclo de vida del software.  Nuestro equipo está formado por desarrolladores, arquitectos y testers para ofrecerte un desarrollo de software a medida sin límites, sin dependencias y con visión a largo plazo.",
+      "buttonText": "Como podemos ayudarte"
+    },
+    "solutionsApplications": {
+      "title": "Desarrollo ágil de software <span> a medida </span>",
+      "subTitle": "Desarrollamos software que se adapta a tu negocio. Nuestro enfoque combina metodologías ágiles, arquitectura escalable y una comunicación constante con tu equipo, para que el desarrollo ad hoc no sea una caja negra, sino una colaboración continua orientada a resultados.",
+      "containers": [
+        {
+          "title": "Enfoque DevOps y cloud-native",
+          "description": "Siempre pensando en producción desde el primer día. Automatización, despliegues continuos, contenedores y cloud computing forman parte de nuestro ADN técnico. Esto nos permite acelerar tiempos de entrega, minimizar errores y asegurar que el software esté listo para escalar cuando tú lo necesites.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Proveedor de nube: AWS, Azure, GCP",
+              "description": "Trabajamos con los principales proveedores Cloud para diseñar infraestructuras flexibles, seguras y escalables. Elegimos la plataforma que mejor se adapta a tus necesidades y la configuramos para que tu aplicación esté disponible, se recupere ante fallos y crezca sin fricciones."
+            },
+            {
+              "title": "Contenedores y orquestación: Docker, Kubernetes, WPAR, K8s ",
+              "description": "Orquestamos tus servicios con Kubernetes o soluciones similares para facilitar la gestión, el escalado automático y el despliegue sin caídas. Esto reduce costes operativos y mejora el rendimiento de tu aplicación en cualquier entorno."
+            },
+            {
+              "title": "CI/CD automatizado: Jenkins, GitLab, GitHub, Git ",
+              "description": "Automatizamos la integración y el despliegue continuo para que cada cambio en tu software se pruebe, valide y publique sin interrupciones. Reducimos tiempos de entrega y evitamos errores gracias a pipelines robustos y personalizables que se adaptan a tu flujo de trabajo."
+            }
+          ]
+        },
+        {
+          "title": "Infraestructura de datos y rendimiento",
+          "description": "Un desarrollo de software personalizado no puede ser rápido si los datos no fluyen bien. Diseñamos infraestructuras pensadas para manejar grandes volúmenes de información, integraciones en tiempo real y análisis eficientes.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Gestión de bases de datos: Oracle, MySQL, MongoDB, PostgresSQL, MS SQL",
+              "description": "Diseñamos y administramos bases de datos relacionales y NoSQL según lo que tu sistema necesita: consultas complejas, escalabilidad, redundancia o velocidad."
+            },
+            {
+              "title": "Sistemas de mensajería y data streaming: RabbitMQ, Apache Kafka, Apache, Redis, ELK stack",
+              "description": "Cuando el sistema necesita hablar en tiempo real, usamos tecnologías de mensajería y streaming para que todo fluya sin cuellos de botella.  Desde eventos simples hasta flujos complejos de datos, construimos arquitecturas orientadas a eventos, resilientes y preparadas para escalar."
+            },
+            {
+              "title": "Monitoreo: Prometheus, Datalog, Grafana, Azure monitor, Amazon CloudWatch, Zabbix",
+              "description": "No basta con que funcione: tiene que seguir funcionando. Implementamos soluciones de observabilidad que permiten detectar errores antes de que se conviertan en problemas."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "¿Cómo trabajamos?",
+      "methods": [
+        {
+          "title": "Descubre",
           "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
         },
         {
