@@ -41,8 +41,7 @@ const generateRoutes = (lang) => {
       { path: slugs.policy, element: <Policity /> },
       { path: slugs.notice, element: <Notice /> },
       { path: slugs.cookies, element: <CookiesPage /> },
-      { path: '*', element: <NotFound /> },,
-      
+      { path: '*', element: <NotFound /> },
     ],
   };
 };
