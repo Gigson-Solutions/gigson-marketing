@@ -1,7 +1,9 @@
-import solutionsApplicationsBgGradient from '../../assets/solutions-applications-bg-gradients-1.svg';
-import { Trans } from 'react-i18next';
 import { useState } from 'react';
+import { Trans } from 'react-i18next';
+
 import chevronDownIcon from '../../assets/chevron-down.svg';
+import solutionsApplicationsBgGradient from '../../assets/solutions-applications-bg-gradients-1.svg';
+
 import { useBreakpoint } from './hooks/useBreakpoint';
 
 

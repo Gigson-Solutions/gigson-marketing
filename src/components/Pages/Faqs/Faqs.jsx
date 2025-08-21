@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { FaqsAccordion } from './FaqsAccordion/FaqsAccordion';
+
 import cono from '../../../assets/cone.svg';
 import pentagono from '../../../assets/pentagon.svg';
+
+import { FaqsAccordion } from './FaqsAccordion/FaqsAccordion';
+
 import './Faqs.css';
 
 const Faqs = () => {

@@ -1,6 +1,8 @@
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
-import avatar from '../../assets/avatar.jpg';
 import { useTranslation } from 'react-i18next';
+
+import avatar from '../../assets/avatar.jpg';
+
 import './WhatsappButton.css';
 
 const WhatsappButton = () => {

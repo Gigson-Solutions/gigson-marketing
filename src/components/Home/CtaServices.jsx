@@ -1,9 +1,11 @@
 import React from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import './CtaServices.css';
+
 import cono from '../../assets/Cono.svg';
 import cubo from '../../assets/Cubo.svg';
-import { Trans, useTranslation } from 'react-i18next';
+
+import './CtaServices.css';
 
 export const CtaServices = () => {
    const { t } = useTranslation();

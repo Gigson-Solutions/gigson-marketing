@@ -1,8 +1,10 @@
-import { AccordionAnimation } from './AccordionAnimation';
-import './Accordion.css';
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
+
+import { AccordionAnimation } from './AccordionAnimation';
+
+import './Accordion.css';
 
 export const Accordion = ({ title, challenge, features, solution, tools, featuresTitle, solutionTitle, isOpen, onClick, classContainer }) => {
    const { t } = useTranslation();

@@ -1,8 +1,10 @@
-import logoFooter from '../../assets/LogoFooter.svg';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import './Footer.css';
+import { Link } from 'react-router-dom';
+
+import logoFooter from '../../assets/LogoFooter.svg';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
+
+import './Footer.css';
 
 const Footer = () => {
    const { t } = useTranslation();

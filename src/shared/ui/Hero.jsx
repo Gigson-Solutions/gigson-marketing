@@ -1,5 +1,6 @@
-import { ButtonLink } from './Button.jsx';
 import { Trans, useTranslation } from 'react-i18next';
+
+import { ButtonLink } from './Button.jsx';
 
 const buttonLink = '/contact';
 

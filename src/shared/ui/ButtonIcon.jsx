@@ -77,4 +77,4 @@ const ButtonIcon = ({ onClick, outlined, outlinedColor }) => {
     );
 };
 
-export { ButtonIconLink, ButtonIcon };
+export { ButtonIcon,ButtonIconLink };

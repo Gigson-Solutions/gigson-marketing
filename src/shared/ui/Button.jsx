@@ -26,4 +26,4 @@ const Button = ({ text, onClick, outlined, className }) => {
     );
 };
 
-export { ButtonLink, Button };
+export { Button,ButtonLink };

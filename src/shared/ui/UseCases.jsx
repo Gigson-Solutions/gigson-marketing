@@ -1,8 +1,10 @@
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Pagination} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import '../../components/slider.css';
+
+import {useState} from 'react';
+import {Trans} from 'react-i18next';
+import {Pagination} from 'swiper/modules';
+import {Swiper, SwiperSlide} from 'swiper/react';
 
 import iconOne from '../../assets/use-cases-icon-1.svg';
 import iconTwo from '../../assets/use-cases-icon-2.svg';
@@ -10,11 +12,11 @@ import iconThree from '../../assets/use-cases-icon-3.svg';
 import iconFour from '../../assets/use-cases-icon-4.svg';
 import iconBlockquote from '../../assets/usecases-blockquote-icon.svg';
 
-import {ButtonIcon} from './ButtonIcon.jsx';
 import {Button} from './Button.jsx';
-import {Trans} from 'react-i18next';
-import {useState} from 'react';
+import {ButtonIcon} from './ButtonIcon.jsx';
 import Dialog from './Dialog.jsx';
+
+import '../../components/slider.css';
 
 const cardsIcons = [iconOne, iconTwo, iconThree, iconFour];
 

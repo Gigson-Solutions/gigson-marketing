@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import CasesBg from '../../../assets/CasesBg.png';
 import { Trans, useTranslation } from 'react-i18next';
-import { Accordion } from '../../Accordion/Accordion';
 import { Link } from 'react-router-dom';
+
+import CasesBg from '../../../assets/CasesBg.png';
+import { Accordion } from '../../Accordion/Accordion';
+
 import './Cases.css';
 
 const Cases = () => {

@@ -1,10 +1,12 @@
+import './i18n/i18n.jsx';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
-import { router } from './router/index.jsx';
-import { useTranslation } from 'react-i18next';
 import { HelmetProvider } from 'react-helmet-async';
-import './i18n/i18n.jsx';
+import { useTranslation } from 'react-i18next';
+import { RouterProvider } from 'react-router-dom';
+
+import { router } from './router/index.jsx';
 
 const LANGS = ['en', 'es'];
 

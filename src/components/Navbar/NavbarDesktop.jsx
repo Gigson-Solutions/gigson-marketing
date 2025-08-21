@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import LanguageSelector from '../LanguageSelector/LanguageSelector.jsx';
 
+import LanguageSelector from '../LanguageSelector/LanguageSelector.jsx';
 
 import './NavbarDesktop.css';
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-
 import Cookies from 'js-cookie';
-import './CookieBanner.css'; // Añadimos estilos personalizados
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+
+import './CookieBanner.css'; // Añadimos estilos personalizados
 
 const CookieBanner = () => {
    const [isVisible, setIsVisible] = useState(false);

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import { AccordionAnimation } from '../../../Accordion/AccordionAnimation';
 
 export const FaqsAccordion = ({ question, answer, isOpen, onClick, cta, isLast, children }) => {

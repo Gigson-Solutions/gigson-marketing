@@ -1,10 +1,12 @@
-import './AboutHero.css';
+import { Trans, useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+
+import circSvg from '../../assets/circunferencia1.svg';
 import cubeSvg from '../../assets/cubo1.svg';
 import piraSvg from '../../assets/tri1.svg';
-import circSvg from '../../assets/circunferencia1.svg';
 import triaSvg from '../../assets/Trianguloycirculo.png';
-import { Link } from 'react-router-dom';
-import { Trans, useTranslation } from 'react-i18next';
+
+import './AboutHero.css';
 
 const AboutHero = () => {
    const { t } = useTranslation();

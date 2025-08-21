@@ -1,10 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
-import ScrollTop from '../../hooks/ScrollTop';
+
 import CookieBanner from '../../CookieBanner'; 
+import ScrollTop from '../../hooks/ScrollTop';
 import Whatsapp from '../../shared/ui/WhatssapButton';
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
 
 const Layout = () => {
    return (

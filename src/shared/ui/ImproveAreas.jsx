@@ -1,10 +1,12 @@
 import {useState} from 'react';
 import {Trans} from 'react-i18next';
-import Dialog from './Dialog.jsx';
-import { Button } from './Button.jsx';
-import {FaqsAccordion} from '../../components/Pages/Faqs/FaqsAccordion/FaqsAccordion.jsx';
+
 import chevronDownIcon from '../../assets/chevron-down.svg';
 import timesCircleIcon from '../../assets/times-circle.svg';
+import {FaqsAccordion} from '../../components/Pages/Faqs/FaqsAccordion/FaqsAccordion.jsx';
+
+import { Button } from './Button.jsx';
+import Dialog from './Dialog.jsx';
 
 const useFaqVisibility = (painPoints) => {
     const defaultPainPoints = painPoints.map((point) => point.type);

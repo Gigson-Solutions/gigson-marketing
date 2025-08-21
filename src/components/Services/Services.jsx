@@ -1,6 +1,8 @@
-import heroImg from '../../assets/HeroServices.png';
-import { Link } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+
+import heroImg from '../../assets/HeroServices.png';
+
 import './Services.css';
 
 const Services = () => {

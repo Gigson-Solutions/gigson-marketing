@@ -1,11 +1,13 @@
-import logoImg from '../../assets/Logo.svg';
-import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 
-import './NavbarHeader.css';
+import logoImg from '../../assets/Logo.svg';
+import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from '../../router/routerSlugs.js';
+
 import NavbarDesktop from './NavbarDesktop.jsx';
 import NavbarMobile from './NavbarMobile.jsx';
-import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from '../../router/routerSlugs.js';
+
+import './NavbarHeader.css';
 
 const Navbar = () => {
    const { t } = useTranslation();

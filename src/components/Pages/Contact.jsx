@@ -1,9 +1,10 @@
 import React from 'react';
-import Form from '../Form';
-import './Contact.css';
-import '../Form.css';
 
 import Bgcont from '../../assets/Group 33770.svg';
+import Form from '../Form';
+
+import './Contact.css';
+import '../Form.css';
 
 const Contact = () => {
    return (

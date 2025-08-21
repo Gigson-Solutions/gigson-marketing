@@ -1,6 +1,8 @@
-import './Hero.css';
-import Button from './Button';
 import heroImg from '../assets/Imagen-esfera-hexagono.png';
+
+import Button from './Button';
+
+import './Hero.css';
 
 function Hero() {
   return (

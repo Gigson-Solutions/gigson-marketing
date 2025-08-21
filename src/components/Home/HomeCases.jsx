@@ -1,14 +1,17 @@
+import '../Pages/Cases/Cases.jsx';
+
 import React from 'react';
-import './Homecases.css';
+import { useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+
+import circSvg from '../../assets/circulo-about.svg';
 import cubeSvg from '../../assets/cubo-about.svg';
 import piraSvg from '../../assets/Piramide-about.svg';
-import circSvg from '../../assets/circulo-about.svg';
-import { Link } from 'react-router-dom';
-import { Trans, useTranslation } from 'react-i18next';
-import { useState } from 'react';
 import { Accordion } from '../../components/Accordion/Accordion.jsx';
+
+import './Homecases.css';
 import '../Pages/Cases/Cases.css';
-import '../Pages/Cases/Cases.jsx';
 
 const HomeCases = () => {
    const [activeIndex, setActiveIndex] = useState(null);

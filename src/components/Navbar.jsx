@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import './Navbar.css';
-import logoImg from '../assets/Gigson-logo.svg';
 import { Link } from 'react-router-dom';
+
+import logoImg from '../assets/Gigson-logo.svg';
+
+import './Navbar.css';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

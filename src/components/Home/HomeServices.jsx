@@ -1,9 +1,11 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import homeServicesImg from '../../assets/FormasServices.png';
 import { Link } from 'react-router-dom';
-import './HomeServices.css';
+
+import homeServicesImg from '../../assets/FormasServices.png';
 import { genArray } from '../../hooks/genArray';
+
+import './HomeServices.css';
 
 function HomeServices() {
    const { t } = useTranslation();

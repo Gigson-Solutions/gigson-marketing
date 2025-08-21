@@ -1,15 +1,16 @@
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Pagination} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+
+import {Trans, useTranslation} from 'react-i18next';
+import {Pagination} from 'swiper/modules';
+import {Swiper, SwiperSlide} from 'swiper/react';
 
 import imgOne from '../../assets/digital-product-img-1.png';
 import imgTwo from '../../assets/digital-product-img-2.png';
 import imgThree from '../../assets/digital-product-img-3.png';
 
-import {ButtonIconLink} from './ButtonIcon.jsx';
 import {ButtonLink} from './Button.jsx';
-import {Trans, useTranslation} from 'react-i18next';
+import {ButtonIconLink} from './ButtonIcon.jsx';
 
 const buttonLink = '/contact';
 
