@@ -15,11 +15,10 @@ const Layout = () => {
             <Outlet />
          </main>
          <Footer />
-         <CookieBanner /> {/* Incluimos el banner de cookies */}
+         <CookieBanner /> {}
          <Whatsapp />
       </ScrollTop>
    );
 };
 
 export default Layout;
-// dda

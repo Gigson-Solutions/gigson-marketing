@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
-import './CookieBanner.css'; // Añadimos estilos personalizados
+import './CookieBanner.css'; 
 
 const CookieBanner = () => {
    const [isVisible, setIsVisible] = useState(false);

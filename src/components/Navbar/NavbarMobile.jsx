@@ -2,7 +2,6 @@ import {useEffect, useState} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import logoImg from '../../assets/Logo.svg';
-import mesh from '../../assets/mesh-gradient.svg';
 import LanguageSelector from '../LanguageSelector/LanguageSelector.jsx';
 
 import './NavbarMobile.css';

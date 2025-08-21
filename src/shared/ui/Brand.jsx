@@ -11,7 +11,7 @@ import spainRevealedGisgsonImg from 'assets/brands/SpainRevealed_Gisgson.svg';
 import stkImg from 'assets/brands/STK.svg';
 import tarbozImg from 'assets/brands/Tarboz.svg';
 import vikoImg from 'assets/brands/Viko.svg';
-import {Trans, useTranslation} from 'react-i18next';
+import {Trans} from 'react-i18next';
 
 
 

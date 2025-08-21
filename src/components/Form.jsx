@@ -69,7 +69,7 @@ const Form = ({ customClass }) => {
                         className="legal-policity-form"
                         to="/policy"
                         onClick={(e) => {
-                           e.preventDefault(); // Previene la navegación normal del <Link>
+                           e.preventDefault(); 
                            window.open('/policy', '_blank');
                         }}
                      >

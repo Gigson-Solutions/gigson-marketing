@@ -1,13 +1,11 @@
-import useCasesBgGradient from 'assets/casos-de-uso-bg-gradient-1.svg';
+
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import Brand from 'shared/Brand.jsx';
 import DigitalProduct from 'shared/DigitalProduct.jsx';
 import Hero from 'shared/Hero.jsx';
 import HowWeWork from 'shared/HowWeWork.jsx';
-import ImproveAreas from 'shared/ImproveAreas.jsx';
 import SolutionsApplications from 'shared/SolutionsApplications.jsx';
-import UseCases from 'shared/UseCases.jsx';
 
 const ConsultoriaTec = () => {
     const { t } = useTranslation();
