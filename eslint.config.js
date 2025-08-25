@@ -1,8 +1,12 @@
 
 import js from '@eslint/js';
 import { defineConfig } from 'eslint/config';
+import importPlugin from 'eslint-plugin-import';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import prettierPlugin from 'eslint-plugin-prettier';
 import react from 'eslint-plugin-react';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 
 export default defineConfig([
@@ -19,35 +23,55 @@ export default defineConfig([
     },
     plugins: {
       'simple-import-sort': simpleImportSort,
-     
+      unicorn,
+      prettier: prettierPlugin,
+      'jsx-a11y': jsxA11y,
+      import: importPlugin,
     },
     rules: {
-      'import/order': 'off', 
+      
+      'import/order': 'off',
+      'sort-imports': 'off',
 
- 
+      
       'simple-import-sort/imports': [
         'error',
         {
           groups: [
-            
+           
             ['^\\u0000'],
 
+        
             ['^react$', '^@?\\w'],
 
-          
+           
             ['^(@|src)(/.*|$)'],
 
+           
             ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
 
-            
+          
             ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
 
-           
+          
             ['^.+\\.s?css$'],
           ],
         },
       ],
       'simple-import-sort/exports': 'error',
+
+    
+      'unicorn/prefer-query-selector': 'warn',
+      'unicorn/prevent-abbreviations': 'off',
+      'unicorn/filename-case': ['error', { case: 'camelCase' }],
+
+      'prettier/prettier': 'error',
+
+      'jsx-a11y/alt-text': 'warn',
+      'jsx-a11y/anchor-is-valid': 'warn',
+
+      'import/no-unresolved': 'error',
+      'import/no-duplicates': 'error',
 
       semi: ['error', 'always'],
       quotes: ['error', 'single'],
