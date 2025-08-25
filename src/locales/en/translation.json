@@ -2321,6 +2321,100 @@
     "chatMessage": "Hello I'm Emmelin! Account Manager of Gigson Solutions, What can I help you with?"
 
   },
+  "software":{
+    "title": "Custom Software Engineering & Development | Gigson Solutions",
+    "metadescription": "We build custom software for businesses. Beyond development, we align technology with your goals to automate processes, integrate systems, and drive sustainable growth",
+    "hero": {
+      "suptitle":"SERVICES",
+      "title": "Software development <span> for business </span>",
+      "description": "Having software that adapts to your company—not the other way around—makes all the difference. At Gigson Solutions, we design, build, and maintain tailored tech solutions, ready to scale, integrate, and evolve with you. From building new features or full products to integrating existing tools and ensuring long-term performance,we cover the entire software lifecycle. Our team includes developers, architects, and testers to provide custom software development with no limits, no dependencies, and a long-term vision.",
+      "buttonText": "How we can help you"
+    },
+    "solutionsApplications": {
+      "title": "Agile & custom <span> software development </span>",
+      "subTitle": "We build software that adapts to your business. Our approach combines agile methodologies, scalable architecture, and constant communication with your team—so development isn’t a black box, but a transparent, results-driven collaboration.",
+      "containers": [
+        {
+          "title": "DevOps & Cloud-Native approach",
+          "description": "Always production-ready from day one.Automation, continuous delivery, containerization, and cloud computing are in our DNA.This helps us speed up delivery, reduce errors, and ensure the software is ready to scale when you need it.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Cloud Providers: AWS, Azure, GCP",
+              "description": "We work with the leading cloud providers to design secure, flexible, and scalable infrastructure.We select the best platform for your needs and configure it so your application is always available, fault-tolerant, and grows without friction."
+            },
+            {
+              "title": "Containers & Orchestration: Docker, Kubernetes, WPAR, K8s",
+              "description": "We orchestrate your services with Kubernetes or similar tools to simplify management, automate scaling, and enable zero-downtime deployments.This reduces operational costs and improves app performance in any environment."
+            },
+            {
+              "title": "Automated CI/CD: Jenkins, GitLab, GitHub, Git",
+              "description": "We automate integration and continuous deployment to ensure every change is tested, validated, and published without interruption.We reduce time-to-deploy and prevent errors through custom pipelines tailored to your workflows."
+            }
+          ]
+        },
+        {
+          "title": "Data infrastructure & performance",
+          "description": "Custom software can’t be fast if data doesn’t flow properly.We design infrastructures built to handle high data volumes, real-time integrations, and efficient analytics.",
+          "type": "Challenges",
+          "cards": [
+            {
+              "title": "Database Management: Oracle, MySQL, MongoDB, PostgreSQL, MS SQL",
+              "description": "We design and manage relational and NoSQL databases based on your system needs: whether you need complex queries, scalability, redundancy, or speed."
+            },
+            {
+              "title": "Messaging & Data Streaming Systems: RabbitMQ, Apache Kafka, Apache, Redis, ELK stack",
+              "description": "When your system needs real-time communication, we use messaging and streaming tech to avoid bottlenecks.From simple events to complex data flows, we build event-driven architectures that are resilient and built to scale."
+            },
+            {
+              "title": "Monitoring: Prometheus, Datalog, Grafana, Azure Monitor, Amazon CloudWatch, Zabbix",
+              "description": "It’s not enough for things to work—they have to keep working. We implement observability solutions that detect issues before they become problems."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How do we work?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identifying needs, mapping processes, and defining objectives."
+        },
+        {
+          "title": "Design and architecture",
+          "description": "Defining requirements, creating a prototype, and designing integrations with current systems."
+        },
+        {
+          "title": "Implementation",
+          "description": "Programming, functional testing, integration with external platforms, and deployment to production."
+        },
+        {
+          "title": "Support and maintenance",
+          "description": "Monitoring KPIs, providing support, maintenance, and improvements based on business evolution."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "What do I need to create a <span>digital product</span>?",
+      "description": "Thinking that developing a digital product is a common or straightforward project poses a considerable risk. This type of product requires detailed attention in every aspect, managed by experts.",
+      "buttonText": "How can we help you",
+      "cards": [
+        {
+          "title": "Software engineering",
+          "description": "From integrating different tools and developing new features and products to monitoring and maintaining a product — we’re ready for it. Our software engineering team is made up of developers, architects, and testers who build solutions with cutting-edge technology."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Information security is no longer optional — cybersecurity is a NECESSITY for every business. All companies must have the knowledge, tools, and processes to prevent or minimize attacks."
+        },
+        {
+          "title": "Technology consulting",
+          "description": "Our team of software engineers, architects, and experienced developers uses the best technologies adapted to your industry. Gigson Solutions is your trusted partner in software development. We understand that behind every line of code lies an opportunity to gain a competitive advantage."
+        }
+      ]
+    }
+  },
   "consultoriaTec":{
     "title": "Technology Consulting for Businesses | Gigson Solutions",
     "metadescription": "Technology consulting for businesses that want to scale smoothly: diagnosis, strategy, and tailored solution implementation.",
