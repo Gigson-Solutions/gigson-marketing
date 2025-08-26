@@ -1,4 +1,3 @@
-
 import js from '@eslint/js';
 import { defineConfig } from 'eslint/config';
 import importPlugin from 'eslint-plugin-import';
@@ -30,7 +29,12 @@ export default defineConfig([
       'import/order': [
         'error',
         {
-          groups: ['builtin', 'external', 'internal', ['parent', 'sibling', 'index']],
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            ['parent', 'sibling', 'index'],
+          ],
           pathGroups: [
             {
               pattern: 'react',

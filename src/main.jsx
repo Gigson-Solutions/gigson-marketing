@@ -19,16 +19,15 @@ const AppWrapper = () => {
       i18n.changeLanguage('en');
     }
     document.documentElement.lang = i18n.language;
-
   }, [i18n]);
 
   return <RouterProvider router={router} />;
 };
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.querySelector('#root')).render(
   <React.StrictMode>
     <HelmetProvider>
       <AppWrapper />
     </HelmetProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

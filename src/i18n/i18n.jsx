@@ -15,10 +15,10 @@ i18n
     detection: {
       order: ['path'],
       lookupFromPathIndex: 0,
-      caches: []
+      caches: [],
     },
     resources: {
       en: { translation: enTranslation },
-      es: { translation: esTranslation }
-    }
+      es: { translation: esTranslation },
+    },
   });

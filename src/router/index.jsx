@@ -1,4 +1,4 @@
-import {createBrowserRouter} from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 import AboutHero from '../components/About/AboutHero';
 import Home from '../components/Home/Home';
@@ -31,11 +31,11 @@ const generateRoutes = (lang) => {
     children: [
       { index: true, element: <Home /> },
       { path: slugs.services, element: <Services /> },
-      { path: slugs.logistics,element: <Logistics /> },
-      { path: slugs.CTO,element: <CTO/> },
-      {path: slugs.software, element: <Software/>},
-      { path: slugs.ConsultoriaTec,element: <ConsultoriaTec/> },
-      { path: slugs.cibersecurity,element: <Cibersecurity/> },
+      { path: slugs.logistics, element: <Logistics /> },
+      { path: slugs.CTO, element: <CTO /> },
+      { path: slugs.software, element: <Software /> },
+      { path: slugs.ConsultoriaTec, element: <ConsultoriaTec /> },
+      { path: slugs.cibersecurity, element: <Cibersecurity /> },
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },
@@ -49,7 +49,7 @@ const generateRoutes = (lang) => {
 };
 
 export const router = createBrowserRouter([
-   generateRoutes('en'),
-   generateRoutes('es'),
-   { path: '*', element: <NotFound /> },
+  generateRoutes('en'),
+  generateRoutes('es'),
+  { path: '*', element: <NotFound /> },
 ]);

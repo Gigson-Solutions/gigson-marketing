@@ -7,16 +7,16 @@ import './Contact.css';
 import '../Form.css';
 
 const Contact = () => {
-   return (
-      <div className="contact-content">
-         <div className="wrapper">
-            <div className="contact-img">
-               <img className="Bgcont" src={Bgcont} alt="Bgcont" />
-            </div>
-            <Form />
-         </div>
+  return (
+    <div className="contact-content">
+      <div className="wrapper">
+        <div className="contact-img">
+          <img className="Bgcont" src={Bgcont} alt="Bgcont" />
+        </div>
+        <Form />
       </div>
-   );
+    </div>
+  );
 };
 
 export default Contact;

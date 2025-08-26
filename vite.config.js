@@ -9,12 +9,10 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
-  resolve: 
-  {
-  alias: {
-    'shared': path.resolve(__dirname, 'src/shared/ui'),
-    'assets': path.resolve(__dirname, 'src/assets')
-    }
-  }
+  resolve: {
+    alias: {
+      shared: path.resolve(__dirname, 'src/shared/ui'),
+      assets: path.resolve(__dirname, 'src/assets'),
+    },
+  },
 });
-

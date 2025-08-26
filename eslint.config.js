@@ -1,4 +1,3 @@
-
 import js from '@eslint/js';
 import { defineConfig } from 'eslint/config';
 import importPlugin from 'eslint-plugin-import';
@@ -29,52 +28,46 @@ export default defineConfig([
       import: importPlugin,
     },
     rules: {
-      
       'import/order': 'off',
       'sort-imports': 'off',
 
-      
       'simple-import-sort/imports': [
         'error',
         {
           groups: [
-           
             ['^\\u0000'],
 
-        
             ['^react$', '^@?\\w'],
 
-           
             ['^(@|src)(/.*|$)'],
 
-           
             ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
 
-          
             ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
 
-          
             ['^.+\\.s?css$'],
           ],
         },
       ],
       'simple-import-sort/exports': 'error',
 
-    
       'unicorn/prefer-query-selector': 'warn',
       'unicorn/prevent-abbreviations': 'off',
-      'unicorn/filename-case': ['error', { case: 'camelCase' }],
 
-      'prettier/prettier': 'error',
+      'prettier/prettier': ['error', { singleQuote: true }],
+      quotes: 'off',
 
       'jsx-a11y/alt-text': 'warn',
       'jsx-a11y/anchor-is-valid': 'warn',
 
-      'import/no-unresolved': 'error',
+      'import/no-unresolved': [
+        'warn',
+        { ignore: ['\\.(css|s[ac]ss)$', '\\.(png|jpe?g|svg|gif)$', '\\.jsx'] },
+      ],
       'import/no-duplicates': 'error',
 
       semi: ['error', 'always'],
-      quotes: ['error', 'single'],
+
       'no-extra-semi': 'error',
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       'react/self-closing-comp': 'error',

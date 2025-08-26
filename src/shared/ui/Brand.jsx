@@ -11,11 +11,23 @@ import spainRevealedGisgsonImg from 'assets/brands/SpainRevealed_Gisgson.svg';
 import stkImg from 'assets/brands/STK.svg';
 import tarbozImg from 'assets/brands/Tarboz.svg';
 import vikoImg from 'assets/brands/Viko.svg';
-import {Trans} from 'react-i18next';
+import { Trans } from 'react-i18next';
 
-
-
-const logoNames = [ caritasImg, stkImg, europcarGroupImg, logoImg, a6Img, elogiaImg, kmmImg, vikoImg, adockImg, modareImg, spainRevealedGisgsonImg, brandtiaImg, tarbozImg ];
+const logoNames = [
+  caritasImg,
+  stkImg,
+  europcarGroupImg,
+  logoImg,
+  a6Img,
+  elogiaImg,
+  kmmImg,
+  vikoImg,
+  adockImg,
+  modareImg,
+  spainRevealedGisgsonImg,
+  brandtiaImg,
+  tarbozImg,
+];
 
 const LogoGrid = () => {
   return (
@@ -23,7 +35,7 @@ const LogoGrid = () => {
       {logoNames.map((img, index) => (
         <img
           key={index}
-          src={img} 
+          src={img}
           alt={`Logo ${index + 1}`}
           className="max-w-full  h-[30px] lg:h-[55px] object-contain lg:p-2"
         />
@@ -33,35 +45,34 @@ const LogoGrid = () => {
 };
 
 const Brand = () => (
-        <section className="mt-fixed-navbar pt-14 lg:pt-40 pb-36 lg:pb-23">
-            <div className="max-w-8xl mx-auto px-landing">
-                <div className="flex flex-col lg:flex-row w-full gap-15">
-            
-                    <div className="  flex flex-col">
-                        <p className="text-h2  text-dark-primary mb-4 md:mb-6">
-                            <Trans
-                                i18nKey={'brand.brand_title'}
-                                components={{
-                                span: <span className="block text-purple-accents" />,
-                                }}
-                            />
-                        </p>
-                        <p className="text-dark-primary text-left text-subtitle max-w-contained mb-6 md:mb-10"> 
-                          <Trans
-                                i18nKey={'brand.brand_description'}
-                                components={{
-                                span: <span className="block text-purple-accents" />,
-                                }}
-                            /> </p>
-                    </div>
+  <section className="mt-fixed-navbar pt-14 lg:pt-40 pb-36 lg:pb-23">
+    <div className="max-w-8xl mx-auto px-landing">
+      <div className="flex flex-col lg:flex-row w-full gap-15">
+        <div className="  flex flex-col">
+          <p className="text-h2  text-dark-primary mb-4 md:mb-6">
+            <Trans
+              i18nKey={'brand.brand_title'}
+              components={{
+                span: <span className="block text-purple-accents" />,
+              }}
+            />
+          </p>
+          <p className="text-dark-primary text-left text-subtitle max-w-contained mb-6 md:mb-10">
+            <Trans
+              i18nKey={'brand.brand_description'}
+              components={{
+                span: <span className="block text-purple-accents" />,
+              }}
+            />{' '}
+          </p>
+        </div>
 
-            
-                    <div className=" lg:w-2/3 flex items-center justify-start">
-                        <LogoGrid />
-                    </div>
-                </div>
-             </div>
-        </section>
-    );
+        <div className=" lg:w-2/3 flex items-center justify-start">
+          <LogoGrid />
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
 export default Brand;

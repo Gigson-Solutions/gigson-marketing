@@ -10,24 +10,24 @@ import HomeCases from './HomeCases';
 import HomeServices from './HomeServices';
 
 const Home = () => {
-   const { t } = useTranslation();
-   const {title , metadescription} = t('home');
+  const { t } = useTranslation();
+  const { title, metadescription } = t('home');
 
-   return (
-      <div className="home-content">
-         <Helmet>
-                <title>{title}</title>
-                <meta name="description" content={metadescription} />
-            </Helmet>
-         <Hero />
-         <HomeServices />
-         <HomeCases />
-         <CtaServices />
-         <div className="wrapper">
-            <Form customClass="home-form" />
-         </div>
+  return (
+    <div className="home-content">
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={metadescription} />
+      </Helmet>
+      <Hero />
+      <HomeServices />
+      <HomeCases />
+      <CtaServices />
+      <div className="wrapper">
+        <Form customClass="home-form" />
       </div>
-   );
+    </div>
+  );
 };
 
 export default Home;
