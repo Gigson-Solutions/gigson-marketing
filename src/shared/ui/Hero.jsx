@@ -1,9 +1,13 @@
-import { ButtonLink } from './Button.jsx';
 import { Trans, useTranslation } from 'react-i18next';
+import { ButtonLink } from './Button.jsx';
 
-const buttonLink = '/contact';
+    
 
 const Hero = ({title, suptitle, description , buttonText }) => {
+
+    const { t } = useTranslation();
+    const hero_link  = t('hero_link');
+    console.log(hero_link);
 
     const Title = <Trans
         i18nKey={title}
@@ -28,7 +32,7 @@ const Hero = ({title, suptitle, description , buttonText }) => {
                    {Title}
                 </h1>
                 <p className="text-dark-primary  text-subtitle max-w-contained text-left mb-6 md:mb-10">{Description}</p>
-                <ButtonLink link={buttonLink} text={buttonText} outlined/>
+                <ButtonLink link={hero_link} text={buttonText} outlined/>
             </div>
         </section>
     );
