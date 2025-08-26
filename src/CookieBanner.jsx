@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import './CookieBanner.css';
+
 import Cookies from 'js-cookie';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-
-import './CookieBanner.css';
 
 const CookieBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,7 +32,7 @@ const CookieBanner = () => {
     setIsVisible(false);
   };
 
-  if (!isVisible) return null;
+  if (!isVisible) return;
 
   return (
     <div className="cookie-banner">

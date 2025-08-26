@@ -1,9 +1,9 @@
+import './Form.css';
+
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import Button from './Button.jsx';
-
-import './Form.css';
 
 const Form = ({ customClass }) => {
   const { t } = useTranslation();

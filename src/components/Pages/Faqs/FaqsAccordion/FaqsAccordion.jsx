@@ -11,7 +11,7 @@ export const FaqsAccordion = ({
   isLast,
   children,
 }) => {
-  if (!question) return null;
+  if (!question) return;
 
   return (
     <div className="accordion-container faqs-container">

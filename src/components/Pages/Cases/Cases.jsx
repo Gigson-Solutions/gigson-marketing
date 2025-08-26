@@ -1,3 +1,5 @@
+import './Cases.css';
+
 import { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -5,13 +7,11 @@ import { Link } from 'react-router-dom';
 import CasesBg from '../../../assets/CasesBg.png';
 import { Accordion } from '../../Accordion/Accordion';
 
-import './Cases.css';
-
 const Cases = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState();
 
   const handleItemClick = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+    setActiveIndex((prevIndex) => (prevIndex === index ? undefined : index));
   };
   const [selectedTags, setSelectedTags] = useState([]);
   const [selectedNeeds, setSelectedNeeds] = useState([]);
@@ -30,8 +30,8 @@ const Cases = () => {
   const cases = t('casesDropdown');
   const { contact } = t('ctas');
 
-  const uniqueTags = [...new Set(cases.map(({ tags }) => tags).flat())];
-  const uniqueNeeds = [...new Set(cases.map(({ need }) => need).flat())];
+  const uniqueTags = [...new Set(cases.flatMap(({ tags }) => tags))];
+  const uniqueNeeds = [...new Set(cases.flatMap(({ need }) => need))];
 
   const handleTagFilter = (tag) => {
     if (selectedTags.includes(tag)) {

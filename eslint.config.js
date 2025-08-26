@@ -1,19 +1,18 @@
 import js from '@eslint/js';
 import { defineConfig } from 'eslint/config';
-import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import prettierPlugin from 'eslint-plugin-prettier';
-import react from 'eslint-plugin-react';
+import reactPlugin from 'eslint-plugin-react';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 
 export default defineConfig([
   js.configs.recommended,
-  react.configs.flat.recommended,
+  reactPlugin.configs.flat.recommended,
 
   {
-    files: ['**/*.{js,jsx,mjs,cjs}'],
+    files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -25,46 +24,42 @@ export default defineConfig([
       unicorn,
       prettier: prettierPlugin,
       'jsx-a11y': jsxA11y,
-      import: importPlugin,
     },
     rules: {
-      'import/order': 'off',
-      'sort-imports': 'off',
+      ...reactPlugin.configs.recommended.rules,
+      ...prettierPlugin.configs.recommended.rules,
+      ...unicorn.configs.recommended.rules,
+      ...jsxA11y.configs.recommended.rules,
 
-      'simple-import-sort/imports': [
-        'error',
-        {
-          groups: [
-            ['^\\u0000'],
-
-            ['^react$', '^@?\\w'],
-
-            ['^(@|src)(/.*|$)'],
-
-            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-
-            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-
-            ['^.+\\.s?css$'],
-          ],
-        },
-      ],
+      'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
 
+      'unicorn/no-array-reduce': 'off',
+      'unicorn/no-nested-ternary': 'off',
+      'no-nested-ternary': 'off',
       'unicorn/prefer-query-selector': 'warn',
       'unicorn/prevent-abbreviations': 'off',
+      'unicorn/filename-case': [
+        'warn',
+        {
+          cases: {
+            camelCase: true,
+          },
+        },
+      ],
 
       'prettier/prettier': ['error', { singleQuote: true }],
       quotes: 'off',
 
+      'jsx-a11y/no-static-element-interactions': 'off',
       'jsx-a11y/alt-text': 'warn',
       'jsx-a11y/anchor-is-valid': 'warn',
-
-      'import/no-unresolved': [
-        'warn',
-        { ignore: ['\\.(css|s[ac]ss)$', '\\.(png|jpe?g|svg|gif)$', '\\.jsx'] },
-      ],
-      'import/no-duplicates': 'error',
+      'jsx-a11y/click-events-have-key-events': 'off',
+      'jsx-a11y/label-has-text': 'off',
+      'no-duplicate-imports': 'error',
+      'jsx-a11y/interactive-supports-focus': 'off',
+      'jsx-a11y/label-has-associated-control': 'off',
+      'jsx-a11y/no-noninteractive-element-interactions': 'off',
 
       semi: ['error', 'always'],
 

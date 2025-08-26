@@ -1,10 +1,10 @@
+import './NavbarMobile.css';
+
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import logoImg from '../../assets/Logo.svg';
 import LanguageSelector from '../LanguageSelector/LanguageSelector.jsx';
-
-import './NavbarMobile.css';
 
 const ChevronDown = () => {
   return (
@@ -29,10 +29,10 @@ const ChevronDown = () => {
 
 const NavbarMobile = ({ menu }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState();
 
   const toggleDropdown = (index) => {
-    setActiveDropdown(activeDropdown === index ? null : index);
+    setActiveDropdown(activeDropdown === index ? undefined : index);
   };
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -80,15 +80,7 @@ const NavbarMobile = ({ menu }) => {
                 isMobileMenuOpen && toggleDropdown(index);
               }}
             >
-              {!children ? (
-                <NavLink
-                  className="menu-item__link"
-                  to={link}
-                  onClick={closeMobileMenu}
-                >
-                  {name}
-                </NavLink>
-              ) : (
+              {children ? (
                 <>
                   <span className="flex items-center menu-item__link">
                     {name}
@@ -111,6 +103,14 @@ const NavbarMobile = ({ menu }) => {
                     ))}
                   </ul>
                 </>
+              ) : (
+                <NavLink
+                  className="menu-item__link"
+                  to={link}
+                  onClick={closeMobileMenu}
+                >
+                  {name}
+                </NavLink>
               )}
             </li>
           ))}

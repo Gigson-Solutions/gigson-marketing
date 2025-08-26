@@ -1,4 +1,6 @@
 import '../Pages/Cases/Cases.jsx';
+import './Homecases.css';
+import '../Pages/Cases/Cases.css';
 
 import React, { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
@@ -9,14 +11,11 @@ import cubeSvg from '../../assets/cubo-about.svg';
 import piraSvg from '../../assets/Piramide-about.svg';
 import { Accordion } from '../../components/Accordion/Accordion.jsx';
 
-import './Homecases.css';
-import '../Pages/Cases/Cases.css';
-
 const HomeCases = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState();
 
   const handleItemClick = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+    setActiveIndex((prevIndex) => (prevIndex === index ? undefined : index));
   };
   const { t } = useTranslation();
   const { title, description, cta, titleH2, belive, need } = t('about');
@@ -71,8 +70,8 @@ const HomeCases = () => {
   const cases = t('casesDropdown');
   const { contact } = t('ctas');
 
-  const uniqueTags = [...new Set(cases.map(({ tags }) => tags).flat())];
-  const uniqueNeeds = [...new Set(cases.map(({ need }) => need).flat())];
+  const uniqueTags = [...new Set(cases.flatMap(({ tags }) => tags))];
+  const uniqueNeeds = [...new Set(cases.flatMap(({ need }) => need))];
 
   const handleTagFilter = (tag) => {
     if (selectedTags.includes(tag)) {

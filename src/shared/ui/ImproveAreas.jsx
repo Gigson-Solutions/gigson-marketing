@@ -4,7 +4,6 @@ import { Trans } from 'react-i18next';
 import chevronDownIcon from '../../assets/chevron-down.svg';
 import timesCircleIcon from '../../assets/times-circle.svg';
 import { FaqsAccordion } from '../../components/Pages/Faqs/FaqsAccordion/FaqsAccordion.jsx';
-
 import { Button } from './Button.jsx';
 import Dialog from './Dialog.jsx';
 
@@ -193,10 +192,10 @@ const AccordionContent = ({
 };
 
 const FaqList = ({ faqs, selectedPainPoints, activeFaqIndex, onFaqClick }) => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState();
 
   const handleItemClick = (index) =>
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+    setActiveIndex((prevIndex) => (prevIndex === index ? undefined : index));
 
   return (
     <div>
@@ -308,7 +307,7 @@ const ImproveAreas = ({
               {painPoints
                 .filter(({ type }) => selectedPainPoints.includes(type))
                 .map(({ type, name }, index) => {
-                  if (initialChipsState) return null;
+                  if (initialChipsState) return;
 
                   return (
                     <Chip
@@ -334,8 +333,8 @@ const ImproveAreas = ({
           <FaqList
             faqs={faqs}
             selectedPainPoints={selectedPainPoints}
-            activeFaqIndex={null}
-            onFaqClick={null}
+            activeFaqIndex={undefined}
+            onFaqClick={undefined}
           />
         </div>
       </div>

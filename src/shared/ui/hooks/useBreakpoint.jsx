@@ -15,7 +15,7 @@ const getDeviceConfig = (width) => {
 const useBreakpoint = () => {
   const [device, setDevice] = useState(
     getDeviceConfig(
-      typeof window !== 'undefined' ? window.innerWidth : BREAKPOINTS.lg
+      globalThis.window === undefined ? BREAKPOINTS.lg : window.innerWidth
     )
   );
 

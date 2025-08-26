@@ -1,10 +1,10 @@
+import './Hero.css';
+import '../Button.css';
+
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import heroImg from '../../assets/Imagen-esfera-hexagono.png';
-
-import './Hero.css';
-import '../Button.css';
 
 function Hero() {
   const { t } = useTranslation();

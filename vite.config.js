@@ -1,6 +1,7 @@
+import path from 'node:path';
+
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
 import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
@@ -11,8 +12,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      shared: path.resolve(__dirname, 'src/shared/ui'),
-      assets: path.resolve(__dirname, 'src/assets'),
+      shared: path.resolve(import.meta.dirname, 'src/shared/ui'),
+      assets: path.resolve(import.meta.dirname, 'src/assets'),
     },
   },
 });

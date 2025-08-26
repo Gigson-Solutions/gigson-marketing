@@ -8,14 +8,14 @@ import { RouterProvider } from 'react-router-dom';
 
 import { router } from './router/index.jsx';
 
-const LANGS = ['en', 'es'];
+const LANGS = new Set(['en', 'es']);
 
 const AppWrapper = () => {
   const { i18n } = useTranslation();
 
   React.useEffect(() => {
     const lang = i18n.language;
-    if (!LANGS.includes(lang)) {
+    if (!LANGS.has(lang)) {
       i18n.changeLanguage('en');
     }
     document.documentElement.lang = i18n.language;

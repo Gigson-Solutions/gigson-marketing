@@ -1,9 +1,9 @@
+import './Services.css';
+
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import heroImg from '../../assets/HeroServices.png';
-
-import './Services.css';
 
 const Services = () => {
   const { t } = useTranslation();

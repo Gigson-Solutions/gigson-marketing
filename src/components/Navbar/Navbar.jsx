@@ -1,3 +1,5 @@
+import './NavbarHeader.css';
+
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -7,21 +9,18 @@ import {
   ROUTE_SLUGS,
   SUPPORTED_LANGS,
 } from '../../router/routerSlugs.js';
-
 import NavbarDesktop from './NavbarDesktop.jsx';
 import NavbarMobile from './NavbarMobile.jsx';
-
-import './NavbarHeader.css';
 
 const Navbar = () => {
   const { t } = useTranslation();
   const location = useLocation();
 
   const currentPath = location.pathname;
-  const segments = currentPath.split('/').filter(Boolean);
+  const segment = currentPath.split('/').find(Boolean);
 
-  const currentLang = SUPPORTED_LANGS.includes(segments[0])
-    ? segments[0]
+  const currentLang = SUPPORTED_LANGS.includes(segment)
+    ? segment
     : DEFAULT_LANG;
 
   const {

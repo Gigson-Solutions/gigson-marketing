@@ -1,3 +1,5 @@
+import '../App.css';
+
 import { createBrowserRouter } from 'react-router-dom';
 
 import AboutHero from '../components/About/AboutHero';
@@ -16,10 +18,7 @@ import Notice from '../components/Pages/Notice';
 import Policity from '../components/Pages/Policity';
 import Software from '../components/Pages/Software/Software';
 import Services from '../components/Services/Services';
-
 import { DEFAULT_LANG, ROUTE_SLUGS } from './routerSlugs';
-
-import '../App.css';
 
 const generateRoutes = (lang) => {
   const slugs = ROUTE_SLUGS[lang];

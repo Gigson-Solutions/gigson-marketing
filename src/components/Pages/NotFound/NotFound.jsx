@@ -1,12 +1,12 @@
+import '../../Home/HomeServices.css';
+import './NotFound.css';
+
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import bg from '../../../assets/mesh-gradient-2.png';
 import { genArray } from '../../../hooks/genArray';
-
-import '../../Home/HomeServices.css';
-import './NotFound.css';
 
 const NotFound = () => {
   const { t } = useTranslation();

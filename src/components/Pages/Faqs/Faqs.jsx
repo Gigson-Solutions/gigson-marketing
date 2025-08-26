@@ -1,22 +1,21 @@
+import './Faqs.css';
+
 import { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import cono from '../../../assets/cone.svg';
 import pentagono from '../../../assets/pentagon.svg';
-
 import { FaqsAccordion } from './FaqsAccordion/FaqsAccordion';
-
-import './Faqs.css';
 
 const Faqs = () => {
   const { t } = useTranslation();
   const title = t('faqsH1');
   const faqsData = t('faqsDropdown');
 
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState();
 
   const handleItemClick = (index) =>
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+    setActiveIndex((prevIndex) => (prevIndex === index ? undefined : index));
 
   return (
     <section className="faqs-section">

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const Dialog = ({ isOpen, onClose, children, size = 'lg' }) => {
-  if (!isOpen) return null;
+  if (!isOpen) return;
 
   useEffect(() => {
     if (isOpen) {

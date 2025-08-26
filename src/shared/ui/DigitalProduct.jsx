@@ -8,7 +8,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import imgOne from '../../assets/digital-product-img-1.png';
 import imgTwo from '../../assets/digital-product-img-2.png';
 import imgThree from '../../assets/digital-product-img-3.png';
-
 import { ButtonLink } from './Button.jsx';
 
 const buttonLink = '/contact';
@@ -98,7 +97,7 @@ const DigitalProduct = ({ title, buttonText, description, cards }) => {
                     />
                   </SwiperSlide>
                 );
-              },
+              }
             )}
           </Swiper>
         </div>

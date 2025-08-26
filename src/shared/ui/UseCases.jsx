@@ -1,5 +1,6 @@
 import 'swiper/css';
 import 'swiper/css/pagination';
+import '../../components/slider.css';
 
 import { useState } from 'react';
 import { Trans } from 'react-i18next';
@@ -11,12 +12,9 @@ import iconTwo from '../../assets/use-cases-icon-2.svg';
 import iconThree from '../../assets/use-cases-icon-3.svg';
 import iconFour from '../../assets/use-cases-icon-4.svg';
 import iconBlockquote from '../../assets/usecases-blockquote-icon.svg';
-
 import { Button } from './Button.jsx';
 import { ButtonIcon } from './ButtonIcon.jsx';
 import Dialog from './Dialog.jsx';
-
-import '../../components/slider.css';
 
 const cardsIcons = [iconOne, iconTwo, iconThree, iconFour];
 
@@ -210,9 +208,9 @@ const DialogContent = ({
 };
 
 const UseCases = ({ cards, title, description }) => {
-  const [showDialog, setShowDialog] = useState(null);
+  const [showDialog, setShowDialog] = useState();
 
-  const handleOnCloseDialog = () => setShowDialog(null);
+  const handleOnCloseDialog = () => setShowDialog(undefined);
   return (
     <>
       <div className="pt-12 lg:pt-40 pb-14 lg:pb-0">

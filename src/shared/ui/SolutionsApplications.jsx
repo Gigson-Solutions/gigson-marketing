@@ -3,7 +3,6 @@ import { Trans } from 'react-i18next';
 
 import chevronDownIcon from '../../assets/chevron-down.svg';
 import solutionsApplicationsBgGradient from '../../assets/solutions-applications-bg-gradients-1.svg';
-
 import { useBreakpoint } from './hooks/useBreakpoint';
 
 const getCardNr = (index) => String(index).padStart(2, '0');

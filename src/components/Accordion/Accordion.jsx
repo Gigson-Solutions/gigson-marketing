@@ -1,10 +1,10 @@
+import './Accordion.css';
+
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import { AccordionAnimation } from './AccordionAnimation';
-
-import './Accordion.css';
 
 export const Accordion = ({
   title,

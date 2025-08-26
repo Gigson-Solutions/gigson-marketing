@@ -1,9 +1,9 @@
-import React from 'react';
-import { Trans, useTranslation } from 'react-i18next';
-
 import './Contact.css';
 import '../Form.css';
 import './Policity.css';
+
+import React from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 
 const Policity = () => {
   const { t } = useTranslation();
