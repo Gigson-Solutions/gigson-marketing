@@ -16,6 +16,7 @@
     "tech_consulting": "Consultoría tecnologica",
     "cibersecurity" : "Ciberseguridad"
   },
+  "hero_link": "/es/contacto",
   "home":{
     "title":"Gigson Solutions | Tecnología para Impulsar tu Negocio",
     "metadescription": "Soluciones a medida para negocios complejos. Potenciamos tu tecnología actual y, si lo que necesitas no existe, lo creamos ☎ 630 84 02 25",
@@ -533,7 +534,7 @@
       "suptitle":"LOGÍSTICA Y FULFILLMENT",
       "title": "<span>Tecnología</span> en logística <br/> y consultoría de <span>intralogística</span> ",
       "description": "La tecnología en logística puede ser un desafío si no se cuenta con el asesoramiento adecuado. En Gigson Solutions, te ayudamos a integrar soluciones tecnológicas sin fricciones, asegurando que se adapten a la estructura del negocio.",
-      "buttonText": "Contactanos"
+      "buttonText": "Contáctanos"
     },
     "useCases": {
       "title": "Casos clave",
@@ -1297,7 +1298,7 @@
       "suptitle":"LOGÍSTICA Y FULFILLMENT",
       "title": "Consultoría tecnológica <br> <span> en construcción </span>",
       "description": "Digitalizar una constructora no es solo implantar un software de gestión de obras: es alinear herramientas, procesos y equipos. En Gigson Solutions, te ayudamos a integrar tecnología sin fricciones, adaptada a los ritmos, retos y particularidades del sector construcciónes, asegurando que se adapten a la estructura del negocio. ",
-      "buttonText": "Contactanos"
+      "buttonText": "Contáctanos"
     },
     "useCases": {
       "title": "Casos clave",
@@ -2168,10 +2169,10 @@
     "title": "CTO as a Service | Gigson Solutions",
     "metadescription": "Mejora tu estrategia tecnológica, lidera la transformación digital y reduce riesgos operativos con un CTO externo",
     "hero": {
-      "suptitle":"SERVICIO",
+      "suptitle":"SERVICIOS",
       "title": "CTO as a Service: <br> <span> estrategia tecnológica a medida </span>",
       "description": "En un contexto donde la tecnología impacta directamente en la eficiencia y la competitividad, muchas pymes se enfrentan a un reto común: necesitan dirección tecnológica estratégica y operativa, pero no pueden asumir la carga financiera ni estructural de incorporar un CTO a tiempo completo. <br> Además, aunque la tecnología no sea su core, la necesitan para operar, crecer y tomar mejores decisiones. Ahí es donde el modelo CTO as a Service cobra todo el sentido. <br> En Gigson Solutions actuamos como partner tecnológico, no solo como consultores. Te ayudamos a definir y ejecutar una estrategia tecnológica que encaje con tu estructura de negocio, sin imponer herramientas ni metodologías genéricas. <br> Acompañamos a startups, scaleups y empresas consolidadas con un enfoque claro: que la tecnología sea un facilitador, no un freno.",
-      "buttonText": "Contactanos"
+      "buttonText": "Contáctanos"
     },
     "solutionsApplications": {
       "title": "Liderazgo y asesoramiento tecnológico <span> para empresas que quieren crecer sin fricciones </span>",
@@ -2319,14 +2320,108 @@
     "statusMessage": "Siempre lista para ayudar",
     "chatMessage": "¡Hola soy Emmelin! Account Manager de Gigson Solutions ¿en qué puedo ayudarte?"
   },
+  "software":{
+    "title": "Ingeniería y Desarrollo de software a medida | Gigson Solutions",
+    "metadescription": "Ingeniería de software enfocada en soluciones a medida para empresas. Mucho más que desarrollo, impulsamos tu crecimiento tecnológico",
+    "hero": {
+      "suptitle":"SERVICES",
+      "title": "Desarrollo de software a medida <span> para empresas </span>",
+      "description": "Tener un software que se adapte a tu empresa —y no al revés— marca la diferencia. En Gigson Solutions trabajamos para diseñar, construir y mantener soluciones tecnológicas a medida, preparadas para escalar, integrarse y evolucionar contigo. Desde desarrollar nuevas funcionalidades o productos completos hasta integrar herramientas existentes y asegurar su rendimiento en el tiempo, cubrimos todo el ciclo de vida del software.  Nuestro equipo está formado por desarrolladores, arquitectos y testers para ofrecerte un desarrollo de software a medida sin límites, sin dependencias y con visión a largo plazo.",
+      "buttonText": "Como podemos ayudarte"
+    },
+    "solutionsApplications": {
+      "title": "Desarrollo ágil de software <span> a medida </span>",
+      "subTitle": "Desarrollamos software que se adapta a tu negocio. Nuestro enfoque combina metodologías ágiles, arquitectura escalable y una comunicación constante con tu equipo, para que el desarrollo ad hoc no sea una caja negra, sino una colaboración continua orientada a resultados.",
+      "containers": [
+        {
+          "title": "Enfoque DevOps y cloud-native",
+          "description": "Siempre pensando en producción desde el primer día. Automatización, despliegues continuos, contenedores y cloud computing forman parte de nuestro ADN técnico. Esto nos permite acelerar tiempos de entrega, minimizar errores y asegurar que el software esté listo para escalar cuando tú lo necesites.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Proveedor de nube: AWS, Azure, GCP",
+              "description": "Trabajamos con los principales proveedores Cloud para diseñar infraestructuras flexibles, seguras y escalables. Elegimos la plataforma que mejor se adapta a tus necesidades y la configuramos para que tu aplicación esté disponible, se recupere ante fallos y crezca sin fricciones."
+            },
+            {
+              "title": "Contenedores y orquestación: Docker, Kubernetes, WPAR, K8s ",
+              "description": "Orquestamos tus servicios con Kubernetes o soluciones similares para facilitar la gestión, el escalado automático y el despliegue sin caídas. Esto reduce costes operativos y mejora el rendimiento de tu aplicación en cualquier entorno."
+            },
+            {
+              "title": "CI/CD automatizado: Jenkins, GitLab, GitHub, Git ",
+              "description": "Automatizamos la integración y el despliegue continuo para que cada cambio en tu software se pruebe, valide y publique sin interrupciones. Reducimos tiempos de entrega y evitamos errores gracias a pipelines robustos y personalizables que se adaptan a tu flujo de trabajo."
+            }
+          ]
+        },
+        {
+          "title": "Infraestructura de datos y rendimiento",
+          "description": "Un desarrollo de software personalizado no puede ser rápido si los datos no fluyen bien. Diseñamos infraestructuras pensadas para manejar grandes volúmenes de información, integraciones en tiempo real y análisis eficientes.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Gestión de bases de datos: Oracle, MySQL, MongoDB, PostgresSQL, MS SQL",
+              "description": "Diseñamos y administramos bases de datos relacionales y NoSQL según lo que tu sistema necesita: consultas complejas, escalabilidad, redundancia o velocidad."
+            },
+            {
+              "title": "Sistemas de mensajería y data streaming: RabbitMQ, Apache Kafka, Apache, Redis, ELK stack",
+              "description": "Cuando el sistema necesita hablar en tiempo real, usamos tecnologías de mensajería y streaming para que todo fluya sin cuellos de botella.  Desde eventos simples hasta flujos complejos de datos, construimos arquitecturas orientadas a eventos, resilientes y preparadas para escalar."
+            },
+            {
+              "title": "Monitoreo: Prometheus, Datalog, Grafana, Azure monitor, Amazon CloudWatch, Zabbix",
+              "description": "No basta con que funcione: tiene que seguir funcionando. Implementamos soluciones de observabilidad que permiten detectar errores antes de que se conviertan en problemas."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "¿Cómo trabajamos?",
+      "methods": [
+        {
+          "title": "Descubre",
+          "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
+        },
+        {
+          "title": "Diseño y arquitectura",
+          "description": "Definición de requisitos, creación de un prototipo y diseño de integraciones con sistemas actuales."
+        },
+        {
+          "title": "Implementación",
+          "description": "Programación, pruebas funcionales, integración con plataformas externas y despliegue en producción."
+        },
+        {
+          "title": "Soporte y mantenimiento",
+          "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "¿Qué necesito para hacer un <span>producto digital</span>?",
+      "description": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
+      "buttonText": "Como podemos ayudarte",
+      "cards": [
+        {
+          "title": "Ingeniería de software",
+          "description": "Desde integrar diferentes herramientas, desarrollar nuevas características y productos hasta monitorear y mantener un producto, estamos listos para ello. Nuestro equipo de ingeniería de software está compuesto por desarrolladores, arquitectos y testers para construir necesidades con tecnología de actual."
+        },
+        {
+          "title": "Ciberseguridad",
+          "description": "La seguridad de la información ya no está en la hoja de ruta. La ciberseguridad es una NECESIDAD en todos los negocios y todas las empresas deben tener el conocimiento, las herramientas y los procesos para evitar o minimizar los ataques."
+        },
+        {
+          "title": "Consultoría tecnologica",
+          "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
+        }
+      ]
+    }
+  },
   "consultoriaTec":{
     "title": "Consultoría Tecnológica para Empresas | Gigson Solutions",
     "metadescription": "Consultoría tecnológica para empresas que quieren crecer sin fricciones: diagnóstico, estrategia e implementación de soluciones a medida",
     "hero": {
-      "suptitle":"SERVICIO",
+      "suptitle":"SERVICIOS",
       "title": "Consultoría tecnológica <span> para empresas </span>",
       "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. <br> Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. <br>  Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento",
-      "buttonText": "Contactanos"
+      "buttonText": "Contáctanos"
     },
     "solutionsApplications": {
       "title": "Asesoramiento tecnológico para empresas que quieren crecer sin fricciones",
@@ -2643,10 +2738,10 @@
     "title": " Ciberseguridad para empresas y pymes | Gigson Solutions",
     "metadescription": "Somos tus socios tecnológicos para prevenir y mitigar amenazas. Integramos la ciberseguridad como parte estructural del negocio",
     "hero": {
-      "suptitle":"SERVICES",
+      "suptitle":"SERVICIOS",
       "title": "Soluciones de ciberseguridad <span> empresarial </span>",
       "description": "En un entorno digital cada vez más complejo, la ciberseguridad empresarial ya no es una opción, sino una necesidad estratégica. Las amenazas evolucionan constantemente y afectan tanto a grandes corporaciones como a pymes. Desde ataques dirigidos a infraestructuras críticas hasta accesos no autorizados o brechas internas, el riesgo es real y constante. En Gigson Solutions, actuamos como socios tecnológicos para ayudarte a prevenir, detectar y mitigar estas amenazas, integrando la ciberseguridad como parte estructural del negocio. No ofrecemos soluciones genéricas. Nuestra visión se basa en que la tecnología debe adaptarse al contexto real de cada empresa, no al revés. Por eso, diseñamos e implementamos soluciones robustas para aplicaciones e infraestructura de empresas que tienen en cuenta su tamaño, sector, estructura técnica y objetivos de negocio. Desde el análisis de riesgos en ciberseguridad hasta el despliegue de herramientas avanzadas, nuestros consultores en ciberseguridad trabajan para que cada capa de protección esté alineada con tu estrategia y evolucione contigo.",
-      "buttonText": "Como podemos ayudarte"
+      "buttonText": "Contáctanos"
     },
     "solutionsApplications": {
       "title": "Ciberseguridad para empresas y pymes",
