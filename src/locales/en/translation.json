@@ -2327,8 +2327,8 @@
     "hero": {
       "suptitle":"SERVICES",
       "title": "Software development <span> for business </span>",
-      "description": "Having software that adapts to your company—not the other way around—makes all the difference. At Gigson Solutions, we design, build, and maintain tailored tech solutions, ready to scale, integrate, and evolve with you. From building new features or full products to integrating existing tools and ensuring long-term performance,we cover the entire software lifecycle. Our team includes developers, architects, and testers to provide custom software development with no limits, no dependencies, and a long-term vision.",
-      "buttonText": "How we can help you"
+      "description": "Having software that adapts to your company—not the other way around—makes all the difference. At Gigson Solutions, we design, build, and maintain tailored tech solutions, ready to scale, integrate, and evolve with you. <br> From building new features or full products to integrating existing tools and ensuring long-term performance,we cover the entire software lifecycle. <br> Our team includes developers, architects, and testers to provide custom software development with no limits, no dependencies, and a long-term vision.",
+      "buttonText": "Contact Us"
     },
     "solutionsApplications": {
       "title": "Agile & custom <span> software development </span>",
@@ -2553,8 +2553,8 @@
     "hero": {
       "suptitle":"SERVICES",
       "title": "<span>Enterprise</span> cybersecurity solutions",
-      "description": "In an increasingly complex digital environment, enterprise cybersecurity is no longer optional—it’s a strategic necessity. Threats are constantly evolving and affect both large corporations and SMEs alike. From targeted attacks on critical infrastructures to unauthorized access or internal breaches, the risk is real and constant. At Gigson Solutions, we act as your technology partner, helping you prevent, detect, and mitigate these threats by embedding cybersecurity as a structural part of your business. We don’t offer generic solutions. Our vision is based on the idea that technology should adapt to the real context of each company, not the other way around. That’s why we design and implement robust solutions for applications and infrastructure, tailored to your size, sector, technical structure, and business goals. From cybersecurity risk analysis to the deployment of advanced tools, our consultants ensure that every protection layer is aligned with your strategy and evolves with your business.",
-      "buttonText": "How we can help you"
+      "description": "In an increasingly complex digital environment, enterprise cybersecurity is no longer optional—it’s a strategic necessity. Threats are constantly evolving and affect both large corporations and SMEs alike.<br> From targeted attacks on critical infrastructures to unauthorized access or internal breaches, the risk is real and constant. <br> At Gigson Solutions, we act as your technology partner, helping you prevent, detect, and mitigate these threats by embedding cybersecurity as a structural part of your business. <br>We don’t offer generic solutions. <br>Our vision is based on the idea that technology should adapt to the real context of each company, not the other way around. That’s why we design and implement robust solutions for applications and infrastructure, tailored to your size, sector, technical structure, and business goals. <br>From cybersecurity risk analysis to the deployment of advanced tools, our consultants ensure that every protection layer is aligned with your strategy and evolves with your business.",
+      "buttonText": "Contact Us"
     },
     "solutionsApplications": {
       "title": "Cybersecurity for companies and SMEs",
