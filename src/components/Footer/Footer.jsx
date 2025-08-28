@@ -47,23 +47,23 @@ const Footer = () => {
           </svg>
         </div>
 
-        <div className="footer-policy">
-          <span href="">Developed by Gigson © 2024 </span>
-          <ul className="footer-policy-links">
-            <li>
-              <Link to="/policy">{legal}</Link>
-            </li>
-            <li>
-              <Link to="/cookies">{cookies}</Link>
-            </li>
-            <li>
-              <Link to="/notice">{notice}</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  );
+            <div className="footer-policy">
+               <span href="">Developed by Gigson Solutions © 2025 </span>
+               <ul className="footer-policy-links">
+                  <li>
+                     <Link to="/policy">{legal}</Link>
+                  </li>
+                  <li>
+                     <Link to="/cookies">{cookies}</Link>
+                  </li>
+                  <li>
+                     <Link to="/notice">{notice}</Link>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </footer>
+   );
 };
 
 export default Footer;

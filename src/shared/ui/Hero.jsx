@@ -1,28 +1,28 @@
 import { Trans } from 'react-i18next';
-
 import { ButtonLink } from './Button.jsx';
+
 
 const buttonLink = '/contact';
 
-const Hero = ({ title, suptitle, description, buttonText }) => {
-  const Title = (
-    <Trans
-      i18nKey={title}
-      components={{
-        span: <span className="text-purple-accents" />,
-        br: <br />,
-      }}
-    />
-  );
-  const Description = (
-    <Trans
-      i18nKey={description}
-      components={{
-        span: <span className="text-purple-accents" />,
-        br: <br />,
-      }}
-    />
-  );
+const Hero = ({title, suptitle, description , buttonText }) => {
+
+    const { t } = useTranslation();
+    const hero_link  = t('hero_link');
+
+    const Title = <Trans
+        i18nKey={title}
+        components={{
+            span: <span className="text-purple-accents" />,
+            br: <br />
+        }}
+    />;
+     const Description = <Trans
+        i18nKey={description}
+        components={{
+            span: <span className="text-purple-accents" />,
+            br: <br />
+        }}
+    />;
 
   return (
     <section className="mt-fixed-navbar pt-14 lg:pt-23 pb-36 lg:pb-23">
