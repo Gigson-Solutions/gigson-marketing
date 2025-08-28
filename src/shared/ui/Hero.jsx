@@ -7,7 +7,6 @@ const Hero = ({title, suptitle, description , buttonText }) => {
 
     const { t } = useTranslation();
     const hero_link  = t('hero_link');
-    console.log(hero_link);
 
     const Title = <Trans
         i18nKey={title}
