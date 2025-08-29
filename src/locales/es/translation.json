@@ -1298,6 +1298,7 @@
     "hero": {
       "suptitle":"LOGÍSTICA Y FULFILLMENT",
       "title": "Consultoría tecnológica <br> <span> en construcción </span>",
+<<<<<<< HEAD
       "description": "Digitalizar una constructora no es solo implantar un software de gestión de obras: es alinear herramientas, procesos y equipos. En Gigson Solutions, te ayudamos a integrar tecnología sin fricciones, adaptada a los ritmos, retos y particularidades del sector construcciónes, asegurando que se adapten a la estructura del negocio. ",
       "buttonText": "Contáctanos"
     },
@@ -2715,6 +2716,8 @@
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
         }
       ]
+=======
+>>>>>>> 79b422103bc5bc872d8a3ef4d953165bb7f63253
       "description": "Digitalizar una constructora no es solo implantar un software de gestión de obras: es alinear herramientas, procesos y equipos. En Gigson Solutions, te ayudamos a integrar tecnología sin fricciones, adaptada a los ritmos, retos y particularidades del sector construcción.nes, asegurando que se adapten a la estructura del negocio. ",
       "buttonText": "Como podemos ayudarte"
     },
