@@ -2438,7 +2438,7 @@
       "painPoints": [
         {
           "type": "A",
-          "name": "Resource optimization"
+          "name": "Budget Management"
         },
         {
           "type": "B",
@@ -2446,317 +2446,132 @@
         },
         {
           "type": "C",
-          "name": "Sustainability"
+          "name": "Business Inteligence "
         },
         {
           "type": "D",
           "name": "Data visibility"
-        },
-        {
-          "type": "E",
-          "name": "Comply with regulations"
         }
       ],
       "faqs": [
         {
           "types": ["A", "B", "C"],
-          "question": "Hassle-free Route Assignment: Faster, More Efficient",
+          "question": "Automatication of Dinamic Budgets",
           "answer": {
-            "challengeDescription": "Manual route planning and resource allocation (vehicles and drivers) was slow, labor-intensive, and error-prone. The operations manager had to individually review staff availability, required vehicle types, and delivery characteristics, delaying operations and inflating operating costs.",
+            "challengeDescription": "Creating customer quotes manually took hours and led to price inconsistencies. In addition, there was no real-time visibility into stored stock, which made it difficult to update warehousing charges and caused inefficiencies in billing.",
             "solutionText": "Solution",
-            "solutionDescription": "We built an integrated system that automatically matches routes and resources by cross-referencing staff and fleet availability with each delivery’s requirements. The system optimizes load capacity, prioritizes deliveries by urgency, and ensures assignments comply with rest and safety regulations. The results: a 25 % reduction in planning time, a 15 % boost in resource utilization, and 20 % more on-time deliveries.",
+            "solutionDescription": "We developed an integrated quoting tool that pulls cost, time, and resource data directly from the company’s operational systems and connects it with real-time warehouse stock. This reduced quote creation time by 70%, enabled automatic billing updates based on storage usage, and significantly improved billing accuracy. As a result, the client increased quote-to-sale conversion by 20% and optimized revenue from warehousing services.",
             "functionalitiesText": "Features",
             "functionalities": [
               {
-                "title": "Staff availability",
-                "description": "Automated engine that tracks schedules, breaks, and certifications alongside fleet details such as vehicle type, load capacity, and operational status."
+                "title": "Automated quote generation:",
+                "description": "In minutes, based on live operational data."
               },
               {
-                "title": "Route assignment",
-                "description": "Dynamic routing based on <span>delivery volume and type</span> (order size, removals, hazardous goods, etc.)."
+                "title": "Customizable templates:",
+                "description": "Tailored by service type, client, or order volume."
               },
               {
-                "title": "Notifications",
-                "description": "Automatic alerts for drivers and managers as soon as routes are assigned."
+                "title": "Auto-calculated costs:",
+                "description": " Includes fuel, labor, tolls, and predefined margins."
               },
               {
-                "title": "Control panel",
-                "description": "Real-time dashboard to reschedule routes in case of unforeseen events (traffic conditions, last-minute priorities, breakdowns, etc.)."
+                "title": "Real-time stock connection:",
+                "description": "Applies warehouse charges based on current and projected storage."
               },
               {
-                "title": "Vehicle-load optimization",
-                "description": "Automatically adjusts the number and type of vehicles assigned according to total volume and weight, maximizing load capacity."
-              },
-              {
-                "title": "Automated productivity reporting",
-                "description": "Auto-generated reports that track system efficiency (kilometers driven, resources used, and time per delivery)."
+                "title": "Professional output & delivery:",
+                "description": "PDF/Excel generation with automated sending to the client."
               }
             ],
             "technologiesText": "Technologies",
             "technologies": [
               {
-                "title": "TMS",
-                "description": "Geotab & Google Maps API"
+                "title": "ERP & warehouse: ",
+                "description": "Odoo / Holded with stock integraton"
               },
               {
-                "title": "RRHH",
-                "description": "Personio"
+                "title": "Frontend:",
+                "description": "React.js"
               },
               {
-                "title": "ERP",
-                "description": "Holded"
+                "title": "Backend:",
+                "description": "Node.js + Python for calculation and simulation logic"
               },
               {
-                "title": "Front-end",
-                "description": "React"
+                "title": "Integrations: ",
+                "description": "Bidirectional API RESTwith ERP / SGA"
               },
               {
-                "title": "Back-end",
-                "description": "Node.js + Python"
+                "title": "Document generator:",
+                "description": "PDFKit"
               },
               {
-                "title": "Database",
-                "description": "PostgreSQL"
+                "title": "CLoud Storage:",
+                "description": "AWS S3"
               },
               {
-                "title": "Notificaciones",
-                "description": "WhatsApp Business API"
-              },
-              {
-                "title": "Reporting",
-                "description": "Looker"
+                "title": "Dashboards & reports:",
+                "description": "Power BI o Looker Studio"
               }
             ]
           }
         },
         {
           "types": ["B", "C", "D"],
-          "question": "Transparency in each kilometer",
+          "question": "Pricing engine  and product updates from supplier files",
           "answer": {
-            "challengeDescription": "With a growing fleet, our client needed to shrink its carbon footprint to meet internal sustainability targets, enhance its reputation with B2B customers and regulators, and make operations fully transparent. Lacking tools to calculate emissions, optimize routes, and deliver detailed reports to customers, transport operations were inefficient and opaque.",
+            "challengeDescription": "A company specializing in the specification and sale of technical and decorative lighting received supplier catalogue and pricing updates in Excel or PDF. Manually updating the ERP was slow, error‑prone, and delayed the creation of accurate quotes.",
             "solutionText": "Solution",
-            "solutionDescription": "We deployed a comprehensive sustainability module that not only calculates and reduces CO₂ emissions but also lets customers access their reports through a personalized portal. This delivered greater transparency and trust—customers can now see the environmental impact of their shipments. As a result, Martínez Marcos cut emissions by 15 %, improved operational efficiency, and strengthened customer relationships through a more transparent, responsible approach.",
+            "solutionDescription": "We implemented a system that automatically parses supplier files, extracts structured data, and synchronizes it with the ERP. It includes a pre‑update validation interface and connects directly to the quoting tool to ensure offer accuracy. Update time for price lists was reduced by 90%, providing a strong competitive advantage in an environment of increasingly frequent price changes.",
             "functionalitiesText": "Features",
             "functionalities": [
               {
-                "title": "Carbon-footprint calculation",
-                "description": "Tool that measures CO₂ emissions per trip based on vehicle type and fuel."
+                "title": "Automatic Excel & PDF parsing:",
+                "description": "Structured data extraction from supplier files"
               },
               {
-                "title": "Sustainable route optimization",
-                "description": "Identifies routes that reduce distance traveled and optimize fuel usage."
+                "title": "Direct ERP update:",
+                "description": "Products, product accessories, and pricing"
               },
               {
-                "title": "Customer portal",
-                "description": "Direct, transparent access for customers to view real-time emissions reports, routes used, and sustainability metrics."
+                "title": "Pre‑update validation interface:",
+                "description": "Review changes before they go live"
               },
               {
-                "title": "Automated reporting",
-                "description": "Personalized emissions reports that customers can download for their own analyses or regulatory needs."
+                "title": "Synchronization with quoting tool:",
+                "description": " Ensures consistency across offers"
               },
               {
-                "title": "Scenario simulation",
-                "description": "Evaluates alternative routes to identify potential emission and cost savings."
+                "title": "Intelligent alerts:",
+                "description": "Notifications of significant price changes"
               }
             ],
             "technologiesText": "Technologies",
-            "technologies": [
+            "technologies":[
               {
-                "title": "Emissions calculation",
-                "description": "EcoTransitIT"
+                "title": "Document Parsing:",
+                "description": "Python"
               },
               {
-                "title": "Front-end",
-                "description": "React"
-              },
-              {
-                "title": "Back-end",
+                "title": "Backend: ",
                 "description": "Node.js + Python"
               },
               {
-                "title": "Database",
-                "description": "PostgreSQL"
+                "title": "ERP integration:",
+                "description": "API REST (Holded, Odoo, SAP)"
               },
               {
-                "title": "Visualization",
-                "description": "Power BI & Looker Studio"
-              }
-            ]
-          }
-        },
-        {
-          "types": ["A", "D"],
-          "question": "Low Idle Time: Organize, Optimize & Deliver",
-          "answer": {
-            "challengeDescription": "Carriers often face long waiting times for loading and unloading, hurting productivity and adding extra costs. Inefficient dock-door management leads to congestion and delays.",
-            "solutionText": "Solution",
-            "solutionDescription": "We rolled out an appointment-scheduling system that streamlines carrier flow at docks, cutting waiting times by 32 %. The result: higher fleet productivity and greater satisfaction for drivers and customers alike.",
-            "functionalitiesText": "Features",
-            "functionalities": [
-              {
-                "title": "Loading appointment management (Time Slot Management)",
-                "description": "Lets carriers book specific time slots to prevent bottlenecks at loading and unloading points."
+                "title": "Review interface:",
+                "description": "React.js"
               },
               {
-                "title": "Real-time notifications",
-                "description": "Instant alerts to drivers and warehouse staff about any appointment changes or updates."
+                "title": "Notifications:",
+                "description": "Email + Slack API"
               },
               {
-                "title": "Operational-flow optimization",
-                "description": "Tools to prioritize urgent loads and distribute drivers efficiently."
-              },
-              {
-                "title": "Productivity reporting",
-                "description": "Metrics on dock-door utilization and average loading/unloading times."
-              }
-            ],
-            "technologiesText": "Technologies",
-            "technologies": [
-              {
-                "title": "Front-end",
-                "description": "React"
-              },
-              {
-                "title": "Back-end",
-                "description": "Node.js + Python"
-              },
-              {
-                "title": "Calendar",
-                "description": "Google Calendar API"
-              },
-              {
-                "title": "Notifications",
-                "description": "WhatsApp Business API"
-              },
-              {
-                "title": "Reporting",
-                "description": "Looker Studio"
-              },
-              {
-                "title": "Algorithms",
-                "description": "Overlap control and time-window validation"
-              }
-            ]
-          }
-        },
-        {
-          "types": ["B", "D", "E"],
-          "question": "Full customer access: transparency and trust in every delivery",
-          "answer": {
-            "challengeDescription": "The luxury-furniture receiving process faced issues validating product condition, quality, and specifications. Without visual proof during receiving and handling, claims with suppliers and insurers became cumbersome, creating logistical headaches. Customers also lacked direct access to visual records and status information.",
-            "solutionText": "Solution",
-            "solutionDescription": "We implemented an end-to-end validation system at the luxury-furniture receiving area, featuring an automated recording station directly connected to the warehouse-management system. A customer portal lets clients view recordings and reports in real time, streamlining communication and claims with suppliers. Results: 100 % product traceability, 50 % faster incident resolution, and a 40 % boost in customer satisfaction.",
-            "functionalitiesText": "Features",
-            "functionalities": [
-              {
-                "title": "Validation station",
-                "description": "Physical and digital verification of furniture (dimensions, finishes, materials)."
-              },
-              {
-                "title": "Automated recording system",
-                "description": "Captures images and video throughout receiving."
-              },
-              {
-                "title": "Customer portal",
-                "description": "Real-time access to recordings and reports."
-              },
-              {
-                "title": "Digital checklist",
-                "description": "Structured validation of attributes linked to the ERP."
-              },
-              {
-                "title": "Warehouse integration",
-                "description": "Syncs with the inventory system to reflect item status and location."
-              },
-              {
-                "title": "Automated reports",
-                "description": "Generates visual reports for internal and external use."
-              }
-            ],
-            "technologiesText": "Technologies",
-            "technologies": [
-              {
-                "title": "Multimedia capture",
-                "description": "IP camera & scheduled-recording software"
-              },
-              {
-                "title": "Front-end",
-                "description": "React"
-              },
-              {
-                "title": "Back-end",
-                "description": "Node.js + Python"
-              },
-              {
-                "title": "Database",
-                "description": "PostgreSQL"
-              },
-              {
-                "title": "ERP",
-                "description": "Odoo / SAP Business One"
-              },
-              {
-                "title": "Visualization & customer portal ",
-                "description": "Power BI & custom WebApp"
-              },
-              {
-                "title": "Warehouse integration",
-                "description": "Amphora Logistics"
-              }
-            ]
-          }
-        },
-        {
-          "types": ["B"],
-          "question": "Centralize Work Orders for complex Operations",
-          "answer": {
-            "challengeDescription": "Managing work orders across different stages (loading, transport, unloading) caused misalignment among departments, leading to operational errors, delays, and a lack of end-to-end visibility over progress. Each team used separate systems or documents, making traceability and real-time decision-making difficult.",
-            "solutionText": "Solution",
-            "solutionDescription": "We designed a modular solution built on a collaborative workflow platform that connects every department involved in day-to-day operations. Using a “dynamic Kanban” work-order system, each order moves through states (pending, loading, in transit, delivered) with real-time visibility for warehouse, transport, and customer-service teams. A traceability layer logs every status change, execution time, and task owner automatically.",
-            "functionalitiesText": "Features",
-            "functionalities": [
-              {
-                "title": "Centralized work-order platform",
-                "description": "A single system where all areas can see the status and progress of every work order."
-              },
-              {
-                "title": "Visual workflows",
-                "description": "Dynamic Kanban boards tailored to each logistics phase."
-              },
-              {
-                "title": "Automatic status updates",
-                "description": "Stage changes sync in real time and are visible to all authorized users."
-              },
-              {
-                "title": "Smart alerts",
-                "description": "Automatic notifications for delays, incidents, or blocked tasks."
-              },
-              {
-                "title": "Complete activity history",
-                "description": "Logs of status changes, timestamps, and responsible parties for internal traceability and audits."
-              }
-            ],
-            "technologiesText": "Technologies",
-            "technologies": [
-              {
-                "title": "Workflow platform",
-                "description": "Custom Trello-like UI (React + drag-and-drop libraries)"
-              },
-              {
-                "title": "Front-end",
-                "description": "React"
-              },
-              {
-                "title": "Back-end",
-                "description": "Node.js + Python (FastAPI)"
-              },
-              {
-                "title": "Database",
-                "description": "PostgreSQL"
-              },
-              {
-                "title": "Notification automation",
-                "description": "Firebase Cloud Messaging & SendGrid email"
+                "title": "Security:",
+                "description": "HTTPS + encryption of sensitive files in transit and at rest"
               }
             ]
           }
