@@ -11,6 +11,7 @@
     "cookies":"Política de cookies",
     "notice":"Aviso legal",
     "logistics": "Logística",
+    "retail": "Retail",
     "CTO" : "CTO as a service",
     "software": "Ingenieria software",
     "tech_consulting": "Consultoría tecnologica",
@@ -2116,6 +2117,752 @@
           "type": "Aplicación",
           "cards": [
           
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "¿Cómo trabajamos?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
+        },
+        {
+          "title": "Diseño y arquitectura",
+          "description": "Definición de requisitos, creación de un prototipo y diseño de integraciones con sistemas actuales."
+        },
+        {
+          "title": "Implementación",
+          "description": "Programación, pruebas funcionales, integración con plataformas externas y despliegue en producción."
+        },
+        {
+          "title": "Soporte y mantenimiento",
+          "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "¿Qué necesito para hacer un <span>producto digital</span>?",
+      "description": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
+      "buttonText": "Como podemos ayudarte",
+      "cards": [
+        {
+          "title": "Ingeniería de software",
+          "description": "Desde integrar diferentes herramientas, desarrollar nuevas características y productos hasta monitorear y mantener un producto, estamos listos para ello. Nuestro equipo de ingeniería de software está compuesto por desarrolladores, arquitectos y testers para construir necesidades con tecnología de actual."
+        },
+        {
+          "title": "Ciberseguridad",
+          "description": "La seguridad de la información ya no está en la hoja de ruta. La ciberseguridad es una NECESIDAD en todos los negocios y todas las empresas deben tener el conocimiento, las herramientas y los procesos para evitar o minimizar los ataques."
+        },
+        {
+          "title": "Consultoría tecnologica",
+          "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
+        }
+      ]
+    }
+  },
+  "cases-retail":{
+    "title": "Soluciones de software para retail o ecommerce | Gigson Solutions",
+    "metadescription": "Impulsa tu negocio ecommerce con la tecnología que necesitas. Integramos sistemas, automatizamos procesos y optimizamos tu gestión tecnológica",
+    "hero": {
+      "suptitle":"RETAIL & ECOMMERCE",
+      "title": "Software para retail <br> <span> y ecommerce </span>",
+      "description": "Technology is transforming retail and ecommerce at breakneck speed. And it's not just about selling online: it’s about integrating systems, automating processes, analyzing real-time data, and delivering customer experiences that are smooth, consistent, and profitable. At Gigson Solutions, we help retail businesses digitize strategically—connecting all the moving parts so that technology becomes an advantage, not a hurdle.",
+      "buttonText": "How we help"
+    },
+    "useCases": {
+      "title": "Casos Claves",
+      "description": "Descubre cómo hemos ayudado a empresas a resolver desafíos desde el diseño hasta la obra mediante soluciones tecnológicas personalizadas. Cada caso refleja nuestro compromiso con la eficiencia, la integración y los resultados medibles.",
+      "cards": [
+        {
+          "title": "Asistente AI para atención al cliente postventa",
+          "supTitle": "Desafio",
+          "description": "Manejar servios al cliente post-ventas mediante email o mensajes manuales era lento, costoso y daba a errores facilmente",
+          "dialog": {
+            "backButtonText": "Casos Clave",
+            "title": "Asistente AI para atención al cliente postventa ",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "La atención al cliente postventa (estado del pedido, devoluciones, cambios) consume muchos recursos humanos y no escala bien en campañas o rebajas.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Chat AI 24/7:",
+                "description": "Capaz de responder en varios idiomas y conectado al ERP/logística."
+              },
+              {
+                "title": "Escalado inteligente:",
+                "description": "Redirige al equipo sólo si no puede resolver la petición."
+              },
+              {
+                "title": "Gestión de tickets integrada:",
+                "description": "Crea o actualiza casos directamente en el CRM."
+              },
+              {
+                "title": "Análisis de interacciones:",
+                "description": "Métricas de satisfacción, tiempo de respuesta y temas recurrentes."
+              }
+            ],
+            "solutionText": "Solution",
+            "solutionDescription": "mplementamos un asistente con IA entrenado con los datos de producto, logística y políticas comerciales de la empresa. El chatbot está integrado en el portal de cliente y puede ofrecer respuestas específicas según cada pedido y su estado de entrega. Cuando es necesario, crea tickets para el equipo de soporte humano. Los tiempos de primera respuesta se redujeron en un 80% y el volumen de tickets bajó un 35%.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "LLM: ",
+                "description": "GPT-4 via Azure OpenAI"
+              },
+              {
+                "title": "RAG engine:",
+                "description": "LangChain + Pinecone"
+              },
+              {
+                "title": "Backend: ",
+                "description": "Node.js"
+              },
+              {
+                "title": "Frontend:",
+                "description": " React widget embedded in customer portal"
+              },
+              {
+                "title": "CRM integration: ",
+                "description": " HubSpot, Zoho"
+              },
+              {
+                "title": " Ticketing:",
+                "description": " Freshdesk / Zendesk"
+              },
+              {
+                "title": "Hosting:",
+                "description": "Vercel / AWS Lambda"
+              },
+              {
+                "title": "Analytics: ",
+                "description": "Google Analytics, Looker Studio"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Etiquetado inteligente en almacén para reducir errores de picking",
+          "supTitle": "Desafio",
+          "description": "El etiquetado manual ralentizaba las operaciones del almacén y provocaba errores en la trazabilidad y clasificación de productos.",
+          "dialog": {
+            "backButtonText": "Casos Clave",
+            "title": "Etiquetado inteligente en almacén para reducir errores de picking",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "Los errores en el picking generan devoluciones, mal servicio y pérdida de confianza. La gestión manual del etiquetado y la identificación de productos suele ser la causa más frecuente.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Etiquetas dinámicas (QR/RFID): ",
+                "description": "Generadas desde el ERP, personalizadas por lote y canal."
+              },
+              {
+                "title": "Validación en tiempo real:",
+                "description": "Confirmación automática al escanear durante el picking."
+              },
+              {
+                "title": "Trazabilidad total: ",
+                "description": "Seguimiento de cada unidad desde el almacén hasta la entrega."
+              },
+              {
+                "title": "Integración logística:",
+                "description": "Compatible con WMS y plataformas de envío."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Implementamos un sistema de etiquetado inteligente que genera códigos únicos (QR o RFID) vinculados en tiempo real al ERP. Los operarios escanean los productos durante el picking y el sistema valida automáticamente si son los correctos. Se redujeron los errores de preparación de pedidos en un 35% y se aceleró la operativa en un 20%.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "ERP: ",
+                "description": " Business Central / Odoo"
+              },
+              {
+                "title": "Backend:",
+                "description": "Python + FastAPI"
+              },
+              {
+                "title": "Hardware: ",
+                "description": "lectores QR o RFID industriales"
+              },
+              {
+                "title": "Base de datos: ",
+                "description": " PostgreSQL"
+              },
+              {
+                "title": "App móvil: ",
+                "description": "React Native"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Programa de fidelización integrado con CRM y plataformas de venta",
+          "supTitle": "Desafío",
+          "description": "Los sistemas de fidelización traducional suelen fallar en adaptar diferentes perfiles y comportamientos de los clientes, limitando el engagement y reduciendo el ROI.",
+          "dialog": {
+            "backButtonText": "Casos Clave",
+            "title": "Programa de fidelización integrado con CRM y plataformas de venta ",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "Muchos comercios tienen programas de puntos o descuentos que no están conectados a su CRM ni a sus canales de venta (tienda física, ecommerce, marketplaces), lo que dificulta ofrecer promociones personalizadas y medir el impacto real en la recurrencia.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Integración CRM-ecommerce:",
+                "description": " Puntos y recompensas ligados al historial de compras del cliente."
+              },
+              {
+                "title": "Multicanalidad:",
+                "description": "Fidelización válida en tienda física, web y marketplaces."
+              },
+              {
+                "title": "Motor de promociones personalizadas: ",
+                "description": "Segmentación por hábitos, recurrencia o ticket medio."
+              },
+              {
+                "title": "Reportes y análisis:",
+                "description": "Impacto en la tasa de recompra, valor del cliente (LTV) y ROI de las campañas."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Desarrollamos un sistema de fidelización conectado con el CRM y los canales de venta, que asigna puntos o beneficios automáticamente según las compras realizadas. Los datos se sincronizan con el historial del cliente para personalizar campañas, promociones y recomendaciones. Esto aumentó la recurrencia en un 25% y mejoró la tasa de conversión de campañas en un 40%.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "CRM:",
+                "description": "HubSpot"
+              },
+              {
+                "title": "eCcommerce: ",
+                "description": "Shopify, WooCommerce, Prestashop"
+              },
+              {
+                "title": "Backend: ",
+                "description": "Node.js"
+              },
+              {
+                "title": "Visualización: ",
+                "description": "Power BI"
+              },
+              {
+                "title": "Integraciones: ",
+                "description": "REST API bidireccional"
+              }
+            ]
+          }
+        },
+        {
+          "title": "Controla tus ventas: desde tu web hasta El Corte Inglés",
+          "supTitle": "Desafio",
+          "buttonText": "Ver caso",
+          "description": "Desconexión entre un e-commerce propio, marketplaces y puntos de venta de terceros sin un control centralizado de inventario y ventas.",
+          "dialog": {
+            "backButtonText": "Casos Clave",
+            "title": "Controla tus ventas: desde tu web hasta El Corte Inglés",
+            "quote": "",
+            "challengeText": "Desafío",
+            "challengeDescription": "La empresa vende a través de múltiples canales: tienda online, marketplaces como Amazon, y puntos de venta físicos y digitales de terceros. La falta de control directo sobre inventarios y ventas en estos canales genera desconexión, sobreventas, retrasos en envíos y una experiencia fragmentada tanto para el equipo interno como para el cliente final.",
+            "functionalitiesText": "Funcionalidades",
+            "functionalities": [
+              {
+                "title": "Integración multicanal:",
+                "description": "Conexión entre tienda online, marketplaces y sistemas de inventario externos mediante API, permitiendo sincronización bidireccional de stock y pedidos."
+              },
+              {
+                "title": "Panel de control centralizado: ",
+                "description": "Visualización de inventarios, pedidos y ventas desde una interfaz única, con filtros por canal, categoría y estado."
+              },
+              {
+                "title": "Alertas automáticas de stock:",
+                "description": "Notificaciones configurables por producto, canal o almacén para anticiparse a roturas de inventario."
+              },
+              {
+                "title": "Gestión de devoluciones unificada:",
+                "description": "Recepción y tratamiento de devoluciones desde todos los canales en una única interfaz conectada con operadores logísticos y ERP."
+              }
+            ],
+            "solutionText": "Solución",
+            "solutionDescription": "Se desarrolló una integración multicanal que conecta todas las plataformas de venta con el ERP, permitiendo sincronizar pedidos e inventarios en tiempo real. Esta solución mejoró la precisión en la gestión de stock, redujo las incidencias por sobreventa y facilitó el control centralizado del rendimiento de cada canal. Además, se unificó la gestión de devoluciones, agilizando su procesamiento y trazabilidad.",
+            "technologiesText": "Tecnologías",
+            "technologies": [
+              {
+                "title": "Integraciones multicanal: ",
+                "description": "Shopify API, Amazon SP-API, Mirakl API"
+              },
+              {
+                "title": "ERP:",
+                "description": "Holded, Odoo"
+              },
+              {
+                "title": "Frontend:",
+                "description": "React"
+              },
+              {
+                "title": "Backend: ",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Base de datos: ",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Visualización: ",
+                "description": " Power BI + Looker Studio"
+              },
+              {
+                "title": "Automatización de flujos: ",
+                "description": "Make.com + cron jobs"
+              },
+              {
+                "title": "Notificaciones: ",
+                "description": "Twilio + WhatsApp Business API"
+              },
+              {
+                "title": "Gestión de devoluciones: ",
+                "description": "APIs de operadores logísticos de SEUR y Correos Express"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "improveAreas": {
+      "title" : "Areas",
+      "filtersText": "Filters",
+      "applyFiltersText": "Apply filters",
+      "filtersClearAllText": "Clear all",
+      "painPoints": [
+        {
+          "type": "A",
+          "name": "Resource optimization"
+        },
+        {
+          "type": "B",
+          "name": "Automation of manual processes"
+        },
+        {
+          "type": "C",
+          "name": "Sustainability"
+        },
+        {
+          "type": "D",
+          "name": "Data visibility"
+        },
+        {
+          "type": "E",
+          "name": "Comply with regulations"
+        }
+      ],
+      "faqs": [
+        {
+          "types": ["A", "B", "C"],
+          "question": "Hassle-free Route Assignment: Faster, More Efficient",
+          "answer": {
+            "challengeDescription": "Manual route planning and resource allocation (vehicles and drivers) was slow, labor-intensive, and error-prone. The operations manager had to individually review staff availability, required vehicle types, and delivery characteristics, delaying operations and inflating operating costs.",
+            "solutionText": "Solution",
+            "solutionDescription": "We built an integrated system that automatically matches routes and resources by cross-referencing staff and fleet availability with each delivery’s requirements. The system optimizes load capacity, prioritizes deliveries by urgency, and ensures assignments comply with rest and safety regulations. The results: a 25 % reduction in planning time, a 15 % boost in resource utilization, and 20 % more on-time deliveries.",
+            "functionalitiesText": "Features",
+            "functionalities": [
+              {
+                "title": "Staff availability",
+                "description": "Automated engine that tracks schedules, breaks, and certifications alongside fleet details such as vehicle type, load capacity, and operational status."
+              },
+              {
+                "title": "Route assignment",
+                "description": "Dynamic routing based on <span>delivery volume and type</span> (order size, removals, hazardous goods, etc.)."
+              },
+              {
+                "title": "Notifications",
+                "description": "Automatic alerts for drivers and managers as soon as routes are assigned."
+              },
+              {
+                "title": "Control panel",
+                "description": "Real-time dashboard to reschedule routes in case of unforeseen events (traffic conditions, last-minute priorities, breakdowns, etc.)."
+              },
+              {
+                "title": "Vehicle-load optimization",
+                "description": "Automatically adjusts the number and type of vehicles assigned according to total volume and weight, maximizing load capacity."
+              },
+              {
+                "title": "Automated productivity reporting",
+                "description": "Auto-generated reports that track system efficiency (kilometers driven, resources used, and time per delivery)."
+              }
+            ],
+            "technologiesText": "Technologies",
+            "technologies": [
+              {
+                "title": "TMS",
+                "description": "Geotab & Google Maps API"
+              },
+              {
+                "title": "RRHH",
+                "description": "Personio"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Database",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Notificaciones",
+                "description": "WhatsApp Business API"
+              },
+              {
+                "title": "Reporting",
+                "description": "Looker"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B", "C", "D"],
+          "question": "Transparency in each kilometer",
+          "answer": {
+            "challengeDescription": "With a growing fleet, our client needed to shrink its carbon footprint to meet internal sustainability targets, enhance its reputation with B2B customers and regulators, and make operations fully transparent. Lacking tools to calculate emissions, optimize routes, and deliver detailed reports to customers, transport operations were inefficient and opaque.",
+            "solutionText": "Solution",
+            "solutionDescription": "We deployed a comprehensive sustainability module that not only calculates and reduces CO₂ emissions but also lets customers access their reports through a personalized portal. This delivered greater transparency and trust—customers can now see the environmental impact of their shipments. As a result, Martínez Marcos cut emissions by 15 %, improved operational efficiency, and strengthened customer relationships through a more transparent, responsible approach.",
+            "functionalitiesText": "Features",
+            "functionalities": [
+              {
+                "title": "Carbon-footprint calculation",
+                "description": "Tool that measures CO₂ emissions per trip based on vehicle type and fuel."
+              },
+              {
+                "title": "Sustainable route optimization",
+                "description": "Identifies routes that reduce distance traveled and optimize fuel usage."
+              },
+              {
+                "title": "Customer portal",
+                "description": "Direct, transparent access for customers to view real-time emissions reports, routes used, and sustainability metrics."
+              },
+              {
+                "title": "Automated reporting",
+                "description": "Personalized emissions reports that customers can download for their own analyses or regulatory needs."
+              },
+              {
+                "title": "Scenario simulation",
+                "description": "Evaluates alternative routes to identify potential emission and cost savings."
+              }
+            ],
+            "technologiesText": "Technologies",
+            "technologies": [
+              {
+                "title": "Emissions calculation",
+                "description": "EcoTransitIT"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Database",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Visualization",
+                "description": "Power BI & Looker Studio"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["A", "D"],
+          "question": "Low Idle Time: Organize, Optimize & Deliver",
+          "answer": {
+            "challengeDescription": "Carriers often face long waiting times for loading and unloading, hurting productivity and adding extra costs. Inefficient dock-door management leads to congestion and delays.",
+            "solutionText": "Solution",
+            "solutionDescription": "We rolled out an appointment-scheduling system that streamlines carrier flow at docks, cutting waiting times by 32 %. The result: higher fleet productivity and greater satisfaction for drivers and customers alike.",
+            "functionalitiesText": "Features",
+            "functionalities": [
+              {
+                "title": "Loading appointment management (Time Slot Management)",
+                "description": "Lets carriers book specific time slots to prevent bottlenecks at loading and unloading points."
+              },
+              {
+                "title": "Real-time notifications",
+                "description": "Instant alerts to drivers and warehouse staff about any appointment changes or updates."
+              },
+              {
+                "title": "Operational-flow optimization",
+                "description": "Tools to prioritize urgent loads and distribute drivers efficiently."
+              },
+              {
+                "title": "Productivity reporting",
+                "description": "Metrics on dock-door utilization and average loading/unloading times."
+              }
+            ],
+            "technologiesText": "Technologies",
+            "technologies": [
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Calendar",
+                "description": "Google Calendar API"
+              },
+              {
+                "title": "Notifications",
+                "description": "WhatsApp Business API"
+              },
+              {
+                "title": "Reporting",
+                "description": "Looker Studio"
+              },
+              {
+                "title": "Algorithms",
+                "description": "Overlap control and time-window validation"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B", "D", "E"],
+          "question": "Full customer access: transparency and trust in every delivery",
+          "answer": {
+            "challengeDescription": "The luxury-furniture receiving process faced issues validating product condition, quality, and specifications. Without visual proof during receiving and handling, claims with suppliers and insurers became cumbersome, creating logistical headaches. Customers also lacked direct access to visual records and status information.",
+            "solutionText": "Solution",
+            "solutionDescription": "We implemented an end-to-end validation system at the luxury-furniture receiving area, featuring an automated recording station directly connected to the warehouse-management system. A customer portal lets clients view recordings and reports in real time, streamlining communication and claims with suppliers. Results: 100 % product traceability, 50 % faster incident resolution, and a 40 % boost in customer satisfaction.",
+            "functionalitiesText": "Features",
+            "functionalities": [
+              {
+                "title": "Validation station",
+                "description": "Physical and digital verification of furniture (dimensions, finishes, materials)."
+              },
+              {
+                "title": "Automated recording system",
+                "description": "Captures images and video throughout receiving."
+              },
+              {
+                "title": "Customer portal",
+                "description": "Real-time access to recordings and reports."
+              },
+              {
+                "title": "Digital checklist",
+                "description": "Structured validation of attributes linked to the ERP."
+              },
+              {
+                "title": "Warehouse integration",
+                "description": "Syncs with the inventory system to reflect item status and location."
+              },
+              {
+                "title": "Automated reports",
+                "description": "Generates visual reports for internal and external use."
+              }
+            ],
+            "technologiesText": "Technologies",
+            "technologies": [
+              {
+                "title": "Multimedia capture",
+                "description": "IP camera & scheduled-recording software"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python"
+              },
+              {
+                "title": "Database",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "ERP",
+                "description": "Odoo / SAP Business One"
+              },
+              {
+                "title": "Visualization & customer portal ",
+                "description": "Power BI & custom WebApp"
+              },
+              {
+                "title": "Warehouse integration",
+                "description": "Amphora Logistics"
+              }
+            ]
+          }
+        },
+        {
+          "types": ["B"],
+          "question": "Centralize Work Orders for complex Operations",
+          "answer": {
+            "challengeDescription": "Managing work orders across different stages (loading, transport, unloading) caused misalignment among departments, leading to operational errors, delays, and a lack of end-to-end visibility over progress. Each team used separate systems or documents, making traceability and real-time decision-making difficult.",
+            "solutionText": "Solution",
+            "solutionDescription": "We designed a modular solution built on a collaborative workflow platform that connects every department involved in day-to-day operations. Using a “dynamic Kanban” work-order system, each order moves through states (pending, loading, in transit, delivered) with real-time visibility for warehouse, transport, and customer-service teams. A traceability layer logs every status change, execution time, and task owner automatically.",
+            "functionalitiesText": "Features",
+            "functionalities": [
+              {
+                "title": "Centralized work-order platform",
+                "description": "A single system where all areas can see the status and progress of every work order."
+              },
+              {
+                "title": "Visual workflows",
+                "description": "Dynamic Kanban boards tailored to each logistics phase."
+              },
+              {
+                "title": "Automatic status updates",
+                "description": "Stage changes sync in real time and are visible to all authorized users."
+              },
+              {
+                "title": "Smart alerts",
+                "description": "Automatic notifications for delays, incidents, or blocked tasks."
+              },
+              {
+                "title": "Complete activity history",
+                "description": "Logs of status changes, timestamps, and responsible parties for internal traceability and audits."
+              }
+            ],
+            "technologiesText": "Technologies",
+            "technologies": [
+              {
+                "title": "Workflow platform",
+                "description": "Custom Trello-like UI (React + drag-and-drop libraries)"
+              },
+              {
+                "title": "Front-end",
+                "description": "React"
+              },
+              {
+                "title": "Back-end",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Database",
+                "description": "PostgreSQL"
+              },
+              {
+                "title": "Notification automation",
+                "description": "Firebase Cloud Messaging & SendGrid email"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "solutionsApplications": {
+      "title": "Soluciones tecnológicas <span> para negocios retail </span>",
+      "subTitle": "Desarrollamos software para retail y ecommerce que necesitan eficiencia, escalabilidad y control sobre sus operaciones. Desde la integración con sistemas clave hasta la analítica avanzada, cubrimos todo el ciclo tecnológico de un negocio conectado.",
+      "containers": [
+        {
+          "title": "Integración de sistemas de negocio",
+          "description": "Si operas con herramientas desconectadas entre sí, se pueden cometer errores, pérdida de datos y que esto lleve a decisiones tomadas a ciegas. Nos encargamos de integrar todos tus sistemas ERP, ecommerce, logística, facturación; para que toda la información fluya y puedas tomar decisiones con una visión global del negocio.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "ERP + Ecommerce: SAP, Odoo, Dynamics",
+              "description": "Integramos tu tienda online con los principales sistemas ERP del mercado para automatizar procesos clave: actualización de stock, facturación, gestión de pedidos y más."
+            },
+            {
+              "title": "Conexión con sistemas de logística y almacén (WMS, TMS)",
+              "description": "Conectamos tu ecommerce con sistemas de gestión de almacenes y transporte para sincronizar entradas, salidas y entregas sin fricciones."
+            },
+            {
+              "title": "Sincronización con sistemas de facturación y contabilidad",
+              "description": "Automatizamos la generación y gestión de facturas, conciliaciones y reportes contables para que tus datos financieros estén siempre al día."
+            }
+          ]
+        },
+          {
+          "title": "Automatizar procesos de retail",
+          "description": "La eficiencia en retail ya no es una opción: es una necesidad. Automatizamos tareas repetitivas y procesos operativos para que tu equipo se centre en lo que realmente aporta valor.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Automatización de gestión de stock",
+              "description": "Reducimos errores humanos y optimizamos la disponibilidad de productos gracias a sistemas que actualizan el inventario en tiempo real."
+            },
+            {
+              "title": "Sistemas de reabastecimiento predictivo",
+              "description": "Implementamos algoritmos que anticipan la demanda y activan pedidos automáticos según el histórico de ventas y las tendencias de consumo."
+            }
+          ]
+        },
+          {
+          "title": "Analítica avanzada y Business Intelligence",
+          "description": "La información sin contexto no sirve de nada. Desarrollamos sistemas de análisis que te permiten entender mejor a tus clientes, medir el rendimiento del negocio y tomar decisiones basadas en datos reales.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Análisis del ciclo de vida del cliente LTV, RFM, cohortes",
+              "description": "Identificamos patrones de comportamiento y segmentamos a tus clientes según su valor, frecuencia de compra y momento dentro del ciclo de vida."
+            },
+            {
+              "title": "Dashboards de datos personalizados",
+              "description": "Diseñamos paneles de control adaptados a tus métricas clave, para que puedas consultar en un solo lugar lo que realmente importa."
+            }
+          ]
+        },
+        {
+          "title": "Experiencia de cliente y  omnicanalidad",
+          "description": "Hoy el cliente espera poder comprar online, recoger en tienda o devolver por mensajero. Y espera que lo conozcas en todos los canales. Creamos sistemas que unifican la experiencia de usuario, permitiendo una gestión omnicanal sin duplicidades ni desconexiones.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Unificación de canales de venta",
+              "description": "Conectamos tus puntos de venta físicos, ecommerce, marketplaces y apps para ofrecer una experiencia coherente y sincronizada"
+            },
+            {
+              "title": "Single customer view",
+              "description": "Creamos una base de datos centralizada que reúne toda la información de cada cliente, independientemente del canal por el que interactúe"
+            }
+          ]
+        },
+        {
+          "title": "IA aplicada a retail y ecommerce",
+          "description": "La inteligencia artificial permite automatizar decisiones, personalizar la experiencia de cliente y anticiparse a la demanda. En Solutions aplicamos IA de forma pragmática, con soluciones que tienen impacto directo en las ventas y la operativa diaria.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Chatbots inteligentes para atención y venta",
+              "description": "Desarrollamos asistentes virtuales capaces de resolver dudas, recomendar productos o la funcionalidad que tu negocio necesite."
+            },
+            {
+              "title": "Previsión de demanda y optimización de stock",
+              "description": "Usamos modelos predictivos para ajustar la oferta de productos a la demanda real, reduciendo roturas de stock y sobrecostes."
+            }
+          ]
+        },
+        {
+          "title": "Ciberseguridad y cumplimiento normativo",
+          "description": "Protegemos tu negocio y tus datos para que puedas escalar sin riesgos, y cumpliendo con las normativas.",
+          "type": "Aplicación",
+          "cards": [
+            {
+              "title": "Seguridad en pasarelas de pago y transacciones",
+              "description": "Implementamos medidas de protección avanzadas para garantizar pagos seguros y reducir el riesgo de fraude."
+            },
+            {
+              "title": "Auditorías de seguridad en entornos ecommerce",
+              "description": "Revisamos la configuración de tu infraestructura para detectar vulnerabilidades y aplicar buenas prácticas de seguridad."
+            },
+            {
+              "title": "Protección de datos personales (GDPR)",
+              "description": "Te ayudamos a cumplir con el Reglamento General de Protección de Datos, desde la recogida hasta el almacenamiento y tratamiento de la información."
+            }
           ]
         }
       ]
