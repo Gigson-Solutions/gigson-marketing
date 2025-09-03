@@ -11,7 +11,11 @@
     "cookies":"Cookies Policy",
     "notice":"Legal Notice",
     "logistics": "Logistics",
-    "construction": "construction-technology"
+    "CTO": "CTO as a service",
+    "tech_consulting": "Technology consulting",
+    "construction": "Construction-technology",
+    "software": "Software engineering",
+    "cibersecurity": "Cybersecurity"
   },
   "hero_link": "/contact",
   "home":{
@@ -1292,773 +1296,379 @@
     "title": "Logistics & Intralogistics Technology  | Gigson Solutions",
     "metadescription": "Optimize your supply chain with tailored tech solutions: greater efficiency, traceability, and control—no need for big-name integrators.",
     "hero": {
-      "suptitle":"LOGÍSTICA Y FULFILLMENT",
-      "title": "Consultoría tecnológica <br> <span> en construcción </span>",
-      "description": "Digitalizar una constructora no es solo implantar un software de gestión de obras: es alinear herramientas, procesos y equipos. En Gigson Solutions, te ayudamos a integrar tecnología sin fricciones, adaptada a los ritmos, retos y particularidades del sector construcción.nes, asegurando que se adapten a la estructura del negocio. ",
-      "buttonText": "Como podemos ayudarte"
+      "suptitle":"ARCHITECTURE & CONSTRUCTION",
+      "title": "Tech consulting <span> in construction </span>",
+      "description": "A digitalized construction company isn’t just installing site management software: it’s aligning tools, processes, and teams. At Gigson Solutions we help you plug in tech with no friction, tuned to the pace, challenges, and quirks of construction ensuring it fits your business structure.  ",
+      "buttonText": "Contact us"
     },
     "useCases": {
-      "title": "Casos clave",
+      "title": "Key Cases",
       "description": "Descubre cómo hemos ayudado a empresas a resolver desafíos logísticos complejos mediante soluciones tecnológicas personalizadas. Cada caso refleja nuestro compromiso con la eficiencia, la integración y los resultados medibles.",
       "cards": [
         {
-          "title": "Optimización de Rutas con TMS Básico",
-          "supTitle": "Desafío",
-          "description": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente ",
+          "title": "Tender Search with AI",
+          "supTitle": "Challenge",
+          "description": "Automatically detect relevant public tenders for a construction company using AI agents that scan official bulletins and structure the data in a custom vector database.",
           "dialog": {
-            "backButtonText": "Casos de uso",
-            "title": "Fichar nunca fue tan fácil: WhatsApp y listo",
+            "backButtonText": "Use Cases",
+            "title": "Tender Search with AI",
             "quote": "",
-            "challengeText": "Desafío",
-            "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
-            "functionalitiesText": "Funcionalidades",
-            "functionalities": [
+            "challengeText": "Challenge",
+            "challengeDescription": "Construction firms miss out on bidding opportunities because reviewing all official bulletins daily (BOE, DOUE, provincial BOPs, regional diaries, etc.) is too time‑consuming. The goal was to build a system that could read, filter, classify, and prioritize tenders autonomously based on each company’s profile, size, experience, business category, and geographic areas.",
+            "functionalitiesText": "Funcionalities",
+            "functionalities": [         
               {
-                "title": "Fichaje a través de WhatsApp",
-                "description": "Los empleados pueden registrar su inicio y fin de jornada, descansos y actividades directamente enviando un mensaje a un bot automatizado en WhatsApp."
+                "title": "Distributed multi-agent system",
+                "description": "Individual agents crawl specific sources (BOE, DOGC, DOE, etc.) to balance load."
               },
               {
-                "title": "Reconocimiento de ubicación",
-                "description": "Validación de la ubicación del fichaje para garantizar que se realiza en los puntos designados (oficinas, almacenes o rutas autorizadas)."
+                "title": "Intelligent OCR & NLP",
+                "description": "Reads scanned PDFs, extracting calls for tender, key dates, CPV codes, technical/admin requirements, and award criteria."
               },
               {
-                "title": "Integración con sistemas de nóminas",
-                "description": "Conexión directa con el software de gestión de nóminas para sincronizar automáticamente las horas trabajadas, horas extras y días de descanso."
+                "title": "Custom vector store",
+                "description": "Semantic index organized by company profile, enabling natural-language queries."
               },
               {
-                "title": "Panel de supervisión",
-                "description": "Herramienta para los gestores que permite visualizar los registros en tiempo real, generar reportes y corregir incidencias."
+                "title": "Alerts & recommendations engine",
+                "description": "Automatic delivery of opportunities based on sector, region, project size, and past wins."
               },
               {
-                "title": "Alertas automáticas",
-                "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales."
+                "title": "Advanced user interface",
+                "description": "Filter by category, date, project type, budget; view history, favorites, tags; export tender documents."
+              },
+              {
+                "title": "Progressive training",
+                "description": "System refines results over time by learning which tenders are saved, ignored, or won."
               }
             ],
-            "solutionText": "Solución",
-            "solutionDescription": "Desarrollamos un sistema de fichaje basado en WhatsApp que se conecta directamente al software de nóminas de Martínez Marcos. Esto permitió automatizar el registro de horas, eliminando errores manuales y garantizando el cumplimiento normativo. Además, la solución es accesible y fácil de usar para los empleados, lo que aumentó la tasa de cumplimiento de fichajes en un 100%.",
-            "technologiesText": "Tecnologías",
+            "solutionText": "Solution",
+            "solutionDescription": "We designed a multi‑agent architecture that crawls every national and regional official bulletin each day. Each agent specializes in one source, using scraping, NLP, and OCR to extract relevant information. The data is normalized and stored in a semantic vector database. Via a web interface, users can query filtered tenders matching their profile and receive automated alerts from an AI engine that learns their project history, past experience, and geographic preferences.",
+            "technologiesText": "Technologies",
             "technologies": [
               {
-                "title": "Chat",
-                "description": "Whatsapp Business API + Twilio"
+                "title": "Multi-agents",
+                "description": "Python (Celery, AsyncIO) + Scrapy + distributed cron jobs"
               },
               {
-                "title": "Back-end",
-                "description": "Node.js"
+                "title": "OCR & NLP",
+                "description": "Tesseract OCR, spaCy, transformers (multilingual BERT)"
               },
               {
-                "title": "Dashboard",
-                "description": "React + Looker Studio"
+                "title": "Vector database",
+                "description": "Pinecone + OpenAI embeddings"
               },
               {
-                "title": "Base de datos",
-                "description": "PostgreSQL"
+                "title": "Frontend",
+                "description": "Next.js + Tailwind CSS with search and history dashboards"
               },
               {
-                "title": "ERP",
-                "description": "Holded y Odoo"
+                "title": "Backend",
+                "description": "FastAPI + PostgreSQL for structured metadata"
               },
               {
-                "title": "Notificaciones",
-                "description": "Twilio + email"
+                "title": "Hosting & scaling",
+                "description": "AWS (Fargate, Lambda) + email & Slack integrations"
+              },
+              {
+                "title": "Security",
+                "description": "OAuth2 with fine-grained role- and company-level access control"
+              },
+              {
+                "title": "Monitoring",
+                "description": "Prometheus & Grafana for crawl tracing and error alerts"
               }
             ]
           }
         },
       {
-          "title": "BIM product integration for architects and builders",
-          "supTitle": "Desafío",
-          "description": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento, manual y propenso a errores. ",
+          "title": "Intelligent AI‑Powered Construction Estimator for End Users",
+          "supTitle": "Challenge",
+          "description": "Enable end customers to get an indicative estimate for their renovation or construction project in seconds, without burdening the contractor. ",
           "dialog": {
-            "backButtonText": "Casos de uso",
-            "title": "FBIM product integration for architects and builders",
+            "backButtonText": "Use Cases",
+            "title": "Intelligent AI‑Powered Construction Estimator for End Users",
             "quote": "",
-            "challengeText": "Desafío",
-            "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. Actualmente, los métodos actuales eran manuales y carecen de integración automática con su sistema de nóminas y su ERP. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
-            "functionalitiesText": "Funcionalidades",
+            "challengeText": "Challenge",
+            "challengeDescription": "Many private clients wanting to renovate or build have no idea what their project might cost. By requesting several free quotes, companies incur high costs and clients delay decisions. The challenge was to create a fast, reliable tool that provides users with an indicative figure without extra work for the contractor.",
+            "functionalitiesText": "Funcionalities",
             "functionalities": [
               {
-                "title": "Fichaje a través de WhatsApp",
-                "description": "Los empleados pueden registrar su inicio y fin de jornada, descansos y actividades directamente enviando un mensaje a un bot automatizado en WhatsApp."
+                "title": "Smart chatbot",
+                "description": "Adapts its questions to the project type and user profile."
               },
               {
-                "title": "Reconocimiento de ubicación",
-                "description": "Validación de la ubicación del fichaje para garantizar que se realiza en los puntos designados (oficinas, almacenes o rutas autorizadas)."
+                "title": "Guided form",
+                "description": "Step-by-step flow for users who prefer a structured approach."
               },
               {
-                "title": "Integración con sistemas de nóminas",
-                "description": "Conexión directa con el software de gestión de nóminas para sincronizar automáticamente las horas trabajadas, horas extras y días de descanso."
+                "title": "Indicative estimate",
+                "description": "Breakdown of civil work, installations, materials, furnishings, etc."
               },
               {
-                "title": "Panel de supervisión",
-                "description": "Herramienta para los gestores que permite visualizar los registros en tiempo real, generar reportes y corregir incidencias."
+                "title": "Customizable parameters",
+                "description": "Quality levels, location, timelines, demolition work, property type, etc."
               },
               {
-                "title": "Alertas automáticas",
-                "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales."
+                "title": "Downloadable summary",
+                "description": "PDF budget to share or print."
+              },
+              {
+                "title": "Lead conversion",
+                "description": "Easy submission of data to the contractor for a real quote with a site visit."
               }
+
             ],
-            "solutionText": "Solución",
-            "solutionDescription": "Desarrollamos un sistema de fichaje basado en WhatsApp que se conecta directamente al software de nóminas de Martínez Marcos. Esto permitió automatizar el registro de horas, eliminando errores manuales y garantizando el cumplimiento normativo. Además, la solución es accesible y fácil de usar para los empleados, lo que aumentó la tasa de cumplimiento de fichajes en un 100%.",
-            "technologiesText": "Tecnologías",
+            "solutionText": "Solution",
+            "solutionDescription": "We developed a web‑based estimator accessible from any browser, combining a conversational form and an AI chatbot. Through guided questions or free conversation, the system collects key details (project type, square meters, finishes, location, timelines, etc.) and generates an indicative budget with a breakdown by category. This gives users an immediate reference to plan and decide before contacting the sales team.",
+            "technologiesText": "Technologies",
             "technologies": [
               {
-                "title": "Chat",
-                "description": "Whatsapp Business API + Twilio"
+                "title": "Frontend",
+                "description": "React + Tailwind"
               },
               {
-                "title": "Back-end",
-                "description": "Node.js"
+                "title": "AI Chatbot",
+                "description": "Botpress + GPT-4o (API)"
               },
               {
-                "title": "Dashboard",
-                "description": "React + Looker Studio"
+                "title": "Estimating Engine",
+                "description": "Proprietary rules and provincial ranges"
               },
               {
-                "title": "Base de datos",
+                "title": "Backend",
+                "description": "Node.js + Python (FastAPI)"
+              },
+              {
+                "title": "Database",
                 "description": "PostgreSQL"
               },
               {
-                "title": "ERP",
-                "description": "Holded y Odoo"
+                "title": "Visualization",
+                "description": "PDFKit + Looker Studio"
               },
               {
-                "title": "Notificaciones",
-                "description": "Twilio + email"
+                "title": "Hosting",
+                "description": "AWS, with optional CRM integration (HubSpot, Pipedrive)"
+              }
+
+            ]
+          }
+        },
+        {
+          "title": "CRM & ERP Integration",
+          "supTitle": "Challenge",
+          "description": "The goal was to integrate the company’s ERP with a CRM system to centralize B2B and B2C account management alongside project workflows. The challenge involved synchronizing customer data, project progress, and financial tracking in one place—improving operational efficiency, resource allocation accuracy, and visibility across the full lifecycle: from concept to execution.",
+          "dialog": {
+            "backButtonText": "Use Cases",
+            "title": "CRM & ERP Integration",
+            "quote": "",
+            "challengeText": "Challenge",
+            "challengeDescription": "The goal was to integrate the company’s ERP with a CRM system to centralize B2B and B2C account management alongside project workflows. The challenge involved synchronizing customer data, project progress, and financial tracking in one place—improving operational efficiency, resource allocation accuracy, and visibility across the full lifecycle: from concept to execution.",
+            "functionalitiesText": "Funcionalities",
+            "functionalities": [
+              {
+                "title": "Unified management",
+                "description": "Client and project management across CRM and ERP"
+              },
+              {
+                "title": "Central dashboard",
+                "description": "Live tracking, time reports, and client-facing updates"
+              },
+              {
+                "title": "Automated billing",
+                "description": "Billing and accounts receivable tracking"
+              },
+              {
+                "title": "ERP-based operations",
+                "description": "Purchasing and quoting directly managed via ERP"
+              },
+              {
+                "title": "Profitability analysis",
+                "description": "Service portfolio tracking and performance control"
+              }
+
+            ],
+            "solutionText": "Solution",
+            "solutionDescription": "We built a fully integrated system connecting HubSpot (CRM), Asana (project management), and Holded (ERP). This setup gave the company end-to-end visibility of their client and project lifecycles—from lead capture through delivery and after-sales. All teams could now operate from a unified interface with synchronized workflows.",
+            "technologiesText": "Technologies",
+            "technologies": [
+              {
+                "title": "CRM",
+                "description": "HubSpot"
+              },
+              {
+                "title": "Project management",
+                "description": "Asana"
+              },
+              {
+                "title": "ERP",
+                "description": "Holded"
+              },
+              {
+                "title": "Integrations",
+                "description": "Custom REST APIs"
+              },
+              {
+                "title": "Dashboards",
+                "description": "Custom-built performance and financial reports"
+              },
+              {
+                "title": "Security",
+                "description": "Enterprise-grade encryption & GDPR-compliant data flows"
               }
             ]
           }
         },
         {
           "title": "Budget engine",
-          "supTitle": "Desafío",
-          "description": "Custom budgeting system connected via API to Holded to generate complex quotations with configurations and simulations for construction and logistics projects.",
+          "supTitle": "Challenge",
+          "description": "A personalized quoting system connected via API to Holded for generating complex estimates with configurable simulations in construction and logistics projects.",
           "dialog": {
             "backButtonText": "Use Cases",
             "title": "Budget engine",
             "quote": "",
-            "challengeText": "Desafío",
-            "challengeDescription": "Create a system for calculating customized quotes that integrates efficiently with the existing ERP (Holded) via API. The goal was to speed up the creation of complex quotes—allowing different configurations and simulations—to support decision-making, justify proposals to clients, and improve financial planning for projects in sectors such as construction and logistics.",
-            "functionalitiesText": "Features",
+            "challengeText": "Challenge",
+            "challengeDescription": "Design a custom budgeting engine that integrates seamlessly with the existing ERP (Holded) via API. The goal was to speed up the creation of intricate quotes, allow multiple configurations and “what‑if” scenarios, support decision‑making, justify proposals to clients, and enhance financial planning for projects in sectors such as construction and logistics.",
+            "functionalitiesText": "Funcionalities",
             "functionalities": [
               {
-                "title": "Variable-driven quotes. ",
-                "description": "Configure materials, labor, equipment rental, logistics, and overhead."
+                "title": "Variable-driven quoting",
+                "description": "Define costs for materials, labor, equipment rental, logistics, and overhead."
               },
               {
-                "title": "Project-type templates.",
-                "description": " Adaptable models tailored to each construction or service scenario."
+                "title": "Project-type templates",
+                "description": "Pre-built models tailored to different services."
               },
               {
-                "title": "Real-time pricing integration.",
-                "description": "API connections to supplier catalogs keep prices current."
+                "title": "Real-time pricing integration",
+                "description": "API link to main supplier catalogs for always-current cost data."
               },
               {
-                "title": "Scenario simulator.",
-                "description": " Evaluate alternative execution methods, materials, or suppliers and measure their financial impact."
+                "title": "Historical quote analysis",
+                "description": "Compare against past projects to spot variances and refine forecasts."
               },
               {
-                "title": "Historical-quote analysis.",
-                "description": "Compare against past projects to spot deviations and refine forecasts."
-              },
-              {
-                "title": "Quote export & validation.",
-                "description": " Generate PDFs or Excel files and sync them to the project record in the ERP for client sharing."
+                "title": "Export & validation",
+                "description": "Generate quotes in PDF or Excel, embed them in the ERP project record, and share directly with clients."
               }
+
             ],
             "solutionText": "Solution",
-            "solutionDescription": "We built a WebApp that connects to Holded through its API and acts as a fully dynamic quote configurator. The tool lets the team create, compare, and validate complex quotes in minutes, with access to up-to-date catalogs and financial-simulation features. Quotes can be exported, shared, and synced with the ERP, boosting financial visibility for each project and improving cost-tracking accuracy.",
+            "solutionDescription": "We built a dynamic WebApp—fully integrated with Holded through its REST API—that serves as a quote configurator. This tool enables the team to create, compare, and validate complex estimates in minutes using up‑to‑date catalogs. Quotes can be exported, shared, reviewed, approved, and synchronized back into the ERP, improving financial visibility per project and boosting cost‑tracking accuracy.",
             "technologiesText": "Technologies",
             "technologies": [
               {
-                "title": "Front-end (quote WebApp)",
+                "title": "Frontend (Budgeting WebApp)",
                 "description": "React.js with material autocomplete and interactive simulators"
               },
               {
-                "title": "Back-end.",
+                "title": "Backend",
                 "description": "Node.js (Express) calculation engine"
               },
               {
                 "title": "Integrations",
-                "description": "Holded REST APIs & webhooks for real-time sync"
+                "description": "Holded REST APIs and webhooks for real-time sync"
               },
               {
-                "title": "Cloud infrastructure. ",
-                "description": "AWS (EC2, S3, RDS, Lambda) with Docker & GitHub Actions"
+                "title": "Cloud infrastructure",
+                "description": "AWS (EC2, S3, RDS, Lambda), Docker, GitHub Actions"
               },
               {
-                "title": "Business Intelligence.",
-                "description": " Looker Studio"
+                "title": "Business Intelligence",
+                "description": "Looker Studio"
               },
               {
-                "title" : "Security & privacy",
-                "description" : "JWT authentication and encryption of sensitive data in transit (HTTPS) and at rest, GDPR compliance, ISO/IEC 27001-certified infrastructure"
+                "title": "Security & Compliance",
+                "description": "JWT authentication, end-to-end encryption (HTTPS in transit, encrypted at rest), GDPR and ISO/IEC 27001 adherence"
               }
-            ]
-          }
-        },
-        {
-          "title": "Integración de herramientas End2End para ecommerce",
-          "supTitle": "Desafío",
-          "description": "Crear y desarrollar una integración de APIs que integre ERP, CMS, diferentes marketplaces y proveedores de Third-Party Logistics (3PLs) para la industria de Dropshipping y Logística. El objetivo es mejorar la eficiencia operativa y la experiencia del cliente al simplificar la gestión de compras, ventas y logística.",
-          "dialog": {
-            "backButtonText": "Casos de uso",
-            "title": "CRM & ERP Integration",
-            "quote": "",
-            "challengeText": "Challenge",
-            "challengeDescription": "The goal was to integrate the company’s ERP with a CRM system to centralize B2B and B2C account management alongside project workflows. The challenge involved synchronizing customer data, project progress, and financial tracking in one place—improving operational efficiency, resource allocation accuracy, and visibility across the full lifecycle: from concept to execution.",
-            "functionalitiesText": "Features",
-            "functionalities": [
-              {
-                "title": "",
-                "description": "Unified client and project management across CRM and ERP"
-              },
-              {
-                "title": "",
-                "description": "Central dashboard for live tracking, time reports, and client-facing updates"
-              },
-              {
-                "title": "",
-                "description": "Automated billing and accounts receivable tracking"
-              },
-              {
-                "title": "",
-                "description": "Purchasing and quoting directly managed via ERP"
-              },
-              {
-                "title": "",
-                "description": "Profitability analysis and service portfolio tracking"
-              }
-            ],
-            "solutionText": "Solution",
-            "solutionDescription": "We built a fully integrated system connecting HubSpot (CRM), Asana (project management), and Holded (ERP). This setup gave the company end-to-end visibility of their client and project lifecycles—from lead capture through delivery and after-sales. All teams could now operate from a unified interface with synchronized workflows.",
-            "technologiesText": "Tecnhnologies",
-            "technologies": [
-              {
-                "title": "CRM:",
-                "description": "HubSpot"
-              },
-              {
-                "title": "Project management: ",
-                "description": " Asana"
-              },
-              {
-                "title": "ERP:",
-                "description": "Holded"
-              },
-              {
-                "title": "Integrations: ",
-                "description": "Custom REST APIs"
-              },
-              {
-                "title": "Dashboards: ",
-                "description": "Custom-built performance and financial reports"
-              },
-              {
-                "title": "Security: ",
-                "description": "Enterprise-grade encryption & GDPR-compliant data flows"
-              }
+
             ]
           }
         }
        ]
     },
      "improveAreas": {
-      "title" : "Áreas",
-      "filtersText": "Filtros",
-      "applyFiltersText": "Aplicar filtros",
-      "filtersClearAllText": "Limpiar todo",
+      "title" : "Areass",
+      "filtersText": "Filters",
+      "applyFiltersText": "Apply filters",
+      "filtersClearAllText": "Clear all",
       "painPoints": [
         {
           "type": "A",
-          "name": "Gestion de inventarios"
+          "name": "Regulatory compliance"
         },
         {
           "type": "B",
-          "name": "Gestión manual de presupuestos"
-        },
-        {
-          "type": "C",
-          "name": "Visibilidad en operaciones"
-        },
-        {
-          "type": "D",
-          "name": "Sostenibilidad"
-        },
-        {
-          "type": "E",
-          "name": "Optimización de procesos manuales"
-        },
-        {
-          "type": "F",
-          "name": "Optimización de rutas y recursos"
-        },
-        {
-          "type": "G",
-          "name": "Eficiencia en el almacén"
-        },
-        {
-          "type": "H",
-          "name": "Integración de herramientas"
+          "name": "Automation of manual processes"
         }
       ],
       "faqs": [
         {
-          "types": ["A", "B", "C"],
-          "question": "Automatización de la gestión de tarifas y productos de proveedores",
+          "types": ["A", "B"],
+          "question": "Timesheet made easy with WhatsApp",
           "answer": {
-            "challengeDescription": "Esteba Maderas trabaja con proveedores variados que envían sus tarifas y catálogos en formatos diferentes, como PDF o Excel. La actualización manual de precios y la introducción de nuevos productos en el ERP genera errores, consume tiempo y retrasa la generación de presupuestos precisos",
-            "solutionText": "Solución",
-            "solutionDescription": "Implementamos un sistema que automatiza la extracción de datos de tarifas y catálogos, conectándolo directamente al ERP de Esteba Maderas. Esto permitió reducir los tiempos de actualización en un 70% y garantizar que las tarifas y productos estén siempre actualizados en la herramienta de generación de presupuestos. Además, los errores en los precios ofrecidos a los clientes disminuyeron en un 40%.",
-            "functionalitiesText": "Funcionalidades",
+            "challengeDescription": "The client needed an efficient solution to record working hours for their drivers and operational staff in order to comply with legislation and track time spent on each customer and task. Their existing method lacked automatic integration with their payroll system and ERP, and wasn’t designed for field workers. This caused inconsistencies in records, legal compliance issues, and errors in managing overtime and breaks.",
+            "solutionText": "Solution",
+            "solutionDescription": "We developed a WhatsApp‑based time‑tracking system that connects directly to the client’s payroll software, eliminating manual errors and ensuring regulatory compliance. The solution is also accessible and user‑friendly for employees, which doubled the clock‑in compliance rate.",
+            "functionalitiesText": "Funcionalities",
             "functionalities": [
               {
-                "title": "",
-                "description": "Parseo automatizado de documentos: Herramienta que extrae información de tarifas y catálogos en PDF o Excel para convertirlos en datos estructurados."
+                "title": "Clock-in via WhatsApp",
+                "description": "Employees can log their start and end of shift, breaks, and activities simply by sending a message to an automated WhatsApp bot."
               },
               {
-                "title": "",
-                "description": "Integración directa con el ERP: Actualización automática de precios, productos y condiciones comerciales en el sistema de gestión."
+                "title": "Location verification",
+                "description": "Validates the clock-in location to ensure it takes place at designated points (offices, warehouses, or authorized routes)."
               },
               {
-                "title": "",
-                "description": "Validación previa de datos: Interfaz que permite revisar y aprobar los datos parseados antes de la actualización final."
+                "title": "Supervision dashboard",
+                "description": "A management tool that displays records in real time, generates reports, approves overtime requests, and corrects discrepancies."
               },
               {
-                "title": "",
-                "description": "Sincronización con la herramienta de presupuestos: Conexión entre los precios actualizados y la herramienta de generación de presupuestos dinámicos, asegurando precisión en las ofertas al cliente."
+                "title": "Payroll system integration",
+                "description": "Direct connection to the payroll software to automatically synchronize worked hours, overtime, and days off."
               },
               {
-                "title": "",
-                "description": "Notificaciones automáticas: Alertas sobre cambios importantes en tarifas o condiciones para mantener a los equipos informados."
+                "title": "Automated alerts",
+                "description": "Notifications to employees if they forget to clock in, and to managers about irregularities in records or potential labor-law violations, plus an overtime request workflow."
               }
+
             ],
-            "technologiesText": "Tecnologías",
+            "technologiesText": "Technologies",
             "technologies": [
               {
-                "title": "Odoo",
-                "description": "como sistema ERP para la administración centralizada de la empresa."
+                "title": "Chat",
+                "description": "WhatsApp Business API + Twilio"
               },
               {
-                "title": "Prestashop",
-                "description": "para la gestión de contenidos y tiendas online."
+                "title": "Backend",
+                "description": "Node.js"
               },
               {
-                "title": "Huboo",
-                "description": "como sistema de gestión de logística y envíos."
+                "title": "Dashboard",
+                "description": "React + Looker Studio"
               },
               {
-                "title": "Amazon Selling Central",
-                "description": "para la integración con el marketplace de Amazon."
-              },
-              {
-                "title": "Google Looker",
-                "description": "para análisis de datos y reportes avanzados."
-              }
-            ]
-          }
-        },
-        {
-          "types": ["B", "C", "D"],
-          "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-          "answer": {
-            "challengeDescription": "Con una flota en crecimiento, nuestro cliente buscaba reducir su huella de carbono para cumplir con objetivos internos de sostenibilidad, mejorar su imagen frente a clientes B2B y reguladores, y proporcionar transparencia en sus operaciones. Sin herramientas para calcular emisiones, optimizar rutas y ofrecer reportes detallados a los clientes, las operaciones del transporte eran ineficiencientes y sin visibilidad.",
-            "solutionText": "Solución",
-            "solutionDescription": "Se implementó un módulo integral de sostenibilidad que no solo calcula y reduce las emisiones de CO₂, sino que también permite a los clientes acceder a sus reportes desde un portal personalizado. Esto brindó mayor transparencia y confianza a los clientes, quienes ahora pueden ver el impacto ambiental de sus envíos. Como resultado, Martínez Marcos redujo las emisiones en un 15%, mejoró su eficiencia operativa y fortaleció las relaciones con sus clientes al ofrecer un enfoque más transparente y responsable.",
-            "functionalitiesText": "Funcionalidades",
-            "functionalities": [
-              {
-                "title": "Cálculo de huella de carbono",
-                "description": "Herramienta que mide las emisiones de CO₂ por trayecto en función del tipo de vehículo y combustible."
-              },
-              {
-                "title": "Optimización de rutas sostenibles",
-                "description": "Identificación de trayectos que reduzcan kilómetros recorridos y optimicen el uso del combustible."
-              },
-              {
-                "title": "Portal de cliente",
-                "description": "Acceso directo y transparente para que los clientes consulten sus reportes de emisiones, rutas utilizadas y métricas sostenibles en tiempo real."
-              },
-              {
-                "title": "Reportes automatizados",
-                "description": "Generación de reportes personalizados sobre emisiones, que los clientes pueden descargar desde el portal para sus propios análisis o regulaciones."
-              },
-              {
-                "title": "Simulación de escenarios",
-                "description": "Evaluación de rutas alternativas para identificar ahorros potenciales en emisiones y costos."
-              }
-            ],
-            "technologiesText": "Tecnologías",
-            "technologies": [
-              {
-                "title": "Cálculo de emisiones",
-                "description": "EcoTransitIT"
-              },
-              {
-                "title": "Front-end",
-                "description": "React"
-              },
-              {
-                "title": "Back-end",
-                "description": "Node.js + Python"
-              },
-              {
-                "title": "Base de datos",
-                "description": "PostgreSQL"
-              },
-              {
-                "title": "Visualización",
-                "description": "PowerBI + Looker Studio"
-              }
-            ]
-          }
-        },
-        {
-          "types": ["A", "D"],
-          "question": "Automatización de la gestión de tarifas y productos de proveedores",
-          "answer": {
-            "challengeDescription": "Normalmente, los transportistas se enfrentan tiempos de espera prolongados para cargar y descargar, lo que afecta la productividad y genera costos adicionales. La falta de una gestión eficiente en los puntos de carga provoca saturaciones y retrasos.",
-            "solutionText": "Solución",
-            "solutionDescription": "Implementamos un sistema de gestión de citas que optimiza el flujo de transportistas en los puntos de carga y descarga, reduciendo los tiempos de espera en un 32%. Esto mejoró tanto la productividad de la flota, como la satisfacción de los conductores y los clientes.",
-            "functionalitiesText": "Funcionalidades",
-            "functionalities": [
-              {
-                "title": "Gestión de citas de carga (Time Slot Management)",
-                "description": "Sistema que permite agendar horarios específicos para evitar congestiones en los puntos de carga y descarga."
-              },
-              {
-                "title": "Notificaciones en tiempo real",
-                "description": "Alertas a transportistas y almacén sobre cambios o actualizaciones en las citas."
-              },
-              {
-                "title": "Optimización del flujo operativo",
-                "description": "Herramientas para priorizar cargas urgentes y distribuir conductores de manera eficiente."
-              },
-              {
-                "title": "Reportes de productividad",
-                "description": "Métricas sobre el uso de los puntos de carga y tiempos de carga/descarga promedio."
-              }
-            ],
-            "technologiesText": "Tecnologías",
-            "technologies": [
-              {
-                "title": "Front-end",
-                "description": "React"
-              },
-              {
-                "title": "Back-end",
-                "description": "Node.js + Python"
-              },
-              {
-                "title": "Calendario",
-                "description": "Google Calendar API"
-              },
-              {
-                "title": "Notificaciones",
-                "description": "WhatsApp Business API"
-              },
-              {
-                "title": "Reporting",
-                "description": "Looker Studio"
-              },
-              {
-                "title": "Algoritmos",
-                "description": "Control de solapamientos y validación de ventanas horarias"
-              }
-            ]
-          }
-        },
-        {
-          "types": ["B", "D", "E"],
-          "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-          "answer": {
-            "challengeDescription": "El proceso de recepción de mobiliario de lujo se enfrentaba a problemas en la validación del estado, calidad y características del producto. La falta de evidencias en la recepción y manipulación de productos dificultaban las reclamaciones con proveedores y aseguradoras y generaba problemas logísticos. Además, los clientes no tenían acceso directo a información visual y registros sobre el estado de los productos.",
-            "solutionText": "Solución",
-            "solutionDescription": "Implementamos un sistema integral de validación en la recepción del mobiliario de lujo, con una mesa de validación que incluye grabación automatizada y una conexión directa al sistema de gestión de almacenes. Además, se desarrolló un portal para clientes que les permite acceder a las grabaciones y reportes en tiempo real, facilitando la comunicación y gestión de reclamaciones con los proveedores. Como resultado, se mejoró la trazabilidad del 100% de los productos, reduciendo los tiempos de resolución de incidencias en un 50% y aumentando la satisfacción del cliente en un 40%.",
-            "functionalitiesText": "Funcionalidades",
-            "functionalities": [
-              {
-                "title": "Mesa de validación",
-                "description": "Verificación física y digital del mobiliario (dimensiones, acabados, materiales)."
-              },
-              {
-                "title": "Sistema de grabación automatizado",
-                "description": "Captura de imágenes y video durante la recepción."
-              },
-              {
-                "title": "Portal de cliente",
-                "description": "Acceso a grabaciones e informes en tiempo real."
-              },
-              {
-                "title": "Checklist digital",
-                "description": "Validación estructurada de atributos conectada al ERP."
-              },
-              {
-                "title": "Integración con almacén",
-                "description": "Sincronización con el sistema de inventario para reflejar estado y ubicación."
-              },
-              {
-                "title": "Reportes automatizados",
-                "description": "Generación de informes visuales para uso interno y externo."
-              }
-            ],
-            "technologiesText": "Tecnologías",
-            "technologies": [
-              {
-                "title": "Captura multimedia",
-                "description": "Cámara IP + software de grabación programada"
-              },
-              {
-                "title": "Front-end",
-                "description": "React"
-              },
-              {
-                "title": "Back-end",
-                "description": "Node.js + Python"
-              },
-              {
-                "title": "Base de datos",
+                "title": "Database",
                 "description": "PostgreSQL"
               },
               {
                 "title": "ERP",
-                "description": "Odoo / SAP Business One"
+                "description": "Holded and A3 ERP"
               },
               {
-                "title": "Visualización y portal:",
-                "description": "Power BI + WebApp personalizada para clientes"
-              },
-              {
-                "title": "Integración",
-                "description": "Amphora Logistics"
+                "title": "Notifications",
+                "description": "Twilio + Email"
               }
-            ]
-          }
-        },
-        {
-          "types": ["B"],
-          "question": "Automatización de la gestión de tarifas y productos de proveedores",
-          "answer": {
-            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
-            "solutionText": "Solución",
-            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
-            "functionalitiesText": "Funcionalidades",
-            "functionalities": [
-              {
-                "title": "Plataforma centralizada de órdenes",
-                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
-              },
-              {
-                "title": "Flujos de trabajo visuales",
-                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
-              },
-              {
-                "title": "Actualización automática de estados",
-                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
-              },
-              {
-                "title": "Alertas inteligentes",
-                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
-              },
-              {
-                "title": "Historial completo de actividad",
-                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
-              }
-            ],
-            "technologiesText": "Tecnologías",
-            "technologies": [
-              {
-                "title": "Plataforma de flujos de trabajo",
-                "description": "Trello-like custom (React + DnD libraries)"
-              },
-              {
-                "title": "Front-end",
-                "description": "React"
-              },
-              {
-                "title": "Back-end",
-                "description": "Node.js + Python (FastAPI)"
-              },
-              {
-                "title": "Base de datos",
-                "description": "PostgreSQL en AWS"
-              },
-              {
-                "title": "Automatización de notificaciones",
-                "description": "Firebase Cloud Messaging + email (SendGrid)"
-              }
-            ]
-          }
-        },
-        {
-          "types": ["B"],
-          "question": "Logística sostenible y reducción de emisiones con portal de cliente",
-          "answer": {
-            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
-            "solutionText": "Solución",
-            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
-            "functionalitiesText": "Funcionalidades",
-            "functionalities": [
-              {
-                "title": "Plataforma centralizada de órdenes",
-                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
-              },
-              {
-                "title": "Flujos de trabajo visuales",
-                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
-              },
-              {
-                "title": "Actualización automática de estados",
-                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
-              },
-              {
-                "title": "Alertas inteligentes",
-                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
-              },
-              {
-                "title": "Historial completo de actividad",
-                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
-              }
-            ],
-            "technologiesText": "Tecnologías",
-            "technologies": [
-              {
-                "title": "Plataforma de flujos de trabajo",
-                "description": "Trello-like custom (React + DnD libraries)"
-              },
-              {
-                "title": "Front-end",
-                "description": "React"
-              },
-              {
-                "title": "Back-end",
-                "description": "Node.js + Python (FastAPI)"
-              },
-              {
-                "title": "Base de datos",
-                "description": "PostgreSQL en AWS"
-              },
-              {
-                "title": "Automatización de notificaciones",
-                "description": "Firebase Cloud Messaging + email (SendGrid)"
-              }
-            ]
-          }
-        },
-        {
-          "types": ["B"],
-          "question": "Automatización de la gestión de tarifas y productos de proveedores",
-          "answer": {
-            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
-            "solutionText": "Solución",
-            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
-            "functionalitiesText": "Funcionalidades",
-            "functionalities": [
-              {
-                "title": "Plataforma centralizada de órdenes",
-                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
-              },
-              {
-                "title": "Flujos de trabajo visuales",
-                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
-              },
-              {
-                "title": "Actualización automática de estados",
-                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
-              },
-              {
-                "title": "Alertas inteligentes",
-                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
-              },
-              {
-                "title": "Historial completo de actividad",
-                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
-              }
-            ],
-            "technologiesText": "Tecnologías",
-            "technologies": [
-              {
-                "title": "Plataforma de flujos de trabajo",
-                "description": "Trello-like custom (React + DnD libraries)"
-              },
-              {
-                "title": "Front-end",
-                "description": "React"
-              },
-              {
-                "title": "Back-end",
-                "description": "Node.js + Python (FastAPI)"
-              },
-              {
-                "title": "Base de datos",
-                "description": "PostgreSQL en AWS"
-              },
-              {
-                "title": "Automatización de notificaciones",
-                "description": "Firebase Cloud Messaging + email (SendGrid)"
-              }
-            ]
-          }
-        },
-        {
-          "types": ["B"],
-          "question": "Automatización de la gestión de tarifas y productos de proveedores",
-          "answer": {
-            "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
-            "solutionText": "Solución",
-            "solutionDescription": "Se diseñó una solución modular basada en una plataforma de flujo de trabajo colaborativo que conecta todos los departamentos implicados en la operativa diaria. A través de la implementación de un sistema de gestión de órdenes tipo \"Kanban dinámico\", cada orden de trabajo avanza entre estados (pendiente, en carga, en tránsito, entregado) con visibilidad en tiempo real para almacén, transporte y atención al cliente. Además, se incorporó una capa de trazabilidad por orden que registra automáticamente cambios de estado, tiempos de ejecución y responsables de cada tarea.",
-            "functionalitiesText": "Funcionalidades",
-            "functionalities": [
-              {
-                "title": "Plataforma centralizada de órdenes",
-                "description": "Sistema único donde todas las áreas visualizan el estado y evolución de las órdenes de trabajo."
-              },
-              {
-                "title": "Flujos de trabajo visuales",
-                "description": "Gestión de órdenes mediante tableros dinámicos tipo Kanban, adaptados a las fases logísticas."
-              },
-              {
-                "title": "Actualización automática de estados",
-                "description": "Cambios de etapa sincronizados en tiempo real, visibles para todos los usuarios autorizados."
-              },
-              {
-                "title": "Alertas inteligentes",
-                "description": "Notificaciones automáticas sobre retrasos, incidencias o tareas bloqueadas."
-              },
-              {
-                "title": "Historial completo de actividad",
-                "description": "Registro de cambios de estado, tiempos y responsables para trazabilidad interna y auditorías."
-              }
-            ],
-            "technologiesText": "Tecnologías",
-            "technologies": [
-              {
-                "title": "Plataforma de flujos de trabajo",
-                "description": "Trello-like custom (React + DnD libraries)"
-              },
-              {
-                "title": "Front-end",
-                "description": "React"
-              },
-              {
-                "title": "Back-end",
-                "description": "Node.js + Python (FastAPI)"
-              },
-              {
-                "title": "Base de datos",
-                "description": "PostgreSQL en AWS"
-              },
-              {
-                "title": "Automatización de notificaciones",
-                "description": "Firebase Cloud Messaging + email (SendGrid)"
-              }
+
             ]
           }
         }
         ]
     },
     "solutionsApplications": {
-      "title": "Transformation and digitalization of <br/> <span> Construction </span>",
+      "title": "Transformation and digitalization of <span> Construction </span>",
       "subTitle": "We work with construction companies because we don’t just understand the tools—they do too—we understand the specific challenges of a sector with many particularities, highly qualified personnel, significant technological barriers, resistance to change, and too much time spent on repetitive processes that don’t add value. We bring our expertise as a tech consultancy to help you integrate digital solutions that adapt to how you work—not the other way around.",
       "containers": [
         {
@@ -2099,21 +1709,21 @@
             },
             {
               "title": "Traceability of decisions, materials and budgets",
-              "description": "We design systems that let you trace every decision, justify each cost, and link suppliers to both their prices and impact on-site. But it’s not just about logging data—it’s about creating clear, actionable reporting to support real-time decision-making.  This prevents overruns, misunderstandings and delays, and gives you full control and transparency across the project lifecycle."
+              "description": "We design systems that let you trace every decision, justify each cost, and link suppliers to both their prices and impact on-site. But it’s not just about logging data—it’s about creating clear, actionable reporting to support real-time decision-making. This prevents overruns, misunderstandings and delays, and gives you full control and transparency across the project lifecycle."
             }
           ]
         },
          {
           "title": "Digital transformation and Process Automation",
-          "description": "Going digital isn’t just about software—it’s about strategy. We automate repetitive tasks, digitize key documentation, and help you introduce technologies only when they make a real impact on-site or in management.",
+          "description": "Going digital isn’t just about software—it’s about strategy.We automate repetitive tasks, digitize key documentation, and help you introduce technologies only when they make a real impact on-site or in management.",
           "type": "Application",
           "cards": [
            
           ]
         },
         {
-          "title": "Soporte y gestión del cambio",
-          "description": "Once the solutions are in place, we stay with you.  We help your team adopt the new systems, solve issues as they arise, and ensure tools are used consistently.  Our support ensures long-term success, avoiding unfinished transitions or poorly adopted solutions.",
+          "title": "Support and Change Management",
+          "description": "Once the solutions are in place, we stay with you. We help your team adopt the new systems, solve issues as they arise, and ensure tools are used consistently. Our support ensures long-term success, avoiding unfinished transitions or poorly adopted solutions.",
           "type": "Application",
           "cards": [
           
@@ -2161,5 +1771,560 @@
         }
       ]
     }
-  }
-}
+  },
+  "brand" : {
+      "brand_title" : "Trusted by <span> Great Brands </span>",
+      "brand_description" : "Meet our clients and discover how we create value for them."
+    },
+    "CTO":{
+    "title": "CTO as a Service | Gigson Solutions",
+    "metadescription": " Upgrade your tech strategy, lead digital transformation, and reduce operational risks with an external CTO.",
+    "hero": {
+      "suptitle":"SERVICES",
+      "title": "CTO as a Service: <br> <span> custom tech strategy </span>",
+      "description": "In a world where technology directly impacts efficiency and competitiveness, many SMEs face a common challenge: they need strategic and operational tech leadership, but can’t afford the financial and structural burden of hiring a full-time CTO. <br> And even if technology isn’t their core, they need it to operate, grow, and make better decisions. That’s where the CTO as a Service model makes total sense. <br> At Gigson Solutions, we act as a technology partner—not just consultants. We help you define and execute a tech strategy that fits your business structure, without imposing generic tools or methodologies. We support startups, scaleups and established companies with one clear focus: making technology a driver, not a blocker.",
+      "buttonText": "Contact us"
+    },
+    "solutionsApplications": {
+      "title": "Tech leadership and advisory <span> for frictionless growing companies.</span>",
+      "subTitle": "Not all companies need a full-time CTO, but all need high-level tech direction. Our Fractional CTO service integrates a tech leader into your team to detect opportunities, avoid mistakes, and align technology with your business goals. From day one, we deliver realistic, actionable tech advice—with direct impact on operations and growth.",
+      "containers": [
+        {
+          "title": "Cost optimization & operational efficiency",
+          "description": "Reducing costs without losing responsiveness is possible when technology is planned with business vision. An external CTO can help identify inefficiencies in your current setup and suggest sustainable solutions—not just quick fixes.",
+          "type": "Sector",
+          "cards": [
+            {
+              "title": "Cost analysis, optimization, reorganization and scalability",
+              "description": "We perform a full audit of your tech ecosystem—from licenses to HR and processes. Where’s the money going? What can be automated? What tools are we paying for but not leveraging? We then design a transformation plan focused on scaling efficiently and sustainably."
+            },
+            {
+              "title": "Measuring tech investment ROI",
+              "description": "This isn’t about tech for tech’s sake. We evaluate each decision using clear metrics: How much value does it bring? What’s the impact on revenue, costs, productivity? Will it still serve us in X years? We work with data, not guesswork or trends."
+            },
+            {
+              "title": "Agile solutions and bottleneck identification",
+              "description": "A slow or poorly organized tech stack slows growth and increases errors.We analyze key flows and help your team unblock the critical friction points that prevent agility and scalability."
+            }
+          ]
+        },
+        {
+          "title": "Global vision & business impact",
+          "description": "Having technical insight without business context is as inefficient as making business decisions without understanding tech implications. The value of a CTO as a Service lies in bridging these worlds and anticipating the impact of each step.",
+          "type": "Sector",
+          "cards": [
+            {
+              "title": "Strategic vision and tech diagnosis",
+              "description": "We start with a full audit: What tech is in place?What are your business goals?What gaps exist? This lets us build a roadmap where tech and strategy are integrated cohesively."
+            },
+            {
+              "title": "C-level support in key decisions: translating tech into business terms",
+              "description": "We actively participate in your executive team, owning the tech vision at decision level. We translate technical language into strategic options, propose actionable paths and evaluate every decision by its risks, costs, and potential impact.Tech shouldn’t be an afterthought—it belongs at the table where the future is decided."
+            },
+            {
+              "title": "Cross-functional coordination with tech providers & decision makers",
+              "description": "Tech doesn’t live in isolation. We coordinate across internal and external teams—aligning providers, developers and executives—to ensure everyone is focused on one thing: achieving business goals."
+            }
+          ]
+        },
+         {
+          "title": "Tech strategy, planning & innovation",
+          "description": "A company’s tech strategy can’t be reactive. It needs to anticipate change, integrate innovation, and ensure every decision adds real value.With our CTO as a Service, your company doesn’t just survive—it evolves.",
+          "type": "sector",
+          "cards": [
+            {
+              "title": " Tech architecture design & audit",
+              "description": "A weak architecture limits growth.We design or audit your systems to ensure they support your present and scale for the future—incorporating best practices in modularity, security, and efficiency."
+            },
+            {
+              "title": "Security best practices",
+              "description": "Cybersecurity is no longer optional.We advise on security policies to protect data, access, and systems—reducing legal, operational and reputational risks."
+            },
+            {
+              "title": "Compliance & Regulatory Consulting",
+              "description": "We help adapt your tech stack to relevant standards: GDPR, ISO27001, NIS2, or any sector-specific regulation.Compliance should not be a barrier—it should be a natural part of growth."
+            },
+            {
+              "title": "Vendor & tech resource management",
+              "description": "We negotiate, coordinate and audit vendors to make sure what's promised is delivered—and that tech resources are used efficiently.No hidden costs. No unnecessary dependencies."
+            },
+            {
+              "title": "Trend monitoring & tech scouting",
+              "description": "Spot before others act. We stay on top of emerging technologies, market trends and regulatory shifts to detect opportunities or threats early."
+            },
+            {
+              "title": "Cloud & hybrid architecture migration",
+              "description": "We optimize existing infrastructure and, when needed, plan migrations to cloud or hybrid environments—ensuring cost-effectiveness, scalability, and performance aligned with your goals."
+            }
+          ]
+        },
+        {
+          "title": "Technical leadership & team development",
+          "description": "Having the best tech strategy means nothing without a team capable of executing it. Gigson Solutions' CTO as a Service not only defines the roadmap but also leads the creation of strong, aligned teams that share your company’s vision.",
+          "type": "Sector",
+          "cards": [
+            {
+              "title": "Defining Tech Culture",
+              "description": "We foster a tech culture built on collaboration, accountability, and technical excellence.It’s not just about development—it’s about understanding how each technology impacts business outcomes."
+            },
+            {
+              "title": "Aligning tech hiring with company values",
+              "description": "Hiring tech talent isn’t about collecting CVs.We define the right profile for each growth stage, ensuring that new hires share your company’s philosophy and strengthen the existing team."
+            },
+            {
+              "title": "Agile scaling of development teams",
+              "description": "As the business grows, the team must scale without losing agility.We design phased growth strategies, prioritizing goal-based organization, autonomy, and technical quality."
+            },
+            {
+              "title": "Training & Tech Leadership",
+              "description": "We train and mentor teams in adopting new technologies, agile methodologies, and development best practices.A well-led, well-trained team is the best tech investment a company can make."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How do we work?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identifying needs, mapping processes, and defining objectives."
+        },
+        {
+          "title": "Design and architecture",
+          "description": "Defining requirements, creating a prototype, and designing integrations with current systems."
+        },
+        {
+          "title": "Implementation",
+          "description": "Programming, functional testing, integration with external platforms, and deployment to production."
+        },
+        {
+          "title": "Support and maintenance",
+          "description": "Monitoring KPIs, providing support, maintenance, and improvements based on business evolution."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "What do I need to create a <span>digital product</span>?",
+      "description": "Thinking that developing a digital product is a common or straightforward project poses a considerable risk. This type of product requires detailed attention in every aspect, managed by experts.",
+      "buttonText": "How can we help you",
+      "cards": [
+        {
+          "title": "Software engineering",
+          "description": "From integrating different tools and developing new features and products to monitoring and maintaining a product — we’re ready for it. Our software engineering team is made up of developers, architects, and testers who build solutions with cutting-edge technology."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Information security is no longer optional — cybersecurity is a NECESSITY for every business. All companies must have the knowledge, tools, and processes to prevent or minimize attacks."
+        },
+        {
+          "title": "Technology consulting",
+          "description": "Our team of software engineers, architects, and experienced developers uses the best technologies adapted to your industry. Gigson Solutions is your trusted partner in software development. We understand that behind every line of code lies an opportunity to gain a competitive advantage."
+        }
+      ]
+    }
+  },
+  "whatsapp" : {
+    "phoneNumber" : "623783507",
+    "accountName" : "Emmelin",
+    "placeholder" : "Hi",
+    "statusMessage": "Always ready to help",
+    "chatMessage": "Hello I'm Emmelin! Account Manager of Gigson Solutions, What can I help you with?"
+
+  },
+  "software":{
+    "title": "Custom Software Engineering & Development | Gigson Solutions",
+    "metadescription": "We build custom software for businesses. Beyond development, we align technology with your goals to automate processes, integrate systems, and drive sustainable growth",
+    "hero": {
+      "suptitle":"SERVICES",
+      "title": "Software development <span> for business </span>",
+      "description": "Having software that adapts to your company—not the other way around—makes all the difference. At Gigson Solutions, we design, build, and maintain tailored tech solutions, ready to scale, integrate, and evolve with you. <br> From building new features or full products to integrating existing tools and ensuring long-term performance,we cover the entire software lifecycle. <br> Our team includes developers, architects, and testers to provide custom software development with no limits, no dependencies, and a long-term vision.",
+      "buttonText": "Contact us"
+    },
+    "solutionsApplications": {
+      "title": "Agile & custom <span> software development </span>",
+      "subTitle": "We build software that adapts to your business. Our approach combines agile methodologies, scalable architecture, and constant communication with your team—so development isn’t a black box, but a transparent, results-driven collaboration.",
+      "containers": [
+        {
+          "title": "DevOps & Cloud-Native approach",
+          "description": "Always production-ready from day one.Automation, continuous delivery, containerization, and cloud computing are in our DNA.This helps us speed up delivery, reduce errors, and ensure the software is ready to scale when you need it.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Cloud Providers: AWS, Azure, GCP",
+              "description": "We work with the leading cloud providers to design secure, flexible, and scalable infrastructure.We select the best platform for your needs and configure it so your application is always available, fault-tolerant, and grows without friction."
+            },
+            {
+              "title": "Containers & Orchestration: Docker, Kubernetes, WPAR, K8s",
+              "description": "We orchestrate your services with Kubernetes or similar tools to simplify management, automate scaling, and enable zero-downtime deployments.This reduces operational costs and improves app performance in any environment."
+            },
+            {
+              "title": "Automated CI/CD: Jenkins, GitLab, GitHub, Git",
+              "description": "We automate integration and continuous deployment to ensure every change is tested, validated, and published without interruption.We reduce time-to-deploy and prevent errors through custom pipelines tailored to your workflows."
+            }
+          ]
+        },
+        {
+          "title": "Data infrastructure & performance",
+          "description": "Custom software can’t be fast if data doesn’t flow properly.We design infrastructures built to handle high data volumes, real-time integrations, and efficient analytics.",
+          "type": "Challenges",
+          "cards": [
+            {
+              "title": "Database Management: Oracle, MySQL, MongoDB, PostgreSQL, MS SQL",
+              "description": "We design and manage relational and NoSQL databases based on your system needs: whether you need complex queries, scalability, redundancy, or speed."
+            },
+            {
+              "title": "Messaging & Data Streaming Systems: RabbitMQ, Apache Kafka, Apache, Redis, ELK stack",
+              "description": "When your system needs real-time communication, we use messaging and streaming tech to avoid bottlenecks.From simple events to complex data flows, we build event-driven architectures that are resilient and built to scale."
+            },
+            {
+              "title": "Monitoring: Prometheus, Datalog, Grafana, Azure Monitor, Amazon CloudWatch, Zabbix",
+              "description": "It’s not enough for things to work—they have to keep working. We implement observability solutions that detect issues before they become problems."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How do we work?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identifying needs, mapping processes, and defining objectives."
+        },
+        {
+          "title": "Design and architecture",
+          "description": "Defining requirements, creating a prototype, and designing integrations with current systems."
+        },
+        {
+          "title": "Implementation",
+          "description": "Programming, functional testing, integration with external platforms, and deployment to production."
+        },
+        {
+          "title": "Support and maintenance",
+          "description": "Monitoring KPIs, providing support, maintenance, and improvements based on business evolution."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "What do I need to create a <span>digital product</span>?",
+      "description": "Thinking that developing a digital product is a common or straightforward project poses a considerable risk. This type of product requires detailed attention in every aspect, managed by experts.",
+      "buttonText": "How can we help you",
+      "cards": [
+        {
+          "title": "Software engineering",
+          "description": "From integrating different tools and developing new features and products to monitoring and maintaining a product — we’re ready for it. Our software engineering team is made up of developers, architects, and testers who build solutions with cutting-edge technology."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Information security is no longer optional — cybersecurity is a NECESSITY for every business. All companies must have the knowledge, tools, and processes to prevent or minimize attacks."
+        },
+        {
+          "title": "Technology consulting",
+          "description": "Our team of software engineers, architects, and experienced developers uses the best technologies adapted to your industry. Gigson Solutions is your trusted partner in software development. We understand that behind every line of code lies an opportunity to gain a competitive advantage."
+        }
+      ]
+    }
+  },
+  "consultoriaTec":{
+    "title": "Technology Consulting for Businesses | Gigson Solutions",
+    "metadescription": "Technology consulting for businesses that want to scale smoothly: diagnosis, strategy, and tailored solution implementation.",
+    "hero": {
+      "suptitle":"SERVICES",
+      "title": "Technology consulting for <span> business </span>",
+      "description": "At Gigson Solutions, we believe technology shouldn’t limit us—it should help us reach business goals.<br> Our business tech consulting service is designed to analyze, transform, optimize, and evolve your company with tailored solutions—without friction, without improvisation, and with a clear, external, and objective vision of the future. <br> Diagnosis, strategy, and action—all in one partner. We support you from the analysis of your current situation to the definition and execution of tech projects that drive your growth.",
+      "buttonText": "Contact us"
+    },
+    "solutionsApplications": {
+      "title": "Tech leadership and advisory <span> for frictionless growing companies.</span>",
+      "subTitle": "Every company has its own context, processes, and challenges. That’s why our technology consulting doesn’t rely on off-the-shelf solutions, but on gaining a deep understanding of your situation, needs, and business goals. Our approach blends technical expertise with business insight to ensure every tech decision adds real value.",
+      "containers": [
+        {
+          "title": "Technology Consulting & Digital Transformation",
+          "description": "Digital transformation isn’t about piling up tools—it’s about optimizing how your business operates, connects with clients, and grows.Through tech consulting, we help you tackle this process strategically: we evaluate your current systems and integrations, identify improvement areas, and design digital solutions that truly fit your structure and growth objectives.",
+          "type": "Challenges",
+          "cards": [
+            {
+              "title": "Design of integrated tech solutions",
+              "description": "We design tech solutions that not only solve specific needs, but also integrate naturally into your processes, teams, and systems.Our approach is modular and scalable: we build tech that works today and grows with you tomorrow—without creating vendor lock-in or future roadblocks."
+            },
+            {
+              "title": "Implementation of digital transformation strategies",
+              "description": "A well-designed digital strategy loses value if poorly executed.We support the practical implementation of your transformation—from planning each phase to launch and ongoing optimization."
+            },
+            {
+              "title": "Tech outsourcing: your trusted partner for change",
+              "description": "Through our tech outsourcing service, we become your trusted partner—bringing the knowledge, experience, and flexibility you need to drive your digital transformation without increasing internal overhead."
+            }
+          ]
+        },
+        {
+          "title": "Tech development",
+          "description": "When standard solutions don’t fit, a tailored approach is needed — that’s why we design and develop custom technology to address the specific needs of your business. Always focused on functionality and efficiency, we create tools and platforms that not only fill a gap in the market but also give you a real competitive advantage. Our philosophy: build what you need today, with tomorrow’s needs in mind.",
+          "type": "Challenges",
+          "cards": [
+            {
+              "title": "Development of tailored tech solutions",
+              "description": "Not all companies have the same needs—so we don’t offer one-size-fits-all solutions.When commercial software or platforms don’t adapt to your processes, we design and develop custom tech solutions from scratch to solve your specific challenges."
+            },
+            {
+              "title": "Optimization and evolution of system architecture",
+              "description": "We perform an in-depth analysis of your IT infrastructure—servers, databases, microservices, and connections—to detect bottlenecks, vulnerabilities, and redundancies.Based on that diagnosis, we redesign your architecture, improving performance and security (hardening, encryption in transit and at rest, access control), and prepare it for scalability.We adapt your environment to new data volumes and business requirements, migrate components to cloud or hybrid architectures, and establish DevOps and CI/CD practices for future iteration."
+            },
+            {
+              "title": "Optimization and transformation of monolithic systems",
+              "description": "Legacy or poorly structured systems can drag down performance and innovation.We help you migrate from monolithic applications to modern architectures (e.g., microservices or containers) while ensuring operational continuity.We analyze dependencies and refactor code, replacing obsolete modules with scalable, efficient components—using blue-green deployment or canary releases to minimize risk."
+            }
+          ]
+        },
+         {
+          "title": "System integration & process improvement",
+          "description": "A disconnected tech ecosystem causes inefficiencies, errors, and wasted time.At Gigson Solutions, we help you integrate your systems and optimize your processes so your infrastructure works in a coordinated, agile, and secure way.",
+          "type": "Challenges",
+          "cards": [
+            {
+              "title": "Tech solutions that connect and optimize your current tools",
+              "description": "Many companies work with multiple tools that don’t communicate.We design solutions that connect platforms, apps, and internal systems—eliminating silos and enabling true collaboration across tools."
+            },
+            {
+              "title": "Automation of critical processes for efficiency",
+              "description": "We identify repetitive, error-prone processes and automate them safely and effectively. This allows you to free up resources, reduce costs, minimize errors, and focus on high-value tasks. Every automation is adapted to your actual workflows—not the other way around."
+            },
+            {
+              "title": "Architecture analysis & optimization",
+              "description": "We conduct a deep audit of your current tech architecture to detect weaknesses, redundancies, and improvement opportunities."
+            }
+          ]
+        },
+        {
+          "title": "IT Consulting: Audit & Tech Strategy",
+          "description": "A strong tech strategy starts with a realistic diagnosis.We analyze your IT infrastructure in depth, detect risks and areas for improvement, and design a tech plan aligned with your business goals.",
+          "type": "Challenges",
+          "cards": [
+            {
+              "title": "Technical & cybersecurity audit",
+              "description": "We conduct technical and security audits to identify vulnerabilities, inefficiencies, and hidden risks in your current infrastructure."
+            },
+            {
+              "title": "Defining a tech strategy aligned with your business goals",
+              "description": "We help you define a realistic, scalable roadmap fully aligned with your business objectives.So that every tech investment becomes a growth driver—not a sunk cost."
+            },
+            {
+              "title": "Management & coordination of external tech providers",
+              "description": "Having multiple tech providers shouldn’t become a management headache.We coordinate, supervise, and optimize your relationships with external vendors to ensure each solution or service brings real value.We make sure everyone involved is aligned with your vision and needs."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How do we work?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identifying needs, mapping processes, and defining objectives."
+        },
+        {
+          "title": "Design and architecture",
+          "description": "Defining requirements, creating a prototype, and designing integrations with current systems."
+        },
+        {
+          "title": "Implementation",
+          "description": "Programming, functional testing, integration with external platforms, and deployment to production."
+        },
+        {
+          "title": "Support and maintenance",
+          "description": "Monitoring KPIs, providing support, maintenance, and improvements based on business evolution."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "What do I need to create a <span>digital product</span>?",
+      "description": "Thinking that developing a digital product is a common or straightforward project poses a considerable risk. This type of product requires detailed attention in every aspect, managed by experts.",
+      "buttonText": "How can we help you",
+      "cards": [
+        {
+          "title": "Software engineering",
+          "description": "From integrating different tools and developing new features and products to monitoring and maintaining a product — we’re ready for it. Our software engineering team is made up of developers, architects, and testers who build solutions with cutting-edge technology."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Information security is no longer optional — cybersecurity is a NECESSITY for every business. All companies must have the knowledge, tools, and processes to prevent or minimize attacks."
+        },
+        {
+          "title": "Technology consulting",
+          "description": "Our team of software engineers, architects, and experienced developers uses the best technologies adapted to your industry. Gigson Solutions is your trusted partner in software development. We understand that behind every line of code lies an opportunity to gain a competitive advantage."
+        }
+      ]
+    }
+  },
+  "cibersecurity":{
+    "title": "Cybersecurity for Businesses & SMBs | Gigson Solutions",
+    "metadescription": "We’re your technology partner to prevent and mitigate threats. We embed cybersecurity as a core part of your business.",
+    "hero": {
+      "suptitle":"SERVICES",
+      "title": "<span>Enterprise</span> cybersecurity solutions",
+      "description": "In an increasingly complex digital environment, enterprise cybersecurity is no longer optional—it’s a strategic necessity. Threats are constantly evolving and affect both large corporations and SMEs alike.<br> From targeted attacks on critical infrastructures to unauthorized access or internal breaches, the risk is real and constant. <br> At Gigson Solutions, we act as your technology partner, helping you prevent, detect, and mitigate these threats by embedding cybersecurity as a structural part of your business. <br>We don’t offer generic solutions. <br>Our vision is based on the idea that technology should adapt to the real context of each company, not the other way around. That’s why we design and implement robust solutions for applications and infrastructure, tailored to your size, sector, technical structure, and business goals. <br>From cybersecurity risk analysis to the deployment of advanced tools, our consultants ensure that every protection layer is aligned with your strategy and evolves with your business.",
+      "buttonText": "Contact us"
+    },
+    "solutionsApplications": {
+      "title": "Cybersecurity for companies and SMEs",
+      "subTitle": "Cybersecurity for companies and SMEs requires a comprehensive approach that combines technology, processes, and people. We address the different elements needed to protect your infrastructure — from the network to devices, the cloud, and critical applications.Below, we show you how we design a complete strategy tailored to the real needs of each organization.",
+      "containers": [
+        {
+          "title": "Perimeter and network security",
+          "description": "Analyzing and protecting a company’s digital perimeter is the first step in preventing unauthorized access and external attacks. We design secure, scalable network architectures aligned with your organization’s operational requirements. We combine advanced tools with a strategic approach to ensure that security doesn’t hinder business operations.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Next-gen firewall configuration and maintenance",
+              "description": "We implement and manage intelligent firewalls that not only block threats but also adapt to network traffic behavior."
+            },
+            {
+              "title": "Intrusion detection and prevention systems (IDS/IPS)",
+              "description": "We detect anomalous patterns and block attacks before they compromise your systems, reducing incident response times."
+            },
+            {
+              "title": "Network segmentation and internal traffic control",
+              "description": "We divide the network into secure zones to minimize the impact of potential breaches and precisely control information flow across departments and devices."
+            }
+          ]
+        },
+        {
+          "title": "Cloud Security",
+          "description": "The use of cloud services has transformed how businesses operate but also introduced new attack surfaces. At Gigson Solutions, we design specific cybersecurity strategies for cloud environments to ensure that your data and operations are protected without limiting scalability or agility.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Protection of AWS, Azure, and Google Cloud environments",
+              "description": "We apply the best security practices to each cloud provider, ensuring proper configuration and protection of critical resources."
+            },
+            {
+              "title": "Data encryption and access control in cloud environments",
+              "description": "We enforce robust encryption and access control policies to ensure that only authorized users can interact with sensitive information."
+            },
+            {
+              "title": "Continuous monitoring and control of critical configurations",
+              "description": "We supervise cloud environments in real time to detect deviations, configuration errors, or suspicious access before they become threats."
+            }
+          ]
+        },
+         {
+          "title": "Endpoint security",
+          "description": "Every device or system connected to your network is a potential entry point for threats. We implement endpoint security solutions that let you control, protect, and monitor all devices in a centralized way—without disrupting daily operations.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Protección avanzada en dispositivos con soluciones EDR",
+              "description": "We deploy Endpoint Detection and Response (EDR) solutions to continuously monitor device activity and neutralize malicious behavior."
+            },
+            {
+              "title": "Centralized antivirus, updates, and access policy management",
+              "description": "We centralize security management across all endpoints, automating updates, scans, and policy enforcement."
+            },
+            {
+              "title": "Data Loss Prevention (DLP) for mobile and portable devices",
+              "description": "We prevent data leaks with DLP tools that control how sensitive information is accessed, copied, or transferred inside and outside your corporate network."
+            }
+          ]
+        },
+        {
+          "title": "Application and system security",
+          "description": "Web apps, mobile apps, and internal systems are frequent targets for attacks. We strengthen security from development to deployment, minimizing vulnerabilities and ensuring critical services operate with integrity and stability.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Vulnerability analysis in web and mobile apps",
+              "description": "We identify security flaws before they are exploited using periodic testing and advanced analysis methods."
+            },
+            {
+              "title": "Configuration and secure code reviews",
+              "description": "We audit configurations and secure development practices to prevent breaches caused by errors or poor implementations."
+            },
+            {
+              "title": "Protection against attacks on APIs and exposed services",
+              "description": "We secure sensitive entry points like APIs and external services through robust authentication, data validation, and automated defenses."
+            }
+          ]
+        },
+        {
+          "title": "Identity and Access Management (IAM)",
+          "description": "Controlling who accesses what, when, and how is essential to reduce internal and external risks. A solid identity and access management strategy helps maintain traceability, limit privileges, and protect your organization’s most sensitive resources.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Implementation of Multi-Factor Authentication (MFA)",
+              "description": "We add extra security layers for user access with MFA systems, making it harder to misuse stolen credentials."
+            },
+            {
+              "title": "Access privilege control and segmentation policies",
+              "description": "We define clear rules to ensure each user accesses only what they truly need, minimizing lateral movement risks within the network."
+            },
+            {
+              "title": "Real-time access monitoring and auditing",
+              "description": "We monitor access to critical systems to detect anomalous behavior and respond immediately to suspicious incidents."
+            }
+          ]
+        },
+        {
+          "title": "Protection Against Internal and External Threatss",
+          "description": "Not all threats come from outside. An unauthorized access, a careless mistake, or a malicious insider can jeopardize your entire infrastructure. That’s why we combine technology solutions with training and active surveillance to anticipate both external attacks and internal vulnerabilities.",
+          "type": "Application",
+          "cards": [
+            {
+              "title": "Monitoring and detection of advanced persistent threats (APT)",
+              "description": "We detect anomalous behavior patterns linked to complex, long-lasting threats before they compromise critical assets."
+            },
+            {
+              "title": "Data filtering and suspicious access control systems",
+              "description": "We apply intelligent filters that block malicious traffic, unusual access, and data exfiltration attempts from within your organization."
+            },
+            {
+              "title": "Employee cybersecurity awareness and training",
+              "description": "We train teams to recognize common risks like phishing or unsafe practices, reducing human error as an attack vector."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How do we work?",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Identifying needs, mapping processes, and defining objectives."
+        },
+        {
+          "title": "Design and architecture",
+          "description": "Defining requirements, creating a prototype, and designing integrations with current systems."
+        },
+        {
+          "title": "Implementation",
+          "description": "Programming, functional testing, integration with external platforms, and deployment to production."
+        },
+        {
+          "title": "Support and maintenance",
+          "description": "Monitoring KPIs, providing support, maintenance, and improvements based on business evolution."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "What do I need to create a <span>digital product</span>?",
+      "description": "Thinking that developing a digital product is a common or straightforward project poses a considerable risk. This type of product requires detailed attention in every aspect, managed by experts.",
+      "buttonText": "How can we help you",
+      "cards": [
+        {
+          "title": "Software engineering",
+          "description": "From integrating different tools and developing new features and products to monitoring and maintaining a product — we’re ready for it. Our software engineering team is made up of developers, architects, and testers who build solutions with cutting-edge technology."
+        },
+        {
+          "title": "Cybersecurity",
+          "description": "Information security is no longer optional — cybersecurity is a NECESSITY for every business. All companies must have the knowledge, tools, and processes to prevent or minimize attacks."
+        },
+        {
+          "title": "Technology consulting",
+          "description": "Our team of software engineers, architects, and experienced developers uses the best technologies adapted to your industry. Gigson Solutions is your trusted partner in software development. We understand that behind every line of code lies an opportunity to gain a competitive advantage."
+        }
+      ]
+    }
+  }}
