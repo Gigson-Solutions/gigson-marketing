@@ -36,7 +36,6 @@ export default defineConfig([
 
       'unicorn/no-array-reduce': 'off',
       'unicorn/no-nested-ternary': 'off',
-      'no-nested-ternary': 'off',
       'unicorn/prefer-query-selector': 'warn',
       'unicorn/prevent-abbreviations': 'off',
       'unicorn/filename-case': [
