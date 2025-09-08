@@ -1,3 +1,4 @@
+
 import { Trans, useTranslation } from 'react-i18next';
 import { ButtonLink } from './Button.jsx';
 
@@ -35,6 +36,7 @@ const Hero = ({title, suptitle, description , buttonText }) => {
             </div>
         </section>
     );
+
 };
 
 export default Hero;
