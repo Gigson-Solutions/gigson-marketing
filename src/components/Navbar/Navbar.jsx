@@ -31,7 +31,7 @@ const Navbar = () => {
     contact,
     industries,
     logistics,
-    retial,
+    retail,
     CTO,
     tech_consulting,
     software,
