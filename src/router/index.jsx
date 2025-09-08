@@ -7,6 +7,7 @@ import Home from '../components/Home/Home';
 import Layout from '../components/Layout/Layout';
 import Cases from '../components/Pages/Cases/Cases';
 import Cibersecurity from '../components/Pages/Cibersecurity/Cibersecurity';
+import Construction from '../components/Pages/Construction/Construction';
 import ConsultoriaTec from '../components/Pages/ConsultoriaTec/ConsultoriaTec';
 import Contact from '../components/Pages/Contact';
 import CookiesPage from '../components/Pages/CookiesPage';
@@ -16,12 +17,9 @@ import Logistics from '../components/Pages/Logistics/Logistics';
 import NotFound from '../components/Pages/NotFound/NotFound';
 import Notice from '../components/Pages/Notice';
 import Policity from '../components/Pages/Policity';
+import Retail from '../components/Pages/Retail/Retail';
 import Software from '../components/Pages/Software/Software';
 import Services from '../components/Services/Services';
-import Retail from "../components/Pages/Retail/Retail";
-import Construction from '../components/Pages/Construction/Construction';
-import {Navigate, Outlet} from 'react-router-dom';
-
 import { DEFAULT_LANG, ROUTE_SLUGS } from './routerSlugs';
 
 const generateRoutes = (lang) => {
@@ -39,8 +37,8 @@ const generateRoutes = (lang) => {
       { path: slugs.software, element: <Software /> },
       { path: slugs.ConsultoriaTec, element: <ConsultoriaTec /> },
       { path: slugs.cibersecurity, element: <Cibersecurity /> },
-      { path: slugs.retail, element: <Retail />},
-      { path: slugs.construction,element: <Construction /> },
+      { path: slugs.retail, element: <Retail /> },
+      { path: slugs.construction, element: <Construction /> },
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },

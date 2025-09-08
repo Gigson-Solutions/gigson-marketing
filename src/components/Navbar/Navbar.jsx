@@ -9,9 +9,9 @@ import {
   ROUTE_SLUGS,
   SUPPORTED_LANGS,
 } from '../../router/routerSlugs.js';
+import Construction from '../Pages/Construction/Construction.jsx';
 import NavbarDesktop from './NavbarDesktop.jsx';
 import NavbarMobile from './NavbarMobile.jsx';
-import Construction from '../Pages/Construction/Construction.jsx';
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -56,9 +56,11 @@ const Navbar = () => {
     },
     {
       name: industries,
-      children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics },
-                 { name: retail, link: ROUTE_SLUGS[currentLang].retail },
-    { name: construction, link: ROUTE_SLUGS[currentLang].construction }],
+      children: [
+        { name: logistics, link: ROUTE_SLUGS[currentLang].logistics },
+        { name: retail, link: ROUTE_SLUGS[currentLang].retail },
+        { name: construction, link: ROUTE_SLUGS[currentLang].construction },
+      ],
     },
     { name: cases, link: ROUTE_SLUGS[currentLang].cases },
     { name: about, link: ROUTE_SLUGS[currentLang].about },
