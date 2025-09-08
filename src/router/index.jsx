@@ -1,18 +1,23 @@
-import Layout from '../components/Layout/Layout';
-import Home from '../components/Home/Home';
+import '../App.css';
+
+import { createBrowserRouter } from 'react-router-dom';
+
 import AboutHero from '../components/About/AboutHero';
-import Services from '../components/Services/Services';
+import Home from '../components/Home/Home';
+import Layout from '../components/Layout/Layout';
 import Cases from '../components/Pages/Cases/Cases';
-import Faqs from '../components/Pages/Faqs/Faqs';
+import Cibersecurity from '../components/Pages/Cibersecurity/Cibersecurity';
+import ConsultoriaTec from '../components/Pages/ConsultoriaTec/ConsultoriaTec';
 import Contact from '../components/Pages/Contact';
-import Logistics from '../components/Pages/Logistics/Logistics';
-import NotFound from '../components/Pages/NotFound/NotFound';
-import Policity from '../components/Pages/Policity';
 import CookiesPage from '../components/Pages/CookiesPage';
 import CTO from '../components/Pages/CTO/CTO';
-import ConsultoriaTec from '../components/Pages/ConsultoriaTec/ConsultoriaTec';
+import Faqs from '../components/Pages/Faqs/Faqs';
+import Logistics from '../components/Pages/Logistics/Logistics';
+import NotFound from '../components/Pages/NotFound/NotFound';
+import Notice from '../components/Pages/Notice';
+import Policity from '../components/Pages/Policity';
 import Software from '../components/Pages/Software/Software';
-import Cibersecurity from '../components/Pages/Cibersecurity/Cibersecurity';
+import Services from '../components/Services/Services';
 import Construction from '../components/Pages/Construction/Construction';
 
 
@@ -33,11 +38,11 @@ const generateRoutes = (lang) => {
     children: [
       { index: true, element: <Home /> },
       { path: slugs.services, element: <Services /> },
-      { path: slugs.logistics,element: <Logistics /> },
-      { path: slugs.CTO,element: <CTO/> },
-      {path: slugs.software, element: <Software/>},
-      { path: slugs.ConsultoriaTec,element: <ConsultoriaTec/> },
-      { path: slugs.cibersecurity,element: <Cibersecurity/> },
+      { path: slugs.logistics, element: <Logistics /> },
+      { path: slugs.CTO, element: <CTO /> },
+      { path: slugs.software, element: <Software /> },
+      { path: slugs.ConsultoriaTec, element: <ConsultoriaTec /> },
+      { path: slugs.cibersecurity, element: <Cibersecurity /> },
       { path: slugs.construction,element: <Construction /> },
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
@@ -52,7 +57,7 @@ const generateRoutes = (lang) => {
 };
 
 export const router = createBrowserRouter([
-   generateRoutes('en'),
-   generateRoutes('es'),
-   { path: '*', element: <NotFound /> },
+  generateRoutes('en'),
+  generateRoutes('es'),
+  { path: '*', element: <NotFound /> },
 ]);
