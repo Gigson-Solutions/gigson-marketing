@@ -1,24 +1,24 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+
+import CookieBanner from '../../CookieBanner';
 import ScrollTop from '../../hooks/ScrollTop';
-import CookieBanner from '../../CookieBanner'; 
 import Whatsapp from '../../shared/ui/WhatssapButton';
+import Footer from '../Footer/Footer';
+import Navbar from '../Navbar/Navbar';
 
 const Layout = () => {
-   return (
-      <ScrollTop>
-         <Navbar />
-         <main>
-            <Outlet />
-         </main>
-         <Footer />
-         <CookieBanner /> {/* Incluimos el banner de cookies */}
-         <Whatsapp />
-      </ScrollTop>
-   );
+  return (
+    <ScrollTop>
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+      <CookieBanner /> {}
+      <Whatsapp />
+    </ScrollTop>
+  );
 };
 
 export default Layout;
-// dda
