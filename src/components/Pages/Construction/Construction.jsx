@@ -8,8 +8,7 @@ import HowWeWork from '../../../shared/ui/HowWeWork.jsx';
 import ImproveAreas from '../../../shared/ui/ImproveAreas.jsx';
 import SolutionsApplications from '../../../shared/ui/SolutionsApplications.jsx';
 import UseCases from '../../../shared/ui/UseCases.jsx';
-
-const Retail = () => {
+const Construction = () => {
   const { t } = useTranslation();
 
   const {
@@ -21,7 +20,7 @@ const Retail = () => {
     improveAreas,
     howWeWork,
     digitalProduct,
-  } = t('cases-retail');
+  } = t('cases-construction');
 
   return (
     <>
@@ -48,4 +47,4 @@ const Retail = () => {
   );
 };
 
-export default Retail;
+export default Construction;
