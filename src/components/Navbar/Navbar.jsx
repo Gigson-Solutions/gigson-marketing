@@ -11,6 +11,7 @@ import {
 } from '../../router/routerSlugs.js';
 import NavbarDesktop from './NavbarDesktop.jsx';
 import NavbarMobile from './NavbarMobile.jsx';
+import Construction from '../Pages/Construction/Construction.jsx';
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -31,6 +32,7 @@ const Navbar = () => {
     contact,
     industries,
     logistics,
+    construction,
     CTO,
     tech_consulting,
     software,
@@ -53,7 +55,8 @@ const Navbar = () => {
     },
     {
       name: industries,
-      children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics }],
+      children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics },
+    { name: construction, link: ROUTE_SLUGS[currentLang].construction }],
     },
     { name: cases, link: ROUTE_SLUGS[currentLang].cases },
     { name: about, link: ROUTE_SLUGS[currentLang].about },

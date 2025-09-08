@@ -21,11 +21,8 @@ import Services from '../components/Services/Services';
 import Construction from '../components/Pages/Construction/Construction';
 
 
-
-
-import {Navigate, Outlet, createBrowserRouter} from 'react-router-dom';
+import {Navigate, Outlet} from 'react-router-dom';
 import '../App.css';
-import Notice from '../components/Pages/Notice';
 import { DEFAULT_LANG, ROUTE_SLUGS } from './routerSlugs';
 
 const generateRoutes = (lang) => {
