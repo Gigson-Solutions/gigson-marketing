@@ -31,6 +31,7 @@ const Navbar = () => {
     contact,
     industries,
     logistics,
+    retail,
     CTO,
     tech_consulting,
     software,
@@ -53,7 +54,8 @@ const Navbar = () => {
     },
     {
       name: industries,
-      children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics }],
+      children: [{ name: logistics, link: ROUTE_SLUGS[currentLang].logistics },
+                 { name: retail, link: ROUTE_SLUGS[currentLang].retail }],
     },
     { name: cases, link: ROUTE_SLUGS[currentLang].cases },
     { name: about, link: ROUTE_SLUGS[currentLang].about },

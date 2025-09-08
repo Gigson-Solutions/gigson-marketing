@@ -18,6 +18,10 @@ import Notice from '../components/Pages/Notice';
 import Policity from '../components/Pages/Policity';
 import Software from '../components/Pages/Software/Software';
 import Services from '../components/Services/Services';
+import Retail from "../components/Pages/Retail/Retail";
+
+import {Navigate, Outlet} from 'react-router-dom';
+
 import { DEFAULT_LANG, ROUTE_SLUGS } from './routerSlugs';
 
 const generateRoutes = (lang) => {
@@ -35,6 +39,7 @@ const generateRoutes = (lang) => {
       { path: slugs.software, element: <Software /> },
       { path: slugs.ConsultoriaTec, element: <ConsultoriaTec /> },
       { path: slugs.cibersecurity, element: <Cibersecurity /> },
+      { path: slugs.retail, element: <Retail />},
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },
