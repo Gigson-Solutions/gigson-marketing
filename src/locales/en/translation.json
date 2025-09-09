@@ -1459,7 +1459,7 @@
         {
           "title": "CRM & ERP Integration",
           "supTitle": "Challenge",
-          "description": "The goal was to integrate the company’s ERP with a CRM system to centralize B2B and B2C account management alongside project workflows. The challenge involved synchronizing customer data, project progress, and financial tracking in one place—improving operational efficiency, resource allocation accuracy, and visibility across the full lifecycle: from concept to execution.",
+          "description": "ERP–CRM integration to centralize B2B/B2C accounts, projects, and finance in one platform. The challenge: sync data and boost efficiency, resource allocation, and lifecycle visibility.",
           "dialog": {
             "backButtonText": "Use Cases",
             "title": "CRM & ERP Integration",
