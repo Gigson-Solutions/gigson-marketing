@@ -14,7 +14,7 @@
     "retail": "Retail",
     "CTO": "CTO as a service",
     "tech_consulting": "Technology consulting",
-    "construction": "Construction-technology",
+    "construction": "Construction",
     "software": "Software engineering",
     "cibersecurity": "Cybersecurity"
   },
@@ -1304,7 +1304,7 @@
     },
     "useCases": {
       "title": "Key Cases",
-      "description": "Descubre cómo hemos ayudado a empresas a resolver desafíos logísticos complejos mediante soluciones tecnológicas personalizadas. Cada caso refleja nuestro compromiso con la eficiencia, la integración y los resultados medibles.",
+      "description": "Discover how we’ve helped companies overcome challenges from design to construction through tailored technology solutions. Each case reflects our commitment to efficiency, integration, and measurable results.",
       "cards": [
         {
           "title": "Tender Search with AI",
@@ -1783,8 +1783,8 @@
       "buttonText": "How we help"
     },
     "useCases": {
-      "title": "Casos Claves",
-      "description": "Descubre cómo hemos ayudado a empresas a resolver desafíos desde el diseño hasta la obra mediante soluciones tecnológicas personalizadas. Cada caso refleja nuestro compromiso con la eficiencia, la integración y los resultados medibles.",
+      "title": "Key Cases",
+      "description": "Discover how we’ve helped companies overcome challenges from design to construction through tailored technology solutions. Each case reflects our commitment to efficiency, integration, and measurable results.",
       "cards": [
         {
           "title": "AI-powered post-sale assistant",

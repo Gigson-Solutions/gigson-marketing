@@ -9,7 +9,6 @@ import {
   ROUTE_SLUGS,
   SUPPORTED_LANGS,
 } from '../../router/routerSlugs.js';
-import Construction from '../Pages/Construction/Construction.jsx';
 import NavbarDesktop from './NavbarDesktop.jsx';
 import NavbarMobile from './NavbarMobile.jsx';
 
