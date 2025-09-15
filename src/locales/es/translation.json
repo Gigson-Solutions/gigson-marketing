@@ -1460,7 +1460,7 @@
         {
           "title": "Integración CRM & ERP",
           "supTitle": "Desafío",
-          "description": "El objetivo era integrar el ERP de la empresa con un CRM para centralizar la gestión de cuentas B2B y B2C junto con los flujos de los proyectos. El reto consistía en sincronizar datos de clientes, seguimiento de proyectos y control financiero en un único entorno, mejorando la eficiencia operativa, la asignación de recursos y la visibilidad del ciclo completo: desde la captación hasta la entrega.",
+          "description": "Integración de ERP y CRM para centralizar cuentas B2B/B2C, proyectos y finanzas en un único entorno. El reto: sincronizar datos y mejorar eficiencia, recursos y visibilidad de todo el ciclo.",
           "dialog": {
             "backButtonText": "Casos de uso",
             "title": "Integración CRM & ERP ",
