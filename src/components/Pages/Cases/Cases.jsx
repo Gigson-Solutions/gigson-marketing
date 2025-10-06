@@ -63,16 +63,20 @@ const Cases = () => {
   );
 
   return (
-    <div className="cases">
-      <div className="hero-cases">
-        <img src={CasesBg} alt="" className="cases-img" />
-        <section className="hero-cases">
+    <div className="cases mt-28">
+      <section className="relative py-20">
+        <img 
+          src={CasesBg} 
+          alt="" 
+          className="absolute inset-0 h-full w-auto min-w-full object-cover opacity-[0.14] -z-10" 
+        />
+        
           <h1 className="hero-cases-h1">
             <Trans i18nKey={heroH1} components={{ span: <span /> }} />
           </h1>
           <p className="hero-cases-p">{heroP}</p>
-        </section>
-      </div>
+       
+      </section>
 
       <h3 className="cases-filters-title">{tagTitle}</h3>
       <div className="cases-container-filters">

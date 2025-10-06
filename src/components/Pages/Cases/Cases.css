@@ -10,18 +10,7 @@
    margin-bottom: 2.625rem !important;
 }
 
-.cases-img {
-   max-width: 55rem;
-   height: 100%;
-   width: 100%;
-   object-fit: contain;
-   opacity: 0.14;
-   position: absolute;
-   top: 0;
-   left: 50%;
-   transform: translateX(-50%);
-   z-index: -1;
-}
+
 .hero-cases-h1 {
    max-width: 23rem;
    margin: auto;
@@ -84,11 +73,6 @@
    .hero-cases {
       margin: 7rem 2rem 2rem;
    }
-   .cases-img {
-      height: 27rem;
-      max-width: 40rem;
-      top: -2rem;
-   }
    .hero-cases-h1 {
       max-width: 38rem;
       margin: 0 auto;
@@ -111,12 +95,6 @@
    .hero-cases {
       margin: 7rem 2rem 3rem;
       padding: 0 4rem;
-   }
-   .cases-img {
-      top: -3rem;
-      left: 48%;
-      height: 32rem;
-      max-width: 60rem;
    }
    .hero-cases-p {
       margin-top: 1.5rem;
