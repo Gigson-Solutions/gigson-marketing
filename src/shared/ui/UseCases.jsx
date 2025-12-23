@@ -214,7 +214,7 @@ const UseCases = ({ cards, title, description }) => {
   return (
     <>
       <div className="pt-12 lg:pt-40 pb-14 lg:pb-0">
-        <div className="max-w-8xl mx-auto px-landing hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">
+        <div className="max-w-[88.875rem] mx-auto hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">
           <TitleBox title={title} description={description} />
 
           {cards?.map((cardProps, index) => {
@@ -234,7 +234,7 @@ const UseCases = ({ cards, title, description }) => {
           })}
         </div>
 
-        <div className="md:hidden max-w-8xl mx-auto px-landing">
+        <div className="md:hidden max-w-[88.875rem] mx-auto">
           <div className="mb-10">
             <TitleBox title={title} description={description} />
           </div>

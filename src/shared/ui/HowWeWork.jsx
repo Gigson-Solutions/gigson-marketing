@@ -31,7 +31,7 @@ const HowWeWork = ({ title, methods }) => {
 
   return (
     <section className="py-14 lg:py-40 bg-gradient-to-br from-[#6d6ff6] via-[#6d6ff6] to-[#e4e5ff]">
-      <div className="max-w-8xl mx-auto px-landing flex flex-col">
+      <div className="max-w-[88.875rem] mx-auto flex flex-col">
         <p className="text-h2 text-white mb-6 md:mb-8 lg:mb-16">{title}</p>
 
         <div className="flex flex-col lg:flex-row flex-wrap gap-10">

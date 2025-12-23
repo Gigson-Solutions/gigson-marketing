@@ -27,7 +27,7 @@ const Hero = ({ title, suptitle, description, buttonText }) => {
 
   return (
     <section className="mt-fixed-navbar pt-14 lg:pt-23 pb-36 lg:pb-23">
-      <div className="max-w-8xl mx-auto px-landing flex flex-col items-center">
+      <div className="max-w-[88.875rem] mx-auto flex flex-col items-center">
         <p className="text-purple-accents text-body1 uppercase mb-4 md:mb-6">
           {suptitle}
         </p>

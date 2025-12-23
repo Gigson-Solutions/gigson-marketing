@@ -261,7 +261,7 @@ const ImproveAreas = ({
   return (
     <>
       <div className="pt-14 lg:pt-40 pb-6 lg:pb-20">
-        <div className="max-w-8xl mx-auto px-landing flex flex-col">
+        <div className="max-w-[88.875rem] mx-auto flex flex-col">
           <div className="flex flex-row items-center justify-between mb-4 md:mb-6">
             <span className="text-bigTag uppercase text-purple-accents">
               {title}
