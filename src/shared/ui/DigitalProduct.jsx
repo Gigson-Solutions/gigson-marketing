@@ -18,10 +18,12 @@ const cardsAttributes = [
   { imgSrc: imgThree },
 ];
 
+const getCardNr = (index) => String(index).padStart(2, '0');
+
 const Card = ({ title, imgSrc, description, cardNr }) => {
   return (
     <div className="h-full md:h-auto md:flex-1 flex flex-col gap-6 h-hull bg-purple-light-a rounded-lg p-4">
-      <p className="text-smallTag text-dark-primary mb-10">{cardNr}</p>
+      <p className="text-bigTag text-purple-accents mb-10">{cardNr}</p>
       <div className="flex flex-col gap-4 lg:gap-x-20">
         <div className="w-full lg:w-auto">
           <img
@@ -30,11 +32,11 @@ const Card = ({ title, imgSrc, description, cardNr }) => {
             alt={`${title}-img`}
           />
         </div>
-        <p className="flex items-center text-h5 text-purple-accents max-w-1/2 min-h-[72px]">
+        <p className="flex items-center text-h4 text-dark-primary  min-h-[72px]">
           {title}
         </p>
       </div>
-      <p className="text-body text-[#737272]">{description}</p>
+      <p className="text-body text-dark-medium">{description}</p>
     </div>
   );
 };
@@ -72,7 +74,7 @@ const DigitalProduct = ({ title, buttonText, description, cards }) => {
                 title={title}
                 description={description}
                 imgSrc={imgSrc}
-                cardNr={index + 1}
+                cardNr={getCardNr(index + 1)}
               />
             );
           })}
