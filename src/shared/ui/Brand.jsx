@@ -11,22 +11,28 @@ import spainRevealedGisgsonImg from 'assets/brands/SpainRevealed_Gisgson.svg';
 import stkImg from 'assets/brands/STK.svg';
 import tarbozImg from 'assets/brands/Tarboz.svg';
 import vikoImg from 'assets/brands/Viko.svg';
+import colvinLogo from 'assets/brands/colvin.svg';
+import unavetsLogo from 'assets/brands/unavets.svg';
+import quicksmileLogo from 'assets/brands/quicksmile.svg';
 import { Trans } from 'react-i18next';
 
 const logoNames = [
   caritasImg,
-  stkImg,
+  vikoImg,
   europcarGroupImg,
   logoImg,
   a6Img,
-  elogiaImg,
   kmmImg,
-  vikoImg,
+  elogiaImg,
+  stkImg,
   adockImg,
   modareImg,
   spainRevealedGisgsonImg,
   brandtiaImg,
   tarbozImg,
+  colvinLogo,
+  unavetsLogo,
+  quicksmileLogo,
 ];
 
 const LogoGrid = () => {
