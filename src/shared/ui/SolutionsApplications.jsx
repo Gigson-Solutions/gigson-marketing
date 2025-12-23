@@ -63,7 +63,7 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
         backgroundSize: 'cover',
       }}
     >
-      <div className="max-w-8xl mx-auto px-landing flex flex-col text-dark-primary">
+      <div className="max-w-[88.875rem] mx-auto flex flex-col text-dark-primary">
         <div className="mb-6 lg:mb-10">
           <h2 className="text-h2 text-dark-primary mb-4">
             <Trans

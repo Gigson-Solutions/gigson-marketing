@@ -35,7 +35,7 @@ const Footer = () => {
             <LanguageSelector />
           </div>
         </nav>
-        <div className="footer-mid">
+        <div className="max-w-[88.875rem] mx-auto footer-mid">
           <img className="logo-footer" src={logoFooter} />
 
           <svg
@@ -47,7 +47,7 @@ const Footer = () => {
           </svg>
         </div>
 
-        <div className="footer-policy">
+        <div className="footer-policy max-w-[88.875rem] mx-auto">
           <span href="">Developed by Gigson Solutions © 2025 </span>
           <ul className="footer-policy-links">
             <li>
