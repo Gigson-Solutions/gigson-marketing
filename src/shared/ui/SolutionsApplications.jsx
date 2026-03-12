@@ -55,7 +55,7 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
 
   return (
     <section
-      className="py-10 lg:py-25"
+      className="px-landing py-10 lg:py-25"
       style={{
         backgroundImage: `url(${solutionsApplicationsBgGradient}`,
         backgroundPosition: 'center center',

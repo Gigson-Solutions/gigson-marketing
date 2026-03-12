@@ -43,7 +43,7 @@ const Card = ({ title, imgSrc, description, cardNr }) => {
 
 const DigitalProduct = ({ title, buttonText, description, cards }) => {
   return (
-    <section className="py-14 lg:py-40">
+    <section className="px-landing py-14 lg:py-40">
       <div className="max-w-[88.875rem] mx-auto">
         <div className="mb-15 flex items-baseline flex-col md:flex-row flex-wrap gap-6">
           <p className="max-w-[800px] text-h2 text-dark-primary md:order-1 md:mr-auto">

@@ -51,7 +51,7 @@ const LogoGrid = () => {
 };
 
 const Brand = () => (
-  <section className="mt-fixed-navbar pb-14 lg:pb-40">
+  <section className="px-landing mt-fixed-navbar pb-14 lg:pb-40">
     <div className="max-w-[88.875rem] mx-auto">
       <div className="flex flex-col lg:flex-row w-full gap-15">
         <div className="  flex flex-col">

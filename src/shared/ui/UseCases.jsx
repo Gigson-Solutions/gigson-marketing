@@ -213,7 +213,7 @@ const UseCases = ({ cards, title, description }) => {
   const handleOnCloseDialog = () => setShowDialog(undefined);
   return (
     <>
-      <div className="pt-12 lg:pt-40 pb-14 lg:pb-0">
+      <div className="px-landing pt-12 lg:pt-40 pb-14 lg:pb-0">
         <div className="max-w-[88.875rem] mx-auto hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">
           <TitleBox title={title} description={description} />
 

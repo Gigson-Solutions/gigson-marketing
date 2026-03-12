@@ -30,7 +30,7 @@ const HowWeWork = ({ title, methods }) => {
   const firstMethod = methods?.slice(0, 1);
 
   return (
-    <section className="py-14 lg:py-40 bg-gradient-to-br from-[#6d6ff6] via-[#6d6ff6] to-[#e4e5ff]">
+    <section className="px-landing py-14 lg:py-40 bg-gradient-to-br from-[#6d6ff6] via-[#6d6ff6] to-[#e4e5ff]">
       <div className="max-w-[88.875rem] mx-auto flex flex-col">
         <p className="text-h2 text-white mb-6 md:mb-8 lg:mb-16">{title}</p>
 
