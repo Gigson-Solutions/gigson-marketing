@@ -1,6 +1,12 @@
 {
+  "book": {
+    "title": "Reservar cita",
+    "subtitle": "Elige un hueco que te encaje. Las reservas se sincronizan con nuestro calendario.",
+    "iframeTitle": "Reservar cita con Gigson Solutions"
+  },
   "menu":{
     "about":"NOSOTROS",
+    "book": "RESERVAR",
     "services":"SERVICIOS",
     "news":"LANDING",
     "industries":"INDUSTRIAS",

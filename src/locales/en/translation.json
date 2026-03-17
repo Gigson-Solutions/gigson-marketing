@@ -1,5 +1,11 @@
 {
+  "book": {
+    "title": "Book a meeting",
+    "subtitle": "Choose a slot that works for you. Bookings sync with our calendars.",
+    "iframeTitle": "Book a meeting with Gigson Solutions"
+  },
   "menu":{
+    "book": "BOOK",
     "services":"SERVICES",
     "news":"LANDING",
     "industries":"INDUSTRIES",

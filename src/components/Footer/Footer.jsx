@@ -5,19 +5,23 @@ import { Link } from 'react-router-dom';
 
 import logoFooter from '../../assets/LogoFooter.svg';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import { DEFAULT_LANG, ROUTE_SLUGS } from '../../router/routerSlugs';
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const slugs = ROUTE_SLUGS[i18n.language] || ROUTE_SLUGS[DEFAULT_LANG];
+  const langPrefix = i18n.language === DEFAULT_LANG ? '' : `/${i18n.language}`;
 
-  const { about, services, cases, faqs, contact, legal, cookies, notice } =
+  const { about, services, cases, faqs, book, contact, legal, cookies, notice } =
     t('menu');
 
   const menuLinks = [
-    { name: services, link: 'services' },
-    { name: cases, link: 'cases' },
-    { name: about, link: 'about' },
-    { name: faqs, link: 'faqs' },
-    { name: contact, link: 'contact' },
+    { name: services, link: `${langPrefix}/${slugs.services}`.replace('//', '/') },
+    { name: cases, link: `${langPrefix}/${slugs.cases}`.replace('//', '/') },
+    { name: about, link: `${langPrefix}/${slugs.about}`.replace('//', '/') },
+    { name: faqs, link: `${langPrefix}/${slugs.faqs}`.replace('//', '/') },
+    { name: book, link: `${langPrefix}/${slugs.book}`.replace('//', '/') },
+    { name: contact, link: `${langPrefix}/${slugs.contact}`.replace('//', '/') },
   ];
 
   return (

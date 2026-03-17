@@ -21,6 +21,7 @@ const ROUTE_SLUGS = {
     ConsultoriaTec: 'technology-consulting',
     software: 'software-engineering',
     cibersecurity: 'cybersecurity',
+    book: 'book',
   },
   es: {
     home: '',
@@ -40,6 +41,7 @@ const ROUTE_SLUGS = {
     ConsultoriaTec: 'consultoria-tecnologica',
     software: 'ingenieria-software',
     cibersecurity: 'ciberseguridad',
+    book: 'reservas',
   },
 };
 

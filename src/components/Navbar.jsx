@@ -1,12 +1,17 @@
 import './Navbar.css';
 
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import logoImg from '../assets/Gigson-logo.svg';
+import { DEFAULT_LANG, ROUTE_SLUGS } from '../router/routerSlugs';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { i18n } = useTranslation();
+  const slugs = ROUTE_SLUGS[i18n.language] || ROUTE_SLUGS[DEFAULT_LANG];
+  const bookPath = i18n.language === DEFAULT_LANG ? `/${slugs.book}` : `/${i18n.language}/${slugs.book}`;
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -48,6 +53,11 @@ const Navbar = () => {
           <li>
             <Link className="menu__item" to="/" onClick={closeMobileMenu}>
               FAQs
+            </Link>
+          </li>
+          <li>
+            <Link className="menu__item" to={bookPath} onClick={closeMobileMenu}>
+              BOOK
             </Link>
           </li>
           <li>
