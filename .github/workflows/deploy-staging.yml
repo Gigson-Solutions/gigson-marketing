@@ -1,0 +1,51 @@
+name: Deploy staging environment
+
+on:
+  push:
+    branches:
+      - staging
+  workflow_dispatch:
+
+env:
+  STAGING_BUCKET: staging-gigsonsolutions-com
+  STAGING_DISTRIBUTION_ID: E1MG8CGWTKF3K5
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: AWS
+    container:
+      image: node:18.12-alpine
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Cache node modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Keep shared favicon
+        run: aws s3 cp s3://gigsonsolutions-com/fav.png "s3://${STAGING_BUCKET}/fav.png"
+
+      - name: Sync to S3 (staging)
+        run: aws s3 sync dist/ "s3://${STAGING_BUCKET}/" --delete
+
+      - name: Invalidate CloudFront
+        run: aws cloudfront create-invalidation --distribution-id "${STAGING_DISTRIBUTION_ID}" --paths "/*" "/fav.png" "/index.html"
