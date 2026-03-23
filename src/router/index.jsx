@@ -14,6 +14,7 @@ import Contact from '../components/Pages/Contact';
 import CookiesPage from '../components/Pages/CookiesPage';
 import CTO from '../components/Pages/CTO/CTO';
 import Faqs from '../components/Pages/Faqs/Faqs';
+import Integrations from '../components/Pages/Integrations/Integrations';
 import Logistics from '../components/Pages/Logistics/Logistics';
 import NotFound from '../components/Pages/NotFound/NotFound';
 import Notice from '../components/Pages/Notice';
@@ -23,6 +24,14 @@ import Software from '../components/Pages/Software/Software';
 import Services from '../components/Services/Services';
 import { DEFAULT_LANG, ROUTE_SLUGS } from './routerSlugs';
 
+/** En el subdominio integrations.* la home es la landing de integraciones Holded. */
+function HomeOrIntegrationsLanding() {
+  const isIntegrations =
+    typeof window !== 'undefined' &&
+    window.location.hostname === 'integrations.gigsonsolutions.com';
+  return isIntegrations ? <Integrations /> : <Home />;
+}
+
 const generateRoutes = (lang) => {
   const slugs = ROUTE_SLUGS[lang];
   const langPrefix = lang === DEFAULT_LANG ? '' : `/${lang}`;
@@ -31,9 +40,10 @@ const generateRoutes = (lang) => {
     path: langPrefix || '/',
     element: <Layout />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, element: <HomeOrIntegrationsLanding /> },
       { path: slugs.services, element: <Services /> },
       { path: slugs.logistics, element: <Logistics /> },
+      { path: slugs.integrations, element: <Integrations /> },
       { path: slugs.CTO, element: <CTO /> },
       { path: slugs.software, element: <Software /> },
       { path: slugs.ConsultoriaTec, element: <ConsultoriaTec /> },

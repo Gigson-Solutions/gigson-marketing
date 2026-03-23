@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const CALCOM_URL =
-  import.meta.env.VITE_CALCOM_GIGSON_URL || 'https://cal.com/gigsonsolutions/30min';
+  import.meta.env.VITE_CALCOM_GIGSON_URL || 'https://cal.gigsonsolutions.com/gigsonsolutions/30min';
 
 const Book = () => {
   const { t } = useTranslation();
