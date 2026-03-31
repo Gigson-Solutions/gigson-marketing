@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integraciones Holded a Medida · Partner Oficial — Gigson Solutions</title>
+<meta name="description" content="Conecta Holded con el software que ya usas. Somos partner oficial de Holded. Integraciones a medida para ecommerce, CRM, ERP, clínicas y más.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17165031999"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17165031999');
+</script>
+<style>
+:root{
+  --bg:#f4f3ef;--bg-card:#fff;--bg-dark:#3c3c3b;
+  --text:#3c3c3b;--muted:#7a7975;--faint:#b0aca6;
+  --purple:#7874f4;--purple-dk:#5f5bd8;
+  --purple-lt:rgba(120,116,244,.10);--purple-mid:rgba(120,116,244,.18);
+  --border:#e5e3dc;--green:#16A34A;--green-lt:#DCFCE7;
+  --r-sm:8px;--r-md:12px;--r-lg:18px;--r-xl:28px;--r-2xl:40px;
+  --sh-sm:0 1px 4px rgba(0,0,0,.06);
+  --sh-md:0 4px 20px rgba(0,0,0,.08),0 2px 8px rgba(0,0,0,.04);
+  --sh-lg:0 12px 48px rgba(0,0,0,.10),0 4px 16px rgba(0,0,0,.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+input,textarea{font-family:inherit}
+h1,h2,h3,h4,h5{font-family:'DM Sans',sans-serif;font-weight:700;line-height:1.15;color:var(--text)}
+h2{font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.02em}
+h3{font-size:clamp(.93rem,1.5vw,1.05rem);letter-spacing:-.01em;font-weight:600}
+p{line-height:1.65}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.btn{background:var(--purple);color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;padding:11px 22px;border-radius:var(--r-md);border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.btn:hover{background:var(--purple-dk);transform:translateY(-1px);box-shadow:var(--sh-md)}
+.fu{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
+.fu.vis{opacity:1;transform:translateY(0)}
+
+/* ─── NAV ──────────────────────────────────── */
+.nav{position:sticky;top:0;z-index:200;background:rgba(244,243,239,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px;max-width:1140px;margin:0 auto;padding:0 24px}
+.nav-logo img{height:30px}
+.nav-cta{background:var(--purple);color:#fff;font-size:14px;font-weight:600;padding:9px 20px;border-radius:var(--r-md);transition:background .2s,transform .15s}
+.nav-cta:hover{background:var(--purple-dk);transform:translateY(-1px)}
+
+/* ─── HERO ─────────────────────────────────── */
+#hero{padding:68px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1fr 430px;gap:72px;align-items:start}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--purple-lt);color:var(--purple);font-size:12.5px;font-weight:700;padding:5px 13px;border-radius:100px;margin-bottom:22px;border:1px solid var(--purple-mid)}
+.hero-eyebrow img{height:14px;border-radius:2px}
+.hero-title{font-family:'DM Sans',sans-serif;font-size:5.6em;line-height:6rem;font-weight:400;letter-spacing:-.03em;margin-bottom:18px}
+.hero-title em{font-style:normal;color:var(--purple)}
+.hero-desc{font-size:17px;color:var(--muted);margin-bottom:28px;line-height:1.72;max-width:480px}
+.hero-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:36px}
+.hero-bullets li{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:500}
+.chk{width:20px;height:20px;background:var(--green-lt);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chk svg{width:11px;height:11px}
+.hero-proof{display:flex;align-items:center;gap:14px}
+.avatar-stack{display:flex}
+.avatar-stack span{width:34px;height:34px;border-radius:50%;border:2.5px solid var(--bg);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;margin-left:-10px;font-family:'DM Sans',sans-serif;color:#fff}
+.avatar-stack span:first-child{margin-left:0}
+.avatar-stack span:nth-child(1){background:#9490f7}
+.avatar-stack span:nth-child(2){background:#7874f4}
+.avatar-stack span:nth-child(3){background:#5f5bd8}
+.proof-text{font-size:13px;color:var(--muted);line-height:1.45}
+.proof-text strong{color:var(--text);font-weight:600}
+
+/* Arrow animation above chat */
+.chat-arrow-hint{display:flex;justify-content:center;margin-bottom:10px;height:36px}
+.chat-arrow-hint svg{animation:arrowBounce 2.2s ease-in-out infinite;opacity:.55}
+@keyframes arrowBounce{0%,100%{transform:translateY(0);opacity:.45}50%{transform:translateY(7px);opacity:.8}}
+
+/* ─── CHAT ─────────────────────────────────── */
+.chat-wrap{background:var(--bg-card);border-radius:var(--r-2xl);box-shadow:var(--sh-lg);overflow:hidden;border:1px solid var(--border)}
+.chat-head{background:var(--bg-dark);padding:15px 20px;display:flex;align-items:center;gap:12px}
+.chat-av{width:42px;height:42px;border-radius:50%;overflow:hidden;position:relative;flex-shrink:0;border:2px solid rgba(255,255,255,.2)}
+.chat-av img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.chat-av-dot{position:absolute;bottom:1px;right:1px;width:10px;height:10px;border-radius:50%;background:var(--green);border:2px solid var(--bg-dark)}
+.chat-head-info h4{font-family:'DM Sans',sans-serif;font-size:13.5px;font-weight:600;color:#fff}
+.chat-head-info p{font-size:11.5px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:5px;margin-top:1px}
+.dot-live{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse-g 2s ease-in-out infinite}
+@keyframes pulse-g{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.4)}}
+.chat-pbar{height:3px;background:rgba(255,255,255,.07)}
+.chat-pfill{height:100%;background:var(--purple);transition:width .5s cubic-bezier(.4,0,.2,1);width:0%}
+.chat-body{padding:18px 18px 12px;min-height:290px;display:flex;flex-direction:column;gap:10px}
+.bubble{max-width:90%;padding:11px 14px;border-radius:14px;font-size:13.5px;line-height:1.55}
+.bubble.bot{background:#F2F2F0;color:var(--text);border-radius:4px 14px 14px 14px;align-self:flex-start}
+.cstep{display:none;flex-direction:column;gap:8px;animation:fadeUp .3s ease}
+.cstep.active{display:flex}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ci,.ct{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:var(--r-sm);font-size:13.5px;background:var(--bg);color:var(--text);outline:none;transition:border-color .2s}
+.ci::placeholder,.ct::placeholder{color:var(--faint)}
+.ci:focus,.ct:focus{border-color:var(--purple)}
+.ct{resize:none;min-height:68px}
+.clabel{font-size:12px;font-weight:600;color:var(--muted);margin-bottom:2px}
+.cradio-group{display:flex;flex-direction:column;gap:6px}
+.cradio{display:flex;align-items:center;gap:10px;padding:10px 13px;border:1.5px solid var(--border);border-radius:var(--r-sm);cursor:pointer;font-size:13.5px;transition:all .18s}
+.cradio:hover{border-color:var(--purple);background:var(--purple-lt)}
+.cradio.sel{border-color:var(--purple);background:var(--purple-lt);color:var(--purple);font-weight:500}
+.cradio input{display:none}
+.rdot{width:15px;height:15px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s}
+.cradio.sel .rdot{border-color:var(--purple);background:var(--purple)}
+.cradio.sel .rdot::after{content:'';width:5px;height:5px;border-radius:50%;background:#fff}
+.chat-foot{padding:12px 18px 18px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px}
+.step-ind{font-size:11.5px;color:var(--faint);text-align:center}
+.cbtn{width:100%;padding:12px;border-radius:var(--r-md);font-family:'DM Sans',sans-serif;font-size:14.5px;font-weight:700;transition:all .2s;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.cbtn-p{background:var(--purple);color:#fff}
+.cbtn-p:hover{background:var(--purple-dk);transform:translateY(-1px)}
+.cbtn-wa{background:#25D366;color:#fff}
+.cbtn-wa:hover{background:#1DBF5E;transform:translateY(-1px)}
+.chat-partner{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;padding:10px 16px;background:rgba(255,255,255,.75);border:1px solid var(--border);border-radius:var(--r-lg)}
+.chat-partner img{height:20px;object-fit:contain}
+.chat-partner-label{font-size:11.5px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+
+/* ─── TRUST BAR ─────────────────────────────── */
+#trust{background:var(--bg-dark);padding:22px 0}
+.trust-row{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.t-item{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.6);font-size:13.5px;font-weight:500}
+.t-item strong{color:#fff;font-size:17px;font-family:'DM Sans',sans-serif}
+.t-sep{width:1px;height:26px;background:rgba(255,255,255,.12)}
+
+/* ─── COMMON SEC ─────────────────────────────── */
+.sec-label{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--purple);margin-bottom:14px}
+.sec-label::before{content:'';width:18px;height:2px;background:var(--purple);border-radius:2px}
+.dark-sec-label{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px}
+.dark-sec-label::before{content:'';width:18px;height:2px;background:rgba(255,255,255,.3);border-radius:2px}
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head p{font-size:17px;color:var(--muted);margin-top:10px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7}
+
+/* ─── LOGO CAROUSEL ─────────────────────────── */
+#logo-carousel{padding:44px 0 0;overflow:hidden;position:relative}
+#logo-carousel::before,#logo-carousel::after{content:'';position:absolute;top:0;bottom:0;width:140px;z-index:10;pointer-events:none}
+#logo-carousel::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+#logo-carousel::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+.car-track-wrap{display:flex;flex-direction:column;gap:14px;margin-bottom:14px}
+.car-track{display:flex;gap:14px;width:max-content}
+.car-track.ltr{animation:scrollLTR 72s linear infinite}
+.car-track.rtl{animation:scrollRTL 84s linear infinite}
+@keyframes scrollLTR{from{transform:translateX(-50%)}to{transform:translateX(0%)}}
+@keyframes scrollRTL{from{transform:translateX(0%)}to{transform:translateX(-50%)}}
+.car-logo{width:118px;height:62px;background:var(--bg-card);border-radius:var(--r-md);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:10px 12px;flex-shrink:0}
+.car-logo img{max-width:94px;max-height:42px;object-fit:contain}
+
+/* ─── SOFTWARE ───────────────────────────────── */
+#software{padding:52px 0 80px}
+.sw-search-wrap{position:relative;margin-bottom:18px}
+.sw-search-wrap svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--muted)}
+.sw-search{width:100%;padding:11px 13px 11px 40px;border:1.5px solid var(--border);border-radius:var(--r-md);font-size:14.5px;background:var(--bg-card);color:var(--text);outline:none;transition:border-color .2s}
+.sw-search:focus{border-color:var(--purple)}
+.ind-tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:28px}
+.ind-tab{padding:7px 15px;border-radius:100px;font-size:12.5px;font-weight:500;border:1.5px solid var(--border);background:var(--bg-card);color:var(--muted);cursor:pointer;transition:all .18s}
+.ind-tab:hover{border-color:var(--purple);color:var(--purple)}
+.ind-tab.on{background:var(--purple);border-color:var(--purple);color:#fff}
+.sw-grid-wrap{position:relative}.sw-grid-wrap.collapsed{max-height:320px;overflow:hidden}.sw-grid-wrap.collapsed::after{content:'';position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(to bottom,transparent,var(--bg,#f4f3ef));pointer-events:none}
+.sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:9px}
+.sw-ver-todo{display:none;margin:14px auto 0;padding:9px 24px;border-radius:100px;font-size:13px;font-weight:600;border:1.5px solid var(--border);background:var(--bg-card);color:var(--purple);cursor:pointer;transition:all .18s}.sw-ver-todo:hover{border-color:var(--purple);background:var(--purple-lt)}.sw-ver-todo.vis{display:block}
+.sw-card{background:var(--bg-card);border:1.5px solid var(--border);border-radius:var(--r-md);padding:11px 13px;display:flex;align-items:center;gap:9px;cursor:pointer;transition:all .18s}
+.sw-card:hover{border-color:var(--purple);background:var(--purple-lt)}
+.sw-check{width:18px;height:18px;border-radius:50%;background:var(--green-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sw-check svg{width:9px;height:9px}
+.sw-name{font-size:12.5px;font-weight:500;color:var(--text)}
+.sw-no{display:none;grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);font-size:15px}
+.sw-no.vis{display:block}
+.sw-cta-bar{margin-top:28px;background:var(--purple-lt);border:1.5px solid var(--purple-mid);border-radius:var(--r-lg);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.sw-cta-bar p{font-size:15px;font-weight:500}
+.sw-cta-bar p span{color:var(--purple);font-weight:700}
+.sw-tooltip{display:none;position:fixed;inset:0;z-index:500;background:rgba(60,60,59,.55);align-items:center;justify-content:center;padding:24px}
+.sw-tooltip.vis{display:flex}
+.sw-tt-box{background:#fff;border-radius:var(--r-xl);padding:36px 32px;max-width:440px;width:100%;text-align:center;box-shadow:var(--sh-lg);position:relative}
+.sw-tt-box h3{margin-bottom:10px}
+.sw-tt-box p{font-size:14.5px;color:var(--muted);margin-bottom:22px;line-height:1.7}
+.sw-tt-close{position:absolute;top:14px;right:16px;font-size:20px;color:var(--faint);cursor:pointer;line-height:1;background:none;border:none}
+
+/* ─── HOW ────────────────────────────────────── */
+#how{padding:80px 0;background:linear-gradient(to bottom right,rgba(120,116,244,.73),rgba(120,116,244,.06))}
+.how-inner{display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:center;margin-top:36px}
+.how-img{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-lg)}
+.how-img img{width:100%;height:auto;display:block}
+.how-steps{display:flex;flex-direction:column}
+.how-step{display:flex;gap:18px;align-items:flex-start;padding:22px 0;position:relative}
+.how-step:not(:last-child)::after{content:'';position:absolute;left:21px;top:56px;bottom:-22px;width:2px;background:linear-gradient(to bottom,rgba(120,116,244,.45),transparent)}
+.how-step:not(:last-child)::before{content:'';position:absolute;left:17px;top:58px;width:10px;height:10px;border-radius:50%;background:var(--purple);opacity:.7;animation:flowDot 2.6s ease-in-out infinite}
+.how-step:nth-child(2):not(:last-child)::before{animation-delay:.85s}
+@keyframes flowDot{0%{transform:translateY(0);opacity:.7}60%{transform:translateY(52px);opacity:1}100%{transform:translateY(80px);opacity:0}}
+.how-num{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--purple);font-family:'DM Sans',sans-serif;font-size:17px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 6px rgba(120,116,244,.12)}
+.how-step h3{margin-bottom:6px}
+.how-step p{font-size:14px;color:rgba(60,60,59,.75);line-height:1.7}
+
+/* ─── CASOS ──────────────────────────────────── */
+#casos{padding:80px 0}
+.casos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.caso{background:var(--bg-card);border:1.5px solid var(--border);border-radius:var(--r-xl);padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .28s,box-shadow .28s,border-color .28s}
+.caso:hover{transform:translateY(-5px) scale(1.012);box-shadow:0 8px 32px rgba(120,116,244,.18);border-color:rgba(120,116,244,.35)}
+.caso-tag{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--faint)}
+.caso h3{font-size:.95rem}
+.caso p{font-size:13.5px;color:var(--muted);line-height:1.68;flex:1}
+.caso-link{font-size:13px;font-weight:600;color:var(--purple);display:flex;align-items:center;gap:5px;margin-top:auto;cursor:pointer;transition:gap .2s}
+.caso:hover .caso-link{gap:9px}
+.caso-link svg{width:13px;height:13px}
+
+/* "ver más" expanded area */
+.casos-more{display:none;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.casos-more.open{display:grid;animation:fadeUp .4s ease}
+.casos-toggle-wrap{margin-top:22px;text-align:center}
+.btn-ghost{background:none;border:1.5px solid var(--purple);color:var(--purple);font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;padding:10px 26px;border-radius:var(--r-md);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:7px}
+.btn-ghost:hover{background:var(--purple);color:#fff}
+.btn-ghost svg{width:15px;height:15px;transition:transform .3s}
+.btn-ghost.open svg{transform:rotate(180deg)}
+
+/* ─── TESTIMONIOS ────────────────────────────── */
+#testimonios{padding:80px 0;overflow:hidden;background:var(--bg-dark)}
+.test-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:0 18px;margin-top:44px;position:relative;height:480px;overflow:hidden}
+.test-masonry::before,.test-masonry::after{content:'';position:absolute;left:0;right:0;height:80px;z-index:10;pointer-events:none}
+.test-masonry::before{top:0;background:linear-gradient(to bottom,var(--bg-dark),transparent)}
+.test-masonry::after{bottom:0;background:linear-gradient(to top,var(--bg-dark),transparent)}
+.test-col{display:flex;flex-direction:column;gap:16px;animation:colScroll var(--dur,28s) linear infinite}
+.test-col:nth-child(2){animation-direction:reverse;--dur:34s}
+.test-col:nth-child(3){--dur:30s}
+@keyframes colScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.test-col:hover{animation-play-state:paused}
+.tcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:22px}
+.tcard .stars{display:flex;gap:2px;margin-bottom:10px}
+.tcard .stars svg{width:12px;height:12px;color:#F59E0B}
+.tcard .ttext{font-size:13.5px;color:rgba(255,255,255,.73);line-height:1.72;margin-bottom:13px}
+.tcard .tauthor{display:flex;align-items:center;gap:10px;padding-top:11px;border-top:1px solid rgba(255,255,255,.07)}
+.tav-img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid rgba(255,255,255,.2)}
+.tname{font-size:12.5px;font-weight:600;color:#fff;font-family:'DM Sans',sans-serif}
+.tco{font-size:11px;color:rgba(255,255,255,.33)}
+.tres{display:inline-flex;align-items:center;gap:4px;background:rgba(22,163,74,.18);color:#4ADE80;font-size:10.5px;font-weight:600;padding:2.5px 7px;border-radius:100px;margin-left:auto;white-space:nowrap}
+
+/* ─── FAQ ────────────────────────────────────── */
+#faq{padding:80px 0;position:relative;background:var(--bg);overflow:hidden}
+/* animated network background */
+#faq-canvas{position:absolute;inset:0;z-index:0;pointer-events:none}
+#faq .wrap{position:relative;z-index:1}
+#faq .sec-head p{color:var(--muted)}
+.faq-list{max-width:740px;margin:44px auto 0;display:flex;flex-direction:column;gap:8px}
+.fq{border-radius:var(--r-md);overflow:hidden;border:1.5px solid var(--border);background:rgba(255,255,255,.88);backdrop-filter:blur(6px)}
+.fq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 22px;text-align:left;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--text);background:none;cursor:pointer;gap:14px}
+.fq-q svg{width:18px;height:18px;color:var(--muted);transition:transform .28s;flex-shrink:0}
+.fq.open .fq-q svg{transform:rotate(180deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .32s ease}
+.fq.open .fq-a{max-height:300px}
+.fq-ai{padding:14px 22px 18px;font-size:14px;color:var(--muted);line-height:1.72;border-top:1px solid var(--border)}
+
+/* ─── CTA FINAL ──────────────────────────────── */
+#cta-final{padding:80px 0;text-align:center;background:var(--bg)}
+.cta-card{border-radius:var(--r-2xl);padding:60px 44px;max-width:680px;margin:0 auto;position:relative;overflow:hidden;background:rgba(255,255,255,.6);border:1px solid var(--border)}
+.cta-card::before{content:'';position:absolute;top:-100px;right:-100px;width:280px;height:280px;border-radius:50%;background:var(--purple);opacity:.07}
+.cta-card h2{color:var(--text);margin-bottom:14px}
+.cta-card p{color:var(--muted);font-size:16px;margin-bottom:32px;position:relative;z-index:1}
+
+/* ─── FOOTER ─────────────────────────────────── */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 0}
+.ft-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.ft-logo img{height:22px;filter:none;opacity:.7}
+.ft-links{display:flex;gap:22px}
+.ft-links a{font-size:12.5px;color:var(--muted);transition:color .2s}
+.ft-links a:hover{color:var(--text)}
+.ft-disc{text-align:center;font-size:11px;color:var(--faint);margin-top:22px;line-height:1.7;max-width:700px;margin-left:auto;margin-right:auto}
+
+/* ─── CLIENTES LOGOS ─────────────────────────── */
+#clientes-logos{padding:60px 0;background:var(--bg)}
+.clientes-label{text-align:center;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:32px}
+.clientes-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px 40px}
+.clientes-grid img{height:28px;width:auto;filter:brightness(0);opacity:.3;transition:opacity .2s}
+.clientes-grid img:hover{opacity:.55}
+
+/* ─── FLOAT CTA ──────────────────────────────── */
+.float-cta{display:none;position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:300;background:var(--purple);color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;padding:13px 26px;border-radius:100px;box-shadow:var(--sh-lg);white-space:nowrap;cursor:pointer;transition:all .2s;border:none;animation:float-in .4s .7s both}
+@keyframes float-in{from{opacity:0;transform:translateX(-50%) translateY(18px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.float-cta:hover{background:var(--purple-dk)}
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-title{font-size:3.2em;line-height:3.8rem}
+  .how-inner{grid-template-columns:1fr}
+  .how-img{max-width:420px;margin:0 auto}
+  .casos-grid,.casos-more{grid-template-columns:1fr 1fr}
+  .test-masonry{grid-template-columns:1fr 1fr}
+  .test-col:last-child{display:none}
+  .float-cta{display:block}
+  .sw-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+  .sw-cta-bar{flex-direction:column;text-align:center}
+}
+@media(max-width:600px){
+  #hero{padding:42px 0 52px}
+  .hero-title{font-size:2.5em;line-height:3rem}
+  .casos-grid,.casos-more{grid-template-columns:1fr}
+  .cta-card{padding:36px 22px}
+  .row2{grid-template-columns:1fr}
+  .trust-row{gap:18px}
+  .t-sep{display:none}
+  .test-masonry{grid-template-columns:1fr;height:420px}
+  .test-col:nth-child(2),.test-col:last-child{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://gigsonsolutions.com/es" class="nav-logo" target="_blank">
+      <img src="img/gigson-solutions-logo.png" alt="Gigson Solutions" onerror="this.outerHTML='<span style=\'font-family:DM Sans,sans-serif;font-weight:700;font-size:16px\'>Gigson Solutions</span>'">
+    </a>
+    <button class="nav-cta" onclick="openChat()">Habla con nuestro experto</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <div class="hero-left fu">
+        <div class="hero-eyebrow">
+          <img src="img/holded-logo.png" alt="Holded" onerror="this.style.display='none'">
+          Integración a medida de cualquier software
+        </div>
+        <h1 class="hero-title">Conecta Holded con el software que <em>ya usas</em></h1>
+        <p class="hero-desc">Hablamos contigo, nos explicas qué necesitas y construimos la integración exacta que lo solucione.</p>
+        <ul class="hero-bullets">
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Integraciones 100% a medida, sin límites de plataforma</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Asesoramiento previo incluido</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>+600 integraciones completadas en múltiples industrias</li>
+        </ul>
+        <div class="hero-proof">
+          <div class="avatar-stack"><span>AG</span><span>MR</span><span>PL</span></div>
+          <p class="proof-text"><strong>+600 empresas</strong> ya tienen Holded<br>conectado con sus herramientas</p>
+        </div>
+      </div>
+
+      <div class="fu" style="transition-delay:.12s">
+        <!-- Arrow hint -->
+        <div class="chat-arrow-hint">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 4 L14 22 M7 15 L14 22 L21 15" stroke="#7874f4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="chat-wrap" id="chatWidget">
+          <div class="chat-head">
+            <div class="chat-av">
+              <img src="img/jaume-torres.jpg" alt="Jaume Torres">
+              <div class="chat-av-dot"></div>
+            </div>
+            <div class="chat-head-info">
+              <h4>Jaume Torres de Gigson Solutions</h4>
+              <p><span class="dot-live"></span> Disponible ahora</p>
+            </div>
+          </div>
+          <div class="chat-pbar"><div class="chat-pfill" id="chatPfill"></div></div>
+          <div class="chat-body" id="chatBody">
+            <div class="cstep active" id="cstep0">
+              <div class="bubble bot">👋 ¡Hola! Soy Jaume, experto en integraciones con Holded. Cuéntame qué necesitas y estudio la mejor forma de ayudarte.</div>
+            </div>
+            <div class="cstep" id="cstep1">
+              <div class="bubble bot">Primero, ¿cómo te llamas y de qué empresa nos escribes?</div>
+              <div class="row2">
+                <input class="ci" id="f_nombre" type="text" placeholder="Nombre y apellidos" autocomplete="name">
+                <input class="ci" id="f_empresa" type="text" placeholder="Empresa" autocomplete="organization">
+              </div>
+              <div class="row2">
+                <input class="ci" id="f_tel" type="tel" placeholder="Teléfono" autocomplete="tel">
+                <input class="ci" id="f_email" type="email" placeholder="Email" autocomplete="email">
+              </div>
+            </div>
+            <div class="cstep" id="cstep2">
+              <div class="bubble bot" id="bubble2">¡Perfecto! ¿Qué herramienta necesitas conectar con Holded?</div>
+              <div>
+                <div class="clabel">¿Qué herramienta quieres conectar con Holded?</div>
+                <input class="ci" id="f_herra" type="text" placeholder="Ej: Shopify, SAP, HubSpot, tu ERP...">
+              </div>
+              <div>
+                <div class="clabel">¿Qué problema quieres resolver?</div>
+                <textarea class="ct" id="f_problema" placeholder="Ej: sincronizar pedidos, automatizar facturación..."></textarea>
+              </div>
+            </div>
+            <div class="cstep" id="cstep3">
+              <div class="bubble bot">Casi listo. ¿Cuántas personas sois en la empresa?</div>
+              <div class="cradio-group">
+                <label class="cradio" onclick="selectSize(this,'menos10')"><input type="radio" name="size"><span class="rdot"></span> Menos de 10 empleados</label>
+                <label class="cradio" onclick="selectSize(this,'10-50')"><input type="radio" name="size"><span class="rdot"></span> 10 – 50 empleados</label>
+                <label class="cradio" onclick="selectSize(this,'50-250')"><input type="radio" name="size"><span class="rdot"></span> 50 – 250 empleados</label>
+                <label class="cradio" onclick="selectSize(this,'+250')"><input type="radio" name="size"><span class="rdot"></span> Más de 250 empleados</label>
+              </div>
+            </div>
+          </div>
+          <div class="chat-foot" id="chatFoot">
+            <div class="step-ind" id="stepInd">Paso 1 de 3</div>
+            <button class="cbtn cbtn-p" id="chatBtn" onclick="chatNext()">Empezar ↔</button>
+          </div>
+        </div>
+        <div class="chat-partner">
+          <img src="img/conectar-holded.png" alt="Holded Partner" onerror="this.style.display='none'">
+          <span class="chat-partner-label">Partner Oficial de Holded</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section id="trust">
+  <div class="wrap">
+    <div class="trust-row">
+      <div class="t-item"><strong>+600</strong> integraciones realizadas</div>
+      <div class="t-sep"></div>
+      <div class="t-item"><strong>12+</strong> industrias</div>
+      <div class="t-sep"></div>
+      <div class="t-item"><strong>100%</strong> a medida</div>
+      <div class="t-sep"></div>
+      <div class="t-item">Partner oficial de Holded</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO CAROUSEL -->
+<section id="logo-carousel">
+  <div class="car-track-wrap">
+    <div class="car-track ltr" id="carRow1"></div>
+    <div class="car-track rtl" id="carRow2"></div>
+  </div>
+</section>
+
+<!-- SOFTWARE -->
+<section id="software">
+  <div class="wrap">
+    <div class="sec-head fu">
+      <div class="sec-label">Software integrado</div>
+      <h2>¿Tu herramienta se habla con Holded?</h2>
+      <p>Búscala abajo. Si la encuentras, ya sabes que se puede conectar. <b>Si no está, también la conectamos</b></p>
+    </div>
+    <div class="sw-search-wrap fu" style="transition-delay:.08s">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input class="sw-search" id="swSearch" type="text" placeholder="Busca tu software... Ej: Shopify, SAP, Doctoralia...">
+    </div>
+    <div class="ind-tabs fu" id="indTabs" style="transition-delay:.12s"></div>
+    <div class="sw-grid-wrap collapsed" id="swGridWrap">
+      <div class="sw-grid" id="swGrid">
+        <div class="sw-no" id="swNo">No encontramos ese software, pero lo integramos igualmente. <a href="#" onclick="openChat();return false;" style="color:var(--purple);font-weight:600">Cuéntanos ↔</a></div>
+      </div>
+    </div>
+    <button class="sw-ver-todo vis" id="swVerTodo" onclick="toggleSwVerTodo()">Ver todo</button>
+    <div class="sw-cta-bar fu" style="transition-delay:.16s">
+      <p>¿No ves tu software? <span>Lo integramos igualmente.</span></p>
+      <button class="btn" onclick="openChat()">
+        <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Habla con nuestro experto
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="sw-tooltip" id="swTooltip" onclick="closeSWTooltip(event)">
+  <div class="sw-tt-box">
+    <button class="sw-tt-close" onclick="document.getElementById('swTooltip').classList.remove('vis')">✕</button>
+    <div style="width:48px;height:48px;border-radius:50%;background:var(--purple-lt);display:flex;align-items:center;justify-content:center;margin:0 auto 14px">
+      <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#7874f4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h3>¡Podemos integrar <span id="ttSwName"></span> con Holded!</h3>
+    <p>Solicita esta integración a través del formulario. Así podremos prepararlo todo antes de hablar contigo.</p>
+    <button class="btn" style="width:100%;justify-content:center" onclick="document.getElementById('swTooltip').classList.remove('vis');openChat(document.getElementById('ttSwName').textContent)">Ir al formulario ↔</button>
+  </div>
+</div>
+
+<!-- HOW -->
+<section id="how">
+  <div class="wrap">
+    <div class="fu" style="text-align:left">
+      <div class="sec-label">Cómo funciona</div>
+      <h2 style="max-width:380px">Lo que necesites, hecho a medida</h2>
+    </div>
+    <div class="how-inner">
+      <div class="how-steps">
+        <div class="how-step fu"><div class="how-num">1</div><div><h3>Hablamos contigo</h3><p>Nos cuentas qué herramienta usas, qué problema tienes y cómo trabaja tu equipo. Analizamos si la integración tiene sentido y cómo resolver de la manera más eficiente.</p></div></div>
+        <div class="how-step fu" style="transition-delay:.1s"><div class="how-num">2</div><div><h3>Diseñamos la solución</h3><p>Definimos el flujo de datos, los puntos de integración y el comportamiento exacto. Sin automatizaciones amateur ni parches, solucionamos adaptando todo a tu operativa. <br> Si la <b>integración nativa de Holded no te funciona</b> también te buscamos una solución.</p></div></div>
+        <div class="how-step fu" style="transition-delay:.2s"><div class="how-num">3</div><div><h3>Construimos y entregamos</h3><p>Desarrollamos la integración, la probamos con datos reales y nos aseguramos de que sepas cómo funciona.</p></div></div>
+      </div>
+      <div class="how-img fu" style="transition-delay:.15s">
+        <img src="img/conectar-holded-1.png" alt="Conectar Holded" onerror="this.parentElement.style.cssText='background:rgba(255,255,255,.25);border-radius:28px;min-height:300px';this.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASOS DE USO -->
+<section id="casos">
+  <div class="wrap">
+    <div class="sec-head fu">
+      <div class="sec-label">Casos de uso</div>
+      <h2>Problemas reales que ya hemos resuelto</h2>
+      <p>Cada integración parte de un problema de negocio concreto. Aquí están los que nos encontramos con más frecuencia</p>
+    </div>
+
+    <!-- 6 open -->
+    <div class="casos-grid">
+      <div class="caso fu"><div class="caso-tag">Ecommerce · Retail</div><h3>Gastos en Stripe ↔ Holded</h3><p>Cada pedido online genera gastos asociados a comisiones de tu pasarela de pago, esto se tiene en cuenta y se pasa a Holded sin introducir nada a mano.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+      <div class="caso fu" style="transition-delay:.07s"><div class="caso-tag">Verifactu</div><h3>Cumplimiento VeriFactu en cualquier sistema</h3><p>Conectamos tu TPV, ERP o ecommerce con Holded para emitir facturas conformes a VeriFactu sin cambiar tu software actual.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+      <div class="caso fu" style="transition-delay:.14s"><div class="caso-tag">Amazon</div><h3>Amazon FBA/FMA ↔ Holded</h3><p>Sincroniza e integra diferentes flujos de FBA o FBM según el gestor logístico que te interese por zona geográfica.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+      <div class="caso fu" style="transition-delay:.07s"><div class="caso-tag">Clínicas · Salud</div><h3>Software clínico ↔ Holded para control financiero</h3><p>Integramos Cliniko, Doctoralia, gestores de clínicas dentales o veterinarias con Holded para centralizar ingresos, costes y márgenes.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+      <div class="caso fu" style="transition-delay:.14s"><div class="caso-tag">Finanzas · Contabilidad</div><h3>Conciliación bancaria basada en IA</h3><p>Leemos movimientos y facturas desde Holded y aplicamos tus reglas personalizadas para proponer conciliaciones automáticas.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+      <div class="caso fu" style="transition-delay:.21s"><div class="caso-tag">ERP · Construcción</div><h3>ERP sectorial (SAP, Odoo, Presto, Shippro) ↔ Holded</h3><p>Si usas un ERP pesado para la operativa pero necesitas Holded para contabilidad, creamos el puente de datos exacto.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+    </div>
+
+    <!-- toggle button -->
+    <div class="casos-toggle-wrap">
+      <button class="btn-ghost" id="casosToggleBtn" onclick="toggleCasosMore()">
+        Ver más casos de uso
+        <svg viewBox="0 0 24 24" fill="none"><polyline points="6,9 12,15 18,9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <!-- 6 hidden, same design -->
+    <div class="casos-more" id="casosMore">
+      <div class="caso"><div class="caso-tag">Hostelería · TPV</div><h3>TPV (Revo, LastApp, Cheerfy) ↔ Holded</h3><p>Sincronizamos el cierre diario de caja, métodos de pago y desglose contable directamente en Holded. Sin exportar manualmente.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+      <div class="caso"><div class="caso-tag">Logística · Envíos</div><h3>Sendcloud / ShipStation ↔ Holded</h3><p>Los costes de envío se contabilizan automáticamente. Puedes analizar el margen real de cada pedido incluyendo la logística.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+      <div class="caso"><div class="caso-tag">Real Estate</div><h3>CRM inmobiliario (Witei, Inmovilla) ↔ Holded</h3><p>Automatizamos la facturación de comisiones y honorarios directamente desde el cierre de operaciones en tu CRM inmobiliario.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+      <div class="caso"><div class="caso-tag">RRHH · Nóminas</div><h3>Factorial / Personio / Sesame ↔ Holded</h3><p>Los costes salariales se registran automáticamente en contabilidad cada mes, sin exportaciones manuales ni errores de imputación.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+      <div class="caso"><div class="caso-tag">Educación · eLearning</div><h3>Kajabi / Teachable ↔ Holded</h3><p>Cada matrícula o pago de curso genera automáticamente su factura en Holded con los datos fiscales del alumno y la categoría contable.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+      <div class="caso"><div class="caso-tag">Marketplace · Amazon</div><h3>Amazon Seller Central ↔ Holded</h3><p>Sincronizamos ventas, comisiones de Amazon, devoluciones y liquidaciones para tener una contabilidad real de tu negocio en marketplace.</p><span class="caso-link" onclick="openChat()">Quiero esto <svg viewBox="0 0 24 24" fill="none"><polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIOS — dark, masonry 3 cols -->
+<section id="testimonios">
+  <div class="wrap">
+    <div class="sec-head fu">
+      <div class="dark-sec-label">Testimonios</div>
+      <h2 style="color:#fff">Estos son algunos 'dolores de cabeza' que hemos resuelto</h2>
+    </div>
+    <div class="test-masonry" id="testMasonry">
+      <div class="test-col" id="testCol1"></div>
+      <div class="test-col" id="testCol2"></div>
+      <div class="test-col" id="testCol3"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS CLIENTES -->
+<section id="clientes-logos">
+  <div class="wrap">
+    <p class="clientes-label">Empresas que ya confían en nosotros</p>
+    <div class="clientes-grid">
+      <img src="img/logos-clientes/adock.svg" alt="Adock">
+      <img src="img/logos-clientes/caritas.svg" alt="Cáritas">
+      <img src="img/logos-clientes/colvin.svg" alt="Colvin">
+      <img src="img/logos-clientes/europcar.svg" alt="Europcar">
+      <img src="img/logos-clientes/kmm.svg" alt="KMM">
+      <img src="img/logos-clientes/moda-re.svg" alt="Moda Re">
+      <img src="img/logos-clientes/mudanza.svg" alt="Mudanza">
+      <img src="img/logos-clientes/quick-smile.svg" alt="Quick Smile">
+      <img src="img/logos-clientes/spain-revealed.svg" alt="Spain Revealed">
+      <img src="img/logos-clientes/stk.svg" alt="STK">
+      <img src="img/logos-clientes/viko.svg" alt="Viko">
+    </div>
+  </div>
+</section>
+
+<!-- FAQ — cream bg + animated network -->
+<section id="faq">
+  <canvas id="faq-canvas"></canvas>
+  <div class="wrap">
+    <div class="sec-head fu">
+      <div class="sec-label">Preguntas frecuentes</div>
+      <h2>¿Alguna duda?</h2>
+    </div>
+    <div class="faq-list">
+      <div class="fq"><button class="fq-q" onclick="toggleFaq(this)">¿Trabajáis con cualquier software o solo con los de vuestra lista?<svg viewBox="0 0 24 24" fill="none"><polyline points="6,9 12,15 18,9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="fq-a"><p class="fq-ai">Con cualquier software que tenga API, webhook o exportación de datos. La lista refleja integraciones ya completadas, pero si tu herramienta no aparece, igualmente podemos conectarla. La viabilidad técnica la analizamos gratis.</p></div></div>
+      <div class="fq"><button class="fq-q" onclick="toggleFaq(this)">¿Cuánto tiempo tarda en estar lista una integración?<svg viewBox="0 0 24 24" fill="none"><polyline points="6,9 12,15 18,9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="fq-a"><p class="fq-ai">Depende de la complejidad. Integraciones simples pueden estar listas en semanas. Las más complejas, con múltiples flujos y lógica de negocio, pueden llevar más tiempo. Siempre te damos un plazo estimado antes de empezar.</p></div></div>
+      <div class="fq"><button class="fq-q" onclick="toggleFaq(this)">¿Necesito conocimientos técnicos para trabajar con vosotros?<svg viewBox="0 0 24 24" fill="none"><polyline points="6,9 12,15 18,9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="fq-a"><p class="fq-ai">No. Nuestro proceso empieza con una conversación en lenguaje de negocio. Tú nos dices qué problema tienes y qué resultado esperas. Nosotros lo traducimos en solución técnica.</p></div></div>
+      <div class="fq"><button class="fq-q" onclick="toggleFaq(this)">¿La primera consulta tiene coste?<svg viewBox="0 0 24 24" fill="none"><polyline points="6,9 12,15 18,9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="fq-a"><p class="fq-ai">No. La consulta inicial es completamente gratuita y está pensada para que nos expliques qué problema tienes y que estudiemos cuál es la mejor solución para ello.</p></div></div>
+      <div class="fq"><button class="fq-q" onclick="toggleFaq(this)">¿Qué os diferencia al ser partner oficial?<svg viewBox="0 0 24 24" fill="none"><polyline points="6,9 12,15 18,9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="fq-a"><p class="fq-ai">Como partner oficial concentramos a lo largo de los años un conocimiento profundo de Holded. Esto evita errores comunes y asegura las mejores prácticas. <br><br>Además somos una empresa de <b>ingeniería de software</b> podemos desarrollar la solución tecnológica que tu negocio necesita porque nuestras soluciones no están limitadas por la tecnología.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL — same as footer bg -->
+<section id="cta-final">
+  <div class="wrap">
+    <div class="cta-card fu">
+      <h2>¿Listo para conectar Holded?</h2>
+      <p>Cuéntanos qué necesitas. La consulta es gratuita y sin compromiso.</p>
+      <button class="btn" style="max-width:280px;margin:0 auto;padding:13px 24px;font-size:15px;position:relative;z-index:1" onclick="openChat()">Hablar con nuestro experto ↔</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-inner">
+      <div class="ft-logo"><img src="img/gigson-solutions-logo.png" alt="Gigson Solutions"></div>
+      <div class="ft-links">
+        <a href="https://gigsonsolutions.com/policy" target="_blank">Política legal</a>
+        <a href="https://gigsonsolutions.com/cookies" target="_blank">Cookies</a>
+        <a href="https://gigsonsolutions.com/notice" target="_blank">Aviso legal</a>
+      </div>
+    </div>
+    <p class="ft-disc">Gigson Solutions es una entidad independiente y no está afiliada ni forma parte de Holded. No representamos a Holded ni actuamos en su nombre. Nuestra condición es exclusivamente la de partner oficial autorizado para la implementación y asesoramiento sobre sus productos y servicios.</p>
+  </div>
+</footer>
+
+<button class="float-cta" onclick="openChat()">Habla con nuestro experto ↔</button>
+
+<script>
+/* ═══════════════════════════════════════════════
+   LOGO CAROUSEL
+═══════════════════════════════════════════════ */
+const CAR_FILES=[
+  'holded-shopify.png','holded-woocomerce.png','hubspot-holded.png','sap-holded.png',
+  'odoo-holded.png','sage-holded.png','netsuite-holded.png','microsoftdynamics-holded.png',
+  'pipedrive-holded.png','harvest-holded.png','freshbooks-holded.png','temaleader-holded.png',
+  'moodle-holded.png','kajabi-holded.png','teachable-holded.png','thinkific-holded.png',
+  'classlife-holded.png','cliniko-holded.png','doctoralia-holded.png','agendapro-holded.png',
+  'covermanager-holded.png','dentalink-holded.png','gesden-holded.png','orisdent-holded.png',
+  'dendoo-holded.png','dasieclinic-holded.png','gestor-vet-holded.png','provetcloud-holded.png',
+  'holded-qvet.png','wakyma-vets-holded.png','winvet-holded.png','presto-holded.png',
+  'revit-holded.png','buildingme-holded.png','construdata-holded.png','sendcloud-holded.png',
+  'shipstation-holded.png','easypost-holded.png','saloodo-holded.png','amazonseller-holded.png',
+  'fotocasa-holded.png','witei-holded.png','tokko-holded.png','inmovilla-holded.png',
+  'idealista-holded.png','sesame-holded.png','factorial-holded.png','bizneo-holded.png',
+  'payfit-holded.png','revo-holded.png','lastapp-holded.png','frontrest-holded.png',
+  'misstipsi-holded.png','printify.png','square-holded.png','flow-holded.png',
+  'timp-holded.png','proyectpro-holded.png','provet-cloud-holded.png','sap-holded.png'
+];
+(function(){
+  const h=Math.ceil(CAR_FILES.length/2);
+  const r1f=CAR_FILES.slice(0,h), r2f=CAR_FILES.slice(h);
+  function item(f){
+    const d=document.createElement('div');d.className='car-logo';
+    const img=document.createElement('img');
+    img.src=`img/logos-negros/${f}`;
+    img.alt=f.replace(/-holded\.png|\.png/g,'').replace(/-/g,' ');
+    img.loading='lazy';d.appendChild(img);return d;
+  }
+  const r1=document.getElementById('carRow1'),r2=document.getElementById('carRow2');
+  [...r1f,...r1f].forEach(f=>r1.appendChild(item(f)));
+  [...r2f,...r2f].forEach(f=>r2.appendChild(item(f)));
+})();
+
+/* ═══════════════════════════════════════════════
+   SOFTWARE GRID — expanded industries
+═══════════════════════════════════════════════ */
+const SW={
+  "Todos":[],
+  "Retail":[
+    {n:"Shopify"},{n:"WooCommerce"},{n:"PrestaShop"},{n:"Magento"},{n:"BigCommerce"},
+    {n:"Square"},{n:"Printify"},{n:"Amazon Seller"},{n:"Lightspeed"},{n:"Tiendanube"},
+    {n:"Shoptet"},{n:"Vtex"},{n:"Wix eCommerce"},{n:"Ecwid"}
+  ],
+  "CRM / ERP":[
+    {n:"HubSpot"},{n:"Salesforce"},{n:"Pipedrive"},{n:"SAP"},{n:"Odoo"},
+    {n:"Sage"},{n:"NetSuite"},{n:"MS Dynamics"},{n:"Zoho CRM"},{n:"Harvest"},
+    {n:"Teamleader"},{n:"Freshbooks"},{n:"Monday.com"},{n:"Copper CRM"},
+    {n:"Zoho Books"},{n:"Wrike"},{n:"Close CRM"},{n:"ActiveCampaign"}
+  ],
+  "Hospitality":[
+    {n:"Guesty"},{n:"Mews"},{n:"Cloudbeds"},{n:"Amenitiz"},{n:"Opera PMS"},{n:"Protel"},
+    {n:"Mirai"},{n:"Wubook"},{n:"Beonprice"},{n:"Pace Revenew"},{n:"Tableau"},{n:"Dataria"},
+    {n:"Revo"},{n:"QuoHotel"},{n:"Partee"},{n:"Asksuite"}
+  ],
+  "Clínicas":[
+    {n:"Cliniko"},{n:"Doctoralia"},{n:"AgendaPro"},{n:"Covermanager"},
+    {n:"Flow"},{n:"Acuity Scheduling"},{n:"Jane App"},{n:"Medesk"},
+    {n:"Noodle"},{n:"Healcode"},{n:"Mindbody"}
+  ],
+  "Dental":[
+    {n:"Dentalink"},{n:"GesDen"},{n:"OrisDent"},{n:"Dendoo"},
+    {n:"Dasieclinic"},{n:"Clinic Cloud"},{n:"Denty"},{n:"OdontoSoft"}
+  ],
+  "Veterinario":[
+    {n:"GestorVet"},{n:"ProvetCloud"},{n:"Qvet"},{n:"Wakyma"},
+    {n:"WinVet"},{n:"eVetPractice"},{n:"Vetspire"},{n:"Digitail"}
+  ],
+  "Hostelería":[
+    {n:"CoverManager"},{n:"Revo"},{n:"LastApp"},{n:"Frontrest"},
+    {n:"MisTipsi"},{n:"Cheerfy"},{n:"TheFork"},{n:"Tspoon"},
+    {n:"Lightspeed Restaurant"},{n:"Toast POS"}
+  ],
+  "Construcción":[
+    {n:"Presto"},{n:"Revit"},{n:"BuildingMe"},{n:"Construdata"},
+    {n:"Planhopper"},{n:"Procore"},{n:"ProyectPro"},{n:"Autodesk BIM"},
+    {n:"Stack"},{n:"CoConstruct"},{n:"Buildertrend"}
+  ],
+  "Educación":[
+    {n:"Kajabi"},{n:"Teachable"},{n:"Moodle"},{n:"Thinkific"},
+    {n:"Classlife"},{n:"LearnWorlds"},{n:"TalentLMS"},{n:"Docebo"},
+    {n:"Chamilo"},{n:"Canvas LMS"},{n:"Schoology"}
+  ],
+  "RR.HH":[
+    {n:"Sesame HR"},{n:"Personio"},{n:"PayFit"},{n:"Factorial"},
+    {n:"Bizneo HR"},{n:"Kenjo"},{n:"Hibob"},{n:"Bamboo HR"},
+    {n:"Workday"},{n:"Rippling"},{n:"Deel"}
+  ],
+  "Logística":[
+    {n:"Sendcloud"},{n:"ShipStation"},{n:"EasyPost"},{n:"Packlink"},
+    {n:"Saloodo"},{n:"Shipbob"},{n:"Outvio"},{n:"Zeleris"},
+    {n:"Correos Express"},{n:"MRW"},{n:"Deliverea"},{n:"Outvio"}
+  ],
+  "Real Estate":[
+    {n:"Fotocasa"},{n:"Witei"},{n:"Tokko"},{n:"Inmovilla"},
+    {n:"Idealista"},{n:"Resales Online"},{n:"Habitaclia"},{n:"Nexo Inmobiliario"}
+  ],
+  "Marketing":[
+    {n:"Mailchimp"},{n:"Klaviyo"},{n:"Brevo"},{n:"ActiveCampaign"},
+    {n:"GetResponse"},{n:"Drip"},{n:"Omnisend"},{n:"Dotdigital"}
+  ],
+  "Pagos":[
+    {n:"Stripe"},{n:"PayPal"},{n:"Redsys"},{n:"GoCardless"},
+    {n:"Mollie"},{n:"Adyen"},{n:"Square Payments"},{n:"Sumup"}
+  ],
+  "Proyectos":[
+    {n:"Asana"},{n:"Jira"},{n:"Monday.com"},{n:"ClickUp"},
+    {n:"Notion"},{n:"Basecamp"},{n:"Teamwork"},{n:"Linear"}
+  ],
+};
+SW["Todos"]=Object.entries(SW).filter(([k])=>k!=="Todos").flatMap(([,v])=>v);
+// deduplicate
+SW["Todos"]=SW["Todos"].filter((v,i,a)=>a.findIndex(t=>t.n===v.n)===i);
+
+let activeCat="Todos",searchQ="";
+function updateVerTodoBtn(){
+  const wrap=document.getElementById('swGridWrap');
+  const btn=document.getElementById('swVerTodo');
+  const isTodos=activeCat==="Todos"&&!searchQ;
+  wrap.classList.toggle('collapsed',isTodos&&!wrap.dataset.expanded);
+  btn.classList.toggle('vis',isTodos&&!wrap.dataset.expanded);
+}
+function toggleSwVerTodo(){
+  const wrap=document.getElementById('swGridWrap');
+  const btn=document.getElementById('swVerTodo');
+  wrap.dataset.expanded='1';
+  wrap.classList.remove('collapsed');
+  btn.classList.remove('vis');
+}
+function renderSW(){
+  const grid=document.getElementById('swGrid'),noEl=document.getElementById('swNo');
+  const wrap=document.getElementById('swGridWrap');
+  delete wrap.dataset.expanded;
+  let list=SW[activeCat]||[];
+  if(searchQ)list=list.filter(s=>s.n.toLowerCase().includes(searchQ.toLowerCase()));
+  grid.querySelectorAll('.sw-card').forEach(c=>c.remove());
+  noEl.classList.toggle('vis',list.length===0);
+  list.forEach(sw=>{
+    const card=document.createElement('div');card.className='sw-card';
+    card.onclick=()=>showSWTooltip(sw.n);
+    card.innerHTML=`<span class="sw-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="sw-name">${sw.n}</span>`;
+    grid.insertBefore(card,noEl);
+  });
+  updateVerTodoBtn();
+}
+function buildTabs(){
+  const tabs=document.getElementById('indTabs');
+  Object.keys(SW).forEach(k=>{
+    const t=document.createElement('button');t.className='ind-tab'+(k==='Todos'?' on':'');
+    t.textContent=k;
+    t.onclick=()=>{activeCat=k;tabs.querySelectorAll('.ind-tab').forEach(x=>x.classList.remove('on'));t.classList.add('on');renderSW()};
+    tabs.appendChild(t);
+  });
+}
+function showSWTooltip(n){document.getElementById('ttSwName').textContent=n;document.getElementById('swTooltip').classList.add('vis')}
+function closeSWTooltip(e){if(e.target===document.getElementById('swTooltip'))document.getElementById('swTooltip').classList.remove('vis')}
+document.getElementById('swSearch').addEventListener('input',e=>{searchQ=e.target.value;renderSW()});
+buildTabs();renderSW();
+
+/* ═══════════════════════════════════════════════
+   CASOS MORE TOGGLE
+═══════════════════════════════════════════════ */
+function toggleCasosMore(){
+  const el=document.getElementById('casosMore');
+  const btn=document.getElementById('casosToggleBtn');
+  const isOpen=el.classList.contains('open');
+  el.classList.toggle('open');
+  btn.classList.toggle('open');
+  btn.childNodes[0].textContent=isOpen?'Ver más casos de uso':'Ver menos casos de uso ';
+}
+
+/* ═══════════════════════════════════════════════
+   TESTIMONIOS MASONRY — 3 cols alternating scroll
+═══════════════════════════════════════════════ */
+const TTEST=[
+  {name:'Juan Carlos Avellaneda',co:'Director de operaciones · Retail',res:'WooCommerce',text:'"Teníamos WooCommerce y Holded totalmente desconectados. Cada semana perdíamos horas cuadrando pedidos y facturas a mano. Gigson Solutions nos montó la integración en dos semanas y desde entonces va solo."'},
+  {name:'Elena Tolosa',co:'Gerente · Red de clínicas dentales',res:'VeriFactu',text:'"Necesitábamos cumplir VeriFactu desde nuestro software de clínica sin cambiar nada de cómo trabajábamos. El equipo de Solutions lo entendió desde el primer momento y lo implementaron sin ninguna fricción."'},
+  {name:'Jorge R. Molina',co:'CEO · Empresa de servicios B2B',res:'Hubspot',text:'"Usamos HubSpot como CRM y Holded para facturar. Había una desconexión total. Solutions montó el flujo: cuando cerramos un deal, la factura aparece sola. El equipo de ventas ya no toca nada."'},
+  {name:'Franciso Serrer',co:'CFO · Distribuidor logístico',res:'Stripe',text:'"La conciliación bancaria era un infierno cada mes. Con la integración, los movimientos se proponen solos. Cerramos el mes en la mitad de tiempo."'},
+  {name:'Rafa G. Soler',co:'Operations · Cadena de restaurantes',res:'LastApp',text:'"Conectamos nuestro TPV con Holded y los cierres diarios ya no requieren intervención manual. Todo llega categorizado directamente a contabilidad."'},
+  {name:'Carla Méndez',co:'CEO · Academia online',res:'Kajabi',text:'"Cada matrícula en nuestra academia generaba trabajo manual. Ahora Kajabi y Holded están conectados y las facturas salen solas con los datos fiscales correctos."'},
+  {name:'Tomás Ibáñez',co:'Director financiero · Constructora',res:'SAP',text:'"Teníamos SAP para obra y Holded para facturación. Dos mundos separados. Gracias al equipo de Gigson Solutions que creó el puente y ahora los datos fluyen en tiempo real sin intervención humana."'},
+  {name:'Nuria Valls',co:'Gerente · Clínica veterinaria',res:'ProvetCloud',text:'"Con ProvetCloud y Holded integrados tenemos por primera vez una visión financiera real de la clínica. Antes vivíamos a ciegas en cuanto a márgenes."'},
+  {name:'David Pons',co:'eCommerce Manager · Retail',res:'Prestashop',text:'"PrestaShop y Holded sincronizados. El stock se actualiza en tiempo real y las facturas se generan automáticamente. Hemos eliminado dos personas de trabajo administrativo."'},
+];
+(function buildMasonry(){
+  const cols=[document.getElementById('testCol1'),document.getElementById('testCol2'),document.getElementById('testCol3')];
+  const stars='<div class="stars">'+Array(5).fill('<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>').join('')+'</div>';
+  const mk=t=>`<div class="tcard">${stars}<p class="ttext">${t.text}</p><div class="tauthor"><div><div class="tname">${t.name}</div><div class="tco">${t.co}</div></div><div class="tres"><svg viewBox="0 0 24 24" fill="none" width="11" height="11"><polyline points="4,12 9,17 20,6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>${t.res}</div></div></div>`;
+  // distribute into 3 cols, duplicated for seamless loop
+  const all=[...TTEST,...TTEST];
+  all.forEach((t,i)=>{
+    cols[i%3].insertAdjacentHTML('beforeend',mk(t));
+  });
+})();
+
+/* ═══════════════════════════════════════════════
+   FAQ CANVAS ANIMATION — network of dashed lines
+═══════════════════════════════════════════════ */
+(function initFaqCanvas(){
+  const canvas=document.getElementById('faq-canvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  let W,H,nodes=[];
+  const N=14, CONN_DIST=200;
+
+  function resize(){
+    const sec=document.getElementById('faq');
+    W=canvas.width=sec.offsetWidth;
+    H=canvas.height=sec.offsetHeight;
+    nodes=Array.from({length:N},()=>({
+      x:Math.random()*W, y:Math.random()*H,
+      vx:(Math.random()-.5)*.4, vy:(Math.random()-.5)*.4,
+      r:2+Math.random()*2
+    }));
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // update positions
+    nodes.forEach(n=>{
+      n.x+=n.vx; n.y+=n.vy;
+      if(n.x<0||n.x>W)n.vx*=-1;
+      if(n.y<0||n.y>H)n.vy*=-1;
+    });
+    // draw connections
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<CONN_DIST){
+          const alpha=(1-dist/CONN_DIST)*0.18;
+          ctx.save();
+          ctx.setLineDash([5,8]);
+          ctx.strokeStyle=`rgba(120,116,244,${alpha})`;
+          ctx.lineWidth=1;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x,nodes[i].y);
+          ctx.lineTo(nodes[j].x,nodes[j].y);
+          ctx.stroke();
+          ctx.restore();
+        }
+      }
+    }
+    // draw nodes
+    nodes.forEach(n=>{
+      ctx.beginPath();
+      ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(120,116,244,0.25)';
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  window.addEventListener('resize',resize);
+  draw();
+})();
+
+/* ═══════════════════════════════════════════════
+   CHATBOT
+═══════════════════════════════════════════════ */
+let chatStep=0,chatData={},sizeVal='';
+function openChat(swName){
+  document.getElementById('chatWidget').scrollIntoView({behavior:'smooth',block:'center'});
+  if(swName)setTimeout(()=>{const fi=document.getElementById('f_herra');if(fi)fi.value=swName},700);
+  if(chatStep===0)setTimeout(()=>chatNext(),400);
+}
+function setProgress(p){document.getElementById('chatPfill').style.width=p+'%'}
+function showStep(id){document.querySelectorAll('.cstep').forEach(s=>s.classList.remove('active'));const el=document.getElementById(id);if(el)el.classList.add('active')}
+function chatNext(){
+  const btn=document.getElementById('chatBtn');chatStep++;
+  if(chatStep===1){
+    showStep('cstep1');
+    setProgress(10);
+    document.getElementById('stepInd').textContent='Paso 1 de 3 — tus datos';
+    btn.textContent='Siguiente ↔';
+    // ── Conversión micro: usuario inicia el formulario ──────────
+   
+    if(typeof gtag!=='undefined'){
+      gtag('event','conversion',{
+        'send_to':'AW-17165031999/hIjzCNyym40cEL-09vg_',
+        'value':0,
+        'currency':'EUR'
+      });
+    }
+    return;
+  }
+  if(chatStep===2){
+    const n=document.getElementById('f_nombre').value.trim(),e=document.getElementById('f_empresa').value.trim(),t=document.getElementById('f_tel').value.trim(),em=document.getElementById('f_email').value.trim();
+    if(!n||!e||!t||!em){alert('Por favor, completa todos los campos.');chatStep--;return}
+    chatData={nombre:n,empresa:e,tel:t,email:em};
+    document.getElementById('bubble2').textContent=`¡Perfecto, ${n.split(' ')[0]}! ¿Qué herramienta necesitas conectar con Holded?`;
+    showStep('cstep2');setProgress(50);document.getElementById('stepInd').textContent='Paso 2 de 3 — tu integración';return
+  }
+  if(chatStep===3){
+    const h=document.getElementById('f_herra').value.trim(),p=document.getElementById('f_problema').value.trim();
+    if(!h||!p){alert('Por favor, indica la herramienta y el problema.');chatStep--;return}
+    chatData.herramienta=h;chatData.problema=p;
+    showStep('cstep3');setProgress(80);document.getElementById('stepInd').textContent='Paso 3 de 3 — tu empresa';
+    btn.className='cbtn cbtn-wa';
+    btn.innerHTML=`<svg viewBox="0 0 24 24" fill="none" width="17" height="17"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Enviar y hablar por WhatsApp`;
+    btn.onclick=sendToWhatsApp;return
+  }
+}
+function selectSize(el, val) {
+  document.querySelectorAll('.cradio').forEach(r => r.classList.remove('sel'));
+  el.classList.add('sel');
+  sizeVal = val;
+}
+function sendToWhatsApp(){
+  if(!sizeVal){alert('Por favor, selecciona el tamaño de tu empresa.');return}
+  chatData.size=sizeVal;
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzA-KFaPSqWg5SihzUCSbU81IzR4rWqR4U59_7jmFmsIF1d1JiODa6VN6k9rwAMHKMj/exec';
+  const payload = {
+    ts:          new Date().toISOString(),
+    nombre:      chatData.nombre      || '',
+    empresa:     chatData.empresa     || '',
+    tel:         chatData.tel         || '',
+    email:       chatData.email       || '',
+    herramienta: chatData.herramienta || '',
+    problema:    chatData.problema    || '',
+    size:        sizeVal,
+    utm:         location.search      || ''
+  };
+  fetch(SCRIPT_URL, {
+    method:  'POST',
+    mode:    'no-cors',
+    headers: { 'Content-Type': 'text/plain' },
+    body:    JSON.stringify(payload)
+  }).catch(() => {});
+  // ── Conversión principal: lead completo ↔ WhatsApp ──────────
+
+  if(typeof gtag!=='undefined'){
+    gtag('event','conversion',{
+      'send_to':'AW-17165031999/Hm03CLWym40cEL-09vg_',
+      'value':10,
+      'currency':'EUR',
+      'event_callback': function(){}   // evita que el navegador corte la petición antes de enviarla
+    });
+  }
+  const msg=encodeURIComponent(`¡Hola! Soy ${chatData.nombre} de ${chatData.empresa}.\n\nQuiero integrar ${chatData.herramienta} con Holded.\n\nLo que necesito resolver: ${chatData.problema}\n\nSomos ${chatData.size} empleados.\n\n ${chatData.tel} ·  ${chatData.email}${location.search?' · Ref:'+location.search:''}`);
+  document.getElementById('chatBody').innerHTML=`<div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 20px;gap:12px"><div style="width:52px;height:52px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><polyline points="4,12 9,17 20,6" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 style="font-size:1rem">¡Gracias, ${chatData.nombre.split(' ')[0]}! 🎉</h3><p style="font-size:13px;color:var(--muted)">Ahora te abrimos WhatsApp para hablar con Jaume.</p></div>`;
+  document.getElementById('chatFoot').innerHTML=`<a href="https://wa.me/34623783507?text=${msg}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:12px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;text-decoration:none;background:#25D366;color:#fff"><svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir WhatsApp</a>`;
+  setProgress(100);setTimeout(()=>window.open(`https://wa.me/34623783507?text=${msg}`,'_blank'),800);
+}
+
+/* ═══════════════════════════════════════════════
+   FAQ ACCORDION
+═══════════════════════════════════════════════ */
+function toggleFaq(btn){
+  const item=btn.parentElement;const was=item.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(f=>f.classList.remove('open'));
+  if(!was)item.classList.add('open');
+}
+
+/* ═══════════════════════════════════════════════
+   SCROLL ANIMATIONS
+═══════════════════════════════════════════════ */
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.08});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+const hObs=new IntersectionObserver(e=>{const f=document.querySelector('.float-cta');if(f)f.style.display=e[0].isIntersecting?'none':''},{threshold:.15});
+const hEl=document.getElementById('hero');if(hEl)hObs.observe(hEl);
+</script>
+</body>
+</html>
