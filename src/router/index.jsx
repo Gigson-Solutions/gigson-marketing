@@ -25,12 +25,13 @@ import Software from '../components/Pages/Software/Software';
 import Services from '../components/Services/Services';
 import { DEFAULT_LANG, ROUTE_SLUGS } from './routerSlugs';
 
-/** En el subdominio integrations.* la home es la landing de integraciones Holded. */
+/** En integrations.* la home es Integraciones; en staging.* la home es la landing Holded (preview). */
 function HomeOrIntegrationsLanding() {
-  const isIntegrations =
-    typeof window !== 'undefined' &&
-    window.location.hostname === 'integrations.gigsonsolutions.com';
-  return isIntegrations ? <Integrations /> : <Home />;
+  if (typeof window === 'undefined') return <Home />;
+  const host = window.location.hostname;
+  if (host === 'integrations.gigsonsolutions.com') return <Integrations />;
+  if (host === 'staging.gigsonsolutions.com') return <HoldedLandingStatic />;
+  return <Home />;
 }
 
 const generateRoutes = (lang) => {

@@ -8,7 +8,7 @@ export default function HoldedLandingStatic() {
   const srcDoc = injectBaseHref(holdedLandingHtml);
 
   return (
-    <div className="fixed inset-0 h-dvh w-full overflow-hidden bg-[#f4f3ef]">
+    <div className="fixed inset-0 z-[300] h-dvh w-full overflow-hidden bg-[#f4f3ef]">
       <iframe
         title="Integraciones Holded · Gigson Solutions"
         srcDoc={srcDoc}
