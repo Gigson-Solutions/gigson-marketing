@@ -14,6 +14,7 @@ import Contact from '../components/Pages/Contact';
 import CookiesPage from '../components/Pages/CookiesPage';
 import CTO from '../components/Pages/CTO/CTO';
 import Faqs from '../components/Pages/Faqs/Faqs';
+import HoldedLandingStatic from '../components/Pages/HoldedLandingStatic/HoldedLandingStatic';
 import Integrations from '../components/Pages/Integrations/Integrations';
 import Logistics from '../components/Pages/Logistics/Logistics';
 import NotFound from '../components/Pages/NotFound/NotFound';
@@ -24,12 +25,13 @@ import Software from '../components/Pages/Software/Software';
 import Services from '../components/Services/Services';
 import { DEFAULT_LANG, ROUTE_SLUGS } from './routerSlugs';
 
-/** En el subdominio integrations.* la home es la landing de integraciones Holded. */
+/** En integrations.* la home es Integraciones; en staging.* la home es la landing Holded (preview). */
 function HomeOrIntegrationsLanding() {
-  const isIntegrations =
-    typeof window !== 'undefined' &&
-    window.location.hostname === 'integrations.gigsonsolutions.com';
-  return isIntegrations ? <Integrations /> : <Home />;
+  if (typeof window === 'undefined') return <Home />;
+  const host = window.location.hostname;
+  if (host === 'integrations.gigsonsolutions.com') return <Integrations />;
+  if (host === 'staging.gigsonsolutions.com') return <HoldedLandingStatic />;
+  return <Home />;
 }
 
 const generateRoutes = (lang) => {
@@ -64,6 +66,8 @@ const generateRoutes = (lang) => {
 };
 
 export const router = createBrowserRouter([
+  { path: '/landing-holded.html', element: <HoldedLandingStatic /> },
+  { path: '/landing-holded', element: <HoldedLandingStatic /> },
   generateRoutes('en'),
   generateRoutes('es'),
   { path: '*', element: <NotFound /> },
