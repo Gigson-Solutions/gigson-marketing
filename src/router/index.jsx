@@ -14,6 +14,7 @@ import Contact from '../components/Pages/Contact';
 import CookiesPage from '../components/Pages/CookiesPage';
 import CTO from '../components/Pages/CTO/CTO';
 import Faqs from '../components/Pages/Faqs/Faqs';
+import HoldedLandingStatic from '../components/Pages/HoldedLandingStatic/HoldedLandingStatic';
 import Integrations from '../components/Pages/Integrations/Integrations';
 import Logistics from '../components/Pages/Logistics/Logistics';
 import NotFound from '../components/Pages/NotFound/NotFound';
@@ -64,6 +65,8 @@ const generateRoutes = (lang) => {
 };
 
 export const router = createBrowserRouter([
+  { path: '/landing-holded.html', element: <HoldedLandingStatic /> },
+  { path: '/landing-holded', element: <HoldedLandingStatic /> },
   generateRoutes('en'),
   generateRoutes('es'),
   { path: '*', element: <NotFound /> },
