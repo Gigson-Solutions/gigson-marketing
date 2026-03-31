@@ -25,12 +25,16 @@ import Software from '../components/Pages/Software/Software';
 import Services from '../components/Services/Services';
 import { DEFAULT_LANG, ROUTE_SLUGS } from './routerSlugs';
 
-/** En integrations.* la home es Integraciones; en staging.* la home es la landing Holded (preview). */
+/** En integrations.* y staging.* la home es la landing Holded estática (iframe). */
 function HomeOrIntegrationsLanding() {
   if (typeof window === 'undefined') return <Home />;
   const host = window.location.hostname;
-  if (host === 'integrations.gigsonsolutions.com') return <Integrations />;
-  if (host === 'staging.gigsonsolutions.com') return <HoldedLandingStatic />;
+  if (
+    host === 'integrations.gigsonsolutions.com' ||
+    host === 'staging.gigsonsolutions.com'
+  ) {
+    return <HoldedLandingStatic />;
+  }
   return <Home />;
 }
 
