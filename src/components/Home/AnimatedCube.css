@@ -1,0 +1,29 @@
+.cube-wrapper {
+  position: relative;
+  width: 23%;
+  aspect-ratio: 1 / 1;
+}
+
+.cube-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+}
+
+.cube-pentagon {
+  position: absolute;
+  left: -30%;
+  top: 28%;
+  width: 80%;
+  height: auto;
+  z-index: 0;
+  transform-origin: center center;
+}
+
+@media (min-width: 37.5rem) {
+  .cube-wrapper {
+    width: 20%;
+  }
+}

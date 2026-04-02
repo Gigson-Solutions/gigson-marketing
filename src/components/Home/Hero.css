@@ -9,12 +9,13 @@
 .hero-shapes {
    position: relative;
    top: 4.5rem;
-   right: -2.5rem;
-   width: 100%;
+   right: -1rem;
+   width: 88%;
    height: 52%;
    max-height: 32rem;
    min-height: 22rem;
    isolation: isolate;
+   margin-left: auto;
 }
 
 /* Esfera con aspecto 3D: punto de luz animado via --lx/--ly */
@@ -143,7 +144,7 @@
 @media (min-width: 24.375rem) {
    .hero-shapes {
       top: 5.5rem;
-      right: -3rem;
+      right: -1rem;
       height: 60%;
       max-height: 23rem;
    }
@@ -162,7 +163,7 @@
 @media (min-width: 40rem) {
    .hero-shapes {
       top: 5.5rem;
-      right: -5rem;
+      right: -1.5rem;
    }
    .hero-text {
       top: 5rem;

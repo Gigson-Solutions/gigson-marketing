@@ -5,7 +5,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import cono from '../../assets/Cono.svg';
-import cubo from '../../assets/Cubo.svg';
+import AnimatedCube from './AnimatedCube';
 
 export const CtaServices = () => {
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ export const CtaServices = () => {
     <div className="wrapper">
       <div className="cta-why-gigson">
         <div className="cta-img-container-cube">
-          <img className="cta-services-img-cube" src={cubo} alt="" />
+          <AnimatedCube />
         </div>
         <div className="internal-cta-container">
           <div className="cta-button-container">
