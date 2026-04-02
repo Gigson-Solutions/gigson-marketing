@@ -2900,50 +2900,73 @@
     "title": "Holded Integrations | Gigson Solutions",
     "metadescription": "Specialists in connecting Holded with the tools you already use. Custom integrations for retail, logistics, hospitality, veterinary, construction and more.",
     "hero": {
-      "suptitle": "Official Holded Partner",
+      "badge": "Official partner",
       "title": "Holded integrations with <span>the software you need</span>",
+      "subtitle": "Custom Holded integrations for your business.",
       "description": "We specialize in connecting Holded with the tools you already use. We define the best solution and build the integration you truly need.",
-      "cta": "TALK TO A HOLDED EXPERT"
+      "cta": "TALK TO A HOLDED EXPERT",
+      "specialists": {
+        "title": "Specialists in connecting Holded with the tools you already use.",
+        "bullets": [
+          "We are an official Holded partner.",
+          "Integrations for every industry.",
+          "Advice before any integration."
+        ],
+        "link": "See use cases"
+      },
+      "whatsapp": {
+        "title": "Questions? Let's talk",
+        "cta": "Chat on WhatsApp"
+      }
     },
     "useCases": {
-      "subtitle": "Use cases",
-      "title": "Custom Holded integrations for your business",
+      "label": "USE CASES",
       "items": [
         {
           "title": "Electronic invoicing & VeriFactu",
-          "description": "Automate VeriFactu compliance and electronic invoice issuance directly from Holded, without any manual work."
+          "description": "Automate VeriFactu compliance and electronic invoice issuance directly from Holded, without any manual work.",
+          "cta": "TALK TO A HOLDED EXPERT"
         },
         {
           "title": "Sales, customer & payment sync",
-          "description": "Connect your POS or e-commerce with Holded so orders, customers and payments sync in real time."
+          "description": "Connect your POS or e-commerce with Holded so orders, customers and payments sync in real time.",
+          "cta": "TALK TO A HOLDED EXPERT"
         },
         {
           "title": "Sector-specific financial control",
-          "description": "Integrate your sector-specific software (veterinary, clinic, construction…) with Holded to unify all financial data."
+          "description": "Integrate your sector-specific software (veterinary, clinic, construction…) with Holded to unify all financial data.",
+          "cta": "TALK TO A HOLDED EXPERT"
         },
         {
           "title": "Advanced bank reconciliation",
-          "description": "Automate bank reconciliation by connecting your bank with Holded and eliminate manual transaction entry."
+          "description": "Automate bank reconciliation by connecting your bank with Holded and eliminate manual transaction entry.",
+          "cta": "TALK TO A HOLDED EXPERT"
         },
         {
           "title": "Employee productivity analysis",
-          "description": "Connect HR and time management tools with Holded for full visibility into team performance."
+          "description": "Connect HR and time management tools with Holded for full visibility into team performance.",
+          "cta": "TALK TO A HOLDED EXPERT"
         },
         {
           "title": "Advanced e-commerce synchronisation",
-          "description": "Keep stock, prices and catalogue in sync between your online store (Shopify, WooCommerce, Amazon…) and Holded."
+          "description": "Keep stock, prices and catalogue in sync between your online store (Shopify, WooCommerce, Amazon…) and Holded.",
+          "cta": "TALK TO A HOLDED EXPERT"
         },
         {
           "title": "Automatic lead registration in CRM",
-          "description": "Connect your forms and email campaigns with Holded or your CRM so leads are registered automatically without manual intervention."
+          "description": "Connect your forms and email campaigns with Holded or your CRM so leads are registered automatically without manual intervention.",
+          "cta": "TALK TO A HOLDED EXPERT"
         }
       ]
     },
     "logos": {
+      "title": "More than 50 tools integrated with Holded",
       "subtitle": "Compatible software",
-      "title": "More than 50 tools integrated with Holded"
+      "mainCta": "Start connecting Holded"
     },
     "form": {
+      "sectionTitle": "Integrations tailored to how you work.",
+      "sectionDescription": "We design custom Holded integrations with your tools. Before we build anything, we analyse your case with you to define the most efficient solution.",
       "title": "What do you need to integrate?",
       "fields": {
         "name": {
@@ -2988,7 +3011,8 @@
         "first": "I have read and accept the ",
         "second": "Privacy Policy",
         "third": ""
-      }
+      },
+      "legalNotice": "Gigson Solutions is an independent entity and is not affiliated with or part of Holded. We do not represent Holded or act on its behalf. Our status is solely that of an authorised official partner for the implementation of and advice on its products and services."
     }
   }
 }
