@@ -6,6 +6,12 @@ import ScrollTop from '../../hooks/ScrollTop';
 import Whatsapp from '../../shared/ui/WhatssapButton';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
+import { DEFAULT_LANG, ROUTE_SLUGS } from '../../router/routerSlugs';
+
+const holdedIntegrationsPath = (lang) =>
+  lang === DEFAULT_LANG
+    ? `/${ROUTE_SLUGS[lang].integrations}`
+    : `/${lang}/${ROUTE_SLUGS[lang].integrations}`;
 
 const Layout = () => {
   const { pathname } = useLocation();
@@ -13,7 +19,10 @@ const Layout = () => {
   const holdedHost =
     host === 'integrations.gigsonsolutions.com' || host === 'staging.gigsonsolutions.com';
   /** Raíz EN/ES en integrations/staging: igual que /landing-holded (sin navbar/footer). */
-  const fullBleed = holdedHost && (pathname === '/' || pathname === '/es');
+  const onHoldedIntegrationsSlug =
+    pathname === holdedIntegrationsPath('en') || pathname === holdedIntegrationsPath('es');
+  const fullBleed =
+    (holdedHost && (pathname === '/' || pathname === '/es')) || onHoldedIntegrationsSlug;
 
   if (fullBleed) {
     return (
