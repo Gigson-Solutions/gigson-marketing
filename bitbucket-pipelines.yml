@@ -8,6 +8,7 @@ definitions:
           - node
         script:
           - npm install
+          - export SITE_URL=https://gigsonsolutions.com
           - npm run build
         artifacts:
           - dist/**

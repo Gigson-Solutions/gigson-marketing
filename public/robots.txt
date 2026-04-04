@@ -1,6 +1,11 @@
+# https://gigsonsolutions.com — marketing SPA (Vite + React)
 User-agent: *
+Allow: /
+
+# Legacy / irrelevant patterns (harmless if unused)
 Disallow: /*/feed/
 Disallow: /*?s=
 Disallow: /*/*/*/feed.xml
 Disallow: /?*
+
 Sitemap: https://gigsonsolutions.com/sitemap.xml
