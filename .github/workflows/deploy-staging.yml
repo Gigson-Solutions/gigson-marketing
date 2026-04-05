@@ -21,11 +21,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: npm
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
 
       - name: Build project
         run: npm run build
@@ -44,6 +47,11 @@ jobs:
 
       - name: Sync to S3 (staging)
         run: aws s3 sync dist/ "s3://${STAGING_BUCKET}/" --delete
+
+      - name: Set text/html on extensionless prerendered objects
+        run: bash dist/patch-content-types.sh
+        env:
+          BUCKET_NAME: ${{ env.STAGING_BUCKET }}
 
       - name: Invalidate CloudFront
         run: aws cloudfront create-invalidation --distribution-id "${STAGING_DISTRIBUTION_ID}" --paths "/*" "/fav.png" "/index.html"

@@ -1,4 +1,4 @@
-image: node:18.12-alpine
+image: node:20-bookworm
 
 definitions:
   steps:
@@ -7,7 +7,8 @@ definitions:
         caches:
           - node
         script:
-          - npm install
+          - npm ci
+          - npx playwright install --with-deps chromium
           - export SITE_URL=https://gigsonsolutions.com
           - npm run build
         artifacts:
@@ -19,7 +20,8 @@ definitions:
           enabled: false
         script:
           - aws s3 sync dist/ s3://$BUCKET_NAME
-          - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/index.html"
+          - bash dist/patch-content-types.sh
+          - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*" "/index.html"
 pipelines:
   pull-requests:
     '**': #this runs as default for any branch not elsewhere defined

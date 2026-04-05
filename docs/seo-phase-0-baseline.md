@@ -44,4 +44,23 @@ Confirmar en la consola AWS que las rutas “limpias” (p. ej. `/services`) dev
 
 `index.html` incluye `title`, `meta description`, `canonical` (home), Open Graph, Twitter Card y JSON-LD (`Corporation` + `WebSite` en `@graph`, `sameAs` como array).
 
-Las rutas concretas siguen dependiendo de **react-helmet-async** en cliente hasta la Fase 2; Google seguirá viendo el mismo `<head>` base en el HTML inicial para todas las URLs hasta entonces.
+## Fase 2 — Prerender (HTML con contenido para crawlers)
+
+Tras `npm run build`, **Playwright** abre cada URL del sitio en `vite preview`, captura el HTML y lo escribe en `dist/` con la misma estructura de claves S3 que usará el despliegue (p. ej. `about`, `es/contacto`, `es/index.html` para la home en español).
+
+- **CI:** GitHub Actions y Bitbucket instalan Chromium con `npx playwright install --with-deps chromium` (imagen **Node 20**, no Alpine).
+- **Content-Type:** Tras `aws s3 sync`, se ejecuta `dist/patch-content-types.sh` para poner `text/html; charset=utf-8` en objetos **sin extensión** (el sync solo acierta el tipo en `.html`).
+
+### Home en español (`/es`) y CloudFront/S3
+
+La home en ES se guarda como **`es/index.html`** (no puede ser el fichero `es` en disco si existen rutas `es/...`). Con origen S3 tipo **REST API**, la petición `GET /es` a veces busca el objeto `es` y **no** `es/index.html`. Si en producción `/es` no sirve HTML o devuelve el fallback del SPA, en CloudFront hay que o bien usar el **endpoint de sitio web estático** de S3 como origen (con documento índice), o bien una **función/regla** que redirija `/es` → `/es/` o que resuelva `es/index.html`. Comprueba `curl -sS -A Googlebot https://gigsonsolutions.com/es` tras el despliegue.
+
+### Comprobar que el prerender funciona
+
+Descarga la página y busca texto visible (títulos, párrafos) dentro del HTML, no solo `<div id="root"></div>` vacío:
+
+```bash
+curl -sS "https://gigsonsolutions.com/services" | head -c 12000
+```
+
+Las rutas concretas en `<head>` (título y meta por página) siguen pudiendo ampliarse con **react-helmet-async** en cliente; el HTML prerenderizado ya incluye lo que React pintó en el primer render (incluido Helmet si se aplicó antes del snapshot).
