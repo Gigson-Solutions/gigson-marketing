@@ -85,14 +85,11 @@ function runPreview() {
     ['vite', 'preview', '--host', '127.0.0.1', '--port', '4173', '--strictPort'],
     {
       cwd: rootDir,
-      stdio: ['ignore', 'pipe', 'pipe'],
+      // Do not pipe stdout/stderr: unconsumed pipes fill and block the child (hangs in CI).
+      stdio: ['ignore', 'ignore', 'ignore'],
       env: { ...process.env, BROWSER: 'none' },
     },
   );
-  child.stderr?.on('data', (d) => {
-    const s = d.toString();
-    if (s.includes('EADDRINUSE') || s.includes('error')) process.stderr.write(s);
-  });
   return child;
 }
 
