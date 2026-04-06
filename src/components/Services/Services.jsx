@@ -4,16 +4,19 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import heroImg from '../../assets/HeroServices.png';
+import { SeoHelmet } from '../../seo/seoHelmet';
 
 const Services = () => {
   const { t } = useTranslation();
   const { serviceH1, serviceP } = t('service');
+  const seo = t('pageSeo.services');
   const servicesData = t('serviceCard');
   const { whyTitle, whyDescription } = t('whyChooseService');
   const { talk } = t('ctas');
 
   return (
     <div className="wrapper">
+      <SeoHelmet title={seo.title} description={seo.description} />
       <div className="services">
         <img src={heroImg} alt="" className="hero-services-img" />
         <section className="hero-services">

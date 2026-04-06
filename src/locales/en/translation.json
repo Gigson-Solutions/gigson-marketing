@@ -3014,5 +3014,47 @@
       },
       "legalNotice": "Gigson Solutions is an independent entity and is not affiliated with or part of Holded. We do not represent Holded or act on its behalf. Our status is solely that of an authorised official partner for the implementation of and advice on its products and services."
     }
+  },
+  "pageSeo": {
+    "services": {
+      "title": "Services | Gigson Solutions",
+      "description": "Discover our services: cybersecurity, software engineering, cloud, integrations and digital products tailored to your business."
+    },
+    "about": {
+      "title": "About us | Gigson Solutions",
+      "description": "Team of professionals with experience in end-to-end digital product development: product, design, engineering, QA and security."
+    },
+    "cases": {
+      "title": "Case studies | Gigson Solutions",
+      "description": "Examples of projects by sector and need: CRM, ERP, integrations, automation and custom software."
+    },
+    "faqs": {
+      "title": "FAQs | Gigson Solutions",
+      "description": "Answers to common questions about our technology consulting, software development and integrations."
+    },
+    "contact": {
+      "title": "Contact | Gigson Solutions",
+      "description": "Get in touch with Gigson Solutions. Tell us about your project and we will get back to you."
+    },
+    "book": {
+      "title": "Book a meeting | Gigson Solutions",
+      "description": "Schedule a call with our team. Choose a time slot that works for you."
+    },
+    "policy": {
+      "title": "Privacy Policy | Gigson Solutions",
+      "description": "How Gigson Solutions processes personal data in accordance with applicable regulations."
+    },
+    "notice": {
+      "title": "Legal Notice | Gigson Solutions",
+      "description": "Legal information about the gigsonsolutions.com website and terms of use."
+    },
+    "cookies": {
+      "title": "Cookies Policy | Gigson Solutions",
+      "description": "How we use cookies and similar technologies on our website."
+    },
+    "notFound": {
+      "title": "Page not found | Gigson Solutions",
+      "description": "The page you are looking for does not exist or has been moved."
+    }
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
+import { SeoHelmet } from '../../seo/seoHelmet';
 import Form from '../Form';
 import { CtaServices } from './CtaServices';
 import Hero from './Hero';
@@ -14,10 +14,7 @@ const Home = () => {
 
   return (
     <div className="home-content">
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={metadescription} />
-      </Helmet>
+      <SeoHelmet title={title} description={metadescription} />
       <Hero />
       <HomeServices />
       <HomeCases />

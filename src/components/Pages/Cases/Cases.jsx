@@ -5,6 +5,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import CasesBg from '../../../assets/CasesBg.png';
+import { SeoHelmet } from '../../../seo/seoHelmet';
 import { Accordion } from '../../Accordion/Accordion';
 
 const Cases = () => {
@@ -17,6 +18,7 @@ const Cases = () => {
   const [selectedNeeds, setSelectedNeeds] = useState([]);
 
   const { t } = useTranslation();
+  const seo = t('pageSeo.cases');
   const {
     heroH1,
     heroP,
@@ -64,6 +66,7 @@ const Cases = () => {
 
   return (
     <div className="cases mt-28">
+      <SeoHelmet title={seo.title} description={seo.description} />
       <section className="relative py-20">
         <img 
           src={CasesBg} 

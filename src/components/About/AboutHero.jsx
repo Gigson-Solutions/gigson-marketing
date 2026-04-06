@@ -3,6 +3,7 @@ import './AboutHero.css';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+import { SeoHelmet } from '../../seo/seoHelmet';
 import circSvg from '../../assets/circunferencia1.svg';
 import cubeSvg from '../../assets/cubo1.svg';
 import piraSvg from '../../assets/tri1.svg';
@@ -11,6 +12,7 @@ import triaSvg from '../../assets/Trianguloycirculo.png';
 const AboutHero = () => {
   const { t } = useTranslation();
   const { title, description, cta, titleH2, belive, need } = t('about');
+  const seo = t('pageSeo.about');
   const { t1, t2, t3, p1, p2, p3 } = belive;
   const {
     specialist1,
@@ -46,6 +48,7 @@ const AboutHero = () => {
 
   return (
     <>
+      <SeoHelmet title={seo.title} description={seo.description} />
       <section className="div-about-hero">
         <div className="about-bg" />
         <div className="text-center">

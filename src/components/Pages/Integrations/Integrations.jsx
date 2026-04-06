@@ -1,6 +1,6 @@
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
+import { SeoHelmet } from '../../../seo/seoHelmet';
 import IntegrationContactForm from './IntegrationContactForm';
 import IntegrationLogosGrid from './IntegrationLogosGrid';
 import IntegrationUseCases from './IntegrationUseCases';
@@ -12,10 +12,7 @@ const Integrations = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={metadescription} />
-      </Helmet>
+      <SeoHelmet title={title} description={metadescription} />
       <IntegrationsHero />
       <IntegrationUseCases />
       <IntegrationLogosGrid />

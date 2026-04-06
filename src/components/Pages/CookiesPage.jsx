@@ -5,8 +5,11 @@ import './Policity.css';
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
+import { SeoHelmet } from '../../seo/seoHelmet';
+
 const CookiesPage = () => {
   const { t } = useTranslation();
+  const seo = t('pageSeo.cookies');
   const {
     h2_1,
     h3_1,
@@ -54,6 +57,7 @@ const CookiesPage = () => {
   } = t('cookies');
   return (
     <div className="wrapper">
+      <SeoHelmet title={seo.title} description={seo.description} />
       <div className="policity-main">
         <h2 className="policity-h2">
           <Trans i18nKey={h2_1} />

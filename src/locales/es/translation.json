@@ -3020,5 +3020,47 @@
       },
       "legalNotice": "Gigson Solutions es una entidad independiente y no está afiliada ni forma parte de Holded. No representamos a Holded ni actuamos en su nombre. Nuestra condición es exclusivamente la de partner oficial autorizado para la implementación y asesoramiento sobre sus productos y servicios."
     }
+  },
+  "pageSeo": {
+    "services": {
+      "title": "Servicios | Gigson Solutions",
+      "description": "Descubre nuestros servicios: ciberseguridad, ingeniería de software, cloud, integraciones y producto digital a medida para tu negocio."
+    },
+    "about": {
+      "title": "Sobre nosotros | Gigson Solutions",
+      "description": "Equipo con experiencia en desarrollo de producto digital de extremo a extremo: producto, diseño, ingeniería, QA y seguridad."
+    },
+    "cases": {
+      "title": "Casos de éxito | Gigson Solutions",
+      "description": "Ejemplos de proyectos por sector y necesidad: CRM, ERP, integraciones, automatización y software a medida."
+    },
+    "faqs": {
+      "title": "Preguntas frecuentes | Gigson Solutions",
+      "description": "Respuestas a dudas habituales sobre consultoría tecnológica, desarrollo de software e integraciones."
+    },
+    "contact": {
+      "title": "Contacto | Gigson Solutions",
+      "description": "Contacta con Gigson Solutions. Cuéntanos tu proyecto y te responderemos."
+    },
+    "book": {
+      "title": "Reservar reunión | Gigson Solutions",
+      "description": "Agenda una llamada con nuestro equipo. Elige el hueco que mejor te encaje."
+    },
+    "policy": {
+      "title": "Política de privacidad | Gigson Solutions",
+      "description": "Información sobre el tratamiento de datos personales por Gigson Solutions según la normativa aplicable."
+    },
+    "notice": {
+      "title": "Aviso legal | Gigson Solutions",
+      "description": "Información legal sobre el sitio web gigsonsolutions.com y condiciones de uso."
+    },
+    "cookies": {
+      "title": "Política de cookies | Gigson Solutions",
+      "description": "Uso de cookies y tecnologías similares en nuestro sitio web."
+    },
+    "notFound": {
+      "title": "Página no encontrada | Gigson Solutions",
+      "description": "La página que buscas no existe o ha cambiado de ubicación."
+    }
   }
 }

@@ -1,13 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { SeoHelmet } from '../../../seo/seoHelmet';
+
 const CALCOM_URL =
   import.meta.env.VITE_CALCOM_GIGSON_URL || 'https://cal.gigsonsolutions.com/gigsonsolutions/30min';
 
 const Book = () => {
   const { t } = useTranslation();
+  const seo = t('pageSeo.book');
+
   return (
     <div className="mx-auto max-w-5xl px-6 py-16">
+      <SeoHelmet title={seo.title} description={seo.description} />
       <h1 className="text-3xl font-bold text-[#3C3C3B]">
         {t('book.title', 'Book a meeting')}
       </h1>

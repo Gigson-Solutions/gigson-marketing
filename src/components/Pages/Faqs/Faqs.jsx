@@ -4,11 +4,13 @@ import { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import cono from '../../../assets/cone.svg';
+import { SeoHelmet } from '../../../seo/seoHelmet';
 import pentagono from '../../../assets/pentagon.svg';
 import { FaqsAccordion } from './FaqsAccordion/FaqsAccordion';
 
 const Faqs = () => {
   const { t } = useTranslation();
+  const seo = t('pageSeo.faqs');
   const title = t('faqsH1');
   const faqsData = t('faqsDropdown');
 
@@ -19,6 +21,7 @@ const Faqs = () => {
 
   return (
     <section className="faqs-section">
+      <SeoHelmet title={seo.title} description={seo.description} />
       <div className="wrapper">
         <div className="hero-faqs">
           <h1 className="hero-faqs-h1">

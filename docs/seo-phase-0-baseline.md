@@ -63,4 +63,8 @@ Descarga la página y busca texto visible (títulos, párrafos) dentro del HTML,
 curl -sS "https://gigsonsolutions.com/services" | head -c 12000
 ```
 
-Las rutas concretas en `<head>` (título y meta por página) siguen pudiendo ampliarse con **react-helmet-async** en cliente; el HTML prerenderizado ya incluye lo que React pintó en el primer render (incluido Helmet si se aplicó antes del snapshot).
+## Fase 3 — Metadatos por ruta (`SeoHelmet`)
+
+Componente `src/seo/seoHelmet.jsx`: en cada página se define `title` y `description` (traducciones existentes o bloque `pageSeo` en `src/locales/{en,es}/translation.json`). Incluye **`link rel="canonical"`** (URL absoluta según `pathname` + origen), Open Graph básico y Twitter Card; la página **404** usa `noindex`.
+
+Tras el prerender, el HTML estático en `dist/` incorpora ese `<head>` por URL.

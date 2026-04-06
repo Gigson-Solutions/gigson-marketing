@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
 import useCasesBgGradient from '../../../assets/casos-de-uso-bg-gradient-1.svg';
@@ -8,6 +7,8 @@ import HowWeWork from '../../../shared/ui/HowWeWork.jsx';
 import ImproveAreas from '../../../shared/ui/ImproveAreas.jsx';
 import SolutionsApplications from '../../../shared/ui/SolutionsApplications.jsx';
 import UseCases from '../../../shared/ui/UseCases.jsx';
+import { SeoHelmet } from '../../../seo/seoHelmet';
+
 const Construction = () => {
   const { t } = useTranslation();
 
@@ -24,10 +25,7 @@ const Construction = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={metadescription} />
-      </Helmet>
+      <SeoHelmet title={title} description={metadescription} />
       <Hero {...hero} />
       <section
         style={{

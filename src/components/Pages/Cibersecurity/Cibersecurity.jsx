@@ -1,10 +1,10 @@
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import Brand from 'shared/Brand.jsx';
 import DigitalProduct from 'shared/DigitalProduct.jsx';
 import Hero from 'shared/Hero.jsx';
 import HowWeWork from 'shared/HowWeWork.jsx';
 import SolutionsApplications from 'shared/SolutionsApplications.jsx';
+import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const Cibersecurity = () => {
   const { t } = useTranslation();
@@ -19,10 +19,7 @@ const Cibersecurity = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={metadescription} />
-      </Helmet>
+      <SeoHelmet title={title} description={metadescription} />
       <Hero {...hero} />
       <SolutionsApplications {...solutionsApplications} />
       <HowWeWork {...howWeWork} />
