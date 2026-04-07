@@ -12,6 +12,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
 const distDir = path.join(rootDir, 'dist');
 const baseUrl = 'http://127.0.0.1:4173';
+const publicSiteUrl = (process.env.SITE_URL || 'https://gigsonsolutions.com').replace(
+  /\/$/,
+  '',
+);
 
 function pathHasChildRoutes(pathname, allPaths) {
   const prefix = pathname === '/' ? null : `${pathname}/`;
@@ -29,18 +33,19 @@ function s3KeyForPathname(pathname, allPaths) {
 }
 
 function writePrerenderedFile(pathname, html, allPaths) {
+  const normalizedHtml = html.split(baseUrl).join(publicSiteUrl);
   if (pathname === '/') {
-    writeFileSync(path.join(distDir, 'index.html'), html, 'utf8');
+    writeFileSync(path.join(distDir, 'index.html'), normalizedHtml, 'utf8');
     return;
   }
   if (pathname.endsWith('.html')) {
-    writeFileSync(path.join(distDir, pathname.slice(1)), html, 'utf8');
+    writeFileSync(path.join(distDir, pathname.slice(1)), normalizedHtml, 'utf8');
     return;
   }
   if (pathHasChildRoutes(pathname, allPaths)) {
     const dir = path.join(distDir, pathname.slice(1));
     mkdirSync(dir, { recursive: true });
-    writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
+    writeFileSync(path.join(dir, 'index.html'), normalizedHtml, 'utf8');
     return;
   }
   const segments = pathname.slice(1).split('/');
@@ -48,7 +53,7 @@ function writePrerenderedFile(pathname, html, allPaths) {
   const sub = segments.join('/');
   const dir = sub ? path.join(distDir, sub) : distDir;
   mkdirSync(dir, { recursive: true });
-  writeFileSync(path.join(dir, fileName), html, 'utf8');
+  writeFileSync(path.join(dir, fileName), normalizedHtml, 'utf8');
 }
 
 async function waitForServer(maxMs = 90000) {
