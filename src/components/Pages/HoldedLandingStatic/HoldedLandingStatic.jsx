@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import holdedLandingHtml from '../../../assets/holded-landing.html?raw';
 import { useTranslation } from 'react-i18next';
 
@@ -7,10 +8,20 @@ function injectBaseHref(html) {
   return html.replace(/<head([^>]*)>/i, '<head$1><base href="/" />');
 }
 
+function injectAgentKey(html, agentKey) {
+  return html.replace(
+    /const _agentKey\s*=\s*\(function\(\)[\s\S]*?\}\)\(\);/,
+    `const _agentKey = '${agentKey}';`
+  );
+}
+
 export default function HoldedLandingStatic() {
   const { t } = useTranslation();
+  const { search } = useLocation();
   const { title, metadescription } = t('integrations-holded');
-  const srcDoc = injectBaseHref(holdedLandingHtml);
+
+  const agentKey = new URLSearchParams(search).get('agent') || 'jaume';
+  const srcDoc = injectAgentKey(injectBaseHref(holdedLandingHtml), agentKey);
 
   return (
     <div className="fixed inset-0 z-[300] h-dvh w-full overflow-hidden bg-[#f4f3ef]">
