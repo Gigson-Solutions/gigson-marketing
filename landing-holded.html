@@ -190,9 +190,9 @@ p{line-height:1.65}
 .how-steps{display:flex;flex-direction:column}
 .how-step{display:flex;gap:18px;align-items:flex-start;padding:22px 0;position:relative}
 .how-step:not(:last-child)::after{content:'';position:absolute;left:21px;top:56px;bottom:-22px;width:2px;background:linear-gradient(to bottom,rgba(120,116,244,.45),transparent)}
-.how-step:not(:last-child)::before{content:'';position:absolute;left:17px;top:58px;width:10px;height:10px;border-radius:50%;background:var(--purple);opacity:.7;animation:flowDot 2.6s ease-in-out infinite}
+.how-step:not(:last-child)::before{content:'';position:absolute;left:17px;top:58px;width:10px;height:10px;border-radius:50%;background:var(--purple);opacity:0;animation:flowDot 2.6s ease-in-out infinite}
 .how-step:nth-child(2):not(:last-child)::before{animation-delay:.85s}
-@keyframes flowDot{0%{transform:translateY(0);opacity:.7}60%{transform:translateY(52px);opacity:1}100%{transform:translateY(80px);opacity:0}}
+/*@keyframes flowDot{0%{transform:translateY(0);opacity:.7}60%{transform:translateY(52px);opacity:1}100%{transform:translateY(80px);opacity:0}}*/
 .how-num{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--purple);font-family:'DM Sans',sans-serif;font-size:17px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 0 6px rgba(120,116,244,.12)}
 .how-step h3{margin-bottom:6px}
 .how-step p{font-size:14px;color:rgba(60,60,59,.75);line-height:1.7}
@@ -353,18 +353,18 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 0}
         <div class="chat-wrap" id="chatWidget">
           <div class="chat-head">
             <div class="chat-av">
-              <img src="img/jaume-torres.jpg" alt="Jaume Torres">
+              <img id="chatAgentImg" src="img/alfonso.jpg" alt="Alfonso">
               <div class="chat-av-dot"></div>
             </div>
             <div class="chat-head-info">
-              <h4>Jaume Torres de Gigson Solutions</h4>
+              <h4 id="chatAgentName">Alfonso de Gigson Solutions</h4>
               <p><span class="dot-live"></span> Disponible ahora</p>
             </div>
           </div>
           <div class="chat-pbar"><div class="chat-pfill" id="chatPfill"></div></div>
           <div class="chat-body" id="chatBody">
             <div class="cstep active" id="cstep0">
-              <div class="bubble bot">👋 ¡Hola! Soy Jaume, experto en integraciones con Holded. Cuéntame qué necesitas y estudio la mejor forma de ayudarte.</div>
+              <div class="bubble bot" id="chatAgentGreeting">👋 ¡Hola! Soy Alfonso. Cuéntame qué necesitas y vemos la mejor forma de ayudarte.</div>
             </div>
             <div class="cstep" id="cstep1">
               <div class="bubble bot">Primero, ¿cómo te llamas y de qué empresa nos escribes?</div>
@@ -619,6 +619,42 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 0}
 <button class="float-cta" onclick="openChat()">Habla con nuestro experto ↔</button>
 
 <script>
+/* ═══════════════════════════════════════════════
+   FEATURE FLAG — AGENTE DEL CHATBOT
+   Activa Alfonso: añade ?agent=alfonso a la URL
+   Activa Jaume:   sin parámetro o ?agent=jaume
+═══════════════════════════════════════════════ */
+const AGENTS = {
+  jaume: {
+    nombre: 'Jaume Torres de Gigson Solutions',
+    foto: 'img/jaume-torres.jpg',
+    fotoAlt: 'Jaume Torres',
+    saludo: '👋 ¡Hola! Soy Jaume, experto en integraciones con Holded. Cuéntame qué necesitas y estudio la mejor forma de ayudarte.',
+    whatsapp: '34623783507',
+    mensajeFin: 'Jaume'
+  },
+  alfonso: {
+    nombre: 'Alfonso de Gigson Solutions',
+    foto: 'img/alfonso.jpg',
+    fotoAlt: 'Alfonso',
+    saludo: '👋 ¡Hola! Soy Alfonso. Cuéntame qué necesitas y vemos la mejor forma de ayudarte.',
+    whatsapp: '34619269383',
+    mensajeFin: 'Alfonso'
+  }
+};
+const _agentKey = new URLSearchParams(window.location.search).get('agent') || 'jaume';
+const AGENT = AGENTS[_agentKey] || AGENTS.jaume;
+
+// Aplica el agente al DOM del chatbot
+document.addEventListener('DOMContentLoaded', function() {
+  const img = document.getElementById('chatAgentImg');
+  const name = document.getElementById('chatAgentName');
+  const greeting = document.getElementById('chatAgentGreeting');
+  if (img) { img.src = AGENT.foto; img.alt = AGENT.fotoAlt; }
+  if (name) name.textContent = AGENT.nombre;
+  if (greeting) greeting.textContent = AGENT.saludo;
+});
+
 /* ═══════════════════════════════════════════════
    LOGO CAROUSEL
 ═══════════════════════════════════════════════ */
@@ -962,9 +998,9 @@ function sendToWhatsApp(){
     });
   }
   const msg=encodeURIComponent(`¡Hola! Soy ${chatData.nombre} de ${chatData.empresa}.\n\nQuiero integrar ${chatData.herramienta} con Holded.\n\nLo que necesito resolver: ${chatData.problema}\n\nSomos ${chatData.size} empleados.\n\n ${chatData.tel} ·  ${chatData.email}${location.search?' · Ref:'+location.search:''}`);
-  document.getElementById('chatBody').innerHTML=`<div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 20px;gap:12px"><div style="width:52px;height:52px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><polyline points="4,12 9,17 20,6" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 style="font-size:1rem">¡Gracias, ${chatData.nombre.split(' ')[0]}! 🎉</h3><p style="font-size:13px;color:var(--muted)">Ahora te abrimos WhatsApp para hablar con Jaume.</p></div>`;
-  document.getElementById('chatFoot').innerHTML=`<a href="https://wa.me/34623783507?text=${msg}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:12px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;text-decoration:none;background:#25D366;color:#fff"><svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir WhatsApp</a>`;
-  setProgress(100);setTimeout(()=>window.open(`https://wa.me/34623783507?text=${msg}`,'_blank'),800);
+  document.getElementById('chatBody').innerHTML=`<div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 20px;gap:12px"><div style="width:52px;height:52px;border-radius:50%;background:#DCFCE7;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" width="26" height="26"><polyline points="4,12 9,17 20,6" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 style="font-size:1rem">¡Gracias, ${chatData.nombre.split(' ')[0]}! 🎉</h3><p style="font-size:13px;color:var(--muted)">Ahora te abrimos WhatsApp para hablar con ${AGENT.mensajeFin}.</p></div>`;
+  document.getElementById('chatFoot').innerHTML=`<a href="https://wa.me/${AGENT.whatsapp}?text=${msg}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:12px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;text-decoration:none;background:#25D366;color:#fff"><svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Abrir WhatsApp</a>`;
+  setProgress(100);setTimeout(()=>window.open(`https://wa.me/${AGENT.whatsapp}?text=${msg}`,'_blank'),800);
 }
 
 /* ═══════════════════════════════════════════════
