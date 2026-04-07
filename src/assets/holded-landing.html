@@ -642,7 +642,12 @@ const AGENTS = {
     mensajeFin: 'Alfonso'
   }
 };
-const _agentKey = new URLSearchParams(window.location.search).get('agent') || 'jaume';
+const _agentKey = (function() {
+  try {
+    const s = window.location.search || window.parent.location.search || '';
+    return new URLSearchParams(s).get('agent') || 'jaume';
+  } catch(e) { return 'jaume'; }
+})();
 const AGENT = AGENTS[_agentKey] || AGENTS.jaume;
 
 // Aplica el agente al DOM del chatbot
