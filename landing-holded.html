@@ -620,40 +620,16 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 0}
 
 <script>
 /* ═══════════════════════════════════════════════
-   FEATURE FLAG — AGENTE DEL CHATBOT
-   Activa Alfonso: añade ?agent=alfonso a la URL
-   Activa Jaume:   sin parámetro o ?agent=jaume
+   AGENTE DEL CHATBOT
 ═══════════════════════════════════════════════ */
-const AGENTS = {
-  jaume: {
-    nombre: 'Jaume Torres de Gigson Solutions',
-    foto: 'img/jaume-torres.jpg',
-    fotoAlt: 'Jaume Torres',
-    saludo: '👋 ¡Hola! Soy Jaume, experto en integraciones con Holded. Cuéntame qué necesitas y estudio la mejor forma de ayudarte.',
-    whatsapp: '34623783507',
-    mensajeFin: 'Jaume'
-  },
-  alfonso: {
-    nombre: 'Alfonso de Gigson Solutions',
-    foto: 'img/alfonso.jpg',
-    fotoAlt: 'Alfonso',
-    saludo: '👋 ¡Hola! Soy Alfonso. Cuéntame qué necesitas y vemos la mejor forma de ayudarte.',
-    whatsapp: '34619269383',
-    mensajeFin: 'Alfonso'
-  }
+const AGENT = {
+  nombre: 'Alfonso de Gigson Solutions',
+  foto: 'img/alfonso.jpg',
+  fotoAlt: 'Alfonso',
+  saludo: '👋 ¡Hola! Soy Alfonso. Cuéntame qué necesitas y vemos la mejor forma de ayudarte.',
+  whatsapp: '34619269383',
+  mensajeFin: 'Alfonso'
 };
-const _agentKey = new URLSearchParams(window.location.search).get('agent') || 'jaume';
-const AGENT = AGENTS[_agentKey] || AGENTS.jaume;
-
-// Aplica el agente al DOM del chatbot
-document.addEventListener('DOMContentLoaded', function() {
-  const img = document.getElementById('chatAgentImg');
-  const name = document.getElementById('chatAgentName');
-  const greeting = document.getElementById('chatAgentGreeting');
-  if (img) { img.src = AGENT.foto; img.alt = AGENT.fotoAlt; }
-  if (name) name.textContent = AGENT.nombre;
-  if (greeting) greeting.textContent = AGENT.saludo;
-});
 
 /* ═══════════════════════════════════════════════
    LOGO CAROUSEL
