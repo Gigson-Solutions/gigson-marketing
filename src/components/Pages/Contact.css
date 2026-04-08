@@ -34,7 +34,6 @@
    }
    .contact-content {
       min-height: initial;
-      max-width: 120rem;
    }
 }
 @media (min-width: 78.125rem) {
@@ -54,7 +53,6 @@
 
    .contact-content {
       margin: 0;
-      max-width: 120rem;
    }
 }
 
