@@ -25,6 +25,7 @@ const ROUTE_SLUGS = {
   },
   es: {
     home: '',
+    integrations: 'integraciones-holded',
     services: 'servicios',
     industries: 'industrias',
     logistics: 'tecnologia-logistica',

@@ -2953,5 +2953,139 @@
       "title": "Page not found | Gigson Solutions",
       "description": "The page you are looking for does not exist or has been moved."
     }
+  },
+  "integrations-holded": {
+    "title": "Holded Integrations | Gigson Solutions",
+    "metadescription": "Specialists in connecting Holded with the tools you already use. Custom integrations for retail, logistics, hospitality, veterinary, construction and more.",
+    "hero": {
+      "badge": "Official partner",
+      "title": "Holded integrations with <span>the software you need</span>",
+      "subtitle": "Custom Holded integrations for your business.",
+      "description": "We specialize in connecting Holded with the tools you already use. We define the best solution and build the integration you truly need.",
+      "cta": "TALK TO A HOLDED EXPERT",
+      "specialists": {
+        "title": "Specialists in connecting Holded with the tools you already use.",
+        "bullets": [
+          "We are an official Holded partner.",
+          "Integrations for every industry.",
+          "Advice before any integration."
+        ],
+        "link": "See use cases"
+      },
+      "whatsapp": {
+        "title": "Questions? Let's talk",
+        "cta": "Chat on WhatsApp"
+      }
+    },
+    "useCases": {
+      "label": "USE CASES",
+      "items": [
+        {
+          "title": "Electronic invoicing & VeriFactu",
+          "description": "Automate VeriFactu compliance and electronic invoice issuance directly from Holded, without any manual work.",
+          "cta": "TALK TO A HOLDED EXPERT"
+        },
+        {
+          "title": "Sales, customer & payment sync",
+          "description": "Connect your POS or e-commerce with Holded so orders, customers and payments sync in real time.",
+          "cta": "TALK TO A HOLDED EXPERT"
+        },
+        {
+          "title": "Sector-specific financial control",
+          "description": "Integrate your sector-specific software (veterinary, clinic, construction…) with Holded to unify all financial data.",
+          "cta": "TALK TO A HOLDED EXPERT"
+        },
+        {
+          "title": "Advanced bank reconciliation",
+          "description": "Automate bank reconciliation by connecting your bank with Holded and eliminate manual transaction entry.",
+          "cta": "TALK TO A HOLDED EXPERT"
+        },
+        {
+          "title": "Employee productivity analysis",
+          "description": "Connect HR and time management tools with Holded for full visibility into team performance.",
+          "cta": "TALK TO A HOLDED EXPERT"
+        },
+        {
+          "title": "Advanced e-commerce synchronisation",
+          "description": "Keep stock, prices and catalogue in sync between your online store (Shopify, WooCommerce, Amazon…) and Holded.",
+          "cta": "TALK TO A HOLDED EXPERT"
+        },
+        {
+          "title": "Automatic lead registration in CRM",
+          "description": "Connect your forms and email campaigns with Holded or your CRM so leads are registered automatically without manual intervention.",
+          "cta": "TALK TO A HOLDED EXPERT"
+        }
+      ]
+    },
+    "logos": {
+      "title": "More than 50 tools integrated with Holded",
+      "subtitle": "Compatible software",
+      "mainCta": "Start connecting Holded"
+    },
+    "form": {
+      "sectionTitle": "Integrations tailored to how you work.",
+      "sectionDescription": "We design custom Holded integrations with your tools. Before we build anything, we analyse your case with you to define the most efficient solution.",
+      "title": "What do you need to integrate?",
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "you@company.com"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "+34 600 000 000"
+        },
+        "company": {
+          "label": "Company",
+          "placeholder": "Your company name"
+        },
+        "tool": {
+          "label": "Tool to integrate",
+          "placeholder": "Shopify, Odoo, SAP..."
+        },
+        "dataTypes": {
+          "label": "What data do you need to sync?",
+          "options": [
+            "Invoices",
+            "Orders",
+            "Customers",
+            "Products",
+            "Other"
+          ]
+        },
+        "flow": {
+          "label": "In which direction?",
+          "options": [
+            {
+              "value": "holded_to_tool",
+              "label": "Holded → Tool"
+            },
+            {
+              "value": "tool_to_holded",
+              "label": "Tool → Holded"
+            },
+            {
+              "value": "bidirectional",
+              "label": "Bidirectional"
+            }
+          ]
+        },
+        "problem": {
+          "label": "Tell us about your problem or need",
+          "placeholder": "Describe what you want to automate or connect..."
+        }
+      },
+      "send": "SEND",
+      "checkbox": {
+        "first": "I have read and accept the ",
+        "second": "Privacy Policy",
+        "third": ""
+      },
+      "legalNotice": "Gigson Solutions is an independent entity and is not affiliated with or part of Holded. We do not represent Holded or act on its behalf. Our status is solely that of an authorised official partner for the implementation of and advice on its products and services."
+    }
   }
 }

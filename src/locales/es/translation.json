@@ -2957,5 +2957,153 @@
       "title": "Página no encontrada | Gigson Solutions",
       "description": "La página que buscas no existe o ha cambiado de ubicación."
     }
+  },
+  "integrations-holded": {
+    "title": "Integraciones Holded | Gigson Solutions",
+    "metadescription": "Especialistas en conectar Holded con las herramientas que ya usas. Integraciones a medida para retail, logística, hostelería, veterinaria, construcción y más.",
+    "hero": {
+      "badge": "Partner oficial",
+      "title": "Integraciones holded con el software que necesites",
+      "subtitle": "Integraciones con Holded a medida para tu negocio.",
+      "description": "Hablamos contigo, definimos la mejor solución y construimos la integración que realmente necesitas.",
+      "cta": "habla con un experto en holded",
+      "specialists": {
+        "title": "Especialistas en conectar Holded con las herramientas que ya usas.",
+        "bullets": [
+          "Somos partner oficial de Holded.",
+          "Integraciones para todo tipo de industrias.",
+          "Asesoramiento antes de cualquier integración."
+        ],
+        "link": "Ver ejemplos de uso"
+      },
+      "whatsapp": {
+        "title": "¿Alguna duda? hablemos",
+        "cta": "Hablar por WhatsApp"
+      }
+    },
+    "useCases": {
+      "label": "casos de uso",
+      "items": [
+        {
+          "title": "Facturación electrónica y cumplimiento VeriFactu",
+          "description": "Automatización de la facturación desde sistemas externos (TPV, ecommerce, software sectorial) hacia Holded para cumplir con VeriFactu sin cambiar toda la operativa del negocio.",
+          "cta": "habla con un experto en holded"
+        },
+        {
+          "title": "Sincronización de ventas, clientes y cobros",
+          "description": "Conexión entre Holded y herramientas de venta (retail, clínicas, reservas, plataformas online) para unificar clientes, facturas y estados de cobro sin duplicar trabajo.",
+          "cta": "habla con un experto en holded"
+        },
+        {
+          "title": "Control económico a partir de software sectorial",
+          "description": "Integración de herramientas específicas (clínicas, veterinaria, hostelería, construcción) con Holded para tener control financiero real: ingresos, costes, márgenes y reporting centralizado.",
+          "cta": "habla con un experto en holded"
+        },
+        {
+          "title": "Conciliación bancaria avanzada",
+          "description": "Leemos movimientos y facturas desde Holded y aplicamos reglas inteligentes para proponer conciliaciones automáticas.",
+          "cta": "habla con un experto en holded"
+        },
+        {
+          "title": "Análisis de productividad por empleado",
+          "description": "Analizamos horas y facturación asociada para medir productividad por persona.",
+          "cta": "habla con un experto en holded"
+        },
+        {
+          "title": "Sincronización avanzada ecommerce",
+          "description": "Creamos integración personalizada que sincroniza pedidos, stock y facturación.",
+          "cta": "habla con un experto en holded"
+        },
+        {
+          "title": "Sincronización automática de emails en CRM",
+          "description": "Registramos automáticamente los emails en la ficha del cliente.",
+          "cta": "habla con un experto en holded"
+        }
+      ]
+    },
+    "logos": {
+      "title": "Integraciones con Holded para todo tipo de negocios:",
+      "subtitle": "Estas son algunos de los software de diferentes industrias que hemos integrado con Holded.",
+      "mainCta": "Empieza a conectar holded",
+      "industries": [
+        "Retail",
+        "Veterinario",
+        "Dental",
+        "Construcción",
+        "Educación",
+        "Clínicas",
+        "Hostelería",
+        "CRM/ERP",
+        "Logística",
+        "Servicios",
+        "Real State",
+        "RR.HH"
+      ]
+    },
+    "form": {
+      "sectionTitle": "Integraciones pensadas para tu forma de trabajar.",
+      "sectionDescription": "Diseñamos integraciones Holded a medida con tus herramientas, adaptadas a tu negocio. Antes de desarrollar nada, analizamos tu caso contigo para definir la solución más eficiente.",
+      "title": "¿Qué necesitas?",
+      "fields": {
+        "name": {
+          "label": "Contacto:",
+          "placeholder": "Nombre y apellidos"
+        },
+        "email": {
+          "label": "Email:",
+          "placeholder": "nombre@ejemplo.com"
+        },
+        "tool": {
+          "label": "¿Qué herramienta quieres conectar con Holded?",
+          "placeholder": "Shopify, Odoo, Prestashop, ERP propio…"
+        },
+        "phone": {
+          "label": "Teléfono",
+          "placeholder": "+34 000 00 00"
+        },
+        "company": {
+          "label": "Empresa",
+          "placeholder": "Nombre de la empresa"
+        },
+        "dataTypes": {
+          "label": "¿Qué datos te gustaría sincronizar?",
+          "options": [
+            "Facturas",
+            "Pedidos",
+            "Clientes",
+            "Productos",
+            "Otros"
+          ]
+        },
+        "flow": {
+          "label": "¿Quieres que los datos vayan de Holded hacia la otra herramienta, al revés, o en ambos sentidos?",
+          "options": [
+            {
+              "value": "holded_to_tool",
+              "label": "De Holded → otra herramienta"
+            },
+            {
+              "value": "tool_to_holded",
+              "label": "De otra herramienta → Holded"
+            },
+            {
+              "value": "bidirectional",
+              "label": "En ambos sentidos"
+            }
+          ]
+        },
+        "problem": {
+          "label": "¿Qué problema quieres resolver con esta integración?",
+          "placeholder": "Explica de forma breve"
+        }
+      },
+      "send": "ENVIAR",
+      "checkbox": {
+        "first": "He leído y acepto la ",
+        "second": "Política de privacidad",
+        "third": ""
+      },
+      "legalNotice": "Gigson Solutions es una entidad independiente y no está afiliada ni forma parte de Holded. No representamos a Holded ni actuamos en su nombre. Nuestra condición es exclusivamente la de partner oficial autorizado para la implementación y asesoramiento sobre sus productos y servicios."
+    }
   }
 }

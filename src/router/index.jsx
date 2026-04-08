@@ -14,6 +14,7 @@ import Contact from '../components/Pages/Contact';
 import CookiesPage from '../components/Pages/CookiesPage';
 import CTO from '../components/Pages/CTO/CTO';
 import Faqs from '../components/Pages/Faqs/Faqs';
+import HoldedLandingStatic from '../components/Pages/HoldedLandingStatic/HoldedLandingStatic';
 import Logistics from '../components/Pages/Logistics/Logistics';
 import NotFound from '../components/Pages/NotFound/NotFound';
 import Notice from '../components/Pages/Notice';
@@ -32,6 +33,7 @@ const generateRoutes = (lang) => {
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
+      { path: slugs.integrations, element: <HoldedLandingStatic /> },
       { path: slugs.services, element: <Services /> },
       { path: slugs.logistics, element: <Logistics /> },
       { path: slugs.CTO, element: <CTO /> },
