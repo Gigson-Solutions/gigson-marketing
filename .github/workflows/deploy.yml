@@ -57,7 +57,7 @@ jobs:
           aws-region: eu-west-1
 
       - name: Sync to S3
-        run: aws s3 sync dist/ s3://$BUCKET_NAME
+        run: aws s3 sync dist/ s3://$BUCKET_NAME --delete
         env:
           BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
 
