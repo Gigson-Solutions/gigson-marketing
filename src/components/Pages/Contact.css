@@ -1,4 +1,5 @@
 .contact-content {
+   padding-inline: var(--global-padding);
    overflow: hidden;
    min-height: 100vh;
 }
@@ -34,6 +35,7 @@
    }
    .contact-content {
       min-height: initial;
+      max-width: 120rem;
    }
 }
 @media (min-width: 78.125rem) {
@@ -53,6 +55,7 @@
 
    .contact-content {
       margin: 0;
+      max-width: 120rem;
    }
 }
 

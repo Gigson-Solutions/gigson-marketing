@@ -15,7 +15,7 @@ const Form = ({ customClass }) => {
       <h2 className="form-h2">{title}</h2>
       <form
         className="form"
-        action="https://formsubmit.co/jaume@somosgigson.com"
+        action="https://formsubmit.co/jaume@somosgigson.com|alfonso.ojeda@gigsonsolutions.com"
         method="POST"
       >
         <div className="form-container">
@@ -120,7 +120,6 @@ const Form = ({ customClass }) => {
           </div>
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="box" />
-          <input type="hidden" name="_cc" value="alfonso.ojeda@gigsonsolutions.com" />
         </div>
         <Button type="submit" name={send} classStyle="form-btn-send" />
       </form>
