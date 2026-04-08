@@ -15,10 +15,12 @@ const Contact = () => {
   return (
     <div className="contact-content">
       <SeoHelmet title={seo.title} description={seo.description} />
-      <div className="contact-img">
-        <img className="Bgcont" src={Bgcont} alt="Bgcont" />
+      <div className="wrapper">
+        <div className="contact-img">
+          <img className="Bgcont" src={Bgcont} alt="Bgcont" />
+        </div>
+        <Form />
       </div>
-      <Form />
     </div>
   );
 };
