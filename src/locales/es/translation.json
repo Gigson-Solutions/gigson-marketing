@@ -4,196 +4,196 @@
     "subtitle": "Elige un hueco que te encaje. Las reservas se sincronizan con nuestro calendario.",
     "iframeTitle": "Reservar cita con Gigson Solutions"
   },
-  "menu":{
-    "about":"NOSOTROS",
+  "menu": {
+    "about": "NOSOTROS",
     "book": "RESERVAR",
-    "services":"SERVICIOS",
-    "news":"LANDING",
-    "industries":"INDUSTRIAS",
-    "cases":"CASOS",
-    "faqs":"FAQs",
-    "contact":"CONTÁCTANOS",
-    "legal":"Política legal",
-    "cookies":"Política de cookies",
-    "notice":"Aviso legal",
+    "services": "SERVICIOS",
+    "news": "LANDING",
+    "industries": "INDUSTRIAS",
+    "cases": "CASOS",
+    "faqs": "FAQs",
+    "contact": "CONTÁCTANOS",
+    "legal": "Política legal",
+    "cookies": "Política de cookies",
+    "notice": "Aviso legal",
     "logistics": "Logística",
     "retail": "Retail",
-    "CTO" : "CTO as a service",
+    "CTO": "CTO as a service",
     "software": "Ingenieria software",
     "construction": "Construcción",
     "tech_consulting": "Consultoría tecnologica",
-    "cibersecurity" : "Ciberseguridad"
+    "cibersecurity": "Ciberseguridad"
   },
   "hero_link": "/es/contacto",
-  "home":{
-    "title":"Gigson Solutions | Tecnología para Impulsar tu Negocio",
+  "home": {
+    "title": "Gigson Solutions | Tecnología para Impulsar tu Negocio",
     "metadescription": "Soluciones a medida para negocios complejos. Potenciamos tu tecnología actual y, si lo que necesitas no existe, lo creamos juntos.",
-    "heroH1":"Tecnología para <span>impulsar</span> tu negocio<span>.</span>",
-    "heroP":"SOLUCIONES A MEDIDA PARA NEGOCIOS COMPLEJOS",
-    "heroBtn":"CONTÁCTANOS",
-    "heroScroll":"SEGUIR EXPLORANDO",
-    "servicesTitle":"Productos <span>a medida</span> para cualquier negocio ·",
-    "servicesP":{
-      "p1":"Nos dedicamos a aprovechar al máximo las herramientas de software que ya utilizas, conectándolas entre sí, optimizándolas para que rindan más y alineándolas con las necesidades reales de tu negocio.",
-      "p2":"Y si lo que necesitas aún no existe... lo creamos para ti."
+    "heroH1": "Tecnología para <span>impulsar</span> tu negocio<span>.</span>",
+    "heroP": "SOLUCIONES A MEDIDA PARA NEGOCIOS COMPLEJOS",
+    "heroBtn": "CONTÁCTANOS",
+    "heroScroll": "SEGUIR EXPLORANDO",
+    "servicesTitle": "Productos <span>a medida</span> para cualquier negocio ·",
+    "servicesP": {
+      "p1": "Nos dedicamos a aprovechar al máximo las herramientas de software que ya utilizas, conectándolas entre sí, optimizándolas para que rindan más y alineándolas con las necesidades reales de tu negocio.",
+      "p2": "Y si lo que necesitas aún no existe... lo creamos para ti."
     },
-    "servicesBtn":"NUESTROS SERVICIOS"
+    "servicesBtn": "NUESTROS SERVICIOS"
   },
-  "ctas":{
-    "contact":"CONTÁCTANOS",
-    "talk":"¿HABLAMOS?"
+  "ctas": {
+    "contact": "CONTÁCTANOS",
+    "talk": "¿HABLAMOS?"
   },
-  "caseswhygigson":{
-    "wth2":"¿Qué puede hacer Gigson Solutions por tu negocio?",
-    "wp1":"En Gigson Solutions, creemos que la tecnología debería impulsar tu negocio hacia adelante, no limitarlo.",
-    "wp2":"Aquí hay algunos ejemplos de lo que podemos hacer por ti.",
-    "wlink":"VER CASOS"
+  "caseswhygigson": {
+    "wth2": "¿Qué puede hacer Gigson Solutions por tu negocio?",
+    "wp1": "En Gigson Solutions, creemos que la tecnología debería impulsar tu negocio hacia adelante, no limitarlo.",
+    "wp2": "Aquí hay algunos ejemplos de lo que podemos hacer por ti.",
+    "wlink": "VER CASOS"
   },
-  "whyservices":{
-    "sth2":"Simplificando un mundo innecesariamente complejo.",
-    "slink":"VER SERVICIOS"
+  "whyservices": {
+    "sth2": "Simplificando un mundo innecesariamente complejo.",
+    "slink": "VER SERVICIOS"
   },
-  "about":{
-    "title":"Somos un equipo de profesionales expertos con más de <span>9 años</span> de experiencia.",
-    "description":"Contamos con todos los perfiles necesarios para el desarrollo de un producto digital, y con diferentes partners en ámbitos específicos para complementar las solución all-in-one.",
-    "cta":"HABLEMOS",
-    "titleH2":"Descubre lo que nos mueve",
-    "belive":{
-      "t1":"Calidad",
-      "t2":"Compromiso",
-      "t3":"Facilidad",
-      "p1":"Independientemente de si estamos desarrollando una prueba de concepto o un producto final, implementaremos diferentes estándares de calidad de producto y de gestión de proyectos para asegurarnos de que cada producto cumpla y supere las expectativas.",
-      "p2":"Podrás elegir el tipo de compromiso que quieras tener con nosotros. Estaremos siempre a tu lado para acompañarte en cualquier fase, no obstante si no quieres continuar, nos encargaremos del cierre y del traspaso necesario cumpliendo con toda legalidad vigente.",
-      "p3":"Sabemos que hablar con un desarrollador no es fácil. Con nosotros hablaras con un consultor de negocios con conocimiento técnico para entender tus necesidades y validar su viabilidad técnica a la vez."
+  "about": {
+    "title": "Somos un equipo de profesionales expertos con más de <span>9 años</span> de experiencia.",
+    "description": "Contamos con todos los perfiles necesarios para el desarrollo de un producto digital, y con diferentes partners en ámbitos específicos para complementar las solución all-in-one.",
+    "cta": "HABLEMOS",
+    "titleH2": "Descubre lo que nos mueve",
+    "belive": {
+      "t1": "Calidad",
+      "t2": "Compromiso",
+      "t3": "Facilidad",
+      "p1": "Independientemente de si estamos desarrollando una prueba de concepto o un producto final, implementaremos diferentes estándares de calidad de producto y de gestión de proyectos para asegurarnos de que cada producto cumpla y supere las expectativas.",
+      "p2": "Podrás elegir el tipo de compromiso que quieras tener con nosotros. Estaremos siempre a tu lado para acompañarte en cualquier fase, no obstante si no quieres continuar, nos encargaremos del cierre y del traspaso necesario cumpliendo con toda legalidad vigente.",
+      "p3": "Sabemos que hablar con un desarrollador no es fácil. Con nosotros hablaras con un consultor de negocios con conocimiento técnico para entender tus necesidades y validar su viabilidad técnica a la vez."
     },
-    "need":{
-      "t":"¿Qué necesito para hacer un <span>producto digital</span>?",
-      "d":"Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
-      "specialist1":"DIRECTOR DE ORQUESTA",
-      "specialist2":"PICACÓDIGO PARA TODO",
-      "specialist3":"LÍDER TÉCNICO",
-      "specialist4":"PICACÓDIGO OCULTO",
-      "specialist5":"ESTRATEGA",
-      "specialist6":"PICACÓDIGO A LA VISTA",
-      "specialist7":"VALIDACIÓN",
-      "specialist8":"DISEÑADOR DEL USO",
-      "specialist9":"PROTEGE EL PRODUCTO",
-      "label":"*No todos estos roles son necesarios en todos los productos. Dependiendo de tus necesidades, puede que los roles sean diferente.",
-      "cta2":"CONTÁCTANOS"
+    "need": {
+      "t": "¿Qué necesito para hacer un <span>producto digital</span>?",
+      "d": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
+      "specialist1": "DIRECTOR DE ORQUESTA",
+      "specialist2": "PICACÓDIGO PARA TODO",
+      "specialist3": "LÍDER TÉCNICO",
+      "specialist4": "PICACÓDIGO OCULTO",
+      "specialist5": "ESTRATEGA",
+      "specialist6": "PICACÓDIGO A LA VISTA",
+      "specialist7": "VALIDACIÓN",
+      "specialist8": "DISEÑADOR DEL USO",
+      "specialist9": "PROTEGE EL PRODUCTO",
+      "label": "*No todos estos roles son necesarios en todos los productos. Dependiendo de tus necesidades, puede que los roles sean diferente.",
+      "cta2": "CONTÁCTANOS"
     }
   },
-  "service":{
-    "serviceH1":"Descubre todos <span>nuestros servicios</span>",
-    "serviceP":"SOLUCIONES A MEDIDA PARA NEGOCIOS COMPLEJOS"
+  "service": {
+    "serviceH1": "Descubre todos <span>nuestros servicios</span>",
+    "serviceP": "SOLUCIONES A MEDIDA PARA NEGOCIOS COMPLEJOS"
   },
-  "serviceCard":[
+  "serviceCard": [
     {
-      "title":"Servicios de ciberseguridad",
-      "description":"La seguridad de la información ya no está en la hoja de ruta. La ciberseguridad es una NECESIDAD en todos los negocios y todas las empresas deben tener el conocimiento, las herramientas y los procesos para evitar o minimizar los ataques.",
-      "cards":[
+      "title": "Servicios de ciberseguridad",
+      "description": "La seguridad de la información ya no está en la hoja de ruta. La ciberseguridad es una NECESIDAD en todos los negocios y todas las empresas deben tener el conocimiento, las herramientas y los procesos para evitar o minimizar los ataques.",
+      "cards": [
         {
-          "title":"Evaluación de Seguridad",
-          "description":"Análisis de vulnerabilidades, Informe de remediación, Evaluaciones de seguridad de aplicaciones."
+          "title": "Evaluación de Seguridad",
+          "description": "Análisis de vulnerabilidades, Informe de remediación, Evaluaciones de seguridad de aplicaciones."
         },
         {
-          "title":"Capacitación",
-          "description":"Capacitación sobre phishing y seguridad de la información."
+          "title": "Capacitación",
+          "description": "Capacitación sobre phishing y seguridad de la información."
         },
         {
-          "title":"Transformaciones de Seguridad",
-          "description":"Evaluaciones del estado actual y futuro, transformación de TI."
+          "title": "Transformaciones de Seguridad",
+          "description": "Evaluaciones del estado actual y futuro, transformación de TI."
         }
       ]
     },
     {
-      "title":"Servicios de ingeniería de software",
-      "description":"Desde integrar diferentes herramientas, desarrollar nuevas características y productos hasta monitorear y mantener un producto, nuestro equipo está listo para ello. Nuestro equipo de ingeniería de software está compuesto por desarrolladores, arquitectos y testers para construir cualquier necesidad con las mejores tecnologías de vanguardia.",
-      "cards":[
+      "title": "Servicios de ingeniería de software",
+      "description": "Desde integrar diferentes herramientas, desarrollar nuevas características y productos hasta monitorear y mantener un producto, nuestro equipo está listo para ello. Nuestro equipo de ingeniería de software está compuesto por desarrolladores, arquitectos y testers para construir cualquier necesidad con las mejores tecnologías de vanguardia.",
+      "cards": [
         {
-          "title":"Proveedor de Nube",
-          "description":"AWS, Microsoft Azure, GCP."
+          "title": "Proveedor de Nube",
+          "description": "AWS, Microsoft Azure, GCP."
         },
         {
-          "title":"Contenedores y Orquestación",
-          "description":"Docker, K8s, WPAR y otros."
+          "title": "Contenedores y Orquestación",
+          "description": "Docker, K8s, WPAR y otros."
         },
         {
-          "title":"CI/CD",
-          "description":"Jenkins, GitLab, GitHub, Git."
+          "title": "CI/CD",
+          "description": "Jenkins, GitLab, GitHub, Git."
         },
         {
-          "title":"Base de Datos",
-          "description":"Oracle, MySQL, MongoDB, PostgresSQL, MS SQL y otros."
+          "title": "Base de Datos",
+          "description": "Oracle, MySQL, MongoDB, PostgresSQL, MS SQL y otros."
         },
         {
-          "title":"Mensajería y Data Streaming",
-          "description":"RabbitMQ, Apache Kafka, Apache, Redis, ELK stack y otros."
+          "title": "Mensajería y Data Streaming",
+          "description": "RabbitMQ, Apache Kafka, Apache, Redis, ELK stack y otros."
         },
         {
-          "title":"Monitoreo",
-          "description":"Prometheus, Datalog, Grafana, Azure monitor, Amazon CloudWatch, Zabbix y otros."
+          "title": "Monitoreo",
+          "description": "Prometheus, Datalog, Grafana, Azure monitor, Amazon CloudWatch, Zabbix y otros."
         }
       ]
     },
     {
-      "title":"Servicios de consultoría",
-      "description":"Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva.",
-      "cards":[
+      "title": "Servicios de consultoría",
+      "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva.",
+      "cards": [
         {
-          "title":"CTO como Servicio",
-          "description":"Liderazgo técnico y de negocio para las áreas de ingeniería y producto."
+          "title": "CTO como Servicio",
+          "description": "Liderazgo técnico y de negocio para las áreas de ingeniería y producto."
         },
         {
-          "title":"Gestión de Proyectos",
-          "description":"Ejecución de proyectos, Análisis de riesgos, Gestión de proveedores."
+          "title": "Gestión de Proyectos",
+          "description": "Ejecución de proyectos, Análisis de riesgos, Gestión de proveedores."
         },
         {
-          "title":"Gestión de Productos",
-          "description":"Visión general de E2E, Gestión de SLAs."
+          "title": "Gestión de Productos",
+          "description": "Visión general de E2E, Gestión de SLAs."
         },
         {
-          "title":"Consultoría Tecnológica",
-          "description":"Consultas técnicas sobre lenguajes, arquitecturas y soluciones."
+          "title": "Consultoría Tecnológica",
+          "description": "Consultas técnicas sobre lenguajes, arquitecturas y soluciones."
         },
         {
-          "title":"Consultoría UX/UI",
-          "description":"Consultoría de experiencia de usuario e interfaz de usuario."
+          "title": "Consultoría UX/UI",
+          "description": "Consultoría de experiencia de usuario e interfaz de usuario."
         }
       ]
     }
   ],
-  "whyChooseService":{
-    "whyTitle":"¿Por qué elegir gigson solutions?",
-    "whyDescription":"En gigson solutions pensamos que la tecnología debería impulsar tu negocio, no limitarlo."
+  "whyChooseService": {
+    "whyTitle": "¿Por qué elegir gigson solutions?",
+    "whyDescription": "En gigson solutions pensamos que la tecnología debería impulsar tu negocio, no limitarlo."
   },
-  "cases":{
-    "heroH1":"¿Cómo podemos ayudarte a alcanzar tus objetivos?",
-    "heroP":"Contesta las siguientes preguntas y observa las mejores soluciones para tu sector.",
-    "tagTitle":"¿Cuál es tu sector?",
-    "needTitle":"¿Cuál es tu necesidad actual?",
-    "resetFilters":"BORRAR FILTROS",
-    "featuresTitle":"Funcionalidades",
-    "solutionTitle":"Solución",
-    "toolsTitle":"Especificaciones"
+  "cases": {
+    "heroH1": "¿Cómo podemos ayudarte a alcanzar tus objetivos?",
+    "heroP": "Contesta las siguientes preguntas y observa las mejores soluciones para tu sector.",
+    "tagTitle": "¿Cuál es tu sector?",
+    "needTitle": "¿Cuál es tu necesidad actual?",
+    "resetFilters": "BORRAR FILTROS",
+    "featuresTitle": "Funcionalidades",
+    "solutionTitle": "Solución",
+    "toolsTitle": "Especificaciones"
   },
-  "casesctaacordion":{
-    "pcasesctaacordion":"Este esquema te proporciona una base sólida para desarrollar un caso de estudio detallado que puedes adaptar y expandir según tus necesidades específicas.",
-    "talk":"¿HABLAMOS?"
+  "casesctaacordion": {
+    "pcasesctaacordion": "Este esquema te proporciona una base sólida para desarrollar un caso de estudio detallado que puedes adaptar y expandir según tus necesidades específicas.",
+    "talk": "¿HABLAMOS?"
   },
-  "faqsH1":"¿Preguntas?<br><span>Las resolvemos</span>",
-  "casesDropdown":[
+  "faqsH1": "¿Preguntas?<br><span>Las resolvemos</span>",
+  "casesDropdown": [
     {
-      "title":"Integración CRM & ERP",
-      "challenge":"Desarrollar una solución que integre el actual sistema de planificación de recursos empresariales (ERP) con un sistema de gestión de las relaciones con el cliente (CRM) para el sector de arquitectura e interiorismo. El reto consistió en sincronizar la gestión de cuentas B2B y B2C con los proyectos en un solo punto, mejorando la eficiencia operativa, la exactitud en la asignación de recursos y proporcionando una visión unificada de la conceptualización, diseño y ejecución de los proyectos.",
-      "features":[
+      "title": "Integración CRM & ERP",
+      "challenge": "Desarrollar una solución que integre el actual sistema de planificación de recursos empresariales (ERP) con un sistema de gestión de las relaciones con el cliente (CRM) para el sector de arquitectura e interiorismo. El reto consistió en sincronizar la gestión de cuentas B2B y B2C con los proyectos en un solo punto, mejorando la eficiencia operativa, la exactitud en la asignación de recursos y proporcionando una visión unificada de la conceptualización, diseño y ejecución de los proyectos.",
+      "features": [
         "Gestión unificada de clientes y proyectos entre CRM y ERP.",
         "Panel de control integrado para seguimiento en tiempo real del progreso de los proyectos dando visibilidad al cliente y reporte horario interno.",
         "Automatización de facturación y seguimiento de cuentas por cobrar dentro del flujo de trabajo de proyectos.",
         "Coordinación de compras y presupuestos a través de la plataforma de ERP integrada.",
         "Análisis de rentabilidad de proyectos y gestión de cartera de servicios."
       ],
-      "solution":"Solución La integración de HubSpot (CRM) con Asana (gestión de proyectos) y Holded (ERP) proporciona una solución completa para la gestión de proyectos de arquitectura e interiorismo. La solución permitió a los usuarios tener una visión completa del ciclo de vida del cliente y los proyectos, desde la adquisición del cliente hasta la entrega final del proyecto y posventa.",
-      "tools":[
+      "solution": "Solución La integración de HubSpot (CRM) con Asana (gestión de proyectos) y Holded (ERP) proporciona una solución completa para la gestión de proyectos de arquitectura e interiorismo. La solución permitió a los usuarios tener una visión completa del ciclo de vida del cliente y los proyectos, desde la adquisición del cliente hasta la entrega final del proyecto y posventa.",
+      "tools": [
         "HubSpot: para la gestión avanzada de relaciones con clientes y marketing automatizado.",
         "Asana: para la planificación detallada de proyectos y seguimiento de tareas.",
         "Holded: para el manejo eficiente de operaciones financieras y contables, compras y gestión de inventarios.",
@@ -201,86 +201,86 @@
         "Dashboards personalizados para reportes y análisis de desempeño.",
         "Seguridad de datos de nivel empresarial y cumplimiento de GDPR."
       ],
-      "tags":[
+      "tags": [
         "Estudio diseño",
         "Agencia creativa",
         "Construcción"
       ],
-      "need":[
+      "need": [
         "Gestión de clientes",
         "Gestión de proyectos y tareas"
       ]
     },
     {
-      "title":"Configurador de presupuestos",
-      "challenge":"Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente. El objetivo era agilizar la creación de presupuestos, permitiendo diferentes configuraciones y aumentando el tiempo de procesado de la información con el fin de mejorar la toma de decisiones, justificaciones a cliente y la planificación financiera.",
-      "features":[
+      "title": "Configurador de presupuestos",
+      "challenge": "Elaborar un sistema de creación y cálculo de presupuestos personalizados para proyectos de construcción y logística, que se integre de manera eficiente con el ERP existente. El objetivo era agilizar la creación de presupuestos, permitiendo diferentes configuraciones y aumentando el tiempo de procesado de la información con el fin de mejorar la toma de decisiones, justificaciones a cliente y la planificación financiera.",
+      "features": [
         "Creación de presupuestos dinámicos basados en variables de proyecto como materiales, mano de obra, maquinaria y logística.",
         "Plantillas personalizables para diferentes tipos de construcciones y servicios logísticos.",
         "Integración de catálogos de proveedores y precios en tiempo real.",
         "Herramientas de análisis para comparar presupuestos y costos históricos.",
         "Simulación de escenarios para evaluar el impacto de diferentes variables en el presupuesto final."
       ],
-      "solution":"La integración del configurador de presupuestos basado en una WebApp e integrado Odoo proporciona una plataforma ágil y potente para la gestión financiera de proyectos de construcción y logística. Conectando con el ERP existente, esta solución permite crear, validar y exportar los presupuestos externamente para comunicar las finanzas de los proyectos a Odoo.",
-      "tools":[
+      "solution": "La integración del configurador de presupuestos basado en una WebApp e integrado Odoo proporciona una plataforma ágil y potente para la gestión financiera de proyectos de construcción y logística. Conectando con el ERP existente, esta solución permite crear, validar y exportar los presupuestos externamente para comunicar las finanzas de los proyectos a Odoo.",
+      "tools": [
         "Odoo: para la gestión y configuración detallada de presupuestos, aprovechando su flexibilidad y módulos personalizables.",
         "AWS: para la infraestructura de computación en la nube, garantizando escalabilidad, seguridad y alta disponibilidad.",
         "Módulos de Inteligencia de Negocio para la visualización de datos y toma de decisiones basada en análisis avanzados.",
         "APIs para la integración de datos de proveedores externos y actualizaciones de precios en tiempo real.",
         "Cumplimiento de estándares de seguridad internacionales y políticas de privacidad de datos."
       ],
-      "tags":[
+      "tags": [
         "Estudio diseño",
         "Agencia creativa",
         "Logística",
         "Construcción"
       ],
-      "need":[
+      "need": [
         "Mejorar rentabilidad de servicios",
         "Centralizar información"
       ]
     },
     {
-      "title":"Integración de herramientas End2End para eCommerce",
-      "challenge":"Crear y desarrollar una integración de APIs que integre ERP, CMS, diferentes marketplaces y proveedores de Third-Party Logistics (3PLs) para la industria de Dropshipping y Logística. El objetivo es mejorar la eficiencia operativa y la experiencia del cliente al simplificar la gestión de compras, ventas y logística.",
-      "features":[
+      "title": "Integración de herramientas End2End para eCommerce",
+      "challenge": "Crear y desarrollar una integración de APIs que integre ERP, CMS, diferentes marketplaces y proveedores de Third-Party Logistics (3PLs) para la industria de Dropshipping y Logística. El objetivo es mejorar la eficiencia operativa y la experiencia del cliente al simplificar la gestión de compras, ventas y logística.",
+      "features": [
         "Interfaz única para gestionar operaciones en diferentes plataformas de comercio electrónico y marketplaces.",
         "Integración de ERP para una gestión eficiente de los recursos y el inventario.",
         "Conexión con 3PLs para optimizar el proceso de envío y entrega.",
         "Herramientas analíticas avanzadas a través de Google Looker para la toma de decisiones basada en datos.",
         "Sincronización en tiempo real de pedidos y existencias entre mercados y el sistema de gestión."
       ],
-      "solution":"La implementación de un Orquestador de API unificado que conecta Odoo (ERP), Prestashop (CMS), Huboo (3PL), y Amazon Selling Central, permite una visión completa del proceso de comercio electrónico. Esta solución facilita la automatización y sincronización entre plataformas, asegurando una gestión fluida y transparente de extremo a extremo.",
-      "tools":[
+      "solution": "La implementación de un Orquestador de API unificado que conecta Odoo (ERP), Prestashop (CMS), Huboo (3PL), y Amazon Selling Central, permite una visión completa del proceso de comercio electrónico. Esta solución facilita la automatización y sincronización entre plataformas, asegurando una gestión fluida y transparente de extremo a extremo.",
+      "tools": [
         "Odoo como sistema ERP para la administración centralizada de la empresa.",
         "Prestashop para la gestión de contenidos y tiendas online.",
         "Huboo como sistema de gestión de logística y envíos.",
         "Amazon Selling Central para la integración con el marketplace de Amazon.",
         "Google Looker para análisis de datos y reportes avanzados."
       ],
-      "tags":[
+      "tags": [
         "Logística",
         "Fabricación",
         "eCommerce"
       ],
-      "need":[
+      "need": [
         "Mejorar la seguridad",
         "Evitar errores manuales",
         "Centralizar información"
       ]
     },
     {
-      "title":"Plataforma Integrada para Agencias Creativas",
-      "challenge":"Implementar una solución que integre herramientas de gestión de proyectos, CRM, y gestión de tareas para agencias creativas. El objetivo es mejorar la planificación de campañas, la gestión de recursos creativos y la comunicación con clientes.",
-      "features":[
+      "title": "Plataforma Integrada para Agencias Creativas",
+      "challenge": "Implementar una solución que integre herramientas de gestión de proyectos, CRM, y gestión de tareas para agencias creativas. El objetivo es mejorar la planificación de campañas, la gestión de recursos creativos y la comunicación con clientes.",
+      "features": [
         "Gestión centralizada de proyectos y clientes.",
         "Integración de CRM para seguimiento de clientes y oportunidades de negocio.",
         "Herramientas de gestión de tareas y colaboración para equipos creativos.",
         "Visualización en tiempo real del progreso de los proyectos y asignación de recursos.",
         "Análisis de desempeño de campañas y proyectos."
       ],
-      "solution":"Solución La integración de herramientas como Adobe Creative Cloud (creación de contenido), Trello (gestión de tareas), Slack (comunicación y colaboración), y Salesforce (CRM) proporciona una plataforma robusta para la gestión de campañas y proyectos. Esta solución permite una mejor planificación, seguimiento y análisis de las actividades creativas, asegurando una comunicación fluida con los clientes.",
-      "tools":[
+      "solution": "Solución La integración de herramientas como Adobe Creative Cloud (creación de contenido), Trello (gestión de tareas), Slack (comunicación y colaboración), y Salesforce (CRM) proporciona una plataforma robusta para la gestión de campañas y proyectos. Esta solución permite una mejor planificación, seguimiento y análisis de las actividades creativas, asegurando una comunicación fluida con los clientes.",
+      "tools": [
         "Adobe Creative Cloud: Para la creación y edición de contenido creativo, incluyendo diseño gráfico, video y otros medios digitales.",
         "Trello: Para la gestión de tareas y proyectos, permitiendo la organización visual y el seguimiento del progreso de cada tarea.",
         "Slack: Para la comunicación y colaboración en tiempo real entre los miembros del equipo, facilitando la coordinación y el intercambio de ideas.",
@@ -288,258 +288,258 @@
         "Zapier: Para la integración y automatización de flujos de trabajo entre las distintas herramientas, asegurando una sincronización de datos eficiente.",
         "Google Analytics: Para el análisis de datos y la evaluación del rendimiento de campañas y proyectos creativos."
       ],
-      "tags":[
+      "tags": [
         "Estudio diseño",
         "Agencia creativa",
         "eCommerce"
       ],
-      "need":[
+      "need": [
         "Gestión de clientes",
         "Gestión de proyectos y tareas",
         "Centralizar información"
       ]
     }
   ],
-  "faqsDropdown":[
+  "faqsDropdown": [
     {
-      "title":"Producto digital"
+      "title": "Producto digital"
     },
     {
-      "question":"¿Qué es un producto digital a medida?",
-      "answer":"Un producto digital cumple las necesidades de los usuarios, los objetivos de negocio y las oportunidades del mercado, para ofrecer la mejor solución al cliente. Se diferencia de las soluciones estándar en que se adapta a los procesos y herramientas específicas del cliente, ofreciendo una mayor flexibilidad y eficiencia."
+      "question": "¿Qué es un producto digital a medida?",
+      "answer": "Un producto digital cumple las necesidades de los usuarios, los objetivos de negocio y las oportunidades del mercado, para ofrecer la mejor solución al cliente. Se diferencia de las soluciones estándar en que se adapta a los procesos y herramientas específicas del cliente, ofreciendo una mayor flexibilidad y eficiencia."
     },
     {
-      "question":"¿Cómo os aseguráis de entender lo que necesito?",
-      "answer":"Nuestro proceso comienza con reuniones de descubrimiento y análisis en las que profundizamos en los casos de uso para asegurarnos que comprendemos todas las necesidades antes de empezar el desarrollo."
+      "question": "¿Cómo os aseguráis de entender lo que necesito?",
+      "answer": "Nuestro proceso comienza con reuniones de descubrimiento y análisis en las que profundizamos en los casos de uso para asegurarnos que comprendemos todas las necesidades antes de empezar el desarrollo."
     },
     {
-      "question":"¿Por qué elegir una solución de software a medida en lugar de una estándar?",
-      "answer":"Las soluciones estándar suelen ser genéricas para cualquier tipo de negocio, suelen incluir funciones innecesarias que complican su uso y no se suelen “integrar” fácilmente con otras soluciones que ya se tengan integradas. Una solución a medida se diseña para integrarse perfectamente con su manera de trabajar, mejorando la productividad y la eficiencia."
+      "question": "¿Por qué elegir una solución de software a medida en lugar de una estándar?",
+      "answer": "Las soluciones estándar suelen ser genéricas para cualquier tipo de negocio, suelen incluir funciones innecesarias que complican su uso y no se suelen “integrar” fácilmente con otras soluciones que ya se tengan integradas. Una solución a medida se diseña para integrarse perfectamente con su manera de trabajar, mejorando la productividad y la eficiencia."
     },
     {
-      "question":"¿Tendré soporte y mantenimiento cuando acabe el desarrollo?",
-      "answer":"¡Por supuesto! Si quieres que nosotros nos encarguemos del mantenimiento y soporte, lo haremos ya que tenemos un equipo dedicado a ello donde estaremos encantados de solucionar todos los problemas que puedan surgir."
+      "question": "¿Tendré soporte y mantenimiento cuando acabe el desarrollo?",
+      "answer": "¡Por supuesto! Si quieres que nosotros nos encarguemos del mantenimiento y soporte, lo haremos ya que tenemos un equipo dedicado a ello donde estaremos encantados de solucionar todos los problemas que puedan surgir."
     },
     {
-      "title":"Propiedad"
+      "title": "Propiedad"
     },
     {
-      "question":"¿Quién desarrollará mi solución?",
-      "answer":"En gigson solutions contamos con diferentes colaboradres especializados en cada parte del proceso para dar un servicio completo y adaptado a las necesidades del cliente como: desarrollo software, usabilidad, marketing y gráfico, legal etc."
+      "question": "¿Quién desarrollará mi solución?",
+      "answer": "En gigson solutions contamos con diferentes colaboradres especializados en cada parte del proceso para dar un servicio completo y adaptado a las necesidades del cliente como: desarrollo software, usabilidad, marketing y gráfico, legal etc."
     },
     {
-      "question":"¿Seré propietario de mi solución?",
-      "answer":"Si quieres, podrás ser el único propietario del producto que desarrollemos para obtener una ventaja competitiva."
+      "question": "¿Seré propietario de mi solución?",
+      "answer": "Si quieres, podrás ser el único propietario del producto que desarrollemos para obtener una ventaja competitiva."
     },
     {
-      "title":"Desarrollo del producto"
+      "title": "Desarrollo del producto"
     },
     {
-      "question":"¿Qué diferencia hay entre Gigson Solutions y contratar a un desarrollador?",
-      "answer":"La principal diferencia es que un desarrollador implementará lo que tu pienses, definas y priorices. En raras ocasiones se preguntará aspectos como si es lo que realmente necesita el negocio, el modelo de pricing o en la seguridad de la información."
+      "question": "¿Qué diferencia hay entre Gigson Solutions y contratar a un desarrollador?",
+      "answer": "La principal diferencia es que un desarrollador implementará lo que tu pienses, definas y priorices. En raras ocasiones se preguntará aspectos como si es lo que realmente necesita el negocio, el modelo de pricing o en la seguridad de la información."
     },
     {
-      "question":"¿Cómo se maneja la seguridad y la privacidad en los nuevos productos?",
-      "answer":"La seguridad y la privacidad son una prioridad en todas nuestras soluciones. Adoptamos prácticas de codificación segura y podemos certificar los productos que desarrollamos siguiendo estándares como GDPR, SOC2 o HIPAA."
+      "question": "¿Cómo se maneja la seguridad y la privacidad en los nuevos productos?",
+      "answer": "La seguridad y la privacidad son una prioridad en todas nuestras soluciones. Adoptamos prácticas de codificación segura y podemos certificar los productos que desarrollamos siguiendo estándares como GDPR, SOC2 o HIPAA."
     },
     {
-      "question":"¿Puedo coordinar yo mismo el desarrollo del producto?",
-      "answer":"Sí, no obstante no lo recomendamos ya que la falta de experiencia en la gestión de equipos técnicos puede conducir a malentendidos en la comunicación, una mala gestión de riesgos y de recursos."
+      "question": "¿Puedo coordinar yo mismo el desarrollo del producto?",
+      "answer": "Sí, no obstante no lo recomendamos ya que la falta de experiencia en la gestión de equipos técnicos puede conducir a malentendidos en la comunicación, una mala gestión de riesgos y de recursos."
     },
     {
-      "question":"¿Nos hemos dejado algo por contestar?",
-      "answer":"Estaremos encantados de resolverte cualquier otra cuestión. Puedes contactarnos en info@gigsonsolutions.com o a través de nuestro formulario.",
-      "cta":"¿Hablamos?"
+      "question": "¿Nos hemos dejado algo por contestar?",
+      "answer": "Estaremos encantados de resolverte cualquier otra cuestión. Puedes contactarnos en info@gigsonsolutions.com o a través de nuestro formulario.",
+      "cta": "¿Hablamos?"
     }
   ],
-  "form":{
-    "title":"Estamos listos para ayudarte",
-    "name":{
-      "label":"Mi nombre es",
-      "placeholder":"Nombre y apellido"
+  "form": {
+    "title": "Estamos listos para ayudarte",
+    "name": {
+      "label": "Mi nombre es",
+      "placeholder": "Nombre y apellido"
     },
-    "service":{
-      "label":"y estoy interesado en",
-      "placeholder":"Servicio",
-      "services":[
+    "service": {
+      "label": "y estoy interesado en",
+      "placeholder": "Servicio",
+      "services": [
         "Desarrollo software",
         "Ciberseguridad",
         "Consultoría tecnológica"
       ]
     },
-    "budget":{
-      "label":"El presupuesto para mi proyecto es",
-      "placeholder":"No sé"
+    "budget": {
+      "label": "El presupuesto para mi proyecto es",
+      "placeholder": "No sé"
     },
-    "email":{
-      "label":"Me puedes contactar en este email",
-      "placeholder":"nombre@ejemplo.com"
+    "email": {
+      "label": "Me puedes contactar en este email",
+      "placeholder": "nombre@ejemplo.com"
     },
-    "details":{
-      "label":"Te cuento más sobre mi proyecto",
-      "placeholder":"Detalles del proyecto (opcional)"
+    "details": {
+      "label": "Te cuento más sobre mi proyecto",
+      "placeholder": "Detalles del proyecto (opcional)"
     },
-    "checkbox":{
-      "first":"He leído la ",
-      "second":"política legal",
-      "third":" y acepto el procesamiento de mi información personal."
+    "checkbox": {
+      "first": "He leído la ",
+      "second": "política legal",
+      "third": " y acepto el procesamiento de mi información personal."
     },
-    "send":"ENVIAR SOLICITUD"
+    "send": "ENVIAR SOLICITUD"
   },
-  "notFound":{
-    "title":"<span>Oops... </span>",
-    "title2":"Parece que nos hemos perdido",
-    "cta":"VOLVER A LA HOME",
-    "description":"La página que buscas parece que ya no está diponible",
-    "banner404":"error 404"
+  "notFound": {
+    "title": "<span>Oops... </span>",
+    "title2": "Parece que nos hemos perdido",
+    "cta": "VOLVER A LA HOME",
+    "description": "La página que buscas parece que ya no está diponible",
+    "banner404": "error 404"
   },
-  "policity":{
-    "h2_1":"Política de protección de datos",
-    "h3_1":"1. OBJETO Y ACEPTACIÓN",
-    "pc_1_1":"El presente aviso legal regula el uso del sitio web www.somosgigson.com (en adelante, LA WEB), del que es titular Gigson (en adelante, EL PROPIETARIO DE LA WEB).",
-    "pc_1_2":"La navegación por el sitio web de EL PROPIETARIO DE LA WEB atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, que pueden sufrir modificaciones.",
-    "pc_1_3":"El usuario se obliga a hacer un uso correcto del sitio web de conformidad con las leyes, la buena fe, el orden público, los usos del tráfico y el presente Aviso Legal. El usuario responderá frente a EL PROPIETARIO DE LA WEB o frente a terceros, de cualesquiera daños y perjuicios que pudieran causarse como consecuencia del incumplimiento de dicha obligación.",
-    "h3_2":"2. IDENTIFICACIÓN Y COMUNICACIONES",
-    "pc_2_1":"EL PROPIETARIO DE LA WEB, en cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, le informa que:",
-    "pc_2_2":"Su denominación social es: Awesomely OÜ",
-    "pc_2_3":"Número de VAT: EE102613528",
-    "pc_2_4":"Su domicilio social está en: Lootsa Tn 2a Harju, 11415, Tallinn, Estonia",
-    "pc_2_5":"Para comunicarse con nosotros, ponemos a su disposición diferentes medios de contacto que detallamos a continuación:",
-    "pc_2_6":"Teléfono: +34630840225",
-    "pc_2_7":"Email: hello@awesomelygroup.com",
-    "pc_2_8":"Todas las notificaciones y comunicaciones entre los usuarios y EL PROPIETARIO DE LA WEB se considerarán eficaces, a todos los efectos, cuando se realicen a través de correo postal o cualquier otro medio de los detallados anteriormente.",
-    "h3_3":"3. CONDICIONES DE ACCESO Y UTILIZACIÓN",
-    "pc_3_1":"El sitio web y sus servicios son de acceso libre y gratuito, no obstante, EL PROPIETARIO DE LA WEB condiciona la utilización de algunos de los servicios ofrecidos en su web a la previa cumplimentación del correspondiente formulario.",
-    "pc_3_2":"El usuario garantiza la autenticidad y actualidad de todos aquellos datos que comunique a EL PROPIETARIO DE LA WEB y será el único responsable de las manifestaciones falsas o inexactas que realice.",
-    "pc_3_3":"El usuario se compromete expresamente a hacer un uso adecuado de los contenidos y servicios de EL PROPIETARIO DE LA WEB y a no emplearlos para, entre otros:",
-    "ps_3_1":"1. Difundir contenidos delictivos, violentos, pornográficos, racistas, xenófobo, ofensivos, de apología del terrorismo o, en general, contrarios a la ley o al orden público.",
-    "ps_3_2":"2. Introducir en la red virus informáticos o realizar actuaciones susceptibles de alterar, estropear, interrumpir o generar errores o daños en los documentos electrónicos, datos o sistemas físicos y lógicos de EL PROPIETARIO DE LA WEB o de terceras personas; así como obstaculizar el acceso de otros usuarios al sitio web y a sus servicios mediante el consumo masivo de los recursos informáticos a través de los cuales EL PROPIETARIO DE LA WEB presta sus servicios.",
-    "ps_3_3":"3. Intentar acceder a las cuentas de correo electrónico de otros usuarios o a áreas restringidas de los sistemas informáticos de EL PROPIETARIO DE LA WEB o de terceros y, en su caso, extraer información.",
-    "ps_3_4":"4. Vulnerar los derechos de propiedad intelectual o industrial, así como violar la confidencialidad de la información de EL PROPIETARIO DE LA WEB o de terceros.",
-    "ps_3_5":"5. Suplantar la identidad de otro usuario, de las administraciones públicas o de un tercero.",
-    "ps_3_6":"6. Reproducir, copiar, distribuir, poner a disposición de, o cualquier otra forma de comunicación pública, transformar o modificar los contenidos, a menos que se cuente con la autorización del titular de los correspondientes derechos o ello resulte legalmente permitido.",
-    "ps_3_7":"7. Recabar datos con finalidad publicitaria y de remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial sin que medie su previa solicitud o consentimiento.",
-    "pc_3_4":"Todos los contenidos del sitio web, como textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a EL PROPIETARIO DE LA WEB, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso de la web.",
-    "pc_3_5":"En definitiva, los usuarios que accedan a este sitio web pueden visualizar los contenidos y efectuar, en su caso, copias privadas autorizadas siempre que los elementos reproducidos no sean cedidos posteriormente a terceros, ni se instalen a servidores conectados a redes, ni sean objeto de ningún tipo de explotación.",
-    "pc_3_6":"Asimismo, todas las marcas, nombres comerciales o signos distintivos de cualquier clase que aparecen en el sitio web son propiedad de EL PROPIETARIO DE LA WEB, sin que pueda entenderse que el uso o acceso al mismo atribuya al usuario derecho alguno sobre los mismos.",
-    "pc_3_7":"La distribución, modificación, cesión o comunicación pública de los contenidos y cualquier otro acto que no haya sido expresamente autorizado por el titular de los derechos de explotación quedan prohibidos.",
-    "pc_3_8":"El establecimiento de un hiperenlace no implica en ningún caso la existencia de relaciones entre EL PROPIETARIO DE LA WEB y el propietario del sitio web en la que se establezca, ni la aceptación y aprobación por parte de EL PROPIETARIO DE LA WEB de sus contenidos o servicios. Aquellas personas que se propongan establecer un hiperenlace previamente deberán solicitar autorización por escrito a EL PROPIETARIO DE LA WEB.",
-    "pc_3_9":"En todo caso, el hiperenlace únicamente permitirá el acceso a la home-page o página de inicio de nuestro sitio web, asimismo deberá abstenerse de realizar manifestaciones o indicaciones falsas, inexactas o incorrectas sobre EL PROPIETARIO DE LA WEB, o incluir contenidos ilícitos, contrarios a las buenas costumbres y al orden público.",
-    "pc_3_10":"EL PROPIETARIO DE LA WEB no se responsabiliza del uso que cada usuario le dé a los materiales puestos a disposición en este sitio web ni de las actuaciones que realice en base a los mismos.",
-    "h3_4":"4. POLÍTICA DE PRIVACIDAD",
-    "pc_4_1":"Quién es el Responsable de tratamiento de sus datos:",
-    "pc_4_2":"El responsable de tratamiento se encuentra identificado en el expositivo 1 de este Aviso Legal.",
-    "pc_4_3":"Qué tipo de datos tenemos sobre su persona y cómo los hemos obtenido",
-    "pc_4_4":"Las categorías de datos personales que tratamos de clientes y proveedores son:",
-    "ps_4_1":"1. Datos de identificación",
-    "ps_4_2":"2. Direcciones postales o electrónicas",
-    "ps_4_3":"3. Información comercial",
-    "ps_4_4":"4. Datos económicos y de transacciones",
-    "pc_4_5":"En ningún caso tratamos datos especialmente protegidos:",
-    "pc_4_6":"Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación."
+  "policity": {
+    "h2_1": "Política de protección de datos",
+    "h3_1": "1. OBJETO Y ACEPTACIÓN",
+    "pc_1_1": "El presente aviso legal regula el uso del sitio web www.somosgigson.com (en adelante, LA WEB), del que es titular Gigson (en adelante, EL PROPIETARIO DE LA WEB).",
+    "pc_1_2": "La navegación por el sitio web de EL PROPIETARIO DE LA WEB atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, que pueden sufrir modificaciones.",
+    "pc_1_3": "El usuario se obliga a hacer un uso correcto del sitio web de conformidad con las leyes, la buena fe, el orden público, los usos del tráfico y el presente Aviso Legal. El usuario responderá frente a EL PROPIETARIO DE LA WEB o frente a terceros, de cualesquiera daños y perjuicios que pudieran causarse como consecuencia del incumplimiento de dicha obligación.",
+    "h3_2": "2. IDENTIFICACIÓN Y COMUNICACIONES",
+    "pc_2_1": "EL PROPIETARIO DE LA WEB, en cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, le informa que:",
+    "pc_2_2": "Su denominación social es: Awesomely OÜ",
+    "pc_2_3": "Número de VAT: EE102613528",
+    "pc_2_4": "Su domicilio social está en: Lootsa Tn 2a Harju, 11415, Tallinn, Estonia",
+    "pc_2_5": "Para comunicarse con nosotros, ponemos a su disposición diferentes medios de contacto que detallamos a continuación:",
+    "pc_2_6": "Teléfono: +34630840225",
+    "pc_2_7": "Email: hello@awesomelygroup.com",
+    "pc_2_8": "Todas las notificaciones y comunicaciones entre los usuarios y EL PROPIETARIO DE LA WEB se considerarán eficaces, a todos los efectos, cuando se realicen a través de correo postal o cualquier otro medio de los detallados anteriormente.",
+    "h3_3": "3. CONDICIONES DE ACCESO Y UTILIZACIÓN",
+    "pc_3_1": "El sitio web y sus servicios son de acceso libre y gratuito, no obstante, EL PROPIETARIO DE LA WEB condiciona la utilización de algunos de los servicios ofrecidos en su web a la previa cumplimentación del correspondiente formulario.",
+    "pc_3_2": "El usuario garantiza la autenticidad y actualidad de todos aquellos datos que comunique a EL PROPIETARIO DE LA WEB y será el único responsable de las manifestaciones falsas o inexactas que realice.",
+    "pc_3_3": "El usuario se compromete expresamente a hacer un uso adecuado de los contenidos y servicios de EL PROPIETARIO DE LA WEB y a no emplearlos para, entre otros:",
+    "ps_3_1": "1. Difundir contenidos delictivos, violentos, pornográficos, racistas, xenófobo, ofensivos, de apología del terrorismo o, en general, contrarios a la ley o al orden público.",
+    "ps_3_2": "2. Introducir en la red virus informáticos o realizar actuaciones susceptibles de alterar, estropear, interrumpir o generar errores o daños en los documentos electrónicos, datos o sistemas físicos y lógicos de EL PROPIETARIO DE LA WEB o de terceras personas; así como obstaculizar el acceso de otros usuarios al sitio web y a sus servicios mediante el consumo masivo de los recursos informáticos a través de los cuales EL PROPIETARIO DE LA WEB presta sus servicios.",
+    "ps_3_3": "3. Intentar acceder a las cuentas de correo electrónico de otros usuarios o a áreas restringidas de los sistemas informáticos de EL PROPIETARIO DE LA WEB o de terceros y, en su caso, extraer información.",
+    "ps_3_4": "4. Vulnerar los derechos de propiedad intelectual o industrial, así como violar la confidencialidad de la información de EL PROPIETARIO DE LA WEB o de terceros.",
+    "ps_3_5": "5. Suplantar la identidad de otro usuario, de las administraciones públicas o de un tercero.",
+    "ps_3_6": "6. Reproducir, copiar, distribuir, poner a disposición de, o cualquier otra forma de comunicación pública, transformar o modificar los contenidos, a menos que se cuente con la autorización del titular de los correspondientes derechos o ello resulte legalmente permitido.",
+    "ps_3_7": "7. Recabar datos con finalidad publicitaria y de remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial sin que medie su previa solicitud o consentimiento.",
+    "pc_3_4": "Todos los contenidos del sitio web, como textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a EL PROPIETARIO DE LA WEB, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso de la web.",
+    "pc_3_5": "En definitiva, los usuarios que accedan a este sitio web pueden visualizar los contenidos y efectuar, en su caso, copias privadas autorizadas siempre que los elementos reproducidos no sean cedidos posteriormente a terceros, ni se instalen a servidores conectados a redes, ni sean objeto de ningún tipo de explotación.",
+    "pc_3_6": "Asimismo, todas las marcas, nombres comerciales o signos distintivos de cualquier clase que aparecen en el sitio web son propiedad de EL PROPIETARIO DE LA WEB, sin que pueda entenderse que el uso o acceso al mismo atribuya al usuario derecho alguno sobre los mismos.",
+    "pc_3_7": "La distribución, modificación, cesión o comunicación pública de los contenidos y cualquier otro acto que no haya sido expresamente autorizado por el titular de los derechos de explotación quedan prohibidos.",
+    "pc_3_8": "El establecimiento de un hiperenlace no implica en ningún caso la existencia de relaciones entre EL PROPIETARIO DE LA WEB y el propietario del sitio web en la que se establezca, ni la aceptación y aprobación por parte de EL PROPIETARIO DE LA WEB de sus contenidos o servicios. Aquellas personas que se propongan establecer un hiperenlace previamente deberán solicitar autorización por escrito a EL PROPIETARIO DE LA WEB.",
+    "pc_3_9": "En todo caso, el hiperenlace únicamente permitirá el acceso a la home-page o página de inicio de nuestro sitio web, asimismo deberá abstenerse de realizar manifestaciones o indicaciones falsas, inexactas o incorrectas sobre EL PROPIETARIO DE LA WEB, o incluir contenidos ilícitos, contrarios a las buenas costumbres y al orden público.",
+    "pc_3_10": "EL PROPIETARIO DE LA WEB no se responsabiliza del uso que cada usuario le dé a los materiales puestos a disposición en este sitio web ni de las actuaciones que realice en base a los mismos.",
+    "h3_4": "4. POLÍTICA DE PRIVACIDAD",
+    "pc_4_1": "Quién es el Responsable de tratamiento de sus datos:",
+    "pc_4_2": "El responsable de tratamiento se encuentra identificado en el expositivo 1 de este Aviso Legal.",
+    "pc_4_3": "Qué tipo de datos tenemos sobre su persona y cómo los hemos obtenido",
+    "pc_4_4": "Las categorías de datos personales que tratamos de clientes y proveedores son:",
+    "ps_4_1": "1. Datos de identificación",
+    "ps_4_2": "2. Direcciones postales o electrónicas",
+    "ps_4_3": "3. Información comercial",
+    "ps_4_4": "4. Datos económicos y de transacciones",
+    "pc_4_5": "En ningún caso tratamos datos especialmente protegidos:",
+    "pc_4_6": "Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación."
   },
-  "notice":{
-    "h2_1":"Política de protección de datos",
-    "h3_1":"1. OBJETO Y ACEPTACIÓN",
-    "pc_1_1":"El presente aviso legal regula el uso del sitio web www.somosgigson.com (en adelante, LA WEB), del que es titular Gigson (en adelante, EL PROPIETARIO DE LA WEB).",
-    "pc_1_2":"La navegación por el sitio web de EL PROPIETARIO DE LA WEB atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, que pueden sufrir modificaciones.",
-    "pc_1_3":"El usuario se obliga a hacer un uso correcto del sitio web de conformidad con las leyes, la buena fe, el orden público, los usos del tráfico y el presente Aviso Legal. El usuario responderá frente a EL PROPIETARIO DE LA WEB o frente a terceros, de cualesquiera daños y perjuicios que pudieran causarse como consecuencia del incumplimiento de dicha obligación.",
-    "h3_2":"2. IDENTIFICACIÓN Y COMUNICACIONES",
-    "pc_2_1":"EL PROPIETARIO DE LA WEB, en cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, le informa que:",
-    "pc_2_2":"Su denominación social es: Awesomely OÜ",
-    "pc_2_3":"Número de VAT: EE102613528",
-    "pc_2_4":"Su domicilio social está en: Lootsa Tn 2a Harju, 11415, Tallinn, Estonia",
-    "pc_2_5":"Para comunicarse con nosotros, ponemos a su disposición diferentes medios de contacto que detallamos a continuación:",
-    "pc_2_6":"Teléfono: +34630840225",
-    "pc_2_7":"Email: hello@awesomelygroup.com",
-    "pc_2_8":"Todas las notificaciones y comunicaciones entre los usuarios y EL PROPIETARIO DE LA WEB se considerarán eficaces, a todos los efectos, cuando se realicen a través de correo postal o cualquier otro medio de los detallados anteriormente.",
-    "h3_3":"3. CONDICIONES DE ACCESO Y UTILIZACIÓN",
-    "pc_3_1":"El sitio web y sus servicios son de acceso libre y gratuito, no obstante, EL PROPIETARIO DE LA WEB condiciona la utilización de algunos de los servicios ofrecidos en su web a la previa cumplimentación del correspondiente formulario.",
-    "pc_3_2":"El usuario garantiza la autenticidad y actualidad de todos aquellos datos que comunique a EL PROPIETARIO DE LA WEB y será el único responsable de las manifestaciones falsas o inexactas que realice.",
-    "pc_3_3":"El usuario se compromete expresamente a hacer un uso adecuado de los contenidos y servicios de EL PROPIETARIO DE LA WEB y a no emplearlos para, entre otros:",
-    "ps_3_1":"1. Difundir contenidos delictivos, violentos, pornográficos, racistas, xenófobo, ofensivos, de apología del terrorismo o, en general, contrarios a la ley o al orden público.",
-    "ps_3_2":"2. Introducir en la red virus informáticos o realizar actuaciones susceptibles de alterar, estropear, interrumpir o generar errores o daños en los documentos electrónicos, datos o sistemas físicos y lógicos de EL PROPIETARIO DE LA WEB o de terceras personas; así como obstaculizar el acceso de otros usuarios al sitio web y a sus servicios mediante el consumo masivo de los recursos informáticos a través de los cuales EL PROPIETARIO DE LA WEB presta sus servicios.",
-    "ps_3_3":"3. Intentar acceder a las cuentas de correo electrónico de otros usuarios o a áreas restringidas de los sistemas informáticos de EL PROPIETARIO DE LA WEB o de terceros y, en su caso, extraer información.",
-    "ps_3_4":"4. Vulnerar los derechos de propiedad intelectual o industrial, así como violar la confidencialidad de la información de EL PROPIETARIO DE LA WEB o de terceros.",
-    "ps_3_5":"5. Suplantar la identidad de otro usuario, de las administraciones públicas o de un tercero.",
-    "ps_3_6":"6. Reproducir, copiar, distribuir, poner a disposición de, o cualquier otra forma de comunicación pública, transformar o modificar los contenidos, a menos que se cuente con la autorización del titular de los correspondientes derechos o ello resulte legalmente permitido.",
-    "ps_3_7":"7. Recabar datos con finalidad publicitaria y de remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial sin que medie su previa solicitud o consentimiento.",
-    "pc_3_4":"Todos los contenidos del sitio web, como textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a EL PROPIETARIO DE LA WEB, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso de la web.",
-    "pc_3_5":"En definitiva, los usuarios que accedan a este sitio web pueden visualizar los contenidos y efectuar, en su caso, copias privadas autorizadas siempre que los elementos reproducidos no sean cedidos posteriormente a terceros, ni se instalen a servidores conectados a redes, ni sean objeto de ningún tipo de explotación.",
-    "pc_3_6":"Asimismo, todas las marcas, nombres comerciales o signos distintivos de cualquier clase que aparecen en el sitio web son propiedad de EL PROPIETARIO DE LA WEB, sin que pueda entenderse que el uso o acceso al mismo atribuya al usuario derecho alguno sobre los mismos.",
-    "pc_3_7":"La distribución, modificación, cesión o comunicación pública de los contenidos y cualquier otro acto que no haya sido expresamente autorizado por el titular de los derechos de explotación quedan prohibidos.",
-    "pc_3_8":"El establecimiento de un hiperenlace no implica en ningún caso la existencia de relaciones entre EL PROPIETARIO DE LA WEB y el propietario del sitio web en la que se establezca, ni la aceptación y aprobación por parte de EL PROPIETARIO DE LA WEB de sus contenidos o servicios. Aquellas personas que se propongan establecer un hiperenlace previamente deberán solicitar autorización por escrito a EL PROPIETARIO DE LA WEB.",
-    "pc_3_9":"En todo caso, el hiperenlace únicamente permitirá el acceso a la home-page o página de inicio de nuestro sitio web, asimismo deberá abstenerse de realizar manifestaciones o indicaciones falsas, inexactas o incorrectas sobre EL PROPIETARIO DE LA WEB, o incluir contenidos ilícitos, contrarios a las buenas costumbres y al orden público.",
-    "pc_3_10":"EL PROPIETARIO DE LA WEB no se responsabiliza del uso que cada usuario le dé a los materiales puestos a disposición en este sitio web ni de las actuaciones que realice en base a los mismos.",
-    "h3_4":"4. POLÍTICA DE PRIVACIDAD",
-    "pc_4_1":"Quién es el Responsable de tratamiento de sus datos:",
-    "pc_4_2":"El responsable de tratamiento se encuentra identificado en el expositivo 1 de este Aviso Legal.",
-    "pc_4_3":"Qué tipo de datos tenemos sobre su persona y cómo los hemos obtenido",
-    "pc_4_4":"Las categorías de datos personales que tratamos de clientes y proveedores son:",
-    "ps_4_1":"1. Datos de identificación",
-    "ps_4_2":"2. Direcciones postales o electrónicas",
-    "ps_4_3":"3. Información comercial",
-    "ps_4_4":"4. Datos económicos y de transacciones",
-    "pc_4_5":"En ningún caso tratamos datos especialmente protegidos:",
-    "pc_4_6":"Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación."
+  "notice": {
+    "h2_1": "Política de protección de datos",
+    "h3_1": "1. OBJETO Y ACEPTACIÓN",
+    "pc_1_1": "El presente aviso legal regula el uso del sitio web www.somosgigson.com (en adelante, LA WEB), del que es titular Gigson (en adelante, EL PROPIETARIO DE LA WEB).",
+    "pc_1_2": "La navegación por el sitio web de EL PROPIETARIO DE LA WEB atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, que pueden sufrir modificaciones.",
+    "pc_1_3": "El usuario se obliga a hacer un uso correcto del sitio web de conformidad con las leyes, la buena fe, el orden público, los usos del tráfico y el presente Aviso Legal. El usuario responderá frente a EL PROPIETARIO DE LA WEB o frente a terceros, de cualesquiera daños y perjuicios que pudieran causarse como consecuencia del incumplimiento de dicha obligación.",
+    "h3_2": "2. IDENTIFICACIÓN Y COMUNICACIONES",
+    "pc_2_1": "EL PROPIETARIO DE LA WEB, en cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, le informa que:",
+    "pc_2_2": "Su denominación social es: Awesomely OÜ",
+    "pc_2_3": "Número de VAT: EE102613528",
+    "pc_2_4": "Su domicilio social está en: Lootsa Tn 2a Harju, 11415, Tallinn, Estonia",
+    "pc_2_5": "Para comunicarse con nosotros, ponemos a su disposición diferentes medios de contacto que detallamos a continuación:",
+    "pc_2_6": "Teléfono: +34630840225",
+    "pc_2_7": "Email: hello@awesomelygroup.com",
+    "pc_2_8": "Todas las notificaciones y comunicaciones entre los usuarios y EL PROPIETARIO DE LA WEB se considerarán eficaces, a todos los efectos, cuando se realicen a través de correo postal o cualquier otro medio de los detallados anteriormente.",
+    "h3_3": "3. CONDICIONES DE ACCESO Y UTILIZACIÓN",
+    "pc_3_1": "El sitio web y sus servicios son de acceso libre y gratuito, no obstante, EL PROPIETARIO DE LA WEB condiciona la utilización de algunos de los servicios ofrecidos en su web a la previa cumplimentación del correspondiente formulario.",
+    "pc_3_2": "El usuario garantiza la autenticidad y actualidad de todos aquellos datos que comunique a EL PROPIETARIO DE LA WEB y será el único responsable de las manifestaciones falsas o inexactas que realice.",
+    "pc_3_3": "El usuario se compromete expresamente a hacer un uso adecuado de los contenidos y servicios de EL PROPIETARIO DE LA WEB y a no emplearlos para, entre otros:",
+    "ps_3_1": "1. Difundir contenidos delictivos, violentos, pornográficos, racistas, xenófobo, ofensivos, de apología del terrorismo o, en general, contrarios a la ley o al orden público.",
+    "ps_3_2": "2. Introducir en la red virus informáticos o realizar actuaciones susceptibles de alterar, estropear, interrumpir o generar errores o daños en los documentos electrónicos, datos o sistemas físicos y lógicos de EL PROPIETARIO DE LA WEB o de terceras personas; así como obstaculizar el acceso de otros usuarios al sitio web y a sus servicios mediante el consumo masivo de los recursos informáticos a través de los cuales EL PROPIETARIO DE LA WEB presta sus servicios.",
+    "ps_3_3": "3. Intentar acceder a las cuentas de correo electrónico de otros usuarios o a áreas restringidas de los sistemas informáticos de EL PROPIETARIO DE LA WEB o de terceros y, en su caso, extraer información.",
+    "ps_3_4": "4. Vulnerar los derechos de propiedad intelectual o industrial, así como violar la confidencialidad de la información de EL PROPIETARIO DE LA WEB o de terceros.",
+    "ps_3_5": "5. Suplantar la identidad de otro usuario, de las administraciones públicas o de un tercero.",
+    "ps_3_6": "6. Reproducir, copiar, distribuir, poner a disposición de, o cualquier otra forma de comunicación pública, transformar o modificar los contenidos, a menos que se cuente con la autorización del titular de los correspondientes derechos o ello resulte legalmente permitido.",
+    "ps_3_7": "7. Recabar datos con finalidad publicitaria y de remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial sin que medie su previa solicitud o consentimiento.",
+    "pc_3_4": "Todos los contenidos del sitio web, como textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a EL PROPIETARIO DE LA WEB, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso de la web.",
+    "pc_3_5": "En definitiva, los usuarios que accedan a este sitio web pueden visualizar los contenidos y efectuar, en su caso, copias privadas autorizadas siempre que los elementos reproducidos no sean cedidos posteriormente a terceros, ni se instalen a servidores conectados a redes, ni sean objeto de ningún tipo de explotación.",
+    "pc_3_6": "Asimismo, todas las marcas, nombres comerciales o signos distintivos de cualquier clase que aparecen en el sitio web son propiedad de EL PROPIETARIO DE LA WEB, sin que pueda entenderse que el uso o acceso al mismo atribuya al usuario derecho alguno sobre los mismos.",
+    "pc_3_7": "La distribución, modificación, cesión o comunicación pública de los contenidos y cualquier otro acto que no haya sido expresamente autorizado por el titular de los derechos de explotación quedan prohibidos.",
+    "pc_3_8": "El establecimiento de un hiperenlace no implica en ningún caso la existencia de relaciones entre EL PROPIETARIO DE LA WEB y el propietario del sitio web en la que se establezca, ni la aceptación y aprobación por parte de EL PROPIETARIO DE LA WEB de sus contenidos o servicios. Aquellas personas que se propongan establecer un hiperenlace previamente deberán solicitar autorización por escrito a EL PROPIETARIO DE LA WEB.",
+    "pc_3_9": "En todo caso, el hiperenlace únicamente permitirá el acceso a la home-page o página de inicio de nuestro sitio web, asimismo deberá abstenerse de realizar manifestaciones o indicaciones falsas, inexactas o incorrectas sobre EL PROPIETARIO DE LA WEB, o incluir contenidos ilícitos, contrarios a las buenas costumbres y al orden público.",
+    "pc_3_10": "EL PROPIETARIO DE LA WEB no se responsabiliza del uso que cada usuario le dé a los materiales puestos a disposición en este sitio web ni de las actuaciones que realice en base a los mismos.",
+    "h3_4": "4. POLÍTICA DE PRIVACIDAD",
+    "pc_4_1": "Quién es el Responsable de tratamiento de sus datos:",
+    "pc_4_2": "El responsable de tratamiento se encuentra identificado en el expositivo 1 de este Aviso Legal.",
+    "pc_4_3": "Qué tipo de datos tenemos sobre su persona y cómo los hemos obtenido",
+    "pc_4_4": "Las categorías de datos personales que tratamos de clientes y proveedores son:",
+    "ps_4_1": "1. Datos de identificación",
+    "ps_4_2": "2. Direcciones postales o electrónicas",
+    "ps_4_3": "3. Información comercial",
+    "ps_4_4": "4. Datos económicos y de transacciones",
+    "pc_4_5": "En ningún caso tratamos datos especialmente protegidos:",
+    "pc_4_6": "Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación."
   },
-  "cookies":{
-    "h2_1":"Política de protección de datos",
-    "h3_1":"1. OBJETO Y ACEPTACIÓN",
-    "pc_1_1":"El presente aviso legal regula el uso del sitio web www.somosgigson.com (en adelante, LA WEB), del que es titular Gigson (en adelante, EL PROPIETARIO DE LA WEB).",
-    "pc_1_2":"La navegación por el sitio web de EL PROPIETARIO DE LA WEB atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, que pueden sufrir modificaciones.",
-    "pc_1_3":"El usuario se obliga a hacer un uso correcto del sitio web de conformidad con las leyes, la buena fe, el orden público, los usos del tráfico y el presente Aviso Legal. El usuario responderá frente a EL PROPIETARIO DE LA WEB o frente a terceros, de cualesquiera daños y perjuicios que pudieran causarse como consecuencia del incumplimiento de dicha obligación.",
-    "h3_2":"2. IDENTIFICACIÓN Y COMUNICACIONES",
-    "pc_2_1":"EL PROPIETARIO DE LA WEB, en cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, le informa que:",
-    "pc_2_2":"Su denominación social es: Awesomely OÜ",
-    "pc_2_3":"Número de VAT: EE102613528",
-    "pc_2_4":"Su domicilio social está en: Lootsa Tn 2a Harju, 11415, Tallinn, Estonia",
-    "pc_2_5":"Para comunicarse con nosotros, ponemos a su disposición diferentes medios de contacto que detallamos a continuación:",
-    "pc_2_6":"Teléfono: +34630840225",
-    "pc_2_7":"Email: hello@awesomelygroup.com",
-    "pc_2_8":"Todas las notificaciones y comunicaciones entre los usuarios y EL PROPIETARIO DE LA WEB se considerarán eficaces, a todos los efectos, cuando se realicen a través de correo postal o cualquier otro medio de los detallados anteriormente.",
-    "h3_3":"3. CONDICIONES DE ACCESO Y UTILIZACIÓN",
-    "pc_3_1":"El sitio web y sus servicios son de acceso libre y gratuito, no obstante, EL PROPIETARIO DE LA WEB condiciona la utilización de algunos de los servicios ofrecidos en su web a la previa cumplimentación del correspondiente formulario.",
-    "pc_3_2":"El usuario garantiza la autenticidad y actualidad de todos aquellos datos que comunique a EL PROPIETARIO DE LA WEB y será el único responsable de las manifestaciones falsas o inexactas que realice.",
-    "pc_3_3":"El usuario se compromete expresamente a hacer un uso adecuado de los contenidos y servicios de EL PROPIETARIO DE LA WEB y a no emplearlos para, entre otros:",
-    "ps_3_1":"1. Difundir contenidos delictivos, violentos, pornográficos, racistas, xenófobo, ofensivos, de apología del terrorismo o, en general, contrarios a la ley o al orden público.",
-    "ps_3_2":"2. Introducir en la red virus informáticos o realizar actuaciones susceptibles de alterar, estropear, interrumpir o generar errores o daños en los documentos electrónicos, datos o sistemas físicos y lógicos de EL PROPIETARIO DE LA WEB o de terceras personas; así como obstaculizar el acceso de otros usuarios al sitio web y a sus servicios mediante el consumo masivo de los recursos informáticos a través de los cuales EL PROPIETARIO DE LA WEB presta sus servicios.",
-    "ps_3_3":"3. Intentar acceder a las cuentas de correo electrónico de otros usuarios o a áreas restringidas de los sistemas informáticos de EL PROPIETARIO DE LA WEB o de terceros y, en su caso, extraer información.",
-    "ps_3_4":"4. Vulnerar los derechos de propiedad intelectual o industrial, así como violar la confidencialidad de la información de EL PROPIETARIO DE LA WEB o de terceros.",
-    "ps_3_5":"5. Suplantar la identidad de otro usuario, de las administraciones públicas o de un tercero.",
-    "ps_3_6":"6. Reproducir, copiar, distribuir, poner a disposición de, o cualquier otra forma de comunicación pública, transformar o modificar los contenidos, a menos que se cuente con la autorización del titular de los correspondientes derechos o ello resulte legalmente permitido.",
-    "ps_3_7":"7. Recabar datos con finalidad publicitaria y de remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial sin que medie su previa solicitud o consentimiento.",
-    "pc_3_4":"Todos los contenidos del sitio web, como textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a EL PROPIETARIO DE LA WEB, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso de la web.",
-    "pc_3_5":"En definitiva, los usuarios que accedan a este sitio web pueden visualizar los contenidos y efectuar, en su caso, copias privadas autorizadas siempre que los elementos reproducidos no sean cedidos posteriormente a terceros, ni se instalen a servidores conectados a redes, ni sean objeto de ningún tipo de explotación.",
-    "pc_3_6":"Asimismo, todas las marcas, nombres comerciales o signos distintivos de cualquier clase que aparecen en el sitio web son propiedad de EL PROPIETARIO DE LA WEB, sin que pueda entenderse que el uso o acceso al mismo atribuya al usuario derecho alguno sobre los mismos.",
-    "pc_3_7":"La distribución, modificación, cesión o comunicación pública de los contenidos y cualquier otro acto que no haya sido expresamente autorizado por el titular de los derechos de explotación quedan prohibidos.",
-    "pc_3_8":"El establecimiento de un hiperenlace no implica en ningún caso la existencia de relaciones entre EL PROPIETARIO DE LA WEB y el propietario del sitio web en la que se establezca, ni la aceptación y aprobación por parte de EL PROPIETARIO DE LA WEB de sus contenidos o servicios. Aquellas personas que se propongan establecer un hiperenlace previamente deberán solicitar autorización por escrito a EL PROPIETARIO DE LA WEB.",
-    "pc_3_9":"En todo caso, el hiperenlace únicamente permitirá el acceso a la home-page o página de inicio de nuestro sitio web, asimismo deberá abstenerse de realizar manifestaciones o indicaciones falsas, inexactas o incorrectas sobre EL PROPIETARIO DE LA WEB, o incluir contenidos ilícitos, contrarios a las buenas costumbres y al orden público.",
-    "pc_3_10":"EL PROPIETARIO DE LA WEB no se responsabiliza del uso que cada usuario le dé a los materiales puestos a disposición en este sitio web ni de las actuaciones que realice en base a los mismos.",
-    "h3_4":"4. POLÍTICA DE PRIVACIDAD",
-    "pc_4_1":"Quién es el Responsable de tratamiento de sus datos:",
-    "pc_4_2":"El responsable de tratamiento se encuentra identificado en el expositivo 1 de este Aviso Legal.",
-    "pc_4_3":"Qué tipo de datos tenemos sobre su persona y cómo los hemos obtenido",
-    "pc_4_4":"Las categorías de datos personales que tratamos de clientes y proveedores son:",
-    "ps_4_1":"1. Datos de identificación",
-    "ps_4_2":"2. Direcciones postales o electrónicas",
-    "ps_4_3":"3. Información comercial",
-    "ps_4_4":"4. Datos económicos y de transacciones",
-    "pc_4_5":"En ningún caso tratamos datos especialmente protegidos:",
-    "pc_4_6":"Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación."
+  "cookies": {
+    "h2_1": "Política de protección de datos",
+    "h3_1": "1. OBJETO Y ACEPTACIÓN",
+    "pc_1_1": "El presente aviso legal regula el uso del sitio web www.somosgigson.com (en adelante, LA WEB), del que es titular Gigson (en adelante, EL PROPIETARIO DE LA WEB).",
+    "pc_1_2": "La navegación por el sitio web de EL PROPIETARIO DE LA WEB atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal, que pueden sufrir modificaciones.",
+    "pc_1_3": "El usuario se obliga a hacer un uso correcto del sitio web de conformidad con las leyes, la buena fe, el orden público, los usos del tráfico y el presente Aviso Legal. El usuario responderá frente a EL PROPIETARIO DE LA WEB o frente a terceros, de cualesquiera daños y perjuicios que pudieran causarse como consecuencia del incumplimiento de dicha obligación.",
+    "h3_2": "2. IDENTIFICACIÓN Y COMUNICACIONES",
+    "pc_2_1": "EL PROPIETARIO DE LA WEB, en cumplimiento de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico, le informa que:",
+    "pc_2_2": "Su denominación social es: Awesomely OÜ",
+    "pc_2_3": "Número de VAT: EE102613528",
+    "pc_2_4": "Su domicilio social está en: Lootsa Tn 2a Harju, 11415, Tallinn, Estonia",
+    "pc_2_5": "Para comunicarse con nosotros, ponemos a su disposición diferentes medios de contacto que detallamos a continuación:",
+    "pc_2_6": "Teléfono: +34630840225",
+    "pc_2_7": "Email: hello@awesomelygroup.com",
+    "pc_2_8": "Todas las notificaciones y comunicaciones entre los usuarios y EL PROPIETARIO DE LA WEB se considerarán eficaces, a todos los efectos, cuando se realicen a través de correo postal o cualquier otro medio de los detallados anteriormente.",
+    "h3_3": "3. CONDICIONES DE ACCESO Y UTILIZACIÓN",
+    "pc_3_1": "El sitio web y sus servicios son de acceso libre y gratuito, no obstante, EL PROPIETARIO DE LA WEB condiciona la utilización de algunos de los servicios ofrecidos en su web a la previa cumplimentación del correspondiente formulario.",
+    "pc_3_2": "El usuario garantiza la autenticidad y actualidad de todos aquellos datos que comunique a EL PROPIETARIO DE LA WEB y será el único responsable de las manifestaciones falsas o inexactas que realice.",
+    "pc_3_3": "El usuario se compromete expresamente a hacer un uso adecuado de los contenidos y servicios de EL PROPIETARIO DE LA WEB y a no emplearlos para, entre otros:",
+    "ps_3_1": "1. Difundir contenidos delictivos, violentos, pornográficos, racistas, xenófobo, ofensivos, de apología del terrorismo o, en general, contrarios a la ley o al orden público.",
+    "ps_3_2": "2. Introducir en la red virus informáticos o realizar actuaciones susceptibles de alterar, estropear, interrumpir o generar errores o daños en los documentos electrónicos, datos o sistemas físicos y lógicos de EL PROPIETARIO DE LA WEB o de terceras personas; así como obstaculizar el acceso de otros usuarios al sitio web y a sus servicios mediante el consumo masivo de los recursos informáticos a través de los cuales EL PROPIETARIO DE LA WEB presta sus servicios.",
+    "ps_3_3": "3. Intentar acceder a las cuentas de correo electrónico de otros usuarios o a áreas restringidas de los sistemas informáticos de EL PROPIETARIO DE LA WEB o de terceros y, en su caso, extraer información.",
+    "ps_3_4": "4. Vulnerar los derechos de propiedad intelectual o industrial, así como violar la confidencialidad de la información de EL PROPIETARIO DE LA WEB o de terceros.",
+    "ps_3_5": "5. Suplantar la identidad de otro usuario, de las administraciones públicas o de un tercero.",
+    "ps_3_6": "6. Reproducir, copiar, distribuir, poner a disposición de, o cualquier otra forma de comunicación pública, transformar o modificar los contenidos, a menos que se cuente con la autorización del titular de los correspondientes derechos o ello resulte legalmente permitido.",
+    "ps_3_7": "7. Recabar datos con finalidad publicitaria y de remitir publicidad de cualquier clase y comunicaciones con fines de venta u otras de naturaleza comercial sin que medie su previa solicitud o consentimiento.",
+    "pc_3_4": "Todos los contenidos del sitio web, como textos, fotografías, gráficos, imágenes, iconos, tecnología, software, así como su diseño gráfico y códigos fuente, constituyen una obra cuya propiedad pertenece a EL PROPIETARIO DE LA WEB, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso de la web.",
+    "pc_3_5": "En definitiva, los usuarios que accedan a este sitio web pueden visualizar los contenidos y efectuar, en su caso, copias privadas autorizadas siempre que los elementos reproducidos no sean cedidos posteriormente a terceros, ni se instalen a servidores conectados a redes, ni sean objeto de ningún tipo de explotación.",
+    "pc_3_6": "Asimismo, todas las marcas, nombres comerciales o signos distintivos de cualquier clase que aparecen en el sitio web son propiedad de EL PROPIETARIO DE LA WEB, sin que pueda entenderse que el uso o acceso al mismo atribuya al usuario derecho alguno sobre los mismos.",
+    "pc_3_7": "La distribución, modificación, cesión o comunicación pública de los contenidos y cualquier otro acto que no haya sido expresamente autorizado por el titular de los derechos de explotación quedan prohibidos.",
+    "pc_3_8": "El establecimiento de un hiperenlace no implica en ningún caso la existencia de relaciones entre EL PROPIETARIO DE LA WEB y el propietario del sitio web en la que se establezca, ni la aceptación y aprobación por parte de EL PROPIETARIO DE LA WEB de sus contenidos o servicios. Aquellas personas que se propongan establecer un hiperenlace previamente deberán solicitar autorización por escrito a EL PROPIETARIO DE LA WEB.",
+    "pc_3_9": "En todo caso, el hiperenlace únicamente permitirá el acceso a la home-page o página de inicio de nuestro sitio web, asimismo deberá abstenerse de realizar manifestaciones o indicaciones falsas, inexactas o incorrectas sobre EL PROPIETARIO DE LA WEB, o incluir contenidos ilícitos, contrarios a las buenas costumbres y al orden público.",
+    "pc_3_10": "EL PROPIETARIO DE LA WEB no se responsabiliza del uso que cada usuario le dé a los materiales puestos a disposición en este sitio web ni de las actuaciones que realice en base a los mismos.",
+    "h3_4": "4. POLÍTICA DE PRIVACIDAD",
+    "pc_4_1": "Quién es el Responsable de tratamiento de sus datos:",
+    "pc_4_2": "El responsable de tratamiento se encuentra identificado en el expositivo 1 de este Aviso Legal.",
+    "pc_4_3": "Qué tipo de datos tenemos sobre su persona y cómo los hemos obtenido",
+    "pc_4_4": "Las categorías de datos personales que tratamos de clientes y proveedores son:",
+    "ps_4_1": "1. Datos de identificación",
+    "ps_4_2": "2. Direcciones postales o electrónicas",
+    "ps_4_3": "3. Información comercial",
+    "ps_4_4": "4. Datos económicos y de transacciones",
+    "pc_4_5": "En ningún caso tratamos datos especialmente protegidos:",
+    "pc_4_6": "Todos los datos arriba mencionados los hemos obtenido o directamente de Usted mediante la presentación de una oferta comercial, propuesta contractual, etc. o mediante su empresa al facilitarnos los datos de identificación y demás información necesaria para llevar al cabo el objeto de la relación contractual entre las partes. Será una obligación suya o de su empresa facilitarnos los datos actualizados en caso de modificación."
   },
-  "cookiesBanner":{
-    "h2":"USAMOS COOKIES",
-    "p":"Utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarte publicidad relacionada con tus preferencias en base a un perfil elaborado a partir de tus hábitos de navegación (por ejemplo, páginas visitadas). Puedes aceptarlas o rechazarlas en los siguientes botones.",
-    "btnAccept":"ACEPTAR",
-    "btnDenie":"RECHAZAR",
-    "btnInfo":"+INFO"
+  "cookiesBanner": {
+    "h2": "USAMOS COOKIES",
+    "p": "Utilizamos cookies propias y de terceros para analizar nuestros servicios y mostrarte publicidad relacionada con tus preferencias en base a un perfil elaborado a partir de tus hábitos de navegación (por ejemplo, páginas visitadas). Puedes aceptarlas o rechazarlas en los siguientes botones.",
+    "btnAccept": "ACEPTAR",
+    "btnDenie": "RECHAZAR",
+    "btnInfo": "+INFO"
   },
-  "cases-logistics":{
+  "cases-logistics": {
     "title": "Tecnología en Logística e Intralogística | Gigson Solutions",
     "metadescription": "Optimiza tu cadena logística con soluciones tecnológicas a medida: más eficiencia, trazabilidad y control sin depender de grandes integradores.",
     "hero": {
-      "suptitle":"LOGÍSTICA Y FULFILLMENT",
+      "suptitle": "LOGÍSTICA Y FULFILLMENT",
       "title": "<span>Tecnología</span> en logística <br/> y consultoría de <span>intralogística</span> ",
       "description": "La tecnología en logística puede ser un desafío si no se cuenta con el asesoramiento adecuado. En Gigson Solutions, te ayudamos a integrar soluciones tecnológicas sin fricciones, asegurando que se adapten a la estructura del negocio.",
       "buttonText": "Contáctanos"
@@ -820,7 +820,7 @@
       ]
     },
     "improveAreas": {
-      "title" : "Áreas",
+      "title": "Áreas",
       "filtersText": "Filtros",
       "applyFiltersText": "Aplicar filtros",
       "filtersClearAllText": "Limpiar todo",
@@ -848,7 +848,11 @@
       ],
       "faqs": [
         {
-          "types": ["A", "B", "C"],
+          "types": [
+            "A",
+            "B",
+            "C"
+          ],
           "question": "Asignación de rutas sin complicaciones: más rápido, más eficiente",
           "answer": {
             "challengeDescription": "La planificación manual de rutas y la asignación de recursos (vehículos y conductores) era un proceso lento, manual y propenso a errores. La directora de operaciones debía analizar manualmente la disponibilidad de la plantilla, los tipos de vehículos requeridos y las características de la entrega, lo que retrasaba las operaciones y aumentaba los costos operativos.",
@@ -919,7 +923,11 @@
           }
         },
         {
-          "types": ["B", "C", "D"],
+          "types": [
+            "B",
+            "C",
+            "D"
+          ],
           "question": "Transparencia en cada kilómetro",
           "answer": {
             "challengeDescription": "Con una flota en crecimiento, nuestro cliente buscaba reducir su huella de carbono para cumplir con objetivos internos de sostenibilidad, mejorar su imagen frente a clientes B2B y reguladores, y proporcionar transparencia en sus operaciones. Sin herramientas para calcular emisiones, optimizar rutas y ofrecer reportes detallados a los clientes, las operaciones del transporte eran ineficiencientes y sin visibilidad.",
@@ -974,7 +982,10 @@
           }
         },
         {
-          "types": ["A", "D"],
+          "types": [
+            "A",
+            "D"
+          ],
           "question": "Reduce los tiempos muertos: organiza, optimiza, entrega",
           "answer": {
             "challengeDescription": "Normalmente, los transportistas se enfrentan tiempos de espera prolongados para cargar y descargar, lo que afecta la productividad y genera costos adicionales. La falta de una gestión eficiente en los puntos de carga provoca saturaciones y retrasos.",
@@ -1029,7 +1040,11 @@
           }
         },
         {
-          "types": ["B", "D", "E"],
+          "types": [
+            "B",
+            "D",
+            "E"
+          ],
           "question": "Acceso total para tus clientes: transparencia y confianza en cada entrega",
           "answer": {
             "challengeDescription": "El proceso de recepción de mobiliario de lujo se enfrentaba a problemas en la validación del estado, calidad y características del producto. La falta de evidencias en la recepción y manipulación de productos dificultaban las reclamaciones con proveedores y aseguradoras y generaba problemas logísticos. Además, los clientes no tenían acceso directo a información visual y registros sobre el estado de los productos.",
@@ -1096,7 +1111,9 @@
           }
         },
         {
-          "types": ["B"],
+          "types": [
+            "B"
+          ],
           "question": "Centralización de órdenes de trabajo para operaciones complejas",
           "answer": {
             "challengeDescription": "La gestión de órdenes de trabajo en distintas etapas (carga, transporte, descarga) generaba descoordinación entre departamentos, provocando errores operativos, retrasos y pérdida de visibilidad global sobre el avance de las operaciones. Cada equipo trabajaba con sistemas o documentos diferentes, dificultando la trazabilidad y la toma de decisiones en tiempo real.",
@@ -1150,7 +1167,7 @@
             ]
           }
         }
-        ]
+      ]
     },
     "solutionsApplications": {
       "title": "Soluciones y aplicación de <span>tecnología en las operaciones logísticas</span>",
@@ -1210,7 +1227,7 @@
             }
           ]
         },
-         {
+        {
           "title": "Eficiencia y automatización de almacenes",
           "description": "Gracias a la implementación de tecnología y automatización en almacenes podemos optimizar el flujo de mercancías y mejorar la gestión del inventario.",
           "type": "Aplicación",
@@ -1299,11 +1316,11 @@
       ]
     }
   },
-  "cases-construction" :{
+  "cases-construction": {
     "title": "Logistics & Intralogistics Technology  | Gigson Solutions",
     "metadescription": "Optimize your supply chain with tailored tech solutions: greater efficiency, traceability, and control—no need for big-name integrators.",
     "hero": {
-      "suptitle":"ARQUITECTURA & CONSTRUCCIÓN",
+      "suptitle": "ARQUITECTURA & CONSTRUCCIÓN",
       "title": "Consultoría tecnológica <br> <span> en construcción </span>",
       "description": "Digitalizar una constructora no es solo implantar un software de gestión de obras: es alinear herramientas, procesos y equipos. En Gigson Solutions, te ayudamos a integrar tecnología sin fricciones, adaptada a los ritmos, retos y particularidades del sector construcciónes, asegurando que se adapten a la estructura del negocio. ",
       "buttonText": "Contáctanos"
@@ -1385,11 +1402,10 @@
                 "title": "Monitorización",
                 "description": "Prometheus + Grafana para trazabilidad de scraping y errores"
               }
-
             ]
           }
         },
-      {
+        {
           "title": "Estimador inteligente de obras con IA para usuarios finales",
           "supTitle": "Desafío",
           "description": "Permitir a clientes finales obtener en segundos una estimación orientativa de su reforma u obra, sin sobrecargar al contratista.",
@@ -1425,7 +1441,6 @@
                 "title": "Conversión a lead",
                 "description": "Envío fácil de datos al contratista para un presupuesto real con visita técnica."
               }
-
             ],
             "solutionText": "Solución",
             "solutionDescription": "Desarrollamos un estimador web accesible desde cualquier navegador, que combina un formulario conversacional y un chatbot con IA. Mediante preguntas guiadas o conversación libre, el sistema recopila datos clave (tipo de obra, metros, acabados, ubicación, plazos…) y genera un presupuesto orientativo con desglose por partidas. Así, el usuario obtiene una referencia inmediata para planificar y decidir antes de contactar con el equipo comercial.",
@@ -1459,7 +1474,6 @@
                 "title": "Hosting",
                 "description": "AWS, con integración CRM opcional (HubSpot, Pipedrive)"
               }
-
             ]
           }
         },
@@ -1495,7 +1509,6 @@
                 "title": "Análisis de rentabilidad",
                 "description": "Control de cartera de servicios"
               }
-
             ],
             "solutionText": "Solución",
             "solutionDescription": "Se diseñó una solución totalmente integrada que conecta HubSpot (CRM), Asana (gestión de proyectos) y Holded (ERP). Esta arquitectura permitió obtener una visión 360º del cliente y de los proyectos, desde la adquisición hasta la entrega y la posventa. Todos los equipos operaban ahora desde una plataforma unificada con procesos sincronizados.",
@@ -1525,7 +1538,6 @@
                 "title": "Seguridad",
                 "description": "Cifrado de datos y cumplimiento de GDPR"
               }
-
             ]
           }
         },
@@ -1561,7 +1573,6 @@
                 "title": "Exportación y validación de presupuestos",
                 "description": "Generación de presupuestos en PDF o Excel, integrados en la ficha del proyecto en el ERP para compartir con cliente."
               }
-
             ],
             "solutionText": "Solución",
             "solutionDescription": "Desarrollamos una WebApp integrada vía API con Holded que actúa como un configurador de presupuestos totalmente dinámico. Esta solución permite al equipo crear, comparar y validar presupuestos complejos en minutos, con acceso a catálogos actualizados. Los presupuestos pueden exportarse, compartirse, revisarse, aprobarse y sincronizarse con el ERP, optimizando la visibilidad financiera de cada proyecto y mejorando la precisión en el seguimiento de costes.",
@@ -1591,14 +1602,13 @@
                 "title": "Seguridad y privacidad",
                 "description": "Autenticación JWT y encriptación de datos sensibles en tránsito (HTTPS) y en reposo. Cumplimiento de GDPR, ISO/IEC 27001 en la infraestructura."
               }
-
             ]
           }
         }
-       ]
+      ]
     },
-     "improveAreas": {
-      "title" : "Áreas",
+    "improveAreas": {
+      "title": "Áreas",
       "filtersText": "Filtros",
       "applyFiltersText": "Aplicar filtros",
       "filtersClearAllText": "Limpiar todo",
@@ -1614,7 +1624,10 @@
       ],
       "faqs": [
         {
-          "types": ["A", "B"],
+          "types": [
+            "A",
+            "B"
+          ],
           "question": "Fichar nunca fue tan fácil: WhatsApp y listo ",
           "answer": {
             "challengeDescription": "El cliente necesitaba una solución eficiente para registrar las horas de trabajo de sus conductores y personal operativo para cumplir con la legislación y controlar tiempos dedicados a cada cliente y tarea. El método existente carece de integración automática con su sistema de nóminas y su ERP, y no está pensado para trabajadores de campo. Esto genera inconsistencias en los registros, problemas de cumplimiento legal y errores en la gestión de horas extras y descansos.",
@@ -1642,7 +1655,6 @@
                 "title": "Alertas automáticas",
                 "description": "Notificaciones al empleado si olvida fichar, y al gestor sobre irregularidades en los registros o posibles incumplimientos de normativas laborales, así como circuito de solicitud de horas extra."
               }
-
             ],
             "technologiesText": "Tecnologías",
             "technologies": [
@@ -1670,11 +1682,10 @@
                 "title": "Notificaciones",
                 "description": "Twilio + email"
               }
-
             ]
           }
         }
-        ]
+      ]
     },
     "solutionsApplications": {
       "title": "Transformación y digitalización <span> de la construcción </span>",
@@ -1722,21 +1733,17 @@
             }
           ]
         },
-         {
+        {
           "title": "Transformación digital y automatización de procesos",
           "description": "Digitalizar no es solo cuestión de software, sino de estrategia. Automatizamos tareas repetitivas, digitalizamos documentación clave y te ayudamos a introducir tecnologías cuando tienen un impacto real en la obra o en la gestión.",
           "type": "Aplicación",
-          "cards": [
-           
-          ]
+          "cards": []
         },
         {
           "title": "Soporte y gestión del cambio",
           "description": "No solo entregamos tecnología: te acompañamos durante todo el proceso de adopción para que el cambio sea real y sostenible. Formamos a tu equipo en el uso práctico de las soluciones, adaptadas a su día a día. Nos involucramos en la gestión del cambio, ayudando a que los procesos se integren con naturalidad y los equipos los hagan suyos.  Y una vez implantadas las herramientas, seguimos ahí: ofreciendo soporte continuo, resolviendo dudas y ajustando lo que haga falta para que la transformación digital no se quede a medio camino.",
           "type": "Aplicación",
-          "cards": [
-          
-          ]
+          "cards": []
         }
       ]
     },
@@ -1781,11 +1788,11 @@
       ]
     }
   },
-  "cases-retail":{
+  "cases-retail": {
     "title": "Soluciones de software para retail o ecommerce | Gigson Solutions",
     "metadescription": "Impulsa tu negocio ecommerce con la tecnología que necesitas. Integramos sistemas, automatizamos procesos y optimizamos tu gestión tecnológica",
     "hero": {
-      "suptitle":"RETAIL & ECOMMERCE",
+      "suptitle": "RETAIL & ECOMMERCE",
       "title": "Software para retail <br> <span> y ecommerce </span>",
       "description": "La tecnología está transformando el retail y el ecommerce a una velocidad vertiginosa. Y no hablamos solo de vender online: hablamos de integrar sistemas, automatizar procesos, analizar datos en tiempo real y ofrecer experiencias de cliente fluidas, coherentes y rentables. <br> En Gigson Solutions ayudamos a negocios retail a digitalizarse de forma estratégica, conectando todas las piezas para que la tecnología deje de ser un obstáculo y se convierta en una ventaja competitiva.",
       "buttonText": "Contáctanos"
@@ -2050,7 +2057,7 @@
       ]
     },
     "improveAreas": {
-      "title" : "Areas",
+      "title": "Areas",
       "filtersText": "Filtros",
       "applyFiltersText": "Aplicar filtros",
       "filtersClearAllText": "Limpiar todo",
@@ -2074,7 +2081,11 @@
       ],
       "faqs": [
         {
-          "types": ["A", "B", "C"],
+          "types": [
+            "A",
+            "B",
+            "C"
+          ],
           "question": "Automatización de Presupuestos Dinámicos",
           "answer": {
             "challengeDescription": "La creación manual de presupuestos para clientes consumía muchas horas y generaba inconsistencias en los precios. Además, no se tenía visibilidad en tiempo real del stock almacenado, lo que complicaba la actualización de la facturación por almacenaje y generaba ineficiencias en los cobros.",
@@ -2141,7 +2152,11 @@
           }
         },
         {
-          "types": ["B", "C", "D"],
+          "types": [
+            "B",
+            "C",
+            "D"
+          ],
           "question": "Automatización de la gestión de tarifas y productos de proveedores",
           "answer": {
             "challengeDescription": "Empresa especializada en la prescripción y venta de iluminación técnica y decorativa de múltiples proveedores que enviaban la actualización de catálogos y tarifas en Excel o PDF. La actualización manual en el ERP era lenta, generaba errores y retrasaba la creación de presupuestos precisos. ",
@@ -2224,7 +2239,7 @@
             }
           ]
         },
-          {
+        {
           "title": "Automatizar procesos de retail",
           "description": "La eficiencia en retail ya no es una opción: es una necesidad. Automatizamos tareas repetitivas y procesos operativos para que tu equipo se centre en lo que realmente aporta valor.",
           "type": "Aplicación",
@@ -2239,7 +2254,7 @@
             }
           ]
         },
-          {
+        {
           "title": "Analítica avanzada y Business Intelligence",
           "description": "La información sin contexto no sirve de nada. Desarrollamos sistemas de análisis que te permiten entender mejor a tus clientes, medir el rendimiento del negocio y tomar decisiones basadas en datos reales.",
           "type": "Aplicación",
@@ -2346,15 +2361,15 @@
       ]
     }
   },
-  "brand" : {
-      "brand_title" : "Respaldados por <span> grandes marcas </span>",
-      "brand_description" : "Descubre nuestros clientes y lo que hacemos por ellos"
-    },
-    "CTO":{
+  "brand": {
+    "brand_title": "Respaldados por <span> grandes marcas </span>",
+    "brand_description": "Descubre nuestros clientes y lo que hacemos por ellos"
+  },
+  "CTO": {
     "title": "CTO as a Service | Gigson Solutions",
     "metadescription": "Mejora tu estrategia tecnológica, lidera la transformación digital y reduce riesgos operativos con un CTO externo",
     "hero": {
-      "suptitle":"SERVICIOS",
+      "suptitle": "SERVICIOS",
       "title": "CTO as a Service: <br> <span> estrategia tecnológica a medida </span>",
       "description": "En un contexto donde la tecnología impacta directamente en la eficiencia y la competitividad, muchas pymes se enfrentan a un reto común: necesitan dirección tecnológica estratégica y operativa, pero no pueden asumir la carga financiera ni estructural de incorporar un CTO a tiempo completo. <br> Además, aunque la tecnología no sea su core, la necesitan para operar, crecer y tomar mejores decisiones. Ahí es donde el modelo CTO as a Service cobra todo el sentido. <br> En Gigson Solutions actuamos como partner tecnológico, no solo como consultores. Te ayudamos a definir y ejecutar una estrategia tecnológica que encaje con tu estructura de negocio, sin imponer herramientas ni metodologías genéricas. <br> Acompañamos a startups, scaleups y empresas consolidadas con un enfoque claro: que la tecnología sea un facilitador, no un freno.",
       "buttonText": "Contáctanos"
@@ -2401,7 +2416,7 @@
             }
           ]
         },
-         {
+        {
           "title": "Estrategia tecnológica, planificación e innovacióne",
           "description": "La estrategia tecnológica de una empresa no puede ser reactiva: necesita anticipar cambios, integrar innovación y asegurar que cada decisión técnica aporte valor real. Con nuestro servicio de CTO as a Service, tu empresa evoluciona, no solo sobrevive.",
           "type": "Retos",
@@ -2498,18 +2513,18 @@
       ]
     }
   },
-  "whatsapp" : {
-    "phoneNumber" : "623783507",
-    "accountName" : "Emmelin",
-    "placeholder" : "Hola",
+  "whatsapp": {
+    "phoneNumber": "623783507",
+    "accountName": "Emmelin",
+    "placeholder": "Hola",
     "statusMessage": "Siempre lista para ayudar",
     "chatMessage": "¡Hola soy Emmelin! Account Manager de Gigson Solutions ¿en qué puedo ayudarte?"
   },
-  "software":{
+  "software": {
     "title": "Ingeniería y Desarrollo de software a medida | Gigson Solutions",
     "metadescription": "Ingeniería de software enfocada en soluciones a medida para empresas. Mucho más que desarrollo, impulsamos tu crecimiento tecnológico",
     "hero": {
-      "suptitle":"SERVICIOS",
+      "suptitle": "SERVICIOS",
       "title": "Desarrollo de software a medida <span> para empresas </span>",
       "description": "Tener un software que se adapte a tu empresa —y no al revés— marca la diferencia. En Gigson Solutions trabajamos para diseñar, construir y mantener soluciones tecnológicas a medida, preparadas para escalar, integrarse y evolucionar contigo.<br> Desde desarrollar nuevas funcionalidades o productos completos hasta integrar herramientas existentes y asegurar su rendimiento en el tiempo, cubrimos todo el ciclo de vida del software. <br> Nuestro equipo está formado por desarrolladores, arquitectos y testers para ofrecerte un desarrollo de software a medida sin límites, sin dependencias y con visión a largo plazo.",
       "buttonText": "Contáctanos"
@@ -2599,11 +2614,11 @@
       ]
     }
   },
-  "consultoriaTec":{
+  "consultoriaTec": {
     "title": "Consultoría Tecnológica para Empresas | Gigson Solutions",
     "metadescription": "Consultoría tecnológica para empresas que quieren crecer sin fricciones: diagnóstico, estrategia e implementación de soluciones a medida",
     "hero": {
-      "suptitle":"SERVICIOS",
+      "suptitle": "SERVICIOS",
       "title": "Consultoría tecnológica <span> para empresas </span>",
       "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. <br> Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. <br>  Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento",
       "buttonText": "Contáctanos"
@@ -2650,7 +2665,7 @@
             }
           ]
         },
-         {
+        {
           "title": "Integración de sistemas y mejora de procesos",
           "description": "Un ecosistema tecnológico desconectado genera ineficiencias, errores y pérdidas de tiempo. En Gigson Solutions te ayudamos a integrar tus sistemas y optimizar tus procesos para que toda tu infraestructura trabaje de manera coordinada, ágil y segura.",
           "type": "Retos",
@@ -2731,11 +2746,11 @@
       ]
     }
   },
-  "cibersecurity":{
+  "cibersecurity": {
     "title": " Ciberseguridad para empresas y pymes | Gigson Solutions",
     "metadescription": "Somos tus socios tecnológicos para prevenir y mitigar amenazas. Integramos la ciberseguridad como parte estructural del negocio",
     "hero": {
-      "suptitle":"SERVICIOS",
+      "suptitle": "SERVICIOS",
       "title": "Soluciones de ciberseguridad <span> empresarial </span>",
       "description": "En un entorno digital cada vez más complejo, la ciberseguridad empresarial ya no es una opción, sino una necesidad estratégica. Las amenazas evolucionan constantemente y afectan tanto a grandes corporaciones como a pymes. <br> Desde ataques dirigidos a infraestructuras críticas hasta accesos no autorizados o brechas internas, el riesgo es real y constante. En Gigson Solutions, actuamos como socios tecnológicos para ayudarte a prevenir, detectar y mitigar estas amenazas, integrando la ciberseguridad como parte estructural del negocio.<br> No ofrecemos soluciones genéricas.<br> Nuestra visión se basa en que la tecnología debe adaptarse al contexto real de cada empresa, no al revés. Por eso, diseñamos e implementamos soluciones robustas para aplicaciones e infraestructura de empresas que tienen en cuenta su tamaño, sector, estructura técnica y objetivos de negocio.<br> Desde el análisis de riesgos en ciberseguridad hasta el despliegue de herramientas avanzadas, nuestros consultores en ciberseguridad trabajan para que cada capa de protección esté alineada con tu estrategia y evolucione contigo.",
       "buttonText": "Contáctanos"
@@ -2782,7 +2797,7 @@
             }
           ]
         },
-         {
+        {
           "title": "Seguridad de endpoints",
           "description": "Cada dispositivo o sistema conectado a tu red representa un posible punto de entrada para amenazas. Implementamos soluciones de seguridad de endpoints que permiten controlar, proteger y supervisar todos los dispositivos de forma centralizada, sin bloquear la operativa diaria.",
           "type": "Aplicación",
@@ -2899,126 +2914,6 @@
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
         }
       ]
-    }
-  },
-  "integrations-holded": {
-    "title": "Integraciones Holded | Gigson Solutions",
-    "metadescription": "Especialistas en conectar Holded con las herramientas que ya usas. Integraciones a medida para retail, logística, hostelería, veterinaria, construcción y más.",
-    "hero": {
-      "badge": "Partner oficial",
-      "title": "Integraciones holded con el software que necesites",
-      "subtitle": "Integraciones con Holded a medida para tu negocio.",
-      "description": "Hablamos contigo, definimos la mejor solución y construimos la integración que realmente necesitas.",
-      "cta": "habla con un experto en holded",
-      "specialists": {
-        "title": "Especialistas en conectar Holded con las herramientas que ya usas.",
-        "bullets": [
-          "Somos partner oficial de Holded.",
-          "Integraciones para todo tipo de industrias.",
-          "Asesoramiento antes de cualquier integración."
-        ],
-        "link": "Ver ejemplos de uso"
-      },
-      "whatsapp": {
-        "title": "¿Alguna duda? hablemos",
-        "cta": "Hablar por WhatsApp"
-      }
-    },
-    "useCases": {
-      "label": "casos de uso",
-      "items": [
-        {
-          "title": "Facturación electrónica y cumplimiento VeriFactu",
-          "description": "Automatización de la facturación desde sistemas externos (TPV, ecommerce, software sectorial) hacia Holded para cumplir con VeriFactu sin cambiar toda la operativa del negocio.",
-          "cta": "habla con un experto en holded"
-        },
-        {
-          "title": "Sincronización de ventas, clientes y cobros",
-          "description": "Conexión entre Holded y herramientas de venta (retail, clínicas, reservas, plataformas online) para unificar clientes, facturas y estados de cobro sin duplicar trabajo.",
-          "cta": "habla con un experto en holded"
-        },
-        {
-          "title": "Control económico a partir de software sectorial",
-          "description": "Integración de herramientas específicas (clínicas, veterinaria, hostelería, construcción) con Holded para tener control financiero real: ingresos, costes, márgenes y reporting centralizado.",
-          "cta": "habla con un experto en holded"
-        },
-        {
-          "title": "Conciliación bancaria avanzada",
-          "description": "Leemos movimientos y facturas desde Holded y aplicamos reglas inteligentes para proponer conciliaciones automáticas.",
-          "cta": "habla con un experto en holded"
-        },
-        {
-          "title": "Análisis de productividad por empleado",
-          "description": "Analizamos horas y facturación asociada para medir productividad por persona.",
-          "cta": "habla con un experto en holded"
-        },
-        {
-          "title": "Sincronización avanzada ecommerce",
-          "description": "Creamos integración personalizada que sincroniza pedidos, stock y facturación.",
-          "cta": "habla con un experto en holded"
-        },
-        {
-          "title": "Sincronización automática de emails en CRM",
-          "description": "Registramos automáticamente los emails en la ficha del cliente.",
-          "cta": "habla con un experto en holded"
-        }
-      ]
-    },
-    "logos": {
-      "title": "Integraciones con Holded para todo tipo de negocios:",
-      "subtitle": "Estas son algunos de los software de diferentes industrias que hemos integrado con Holded.",
-      "mainCta": "Empieza a conectar holded",
-      "industries": ["Retail", "Veterinario", "Dental", "Construcción", "Educación", "Clínicas", "Hostelería", "CRM/ERP", "Logística", "Servicios", "Real State", "RR.HH"]
-    },
-    "form": {
-      "sectionTitle": "Integraciones pensadas para tu forma de trabajar.",
-      "sectionDescription": "Diseñamos integraciones Holded a medida con tus herramientas, adaptadas a tu negocio. Antes de desarrollar nada, analizamos tu caso contigo para definir la solución más eficiente.",
-      "title": "¿Qué necesitas?",
-      "fields": {
-        "name": {
-          "label": "Contacto:",
-          "placeholder": "Nombre y apellidos"
-        },
-        "email": {
-          "label": "Email:",
-          "placeholder": "nombre@ejemplo.com"
-        },
-        "tool": {
-          "label": "¿Qué herramienta quieres conectar con Holded?",
-          "placeholder": "Shopify, Odoo, Prestashop, ERP propio…"
-        },
-        "phone": {
-          "label": "Teléfono",
-          "placeholder": "+34 000 00 00"
-        },
-        "company": {
-          "label": "Empresa",
-          "placeholder": "Nombre de la empresa"
-        },
-        "dataTypes": {
-          "label": "¿Qué datos te gustaría sincronizar?",
-          "options": ["Facturas", "Pedidos", "Clientes", "Productos", "Otros"]
-        },
-        "flow": {
-          "label": "¿Quieres que los datos vayan de Holded hacia la otra herramienta, al revés, o en ambos sentidos?",
-          "options": [
-            { "value": "holded_to_tool", "label": "De Holded → otra herramienta" },
-            { "value": "tool_to_holded", "label": "De otra herramienta → Holded" },
-            { "value": "bidirectional", "label": "En ambos sentidos" }
-          ]
-        },
-        "problem": {
-          "label": "¿Qué problema quieres resolver con esta integración?",
-          "placeholder": "Explica de forma breve"
-        }
-      },
-      "send": "ENVIAR",
-      "checkbox": {
-        "first": "He leído y acepto la ",
-        "second": "Política de privacidad",
-        "third": ""
-      },
-      "legalNotice": "Gigson Solutions es una entidad independiente y no está afiliada ni forma parte de Holded. No representamos a Holded ni actuamos en su nombre. Nuestra condición es exclusivamente la de partner oficial autorizado para la implementación y asesoramiento sobre sus productos y servicios."
     }
   },
   "pageSeo": {

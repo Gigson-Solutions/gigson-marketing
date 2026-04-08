@@ -3,7 +3,6 @@ import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from './routerSlugs.js';
 export const MARKETING_PAGE_KEYS = [
   'services',
   'logistics',
-  'integrations',
   'CTO',
   'software',
   'ConsultoriaTec',
@@ -20,8 +19,6 @@ export const MARKETING_PAGE_KEYS = [
   'cookies',
 ];
 
-const EXTRA_PATHNAMES = ['/landing-holded', '/landing-holded.html'];
-
 export function getAllMarketingPathnames() {
   const paths = new Set();
 
@@ -36,10 +33,6 @@ export function getAllMarketingPathnames() {
       if (!slug) continue;
       paths.add(prefix ? `${prefix}/${slug}` : `/${slug}`);
     }
-  }
-
-  for (const p of EXTRA_PATHNAMES) {
-    paths.add(p);
   }
 
   return [...paths].sort((a, b) => {

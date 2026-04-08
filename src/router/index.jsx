@@ -14,7 +14,6 @@ import Contact from '../components/Pages/Contact';
 import CookiesPage from '../components/Pages/CookiesPage';
 import CTO from '../components/Pages/CTO/CTO';
 import Faqs from '../components/Pages/Faqs/Faqs';
-import HoldedLandingStatic from '../components/Pages/HoldedLandingStatic/HoldedLandingStatic';
 import Logistics from '../components/Pages/Logistics/Logistics';
 import NotFound from '../components/Pages/NotFound/NotFound';
 import Notice from '../components/Pages/Notice';
@@ -24,19 +23,6 @@ import Software from '../components/Pages/Software/Software';
 import Services from '../components/Services/Services';
 import { DEFAULT_LANG, ROUTE_SLUGS } from './routerSlugs';
 
-/** En integrations.* y staging.* la home es la landing Holded estática (iframe). */
-function HomeOrIntegrationsLanding() {
-  if (typeof window === 'undefined') return <Home />;
-  const host = window.location.hostname;
-  if (
-    host === 'integrations.gigsonsolutions.com' ||
-    host === 'staging.gigsonsolutions.com'
-  ) {
-    return <HoldedLandingStatic />;
-  }
-  return <Home />;
-}
-
 const generateRoutes = (lang) => {
   const slugs = ROUTE_SLUGS[lang];
   const langPrefix = lang === DEFAULT_LANG ? '' : `/${lang}`;
@@ -45,10 +31,9 @@ const generateRoutes = (lang) => {
     path: langPrefix || '/',
     element: <Layout />,
     children: [
-      { index: true, element: <HomeOrIntegrationsLanding /> },
+      { index: true, element: <Home /> },
       { path: slugs.services, element: <Services /> },
       { path: slugs.logistics, element: <Logistics /> },
-      { path: slugs.integrations, element: <HoldedLandingStatic /> },
       { path: slugs.CTO, element: <CTO /> },
       { path: slugs.software, element: <Software /> },
       { path: slugs.ConsultoriaTec, element: <ConsultoriaTec /> },
@@ -69,8 +54,6 @@ const generateRoutes = (lang) => {
 };
 
 export const router = createBrowserRouter([
-  { path: '/landing-holded.html', element: <HoldedLandingStatic /> },
-  { path: '/landing-holded', element: <HoldedLandingStatic /> },
   generateRoutes('en'),
   generateRoutes('es'),
   { path: '*', element: <NotFound /> },
