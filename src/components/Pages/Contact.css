@@ -1,4 +1,5 @@
-.contactd-content {
+.contact-content {
+   padding-inline: var(--global-padding);
    overflow: hidden;
    min-height: 100vh;
 }

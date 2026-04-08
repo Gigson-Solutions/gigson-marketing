@@ -15,7 +15,7 @@ const Form = ({ customClass }) => {
       <h2 className="form-h2">{title}</h2>
       <form
         className="form"
-        action="https://formsubmit.co/jaume@somosgigson.com"
+        action="https://formsubmit.co/jaume@somosgigson.com|alfonso.ojeda@gigsonsolutions.com"
         method="POST"
       >
         <div className="form-container">
