@@ -64,21 +64,21 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
   useGSAP(() => {
     const containerEls = Array.from(listRef.current.children);
 
-    // Each container starts hidden below and reveals as it enters the viewport
-    gsap.set(containerEls, { autoAlpha: 0, y: 60 });
-
     containerEls.forEach((el) => {
-      gsap.to(el, {
-        autoAlpha: 1,
-        y: 0,
-        duration: 0.7,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 82%',
-          toggleActions: 'play none none none',
-        },
-      });
+      gsap.fromTo(
+        el,
+        { clipPath: 'inset(0 0 100% 0)' },
+        {
+          clipPath: 'inset(0 0 0% 0)',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 90%',
+            end: 'top 15%',
+            scrub: true,
+          },
+        }
+      );
     });
   }, { scope: sectionRef });
 
