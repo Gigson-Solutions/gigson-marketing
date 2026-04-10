@@ -141,18 +141,12 @@ const HomeCases = () => {
               onToggle={handleTagFilter}
             />
 
-            <h3 className="home-cases-filters-title">{needTitle}</h3>
-            <div className="home-cases-container-filters">
-              {uniqueNeeds.map((need) => (
-                <button
-                  key={need}
-                  onClick={() => handleNeedFilter(need)}
-                  className={`button-main filters-btn ${selectedNeeds.includes(need) && 'filter-btn-active'}`}
-                >
-                  {need}
-                </button>
-              ))}
-            </div>
+            <SectorSelector
+              title={needTitle}
+              sectors={uniqueNeeds}
+              selected={selectedNeeds}
+              onToggle={handleNeedFilter}
+            />
 
             <button
               className="cases-reset-filters home"

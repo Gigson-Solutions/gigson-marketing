@@ -50,6 +50,19 @@
   z-index: 1;
 }
 
+/* ── Centered variant (used in /cases page) ── */
+.sector-selector--centered .sector-selector__title {
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.sector-selector--centered .sector-selector__grid {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ── Desktop ── */
 @media (min-width: 70.25rem) {
   .sector-selector__title {
@@ -61,5 +74,14 @@
   .sector-selector__grid {
     gap: 0.9rem 0.6rem;
     margin: 0 0 2.5rem;
+  }
+
+  .sector-selector--centered .sector-selector__title {
+    margin-left: 0;
+  }
+
+  .sector-selector--centered .sector-selector__grid {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
