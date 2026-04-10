@@ -8,7 +8,7 @@ import heroImg from '../../assets/Imagen-esfera-hexagono.png';
 
 function Hero() {
   const { t } = useTranslation();
-  const { heroH1, heroP, heroBtn, heroScroll } = t('home');
+  const { heroH1, heroSubhead, heroBtn, heroScroll } = t('home');
 
   return (
     <div className="wrapper">
@@ -16,10 +16,19 @@ function Hero() {
         <header className="hero-top-content">
           <img className="hero-img" src={heroImg} alt="" />
           <div className="hero-text">
-            <p className="hero-p">{heroP}</p>
+            <div className="hero-partner-badge">
+              <img
+                className="hero-anthropic-logo"
+                src="/claude-logo.png"
+                alt="Claude"
+              />
+              <span className="hero-badge-sep">·</span>
+              <span className="hero-badge-label">CERTIFIED CLAUDE PARTNER</span>
+            </div>
             <h1 className="hero-h1">
               <Trans i18nKey={heroH1} components={{ span: <span /> }} />
             </h1>
+            <p className="hero-subhead">{heroSubhead}</p>
             <Link to="/contact" className="hero-btn button-main">
               {heroBtn}
             </Link>

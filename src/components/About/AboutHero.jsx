@@ -13,7 +13,7 @@ const AboutHero = () => {
   const { t } = useTranslation();
   const { title, description, cta, titleH2, belive, need } = t('about');
   const seo = t('pageSeo.about');
-  const { t1, t2, t3, p1, p2, p3 } = belive;
+  const { t1, t2, t3, t4, p1, p2, p3, p4 } = belive;
   const {
     specialist1,
     specialist2,
@@ -32,6 +32,7 @@ const AboutHero = () => {
     { img: cubeSvg, title: t1, description: p1 },
     { img: piraSvg, title: t2, description: p2 },
     { img: circSvg, title: t3, description: p3 },
+    { img: circSvg, title: t4, description: p4 },
   ];
 
   const dataSpecialist = [

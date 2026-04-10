@@ -29,10 +29,11 @@
     "title": "Gigson Solutions | Tech Boosting your Business",
     "metadescription": "Custom solutions for complex businesses. We enhance your existing technology and, if what you need doesn't exist, we build it together.",
     "heroH1": "Making technology <span>boost</span> your business<span>.</span>",
-    "heroP": "BUILDING TAILORED SOFTWARE SOLUTIONS",
+    "heroP": "CERTIFIED ANTHROPIC CLAUDE PARTNER · AI AGENT IMPLEMENTATION",
+    "heroSubhead": "We design, build, and deploy AI agents powered by Claude — Anthropic's most capable model — alongside custom software, system integrations, and cybersecurity. Certified partner. Real delivery.",
     "heroBtn": "CONTACT US",
     "heroScroll": "GO DOWN TO EXPLORE",
-    "servicesTitle": "Tailored <span>solutions</span> for any business ·",
+    "servicesTitle": "Tailored solutions for any business · AI Agent Implementation · Certified Anthropic <span>Claude</span> Partner · System Integrations · CTO as a Service · Cybersecurity · ",
     "servicesP": {
       "p1": "We are focused to leverage the technology to  your business, connecting and making it secure to align needs and business goals.",
       "p2": "And if your solution does not exist yet, let's build it together."
@@ -45,7 +46,7 @@
   },
   "caseswhygigson": {
     "wth2": "What can Gigson Solutions do for your business?",
-    "wp1": "At Gigson Solutions, we believe that technology should drive your business forward, not limit it.",
+    "wp1": "At Gigson Solutions, we believe that technology should drive your business forward, not limit it. As a certified Anthropic Claude Partner, we combine classic software engineering with AI agent delivery — so your business moves faster, with less manual work and more intelligent automation.",
     "wp2": "Here are some examples of what we can do for you.",
     "wlink": "VIEW CASES"
   },
@@ -55,16 +56,18 @@
   },
   "about": {
     "title": "Our team is built by professionals with more than <span>9 years</span> of experience.",
-    "description": "We have the required profiles to face the end-to-end digital product development to offer an all-in-one service.",
+    "description": "We have the required profiles to deliver end-to-end digital products and AI agent systems — all in-house. As a certified Anthropic Claude Partner, our team includes Claude Certified Architects trained directly by Anthropic.",
     "cta": "LET’S TALK",
     "titleH2": "What be believe",
     "belive": {
       "t1": "Quality",
       "t2": "Commitment",
       "t3": "Security",
+      "t4": "AI-first delivery",
       "p1": "Regardless of whether we're crafting a proof of concept or a final product, we apply various product quality and project management standards to ensure that every product meets and exceeds expectations.",
       "p2": "You'll have the flexibility to choose the level of engagement you prefer with us. We'll always be by your side to support you at any stage, but if you decide not to continue, we'll handle the closure and necessary handover, complying with all current legal requirements.",
-      "p3": "Security is essential to us. We offer the ability to audit and certify our cloud solutions with CIS, CISA, FedRAMP, PCI-DSS, GDPR, FFIEC, and SOC2."
+      "p3": "Security is essential to us. We offer the ability to audit and certify our cloud solutions with CIS, CISA, FedRAMP, PCI-DSS, GDPR, FFIEC, and SOC2.",
+      "p4": "We believe AI should be embedded in how we deliver — not bolted on at the end. As a certified Anthropic Claude Partner, we hold ourselves to the highest standards of responsible AI deployment: transparent reasoning, human oversight, and production-grade reliability. Every AI system we build is designed to augment your team, not replace your judgment."
     },
     "need": {
       "t": "What do I need to build a <span>Digital product</span>?",
@@ -296,6 +299,34 @@
       "need": [
         "Customer Management",
         "Project and Task Management",
+        "Centralize information"
+      ]
+    },
+    {
+      "title": "AI Agent for Operations",
+      "challenge": "Deploy an AI agent powered by Claude that handles document processing, internal Q&A, workflow routing, and decision support — integrated with your existing ERP, CRM, or project management tools.",
+      "features": [
+        "Conversational agent connected to internal systems via API",
+        "Document ingestion and structured data extraction",
+        "Workflow automation triggered by agent reasoning",
+        "Human-in-the-loop approval gates for critical actions",
+        "Audit trail and compliance logging"
+      ],
+      "solution": "Built on Anthropic's Claude API with a custom integration layer connecting your existing stack. Deployed on your infrastructure or cloud of choice. Ongoing retainer model for iteration and maintenance.",
+      "tools": [
+        "Claude API (Anthropic)",
+        "n8n or custom orchestration",
+        "REST APIs",
+        "Cloud infrastructure (AWS / GCP / Hetzner)"
+      ],
+      "tags": [
+        "Manufacturing",
+        "Logistics",
+        "Professional Services"
+      ],
+      "need": [
+        "Avoid human errors",
+        "Automate critical processes",
         "Centralize information"
       ]
     }
@@ -2522,7 +2553,7 @@
     "hero": {
       "suptitle": "SERVICES",
       "title": "Software development <span> for business </span>",
-      "description": "Having software that adapts to your company—not the other way around—makes all the difference. At Gigson Solutions, we design, build, and maintain tailored tech solutions, ready to scale, integrate, and evolve with you. <br> From building new features or full products to integrating existing tools and ensuring long-term performance,we cover the entire software lifecycle. <br> Our team includes developers, architects, and testers to provide custom software development with no limits, no dependencies, and a long-term vision.",
+      "description": "Having software that adapts to your company—not the other way around—makes all the difference. At Gigson Solutions, we design, build, and maintain tailored tech solutions, ready to scale, integrate, and evolve with you. <br> From building new features or full products to integrating existing tools and ensuring long-term performance,we cover the entire software lifecycle. <br> Our team includes developers, architects, and testers to provide custom software development with no limits, no dependencies, and a long-term vision. <br> We don't just integrate AI as a feature — we build software where Claude is a core component of the product logic. From document processing pipelines to agent-driven backends, our engineering team has the experience to ship AI systems that work in production, not just in demos. Our Claude Certified Architects design every AI integration to Anthropic's best practices: structured prompts, tool use, multi-turn memory, safe deployment, and cost-efficient API usage.",
       "buttonText": "Contact us"
     },
     "solutionsApplications": {
@@ -2616,7 +2647,7 @@
     "hero": {
       "suptitle": "SERVICES",
       "title": "Technology consulting for <span> business </span>",
-      "description": "At Gigson Solutions, we believe technology shouldn’t limit us—it should help us reach business goals.<br> Our business tech consulting service is designed to analyze, transform, optimize, and evolve your company with tailored solutions—without friction, without improvisation, and with a clear, external, and objective vision of the future. <br> Diagnosis, strategy, and action—all in one partner. We support you from the analysis of your current situation to the definition and execution of tech projects that drive your growth.",
+      "description": "At Gigson Solutions, we believe technology shouldn’t limit us—it should help us reach business goals.<br> Our business tech consulting service is designed to analyze, transform, optimize, and evolve your company with tailored solutions—without friction, without improvisation, and with a clear, external, and objective vision of the future. <br> Diagnosis, strategy, and action—all in one partner. We support you from the analysis of your current situation to the definition and execution of tech projects that drive your growth. <br> As a certified Anthropic Claude Partner, we also help you identify where AI agents can take over repetitive, high-effort processes — and we build them.",
       "buttonText": "Contact us"
     },
     "solutionsApplications": {
@@ -2681,13 +2712,32 @@
           ]
         },
         {
+          "title": "AI Agent Deployment",
+          "description": "Standard automation connects tools. AI agents make decisions.\n\nWe design and deploy Claude-powered agents that go beyond rule-based automation: they understand context, process unstructured inputs, reason through multi-step workflows, and take action — while keeping humans in control of what matters.\n\nWhether you need an agent that handles customer requests, processes documents, supports internal teams, or orchestrates your existing integrations, we build it to production standard and maintain it on a recurring retainer.",
+          "type": "Challenges",
+          "cards": [
+            {
+              "title": "Agent design & architecture",
+              "description": "We map your workflows, identify where reasoning adds value over rules, and design an agent architecture that fits your existing stack. We define the right model configuration, tool access, memory strategy, and human-in-the-loop gates."
+            },
+            {
+              "title": "Claude API integration",
+              "description": "We implement agents using Anthropic's Claude API, connected to your internal systems via REST, webhooks, or custom MCP servers. Every integration is built for reliability, observability, and cost control."
+            },
+            {
+              "title": "Ongoing agent retainer",
+              "description": "AI agents are not set-and-forget. We offer monthly retainer packages to monitor, iterate, and expand your agent deployments as your needs evolve — including model upgrades as Anthropic releases new versions."
+            }
+          ]
+        },
+        {
           "title": "IT Consulting: Audit & Tech Strategy",
           "description": "A strong tech strategy starts with a realistic diagnosis.We analyze your IT infrastructure in depth, detect risks and areas for improvement, and design a tech plan aligned with your business goals.",
           "type": "Challenges",
           "cards": [
             {
               "title": "Technical & cybersecurity audit",
-              "description": "We conduct technical and security audits to identify vulnerabilities, inefficiencies, and hidden risks in your current infrastructure."
+              "description": "We conduct technical and security audits to identify vulnerabilities, inefficiencies, and hidden risks in your current infrastructure. Our audits now include AI readiness assessment: we evaluate which of your processes are candidates for Claude agent automation, and what data and infrastructure changes are needed to support safe deployment."
             },
             {
               "title": "Defining a tech strategy aligned with your business goals",

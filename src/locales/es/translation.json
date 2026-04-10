@@ -29,10 +29,11 @@
     "title": "Gigson Solutions | Tecnología para Impulsar tu Negocio",
     "metadescription": "Soluciones a medida para negocios complejos. Potenciamos tu tecnología actual y, si lo que necesitas no existe, lo creamos juntos.",
     "heroH1": "Tecnología para <span>impulsar</span> tu negocio<span>.</span>",
-    "heroP": "SOLUCIONES A MEDIDA PARA NEGOCIOS COMPLEJOS",
+    "heroP": "CERTIFIED ANTHROPIC CLAUDE PARTNER · AI AGENT IMPLEMENTATION",
+    "heroSubhead": "Diseñamos, construimos y desplegamos agentes de IA impulsados por Claude — el modelo más avanzado de Anthropic — junto con software a medida, integraciones de sistemas y ciberseguridad. Partner certificado. Entrega real.",
     "heroBtn": "CONTÁCTANOS",
     "heroScroll": "SEGUIR EXPLORANDO",
-    "servicesTitle": "Productos <span>a medida</span> para cualquier negocio ·",
+    "servicesTitle": "Soluciones a medida para cualquier negocio · AI Agent Implementation · Certified Anthropic <span>Claude</span> Partner · System Integrations · CTO as a Service · Ciberseguridad · ",
     "servicesP": {
       "p1": "Nos dedicamos a aprovechar al máximo las herramientas de software que ya utilizas, conectándolas entre sí, optimizándolas para que rindan más y alineándolas con las necesidades reales de tu negocio.",
       "p2": "Y si lo que necesitas aún no existe... lo creamos para ti."
@@ -45,7 +46,7 @@
   },
   "caseswhygigson": {
     "wth2": "¿Qué puede hacer Gigson Solutions por tu negocio?",
-    "wp1": "En Gigson Solutions, creemos que la tecnología debería impulsar tu negocio hacia adelante, no limitarlo.",
+    "wp1": "En Gigson Solutions, creemos que la tecnología debería impulsar tu negocio hacia adelante, no limitarlo. Como Anthropic Claude Partner certificado, combinamos ingeniería de software clásica con entrega de agentes de IA — para que tu negocio avance más rápido, con menos trabajo manual y más automatización inteligente.",
     "wp2": "Aquí hay algunos ejemplos de lo que podemos hacer por ti.",
     "wlink": "VER CASOS"
   },
@@ -55,16 +56,18 @@
   },
   "about": {
     "title": "Somos un equipo de profesionales expertos con más de <span>9 años</span> de experiencia.",
-    "description": "Contamos con todos los perfiles necesarios para el desarrollo de un producto digital, y con diferentes partners en ámbitos específicos para complementar las solución all-in-one.",
+    "description": "Contamos con todos los perfiles necesarios para el desarrollo de productos digitales y sistemas de agentes de IA — todo in-house. Como Anthropic Claude Partner certificado, nuestro equipo incluye Claude Certified Architects formados directamente por Anthropic.",
     "cta": "HABLEMOS",
     "titleH2": "Descubre lo que nos mueve",
     "belive": {
       "t1": "Calidad",
       "t2": "Compromiso",
       "t3": "Facilidad",
+      "t4": "AI-first delivery",
       "p1": "Independientemente de si estamos desarrollando una prueba de concepto o un producto final, implementaremos diferentes estándares de calidad de producto y de gestión de proyectos para asegurarnos de que cada producto cumpla y supere las expectativas.",
       "p2": "Podrás elegir el tipo de compromiso que quieras tener con nosotros. Estaremos siempre a tu lado para acompañarte en cualquier fase, no obstante si no quieres continuar, nos encargaremos del cierre y del traspaso necesario cumpliendo con toda legalidad vigente.",
-      "p3": "Sabemos que hablar con un desarrollador no es fácil. Con nosotros hablaras con un consultor de negocios con conocimiento técnico para entender tus necesidades y validar su viabilidad técnica a la vez."
+      "p3": "Sabemos que hablar con un desarrollador no es fácil. Con nosotros hablaras con un consultor de negocios con conocimiento técnico para entender tus necesidades y validar su viabilidad técnica a la vez.",
+      "p4": "Creemos que la IA debe estar integrada en cómo entregamos — no añadida al final. Como Anthropic Claude Partner certificado, nos comprometemos con los más altos estándares de despliegue de IA responsable: razonamiento transparente, supervisión humana y fiabilidad en producción. Cada sistema de IA que construimos está diseñado para potenciar tu equipo, no para reemplazar tu criterio."
     },
     "need": {
       "t": "¿Qué necesito para hacer un <span>producto digital</span>?",
@@ -296,6 +299,34 @@
       "need": [
         "Gestión de clientes",
         "Gestión de proyectos y tareas",
+        "Centralizar información"
+      ]
+    },
+    {
+      "title": "Agente de IA para Operaciones",
+      "challenge": "Despliega un agente de IA impulsado por Claude que gestione el procesamiento de documentos, Q&A interno, enrutamiento de flujos de trabajo y soporte a la toma de decisiones — integrado con tu ERP, CRM o herramientas de gestión de proyectos existentes.",
+      "features": [
+        "Agente conversacional conectado a sistemas internos vía API",
+        "Ingesta de documentos y extracción de datos estructurados",
+        "Automatización de flujos de trabajo activada por el razonamiento del agente",
+        "Puntos de aprobación humana para acciones críticas",
+        "Registro de auditoría y conformidad"
+      ],
+      "solution": "Construido sobre la API de Claude de Anthropic con una capa de integración personalizada que conecta tu stack existente. Desplegado en tu infraestructura o nube de elección. Modelo de retainer recurrente para iteración y mantenimiento.",
+      "tools": [
+        "Claude API (Anthropic)",
+        "n8n u orquestación personalizada",
+        "REST APIs",
+        "Infraestructura cloud (AWS / GCP / Hetzner)"
+      ],
+      "tags": [
+        "Industria",
+        "Logística",
+        "Servicios profesionales"
+      ],
+      "need": [
+        "Evitar errores humanos",
+        "Automatizar procesos críticos",
         "Centralizar información"
       ]
     }
@@ -2526,7 +2557,7 @@
     "hero": {
       "suptitle": "SERVICIOS",
       "title": "Desarrollo de software a medida <span> para empresas </span>",
-      "description": "Tener un software que se adapte a tu empresa —y no al revés— marca la diferencia. En Gigson Solutions trabajamos para diseñar, construir y mantener soluciones tecnológicas a medida, preparadas para escalar, integrarse y evolucionar contigo.<br> Desde desarrollar nuevas funcionalidades o productos completos hasta integrar herramientas existentes y asegurar su rendimiento en el tiempo, cubrimos todo el ciclo de vida del software. <br> Nuestro equipo está formado por desarrolladores, arquitectos y testers para ofrecerte un desarrollo de software a medida sin límites, sin dependencias y con visión a largo plazo.",
+      "description": "Tener un software que se adapte a tu empresa —y no al revés— marca la diferencia. En Gigson Solutions trabajamos para diseñar, construir y mantener soluciones tecnológicas a medida, preparadas para escalar, integrarse y evolucionar contigo.<br> Desde desarrollar nuevas funcionalidades o productos completos hasta integrar herramientas existentes y asegurar su rendimiento en el tiempo, cubrimos todo el ciclo de vida del software. <br> Nuestro equipo está formado por desarrolladores, arquitectos y testers para ofrecerte un desarrollo de software a medida sin límites, sin dependencias y con visión a largo plazo. <br> No integramos la IA como una función más — construimos software donde Claude es un componente central de la lógica del producto. Desde pipelines de procesamiento de documentos hasta backends basados en agentes, nuestro equipo de ingeniería tiene la experiencia para producir sistemas de IA que funcionen en producción, no solo en demos. Nuestros Claude Certified Architects diseñan cada integración de IA siguiendo las mejores prácticas de Anthropic: prompts estructurados, uso de herramientas, memoria multi-turno, despliegue seguro y uso eficiente de la API.",
       "buttonText": "Contáctanos"
     },
     "solutionsApplications": {
@@ -2620,7 +2651,7 @@
     "hero": {
       "suptitle": "SERVICIOS",
       "title": "Consultoría tecnológica <span> para empresas </span>",
-      "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. <br> Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. <br>  Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento",
+      "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. <br> Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. <br>  Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento. <br> Como Anthropic Claude Partner certificado, también te ayudamos a identificar dónde los agentes de IA pueden hacerse cargo de procesos repetitivos y de alto esfuerzo — y los construimos.",
       "buttonText": "Contáctanos"
     },
     "solutionsApplications": {
@@ -2685,13 +2716,32 @@
           ]
         },
         {
+          "title": "Despliegue de agentes de IA",
+          "description": "La automatización estándar conecta herramientas. Los agentes de IA toman decisiones.\n\nDiseñamos y desplegamos agentes impulsados por Claude que van más allá de la automatización basada en reglas: entienden el contexto, procesan entradas no estructuradas, razonan en flujos de trabajo de múltiples pasos y actúan — manteniendo a las personas en control de lo que importa.\n\nTanto si necesitas un agente que gestione solicitudes de clientes, procese documentos, apoye a equipos internos u orqueste tus integraciones existentes, lo construimos a estándar de producción y lo mantenemos en un retainer recurrente.",
+          "type": "Retos",
+          "cards": [
+            {
+              "title": "Diseño y arquitectura de agentes",
+              "description": "Mapeamos tus flujos de trabajo, identificamos dónde el razonamiento añade valor sobre las reglas y diseñamos una arquitectura de agente que encaja en tu stack existente. Definimos la configuración del modelo adecuada, el acceso a herramientas, la estrategia de memoria y los puntos de supervisión humana."
+            },
+            {
+              "title": "Integración de la API de Claude",
+              "description": "Implementamos agentes usando la API de Claude de Anthropic, conectados a tus sistemas internos vía REST, webhooks o servidores MCP personalizados. Cada integración se construye para la fiabilidad, la observabilidad y el control de costes."
+            },
+            {
+              "title": "Retainer de agentes recurrente",
+              "description": "Los agentes de IA no son plug-and-play. Ofrecemos paquetes de retainer mensual para monitorizar, iterar y ampliar tus despliegues de agentes a medida que evolucionan tus necesidades — incluyendo actualizaciones de modelo cuando Anthropic lanza nuevas versiones."
+            }
+          ]
+        },
+        {
           "title": "Consultoría IT: auditoría y estrategia tecnológica",
           "description": "Una buena estrategia tecnológica empieza con un diagnóstico realista. Analizamos en profundidad tu infraestructura IT, detectamos riesgos y áreas de mejora, y diseñamos un plan tecnológico alineado con tus objetivos de negocio.",
           "type": "Retos",
           "cards": [
             {
               "title": "Auditoría técnica y de seguridad informática",
-              "description": "Realizamos auditorías técnicas y de seguridad para identificar vulnerabilidades, ineficiencias y riesgos ocultos en tu infraestructura actual."
+              "description": "Realizamos auditorías técnicas y de seguridad para identificar vulnerabilidades, ineficiencias y riesgos ocultos en tu infraestructura actual. Nuestras auditorías incluyen ahora una evaluación de preparación para IA: evaluamos qué procesos son candidatos a la automatización con agentes Claude, y qué cambios de datos e infraestructura son necesarios para un despliegue seguro."
             },
             {
               "title": "Definición de estrategia tecnológica alineada a tus objetivos de negocio",

@@ -18,7 +18,7 @@ function HomeServices() {
       <div className="home-text-container">
         <div className="services-h2-animation">
           <h2 className="home-services-h2">
-            {genArray(10).map((v, k) => (
+            {genArray(4).map((v, k) => (
               <>
                 <Trans
                   key={k}
