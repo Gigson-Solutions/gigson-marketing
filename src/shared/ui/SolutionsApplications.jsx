@@ -56,8 +56,6 @@ const CardMobile = ({ title, description, cardNr, className }) => {
   );
 };
 
-const SCROLL_PER_STEP = 700;
-
 const SolutionsApplications = ({ title, subTitle, containers }) => {
   const { isMobile } = useBreakpoint();
   const sectionRef = useRef(null);
@@ -65,46 +63,23 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
 
   useGSAP(() => {
     const containerEls = Array.from(listRef.current.children);
-    if (containerEls.length <= 1) {
-      // Single container: simple scroll-triggered reveal
-      gsap.from(containerEls[0], {
-        scrollTrigger: {
-          trigger: containerEls[0],
-          start: 'top 85%',
-        },
-        autoAlpha: 0,
-        y: 50,
-        duration: 0.8,
+
+    // Each container starts hidden below and reveals as it enters the viewport
+    gsap.set(containerEls, { autoAlpha: 0, y: 60 });
+
+    containerEls.forEach((el) => {
+      gsap.to(el, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.7,
         ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 82%',
+          toggleActions: 'play none none none',
+        },
       });
-      return;
-    }
-
-    // Multi-container: pin + crossfade one at a time
-    gsap.set(containerEls, { autoAlpha: 0, y: 40 });
-    gsap.set(containerEls[0], { autoAlpha: 1, y: 0 });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        pin: true,
-        pinSpacing: true,
-        start: 'top top',
-        end: `+=${(containerEls.length - 1) * SCROLL_PER_STEP}`,
-        scrub: 1.2,
-      },
     });
-
-    for (let i = 1; i < containerEls.length; i++) {
-      // Dwell on current step
-      tl.to({}, { duration: 0.25 });
-      // Exit previous container up
-      tl.to(containerEls[i - 1], { autoAlpha: 0, y: -50, duration: 0.6, ease: 'power2.inOut' });
-      // Enter next container from below
-      tl.to(containerEls[i], { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '<0.25');
-      // Dwell after entering
-      tl.to({}, { duration: 0.25 });
-    }
   }, { scope: sectionRef });
 
   return (
