@@ -69,28 +69,104 @@
   "aiAgents": {
     "title": "AI Agent Implementation | Gigson Solutions",
     "metadescription": "We design, build, and deploy Claude-powered AI agents for business operations — as a certified Anthropic Claude Partner.",
-    "heroH1": "AI Agent Implementation",
-    "heroSubhead": "We design, build, and deploy Claude-powered AI agents for business operations — as a certified Anthropic Claude Partner.",
-    "whatIsTitle": "What is an AI agent?",
-    "whatIsBody": "An AI agent is software that can perceive context, reason through it, and take action — connecting to your tools, processing your data, and executing tasks without manual intervention. Unlike simple automations, agents handle ambiguity, multi-step decisions, and unstructured inputs.\n\nWe build agents powered by Claude, Anthropic's most capable and safest AI model.",
-    "whatWeDeliverTitle": "What we deliver",
-    "useCases": [
-      { "case": "Document processing", "description": "Extracts, classifies, and routes documents from any source" },
-      { "case": "Internal Q&A", "description": "Answers questions from your team using your own knowledge base" },
-      { "case": "Operations automation", "description": "Executes multi-step workflows triggered by business events" },
-      { "case": "Customer support", "description": "Handles tier-1 requests with escalation to human agents" },
-      { "case": "Data extraction", "description": "Turns unstructured inputs (emails, PDFs, forms) into structured data" }
-    ],
-    "whyClaudeTitle": "Why Claude?",
-    "whyClaudeBody": "Claude is built by Anthropic with safety and reliability as core principles — not afterthoughts. It handles long, complex documents, follows nuanced instructions, and maintains consistent behavior in production. As a certified partner, we have direct access to Anthropic's technical support, early access to new model releases, and the certifications to back up our implementation work.",
-    "howWeEngageTitle": "How we engage",
-    "engageSteps": [
-      { "num": "01", "title": "Discovery (1 session)", "description": "We map your workflows and identify the highest-value agent use case" },
-      { "num": "02", "title": "Design & prototype (1–2 weeks)", "description": "We build a working prototype connected to your systems" },
-      { "num": "03", "title": "Production deployment", "description": "We ship to your infrastructure with monitoring and logging" },
-      { "num": "04", "title": "Retainer", "description": "Monthly iteration, maintenance, and model upgrades" }
-    ],
-    "cta": "BOOK A 30-MINUTE AI DISCOVERY CALL →"
+    "hero": {
+      "suptitle": "CERTIFIED ANTHROPIC CLAUDE PARTNER",
+      "title": "AI Agent <span>Implementation</span>",
+      "description": "We design, build, and deploy Claude-powered AI agents for business operations. An AI agent is software that can perceive context, reason through it, and take action — connecting to your tools, processing your data, and executing tasks without manual intervention. Unlike simple automations, agents handle ambiguity, multi-step decisions, and unstructured inputs.<br>We build agents powered by Claude, Anthropic's most capable and safest AI model.",
+      "buttonText": "Contact us"
+    },
+    "solutionsApplications": {
+      "title": "Intelligent agents that work <span>inside your business.</span>",
+      "subTitle": "Every business has repetitive, high-effort processes that could be handled by an agent. We identify them, build the agent, connect it to your existing systems, and deploy it to production — with ongoing support.",
+      "containers": [
+        {
+          "title": "What we deliver",
+          "description": "From document processing to customer-facing automation, our agents handle the workflows that currently depend on manual effort — reliably, at scale, and with full audit trails.",
+          "type": "Use cases",
+          "cards": [
+            {
+              "title": "Document processing",
+              "description": "Extracts, classifies, and routes documents from any source — PDFs, emails, forms — into your systems without manual intervention."
+            },
+            {
+              "title": "Internal Q&A",
+              "description": "Answers questions from your team using your own knowledge base, connected to your internal docs, wikis, and databases."
+            },
+            {
+              "title": "Operations automation",
+              "description": "Executes multi-step workflows triggered by business events — approvals, escalations, data syncs — without manual oversight."
+            },
+            {
+              "title": "Customer support",
+              "description": "Handles tier-1 customer requests with structured responses and escalation to human agents when needed."
+            },
+            {
+              "title": "Data extraction",
+              "description": "Turns unstructured inputs (emails, PDFs, forms) into structured, actionable data ready for your ERP, CRM, or databases."
+            }
+          ]
+        },
+        {
+          "title": "Why Claude?",
+          "description": "Claude is built by Anthropic with safety and reliability as core principles — not afterthoughts. It handles long, complex documents, follows nuanced instructions, and maintains consistent behavior in production.",
+          "type": "Technology",
+          "cards": [
+            {
+              "title": "Safety-first model",
+              "description": "Claude is designed with human oversight in mind — every agent we build includes clear boundaries, human-in-the-loop gates, and full audit logging so you stay in control of what matters."
+            },
+            {
+              "title": "Certified partner access",
+              "description": "As a certified Anthropic Claude Partner, we have direct access to Anthropic's technical support and early access to new model releases — so your implementation is always on the latest, safest version."
+            },
+            {
+              "title": "Production-grade reliability",
+              "description": "Claude maintains consistent behavior at scale. Every integration we build is designed for reliability, observability, and cost control — not just proof-of-concept demos."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How we engage",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "We map your workflows and identify the highest-value agent use case in a single working session."
+        },
+        {
+          "title": "Design & prototype",
+          "description": "We design the agent architecture and build a working prototype connected to your systems — typically in 1–2 weeks."
+        },
+        {
+          "title": "Production deployment",
+          "description": "We ship to your infrastructure with monitoring, logging, and human-in-the-loop gates configured from day one."
+        },
+        {
+          "title": "Retainer",
+          "description": "Monthly iteration, maintenance, and model upgrades as Anthropic releases new versions of Claude."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "Ready to deploy your <span>first AI agent</span>?",
+      "description": "Book a 30-minute discovery call. We'll map your highest-value use case and tell you exactly what it would take to build it.",
+      "buttonText": "Book a discovery call",
+      "cards": [
+        {
+          "title": "Agent design & architecture",
+          "description": "We map your workflows, identify where reasoning adds value over rules, and design an agent architecture that fits your existing stack — with the right model configuration, tool access, and memory strategy."
+        },
+        {
+          "title": "Claude API integration",
+          "description": "We implement agents using Anthropic's Claude API, connected to your internal systems via REST, webhooks, or custom MCP servers. Every integration is built for reliability, observability, and cost control."
+        },
+        {
+          "title": "Ongoing agent retainer",
+          "description": "AI agents are not set-and-forget. We offer monthly retainer packages to monitor, iterate, and expand your agent deployments as your needs evolve."
+        }
+      ]
+    }
   },
   "about": {
     "title": "Our team is built by professionals with more than <span>9 years</span> of experience.",

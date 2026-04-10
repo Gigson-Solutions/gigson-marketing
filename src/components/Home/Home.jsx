@@ -7,7 +7,6 @@ import { CtaServices } from './CtaServices';
 import Hero from './Hero';
 import HomeCases from './HomeCases';
 import HomeServices from './HomeServices';
-import { PartnerBadge } from './PartnerBadge';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -19,7 +18,6 @@ const Home = () => {
       <Hero />
       <HomeServices />
       <HomeCases />
-      <PartnerBadge />
       <CtaServices />
       <div className="wrapper">
         <Form customClass="home-form" />

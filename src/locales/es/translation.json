@@ -69,28 +69,104 @@
   "aiAgents": {
     "title": "Implementación de Agentes IA | Gigson Solutions",
     "metadescription": "Diseñamos, construimos y desplegamos agentes de IA basados en Claude para operaciones empresariales — como Anthropic Claude Partner certificado.",
-    "heroH1": "Implementación de Agentes IA",
-    "heroSubhead": "Diseñamos, construimos y desplegamos agentes de IA basados en Claude para operaciones empresariales — como Anthropic Claude Partner certificado.",
-    "whatIsTitle": "¿Qué es un agente de IA?",
-    "whatIsBody": "Un agente de IA es software que puede percibir contexto, razonarlo y actuar — conectándose a tus herramientas, procesando tus datos y ejecutando tareas sin intervención manual. A diferencia de las automatizaciones simples, los agentes gestionan ambigüedad, decisiones de múltiples pasos e inputs no estructurados.\n\nConstruimos agentes con Claude, el modelo de IA más avanzado y seguro de Anthropic.",
-    "whatWeDeliverTitle": "Qué entregamos",
-    "useCases": [
-      { "case": "Procesamiento de documentos", "description": "Extrae, clasifica y enruta documentos de cualquier fuente" },
-      { "case": "Q&A interno", "description": "Responde preguntas de tu equipo usando tu propia base de conocimiento" },
-      { "case": "Automatización de operaciones", "description": "Ejecuta flujos de trabajo de múltiples pasos desencadenados por eventos de negocio" },
-      { "case": "Atención al cliente", "description": "Gestiona solicitudes de nivel 1 con escalada a agentes humanos" },
-      { "case": "Extracción de datos", "description": "Convierte inputs no estructurados (emails, PDFs, formularios) en datos estructurados" }
-    ],
-    "whyClaudeTitle": "¿Por qué Claude?",
-    "whyClaudeBody": "Claude está construido por Anthropic con la seguridad y la fiabilidad como principios fundamentales — no como añadidos. Gestiona documentos largos y complejos, sigue instrucciones matizadas y mantiene un comportamiento consistente en producción. Como partner certificado, tenemos acceso directo al soporte técnico de Anthropic, acceso anticipado a nuevas versiones de modelos y las certificaciones que respaldan nuestro trabajo.",
-    "howWeEngageTitle": "Cómo trabajamos",
-    "engageSteps": [
-      { "num": "01", "title": "Discovery (1 sesión)", "description": "Mapeamos tus flujos de trabajo e identificamos el caso de uso de agente de mayor valor" },
-      { "num": "02", "title": "Diseño y prototipo (1–2 semanas)", "description": "Construimos un prototipo funcional conectado a tus sistemas" },
-      { "num": "03", "title": "Despliegue en producción", "description": "Lo desplegamos en tu infraestructura con monitorización y logging" },
-      { "num": "04", "title": "Retainer", "description": "Iteración mensual, mantenimiento y actualizaciones de modelo" }
-    ],
-    "cta": "RESERVA UNA LLAMADA DE DISCOVERY DE 30 MIN →"
+    "hero": {
+      "suptitle": "CERTIFIED ANTHROPIC CLAUDE PARTNER",
+      "title": "Implementación de <span>Agentes IA</span>",
+      "description": "Diseñamos, construimos y desplegamos agentes de IA basados en Claude para operaciones empresariales. Un agente de IA es software que puede percibir contexto, razonarlo y actuar — conectándose a tus herramientas, procesando tus datos y ejecutando tareas sin intervención manual. A diferencia de las automatizaciones simples, los agentes gestionan ambigüedad, decisiones de múltiples pasos e inputs no estructurados.<br>Construimos agentes con Claude, el modelo de IA más avanzado y seguro de Anthropic.",
+      "buttonText": "Contáctanos"
+    },
+    "solutionsApplications": {
+      "title": "Agentes inteligentes que trabajan <span>dentro de tu negocio.</span>",
+      "subTitle": "Cada negocio tiene procesos repetitivos y de alto esfuerzo que un agente podría gestionar. Los identificamos, construimos el agente, lo conectamos a tus sistemas existentes y lo desplegamos en producción — con soporte continuo.",
+      "containers": [
+        {
+          "title": "Qué entregamos",
+          "description": "Desde procesamiento de documentos hasta automatización orientada al cliente, nuestros agentes gestionan los flujos de trabajo que actualmente dependen del esfuerzo manual — de forma fiable, a escala y con trazabilidad completa.",
+          "type": "Casos de uso",
+          "cards": [
+            {
+              "title": "Procesamiento de documentos",
+              "description": "Extrae, clasifica y enruta documentos de cualquier fuente — PDFs, emails, formularios — a tus sistemas sin intervención manual."
+            },
+            {
+              "title": "Q&A interno",
+              "description": "Responde preguntas de tu equipo usando tu propia base de conocimiento, conectada a tus docs internos, wikis y bases de datos."
+            },
+            {
+              "title": "Automatización de operaciones",
+              "description": "Ejecuta flujos de trabajo de múltiples pasos desencadenados por eventos de negocio — aprobaciones, escaladas, sincronizaciones de datos — sin supervisión manual."
+            },
+            {
+              "title": "Atención al cliente",
+              "description": "Gestiona solicitudes de nivel 1 con respuestas estructuradas y escalada a agentes humanos cuando es necesario."
+            },
+            {
+              "title": "Extracción de datos",
+              "description": "Convierte inputs no estructurados (emails, PDFs, formularios) en datos estructurados y accionables listos para tu ERP, CRM o bases de datos."
+            }
+          ]
+        },
+        {
+          "title": "¿Por qué Claude?",
+          "description": "Claude está construido por Anthropic con la seguridad y la fiabilidad como principios fundamentales — no como añadidos. Gestiona documentos largos y complejos, sigue instrucciones matizadas y mantiene un comportamiento consistente en producción.",
+          "type": "Tecnología",
+          "cards": [
+            {
+              "title": "Modelo safety-first",
+              "description": "Claude está diseñado con la supervisión humana en mente — cada agente que construimos incluye límites claros, puntos de control humano y logging de auditoría completo para que mantengas el control de lo que importa."
+            },
+            {
+              "title": "Acceso de partner certificado",
+              "description": "Como Anthropic Claude Partner certificado, tenemos acceso directo al soporte técnico de Anthropic y acceso anticipado a nuevas versiones — para que tu implementación siempre esté en la versión más reciente y segura."
+            },
+            {
+              "title": "Fiabilidad en producción",
+              "description": "Claude mantiene un comportamiento consistente a escala. Cada integración que construimos está diseñada para fiabilidad, observabilidad y control de costes — no solo demostraciones de prueba de concepto."
+            }
+          ]
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "Cómo trabajamos",
+      "methods": [
+        {
+          "title": "Discovery",
+          "description": "Mapeamos tus flujos de trabajo e identificamos el caso de uso de agente de mayor valor en una única sesión de trabajo."
+        },
+        {
+          "title": "Diseño y prototipo",
+          "description": "Diseñamos la arquitectura del agente y construimos un prototipo funcional conectado a tus sistemas — normalmente en 1–2 semanas."
+        },
+        {
+          "title": "Despliegue en producción",
+          "description": "Lo desplegamos en tu infraestructura con monitorización, logging y puntos de control humano configurados desde el primer día."
+        },
+        {
+          "title": "Retainer",
+          "description": "Iteración mensual, mantenimiento y actualizaciones de modelo a medida que Anthropic lanza nuevas versiones de Claude."
+        }
+      ]
+    },
+    "digitalProduct": {
+      "title": "¿Listo para desplegar tu <span>primer agente de IA</span>?",
+      "description": "Reserva una llamada de discovery de 30 minutos. Mapearemos tu caso de uso de mayor valor y te diremos exactamente qué se necesita para construirlo.",
+      "buttonText": "Reservar llamada de discovery",
+      "cards": [
+        {
+          "title": "Diseño y arquitectura del agente",
+          "description": "Mapeamos tus flujos de trabajo, identificamos dónde el razonamiento aporta valor sobre las reglas, y diseñamos una arquitectura de agente que encaja con tu stack existente — con la configuración de modelo, acceso a herramientas y estrategia de memoria correctas."
+        },
+        {
+          "title": "Integración con la API de Claude",
+          "description": "Implementamos agentes usando la API de Claude de Anthropic, conectada a tus sistemas internos via REST, webhooks o servidores MCP personalizados. Cada integración está construida para fiabilidad, observabilidad y control de costes."
+        },
+        {
+          "title": "Retainer de agente continuo",
+          "description": "Los agentes de IA no son plug-and-forget. Ofrecemos paquetes de retainer mensual para monitorizar, iterar y expandir tus despliegues de agentes a medida que tus necesidades evolucionan."
+        }
+      ]
+    }
   },
   "about": {
     "title": "Somos un equipo de profesionales expertos con más de <span>9 años</span> de experiencia.",

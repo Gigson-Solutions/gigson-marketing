@@ -6,6 +6,8 @@ import React, { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+import SectorSelector from './SectorSelector';
+
 import circSvg from '../../assets/circulo-about.svg';
 import cubeSvg from '../../assets/cubo-about.svg';
 import piraSvg from '../../assets/Piramide-about.svg';
@@ -132,18 +134,12 @@ const HomeCases = () => {
             </section>
           </div>
           <div className="case-selector-flex">
-            <h3 className="home-cases-filters-title">{tagTitle}</h3>
-            <div className="home-cases-container-filters">
-              {uniqueTags.map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => handleTagFilter(tag)}
-                  className={`button-main filters-btn ${selectedTags.includes(tag) && 'filter-btn-active'}`}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
+            <SectorSelector
+              title={tagTitle}
+              sectors={uniqueTags}
+              selected={selectedTags}
+              onToggle={handleTagFilter}
+            />
 
             <h3 className="home-cases-filters-title">{needTitle}</h3>
             <div className="home-cases-container-filters">
