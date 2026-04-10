@@ -1,17 +1,43 @@
 import './CtaServices.css';
 
-import React from 'react';
+import { useRef } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 import cono from '../../assets/Cono.svg';
 import cubo from '../../assets/Cubo.svg';
 
+gsap.registerPlugin(useGSAP);
+
 export const CtaServices = () => {
   const { t } = useTranslation();
   const { sth2, slink } = t('whyservices');
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.to('.cta-services-img-cube', {
+      y: -14,
+      rotation: 8,
+      duration: 3,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+    });
+
+    gsap.to('.cta-services-img', {
+      y: 14,
+      rotation: -6,
+      duration: 3.5,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+    });
+  }, { scope: containerRef });
+
   return (
-    <div className="wrapper">
+    <div className="wrapper" ref={containerRef}>
       <div className="cta-why-gigson">
         <div className="cta-img-container-cube">
           <img className="cta-services-img-cube" src={cubo} alt="" />

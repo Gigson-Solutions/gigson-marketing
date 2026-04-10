@@ -37,6 +37,7 @@ const Navbar = () => {
     tech_consulting,
     software,
     cibersecurity,
+    ai_agents,
   } = t('menu');
 
   const menuLinks = [
@@ -49,6 +50,7 @@ const Navbar = () => {
           name: tech_consulting,
           link: ROUTE_SLUGS[currentLang].ConsultoriaTec,
         },
+        { name: ai_agents, link: ROUTE_SLUGS[currentLang].aiAgents },
         { name: software, link: ROUTE_SLUGS[currentLang].software },
         { name: cibersecurity, link: ROUTE_SLUGS[currentLang].cibersecurity },
       ],

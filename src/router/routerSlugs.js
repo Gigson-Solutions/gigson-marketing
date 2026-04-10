@@ -22,6 +22,7 @@ const ROUTE_SLUGS = {
     software: 'software-engineering',
     cibersecurity: 'cybersecurity',
     book: 'book',
+    aiAgents: 'ai-agents',
   },
   es: {
     home: '',
@@ -43,6 +44,7 @@ const ROUTE_SLUGS = {
     software: 'ingenieria-software',
     cibersecurity: 'ciberseguridad',
     book: 'reservas',
+    aiAgents: 'agentes-ia',
   },
 };
 

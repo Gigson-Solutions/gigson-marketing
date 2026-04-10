@@ -22,7 +22,8 @@
     "tech_consulting": "Technology consulting",
     "construction": "Construction",
     "software": "Software engineering",
-    "cibersecurity": "Cybersecurity"
+    "cibersecurity": "Cybersecurity",
+    "ai_agents": "AI Agents"
   },
   "hero_link": "/contact",
   "home": {
@@ -53,6 +54,43 @@
   "whyservices": {
     "sth2": "Simplifying a needless complex world.",
     "slink": "SEE SERVICES"
+  },
+  "partnerBadge": {
+    "title": "Certified Anthropic Claude Partner",
+    "body": "Gigson Solutions is a member of the Claude Partner Network — Anthropic's official program for firms delivering Claude-powered solutions to business clients. This means our team is trained and certified directly by Anthropic, with access to the same tools, playbooks, and technical support used by the world's leading AI consulting firms.",
+    "items": [
+      "Your AI implementation is built on Claude — the model trusted by enterprises globally",
+      "Our team holds the Claude Certified Architect credential",
+      "You benefit from Anthropic's safety-first approach to AI deployment",
+      "Direct access to Anthropic's partner technical support channel"
+    ],
+    "cta": "LEARN ABOUT OUR AI SERVICES →"
+  },
+  "aiAgents": {
+    "title": "AI Agent Implementation | Gigson Solutions",
+    "metadescription": "We design, build, and deploy Claude-powered AI agents for business operations — as a certified Anthropic Claude Partner.",
+    "heroH1": "AI Agent Implementation",
+    "heroSubhead": "We design, build, and deploy Claude-powered AI agents for business operations — as a certified Anthropic Claude Partner.",
+    "whatIsTitle": "What is an AI agent?",
+    "whatIsBody": "An AI agent is software that can perceive context, reason through it, and take action — connecting to your tools, processing your data, and executing tasks without manual intervention. Unlike simple automations, agents handle ambiguity, multi-step decisions, and unstructured inputs.\n\nWe build agents powered by Claude, Anthropic's most capable and safest AI model.",
+    "whatWeDeliverTitle": "What we deliver",
+    "useCases": [
+      { "case": "Document processing", "description": "Extracts, classifies, and routes documents from any source" },
+      { "case": "Internal Q&A", "description": "Answers questions from your team using your own knowledge base" },
+      { "case": "Operations automation", "description": "Executes multi-step workflows triggered by business events" },
+      { "case": "Customer support", "description": "Handles tier-1 requests with escalation to human agents" },
+      { "case": "Data extraction", "description": "Turns unstructured inputs (emails, PDFs, forms) into structured data" }
+    ],
+    "whyClaudeTitle": "Why Claude?",
+    "whyClaudeBody": "Claude is built by Anthropic with safety and reliability as core principles — not afterthoughts. It handles long, complex documents, follows nuanced instructions, and maintains consistent behavior in production. As a certified partner, we have direct access to Anthropic's technical support, early access to new model releases, and the certifications to back up our implementation work.",
+    "howWeEngageTitle": "How we engage",
+    "engageSteps": [
+      { "num": "01", "title": "Discovery (1 session)", "description": "We map your workflows and identify the highest-value agent use case" },
+      { "num": "02", "title": "Design & prototype (1–2 weeks)", "description": "We build a working prototype connected to your systems" },
+      { "num": "03", "title": "Production deployment", "description": "We ship to your infrastructure with monitoring and logging" },
+      { "num": "04", "title": "Retainer", "description": "Monthly iteration, maintenance, and model upgrades" }
+    ],
+    "cta": "BOOK A 30-MINUTE AI DISCOVERY CALL →"
   },
   "about": {
     "title": "Our team is built by professionals with more than <span>9 years</span> of experience.",

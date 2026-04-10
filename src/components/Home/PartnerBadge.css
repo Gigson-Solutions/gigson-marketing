@@ -1,0 +1,128 @@
+.partner-badge {
+  padding: var(--global-padding) 0;
+  background-color: var(--color-dark-primary);
+  color: #ffffff;
+}
+
+.partner-badge__inner {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: var(--global-padding) var(--global-padding);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.partner-badge__logo {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2.4rem;
+}
+
+.partner-badge__logo img {
+  height: 3.2rem;
+  filter: invert(1);
+}
+
+.partner-badge__title {
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.partner-badge__body {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 3.2rem;
+}
+
+.partner-badge__items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.partner-badge__items li {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding-left: 2rem;
+  position: relative;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.partner-badge__items li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-purple-accents);
+}
+
+.partner-badge__cta {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  padding: 1.2rem 2.4rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.partner-badge__cta:hover {
+  background-color: #ffffff;
+  color: var(--color-dark-primary);
+  border-color: #ffffff;
+}
+
+.partner-badge__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-badge__card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.partner-badge__card img {
+  height: 3.2rem;
+  filter: invert(1);
+}
+
+.partner-badge__card-label {
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.partner-badge__card-name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .partner-badge__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-badge__visual {
+    display: none;
+  }
+}

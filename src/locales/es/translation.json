@@ -22,7 +22,8 @@
     "software": "Ingenieria software",
     "construction": "Construcción",
     "tech_consulting": "Consultoría tecnologica",
-    "cibersecurity": "Ciberseguridad"
+    "cibersecurity": "Ciberseguridad",
+    "ai_agents": "Agentes IA"
   },
   "hero_link": "/es/contacto",
   "home": {
@@ -53,6 +54,43 @@
   "whyservices": {
     "sth2": "Simplificando un mundo innecesariamente complejo.",
     "slink": "VER SERVICIOS"
+  },
+  "partnerBadge": {
+    "title": "Certified Anthropic Claude Partner",
+    "body": "Gigson Solutions es miembro de la Claude Partner Network — el programa oficial de Anthropic para empresas que entregan soluciones basadas en Claude a clientes empresariales. Nuestro equipo está formado y certificado directamente por Anthropic, con acceso a las mismas herramientas, playbooks y soporte técnico que las principales consultoras de IA del mundo.",
+    "items": [
+      "Tu implementación de IA está construida sobre Claude — el modelo de confianza de empresas globales",
+      "Nuestro equipo tiene la certificación Claude Certified Architect",
+      "Te beneficias del enfoque safety-first de Anthropic en despliegue de IA",
+      "Acceso directo al canal de soporte técnico para partners de Anthropic"
+    ],
+    "cta": "CONOCE NUESTROS SERVICIOS DE IA →"
+  },
+  "aiAgents": {
+    "title": "Implementación de Agentes IA | Gigson Solutions",
+    "metadescription": "Diseñamos, construimos y desplegamos agentes de IA basados en Claude para operaciones empresariales — como Anthropic Claude Partner certificado.",
+    "heroH1": "Implementación de Agentes IA",
+    "heroSubhead": "Diseñamos, construimos y desplegamos agentes de IA basados en Claude para operaciones empresariales — como Anthropic Claude Partner certificado.",
+    "whatIsTitle": "¿Qué es un agente de IA?",
+    "whatIsBody": "Un agente de IA es software que puede percibir contexto, razonarlo y actuar — conectándose a tus herramientas, procesando tus datos y ejecutando tareas sin intervención manual. A diferencia de las automatizaciones simples, los agentes gestionan ambigüedad, decisiones de múltiples pasos e inputs no estructurados.\n\nConstruimos agentes con Claude, el modelo de IA más avanzado y seguro de Anthropic.",
+    "whatWeDeliverTitle": "Qué entregamos",
+    "useCases": [
+      { "case": "Procesamiento de documentos", "description": "Extrae, clasifica y enruta documentos de cualquier fuente" },
+      { "case": "Q&A interno", "description": "Responde preguntas de tu equipo usando tu propia base de conocimiento" },
+      { "case": "Automatización de operaciones", "description": "Ejecuta flujos de trabajo de múltiples pasos desencadenados por eventos de negocio" },
+      { "case": "Atención al cliente", "description": "Gestiona solicitudes de nivel 1 con escalada a agentes humanos" },
+      { "case": "Extracción de datos", "description": "Convierte inputs no estructurados (emails, PDFs, formularios) en datos estructurados" }
+    ],
+    "whyClaudeTitle": "¿Por qué Claude?",
+    "whyClaudeBody": "Claude está construido por Anthropic con la seguridad y la fiabilidad como principios fundamentales — no como añadidos. Gestiona documentos largos y complejos, sigue instrucciones matizadas y mantiene un comportamiento consistente en producción. Como partner certificado, tenemos acceso directo al soporte técnico de Anthropic, acceso anticipado a nuevas versiones de modelos y las certificaciones que respaldan nuestro trabajo.",
+    "howWeEngageTitle": "Cómo trabajamos",
+    "engageSteps": [
+      { "num": "01", "title": "Discovery (1 sesión)", "description": "Mapeamos tus flujos de trabajo e identificamos el caso de uso de agente de mayor valor" },
+      { "num": "02", "title": "Diseño y prototipo (1–2 semanas)", "description": "Construimos un prototipo funcional conectado a tus sistemas" },
+      { "num": "03", "title": "Despliegue en producción", "description": "Lo desplegamos en tu infraestructura con monitorización y logging" },
+      { "num": "04", "title": "Retainer", "description": "Iteración mensual, mantenimiento y actualizaciones de modelo" }
+    ],
+    "cta": "RESERVA UNA LLAMADA DE DISCOVERY DE 30 MIN →"
   },
   "about": {
     "title": "Somos un equipo de profesionales expertos con más de <span>9 años</span> de experiencia.",
