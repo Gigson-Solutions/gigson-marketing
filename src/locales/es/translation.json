@@ -16,6 +16,7 @@
     "legal": "Política legal",
     "cookies": "Política de cookies",
     "notice": "Aviso legal",
+    "ai_manifest": "AI Manifest",
     "logistics": "Logística",
     "retail": "Retail",
     "CTO": "CTO as a service",
@@ -1462,8 +1463,8 @@
     }
   },
   "cases-construction": {
-    "title": "Logistics & Intralogistics Technology  | Gigson Solutions",
-    "metadescription": "Optimize your supply chain with tailored tech solutions: greater efficiency, traceability, and control—no need for big-name integrators.",
+    "title": "Soluciones Tecnológicas para Construcción y Arquitectura | Gigson Solutions",
+    "metadescription": "Soluciones tecnológicas para empresas del sector de la construcción: gestión de proyectos, trazabilidad de recursos, integraciones ERP y digitalización adaptada al sector.",
     "hero": {
       "suptitle": "ARQUITECTURA & CONSTRUCCIÓN",
       "title": "Consultoría tecnológica <br> <span> en construcción </span>",
@@ -2722,7 +2723,7 @@
       "title": "¿Cómo trabajamos?",
       "methods": [
         {
-          "title": "Descubre",
+          "title": "Discovery",
           "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
         },
         {
@@ -2873,7 +2874,7 @@
       "title": "¿Cómo trabajamos?",
       "methods": [
         {
-          "title": "Descubre",
+          "title": "Discovery",
           "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
         },
         {
@@ -3087,7 +3088,7 @@
     },
     "about": {
       "title": "Sobre nosotros | Gigson Solutions",
-      "description": "Equipo con experiencia en desarrollo de producto digital de extremo a extremo: producto, diseño, ingeniería, QA y seguridad."
+      "description": "Conoce al equipo de Gigson Solutions: ingenieros, arquitectos y diseñadores especializados en productos digitales y agentes IA. Anthropic Claude Partner certificado."
     },
     "cases": {
       "title": "Casos de éxito | Gigson Solutions",
@@ -3120,6 +3121,10 @@
     "notFound": {
       "title": "Página no encontrada | Gigson Solutions",
       "description": "La página que buscas no existe o ha cambiado de ubicación."
+    },
+    "ai_manifest": {
+      "title": "AI Manifest | Gigson Solutions",
+      "description": "Cómo Gigson Solutions utiliza la inteligencia artificial de forma responsable en sus procesos y entregas."
     }
   },
   "integrations-holded": {
@@ -3269,5 +3274,20 @@
       },
       "legalNotice": "Gigson Solutions es una entidad independiente y no está afiliada ni forma parte de Holded. No representamos a Holded ni actuamos en su nombre. Nuestra condición es exclusivamente la de partner oficial autorizado para la implementación y asesoramiento sobre sus productos y servicios."
     }
+  },
+  "ai_manifest": {
+    "h2_1": "Construimos con IA. Decidimos con personas.",
+    "pc_intro": "La inteligencia artificial está integrada en cómo trabajamos y en lo que entregamos. La usamos para ir más rápido, reducir errores y hacer que el software a medida de calidad sea accesible para empresas que históricamente no podían permitírselo. Pero la IA no reemplaza el criterio — lo requiere.",
+    "h3_1": "Cómo usamos la IA",
+    "pc_1_1": "Aplicamos IA a lo largo del ciclo de entrega: extracción de requisitos, documentación técnica, revisión de código, mapeo de integraciones y análisis de sistemas. Cada entregable es revisado por un responsable técnico antes de llegar al cliente.",
+    "h3_2": "Qué aporta a nuestros clientes",
+    "pc_2_1": "Entregas más rápidas. Menos errores. Documentación más limpia. Sistemas que conectan las herramientas que ya usa tu negocio, sin necesitar un equipo técnico grande para mantenerlos.",
+    "h3_3": "Lo que no hacemos",
+    "ps_3_1": "No introducimos datos confidenciales de clientes en modelos de IA públicos sin consentimiento explícito.",
+    "ps_3_2": "No generamos propuestas ni estimaciones técnicas sin validación humana.",
+    "ps_3_3": "No prometemos resultados que no podemos medir.",
+    "h3_4": "Nuestro compromiso",
+    "pc_4_1": "Cada proceso asistido por IA que entregamos tiene un responsable humano en ambos lados. Construimos con puntos de control, no con cajas negras.",
+    "pc_4_2": "Gigson Solutions es Partner certificado de Anthropic Claude."
   }
 }
