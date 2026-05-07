@@ -3289,5 +3289,187 @@
     "h3_4": "Nuestro compromiso",
     "pc_4_1": "Cada proceso asistido por IA que entregamos tiene un responsable humano en ambos lados. Construimos con puntos de control, no con cajas negras.",
     "pc_4_2": "Gigson Solutions es Partner certificado de Anthropic Claude."
+  },
+  "servicesPage": {
+    "hero": {
+      "suptitle": "Servicios",
+      "title": "Tecnología que funciona en el mundo real.",
+      "description": "CTO como Servicio, Consultoría Tech con IA, Desarrollo de Software e ISO Compliance."
+    },
+    "services": [
+      {
+        "number": "01",
+        "title": "CTO como Servicio",
+        "tagline": "Liderazgo técnico integrado en tu negocio — sin el coste ni el compromiso de una contratación a tiempo completo.",
+        "sections": [
+          {
+            "heading": "Qué hacemos",
+            "items": [
+              "CTO fraccional o interino para empresas en crecimiento",
+              "Diseño y priorización del roadmap tecnológico",
+              "Decisiones de arquitectura y selección de stack tecnológico",
+              "Gestión del equipo de ingeniería y apoyo en selección",
+              "Evaluación de vendors y partners tecnológicos",
+              "Reporting a consejo e inversores"
+            ]
+          },
+          {
+            "heading": "Ideal para",
+            "items": [
+              "Scale-ups que necesitan liderazgo técnico senior sin contratar a tiempo completo",
+              "Fundadores que quieren un co-piloto técnico para validar decisiones",
+              "Empresas en transición entre CTOs o reestructurando su área tecnológica"
+            ]
+          }
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Consultoría Tech",
+        "tagline": "Asesoramiento estratégico sobre arquitectura, producto y adopción de IA — con los pies en la tierra.",
+        "sections": [
+          {
+            "heading": "Qué hacemos",
+            "items": [
+              "Consultoría tecnológica y de arquitectura",
+              "Estrategia de IA y descubrimiento de casos de uso",
+              "Evaluación de madurez en IA (datos y procesos)",
+              "Gestión de proyectos y producto",
+              "Gestión de SLAs y supervisión end-to-end del producto",
+              "Consultoría UX/UI y revisión de diseño"
+            ]
+          },
+          {
+            "heading": "Consultoría IA",
+            "items": [
+              "Identificar dónde la IA genera ROI real en tu operación",
+              "Evaluación de LLMs y herramientas IA para tu caso de uso concreto",
+              "Diseño de flujos de trabajo aumentados con IA que los equipos adoptan",
+              "Gobernanza IA y guía de despliegue responsable"
+            ]
+          }
+        ],
+        "tags": ["Estrategia IA", "Evaluación LLM", "UX/UI", "Product Management"]
+      },
+      {
+        "number": "03",
+        "title": "Desarrollo de Software",
+        "tagline": "Desde integraciones y automatizaciones hasta productos completos — incluyendo funcionalidades y flujos con IA.",
+        "sections": [
+          {
+            "heading": "Ingeniería",
+            "items": [
+              "Desarrollo de software a medida y APIs",
+              "Integraciones con ERP, CRM y terceros",
+              "Infraestructura cloud: AWS, Azure, GCP",
+              "Contenedores, CI/CD y pipelines DevOps",
+              "Bases de datos, mensajería y monitorización",
+              "QA y testing automatizado"
+            ],
+            "tags": ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Kafka", "PostgreSQL", "MongoDB", "GitHub Actions"]
+          },
+          {
+            "heading": "IA & Automatización",
+            "items": [
+              "Desarrollo de funcionalidades IA integradas en el producto",
+              "Herramientas con LLM: análisis de documentos, asistentes, extracción de datos",
+              "Automatización de procesos con n8n, Zapier y flujos personalizados",
+              "Sistemas RAG e integraciones con bases de datos vectoriales",
+              "Agentes IA para operaciones internas y flujos de cara al cliente"
+            ],
+            "tags": ["Integración LLM", "RAG", "n8n", "Zapier", "Agentes IA", "Vector DBs"]
+          }
+        ]
+      },
+      {
+        "number": "04",
+        "title": "Compliance",
+        "tagline": "Implantación de ISO 27001 e ISO 9001 que tu equipo realmente usa — no carpetas de documentos que nadie lee.",
+        "sections": [
+          {
+            "heading": "Qué implantamos",
+            "items": [
+              "ISO 27001 — Sistema de Gestión de Seguridad de la Información (SGSI)",
+              "ISO 9001 — Sistema de Gestión de la Calidad (SGC)",
+              "Sistemas integrados (ambas normas, documentación compartida)",
+              "Controles técnicos: gestión de accesos, cifrado, copias de seguridad, MDM",
+              "Automatización de controles y registros (n8n, flujos de aprobación)",
+              "Integración con Google Workspace, Microsoft 365, Holded"
+            ]
+          },
+          {
+            "heading": "Cómo trabajamos",
+            "numbered": true,
+            "items": [
+              "Diagnóstico y análisis de brecha — Informe de gaps + plan priorizado",
+              "Implantación técnica y documental — Sistema operativo + conjunto documental completo",
+              "Validación interna y formación — Auditoría interna + plan de acciones correctivas cerrado",
+              "Mantenimiento y mejora continua — Plan de mantenimiento activo + calendario de revisiones"
+            ]
+          }
+        ],
+        "tags": ["ISO 27001", "ISO 9001", "ENS", "RGPD"],
+        "cta": {
+          "text": "Solicitar diagnóstico gratuito",
+          "link": "/contact"
+        }
+      }
+    ],
+    "engagement": {
+      "title": "Cómo trabajamos",
+      "models": [
+        {
+          "type": "Retainer",
+          "subtitle": "Soporte continuo",
+          "description": "Soporte técnico mensual continuo para equipos con un backlog constante. Un workstream activo, respuesta rápida, sin compromiso mínimo.",
+          "items": [
+            "Respuesta en 2–5 días por solicitud",
+            "Pausable en cualquier momento, los días no usados se acumulan",
+            "Async-first, integrado con las herramientas del cliente",
+            "Revisiones ilimitadas hasta que esté bien"
+          ]
+        },
+        {
+          "type": "Proyecto",
+          "subtitle": "Sprint de alcance fijo",
+          "description": "Contratación de alcance fijo para equipos con una fecha límite. Alcance claro, equipo dedicado, entrega funcional.",
+          "items": [
+            "Plazos y entregables acordados desde el inicio",
+            "Equipo dedicado, atención completa",
+            "Sincronizaciones semanales y actualizaciones de progreso",
+            "Entrega al equipo cliente o soporte continuo tras la entrega"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "question": "¿Cuál es la diferencia entre Consultoría Tech y CTO como Servicio?",
+          "answer": "CTO como Servicio es liderazgo técnico continuo — actuamos como parte del equipo directivo y tomamos decisiones. La Consultoría Tech es asesoramiento puntual: traes un problema concreto (arquitectura, estrategia de IA, revisión de producto) y lo resolvemos contigo."
+        },
+        {
+          "question": "¿Necesito implantar una ISO para trabajar con vosotros en Compliance?",
+          "answer": "No. Podemos ayudar en cualquier etapa — desde un análisis de brecha inicial hasta la implantación completa de ISO 27001 o ISO 9001. La certificación es opcional: muchos clientes quieren un sistema funcional sin pasar por una auditoría externa."
+        },
+        {
+          "question": "¿Qué madurez en datos necesito para aprovechar los servicios de IA?",
+          "answer": "Menos de lo que crees. Parte de nuestra consultoría de IA es evaluar tu landscape de datos e identificar qué puede generar ROI ahora frente a qué necesita más preparación. No proponemos IA por proponerla — si no está lista, te lo decimos."
+        },
+        {
+          "question": "¿Podéis trabajar junto a nuestro equipo de desarrollo existente?",
+          "answer": "Sí. Nos integramos en tus herramientas actuales — Slack, Jira, GitHub, lo que uses. Podemos co-desarrollar con tus ingenieros u operar de forma independiente si aún no tienes equipo técnico."
+        },
+        {
+          "question": "¿Cuánto cuesta implantar ISO 27001 en una empresa mediana?",
+          "answer": "Para empresas de 50–100 empleados, el rango habitual es de 8.000–20.000 € según el alcance y el punto de partida. Ofrecemos un diagnóstico gratuito antes de proponer nada — sin sorpresas, sin presupuestos genéricos."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Construyamos algo que realmente funcione.",
+      "buttonText": "Hablemos"
+    }
   }
 }

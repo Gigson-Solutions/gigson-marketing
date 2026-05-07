@@ -3271,5 +3271,187 @@
     "h3_4": "Our commitment",
     "pc_4_1": "Every AI-assisted process we deliver has a human owner on both sides. We build with checkpoints, not black boxes.",
     "pc_4_2": "Gigson Solutions is a certified Anthropic Claude Partner."
+  },
+  "servicesPage": {
+    "hero": {
+      "suptitle": "Services",
+      "title": "Technology that works in the real world.",
+      "description": "CTO as a Service, Tech Consulting with AI, Software Development and ISO Compliance."
+    },
+    "services": [
+      {
+        "number": "01",
+        "title": "CTO as a Service",
+        "tagline": "Technical leadership embedded in your business — without the cost or commitment of a full-time hire.",
+        "sections": [
+          {
+            "heading": "What we do",
+            "items": [
+              "Fractional or interim CTO for growing businesses",
+              "Roadmap design and prioritization",
+              "Architecture decisions and tech stack selection",
+              "Engineering team management and recruitment support",
+              "Vendor and technology partner evaluation",
+              "Board reporting and investor due diligence"
+            ]
+          },
+          {
+            "heading": "Best for",
+            "items": [
+              "Scale-ups needing senior technical leadership without a full-time hire",
+              "Founders wanting a technical co-pilot to validate decisions",
+              "Companies transitioning between CTOs or restructuring their tech org"
+            ]
+          }
+        ]
+      },
+      {
+        "number": "02",
+        "title": "Tech Consulting",
+        "tagline": "Strategic advisory on architecture, product, and AI adoption — grounded in what actually ships.",
+        "sections": [
+          {
+            "heading": "What we do",
+            "items": [
+              "Technology and architecture consulting",
+              "AI strategy and use case discovery",
+              "AI readiness assessment (data and processes)",
+              "Project and product management",
+              "SLA management and end-to-end product oversight",
+              "UX/UI consulting and design review"
+            ]
+          },
+          {
+            "heading": "AI Consulting",
+            "items": [
+              "Identify where AI generates real ROI in your operations",
+              "LLM and AI tool evaluation for your specific use case",
+              "AI-augmented workflow design that teams actually adopt",
+              "AI governance and responsible deployment guidance"
+            ]
+          }
+        ],
+        "tags": ["AI strategy", "LLM evaluation", "UX/UI", "Product Management"]
+      },
+      {
+        "number": "03",
+        "title": "Software Development",
+        "tagline": "From integrations and automations to full product builds — including AI-powered features and workflows.",
+        "sections": [
+          {
+            "heading": "Engineering",
+            "items": [
+              "Custom software development and APIs",
+              "ERP, CRM, and third-party integrations",
+              "Cloud infrastructure: AWS, Azure, GCP",
+              "Containers, CI/CD, and DevOps pipelines",
+              "Databases, messaging, and monitoring",
+              "QA and automated testing"
+            ],
+            "tags": ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Kafka", "PostgreSQL", "MongoDB", "GitHub Actions"]
+          },
+          {
+            "heading": "AI & Automation",
+            "items": [
+              "AI feature development integrated into the product",
+              "LLM-powered tools: document analysis, assistants, data extraction",
+              "Process automation with n8n, Zapier, and custom workflows",
+              "RAG systems and vector database integrations",
+              "AI agents for internal operations and customer-facing flows"
+            ],
+            "tags": ["LLM integration", "RAG", "n8n", "Zapier", "AI agents", "Vector DBs"]
+          }
+        ]
+      },
+      {
+        "number": "04",
+        "title": "Compliance",
+        "tagline": "ISO 27001 and ISO 9001 implementation that your team actually uses — not folders of documents nobody reads.",
+        "sections": [
+          {
+            "heading": "What we implement",
+            "items": [
+              "ISO 27001 — Information Security Management System (ISMS)",
+              "ISO 9001 — Quality Management System (QMS)",
+              "Integrated systems (both standards, shared documentation)",
+              "Technical controls: access management, encryption, backups, MDM",
+              "Control and record automation (n8n, approval workflows)",
+              "Integration with Google Workspace, Microsoft 365, Holded"
+            ]
+          },
+          {
+            "heading": "How we work",
+            "numbered": true,
+            "items": [
+              "Diagnosis and gap analysis — Gap report + prioritized plan",
+              "Technical and documentary implementation — Operational system + complete document set",
+              "Internal validation and training — Internal audit + closed corrective action plan",
+              "Maintenance and continuous improvement — Active maintenance plan + review calendar"
+            ]
+          }
+        ],
+        "tags": ["ISO 27001", "ISO 9001", "ENS", "GDPR"],
+        "cta": {
+          "text": "Request free diagnosis",
+          "link": "/contact"
+        }
+      }
+    ],
+    "engagement": {
+      "title": "How we work",
+      "models": [
+        {
+          "type": "Retainer",
+          "subtitle": "Ongoing support",
+          "description": "Continuous monthly technical support for teams with a constant backlog. One active workstream, fast turnaround, no minimum commitment.",
+          "items": [
+            "2–5 day turnaround per request",
+            "Pausable at any time, unused days accumulate",
+            "Async-first, integrated with client tools",
+            "Unlimited revisions until it's right"
+          ]
+        },
+        {
+          "type": "Project",
+          "subtitle": "Fixed-scope sprint",
+          "description": "Fixed-scope engagement for teams with a deadline. Clear scope, dedicated team, working handoff.",
+          "items": [
+            "Timeline and deliverables agreed from the start",
+            "Dedicated team, full attention",
+            "Weekly syncs and progress updates",
+            "Handoff to client team or ongoing support after"
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "What's the difference between Tech Consulting and CTO as a Service?",
+          "answer": "CTO as a Service is ongoing technical leadership — we act as part of the leadership team and make decisions. Tech Consulting is point-in-time advisory: you bring a specific problem (architecture, AI strategy, product review) and we solve it with you."
+        },
+        {
+          "question": "Do I need to implement ISO to work with you on Compliance?",
+          "answer": "No. We can help at any stage — from an initial gap analysis to full ISO 27001 or ISO 9001 implementation. Certification is optional: many clients want a functional system without going through an external audit."
+        },
+        {
+          "question": "What data maturity do I need to benefit from AI services?",
+          "answer": "Less than you think. Part of our AI consulting is evaluating your data landscape and identifying what can generate ROI now versus what needs more preparation. We don't propose AI for the sake of it — if it's not ready, we'll tell you."
+        },
+        {
+          "question": "Can you work alongside our existing development team?",
+          "answer": "Yes. We integrate into your current tools — Slack, Jira, GitHub, whatever you use. We can co-develop with your engineers or operate independently if you don't have a technical team yet."
+        },
+        {
+          "question": "How much does it cost to implement ISO 27001 in a mid-sized company?",
+          "answer": "For companies of 50–100 employees, the typical range is €8,000–€20,000 depending on scope and starting point. We offer a free diagnosis before proposing anything — no surprises, no generic quotes."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Let's build something that actually works.",
+      "buttonText": "Get in touch"
+    }
   }
 }
