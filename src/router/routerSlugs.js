@@ -23,6 +23,7 @@ const ROUTE_SLUGS = {
     cibersecurity: 'cybersecurity',
     book: 'book',
     aiAgents: 'ai-agents',
+    aiManifest: 'ai-manifest',
   },
   es: {
     home: '',
@@ -45,6 +46,7 @@ const ROUTE_SLUGS = {
     cibersecurity: 'ciberseguridad',
     book: 'reservas',
     aiAgents: 'agentes-ia',
+    aiManifest: 'manifiesto-ia',
   },
 };
 
