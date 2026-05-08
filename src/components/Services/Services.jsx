@@ -1,120 +1,142 @@
 import './Services.css';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
 import { AccordionAnimation } from '../Accordion/AccordionAnimation';
 import { SeoHelmet } from '../../seo/seoHelmet';
 import { ButtonLink } from '../../shared/ui/Button';
+import { useBreakpoint } from 'shared/hooks/useBreakpoint.jsx';
 
-const Tag = ({ label }) => (
-  <span className="text-smallTag text-dark-medium border border-dark-medium rounded-full px-3 py-1">
-    {label}
-  </span>
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+/* ─── Off Menu flip card ──────────────────────────────────────── */
+
+const ClaudeBadge = () => (
+  <div className="flex items-center gap-[0.625rem] shrink-0">
+    <img src="/claude-logo.png" alt="Claude" className="h-5 w-auto block" />
+    <span className="text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-purple-accents">
+      Certified Claude Partner
+    </span>
+  </div>
 );
 
-const ServiceAccordionItem = ({ number, title, tagline, sections, tags, cta }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const OffMenuCard = ({ label, title, price, tagline, isDark, ctaText, sections, badge }) => {
+  const cardInnerRef = useRef(null);
+  const { isDesktop } = useBreakpoint();
+  const [flipped, setFlipped] = useState(false);
+
+  const flipTo = (toBack) => {
+    if (flipped === toBack) return;
+    setFlipped(toBack);
+    gsap.to(cardInnerRef.current, {
+      rotationY: toBack ? 180 : 0,
+      duration: 0.65,
+      ease: 'power3.inOut',
+    });
+  };
+
+  const handleClick = () => {
+    if (!isDesktop) flipTo(!flipped);
+  };
+
+  const bg = isDark ? '#3C3C3B' : '#EDECE8';
+  const labelCls = isDark ? 'text-white/50' : 'text-dark-medium';
+  const titleCls = isDark ? 'text-white' : 'text-dark-primary';
+  const taglineCls = isDark ? 'text-white/40' : 'text-dark-medium';
+  const bodyBackCls = isDark ? 'text-white/75' : 'text-dark-medium';
+  const btnCls = isDark
+    ? 'bg-white text-[#3C3C3B] hover:opacity-75'
+    : 'bg-[#3C3C3B] text-white hover:opacity-75';
 
   return (
-    <div className="border-t border-dark-primary">
-      <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="w-full flex items-start justify-between gap-6 py-8 lg:py-10 text-left cursor-pointer"
-        aria-expanded={isOpen}
-      >
-        <div className="flex items-baseline gap-4 lg:gap-8 min-w-0">
-          <span className="text-body text-purple-accents font-mono shrink-0">{number}</span>
-          <div className="min-w-0">
-            <h2 className="text-h2 text-dark-primary">{title}</h2>
-            {!isOpen && (
-              <p className="text-body text-dark-medium mt-2 max-w-2xl">{tagline}</p>
+    <div
+      data-anim-card
+      className="h-[480px] lg:h-[520px] cursor-pointer"
+      style={{ perspective: '1200px' }}
+      onMouseEnter={isDesktop ? () => flipTo(true) : undefined}
+      onMouseLeave={isDesktop ? () => flipTo(false) : undefined}
+      onClick={handleClick}
+    >
+      <div ref={cardInnerRef} className="flip-card-inner h-full">
+
+        {/* ── Front ── */}
+        <div
+          className="flip-card-face h-full rounded-[1.5rem] p-10 lg:p-12 flex flex-col justify-between"
+          style={{ backgroundColor: bg }}
+        >
+          <div className="flex flex-col gap-5">
+            <p className={`text-smallTag uppercase tracking-widest ${labelCls}`}>{label}</p>
+            <h2 className={`text-h2 leading-tight ${titleCls}`}>{title}</h2>
+            {price && (
+              <p className={`text-h2 font-light leading-none ${isDark ? 'text-white/30' : 'text-[#3C3C3B]/30'}`}>
+                {price}
+              </p>
             )}
+            <p className={`text-bigTag ${taglineCls}`}>{tagline}</p>
+          </div>
+          <div className="flex items-end justify-between gap-4">
+            <Link
+              to="/contact"
+              onClick={(e) => e.stopPropagation()}
+              className={`self-start px-7 py-3.5 rounded-full text-body transition-opacity ${btnCls}`}
+            >
+              {ctaText}
+            </Link>
+            {badge && <ClaudeBadge />}
           </div>
         </div>
-        <AccordionAnimation accordionOpen={isOpen} />
-      </button>
 
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-[2000px] pb-12' : 'max-h-0'
-        }`}
-      >
-        <p className="text-subtitle text-dark-medium mb-10 max-w-2xl">{tagline}</p>
+        {/* ── Back ── */}
+        <div
+          className="flip-card-face flip-card-back h-full rounded-[1.5rem] p-8 lg:p-10 flex flex-col gap-5 overflow-hidden"
+          style={{ backgroundColor: bg }}
+        >
+          <p className={`text-smallTag uppercase tracking-widest shrink-0 ${labelCls}`}>{label}</p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-          {sections.map((section, i) => (
-            <div key={i}>
-              <h3 className="text-smallTag text-purple-accents uppercase tracking-widest mb-5">
-                {section.heading}
-              </h3>
-              {section.numbered ? (
-                <ol className="flex flex-col gap-4">
-                  {section.items.map((item, j) => (
-                    <li key={j} className="text-body text-dark-medium flex gap-3">
+          <div className="flex flex-col gap-6 flex-1 overflow-hidden">
+            {(sections ?? []).slice(0, 2).map((section, i) => (
+              <div key={i} className="flex flex-col gap-2">
+                {section.heading ? (
+                  <h3 className="text-smallTag text-purple-accents uppercase tracking-widest">
+                    {section.heading}
+                  </h3>
+                ) : null}
+                <ul className="flex flex-col gap-1.5">
+                  {section.items.slice(0, 5).map((item, j) => (
+                    <li
+                      key={j}
+                      className={`text-sm leading-snug flex gap-2 ${bodyBackCls}`}
+                    >
                       <span className="text-purple-accents shrink-0 font-mono">
-                        {String(j + 1).padStart(2, '0')}
+                        {section.numbered ? String(j + 1).padStart(2, '0') : '—'}
                       </span>
                       {item}
                     </li>
                   ))}
-                </ol>
-              ) : (
-                <ul className="flex flex-col gap-4">
-                  {section.items.map((item, j) => (
-                    <li key={j} className="text-body text-dark-medium flex gap-3">
-                      <span className="text-purple-accents shrink-0">—</span>
-                      {item}
-                    </li>
-                  ))}
                 </ul>
-              )}
-              {section.tags && (
-                <div className="flex flex-wrap gap-2 mt-6">
-                  {section.tags.map((tag, k) => (
-                    <Tag key={k} label={tag} />
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {tags && (
-          <div className="flex flex-wrap gap-2 mt-8">
-            {tags.map((tag, i) => (
-              <Tag key={i} label={tag} />
+              </div>
             ))}
           </div>
-        )}
 
-        {cta && (
-          <div className="mt-10">
-            <ButtonLink link={cta.link} text={cta.text} outlined />
-          </div>
-        )}
+          <Link
+            to="/contact"
+            onClick={(e) => e.stopPropagation()}
+            className={`self-start shrink-0 px-7 py-3.5 rounded-full text-body transition-opacity ${btnCls}`}
+          >
+            {ctaText}
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
-const EngagementCard = ({ type, subtitle, description, items }) => (
-  <div className="bg-purple-light-a rounded-2xl p-8 lg:p-10 flex flex-col gap-6">
-    <div>
-      <p className="text-smallTag text-purple-accents uppercase tracking-widest mb-2">{type}</p>
-      <h3 className="text-h3 text-dark-primary">{subtitle}</h3>
-    </div>
-    <p className="text-body text-dark-medium">{description}</p>
-    <ul className="flex flex-col gap-4">
-      {items.map((item, i) => (
-        <li key={i} className="text-body text-dark-medium flex gap-3">
-          <span className="text-purple-accents shrink-0">—</span>
-          {item}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+/* ─── FAQ item ────────────────────────────────────────────────── */
 
 const FaqItem = ({ question, answer, isOpen, onClick }) => (
   <div className="border-b border-dark-primary">
@@ -136,14 +158,60 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => (
   </div>
 );
 
+/* ─── Page ────────────────────────────────────────────────────── */
+
 const Services = () => {
   const { t } = useTranslation();
   const seo = t('pageSeo.services');
   const page = t('servicesPage');
 
+  const serviceCardsRef = useRef(null);
+  const engagementRef = useRef(null);
+
   const [activeFaq, setActiveFaq] = useState(null);
-  const handleFaqClick = (i) =>
-    setActiveFaq((prev) => (prev === i ? null : i));
+  const handleFaqClick = (i) => setActiveFaq((prev) => (prev === i ? null : i));
+
+  /* Scroll entrance — service cards */
+  useGSAP(
+    () => {
+      const cards = serviceCardsRef.current.querySelectorAll('[data-anim-card]');
+      gsap.set(cards, { autoAlpha: 0, y: 64 });
+      ScrollTrigger.batch(cards, {
+        start: 'top 88%',
+        once: true,
+        onEnter: (els) =>
+          gsap.to(els, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.85,
+            stagger: 0.14,
+            ease: 'power3.out',
+          }),
+      });
+    },
+    { scope: serviceCardsRef }
+  );
+
+  /* Scroll entrance — engagement cards */
+  useGSAP(
+    () => {
+      const cards = engagementRef.current.querySelectorAll('[data-anim-card]');
+      gsap.set(cards, { autoAlpha: 0, y: 64 });
+      ScrollTrigger.batch(cards, {
+        start: 'top 88%',
+        once: true,
+        onEnter: (els) =>
+          gsap.to(els, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.85,
+            stagger: 0.14,
+            ease: 'power3.out',
+          }),
+      });
+    },
+    { scope: engagementRef }
+  );
 
   return (
     <>
@@ -158,23 +226,40 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services accordions */}
-      <section className="px-landing pb-20 lg:pb-32">
-        <div className="max-w-[88.875rem] mx-auto">
-          {page.services.map((service) => (
-            <ServiceAccordionItem key={service.number} {...service} />
+      {/* Service cards — hover/tap to flip and reveal sections */}
+      <section ref={serviceCardsRef} className="px-landing pb-24 lg:pb-36">
+        <div className="max-w-[88.875rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
+          {page.services.map((service, i) => (
+            <OffMenuCard
+              key={service.number}
+              label={service.number}
+              title={service.title}
+              tagline={service.tagline}
+              isDark={i === 0 || i === 3}
+              ctaText={page.cta.buttonText}
+              sections={i === 3 ? [service.sections[0]] : service.sections}
+              badge={service.number === '02' || service.number === '03'}
+            />
           ))}
-          <div className="border-t border-dark-primary" />
         </div>
       </section>
 
-      {/* Engagement models */}
-      <section className="px-landing py-16 lg:py-24">
+      {/* Engagement model cards */}
+      <section ref={engagementRef} className="px-landing py-16 lg:py-24">
         <div className="max-w-[88.875rem] mx-auto">
           <h2 className="text-h2 text-dark-primary mb-10 lg:mb-14">{page.engagement.title}</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
             {page.engagement.models.map((model, i) => (
-              <EngagementCard key={i} {...model} />
+              <OffMenuCard
+                key={i}
+                label={model.type}
+                title={model.subtitle}
+                price={model.price}
+                tagline={model.description}
+                isDark={i % 2 === 0}
+                ctaText={page.cta.buttonText}
+                sections={[{ heading: '', items: model.items }]}
+              />
             ))}
           </div>
         </div>

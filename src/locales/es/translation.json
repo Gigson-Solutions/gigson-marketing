@@ -3421,6 +3421,7 @@
         {
           "type": "Retainer",
           "subtitle": "Soporte continuo",
+          "price": "15k /mes",
           "description": "Soporte técnico mensual continuo para equipos con un backlog constante. Un workstream activo, respuesta rápida, sin compromiso mínimo.",
           "items": [
             "Respuesta en 2–5 días por solicitud",

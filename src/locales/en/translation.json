@@ -3403,6 +3403,7 @@
         {
           "type": "Retainer",
           "subtitle": "Ongoing support",
+          "price": "15k /mo",
           "description": "Continuous monthly technical support for teams with a constant backlog. One active workstream, fast turnaround, no minimum commitment.",
           "items": [
             "2–5 day turnaround per request",

@@ -1,3 +1,21 @@
-/* Services page — Tailwind-only redesign */
-.svg-faqs { transition: transform 300ms ease-out; }
+/* Services page */
+
+/* 3D flip card */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* FAQ chevron (required by AccordionAnimation when faqs=true) */
+.svg-faqs       { transition: transform 300ms ease-out; }
 .svg-faqs-close { transform: rotate(180deg); transition: transform 300ms ease-out; }
