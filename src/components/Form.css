@@ -107,7 +107,7 @@ input[type="radio"]:checked + label {
 }
 @media (min-width: 45rem) {
    .form-section {
-      margin: 4rem 0 7rem;
+      margin-block: 4rem 7rem;
    }
 }
 @media (min-width: 56.25rem) {
@@ -181,7 +181,7 @@ input[type="radio"]:checked + label {
       min-width: 0;
    }
    .form-section {
-      margin: 4rem 0 6rem;
+      margin-block: 4rem 6rem;
    }
    .form-check {
       margin: 0;
@@ -191,7 +191,7 @@ input[type="radio"]:checked + label {
 }
 @media (min-width: 80.125rem) {
    .form-section {
-      margin: 2rem 0 7rem;
+      margin-block: 2rem 7rem;
    }
 }
 
@@ -202,7 +202,7 @@ input[type="radio"]:checked + label {
    }
    .form-section {
       overflow-x: hidden;
-      margin: 2rem 0 8rem;
+      margin-block: 2rem 8rem;
    }
    .input-container {
       margin: 0;
