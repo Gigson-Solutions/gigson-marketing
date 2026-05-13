@@ -14,6 +14,7 @@ export const MARKETING_PAGE_KEYS = [
   'about',
   'faqs',
   'book',
+  'aiAgents',
   'contact',
   'policy',
   'notice',

@@ -35,7 +35,7 @@
 .services-h2-animation {
    white-space: nowrap;
    padding: 1rem;
-   animation: scrollLeft 7s linear infinite;
+   animation: scrollLeft 20s linear infinite;
    /* Single animation */
    animation-play-state: running;
 }

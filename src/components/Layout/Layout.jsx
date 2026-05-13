@@ -16,14 +16,10 @@ const holdedIntegrationsPath = (lang) => {
 
 const Layout = () => {
   const { pathname } = useLocation();
-  const host = typeof window !== 'undefined' ? window.location.hostname : '';
-  const holdedHost = host === 'staging.gigsonsolutions.com';
   const onHoldedIntegrationsSlug =
     ['en', 'es'].some((l) => holdedIntegrationsPath(l) && pathname === holdedIntegrationsPath(l));
-  const fullBleed =
-    (holdedHost && (pathname === '/' || pathname === '/es')) || onHoldedIntegrationsSlug;
 
-  if (fullBleed) {
+  if (onHoldedIntegrationsSlug) {
     return (
       <ScrollTop>
         <Outlet />

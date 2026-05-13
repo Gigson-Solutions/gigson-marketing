@@ -3,6 +3,8 @@ import '../App.css';
 import { createBrowserRouter } from 'react-router-dom';
 
 import AboutHero from '../components/About/AboutHero';
+import AiAgents from '../components/Pages/AiAgents/AiAgents';
+import AiManifest from '../components/Pages/AiManifest';
 import Home from '../components/Home/Home';
 import Layout from '../components/Layout/Layout';
 import Cases from '../components/Pages/Cases/Cases';
@@ -45,11 +47,13 @@ const generateRoutes = (lang) => {
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },
+      { path: slugs.aiAgents, element: <AiAgents /> },
       { path: slugs.book, element: <Book /> },
       { path: slugs.contact, element: <Contact /> },
       { path: slugs.policy, element: <Policity /> },
       { path: slugs.notice, element: <Notice /> },
       { path: slugs.cookies, element: <CookiesPage /> },
+      { path: slugs.aiManifest, element: <AiManifest /> },
       { path: '*', element: <NotFound /> },
     ],
   };
