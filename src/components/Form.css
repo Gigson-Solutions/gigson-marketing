@@ -1,5 +1,6 @@
 .form-section {
    margin: 4rem 0 5rem;
+   margin-inline: auto;
    color: #3c3c3b;
 }
 .form-h2 {
@@ -169,11 +170,15 @@ input[type="radio"]:checked + label {
       flex-direction: row;
    }
 
-   .home-form .form-container .first {
-      width: auto;
-   }
+   .home-form .form-container .first,
    .home-form .form-container .second {
-      width: auto;
+      flex: 1;
+      min-width: 0;
+   }
+   .home-form .form-container .first input,
+   .home-form .form-container .second select {
+      flex: 1;
+      min-width: 0;
    }
    .form-section {
       margin: 4rem 0 6rem;
@@ -240,11 +245,9 @@ input[type="radio"]:checked + label {
    }
 }
 @media (min-width: 119.375rem) {
-   .home-form .form-container .first {
-      width: 39%;
-   }
+   .home-form .form-container .first,
    .home-form .form-container .second {
-      width: auto;
+      flex: 1;
    }
 }
 
