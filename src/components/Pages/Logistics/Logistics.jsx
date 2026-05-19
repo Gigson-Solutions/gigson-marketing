@@ -7,6 +7,7 @@ import HowWeWork from 'shared/HowWeWork.jsx';
 import ImproveAreas from 'shared/ImproveAreas.jsx';
 import SolutionsApplications from 'shared/SolutionsApplications.jsx';
 import UseCases from 'shared/UseCases.jsx';
+
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const Logistics = () => {

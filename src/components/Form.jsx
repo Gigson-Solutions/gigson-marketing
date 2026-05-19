@@ -120,7 +120,11 @@ const Form = ({ customClass }) => {
           </div>
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="box" />
-          <input type="hidden" name="_cc" value="alfonso.ojeda@gigsonsolutions.com" />
+          <input
+            type="hidden"
+            name="_cc"
+            value="alfonso.ojeda@gigsonsolutions.com"
+          />
         </div>
         <Button type="submit" name={send} classStyle="form-btn-send" />
       </form>

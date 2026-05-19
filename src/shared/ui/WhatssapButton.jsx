@@ -7,7 +7,13 @@ const WhatsappButton = () => {
   const { t } = useTranslation();
   const whatsappData = t('whatsapp');
 
-  return <FloatingWhatsApp allowClickAway avatar="/img/alfonso.jpg" {...whatsappData} />;
+  return (
+    <FloatingWhatsApp
+      allowClickAway
+      avatar="/img/alfonso.jpg"
+      {...whatsappData}
+    />
+  );
 };
 
 export default WhatsappButton;

@@ -3,15 +3,15 @@ import '../App.css';
 import { createBrowserRouter } from 'react-router-dom';
 
 import AboutHero from '../components/About/AboutHero';
-import AiAgents from '../components/Pages/AiAgents/AiAgents';
-import AiManifest from '../components/Pages/AiManifest';
 import Home from '../components/Home/Home';
 import Layout from '../components/Layout/Layout';
+import AiAgents from '../components/Pages/AiAgents/AiAgents';
+import AiManifest from '../components/Pages/AiManifest';
+import Book from '../components/Pages/Book/Book';
 import Cases from '../components/Pages/Cases/Cases';
 import Cibersecurity from '../components/Pages/Cibersecurity/Cibersecurity';
 import Construction from '../components/Pages/Construction/Construction';
 import ConsultoriaTec from '../components/Pages/ConsultoriaTec/ConsultoriaTec';
-import Book from '../components/Pages/Book/Book';
 import Contact from '../components/Pages/Contact';
 import CookiesPage from '../components/Pages/CookiesPage';
 import CTO from '../components/Pages/CTO/CTO';

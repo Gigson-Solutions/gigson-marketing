@@ -6,12 +6,11 @@ import React, { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import SectorSelector from './SectorSelector';
-
 import circSvg from '../../assets/circulo-about.svg';
 import cubeSvg from '../../assets/cubo-about.svg';
 import piraSvg from '../../assets/Piramide-about.svg';
 import { Accordion } from '../../components/Accordion/Accordion.jsx';
+import SectorSelector from './SectorSelector';
 
 const HomeCases = () => {
   const [activeIndex, setActiveIndex] = useState();

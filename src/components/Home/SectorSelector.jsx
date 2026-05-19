@@ -1,12 +1,18 @@
 import './SectorSelector.css';
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
 
 gsap.registerPlugin(useGSAP);
 
-const SectorSelector = ({ title, sectors, selected, onToggle, centered = false }) => {
+const SectorSelector = ({
+  title,
+  sectors,
+  selected,
+  onToggle,
+  centered = false,
+}) => {
   const containerRef = useRef(null);
   const isFirstRender = useRef(true);
 
@@ -32,7 +38,7 @@ const SectorSelector = ({ title, sectors, selected, onToggle, centered = false }
     }
     if (!containerRef.current) return;
 
-    containerRef.current.querySelectorAll('.sector-pill').forEach((pill) => {
+    for (const pill of containerRef.current.querySelectorAll('.sector-pill')) {
       const fill = pill.querySelector('.sector-pill__fill');
       const label = pill.querySelector('.sector-pill__label');
       const isActive = selected.includes(pill.dataset.sector);
@@ -63,7 +69,7 @@ const SectorSelector = ({ title, sectors, selected, onToggle, centered = false }
         duration: isActive ? 0.22 : 0.15,
         overwrite: 'auto',
       });
-    });
+    }
   }, [selected]);
 
   // ── Hover lift ──
