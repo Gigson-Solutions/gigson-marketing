@@ -1,8 +1,8 @@
-import { useRef, useState } from 'react';
-import { Trans } from 'react-i18next';
+import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+import { useRef, useState } from 'react';
+import { Trans } from 'react-i18next';
 
 import chevronDownIcon from '../../assets/chevron-down.svg';
 import solutionsApplicationsBgGradient from '../../assets/solutions-applications-bg-gradients-1.svg';
@@ -46,7 +46,9 @@ const CardMobile = ({ title, description, cardNr, className }) => {
               className={`h-7 transition-transform ${open ? 'rotate-180' : ''}`}
             />
           </div>
-          <p className={`${open ? 'block' : 'hidden'} text-body text-dark-medium`}>
+          <p
+            className={`${open ? 'block' : 'hidden'} text-body text-dark-medium`}
+          >
             {description}
           </p>
         </div>
@@ -59,27 +61,30 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
   const { isMobile } = useBreakpoint();
   const sectionRef = useRef(null);
 
-  useGSAP(() => {
-    const cards = sectionRef.current.querySelectorAll('[data-card]');
+  useGSAP(
+    () => {
+      const cards = sectionRef.current.querySelectorAll('[data-card]');
 
-    // Start all cards hidden
-    gsap.set(cards, { autoAlpha: 0, y: 28 });
+      // Start all cards hidden
+      gsap.set(cards, { autoAlpha: 0, y: 28 });
 
-    // Batch-reveal cards as they enter the viewport
-    ScrollTrigger.batch(cards, {
-      start: 'top 88%',
-      once: true,
-      onEnter: (elements) => {
-        gsap.to(elements, {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.55,
-          stagger: 0.1,
-          ease: 'power2.out',
-        });
-      },
-    });
-  }, { scope: sectionRef });
+      // Batch-reveal cards as they enter the viewport
+      ScrollTrigger.batch(cards, {
+        start: 'top 88%',
+        once: true,
+        onEnter: (elements) => {
+          gsap.to(elements, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.55,
+            stagger: 0.1,
+            ease: 'power2.out',
+          });
+        },
+      });
+    },
+    { scope: sectionRef }
+  );
 
   return (
     <section
@@ -118,7 +123,10 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
             const cardNr = getCardNr(index + 1);
 
             return (
-              <div key={index} className="flex flex-col md:grid md:grid-cols-3 gap-6">
+              <div
+                key={index}
+                className="flex flex-col md:grid md:grid-cols-3 gap-6"
+              >
                 {/* Purple challenge card */}
                 <div
                   className={`bg-gradient-to-b from-[#7874F4] to-[#5E5BC6] text-white px-2 md:px-4 py-8 rounded-t-4xl rounded-b-lg mb-6 md:mb-0 ${mainCardClass}`}
@@ -163,13 +171,16 @@ const SolutionsApplications = ({ title, subTitle, containers }) => {
                   {remainingCards.length > 0 && (
                     <div
                       className={`flex flex-col md:grid ${
-                        remainingCards.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'
+                        remainingCards.length === 2
+                          ? 'md:grid-cols-2'
+                          : 'md:grid-cols-3'
                       } gap-6`}
                     >
                       {remainingCards.map(({ title, description }, i) => {
                         const flexCardIndex = i + 3;
                         const isLongCard =
-                          flexCardIndex % 6 === 0 || remainingCards.length === 1;
+                          flexCardIndex % 6 === 0 ||
+                          remainingCards.length === 1;
                         return (
                           <Card
                             key={i}

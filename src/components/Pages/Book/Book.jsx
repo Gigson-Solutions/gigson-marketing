@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const CALCOM_URL =
-  import.meta.env.VITE_CALCOM_GIGSON_URL || 'https://cal.gigsonsolutions.com/gigsonsolutions/30min';
+  import.meta.env.VITE_CALCOM_GIGSON_URL ||
+  'https://cal.gigsonsolutions.com/gigsonsolutions/30min';
 
 const Book = () => {
   const { t } = useTranslation();
@@ -17,7 +18,10 @@ const Book = () => {
         {t('book.title', 'Book a meeting')}
       </h1>
       <p className="mt-4 text-gray-600">
-        {t('book.subtitle', 'Choose a slot that works for you. Bookings sync with our calendars.')}
+        {t(
+          'book.subtitle',
+          'Choose a slot that works for you. Bookings sync with our calendars.'
+        )}
       </p>
       <div className="mt-8 min-h-[700px] w-full overflow-hidden rounded-lg border border-gray-200">
         <iframe
