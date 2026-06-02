@@ -1,16 +1,19 @@
 import './Iso27001.css';
 
 import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+import solutionsBg from '../../../assets/solutions-applications-bg-gradients-1.svg';
 import { DEFAULT_LANG, ROUTE_SLUGS } from '../../../router/routerSlugs';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const TOTAL_STEPS = 3;
 
 const Iso27001 = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const lang = ROUTE_SLUGS[i18n.language] ? i18n.language : DEFAULT_LANG;
   const langPrefix = lang === DEFAULT_LANG ? '' : `/${lang}`;
   const policyPath = `${langPrefix}/${ROUTE_SLUGS[lang].policy}`;
@@ -30,11 +33,22 @@ const Iso27001 = () => {
   const [submitted, setSubmitted] = useState(false);
   const [revealed, setRevealed] = useState(false);
 
+  const cubeRef = useRef(null);
   const stepsRef = useRef(null);
   const formCardRef = useRef(null);
   const formSectionRef = useRef(null);
   const chipRowRef = useRef(null);
   const inputRefs = useRef({});
+
+  useGSAP(() => {
+    gsap.set(cubeRef.current, { rotateX: -15, rotateY: 35 });
+    gsap.to(cubeRef.current, {
+      rotateY: '+=360',
+      duration: 22,
+      ease: 'none',
+      repeat: -1,
+    });
+  });
 
   const setField = (name, value) =>
     setValues((prev) => ({ ...prev, [name]: value }));
@@ -144,53 +158,50 @@ const Iso27001 = () => {
   return (
     <div className="iso27001">
       <SeoHelmet
-        title="Certificación ISO 27001 para empresas tecnológicas · gigson solutions"
-        description="Implantamos tu SGSI ISO 27001 sobre tu operativa real, sin burocracia. Diagnóstico gratuito en 24 h para pymes, despachos y consultoras."
+        title={t('iso27001.seo.title')}
+        description={t('iso27001.seo.description')}
       />
 
       {/* HERO */}
       <section className="hero">
         <div className="hero-mesh" />
-        <div className="hero-grid" />
         <div className="hero-shape">
-          <div className="d3 d3-sphere" />
+          <div className="cube-scene">
+            <div className="cube" ref={cubeRef}>
+              <div className="cube-face cube-front" />
+              <div className="cube-face cube-back" />
+              <div className="cube-face cube-left" />
+              <div className="cube-face cube-right" />
+              <div className="cube-face cube-top" />
+              <div className="cube-face cube-bottom" />
+            </div>
+          </div>
         </div>
 
         <div className="hero-wrap">
           <div className="hero-inner">
             <span className="hero-tag">
-              <b>ISO/IEC 27001:2022</b> · Seguridad de la información
+              <b>{t('iso27001.hero.tag')}</b>
             </span>
             <h1>
-              Te están obligando
-              <br />a certificarte en
+              {t('iso27001.hero.h1a')}
+              <br />{t('iso27001.hero.h1b')}
               <br />
               <em className="accent-italic">ISO 27001</em>.<br />
-              Te lo resolvemos.
+              {t('iso27001.hero.h1d')}
             </h1>
-            <p className="hero-sub">
-              Implantamos un Sistema de Gestión de Seguridad de la Información
-              (SGSI) sobre tu operativa real — no documentación que nadie va a
-              usar. Para empresas pequeñas y medianas — un despacho de abogados,
-              una consultora, una agencia, una pyme tecnológica — que necesitan
-              el certificado sin paralizar su día a día.
-            </p>
+            <p className="hero-sub">{t('iso27001.hero.sub')}</p>
             <div className="hero-pills">
-              <span className="pill">Controles técnicos reales</span>
-              <span className="pill">
-                Sistema mínimo viable, sin burocracia
-              </span>
-              <span className="pill pill--accent">
-                Diagnóstico gratuito en 24 h
-              </span>
+              <span className="pill">{t('iso27001.hero.pill1')}</span>
+              <span className="pill">{t('iso27001.hero.pill2')}</span>
+              <span className="pill pill--accent">{t('iso27001.hero.pill3')}</span>
             </div>
             <div className="hero-cta-row">
               <a href="#form" className="btn is-wide" onClick={scrollToForm}>
-                Solicita tu diagnóstico gratuito
+                {t('iso27001.hero.cta')}
               </a>
               <span className="hero-note">
-                <b>Sin compromiso</b> · Te decimos qué controles ya cumples sin
-                saberlo
+                {t('iso27001.hero.note')}
               </span>
             </div>
           </div>
@@ -200,66 +211,57 @@ const Iso27001 = () => {
       {/* TRUST BAR */}
       <div className="trust">
         <div className="trust-inner">
-          <span className="trust-label">Trabajamos con</span>
+          <span className="trust-label">{t('iso27001.trust.label')}</span>
           <div className="trust-items">
-            <span className="trust-item">Despachos y consultoras</span>
-            <span className="trust-item">Pymes tecnológicas de 10 a 250</span>
-            <span className="trust-item">
-              Proveedores de empresas reguladas
-            </span>
-            <span className="trust-item">Empresas con clientes B2B</span>
+            <span className="trust-item">{t('iso27001.trust.item1')}</span>
+            <span className="trust-item">{t('iso27001.trust.item2')}</span>
+            <span className="trust-item">{t('iso27001.trust.item3')}</span>
+            <span className="trust-item">{t('iso27001.trust.item4')}</span>
           </div>
         </div>
       </div>
+
+      <div
+        className="content-bg"
+        style={{
+          backgroundImage: `url(${solutionsBg})`,
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+      >
 
       {/* PAIN */}
       <section className="pain">
         <div className="pain-inner">
           <div className="section-head">
-            <span className="eyebrow eyebrow--purple">Por qué ahora</span>
+            <span className="eyebrow eyebrow--purple">{t('iso27001.pain.eyebrow')}</span>
             <h2>
-              Hay razones de peso
+              {t('iso27001.pain.h2a')}
               <br />
-              para certificarte <em className="accent-italic">ahora</em>.
+              {t('iso27001.pain.h2b')} <em className="accent-italic">{t('iso27001.pain.h2accent')}</em>.
             </h2>
           </div>
           <div className="pain-grid">
             <article className="card">
               <div className="card-num">01</div>
-              <h3>Tu cliente lo exige para seguir trabajando contigo</h3>
-              <p>
-                Cada vez más empresas medianas y grandes incluyen ISO 27001 como
-                requisito contractual para sus proveedores. No es opcional: o te
-                certificas o pierdes el contrato.
-              </p>
+              <h3>{t('iso27001.pain.card1title')}</h3>
+              <p>{t('iso27001.pain.card1p')}</p>
             </article>
             <article className="card">
               <div className="card-num">02</div>
-              <h3>La licitación la puntúa o la exige directamente</h3>
-              <p>
-                En concursos públicos y privados, tener ISO 27001 suma puntos o
-                es requisito de admisión. Competir sin ella significa ceder
-                terreno a quienes ya la tienen.
-              </p>
+              <h3>{t('iso27001.pain.card2title')}</h3>
+              <p>{t('iso27001.pain.card2p')}</p>
             </article>
             <article className="card">
               <div className="card-num">03</div>
-              <h3>Cada venta se atasca en un cuestionario de seguridad</h3>
-              <p>
-                Tus clientes —sobre todo si están regulados o tienen NIS2
-                detrás— te envían cuestionarios de seguridad cada vez más
-                exigentes. Sin ISO 27001 cada cuestionario es semanas de
-                trabajo; con ella, una sola respuesta.
-              </p>
+              <h3>{t('iso27001.pain.card3title')}</h3>
+              <p>{t('iso27001.pain.card3p')}</p>
             </article>
             <article className="card">
               <div className="card-num">04</div>
-              <h3>Tu competencia ya la tiene</h3>
-              <p>
-                Más de 3.000 empresas españolas están certificadas en ISO 27001.
-                En cada vez más sectores la certificación ya es un estándar de
-                facto — no un diferencial.
-              </p>
+              <h3>{t('iso27001.pain.card4title')}</h3>
+              <p>{t('iso27001.pain.card4p')}</p>
             </article>
           </div>
         </div>
@@ -270,50 +272,29 @@ const Iso27001 = () => {
         <div className="diff-inner">
           <div className="diff-slab">
             <div className="section-head">
-              <span className="eyebrow eyebrow--oncream">Nuestro enfoque</span>
+              <span className="eyebrow eyebrow--oncream">{t('iso27001.diff.eyebrow')}</span>
               <h2>
-                ISO 27001 implantada
+                {t('iso27001.diff.h2a')}
                 <br />
-                con <em style={{ fontStyle: 'italic' }}>rigor técnico</em>.
+                {t('iso27001.diff.h2b')}
               </h2>
-              <p className="lead">
-                La mayoría de consultoras ISO redactan documentos. Nosotros
-                implementamos los controles sobre tu operativa real, los
-                sistemas, accesos y procesos que ya usas cada día, y te dejamos
-                un SGSI que funciona, no uno que solo pasa la auditoría.
-              </p>
+              <p className="lead">{t('iso27001.diff.lead')}</p>
             </div>
             <div className="diff-grid">
               <div className="diff-item">
                 <span className="diff-num">01</span>
-                <h3>Controles reales, no solo documentación</h3>
-                <p>
-                  Evaluamos cómo funciona tu empresa de verdad — sistemas,
-                  accesos, datos, proveedores, procesos críticos — e
-                  implementamos los controles del Anexo A sobre lo que ya
-                  tienes.
-                </p>
+                <h3>{t('iso27001.diff.item1title')}</h3>
+                <p>{t('iso27001.diff.item1p')}</p>
               </div>
               <div className="diff-item">
                 <span className="diff-num">02</span>
-                <h3>Un sistema mínimo viable, fácil de sostener</h3>
-                <p>
-                  Sabemos que muchas empresas no tienen responsable de seguridad
-                  — ni equipo de IT, en algunos casos. Diseñamos el SGSI más
-                  sencillo que pasa la auditoría: sin burocracia innecesaria,
-                  fácil de mantener aunque la seguridad la lleve quien ya tiene
-                  cinco cosas en la mano.
-                </p>
+                <h3>{t('iso27001.diff.item2title')}</h3>
+                <p>{t('iso27001.diff.item2p')}</p>
               </div>
               <div className="diff-item">
                 <span className="diff-num">03</span>
-                <h3>Sabemos qué es certificable y qué no</h3>
-                <p>
-                  No te venderemos que te certifiques en todo. NIS2, por
-                  ejemplo, no es una certificación — es cumplimiento; ISO 27001
-                  sí lo es. Te explicamos exactamente qué necesitas según tu
-                  situación, sin sobreingeniería ni papel innecesario.
-                </p>
+                <h3>{t('iso27001.diff.item3title')}</h3>
+                <p>{t('iso27001.diff.item3p')}</p>
               </div>
             </div>
           </div>
@@ -324,16 +305,14 @@ const Iso27001 = () => {
       <section className="process">
         <div className="process-inner">
           <div className="section-head">
-            <span className="eyebrow eyebrow--purple">Cómo trabajamos</span>
+            <span className="eyebrow eyebrow--purple">{t('iso27001.process.eyebrow')}</span>
             <h2>
-              Cuatro fases,
+              {t('iso27001.process.h2a')}
               <br />
-              un certificado.
+              {t('iso27001.process.h2b')}
             </h2>
             <p className="lead" style={{ maxWidth: '38ch' }}>
-              Un proceso pensado para pymes: diagnóstico de tu operativa real,
-              implantación sobre lo que ya tienes y coordinación de la
-              certificadora — sin paralizar tu día a día.
+              {t('iso27001.process.lead')}
             </p>
           </div>
 
@@ -343,83 +322,58 @@ const Iso27001 = () => {
           >
             <div className="step">
               <div className="step-num">01</div>
-              <h4>Diagnóstico</h4>
-              <p>
-                Gap analysis de tu situación actual. Identificamos qué controles
-                ya cumples sin saberlo y qué falta realmente.
-              </p>
+              <h4>{t('iso27001.process.step1title')}</h4>
+              <p>{t('iso27001.process.step1p')}</p>
             </div>
             <div className="step">
               <div className="step-num">02</div>
-              <h4>Implantación</h4>
-              <p>
-                Documentación, análisis de riesgos, controles operativos sobre
-                lo que ya tienes y formación al equipo implicado.
-              </p>
+              <h4>{t('iso27001.process.step2title')}</h4>
+              <p>{t('iso27001.process.step2p')}</p>
             </div>
             <div className="step">
               <div className="step-num">03</div>
-              <h4>Auditoría interna</h4>
-              <p>
-                Verificación previa para que llegues a la auditoría externa con
-                la certificación asegurada.
-              </p>
+              <h4>{t('iso27001.process.step3title')}</h4>
+              <p>{t('iso27001.process.step3p')}</p>
             </div>
             <div className="step">
               <div className="step-num">04</div>
-              <h4>Certificación</h4>
-              <p>
-                Coordinamos las auditorías de fase 1 y fase 2 con la entidad
-                certificadora. Certificado ISO 27001 obtenido.
-              </p>
+              <h4>{t('iso27001.process.step4title')}</h4>
+              <p>{t('iso27001.process.step4p')}</p>
             </div>
           </div>
         </div>
       </section>
+
+      </div>{/* end content-bg */}
 
       {/* FORM */}
       <section className="formsec" id="form" ref={formSectionRef}>
         <div className="formsec-inner">
           <div className="formsec-left">
             <span className="eyebrow eyebrow--purple">
-              Diagnóstico gratuito
+              {t('iso27001.form.eyebrow')}
             </span>
             <h2 style={{ marginTop: '18px' }}>
-              Te decimos qué controles
-              <br />
-              de ISO 27001{' '}
+              {t('iso27001.form.h2a')}
+              <br />{' '}
               <em style={{ fontStyle: 'italic', color: 'var(--gs-purple)' }}>
-                ya cumples
+                {t('iso27001.form.h2accent')}
               </em>{' '}
-              sin saberlo.
+              {t('iso27001.form.h2b')}
             </h2>
-            <p className="lead">
-              Si te están empujando a certificarte —un cliente, una licitación,
-              un cuestionario de seguridad que no para de crecer— probablemente
-              ya cumples más controles de los que crees. Sea un despacho de
-              abogados, una consultora o una pyme tecnológica, cuéntanos tu
-              situación y te lo aterrizamos.
-            </p>
+            <p className="lead">{t('iso27001.form.lead')}</p>
 
             <div className="deliver-block">
               <div className="deliver">
-                <span className="deliver-tag">El diagnóstico gratuito</span>
-                <p>
-                  Revisamos tu operativa actual y te enviamos por escrito{' '}
-                  <b>qué controles de ISO 27001 ya cumples</b> y cuáles te
-                  faltan. Sin compromiso.
-                </p>
+                <span className="deliver-tag">{t('iso27001.form.deliver1tag')}</span>
+                <p dangerouslySetInnerHTML={{ __html: t('iso27001.form.deliver1p') }} />
               </div>
               <div className="deliver">
                 <span className="deliver-tag">
-                  La llamada posterior{' '}
-                  <span className="deliver-tag-soft">(opcional)</span>
+                  {t('iso27001.form.deliver2tag')}{' '}
+                  <span className="deliver-tag-soft">{t('iso27001.form.deliver2tagSoft')}</span>
                 </span>
-                <p>
-                  Si quieres ir más allá, en 30 minutos te damos{' '}
-                  <b>plazo y coste ajustados a tu empresa</b> y te explicamos si
-                  NIS2 te afecta y cómo se relaciona con la ISO 27001.
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: t('iso27001.form.deliver2p') }} />
               </div>
             </div>
           </div>
@@ -428,7 +382,7 @@ const Iso27001 = () => {
             {!submitted && (
               <div id="form-content">
                 <div className="formtag">
-                  Diagnóstico gratuito · Paso {step} de {TOTAL_STEPS}
+                  {t('iso27001.form.step')} {step} {t('iso27001.form.of')} {TOTAL_STEPS}
                 </div>
                 <div className="step-bar" aria-hidden="true">
                   <div
@@ -446,14 +400,12 @@ const Iso27001 = () => {
                 >
                   {/* STEP 1 */}
                   <div className={`form-step${step === 1 ? ' is-active' : ''}`}>
-                    <h3>Cuéntanos quién eres.</h3>
-                    <p className="form-note">
-                      Cuatro frases rápidas para entender a quién atendemos.
-                    </p>
+                    <h3>{t('iso27001.form.step1h3')}</h3>
+                    <p className="form-note">{t('iso27001.form.step1note')}</p>
 
                     <div className="convo">
                       <div className="convo-field">
-                        <span className="convo-label">Me llamo</span>
+                        <span className="convo-label">{t('iso27001.form.labelName')}</span>
                         <span
                           className="convo-fill"
                           style={invalidStyle('nombre')}
@@ -461,7 +413,7 @@ const Iso27001 = () => {
                           <input
                             type="text"
                             name="nombre"
-                            placeholder="Nombre y apellidos"
+                            placeholder={t('iso27001.form.placeholderName')}
                             autoComplete="name"
                             value={values.nombre}
                             ref={(el) => (inputRefs.current.nombre = el)}
@@ -470,7 +422,7 @@ const Iso27001 = () => {
                         </span>
                       </div>
                       <div className="convo-field">
-                        <span className="convo-label">y trabajo en</span>
+                        <span className="convo-label">{t('iso27001.form.labelCompany')}</span>
                         <span
                           className="convo-fill"
                           style={invalidStyle('empresa')}
@@ -478,7 +430,7 @@ const Iso27001 = () => {
                           <input
                             type="text"
                             name="empresa"
-                            placeholder="Nombre de la empresa"
+                            placeholder={t('iso27001.form.placeholderCompany')}
                             autoComplete="organization"
                             value={values.empresa}
                             ref={(el) => (inputRefs.current.empresa = el)}
@@ -489,24 +441,24 @@ const Iso27001 = () => {
                         </span>
                       </div>
                       <div className="convo-field">
-                        <span className="convo-label">del sector</span>
+                        <span className="convo-label">{t('iso27001.form.labelSector')}</span>
                         <span className="convo-fill">
                           <input
                             type="text"
                             name="sector"
-                            placeholder="Tecnología, despacho, consultora…"
+                            placeholder={t('iso27001.form.placeholderSector')}
                             value={values.sector}
                             onChange={(e) => setField('sector', e.target.value)}
                           />
                         </span>
                       </div>
                       <div className="convo-field">
-                        <span className="convo-label">como</span>
+                        <span className="convo-label">{t('iso27001.form.labelRole')}</span>
                         <span className="convo-fill">
                           <input
                             type="text"
                             name="cargo"
-                            placeholder="socio, gerente, responsable de IT…"
+                            placeholder={t('iso27001.form.placeholderRole')}
                             autoComplete="organization-title"
                             value={values.cargo}
                             onChange={(e) => setField('cargo', e.target.value)}
@@ -522,36 +474,30 @@ const Iso27001 = () => {
                         className="btn step-next"
                         onClick={() => goNext(2)}
                       >
-                        Siguiente →
+                        {t('iso27001.form.next')}
                       </button>
                     </div>
                   </div>
 
                   {/* STEP 2 */}
                   <div className={`form-step${step === 2 ? ' is-active' : ''}`}>
-                    <h3>¿Qué necesitas?</h3>
-                    <p className="form-note">
-                      Si todavía no lo tienes claro, no pasa nada — para eso es
-                      el diagnóstico.
-                    </p>
+                    <h3>{t('iso27001.form.step2h3')}</h3>
+                    <p className="form-note">{t('iso27001.form.step2note')}</p>
 
                     <div className="convo">
                       <div className="convo-field convo-field--stack">
-                        <span className="convo-label">Necesito…</span>
+                        <span className="convo-label">{t('iso27001.form.needLabel')}</span>
                         <div
                           className="chip-row"
                           role="radiogroup"
-                          aria-label="¿Qué necesitas?"
+                          aria-label={t('iso27001.form.step2h3')}
                           ref={chipRowRef}
                         >
                           {[
-                            ['implantacion', 'Implantación'],
-                            ['certificacion', 'Certificación'],
-                            [
-                              'implantacion-certificacion',
-                              'Implantación + certificación',
-                            ],
-                            ['no-seguro', 'No estoy seguro'],
+                            ['implantacion', t('iso27001.form.chip1')],
+                            ['certificacion', t('iso27001.form.chip2')],
+                            ['implantacion-certificacion', t('iso27001.form.chip3')],
+                            ['no-seguro', t('iso27001.form.chip4')],
                           ].map(([value, label]) => (
                             <label className="chip" key={value}>
                               <input
@@ -574,32 +520,29 @@ const Iso27001 = () => {
                       <button
                         type="button"
                         className="btn step-prev"
-                        aria-label="Volver al paso anterior"
+                        aria-label={t('iso27001.form.back')}
                         onClick={() => setStep(1)}
                       >
-                        ←
+                        {t('iso27001.form.back')}
                       </button>
                       <button
                         type="button"
                         className="btn step-next"
                         onClick={() => goNext(3)}
                       >
-                        Siguiente →
+                        {t('iso27001.form.next')}
                       </button>
                     </div>
                   </div>
 
                   {/* STEP 3 */}
                   <div className={`form-step${step === 3 ? ' is-active' : ''}`}>
-                    <h3>¿Cómo te contactamos?</h3>
-                    <p className="form-note">
-                      Con un email o un teléfono nos vale. Te enviamos el
-                      diagnóstico en menos de 24 h.
-                    </p>
+                    <h3>{t('iso27001.form.step3h3')}</h3>
+                    <p className="form-note">{t('iso27001.form.step3note')}</p>
 
                     <div className="convo">
                       <div className="convo-field">
-                        <span className="convo-label">Puedes escribirme a</span>
+                        <span className="convo-label">{t('iso27001.form.labelEmail')}</span>
                         <span className="convo-fill">
                           <input
                             type="email"
@@ -616,7 +559,7 @@ const Iso27001 = () => {
                         </span>
                       </div>
                       <div className="convo-field">
-                        <span className="convo-label">o llamarme al</span>
+                        <span className="convo-label">{t('iso27001.form.labelPhone')}</span>
                         <span className="convo-fill">
                           <input
                             type="tel"
@@ -634,34 +577,37 @@ const Iso27001 = () => {
                     </div>
 
                     {contactHint && (
-                      <p className="contact-hint">
-                        Necesitamos al menos un email <b>o</b> un teléfono para
-                        hacerte llegar el diagnóstico.
-                      </p>
+                      <p
+                        className="contact-hint"
+                        dangerouslySetInnerHTML={{ __html: t('iso27001.form.contactHint') }}
+                      />
                     )}
 
                     <div className="step-nav">
                       <button
                         type="button"
                         className="btn step-prev"
-                        aria-label="Volver al paso anterior"
+                        aria-label={t('iso27001.form.back')}
                         onClick={() => setStep(2)}
                       >
-                        ←
+                        {t('iso27001.form.back')}
                       </button>
                       <button
                         type="submit"
                         className="btn is-wide step-submit"
                         style={{ justifyContent: 'center' }}
                       >
-                        Solicitar diagnóstico gratuito
+                        {t('iso27001.form.submit')}
                       </button>
                     </div>
                     <p className="form-legal">
-                      Al enviar este formulario aceptas que gigson solutions se
-                      ponga en contacto contigo en relación a tu solicitud. No
-                      compartimos tus datos con terceros.{' '}
-                      <Link to={policyPath}>Política de privacidad</Link>.
+                      {t('iso27001.form.legal', {
+                        defaultValue: '',
+                      }).split('<a>')[0]}
+                      <Link to={policyPath}>
+                        {t('iso27001.form.legal').split('<a>')[1]?.split('</a>')[0]}
+                      </Link>
+                      {t('iso27001.form.legal').split('</a>')[1]}
                     </p>
                   </div>
                 </form>
@@ -675,25 +621,17 @@ const Iso27001 = () => {
                     <polyline points="4,12 10,18 20,6" />
                   </svg>
                 </div>
-                <h3>Recibido. Te enviamos el diagnóstico en 24 h.</h3>
-                <p>
-                  Revisaremos tu situación y te enviaremos por escrito qué
-                  controles de ISO 27001 ya cumples sin saberlo. Si quieres,
-                  reserva ahora una llamada de 30 minutos para repasarlo y ver
-                  plazo, coste y cómo te afecta NIS2.
-                </p>
+                <h3>{t('iso27001.form.successTitle')}</h3>
+                <p>{t('iso27001.form.successP')}</p>
                 <a
                   href="https://calendly.com/gigson"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn is-wide"
                 >
-                  Reservar llamada en Calendly →
+                  {t('iso27001.form.successCta')}
                 </a>
-                <p className="success-soft">
-                  O espera nuestro correo — te respondemos antes de 24 horas
-                  laborables.
-                </p>
+                <p className="success-soft">{t('iso27001.form.successSoft')}</p>
               </div>
             )}
           </div>
