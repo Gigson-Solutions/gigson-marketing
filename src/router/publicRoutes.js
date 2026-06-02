@@ -8,6 +8,7 @@ export const MARKETING_PAGE_KEYS = [
   'software',
   'ConsultoriaTec',
   'cibersecurity',
+  'iso27001',
   'retail',
   'construction',
   'cases',
