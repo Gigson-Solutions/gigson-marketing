@@ -82,10 +82,25 @@ const NavbarMobile = ({ menu }) => {
             >
               {children ? (
                 <>
-                  <span className="flex items-center menu-item__link">
-                    {name}
-                    <ChevronDown />
-                  </span>
+                  {link && link.startsWith('http') ? (
+                    <div className="flex items-center menu-item__link">
+                      <a
+                        href={link}
+                        onClick={(e) => { e.stopPropagation(); closeMobileMenu(); }}
+                        style={{ flex: 1 }}
+                      >
+                        {name}
+                      </a>
+                      <span onClick={(e) => { e.stopPropagation(); isMobileMenuOpen && toggleDropdown(index); }}>
+                        <ChevronDown />
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="flex items-center menu-item__link">
+                      {name}
+                      <ChevronDown />
+                    </span>
+                  )}
                   <ul
                     className={`dropdown ${activeDropdown === index ? 'visible' : ''}`}
                   >

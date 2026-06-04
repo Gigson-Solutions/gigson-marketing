@@ -24,7 +24,8 @@
     "construction": "Construction",
     "software": "Software engineering",
     "cibersecurity": "Cybersecurity",
-    "ai_agents": "AI Agents"
+    "ai_agents": "AI Agents",
+    "compliance": "Compliance"
   },
   "hero_link": "/contact",
   "home": {
@@ -3365,6 +3366,31 @@
       },
       {
         "number": "04",
+        "title": "AI Agents",
+        "tagline": "Custom AI agents that automate real workflows — not demos, production-ready systems integrated into your tools.",
+        "sections": [
+          {
+            "heading": "What we build",
+            "items": [
+              "AI agents for internal operations and customer-facing flows",
+              "Document analysis, assistants and data extraction with LLMs",
+              "RAG systems and vector database integrations",
+              "Process automation with n8n, Zapier and custom workflows",
+              "Multi-agent orchestration for complex business logic"
+            ]
+          },
+          {
+            "heading": "Best for",
+            "items": [
+              "Teams spending hours on repetitive, document-heavy tasks",
+              "Companies wanting AI embedded in their existing tools",
+              "Businesses needing custom agents, not off-the-shelf chatbots"
+            ]
+          }
+        ]
+      },
+      {
+        "number": "05",
         "title": "Compliance",
         "tagline": "ISO 27001 and ISO 9001 implementation that your team actually uses — not folders of documents nobody reads.",
         "sections": [

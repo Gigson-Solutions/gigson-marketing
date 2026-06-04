@@ -33,22 +33,12 @@ const Iso27001 = () => {
   const [submitted, setSubmitted] = useState(false);
   const [revealed, setRevealed] = useState(false);
 
-  const cubeRef = useRef(null);
   const stepsRef = useRef(null);
   const formCardRef = useRef(null);
   const formSectionRef = useRef(null);
   const chipRowRef = useRef(null);
   const inputRefs = useRef({});
 
-  useGSAP(() => {
-    gsap.set(cubeRef.current, { rotateX: -15, rotateY: 35 });
-    gsap.to(cubeRef.current, {
-      rotateY: '+=360',
-      duration: 22,
-      ease: 'none',
-      repeat: -1,
-    });
-  });
 
   const setField = (name, value) =>
     setValues((prev) => ({ ...prev, [name]: value }));
@@ -165,18 +155,6 @@ const Iso27001 = () => {
       {/* HERO */}
       <section className="hero">
         <div className="hero-mesh" />
-        <div className="hero-shape">
-          <div className="cube-scene">
-            <div className="cube" ref={cubeRef}>
-              <div className="cube-face cube-front" />
-              <div className="cube-face cube-back" />
-              <div className="cube-face cube-left" />
-              <div className="cube-face cube-right" />
-              <div className="cube-face cube-top" />
-              <div className="cube-face cube-bottom" />
-            </div>
-          </div>
-        </div>
 
         <div className="hero-wrap">
           <div className="hero-inner">

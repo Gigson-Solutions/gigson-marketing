@@ -2,7 +2,7 @@ import './Services.css';
 
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -11,6 +11,7 @@ import { AccordionAnimation } from '../Accordion/AccordionAnimation';
 import { SeoHelmet } from '../../seo/seoHelmet';
 import { ButtonLink } from '../../shared/ui/Button';
 import { useBreakpoint } from 'shared/hooks/useBreakpoint.jsx';
+import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from '../../router/routerSlugs';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -25,10 +26,11 @@ const ClaudeBadge = () => (
   </div>
 );
 
-const OffMenuCard = ({ label, title, price, tagline, isDark, ctaText, sections, badge }) => {
+const OffMenuCard = ({ label, title, price, tagline, isDark, ctaText, sections, badge, link }) => {
   const cardInnerRef = useRef(null);
   const { isDesktop } = useBreakpoint();
   const [flipped, setFlipped] = useState(false);
+  const navigate = useNavigate();
 
   const flipTo = (toBack) => {
     if (flipped === toBack) return;
@@ -41,7 +43,11 @@ const OffMenuCard = ({ label, title, price, tagline, isDark, ctaText, sections, 
   };
 
   const handleClick = () => {
-    if (!isDesktop) flipTo(!flipped);
+    if (link) {
+      navigate(link);
+    } else if (!isDesktop) {
+      flipTo(!flipped);
+    }
   };
 
   const bg = isDark ? '#3C3C3B' : '#EDECE8';
@@ -162,11 +168,23 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => (
 
 const Services = () => {
   const { t } = useTranslation();
+  const location = useLocation();
   const seo = t('pageSeo.services');
   const page = t('servicesPage');
 
+  const segment = location.pathname.split('/').find(Boolean);
+  const lang = SUPPORTED_LANGS.includes(segment) ? segment : DEFAULT_LANG;
+  const slugs = ROUTE_SLUGS[lang];
+  const langPrefix = lang === DEFAULT_LANG ? '' : `/${lang}`;
+  const serviceLinks = [
+    `${langPrefix}/${slugs.CTO}`,
+    `${langPrefix}/${slugs.ConsultoriaTec}`,
+    `${langPrefix}/${slugs.software}`,
+    `${langPrefix}/${slugs.aiAgents}`,
+    `${langPrefix}/${slugs.iso27001}`,
+  ];
+
   const serviceCardsRef = useRef(null);
-  const engagementRef = useRef(null);
 
   const [activeFaq, setActiveFaq] = useState(null);
   const handleFaqClick = (i) => setActiveFaq((prev) => (prev === i ? null : i));
@@ -192,27 +210,6 @@ const Services = () => {
     { scope: serviceCardsRef }
   );
 
-  /* Scroll entrance — engagement cards */
-  useGSAP(
-    () => {
-      const cards = engagementRef.current.querySelectorAll('[data-anim-card]');
-      gsap.set(cards, { autoAlpha: 0, y: 64 });
-      ScrollTrigger.batch(cards, {
-        start: 'top 88%',
-        once: true,
-        onEnter: (els) =>
-          gsap.to(els, {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.85,
-            stagger: 0.14,
-            ease: 'power3.out',
-          }),
-      });
-    },
-    { scope: engagementRef }
-  );
-
   return (
     <>
       <SeoHelmet title={seo.title} description={seo.description} />
@@ -235,33 +232,13 @@ const Services = () => {
               label={service.number}
               title={service.title}
               tagline={service.tagline}
-              isDark={i === 0 || i === 3}
+              isDark={i === 0 || i === 4}
               ctaText={page.cta.buttonText}
-              sections={i === 3 ? [service.sections[0]] : service.sections}
+              sections={i === 4 ? [service.sections[0]] : service.sections}
               badge={service.number === '02' || service.number === '03'}
+              link={serviceLinks[i]}
             />
           ))}
-        </div>
-      </section>
-
-      {/* Engagement model cards */}
-      <section ref={engagementRef} className="px-landing py-16 lg:py-24">
-        <div className="max-w-[88.875rem] mx-auto">
-          <h2 className="text-h2 text-dark-primary mb-10 lg:mb-14">{page.engagement.title}</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
-            {page.engagement.models.map((model, i) => (
-              <OffMenuCard
-                key={i}
-                label={model.type}
-                title={model.subtitle}
-                price={model.price}
-                tagline={model.description}
-                isDark={i % 2 === 0}
-                ctaText={page.cta.buttonText}
-                sections={[{ heading: '', items: model.items }]}
-              />
-            ))}
-          </div>
         </div>
       </section>
 

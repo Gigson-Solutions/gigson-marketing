@@ -24,7 +24,8 @@
     "construction": "Construcción",
     "tech_consulting": "Consultoría tecnologica",
     "cibersecurity": "Ciberseguridad",
-    "ai_agents": "Agentes IA"
+    "ai_agents": "Agentes IA",
+    "compliance": "Compliance"
   },
   "hero_link": "/es/contacto",
   "home": {
@@ -3383,6 +3384,31 @@
       },
       {
         "number": "04",
+        "title": "Agentes IA",
+        "tagline": "Agentes de IA personalizados que automatizan flujos de trabajo reales — no demos, sistemas listos para producción integrados en tus herramientas.",
+        "sections": [
+          {
+            "heading": "Qué construimos",
+            "items": [
+              "Agentes IA para operaciones internas y flujos de cara al cliente",
+              "Análisis de documentos, asistentes y extracción de datos con LLMs",
+              "Sistemas RAG e integración con bases de datos vectoriales",
+              "Automatización de procesos con n8n, Zapier y flujos personalizados",
+              "Orquestación multi-agente para lógica de negocio compleja"
+            ]
+          },
+          {
+            "heading": "Ideal para",
+            "items": [
+              "Equipos que dedican horas a tareas repetitivas con muchos documentos",
+              "Empresas que quieren IA integrada en sus herramientas actuales",
+              "Negocios que necesitan agentes a medida, no chatbots genéricos"
+            ]
+          }
+        ]
+      },
+      {
+        "number": "05",
         "title": "Compliance",
         "tagline": "Implantación de ISO 27001 e ISO 9001 que tu equipo realmente usa — no carpetas de documentos que nadie lee.",
         "sections": [
