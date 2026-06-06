@@ -4,31 +4,22 @@ import '../Button.css';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import heroImg from '../../assets/Imagen-esfera-hexagono.png';
+import HeroScene from './HeroScene';
 
 function Hero() {
   const { t } = useTranslation();
-  const { heroH1, heroSubhead, heroBtn, heroScroll } = t('home');
+  const { heroH1, heroP, heroBtn, heroScroll } = t('home');
 
   return (
     <div className="wrapper">
       <section className="hero-section">
+        <HeroScene className="hero-scene-overlay" />
         <header className="hero-top-content">
-          <img className="hero-img" src={heroImg} alt="" />
           <div className="hero-text">
-            <div className="hero-partner-badge">
-              <img
-                className="hero-anthropic-logo"
-                src="/claude-logo.png"
-                alt="Claude"
-              />
-              <span className="hero-badge-sep">·</span>
-              <span className="hero-badge-label">CERTIFIED CLAUDE PARTNER</span>
-            </div>
+            <p className="hero-p">{heroP}</p>
             <h1 className="hero-h1">
               <Trans i18nKey={heroH1} components={{ span: <span /> }} />
             </h1>
-            <p className="hero-subhead">{heroSubhead}</p>
             <Link to="/contact" className="hero-btn button-main">
               {heroBtn}
             </Link>
