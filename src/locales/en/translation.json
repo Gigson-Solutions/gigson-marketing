@@ -188,15 +188,6 @@
     "need": {
       "t": "What do I need to build a <span>Digital product</span>?",
       "d": "Develop a software product is much more than just building physical product or running a project. This type of products require full attention and knowledge in different areas to avoid costs overrun or technology limitations.",
-      "specialist1": "WHO MANAGE THE PRODUCT",
-      "specialist2": "WHO CODES ALMOST EVERYTHING",
-      "specialist3": "WHO DESIGN THE SOLUTION",
-      "specialist4": "WHO CODES HOW THE PRODUCT WORKS",
-      "specialist5": "WHO THINKS ABOUT THE BUSINESS",
-      "specialist6": "WHO CODES WHAT YOU SEE",
-      "specialist7": "WHO VALIDATES",
-      "specialist8": "WHO DESIGN WHAT YOU FEEL",
-      "specialist9": "WHO SECURE THE PRODUCT",
       "label": "*Not all of these roles are necessary in all products. Wisely selection is needed depending on needs and sectors.",
       "cta2": "CONTACT US"
     }
@@ -3332,7 +3323,12 @@
             ]
           }
         ],
-        "tags": ["AI strategy", "LLM evaluation", "UX/UI", "Product Management"]
+        "tags": [
+          "AI strategy",
+          "LLM evaluation",
+          "UX/UI",
+          "Product Management"
+        ]
       },
       {
         "number": "03",
@@ -3349,7 +3345,17 @@
               "Databases, messaging, and monitoring",
               "QA and automated testing"
             ],
-            "tags": ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Kafka", "PostgreSQL", "MongoDB", "GitHub Actions"]
+            "tags": [
+              "AWS",
+              "Azure",
+              "GCP",
+              "Docker",
+              "Kubernetes",
+              "Kafka",
+              "PostgreSQL",
+              "MongoDB",
+              "GitHub Actions"
+            ]
           },
           {
             "heading": "AI & Automation",
@@ -3360,7 +3366,14 @@
               "RAG systems and vector database integrations",
               "AI agents for internal operations and customer-facing flows"
             ],
-            "tags": ["LLM integration", "RAG", "n8n", "Zapier", "AI agents", "Vector DBs"]
+            "tags": [
+              "LLM integration",
+              "RAG",
+              "n8n",
+              "Zapier",
+              "AI agents",
+              "Vector DBs"
+            ]
           }
         ]
       },
@@ -3416,7 +3429,12 @@
             ]
           }
         ],
-        "tags": ["ISO 27001", "ISO 9001", "ENS", "GDPR"],
+        "tags": [
+          "ISO 27001",
+          "ISO 9001",
+          "ENS",
+          "GDPR"
+        ],
         "cta": {
           "text": "Request free diagnosis",
           "link": "/contact"

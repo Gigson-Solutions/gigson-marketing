@@ -13,7 +13,7 @@
    top: 0;
    z-index: -1;
    background: url("../../assets/Bg-home-services.png") no-repeat;
-   background-position: 0 100%;
+   background-position: center 100%;
    background-size: cover;
 }
 .home-services-bg:before {
@@ -133,7 +133,7 @@
    }
 
    .home-services-bg {
-      background-position: 0 10%;
+      background-position: center 10%;
       margin-top: -5rem;
       width: 100%;
       height: 100%;
@@ -176,7 +176,7 @@
 
 @media (min-width: 82rem) {
    .home-services-bg {
-      background-position: 0 17%;
+      background-position: center 17%;
       margin-top: 0;
    }
 }
@@ -190,7 +190,7 @@
 
    .home-services-bg {
       /* background-position: 0 0; */
-      background-position: 0 15%;
+      background-position: center 15%;
    }
 
    .home-services-btn {
@@ -224,7 +224,7 @@
    }
 
    .home-services-bg {
-      background-position: 0 13%;
+      background-position: center 13%;
       margin-top: -1rem;
    }
 }

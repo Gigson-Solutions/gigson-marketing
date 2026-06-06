@@ -188,15 +188,6 @@
     "need": {
       "t": "¿Qué necesito para hacer un <span>producto digital</span>?",
       "d": "Pensar que el desarrollo de un producto digital es un proyecto común y corriente representa un riesgo considerable. Este tipo de producto, requiere una atención detallada en cada aspecto, gestionada por profesionales especializados.",
-      "specialist1": "DIRECTOR DE ORQUESTA",
-      "specialist2": "PICACÓDIGO PARA TODO",
-      "specialist3": "LÍDER TÉCNICO",
-      "specialist4": "PICACÓDIGO OCULTO",
-      "specialist5": "ESTRATEGA",
-      "specialist6": "PICACÓDIGO A LA VISTA",
-      "specialist7": "VALIDACIÓN",
-      "specialist8": "DISEÑADOR DEL USO",
-      "specialist9": "PROTEGE EL PRODUCTO",
       "label": "*No todos estos roles son necesarios en todos los productos. Dependiendo de tus necesidades, puede que los roles sean diferente.",
       "cta2": "CONTÁCTANOS"
     }
@@ -3350,7 +3341,12 @@
             ]
           }
         ],
-        "tags": ["Estrategia IA", "Evaluación LLM", "UX/UI", "Product Management"]
+        "tags": [
+          "Estrategia IA",
+          "Evaluación LLM",
+          "UX/UI",
+          "Product Management"
+        ]
       },
       {
         "number": "03",
@@ -3367,7 +3363,17 @@
               "Bases de datos, mensajería y monitorización",
               "QA y testing automatizado"
             ],
-            "tags": ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Kafka", "PostgreSQL", "MongoDB", "GitHub Actions"]
+            "tags": [
+              "AWS",
+              "Azure",
+              "GCP",
+              "Docker",
+              "Kubernetes",
+              "Kafka",
+              "PostgreSQL",
+              "MongoDB",
+              "GitHub Actions"
+            ]
           },
           {
             "heading": "IA & Automatización",
@@ -3378,7 +3384,14 @@
               "Sistemas RAG e integraciones con bases de datos vectoriales",
               "Agentes IA para operaciones internas y flujos de cara al cliente"
             ],
-            "tags": ["Integración LLM", "RAG", "n8n", "Zapier", "Agentes IA", "Vector DBs"]
+            "tags": [
+              "Integración LLM",
+              "RAG",
+              "n8n",
+              "Zapier",
+              "Agentes IA",
+              "Vector DBs"
+            ]
           }
         ]
       },
@@ -3434,7 +3447,12 @@
             ]
           }
         ],
-        "tags": ["ISO 27001", "ISO 9001", "ENS", "RGPD"],
+        "tags": [
+          "ISO 27001",
+          "ISO 9001",
+          "ENS",
+          "RGPD"
+        ],
         "cta": {
           "text": "Solicitar diagnóstico gratuito",
           "link": "/contact"
