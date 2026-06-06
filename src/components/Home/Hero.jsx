@@ -4,7 +4,7 @@ import '../Button.css';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import heroImg from '../../assets/Imagen-esfera-hexagono.png';
+import HeroScene from './HeroScene';
 
 function Hero() {
   const { t } = useTranslation();
@@ -13,8 +13,8 @@ function Hero() {
   return (
     <div className="wrapper">
       <section className="hero-section">
+        <HeroScene className="hero-scene-overlay" />
         <header className="hero-top-content">
-          <img className="hero-img" src={heroImg} alt="" />
           <div className="hero-text">
             <div className="hero-partner-badge">
               <img
