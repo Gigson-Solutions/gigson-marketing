@@ -130,8 +130,11 @@
       ]
     },
     "howWeWork": {
-      "title": "How we engage",
-      "methods": [
+      "eyebrow": "How we engage",
+      "h2a": "From first session",
+      "h2b": "to production agent.",
+      "lead": "We move fast without cutting corners. Most clients go from first conversation to a working agent in production in under four weeks.",
+      "steps": [
         {
           "title": "Discovery",
           "description": "We map your workflows and identify the highest-value agent use case in a single working session."
@@ -2607,23 +2610,26 @@
       ]
     },
     "howWeWork": {
-      "title": "How do we work?",
-      "methods": [
+      "eyebrow": "How we engage",
+      "h2a": "From first call",
+      "h2b": "to technology ownership.",
+      "lead": "A fractional CTO engagement structured to move fast: we diagnose your tech, define the roadmap, and embed alongside your team to drive delivery.",
+      "steps": [
         {
           "title": "Discovery",
-          "description": "Identifying needs, mapping processes, and defining objectives."
+          "description": "We audit your current stack, team structure, and product roadmap to identify where technology is slowing the business down."
         },
         {
-          "title": "Design and architecture",
-          "description": "Defining requirements, creating a prototype, and designing integrations with current systems."
+          "title": "Strategy",
+          "description": "We define a technology roadmap aligned with your business goals — architecture, team scaling, tooling, and build-vs-buy decisions."
         },
         {
-          "title": "Implementation",
-          "description": "Programming, functional testing, integration with external platforms, and deployment to production."
+          "title": "Execution",
+          "description": "We lead delivery: running sprints, making architecture calls, and building the engineering processes your team needs to ship reliably."
         },
         {
-          "title": "Support and maintenance",
-          "description": "Monitoring KPIs, providing support, maintenance, and improvements based on business evolution."
+          "title": "Evolution",
+          "description": "We iterate continuously: refining the roadmap, helping onboard talent, and adjusting the strategy as the business grows."
         }
       ]
     },
@@ -2708,23 +2714,26 @@
       ]
     },
     "howWeWork": {
-      "title": "How do we work?",
-      "methods": [
+      "eyebrow": "How we engage",
+      "h2a": "From requirements",
+      "h2b": "to working software.",
+      "lead": "We build software that fits your real operations — not generic solutions. Iterative delivery with clear checkpoints and no surprises.",
+      "steps": [
         {
           "title": "Discovery",
-          "description": "Identifying needs, mapping processes, and defining objectives."
+          "description": "We understand your requirements, map the existing system, and define an architecture that fits what you already have."
         },
         {
-          "title": "Design and architecture",
-          "description": "Defining requirements, creating a prototype, and designing integrations with current systems."
+          "title": "Build",
+          "description": "Iterative development with regular demos and feedback loops, so the product evolves alongside your needs."
         },
         {
-          "title": "Implementation",
-          "description": "Programming, functional testing, integration with external platforms, and deployment to production."
+          "title": "Delivery",
+          "description": "QA, deployment to production, and integration with your existing stack — fully tested before go-live."
         },
         {
-          "title": "Support and maintenance",
-          "description": "Monitoring KPIs, providing support, maintenance, and improvements based on business evolution."
+          "title": "Support",
+          "description": "Post-launch monitoring, maintenance, and feature iterations as the product evolves with your business."
         }
       ]
     },
@@ -2859,23 +2868,26 @@
       ]
     },
     "howWeWork": {
-      "title": "How do we work?",
-      "methods": [
+      "eyebrow": "How we engage",
+      "h2a": "From diagnosis",
+      "h2b": "to working solution.",
+      "lead": "We start with your real operations — not your org chart. Then we build a plan you can actually execute and stay alongside you through implementation.",
+      "steps": [
         {
           "title": "Discovery",
-          "description": "Identifying needs, mapping processes, and defining objectives."
+          "description": "We map your systems, processes, and pain points through interviews and hands-on analysis of what you actually run."
         },
         {
-          "title": "Design and architecture",
-          "description": "Defining requirements, creating a prototype, and designing integrations with current systems."
+          "title": "Assessment",
+          "description": "We deliver a clear diagnosis: what is working, what is not, and where the highest-impact changes are."
         },
         {
-          "title": "Implementation",
-          "description": "Programming, functional testing, integration with external platforms, and deployment to production."
+          "title": "Roadmap",
+          "description": "We produce a prioritised technology action plan with realistic timelines, investment estimates, and clear ownership."
         },
         {
-          "title": "Support and maintenance",
-          "description": "Monitoring KPIs, providing support, maintenance, and improvements based on business evolution."
+          "title": "Support",
+          "description": "We stay alongside your team through execution — guiding implementation, unblocking decisions, and adjusting the plan as reality unfolds."
         }
       ]
     },

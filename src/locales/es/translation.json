@@ -130,8 +130,11 @@
       ]
     },
     "howWeWork": {
-      "title": "Cómo trabajamos",
-      "methods": [
+      "eyebrow": "Cómo trabajamos",
+      "h2a": "De la primera sesión",
+      "h2b": "al agente en producción.",
+      "lead": "Avanzamos rápido sin saltarnos pasos. La mayoría de clientes pasan de la primera conversación a un agente funcionando en producción en menos de cuatro semanas.",
+      "steps": [
         {
           "title": "Discovery",
           "description": "Mapeamos tus flujos de trabajo e identificamos el caso de uso de agente de mayor valor en una única sesión de trabajo."
@@ -2611,23 +2614,26 @@
       ]
     },
     "howWeWork": {
-      "title": "¿Cómo trabajamos?",
-      "methods": [
+      "eyebrow": "Cómo trabajamos",
+      "h2a": "De la primera llamada",
+      "h2b": "a la dirección tecnológica.",
+      "lead": "Un engagement de CTO fraccional pensado para avanzar rápido: diagnosticamos tu tecnología, definimos el roadmap y nos integramos con tu equipo para hacer que las cosas ocurran.",
+      "steps": [
         {
           "title": "Discovery",
-          "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
+          "description": "Auditamos tu stack actual, la estructura del equipo y el roadmap de producto para identificar dónde la tecnología está frenando el negocio."
         },
         {
-          "title": "Diseño y arquitectura",
-          "description": "Definición de requisitos, creación de un prototipo y diseño de integraciones con sistemas actuales."
+          "title": "Estrategia",
+          "description": "Definimos un roadmap tecnológico alineado con tus objetivos de negocio: arquitectura, escalado de equipo, herramientas y decisiones de build vs. buy."
         },
         {
-          "title": "Implementación",
-          "description": "Programación, pruebas funcionales, integración con plataformas externas y despliegue en producción."
+          "title": "Ejecución",
+          "description": "Lideramos la entrega: gestionando sprints, tomando decisiones de arquitectura y construyendo los procesos de ingeniería que tu equipo necesita para entregar con fiabilidad."
         },
         {
-          "title": "Soporte y mantenimiento",
-          "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
+          "title": "Evolución",
+          "description": "Iteramos de forma continua: refinando el roadmap, ayudando a incorporar talento y ajustando la estrategia a medida que el negocio crece."
         }
       ]
     },
@@ -2712,23 +2718,26 @@
       ]
     },
     "howWeWork": {
-      "title": "¿Cómo trabajamos?",
-      "methods": [
+      "eyebrow": "Cómo trabajamos",
+      "h2a": "De los requisitos",
+      "h2b": "al software funcionando.",
+      "lead": "Construimos software que encaja con tu operativa real, no soluciones genéricas. Entrega iterativa con checkpoints claros y sin sorpresas.",
+      "steps": [
         {
           "title": "Discovery",
-          "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
+          "description": "Entendemos tus requisitos, mapeamos el sistema existente y definimos una arquitectura que encaja con lo que ya tienes."
         },
         {
-          "title": "Diseño y arquitectura",
-          "description": "Definición de requisitos, creación de un prototipo y diseño de integraciones con sistemas actuales."
+          "title": "Build",
+          "description": "Desarrollo iterativo con demos periódicas y ciclos de feedback, para que el producto evolucione a la par que tus necesidades."
         },
         {
-          "title": "Implementación",
-          "description": "Programación, pruebas funcionales, integración con plataformas externas y despliegue en producción."
+          "title": "Entrega",
+          "description": "QA, despliegue en producción e integración con tu stack existente — completamente probado antes del go-live."
         },
         {
-          "title": "Soporte y mantenimiento",
-          "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
+          "title": "Soporte",
+          "description": "Monitorización post-lanzamiento, mantenimiento e iteraciones de funcionalidades a medida que el producto evoluciona con tu negocio."
         }
       ]
     },
@@ -2863,23 +2872,26 @@
       ]
     },
     "howWeWork": {
-      "title": "¿Cómo trabajamos?",
-      "methods": [
+      "eyebrow": "Cómo trabajamos",
+      "h2a": "Del diagnóstico",
+      "h2b": "a la solución funcionando.",
+      "lead": "Empezamos por tu operativa real, no por tu organigrama. Luego construimos un plan que puedes ejecutar de verdad y nos quedamos a tu lado durante la implementación.",
+      "steps": [
         {
           "title": "Discovery",
-          "description": "Identificación de necesidades, mapeo de procesos y definición de objetivos."
+          "description": "Mapeamos tus sistemas, procesos y puntos de dolor mediante entrevistas y análisis directo de lo que realmente tienes en marcha."
         },
         {
-          "title": "Diseño y arquitectura",
-          "description": "Definición de requisitos, creación de un prototipo y diseño de integraciones con sistemas actuales."
+          "title": "Diagnóstico",
+          "description": "Entregamos un diagnóstico claro: qué funciona, qué no y dónde están los cambios de mayor impacto."
         },
         {
-          "title": "Implementación",
-          "description": "Programación, pruebas funcionales, integración con plataformas externas y despliegue en producción."
+          "title": "Roadmap",
+          "description": "Producimos un plan de acción tecnológico priorizado con plazos realistas, estimaciones de inversión y responsabilidades claras."
         },
         {
-          "title": "Soporte y mantenimiento",
-          "description": "Monitorización de KPIs, soporte, mantenimiento y mejoras según la evolución del negocio."
+          "title": "Soporte",
+          "description": "Nos quedamos junto a tu equipo durante la ejecución: guiando la implementación, desbloqueando decisiones y ajustando el plan según la realidad."
         }
       ]
     },
