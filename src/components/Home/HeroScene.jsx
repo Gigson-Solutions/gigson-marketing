@@ -2,21 +2,31 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 
 const DOT_COLOR = '120, 116, 244';
-const BASE_LARGE = 160;
-const MAX_LARGE = 380;
-const BASE_SMALL = 80;
-const MAX_SMALL = 200;
+const LARGE_COUNT = 340;
+const SMALL_COUNT = 170;
+const WOBBLE_AMP = 0.16;
 
-function fibonacciSphere(n, radius) {
+function randomSphere(n, seed) {
+  let s = seed;
+  const rand = () => {
+    s = (s * 1664525 + 1013904223) & 0xffffffff;
+    return (s >>> 0) / 0xffffffff;
+  };
   const points = [];
-  const golden = (1 + Math.sqrt(5)) / 2;
   for (let i = 0; i < n; i++) {
-    const theta = Math.acos(1 - (2 * (i + 0.5)) / n);
-    const phi = (2 * Math.PI * i) / golden;
+    const phi = Math.acos(2 * rand() - 1);
+    const theta = 2 * Math.PI * rand();
     points.push({
-      x: Math.sin(theta) * Math.cos(phi) * radius,
-      y: Math.sin(theta) * Math.sin(phi) * radius,
-      z: Math.cos(theta) * radius,
+      x: Math.sin(phi) * Math.cos(theta),
+      y: Math.sin(phi) * Math.sin(theta),
+      z: Math.cos(phi),
+      // Two harmonics per axis at incommensurable frequencies → quasi-random path
+      fA:  0.12 + rand() * 0.7,  phA:  rand() * Math.PI * 2,
+      fA2: 0.45 + rand() * 1.1,  phA2: rand() * Math.PI * 2,
+      fB:  0.12 + rand() * 0.7,  phB:  rand() * Math.PI * 2,
+      fB2: 0.45 + rand() * 1.1,  phB2: rand() * Math.PI * 2,
+      fC:  0.12 + rand() * 0.7,  phC:  rand() * Math.PI * 2,
+      fC2: 0.45 + rand() * 1.1,  phC2: rand() * Math.PI * 2,
     });
   }
   return points;
@@ -29,32 +39,46 @@ function rotateY(x, y, z, angle) {
 }
 
 function drawDot(ctx, cx, cy, size, opacity) {
-  if (opacity <= 0.01) return;
+  if (opacity <= 0.005) return;
   ctx.beginPath();
   ctx.arc(cx, cy, size * 0.28, 0, Math.PI * 2);
-  ctx.fillStyle = `rgba(${DOT_COLOR}, ${Math.min(1, Math.max(0, opacity))})`;
+  ctx.fillStyle = `rgba(${DOT_COLOR}, ${Math.min(1, opacity)})`;
   ctx.fill();
 }
 
-function renderSphere(ctx, points, cx, cy, rotY, radius, dotSize, mouseX, mouseY, mouseRadius = 220) {
+function renderSphere(ctx, points, cx, cy, rotY, radius, dotSize, mouseX, mouseY, time) {
   const perspective = 600;
+  const mouseR = radius * 0.55;
+  const isMouseOver = Math.sqrt((mouseX - cx) ** 2 + (mouseY - cy) ** 2) < radius * 1.1;
+
   const projected = points.map((p) => {
-    const r = rotateY(p.x, p.y, p.z, rotY);
+    const wx = (Math.sin(time * p.fA  + p.phA)  * 0.6 + Math.sin(time * p.fA2 + p.phA2) * 0.4) * WOBBLE_AMP;
+    const wy = (Math.cos(time * p.fB  + p.phB)  * 0.6 + Math.cos(time * p.fB2 + p.phB2) * 0.4) * WOBBLE_AMP;
+    const wz = (Math.sin(time * p.fC  + p.phC)  * 0.6 + Math.sin(time * p.fC2 + p.phC2) * 0.4) * WOBBLE_AMP;
+
+    const r = rotateY((p.x + wx) * radius, (p.y + wy) * radius, (p.z + wz) * radius, rotY);
     const scale = perspective / (perspective + r.z + radius);
     const px = cx + r.x * scale;
     const py = cy + r.y * scale;
+
     const normalizedZ = (r.z / radius + 1) / 2;
-    const baseOpacity = 0.28 + normalizedZ * 0.72;
-    const dx = px - mouseX;
-    const dy = py - mouseY;
-    const dist = Math.sqrt(dx * dx + dy * dy);
-    const proximity = Math.max(0, 1 - dist / mouseRadius);
-    const opacity = baseOpacity * (1 - proximity * 0.88);
+    // Edge factor: 0 at poles, 1 at the visible silhouette of the sphere
+    const edgeFactor = Math.min(1, Math.sqrt(r.x * r.x + r.y * r.y) / radius);
+    const edgeBoost = Math.pow(edgeFactor, 2.2) * 0.55;
+    let opacity = Math.min(1, 0.22 + normalizedZ * 0.78 + edgeBoost);
+
+    if (isMouseOver) {
+      const dx = px - mouseX;
+      const dy = py - mouseY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const proximity = Math.max(0, 1 - dist / mouseR);
+      opacity = Math.max(0.08, opacity * (1 - proximity * 0.85));
+    }
+
     return { px, py, scale, opacity, z: r.z };
   });
 
   projected.sort((a, b) => a.z - b.z);
-
   for (const { px, py, scale, opacity } of projected) {
     drawDot(ctx, px, py, dotSize * scale, opacity);
   }
@@ -111,17 +135,13 @@ function HeroScene({ className }) {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
-    // Pre-generate max-density point sets; sliced down to base count each frame
-    const largeSpherePoints = fibonacciSphere(MAX_LARGE, 1);
-    const smallSpherePoints = fibonacciSphere(MAX_SMALL, 1);
+    const largePts = randomSphere(LARGE_COUNT, 42);
+    const smallPts = randomSphere(SMALL_COUNT, 137);
 
     const anim = { rotY: 0, rotY2: 0, pentRotZ: 0 };
     const mouse = { x: -9999, y: -9999 };
-    const hover = { large: 0, small: 0 };
 
-    let w = 0;
-    let h = 0;
-    let dpr = 1;
+    let w = 0, h = 0, dpr = 1;
 
     function resize() {
       dpr = window.devicePixelRatio || 1;
@@ -151,37 +171,14 @@ function HeroScene({ className }) {
       const pentCx = w * 0.74;
       const pentCy = h * 0.35;
 
-      // Lerp hover state toward target each frame
-      const dxL = mouse.x - largeCx;
-      const dyL = mouse.y - largeCy;
-      const targetLarge = Math.sqrt(dxL * dxL + dyL * dyL) < largeR ? 1 : 0;
-      hover.large += (targetLarge - hover.large) * 0.07;
-
-      const dxS = mouse.x - smallCx;
-      const dyS = mouse.y - smallCy;
-      const targetSmall = Math.sqrt(dxS * dxS + dyS * dyS) < smallR ? 1 : 0;
-      hover.small += (targetSmall - hover.small) * 0.07;
-
-      const largeCount = Math.round(BASE_LARGE + hover.large * (MAX_LARGE - BASE_LARGE));
-      const smallCount = Math.round(BASE_SMALL + hover.small * (MAX_SMALL - BASE_SMALL));
-
-      const scaledLarge = largeSpherePoints.slice(0, largeCount).map((p) => ({
-        x: p.x * largeR,
-        y: p.y * largeR,
-        z: p.z * largeR,
-      }));
-      const scaledSmall = smallSpherePoints.slice(0, smallCount).map((p) => ({
-        x: p.x * smallR,
-        y: p.y * smallR,
-        z: p.z * smallR,
-      }));
+      const time = gsap.ticker.time;
 
       renderPentagon(ctx, pentCx, pentCy, pentR, anim.pentRotZ + 0.15, mouse.x, mouse.y, [
         { cx: largeCx, cy: largeCy, r: largeR },
         { cx: smallCx, cy: smallCy, r: smallR },
       ]);
-      renderSphere(ctx, scaledLarge, largeCx, largeCy, anim.rotY, largeR, 15, mouse.x, mouse.y);
-      renderSphere(ctx, scaledSmall, smallCx, smallCy, anim.rotY2, smallR, 11, mouse.x, mouse.y, 130);
+      renderSphere(ctx, largePts, largeCx, largeCy, anim.rotY, largeR, 15, mouse.x, mouse.y, time);
+      renderSphere(ctx, smallPts, smallCx, smallCy, anim.rotY2, smallR, 8, mouse.x, mouse.y, time);
     }
 
     gsap.to(anim, { rotY: Math.PI * 2, duration: 28, ease: 'none', repeat: -1 });
@@ -195,7 +192,6 @@ function HeroScene({ className }) {
       mouse.x = e.clientX - rect.left;
       mouse.y = e.clientY - rect.top;
     }
-
     function handleMouseLeave() {
       mouse.x = -9999;
       mouse.y = -9999;
