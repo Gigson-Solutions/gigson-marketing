@@ -3,6 +3,7 @@
    /* padding: 0 1rem; */
    position: relative;
    padding-top: 3rem;
+   background: linear-gradient(135deg, rgba(120, 116, 244, 0.18) 0%, rgba(120, 116, 244, 0.04) 60%, transparent 100%);
 }
 
 .home-services-bg {
@@ -12,7 +13,7 @@
    position: absolute;
    top: 0;
    z-index: -1;
-   background: url("../../assets/Bg-home-services.png") no-repeat;
+   background: #7874f4 url("../../assets/Bg-home-services.png") no-repeat;
    background-position: center 100%;
    background-size: cover;
 }
