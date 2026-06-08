@@ -7,14 +7,14 @@ import { SeoHelmet } from '../../seo/seoHelmet';
 import circSvg from '../../assets/circunferencia1.svg';
 import cubeSvg from '../../assets/cubo1.svg';
 import piraSvg from '../../assets/tri1.svg';
-// import WorldMap from './WorldMap';
+import WorldMap from './WorldMap';
 
 const AboutHero = () => {
   const { t } = useTranslation();
   const { title, description, cta, titleH2, belive, need } = t('about');
   const seo = t('pageSeo.about');
   const { t1, t2, t3, t4, p1, p2, p3, p4 } = belive;
-  const { label, cta2 } = need;
+  const { cta2 } = need;
 
   const dataBelive = [
     { img: cubeSvg, title: t1, description: p1 },
@@ -88,11 +88,10 @@ const AboutHero = () => {
         </section>
       </div>
 
-      {/* <WorldMap /> */}
+      <WorldMap />
 
       <div className="wrapper">
         <div className="about-map-footer">
-          <p className="about-believe-p">{label}</p>
           <Link to="/contact" className="about-button-contact button-main">
             {cta2}
           </Link>

@@ -3,6 +3,7 @@ import './ClaudePartner.css';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
+import solutionsBg from '../../../assets/solutions-applications-bg-gradients-1.svg';
 import { OrganizationSchema, ServiceSchema } from '../../../seo/SchemaOrg';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 import { ServiceFaq } from 'shared/ServiceFaq.jsx';
@@ -30,43 +31,49 @@ const ClaudePartner = () => {
 
       {/* HERO */}
       <section className="cp-hero">
-        <span className="cp-hero-eyebrow">{cp.hero.eyebrow}</span>
-        <h1
-          dangerouslySetInnerHTML={{ __html: cp.hero.h1 }}
-        />
+        <p className="cp-eyebrow">{cp.hero.eyebrow}</p>
+        <h1 dangerouslySetInnerHTML={{ __html: cp.hero.h1 }} />
         <p className="cp-hero-sub">{cp.hero.sub}</p>
-        <Link to={contactPath} className="cp-hero-cta">
+        <Link to={contactPath} className="button-main">
           {cp.hero.cta}
         </Link>
       </section>
 
-      {/* WHAT IS */}
-      <section className="cp-what">
-        <div className="cp-what-inner">
+      {/* WHAT IS + NETWORK */}
+      <section
+        className="cp-section cp-section--cream"
+        style={{
+          backgroundImage: `url(${solutionsBg})`,
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+      >
+        <div className="cp-inner cp-two-col wrapper">
           <div>
-            <span className="cp-section-eyebrow">{cp.what.eyebrow}</span>
+            <p className="cp-eyebrow">{cp.what.eyebrow}</p>
             <h2>{cp.what.h2}</h2>
-            <p>{cp.what.p1}</p>
-            <p>{cp.what.p2}</p>
+            <p className="cp-lead">{cp.what.p1}</p>
+            <p className="cp-lead">{cp.what.p2}</p>
           </div>
           <div>
-            <span className="cp-section-eyebrow">{cp.network.eyebrow}</span>
+            <p className="cp-eyebrow">{cp.network.eyebrow}</p>
             <h2>{cp.network.h2}</h2>
-            <p>{cp.network.p1}</p>
-            <p>{cp.network.p2}</p>
+            <p className="cp-lead">{cp.network.p1}</p>
+            <p className="cp-lead">{cp.network.p2}</p>
           </div>
         </div>
       </section>
 
       {/* BENEFITS */}
-      <section className="cp-benefits">
-        <div className="cp-benefits-inner">
+      <section className="cp-section">
+        <div className="cp-inner wrapper">
           <h2>{cp.benefits.h2}</h2>
-          <p className="cp-benefits-lead">{cp.benefits.lead}</p>
-          <div className="cp-benefits-grid">
+          <p className="cp-lead">{cp.benefits.lead}</p>
+          <div className="cp-grid">
             {cp.benefits.items.map(({ num, title, description }) => (
-              <div key={num} className="cp-benefit-card">
-                <div className="cp-benefit-num">{num}</div>
+              <div key={num} className="cp-card">
+                <div className="cp-card-num">{num}</div>
                 <h3>{title}</h3>
                 <p>{description}</p>
               </div>
@@ -76,10 +83,18 @@ const ClaudePartner = () => {
       </section>
 
       {/* VS TABLE */}
-      <section className="cp-vs">
-        <div className="cp-vs-inner">
+      <section
+        className="cp-section cp-section--cream"
+        style={{
+          backgroundImage: `url(${solutionsBg})`,
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+      >
+        <div className="cp-inner wrapper">
           <h2>{cp.vs.h2}</h2>
-          <table className="cp-vs-table">
+          <table className="cp-table">
             <thead>
               <tr>
                 {cp.vs.headers.map((h, i) => (
@@ -101,12 +116,13 @@ const ClaudePartner = () => {
       </section>
 
       {/* CERTIFICATION */}
-      <section className="cp-cert">
-        <div className="cp-cert-inner">
+      <section className="cp-section">
+        <div className="cp-inner wrapper">
           <div className="cp-cert-box">
+            <p className="cp-eyebrow">{cp.cert.eyebrow ?? 'CERTIFICACIÓN'}</p>
             <h2>{cp.cert.h2}</h2>
-            <p>{cp.cert.p1}</p>
-            <p>{cp.cert.p2}</p>
+            <p className="cp-lead">{cp.cert.p1}</p>
+            <p className="cp-lead">{cp.cert.p2}</p>
             <ul className="cp-cert-items">
               {cp.cert.items.map((item, i) => (
                 <li key={i}>{item}</li>
@@ -122,8 +138,8 @@ const ClaudePartner = () => {
       {/* CTA BOTTOM */}
       <section className="cp-cta-bottom">
         <h2>{cp.ctaBottom.h2}</h2>
-        <p>{cp.ctaBottom.p}</p>
-        <Link to={contactPath} className="cp-hero-cta">
+        <p className="cp-lead">{cp.ctaBottom.p}</p>
+        <Link to={contactPath} className="button-main">
           {cp.ctaBottom.cta}
         </Link>
       </section>
