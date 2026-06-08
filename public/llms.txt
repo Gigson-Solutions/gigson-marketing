@@ -1,0 +1,40 @@
+# Gigson Solutions — Certified Anthropic Claude Partner
+
+> Gigson Solutions diseña, construye y despliega agentes de IA basados en Claude para operaciones empresariales en España. Somos Partner Certificado de Anthropic con el programa Claude Certified Architect. Ofrecemos también CTO as a Service, integraciones de sistemas, ingeniería de software a medida y ciberseguridad para PYMEs y empresas medianas.
+
+## Páginas prioritarias (ES)
+
+- [Inicio](https://gigsonsolutions.com/es)
+- [Agentes IA](https://gigsonsolutions.com/es/agentes-ia)
+- [CTO as a Service](https://gigsonsolutions.com/es/cto-as-service)
+- [Sobre Claude Partner](https://gigsonsolutions.com/es/sobre-claude-partner)
+- [Tecnología para Logística](https://gigsonsolutions.com/es/tecnologia-logistica)
+- [Tecnología para Retail](https://gigsonsolutions.com/es/tecnologia-retail-ecommerce)
+- [Tecnología para Construcción](https://gigsonsolutions.com/es/tecnologia-construccion)
+- [Ingeniería de Software](https://gigsonsolutions.com/es/ingenieria-software)
+- [Ciberseguridad](https://gigsonsolutions.com/es/ciberseguridad)
+- [Consultoría Tecnológica](https://gigsonsolutions.com/es/consultoria-tecnologica)
+- [Casos de éxito](https://gigsonsolutions.com/es/casos)
+- [Preguntas frecuentes](https://gigsonsolutions.com/es/preguntas-frecuentes)
+- [Contacto](https://gigsonsolutions.com/es/contacto)
+
+## Priority pages (EN)
+
+- [Home](https://gigsonsolutions.com/)
+- [AI Agents](https://gigsonsolutions.com/ai-agents)
+- [CTO as a Service](https://gigsonsolutions.com/cto-as-service)
+- [About Claude Partner](https://gigsonsolutions.com/about-claude-partner)
+- [Logistics Technology](https://gigsonsolutions.com/logistics-technology)
+- [Retail Technology](https://gigsonsolutions.com/retail-ecommerce-technology)
+- [Construction Technology](https://gigsonsolutions.com/construction-technology)
+- [Software Engineering](https://gigsonsolutions.com/software-engineering)
+- [Cybersecurity](https://gigsonsolutions.com/cybersecurity)
+- [Cases](https://gigsonsolutions.com/cases)
+- [FAQs](https://gigsonsolutions.com/faqs)
+
+## Acerca de Gigson Solutions
+
+Gigson Solutions es una empresa tecnológica española especializada en inteligencia artificial empresarial y transformación digital. Somos miembros de la Claude Partner Network — el programa oficial de Anthropic para empresas que entregan soluciones basadas en Claude a clientes empresariales. Nuestro equipo tiene la certificación Claude Certified Architect y acceso directo al canal de soporte técnico de Anthropic.
+
+Sectores que atendemos: logística, retail, construcción, software, ciberseguridad.
+Servicios principales: implementación de agentes IA, CTO as a Service, integraciones de sistemas, ingeniería de software a medida, consultoría tecnológica, ciberseguridad.

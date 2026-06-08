@@ -12,7 +12,7 @@ const Footer = () => {
   const slugs = ROUTE_SLUGS[i18n.language] || ROUTE_SLUGS[DEFAULT_LANG];
   const langPrefix = i18n.language === DEFAULT_LANG ? '' : `/${i18n.language}`;
 
-  const { about, services, cases, faqs, book, contact, legal, cookies, notice } =
+  const { about, services, cases, faqs, book, contact, legal, cookies, notice, ai_manifest } =
     t('menu');
 
   const menuLinks = [
@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-policy max-w-[88.875rem] mx-auto">
-          <span href="">Developed by Gigson Solutions © 2025 </span>
+          <span>Developed by Gigson Solutions © {new Date().getFullYear()}</span>
           <ul className="footer-policy-links">
             <li>
               <Link to="/policy">{legal}</Link>
@@ -62,6 +62,9 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/notice">{notice}</Link>
+            </li>
+            <li>
+              <Link to="/ai-manifest">{ai_manifest}</Link>
             </li>
           </ul>
         </div>

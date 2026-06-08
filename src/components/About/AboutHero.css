@@ -127,39 +127,14 @@
    margin: 1rem 0 3rem;
 }
 
-.about-div-specialist {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   gap: 2rem;
-   margin-bottom: 1.5rem;
-   padding: 1rem 0;
-}
-
-.about-need-h3 {
-   font-size: 1rem;
-   color: #3c3c3b;
-}
-.about-need-p1 {
-   color: #7874f4;
-   font-size: 0.875rem;
-   text-transform: uppercase;
-}
-.about-button-container {
-   display: flex;
-   align-items: center;
+.about-map-footer {
+   padding: 2.5rem 0 4rem;
 }
 .about-button-contact {
    font-size: 1rem;
    color: #7874f4;
-   margin: 6rem auto;
-}
-.about-background-image-DgPrd {
-   position: absolute;
-   top: -6rem;
-   right: -1.5rem;
-   width: 60vw;
-   max-width: 20rem;
-   opacity: 0.2;
+   margin-top: 1.5rem;
+   display: inline-block;
 }
 
 @media (min-width: 40rem) {
@@ -240,10 +215,6 @@
    .about-believe-p {
       font-size: 1.05rem;
    }
-   .about-div-specialist {
-      padding: 4rem 0 inherit;
-      grid-template-columns: repeat(3, 1fr);
-   }
    .about-hero-need-h2 {
       font-size: 2.8em;
       max-width: 35rem;
@@ -251,18 +222,6 @@
    .about-need-p {
       font-size: 1.25rem;
       max-width: 43rem;
-   }
-   .about-need-h3 {
-      font-size: 2.1em;
-   }
-   .about-need-p1 {
-      padding-top: 0.5rem;
-      font-size: 1.2em;
-   }
-   .about-background-image-DgPrd {
-      top: -3rem;
-      right: 3.5rem;
-      max-width: 25rem;
    }
    .about-bg {
       top: 4rem;
@@ -291,20 +250,9 @@
    }
 }
 
-@media (min-width: 75rem) {
-   .about-background-image-DgPrd {
-      opacity: 0.4;
-   }
-}
-
 @media (min-width: 81.25rem) {
    .about-button-contact {
       font-size: 1.25rem;
-      /* margin-bottom: 3rem; */
-      margin: 5.5rem auto;
-   }
-   .about-div-specialist {
-      margin-bottom: 1rem;
    }
 }
 @media (min-width: 90rem) {
@@ -344,17 +292,6 @@
       text-wrap: balance;
       margin-top: 2rem;
    }
-
-   .about-need-h3 {
-      font-size: 2.1em;
-   }
-   .about-need-p1 {
-      padding-top: 0.5rem;
-      font-size: 1.2em;
-   }
-   .about-div-specialist {
-      padding: 3rem 0 2rem;
-   }
 }
 @media (min-width: 102.5625rem) {
    .about-belive-max {
@@ -379,14 +316,6 @@
 
    .about-section-need {
       padding: 2rem 0rem;
-   }
-   .about-background-image-DgPrd {
-      top: 1rem;
-      right: 5rem;
-      max-width: 30rem;
-   }
-   .about-div-specialist {
-      grid-template-columns: repeat(3, 32rem);
    }
 }
 @media (min-width: 121rem) {

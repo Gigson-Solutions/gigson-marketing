@@ -2,10 +2,29 @@
 User-agent: *
 Allow: /
 
-# Legacy / irrelevant patterns (harmless if unused)
-Disallow: /*/feed/
-Disallow: /*?s=
-Disallow: /*/*/*/feed.xml
-Disallow: /?*
+# AI crawlers — explicitly allowed for GEO indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
 
 Sitemap: https://gigsonsolutions.com/sitemap.xml

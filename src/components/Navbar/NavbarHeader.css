@@ -18,6 +18,11 @@
 
 .logo-header {
    width: 9rem;
+   flex-shrink: 0;
+}
+
+.div-header > a {
+   flex-shrink: 0;
 }
 
 
@@ -28,7 +33,7 @@
 }
 
 
-@media (min-width: 65rem) {
+@media (min-width: 72rem) {
    .logo-header {
       width: 10rem;
    }

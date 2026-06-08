@@ -37,10 +37,22 @@ const NavbarDesktop = ({ menu }) => {
             >
               {children ? (
                 <>
-                  <span className="menu-item__link">
-                    {name}
-                    <ChevronDown />
-                  </span>
+                  {link && link.startsWith('http') ? (
+                    <a className="menu-item__link" href={link}>
+                      {name}
+                      <ChevronDown />
+                    </a>
+                  ) : link ? (
+                    <NavLink className="menu-item__link" to={link}>
+                      {name}
+                      <ChevronDown />
+                    </NavLink>
+                  ) : (
+                    <span className="menu-item__link">
+                      {name}
+                      <ChevronDown />
+                    </span>
+                  )}
                   <ul className="dropdown">
                     {children.map(({ link, name }, childIndex) => (
                       <li className="menu-item__child" key={childIndex}>

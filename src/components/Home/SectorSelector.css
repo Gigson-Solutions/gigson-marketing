@@ -1,0 +1,87 @@
+.sector-selector__title {
+  font-size: 1.25em;
+  margin-bottom: 1.4rem;
+  margin-left: 2rem;
+  color: #7874f4;
+}
+
+.sector-selector__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 0.5rem;
+  max-width: 45rem;
+  margin-left: 2rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Base pill — GSAP autoAlpha sets visibility:hidden before entry animation */
+.sector-pill {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.58rem 1.25rem;
+  border-radius: 100px;
+  border: 1.5px solid #3c3c3b;
+  background: transparent;
+  color: #3c3c3b;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1;
+  /* No CSS transition — GSAP owns all visual state */
+}
+
+/* Purple fill that sweeps in/out via GSAP scaleX */
+.sector-pill__fill {
+  position: absolute;
+  inset: 0;
+  background: #7874f4;
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+  border-radius: 100px;
+}
+
+/* Label stays above fill */
+.sector-pill__label {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Centered variant (used in /cases page) ── */
+.sector-selector--centered .sector-selector__title {
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.sector-selector--centered .sector-selector__grid {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Desktop ── */
+@media (min-width: 70.25rem) {
+  .sector-selector__title {
+    font-size: 1.875em;
+    margin-bottom: 1.6rem;
+    margin-left: 0.3rem;
+  }
+
+  .sector-selector__grid {
+    gap: 0.9rem 0.6rem;
+    margin: 0 0 2.5rem;
+  }
+
+  .sector-selector--centered .sector-selector__title {
+    margin-left: 0;
+  }
+
+  .sector-selector--centered .sector-selector__grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

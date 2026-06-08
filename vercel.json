@@ -1,4 +1,5 @@
 {
+    "buildCommand": "vite build && node scripts/generate-sitemap.mjs",
     "rewrites":  [
         {"source": "/(.*)", "destination": "/"}
      ]

@@ -5,12 +5,14 @@ import DigitalProduct from '../../../shared/ui/DigitalProduct.jsx';
 import Hero from '../../../shared/ui/Hero.jsx';
 import HowWeWork from '../../../shared/ui/HowWeWork.jsx';
 import ImproveAreas from '../../../shared/ui/ImproveAreas.jsx';
+import { ServiceFaq } from '../../../shared/ui/ServiceFaq.jsx';
 import SolutionsApplications from '../../../shared/ui/SolutionsApplications.jsx';
 import UseCases from '../../../shared/ui/UseCases.jsx';
+import { ServiceSchema } from '../../../seo/SchemaOrg';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const Construction = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const {
     title,
@@ -21,11 +23,16 @@ const Construction = () => {
     improveAreas,
     howWeWork,
     digitalProduct,
+    faq,
   } = t('cases-construction');
+
+  const lang = i18n.language || 'en';
+  const serviceUrl = lang === 'es' ? '/es/tecnologia-construccion' : '/construction-technology';
 
   return (
     <>
       <SeoHelmet title={title} description={metadescription} />
+      <ServiceSchema name={title} description={metadescription} url={serviceUrl} serviceType="Construction Technology" />
       <Hero {...hero} />
       <section
         style={{
@@ -41,6 +48,7 @@ const Construction = () => {
       <SolutionsApplications {...solutionsApplications} />
       <HowWeWork {...howWeWork} />
       <DigitalProduct {...digitalProduct} />
+      {faq && <ServiceFaq title={faq.title} faqs={faq.items} />}
     </>
   );
 };
