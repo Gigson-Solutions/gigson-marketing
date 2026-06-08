@@ -2,18 +2,18 @@ import a6Img from 'assets/brands/A6.svg';
 import adockImg from 'assets/brands/Adock.svg';
 import brandtiaImg from 'assets/brands/Brandtia.svg';
 import caritasImg from 'assets/brands/Caritas.svg';
+import colvinLogo from 'assets/brands/colvin.svg';
 import elogiaImg from 'assets/brands/Elogia.svg';
 import europcarGroupImg from 'assets/brands/EuropcarGroup.svg';
 import kmmImg from 'assets/brands/KMM.svg';
 import logoImg from 'assets/brands/Logo.svg';
 import modareImg from 'assets/brands/Modare.svg';
+import quicksmileLogo from 'assets/brands/quicksmile.svg';
 import spainRevealedGisgsonImg from 'assets/brands/SpainRevealed_Gisgson.svg';
 import stkImg from 'assets/brands/STK.svg';
 import tarbozImg from 'assets/brands/Tarboz.svg';
-import vikoImg from 'assets/brands/Viko.svg';
-import colvinLogo from 'assets/brands/colvin.svg';
 import unavetsLogo from 'assets/brands/unavets.svg';
-import quicksmileLogo from 'assets/brands/quicksmile.svg';
+import vikoImg from 'assets/brands/Viko.svg';
 import { Trans } from 'react-i18next';
 
 const logoNames = [

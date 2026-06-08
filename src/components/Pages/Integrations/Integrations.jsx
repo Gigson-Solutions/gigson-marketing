@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 import IntegrationContactForm from './IntegrationContactForm';
 import IntegrationLogosGrid from './IntegrationLogosGrid';
-import IntegrationUseCases from './IntegrationUseCases';
 import IntegrationsHero from './IntegrationsHero';
+import IntegrationUseCases from './IntegrationUseCases';
 
 const Integrations = () => {
   const { t } = useTranslation();

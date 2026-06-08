@@ -3,10 +3,11 @@ import './AboutHero.css';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import { SeoHelmet } from '../../seo/seoHelmet';
 import circSvg from '../../assets/circunferencia1.svg';
 import cubeSvg from '../../assets/cubo1.svg';
 import piraSvg from '../../assets/tri1.svg';
+import triaSvg from '../../assets/Trianguloycirculo.png';
+import { SeoHelmet } from '../../seo/seoHelmet';
 import WorldMap from './WorldMap';
 
 const AboutHero = () => {

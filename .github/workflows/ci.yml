@@ -1,0 +1,44 @@
+name: CI
+
+# Validación obligatoria en cada Pull Request hacia main o staging.
+# El nombre del job ("build") es el "status check" requerido por los rulesets.
+on:
+  pull_request:
+    branches:
+      - main
+      - staging
+
+# Cancela ejecuciones antiguas si se hace push nuevo a la misma PR.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Modo verificación (sin --fix): la PR falla si hay errores de lint.
+      - name: Lint
+        run: npx eslint .
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build project
+        run: npm run build
+        env:
+          SITE_URL: https://gigsonsolutions.com
