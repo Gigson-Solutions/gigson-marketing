@@ -1,0 +1,312 @@
+.claude-partner {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* HERO */
+.cp-hero {
+  padding: 8rem 1.5rem 5rem;
+  text-align: center;
+}
+
+.cp-hero-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7874f4;
+  margin-bottom: 1.25rem;
+}
+
+.cp-hero h1 {
+  font-size: 2.2rem;
+  line-height: 1.15;
+  color: #3c3c3b;
+  max-width: 22ch;
+  margin: 0 auto 1.5rem;
+  text-wrap: pretty;
+}
+
+.cp-hero h1 span {
+  color: #7874f4;
+}
+
+.cp-hero-sub {
+  font-size: 1.05rem;
+  color: #6b6b6a;
+  max-width: 52ch;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.cp-hero-cta {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background: #7874f4;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 180ms;
+}
+
+.cp-hero-cta:hover {
+  background: #5e5ad8;
+}
+
+/* WHAT IS */
+.cp-what {
+  padding: 4rem 1.5rem;
+  background: #f8f8f8;
+}
+
+.cp-what-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.cp-section-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7874f4;
+  margin-bottom: 0.75rem;
+}
+
+.cp-what h2 {
+  font-size: 1.6rem;
+  color: #3c3c3b;
+  margin-bottom: 1rem;
+}
+
+.cp-what p {
+  color: #6b6b6a;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+/* BENEFITS */
+.cp-benefits {
+  padding: 4rem 1.5rem;
+}
+
+.cp-benefits-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.cp-benefits h2 {
+  font-size: 1.6rem;
+  color: #3c3c3b;
+  margin-bottom: 0.75rem;
+}
+
+.cp-benefits-lead {
+  color: #6b6b6a;
+  margin-bottom: 2.5rem;
+  max-width: 55ch;
+  line-height: 1.6;
+}
+
+.cp-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.cp-benefit-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 1.75rem 1.5rem;
+}
+
+.cp-benefit-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #7874f4;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.cp-benefit-card h3 {
+  font-size: 1.05rem;
+  color: #3c3c3b;
+  margin-bottom: 0.5rem;
+}
+
+.cp-benefit-card p {
+  font-size: 0.92rem;
+  color: #6b6b6a;
+  line-height: 1.6;
+}
+
+/* VS TABLE */
+.cp-vs {
+  padding: 4rem 1.5rem;
+  background: #f8f8f8;
+}
+
+.cp-vs-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.cp-vs h2 {
+  font-size: 1.6rem;
+  color: #3c3c3b;
+  margin-bottom: 2rem;
+}
+
+.cp-vs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.cp-vs-table th,
+.cp-vs-table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.cp-vs-table thead th {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #3c3c3b;
+}
+
+.cp-vs-table thead th:first-child {
+  width: 40%;
+}
+
+.cp-vs-table td:first-child {
+  color: #3c3c3b;
+  font-weight: 500;
+}
+
+.cp-vs-table td:nth-child(2) {
+  color: #7874f4;
+  font-weight: 600;
+}
+
+.cp-vs-table td:nth-child(3) {
+  color: #9b9b9b;
+}
+
+/* CERT */
+.cp-cert {
+  padding: 4rem 1.5rem;
+}
+
+.cp-cert-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.cp-cert-box {
+  border: 2px solid #7874f4;
+  border-radius: 10px;
+  padding: 2.5rem 2rem;
+}
+
+.cp-cert-box h2 {
+  font-size: 1.4rem;
+  color: #3c3c3b;
+  margin-bottom: 1rem;
+}
+
+.cp-cert-box p {
+  color: #6b6b6a;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.cp-cert-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cp-cert-items li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: #3c3c3b;
+}
+
+.cp-cert-items li::before {
+  content: '→';
+  color: #7874f4;
+  flex-shrink: 0;
+}
+
+/* CTA BOTTOM */
+.cp-cta-bottom {
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.cp-cta-bottom h2 {
+  font-size: 1.7rem;
+  color: #3c3c3b;
+  margin-bottom: 1rem;
+}
+
+.cp-cta-bottom p {
+  color: #6b6b6a;
+  margin-bottom: 2rem;
+  max-width: 44ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (min-width: 40rem) {
+  .cp-benefits-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .cp-hero {
+    padding: 11rem 2rem 7rem;
+  }
+
+  .cp-hero h1 {
+    font-size: 3.5rem;
+    max-width: 18ch;
+  }
+
+  .cp-hero-sub {
+    font-size: 1.15rem;
+  }
+
+  .cp-what-inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .cp-benefits-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cp-benefit-card {
+    padding: 2rem 1.75rem;
+  }
+}

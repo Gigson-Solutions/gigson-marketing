@@ -29,9 +29,9 @@
   },
   "hero_link": "/es/contacto",
   "home": {
-    "title": "Gigson Solutions | Tecnología para Impulsar tu Negocio",
-    "metadescription": "Soluciones a medida para negocios complejos. Potenciamos tu tecnología actual y, si lo que necesitas no existe, lo creamos juntos.",
-    "heroH1": "Tecnología para <span>impulsar</span> tu negocio<span>.</span>",
+    "title": "Gigson Solutions | Partner IA Empresarial en España · Claude Partner Certificado",
+    "metadescription": "Partner certificado de Anthropic. Diseñamos e implementamos agentes Claude para empresas en España en 4–8 semanas. CTO as a Service, integraciones y ciberseguridad.",
+    "heroH1": "Tecnología para <span>impulsar</span> tu negocio en <span>España.</span>",
     "heroP": "CERTIFIED ANTHROPIC CLAUDE PARTNER · AI AGENT IMPLEMENTATION",
     "heroSubhead": "Diseñamos, construimos y desplegamos agentes de IA impulsados por Claude — el modelo más avanzado de Anthropic — junto con software a medida, integraciones de sistemas y ciberseguridad. Partner certificado. Entrega real.",
     "heroBtn": "CONTÁCTANOS",
@@ -69,11 +69,11 @@
     "cta": "CONOCE NUESTROS SERVICIOS DE IA →"
   },
   "aiAgents": {
-    "title": "Implementación de Agentes IA | Gigson Solutions",
-    "metadescription": "Diseñamos, construimos y desplegamos agentes de IA basados en Claude para operaciones empresariales — como Anthropic Claude Partner certificado.",
+    "title": "Agentes IA para Empresas en España | Claude Partner Certificado · Gigson Solutions",
+    "metadescription": "Implementamos agentes de IA basados en Claude para empresas en España en 4–8 semanas. Partner Certificado de Anthropic. Procesamiento de documentos, automatización y Q&A interno.",
     "hero": {
       "suptitle": "CERTIFIED ANTHROPIC CLAUDE PARTNER",
-      "title": "Implementación de <span>Agentes IA</span>",
+      "title": "Implementación de <span>Agentes IA</span> para Empresas en España",
       "description": "Diseñamos, construimos y desplegamos agentes de IA basados en Claude para operaciones empresariales. Un agente de IA es software que puede percibir contexto, razonarlo y actuar — conectándose a tus herramientas, procesando tus datos y ejecutando tareas sin intervención manual. A diferencia de las automatizaciones simples, los agentes gestionan ambigüedad, decisiones de múltiples pasos e inputs no estructurados.<br>Construimos agentes con Claude, el modelo de IA más avanzado y seguro de Anthropic.",
       "buttonText": "Contáctanos"
     },
@@ -169,6 +169,31 @@
         {
           "title": "Retainer de agente continuo",
           "description": "Los agentes de IA no son plug-and-forget. Ofrecemos paquetes de retainer mensual para monitorizar, iterar y expandir tus despliegues de agentes a medida que tus necesidades evolucionan."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre agentes IA",
+      "items": [
+        {
+          "question": "¿Cuánto cuesta implementar un agente Claude en una empresa en España?",
+          "answer": "El coste de implementación varía según la complejidad del caso de uso. Un agente básico (procesamiento de documentos o Q&A interno) parte desde 8.000–15.000€. Proyectos más complejos con múltiples integraciones y flujos de trabajo suelen estar entre 20.000–50.000€. Contáctanos para una estimación personalizada sin compromiso."
+        },
+        {
+          "question": "¿Cuánto tiempo tarda implementar un agente de IA?",
+          "answer": "El tiempo medio de implementación es de 4 a 8 semanas desde el kickoff hasta producción. Proyectos más complejos pueden tomar 10–16 semanas. Trabajamos con sprints iterativos para que veas resultados reales desde la semana 2–3."
+        },
+        {
+          "question": "¿Qué diferencia a Gigson Solutions de otras empresas de IA?",
+          "answer": "Somos Partner Certificado de Anthropic — uno de los pocos en España — con acceso directo a soporte técnico y los últimos modelos Claude. No vendemos demos ni POCs abandonados: entregamos agentes en producción con soporte continuo y trazabilidad completa."
+        },
+        {
+          "question": "¿Qué necesita mi empresa para empezar a usar agentes IA?",
+          "answer": "No necesitas infraestructura especial. Los agentes se conectan a tus herramientas existentes (ERP, CRM, email, documentos). Empezamos con un diagnóstico gratuito para identificar el caso de uso de mayor impacto y menor fricción para tu equipo."
+        },
+        {
+          "question": "¿Los agentes Claude son seguros para datos empresariales confidenciales?",
+          "answer": "Sí. Claude de Anthropic está diseñado con un enfoque safety-first. Los datos no se usan para entrenar modelos. Podemos desplegar los agentes en tu infraestructura (on-premise o cloud privado) para mayor control. Cumplimos con RGPD y podemos acompañar procesos de compliance."
         }
       ]
     }
@@ -677,11 +702,11 @@
     "btnInfo": "+INFO"
   },
   "cases-logistics": {
-    "title": "Tecnología en Logística e Intralogística | Gigson Solutions",
-    "metadescription": "Optimiza tu cadena logística con soluciones tecnológicas a medida: más eficiencia, trazabilidad y control sin depender de grandes integradores.",
+    "title": "Tecnología para Empresas de Logística en España | Gigson Solutions",
+    "metadescription": "Optimiza tu cadena logística con tecnología a medida en España: trazabilidad, automatización y eficiencia operativa sin grandes integradores. Agentes IA + integraciones.",
     "hero": {
       "suptitle": "LOGÍSTICA Y FULFILLMENT",
-      "title": "<span>Tecnología</span> en logística <br/> y consultoría de <span>intralogística</span> ",
+      "title": "<span>Tecnología</span> para empresas de logística <br/> e <span>intralogística</span> en España",
       "description": "La tecnología en logística puede ser un desafío si no se cuenta con el asesoramiento adecuado. En Gigson Solutions, te ayudamos a integrar soluciones tecnológicas sin fricciones, asegurando que se adapten a la estructura del negocio.",
       "buttonText": "Contáctanos"
     },
@@ -1453,6 +1478,23 @@
         {
           "title": "Consultoría tecnologica",
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre tecnología en logística",
+      "items": [
+        {
+          "question": "¿Cómo puede la IA mejorar las operaciones logísticas de mi empresa?",
+          "answer": "Los agentes IA pueden automatizar tareas de alto volumen y bajo valor: clasificación de documentos de transporte, seguimiento de pedidos, gestión de incidencias, comunicación con transportistas y generación de reportes. El resultado medio es una reducción del 30–50% en tiempo operativo en estos procesos."
+        },
+        {
+          "question": "¿Qué integraciones tecnológicas son comunes en empresas de logística?",
+          "answer": "Las más frecuentes son: integración ERP ↔ WMS, conexión con plataformas de tracking (FedEx, DHL, MRW), integración con marketplaces (Amazon, Shopify), automatización de EDI, y conectores con sistemas de gestión de almacén propietarios. Trabajamos con sistemas legacy y modernos."
+        },
+        {
+          "question": "¿Cuánto tiempo tarda un proyecto de digitalización logística?",
+          "answer": "Depende del alcance. Una integración puntual (ej. conectar ERP con plataforma de transportistas) tarda 3–6 semanas. Un proyecto de transformación digital más amplio puede tomar 3–6 meses con fases iterativas. Siempre empezamos con el proceso de mayor impacto para mostrar resultados rápidos."
         }
       ]
     }
@@ -2507,11 +2549,11 @@
     "brand_description": "Descubre nuestros clientes y lo que hacemos por ellos"
   },
   "CTO": {
-    "title": "CTO as a Service | Gigson Solutions",
-    "metadescription": "Mejora tu estrategia tecnológica, lidera la transformación digital y reduce riesgos operativos con un CTO externo",
+    "title": "CTO as a Service para PYMEs en España | Gigson Solutions",
+    "metadescription": "Dirección tecnológica estratégica para PYMEs y startups en España. CTO externo certificado: estrategia, arquitectura y liderazgo técnico sin los costes de un CTO a tiempo completo.",
     "hero": {
       "suptitle": "SERVICIOS",
-      "title": "CTO as a Service: <br> <span> estrategia tecnológica a medida </span>",
+      "title": "CTO as a Service para <span>PYMEs en España</span>",
       "description": "En un contexto donde la tecnología impacta directamente en la eficiencia y la competitividad, muchas pymes se enfrentan a un reto común: necesitan dirección tecnológica estratégica y operativa, pero no pueden asumir la carga financiera ni estructural de incorporar un CTO a tiempo completo. <br> Además, aunque la tecnología no sea su core, la necesitan para operar, crecer y tomar mejores decisiones. Ahí es donde el modelo CTO as a Service cobra todo el sentido. <br> En Gigson Solutions actuamos como partner tecnológico, no solo como consultores. Te ayudamos a definir y ejecutar una estrategia tecnológica que encaje con tu estructura de negocio, sin imponer herramientas ni metodologías genéricas. <br> Acompañamos a startups, scaleups y empresas consolidadas con un enfoque claro: que la tecnología sea un facilitador, no un freno.",
       "buttonText": "Contáctanos"
     },
@@ -2653,6 +2695,27 @@
         {
           "title": "Consultoría tecnologica",
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre CTO as a Service",
+      "items": [
+        {
+          "question": "¿Qué es exactamente un CTO as a Service?",
+          "answer": "Un CTO as a Service es un director de tecnología externo que actúa como parte de tu equipo directivo, pero sin los costes ni la rigidez de una contratación a tiempo completo. Aporta estrategia tecnológica, arquitectura de sistemas, liderazgo de equipos técnicos y toma de decisiones tecnológicas alineadas con tu negocio."
+        },
+        {
+          "question": "¿Cuánto cuesta un CTO as a Service en España?",
+          "answer": "El coste depende del nivel de dedicación. Modelos de 1–2 días semanales parten desde 2.000–4.000€/mes. La dedicación completa (equivalente a tiempo completo) puede llegar a 8.000–12.000€/mes. Siempre significativamente menor que contratar un CTO senior en nómina (80.000–120.000€/año + beneficios)."
+        },
+        {
+          "question": "¿Para qué tipo de empresa tiene sentido el modelo CTO as a Service?",
+          "answer": "Para PYMEs en crecimiento que necesitan dirección tecnológica pero no pueden asumir un CTO a tiempo completo, startups que necesitan arquitectura sólida desde el principio, y empresas en proceso de digitalización o transformación tecnológica sin equipo técnico interno."
+        },
+        {
+          "question": "¿En qué se diferencia de una consultoría tecnológica?",
+          "answer": "Una consultoría entrega informes y recomendaciones. Un CTO as a Service se implica en la ejecución: lidera el equipo técnico, toma decisiones diarias, asiste a comités de dirección y tiene accountability real sobre los resultados tecnológicos de tu empresa."
         }
       ]
     }
@@ -3637,6 +3700,125 @@
       "successP": "Revisaremos tu situación y te enviaremos por escrito qué controles de ISO 27001 ya cumples sin saberlo. Si quieres, reserva ahora una llamada de 30 minutos para repasarlo y ver plazo, coste y cómo te afecta NIS2.",
       "successCta": "Reservar llamada en Calendly →",
       "successSoft": "O espera nuestro correo — te respondemos antes de 24 horas laborables."
+    }
+  },
+  "claudePartner": {
+    "seo": {
+      "title": "Sobre Claude Partner | Gigson Solutions · Partner Certificado de Anthropic en España",
+      "description": "Gigson Solutions es Partner Certificado de Anthropic en España. Conoce qué significa ser miembro de la Claude Partner Network y qué ventajas concretas aporta a tu proyecto de IA."
+    },
+    "hero": {
+      "eyebrow": "CERTIFIED ANTHROPIC CLAUDE PARTNER",
+      "h1": "Por qué ser <span>Claude Partner</span> importa para tu empresa.",
+      "sub": "No todos los proveedores de IA son iguales. Somos uno de los pocos partners certificados de Anthropic en España — con acceso directo, soporte técnico prioritario y formación continua del equipo en los últimos modelos Claude.",
+      "cta": "HABLEMOS DE TU PROYECTO"
+    },
+    "what": {
+      "eyebrow": "QUÉ ES",
+      "h2": "¿Qué es la Claude Partner Network?",
+      "p1": "La Claude Partner Network es el programa oficial de Anthropic para empresas que diseñan, construyen y despliegan soluciones basadas en Claude para clientes empresariales. No es un programa de afiliados ni un badge de marketing — es una certificación técnica con requisitos de formación, proyectos reales y acceso a recursos exclusivos.",
+      "p2": "Los partners tienen acceso a los mismos playbooks, herramientas y soporte técnico que las principales consultoras de IA del mundo. Anthropic forma directamente al equipo técnico y audita la calidad de las implementaciones."
+    },
+    "network": {
+      "eyebrow": "GIGSON EN LA RED",
+      "h2": "Gigson Solutions como Claude Partner.",
+      "p1": "Nuestro equipo tiene la certificación Claude Certified Architect y lleva más de dos años implementando soluciones basadas en modelos de Anthropic. Hemos entregado agentes en producción para empresas de logística, retail, software y servicios profesionales.",
+      "p2": "Como partner certificado, tenemos canal directo con el equipo técnico de Anthropic, acceso anticipado a nuevas capacidades y soporte prioritario para proyectos en producción."
+    },
+    "benefits": {
+      "h2": "¿Qué ventajas concretas tiene para tu empresa?",
+      "lead": "Trabajar con un Claude Partner certificado no es lo mismo que contratar a cualquier proveedor de IA. Estas son las diferencias que impactan directamente en tu proyecto.",
+      "items": [
+        {
+          "num": "01",
+          "title": "Acceso a los modelos más avanzados",
+          "description": "Como partners certificados tenemos acceso anticipado a los últimos modelos Claude y a capacidades que aún no están disponibles públicamente — lo que significa que tu implementación puede usar lo mejor disponible."
+        },
+        {
+          "num": "02",
+          "title": "Soporte técnico directo de Anthropic",
+          "description": "Cuando hay un problema técnico complejo, tenemos canal directo con el equipo de ingeniería de Anthropic. No dependemos de foros o documentación pública para resolver issues en producción."
+        },
+        {
+          "num": "03",
+          "title": "Equipo formado y certificado",
+          "description": "Nuestros arquitectos tienen la certificación Claude Certified Architect — que valida que conocemos en profundidad las mejores prácticas de diseño, seguridad y despliegue de sistemas basados en Claude."
+        },
+        {
+          "num": "04",
+          "title": "Enfoque safety-first en IA empresarial",
+          "description": "Anthropic es la empresa de IA con el enfoque más riguroso en seguridad y alineación. Como partner, aplicamos ese mismo estándar en cada implementación: trazabilidad completa, control de datos y despliegues auditables."
+        }
+      ]
+    },
+    "vs": {
+      "h2": "Claude Partner vs. proveedor estándar de IA.",
+      "headers": [
+        "Criterio",
+        "Gigson (Claude Partner)",
+        "Proveedor estándar"
+      ],
+      "rows": [
+        {
+          "feature": "Acceso a modelos",
+          "partner": "Anticipado + capacidades exclusivas",
+          "standard": "Solo API pública"
+        },
+        {
+          "feature": "Soporte técnico",
+          "partner": "Canal directo con Anthropic",
+          "standard": "Documentación y foros"
+        },
+        {
+          "feature": "Formación del equipo",
+          "partner": "Claude Certified Architect",
+          "standard": "Autoformación"
+        },
+        {
+          "feature": "Auditoría de implementación",
+          "partner": "Revisada por Anthropic",
+          "standard": "Sin validación externa"
+        },
+        {
+          "feature": "Seguridad y compliance",
+          "partner": "Safety-first, RGPD, auditables",
+          "standard": "Varía según proveedor"
+        }
+      ]
+    },
+    "cert": {
+      "h2": "Certificación Claude Certified Architect.",
+      "p1": "La certificación Claude Certified Architect es la acreditación técnica más alta del programa de partners de Anthropic. Valida que el equipo domina el diseño de sistemas multi-agente, la seguridad en despliegues empresariales y las mejores prácticas de uso de Claude en producción.",
+      "p2": "No es una certificación que se compra — requiere demostrar proyectos reales, superar evaluaciones técnicas y mantenerse actualizado con cada nueva versión de Claude.",
+      "items": [
+        "Diseño de arquitecturas multi-agente con Claude",
+        "Integración segura con sistemas empresariales (ERP, CRM, bases de datos)",
+        "Gestión de contexto, memoria y herramientas en agentes Claude",
+        "Despliegue en producción: monitorización, trazabilidad y rollback",
+        "Compliance: RGPD, auditoría de datos y políticas de retención"
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre la Claude Partner Network",
+      "items": [
+        {
+          "question": "¿Qué diferencia hay entre un Claude Partner y alguien que usa la API de Claude?",
+          "answer": "Cualquier empresa puede usar la API pública de Claude. Un Claude Partner certificado ha superado un proceso de selección y formación por Anthropic, tiene acceso a recursos exclusivos, soporte técnico directo y está validado para implementar soluciones Claude en entornos empresariales complejos. Es la diferencia entre un desarrollador que conoce una tecnología y un arquitecto certificado en ella."
+        },
+        {
+          "question": "¿Cómo sé que Gigson Solutions es realmente un partner certificado?",
+          "answer": "La certificación es verificable directamente con Anthropic. Podemos facilitar documentación oficial del programa y referencias de proyectos entregados. Si tienes dudas, te invitamos a contactarnos y te explicamos el proceso de certificación en detalle."
+        },
+        {
+          "question": "¿Ser Claude Partner significa que usáis solo Claude? ¿Qué pasa si necesito otro modelo?",
+          "answer": "La certificación es específica para soluciones basadas en Claude, que es el modelo que recomendamos para la mayoría de casos de uso empresariales. Sin embargo, trabajamos con arquitecturas que pueden integrar diferentes modelos según las necesidades — Claude no es la única herramienta en nuestro stack."
+        }
+      ]
+    },
+    "ctaBottom": {
+      "h2": "¿Quieres implementar IA en tu empresa con un partner certificado?",
+      "p": "Empieza con un diagnóstico gratuito. En 45 minutos identificamos el caso de uso de mayor impacto para tu negocio y te explicamos cómo lo implementaríamos.",
+      "cta": "SOLICITAR DIAGNÓSTICO GRATUITO"
     }
   }
 }

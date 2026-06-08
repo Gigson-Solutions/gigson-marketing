@@ -7,6 +7,7 @@ import Home from '../components/Home/Home';
 import Layout from '../components/Layout/Layout';
 import AiAgents from '../components/Pages/AiAgents/AiAgents';
 import AiManifest from '../components/Pages/AiManifest';
+import ClaudePartner from '../components/Pages/ClaudePartner/ClaudePartner';
 import Book from '../components/Pages/Book/Book';
 import Cases from '../components/Pages/Cases/Cases';
 import Cibersecurity from '../components/Pages/Cibersecurity/Cibersecurity';
@@ -50,6 +51,7 @@ const generateRoutes = (lang) => {
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },
       { path: slugs.aiAgents, element: <AiAgents /> },
+      { path: slugs.claudePartner, element: <ClaudePartner /> },
       { path: slugs.book, element: <Book /> },
       { path: slugs.contact, element: <Contact /> },
       { path: slugs.policy, element: <Policity /> },
