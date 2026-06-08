@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-policy max-w-[88.875rem] mx-auto">
-          <span href="">Developed by Gigson Solutions © 2025 </span>
+          <span>Developed by Gigson Solutions © {new Date().getFullYear()}</span>
           <ul className="footer-policy-links">
             <li>
               <Link to="/policy">{legal}</Link>
