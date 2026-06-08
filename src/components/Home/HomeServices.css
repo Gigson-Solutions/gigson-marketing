@@ -236,10 +236,10 @@
       margin-top: -6rem;
    }
 }
-@media (min-width: 130rem) {
-   #homeServices {
-      max-width: var(--max-width-xl);
-      margin-inline: auto;
+@media (min-width: 121rem) {
+   .home-services {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
    }
 }
 

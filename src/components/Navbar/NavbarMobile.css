@@ -113,7 +113,7 @@
     }
 }
 
-@media (min-width: 65rem) {
+@media (min-width: 72rem) {
     .navbar-mobile {
         display: none;
     }
