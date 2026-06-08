@@ -29,11 +29,11 @@
   },
   "hero_link": "/es/contacto",
   "home": {
-    "title": "Gigson Solutions | Tecnología para Impulsar tu Negocio",
-    "metadescription": "Soluciones a medida para negocios complejos. Potenciamos tu tecnología actual y, si lo que necesitas no existe, lo creamos juntos.",
-    "heroH1": "Tecnología para <span>impulsar</span> tu negocio<span>.</span>",
+    "title": "Gigson Solutions | Partner IA Empresarial en España · Claude Partner Certificado",
+    "metadescription": "Partner certificado de Anthropic. Diseñamos e implementamos agentes Claude para empresas en España en 4–8 semanas. CTO as a Service, integraciones y ciberseguridad.",
+    "heroH1": "Tecnología para <span>impulsar</span> tu negocio en <span>España.</span>",
     "heroP": "CERTIFIED ANTHROPIC CLAUDE PARTNER · AI AGENT IMPLEMENTATION",
-    "heroSubhead": "Diseñamos, construimos y desplegamos agentes de IA impulsados por Claude — el modelo más avanzado de Anthropic — junto con software a medida, integraciones de sistemas y ciberseguridad. Partner certificado. Entrega real.",
+    "heroSubhead": "Diseñamos, construimos y desplegamos agentes de IA impulsados por Claude - el modelo más avanzado de Anthropic - junto con software a medida, integraciones de sistemas y ciberseguridad. Partner certificado. Entrega real.",
     "heroBtn": "CONTÁCTANOS",
     "heroScroll": "SEGUIR EXPLORANDO",
     "servicesTitle": "Soluciones a medida para cualquier negocio · AI Agent Implementation · Certified Anthropic <span>Claude</span> Partner · System Integrations · CTO as a Service · Ciberseguridad · ",
@@ -49,7 +49,7 @@
   },
   "caseswhygigson": {
     "wth2": "¿Qué puede hacer Gigson Solutions por tu negocio?",
-    "wp1": "En Gigson Solutions, creemos que la tecnología debería impulsar tu negocio hacia adelante, no limitarlo. Como Anthropic Claude Partner certificado, combinamos ingeniería de software clásica con entrega de agentes de IA — para que tu negocio avance más rápido, con menos trabajo manual y más automatización inteligente.",
+    "wp1": "En Gigson Solutions, creemos que la tecnología debería impulsar tu negocio hacia adelante, no limitarlo. Como Anthropic Claude Partner certificado, combinamos ingeniería de software clásica con entrega de agentes de IA - para que tu negocio avance más rápido, con menos trabajo manual y más automatización inteligente.",
     "wp2": "Aquí hay algunos ejemplos de lo que podemos hacer por ti.",
     "wlink": "VER CASOS"
   },
@@ -59,9 +59,9 @@
   },
   "partnerBadge": {
     "title": "Certified Anthropic Claude Partner",
-    "body": "Gigson Solutions es miembro de la Claude Partner Network — el programa oficial de Anthropic para empresas que entregan soluciones basadas en Claude a clientes empresariales. Nuestro equipo está formado y certificado directamente por Anthropic, con acceso a las mismas herramientas, playbooks y soporte técnico que las principales consultoras de IA del mundo.",
+    "body": "Gigson Solutions es miembro de la Claude Partner Network - el programa oficial de Anthropic para empresas que entregan soluciones basadas en Claude a clientes empresariales. Nuestro equipo está formado y certificado directamente por Anthropic, con acceso a las mismas herramientas, playbooks y soporte técnico que las principales consultoras de IA del mundo.",
     "items": [
-      "Tu implementación de IA está construida sobre Claude — el modelo de confianza de empresas globales",
+      "Tu implementación de IA está construida sobre Claude - el modelo de confianza de empresas globales",
       "Nuestro equipo tiene la certificación Claude Certified Architect",
       "Te beneficias del enfoque safety-first de Anthropic en despliegue de IA",
       "Acceso directo al canal de soporte técnico para partners de Anthropic"
@@ -69,26 +69,26 @@
     "cta": "CONOCE NUESTROS SERVICIOS DE IA →"
   },
   "aiAgents": {
-    "title": "Implementación de Agentes IA | Gigson Solutions",
-    "metadescription": "Diseñamos, construimos y desplegamos agentes de IA basados en Claude para operaciones empresariales — como Anthropic Claude Partner certificado.",
+    "title": "Agentes IA para Empresas en España | Claude Partner Certificado · Gigson Solutions",
+    "metadescription": "Implementamos agentes de IA basados en Claude para empresas en España en 4–8 semanas. Partner Certificado de Anthropic. Procesamiento de documentos, automatización y Q&A interno.",
     "hero": {
       "suptitle": "CERTIFIED ANTHROPIC CLAUDE PARTNER",
-      "title": "Implementación de <span>Agentes IA</span>",
-      "description": "Diseñamos, construimos y desplegamos agentes de IA basados en Claude para operaciones empresariales. Un agente de IA es software que puede percibir contexto, razonarlo y actuar — conectándose a tus herramientas, procesando tus datos y ejecutando tareas sin intervención manual. A diferencia de las automatizaciones simples, los agentes gestionan ambigüedad, decisiones de múltiples pasos e inputs no estructurados.<br>Construimos agentes con Claude, el modelo de IA más avanzado y seguro de Anthropic.",
+      "title": "Implementación de <span>Agentes IA</span> para Empresas en España",
+      "description": "Diseñamos, construimos y desplegamos agentes de IA basados en Claude para operaciones empresariales. Un agente de IA es software que puede percibir contexto, razonarlo y actuar - conectándose a tus herramientas, procesando tus datos y ejecutando tareas sin intervención manual. A diferencia de las automatizaciones simples, los agentes gestionan ambigüedad, decisiones de múltiples pasos e inputs no estructurados.<br>Construimos agentes con Claude, el modelo de IA más avanzado y seguro de Anthropic.",
       "buttonText": "Contáctanos"
     },
     "solutionsApplications": {
       "title": "Agentes inteligentes que trabajan <span>dentro de tu negocio.</span>",
-      "subTitle": "Cada negocio tiene procesos repetitivos y de alto esfuerzo que un agente podría gestionar. Los identificamos, construimos el agente, lo conectamos a tus sistemas existentes y lo desplegamos en producción — con soporte continuo.",
+      "subTitle": "Cada negocio tiene procesos repetitivos y de alto esfuerzo que un agente podría gestionar. Los identificamos, construimos el agente, lo conectamos a tus sistemas existentes y lo desplegamos en producción - con soporte continuo.",
       "containers": [
         {
           "title": "Qué entregamos",
-          "description": "Desde procesamiento de documentos hasta automatización orientada al cliente, nuestros agentes gestionan los flujos de trabajo que actualmente dependen del esfuerzo manual — de forma fiable, a escala y con trazabilidad completa.",
+          "description": "Desde procesamiento de documentos hasta automatización orientada al cliente, nuestros agentes gestionan los flujos de trabajo que actualmente dependen del esfuerzo manual - de forma fiable, a escala y con trazabilidad completa.",
           "type": "Casos de uso",
           "cards": [
             {
               "title": "Procesamiento de documentos",
-              "description": "Extrae, clasifica y enruta documentos de cualquier fuente — PDFs, emails, formularios — a tus sistemas sin intervención manual."
+              "description": "Extrae, clasifica y enruta documentos de cualquier fuente - PDFs, emails, formularios - a tus sistemas sin intervención manual."
             },
             {
               "title": "Q&A interno",
@@ -96,7 +96,7 @@
             },
             {
               "title": "Automatización de operaciones",
-              "description": "Ejecuta flujos de trabajo de múltiples pasos desencadenados por eventos de negocio — aprobaciones, escaladas, sincronizaciones de datos — sin supervisión manual."
+              "description": "Ejecuta flujos de trabajo de múltiples pasos desencadenados por eventos de negocio - aprobaciones, escaladas, sincronizaciones de datos - sin supervisión manual."
             },
             {
               "title": "Atención al cliente",
@@ -110,20 +110,20 @@
         },
         {
           "title": "¿Por qué Claude?",
-          "description": "Claude está construido por Anthropic con la seguridad y la fiabilidad como principios fundamentales — no como añadidos. Gestiona documentos largos y complejos, sigue instrucciones matizadas y mantiene un comportamiento consistente en producción.",
+          "description": "Claude está construido por Anthropic con la seguridad y la fiabilidad como principios fundamentales - no como añadidos. Gestiona documentos largos y complejos, sigue instrucciones matizadas y mantiene un comportamiento consistente en producción.",
           "type": "Tecnología",
           "cards": [
             {
               "title": "Modelo safety-first",
-              "description": "Claude está diseñado con la supervisión humana en mente — cada agente que construimos incluye límites claros, puntos de control humano y logging de auditoría completo para que mantengas el control de lo que importa."
+              "description": "Claude está diseñado con la supervisión humana en mente - cada agente que construimos incluye límites claros, puntos de control humano y logging de auditoría completo para que mantengas el control de lo que importa."
             },
             {
               "title": "Acceso de partner certificado",
-              "description": "Como Anthropic Claude Partner certificado, tenemos acceso directo al soporte técnico de Anthropic y acceso anticipado a nuevas versiones — para que tu implementación siempre esté en la versión más reciente y segura."
+              "description": "Como Anthropic Claude Partner certificado, tenemos acceso directo al soporte técnico de Anthropic y acceso anticipado a nuevas versiones - para que tu implementación siempre esté en la versión más reciente y segura."
             },
             {
               "title": "Fiabilidad en producción",
-              "description": "Claude mantiene un comportamiento consistente a escala. Cada integración que construimos está diseñada para fiabilidad, observabilidad y control de costes — no solo demostraciones de prueba de concepto."
+              "description": "Claude mantiene un comportamiento consistente a escala. Cada integración que construimos está diseñada para fiabilidad, observabilidad y control de costes - no solo demostraciones de prueba de concepto."
             }
           ]
         }
@@ -141,7 +141,7 @@
         },
         {
           "title": "Diseño y prototipo",
-          "description": "Diseñamos la arquitectura del agente y construimos un prototipo funcional conectado a tus sistemas — normalmente en 1–2 semanas."
+          "description": "Diseñamos la arquitectura del agente y construimos un prototipo funcional conectado a tus sistemas - normalmente en 1–2 semanas."
         },
         {
           "title": "Despliegue en producción",
@@ -160,7 +160,7 @@
       "cards": [
         {
           "title": "Diseño y arquitectura del agente",
-          "description": "Mapeamos tus flujos de trabajo, identificamos dónde el razonamiento aporta valor sobre las reglas, y diseñamos una arquitectura de agente que encaja con tu stack existente — con la configuración de modelo, acceso a herramientas y estrategia de memoria correctas."
+          "description": "Mapeamos tus flujos de trabajo, identificamos dónde el razonamiento aporta valor sobre las reglas, y diseñamos una arquitectura de agente que encaja con tu stack existente - con la configuración de modelo, acceso a herramientas y estrategia de memoria correctas."
         },
         {
           "title": "Integración con la API de Claude",
@@ -171,11 +171,36 @@
           "description": "Los agentes de IA no son plug-and-forget. Ofrecemos paquetes de retainer mensual para monitorizar, iterar y expandir tus despliegues de agentes a medida que tus necesidades evolucionan."
         }
       ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre agentes IA",
+      "items": [
+        {
+          "question": "¿Cuánto cuesta implementar un agente Claude en una empresa en España?",
+          "answer": "El coste de implementación varía según la complejidad del caso de uso. Un agente básico (procesamiento de documentos o Q&A interno) parte desde 8.000–15.000€. Proyectos más complejos con múltiples integraciones y flujos de trabajo suelen estar entre 20.000–50.000€. Contáctanos para una estimación personalizada sin compromiso."
+        },
+        {
+          "question": "¿Cuánto tiempo tarda implementar un agente de IA?",
+          "answer": "El tiempo medio de implementación es de 4 a 8 semanas desde el kickoff hasta producción. Proyectos más complejos pueden tomar 10–16 semanas. Trabajamos con sprints iterativos para que veas resultados reales desde la semana 2–3."
+        },
+        {
+          "question": "¿Qué diferencia a Gigson Solutions de otras empresas de IA?",
+          "answer": "Somos Partner Certificado de Anthropic - uno de los pocos en España - con acceso directo a soporte técnico y los últimos modelos Claude. No vendemos demos ni POCs abandonados: entregamos agentes en producción con soporte continuo y trazabilidad completa."
+        },
+        {
+          "question": "¿Qué necesita mi empresa para empezar a usar agentes IA?",
+          "answer": "No necesitas infraestructura especial. Los agentes se conectan a tus herramientas existentes (ERP, CRM, email, documentos). Empezamos con un diagnóstico gratuito para identificar el caso de uso de mayor impacto y menor fricción para tu equipo."
+        },
+        {
+          "question": "¿Los agentes Claude son seguros para datos empresariales confidenciales?",
+          "answer": "Sí. Claude de Anthropic está diseñado con un enfoque safety-first. Los datos no se usan para entrenar modelos. Podemos desplegar los agentes en tu infraestructura (on-premise o cloud privado) para mayor control. Cumplimos con RGPD y podemos acompañar procesos de compliance."
+        }
+      ]
     }
   },
   "about": {
     "title": "Somos un equipo de profesionales expertos con más de <span>9 años</span> de experiencia.",
-    "description": "Contamos con todos los perfiles necesarios para el desarrollo de productos digitales y sistemas de agentes de IA — todo in-house. Como Anthropic Claude Partner certificado, nuestro equipo incluye Claude Certified Architects formados directamente por Anthropic.",
+    "description": "Contamos con todos los perfiles necesarios para el desarrollo de productos digitales y sistemas de agentes de IA - todo in-house. Como Anthropic Claude Partner certificado, nuestro equipo incluye Claude Certified Architects formados directamente por Anthropic.",
     "cta": "HABLEMOS",
     "titleH2": "Descubre lo que nos mueve",
     "belive": {
@@ -186,7 +211,7 @@
       "p1": "Independientemente de si estamos desarrollando una prueba de concepto o un producto final, implementaremos diferentes estándares de calidad de producto y de gestión de proyectos para asegurarnos de que cada producto cumpla y supere las expectativas.",
       "p2": "Podrás elegir el tipo de compromiso que quieras tener con nosotros. Estaremos siempre a tu lado para acompañarte en cualquier fase, no obstante si no quieres continuar, nos encargaremos del cierre y del traspaso necesario cumpliendo con toda legalidad vigente.",
       "p3": "Sabemos que hablar con un desarrollador no es fácil. Con nosotros hablaras con un consultor de negocios con conocimiento técnico para entender tus necesidades y validar su viabilidad técnica a la vez.",
-      "p4": "Creemos que la IA debe estar integrada en cómo entregamos — no añadida al final. Como Anthropic Claude Partner certificado, nos comprometemos con los más altos estándares de despliegue de IA responsable: razonamiento transparente, supervisión humana y fiabilidad en producción. Cada sistema de IA que construimos está diseñado para potenciar tu equipo, no para reemplazar tu criterio."
+      "p4": "Creemos que la IA debe estar integrada en cómo entregamos - no añadida al final. Como Anthropic Claude Partner certificado, nos comprometemos con los más altos estándares de despliegue de IA responsable: razonamiento transparente, supervisión humana y fiabilidad en producción. Cada sistema de IA que construimos está diseñado para potenciar tu equipo, no para reemplazar tu criterio."
     },
     "need": {
       "t": "¿Qué necesito para hacer un <span>producto digital</span>?",
@@ -414,7 +439,7 @@
     },
     {
       "title": "Agente de IA para Operaciones",
-      "challenge": "Despliega un agente de IA impulsado por Claude que gestione el procesamiento de documentos, Q&A interno, enrutamiento de flujos de trabajo y soporte a la toma de decisiones — integrado con tu ERP, CRM o herramientas de gestión de proyectos existentes.",
+      "challenge": "Despliega un agente de IA impulsado por Claude que gestione el procesamiento de documentos, Q&A interno, enrutamiento de flujos de trabajo y soporte a la toma de decisiones - integrado con tu ERP, CRM o herramientas de gestión de proyectos existentes.",
       "features": [
         "Agente conversacional conectado a sistemas internos vía API",
         "Ingesta de documentos y extracción de datos estructurados",
@@ -677,11 +702,11 @@
     "btnInfo": "+INFO"
   },
   "cases-logistics": {
-    "title": "Tecnología en Logística e Intralogística | Gigson Solutions",
-    "metadescription": "Optimiza tu cadena logística con soluciones tecnológicas a medida: más eficiencia, trazabilidad y control sin depender de grandes integradores.",
+    "title": "Tecnología para Empresas de Logística en España | Gigson Solutions",
+    "metadescription": "Optimiza tu cadena logística con tecnología a medida en España: trazabilidad, automatización y eficiencia operativa sin grandes integradores. Agentes IA + integraciones.",
     "hero": {
       "suptitle": "LOGÍSTICA Y FULFILLMENT",
-      "title": "<span>Tecnología</span> en logística <br/> y consultoría de <span>intralogística</span> ",
+      "title": "<span>Tecnología</span> para empresas de logística <br/> e <span>intralogística</span> en España",
       "description": "La tecnología en logística puede ser un desafío si no se cuenta con el asesoramiento adecuado. En Gigson Solutions, te ayudamos a integrar soluciones tecnológicas sin fricciones, asegurando que se adapten a la estructura del negocio.",
       "buttonText": "Contáctanos"
     },
@@ -1455,6 +1480,23 @@
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
         }
       ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre tecnología en logística",
+      "items": [
+        {
+          "question": "¿Cómo puede la IA mejorar las operaciones logísticas de mi empresa?",
+          "answer": "Los agentes IA pueden automatizar tareas de alto volumen y bajo valor: clasificación de documentos de transporte, seguimiento de pedidos, gestión de incidencias, comunicación con transportistas y generación de reportes. El resultado medio es una reducción del 30–50% en tiempo operativo en estos procesos."
+        },
+        {
+          "question": "¿Qué integraciones tecnológicas son comunes en empresas de logística?",
+          "answer": "Las más frecuentes son: integración ERP ↔ WMS, conexión con plataformas de tracking (FedEx, DHL, MRW), integración con marketplaces (Amazon, Shopify), automatización de EDI, y conectores con sistemas de gestión de almacén propietarios. Trabajamos con sistemas legacy y modernos."
+        },
+        {
+          "question": "¿Cuánto tiempo tarda un proyecto de digitalización logística?",
+          "answer": "Depende del alcance. Una integración puntual (ej. conectar ERP con plataforma de transportistas) tarda 3–6 semanas. Un proyecto de transformación digital más amplio puede tomar 3–6 meses con fases iterativas. Siempre empezamos con el proceso de mayor impacto para mostrar resultados rápidos."
+        }
+      ]
     }
   },
   "cases-construction": {
@@ -1925,6 +1967,23 @@
         {
           "title": "Consultoría tecnologica",
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre tecnología en construcción",
+      "items": [
+        {
+          "question": "¿Cómo puede la tecnología mejorar la gestión de proyectos de construcción?",
+          "answer": "La tecnología permite digitalizar la gestión de obra: seguimiento de avance en tiempo real, control de costes por partida, gestión documental centralizada, comunicación entre equipos de campo y oficina, y alertas automáticas de desviaciones. Reducimos el tiempo dedicado a reportes manuales y mejoramos la visibilidad sobre cada proyecto."
+        },
+        {
+          "question": "¿Qué integraciones son habituales en empresas constructoras?",
+          "answer": "Las más frecuentes son: integración entre software de presupuestos y contabilidad, conexión con plataformas de gestión documental (BIM, DMS), automatización de informes de avance, integración con ERPs sectoriales como Presto o Buildertrend, y sistemas de control de acceso y presencia en obra."
+        },
+        {
+          "question": "¿Es viable digitalizar una empresa constructora mediana sin un equipo IT interno?",
+          "answer": "Sí. La mayoría de empresas constructoras con las que trabajamos no tienen equipo IT propio. Nos encargamos de la implementación, formación del equipo, soporte continuo y adaptación de las herramientas a los procesos de tu empresa. El objetivo es que la tecnología funcione sin necesidad de expertos internos para el día a día."
         }
       ]
     }
@@ -2500,6 +2559,23 @@
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
         }
       ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre tecnología para retail",
+      "items": [
+        {
+          "question": "¿Cómo puede la IA mejorar las operaciones de mi tienda o ecommerce?",
+          "answer": "Los agentes IA pueden automatizar atención al cliente (chatbots avanzados que escalan a humanos solo cuando es necesario), personalización de recomendaciones, gestión de devoluciones, análisis de inventario y predicción de demanda. El resultado es una reducción de costes operativos y una mejora medible en la experiencia del cliente."
+        },
+        {
+          "question": "¿Qué integraciones tecnológicas son críticas en retail omnicanal?",
+          "answer": "Las fundamentales son: sincronización de stock entre tienda física y ecommerce, integración con marketplaces (Amazon, El Corte Inglés, ZALANDO), conexión ERP con plataforma ecommerce (Shopify, Magento, WooCommerce), automatización de fulfillment y gestión unificada de devoluciones."
+        },
+        {
+          "question": "¿Cuánto tiempo tarda un proyecto de digitalización en retail?",
+          "answer": "Depende del alcance. Una integración puntual (ej. conectar tu ERP con Shopify) tarda 3-6 semanas. Un proyecto de transformación más amplio que incluya IA, omnicanalidad e integraciones múltiples puede durar 3-6 meses con fases iterativas. Siempre empezamos con el proceso de mayor impacto para mostrar resultados rápidos."
+        }
+      ]
     }
   },
   "brand": {
@@ -2507,11 +2583,11 @@
     "brand_description": "Descubre nuestros clientes y lo que hacemos por ellos"
   },
   "CTO": {
-    "title": "CTO as a Service | Gigson Solutions",
-    "metadescription": "Mejora tu estrategia tecnológica, lidera la transformación digital y reduce riesgos operativos con un CTO externo",
+    "title": "CTO as a Service para PYMEs en España | Gigson Solutions",
+    "metadescription": "Dirección tecnológica estratégica para PYMEs y startups en España. CTO externo certificado: estrategia, arquitectura y liderazgo técnico sin los costes de un CTO a tiempo completo.",
     "hero": {
       "suptitle": "SERVICIOS",
-      "title": "CTO as a Service: <br> <span> estrategia tecnológica a medida </span>",
+      "title": "CTO as a Service para <span>PYMEs en España</span>",
       "description": "En un contexto donde la tecnología impacta directamente en la eficiencia y la competitividad, muchas pymes se enfrentan a un reto común: necesitan dirección tecnológica estratégica y operativa, pero no pueden asumir la carga financiera ni estructural de incorporar un CTO a tiempo completo. <br> Además, aunque la tecnología no sea su core, la necesitan para operar, crecer y tomar mejores decisiones. Ahí es donde el modelo CTO as a Service cobra todo el sentido. <br> En Gigson Solutions actuamos como partner tecnológico, no solo como consultores. Te ayudamos a definir y ejecutar una estrategia tecnológica que encaje con tu estructura de negocio, sin imponer herramientas ni metodologías genéricas. <br> Acompañamos a startups, scaleups y empresas consolidadas con un enfoque claro: que la tecnología sea un facilitador, no un freno.",
       "buttonText": "Contáctanos"
     },
@@ -2655,6 +2731,27 @@
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
         }
       ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre CTO as a Service",
+      "items": [
+        {
+          "question": "¿Qué es exactamente un CTO as a Service?",
+          "answer": "Un CTO as a Service es un director de tecnología externo que actúa como parte de tu equipo directivo, pero sin los costes ni la rigidez de una contratación a tiempo completo. Aporta estrategia tecnológica, arquitectura de sistemas, liderazgo de equipos técnicos y toma de decisiones tecnológicas alineadas con tu negocio."
+        },
+        {
+          "question": "¿Cuánto cuesta un CTO as a Service en España?",
+          "answer": "El coste depende del nivel de dedicación. Modelos de 1–2 días semanales parten desde 2.000–4.000€/mes. La dedicación completa (equivalente a tiempo completo) puede llegar a 8.000–12.000€/mes. Siempre significativamente menor que contratar un CTO senior en nómina (80.000–120.000€/año + beneficios)."
+        },
+        {
+          "question": "¿Para qué tipo de empresa tiene sentido el modelo CTO as a Service?",
+          "answer": "Para PYMEs en crecimiento que necesitan dirección tecnológica pero no pueden asumir un CTO a tiempo completo, startups que necesitan arquitectura sólida desde el principio, y empresas en proceso de digitalización o transformación tecnológica sin equipo técnico interno."
+        },
+        {
+          "question": "¿En qué se diferencia de una consultoría tecnológica?",
+          "answer": "Una consultoría entrega informes y recomendaciones. Un CTO as a Service se implica en la ejecución: lidera el equipo técnico, toma decisiones diarias, asiste a comités de dirección y tiene accountability real sobre los resultados tecnológicos de tu empresa."
+        }
+      ]
     }
   },
   "whatsapp": {
@@ -2670,7 +2767,7 @@
     "hero": {
       "suptitle": "SERVICIOS",
       "title": "Desarrollo de software a medida <span> para empresas </span>",
-      "description": "Tener un software que se adapte a tu empresa —y no al revés— marca la diferencia. En Gigson Solutions trabajamos para diseñar, construir y mantener soluciones tecnológicas a medida, preparadas para escalar, integrarse y evolucionar contigo.<br> Desde desarrollar nuevas funcionalidades o productos completos hasta integrar herramientas existentes y asegurar su rendimiento en el tiempo, cubrimos todo el ciclo de vida del software. <br> Nuestro equipo está formado por desarrolladores, arquitectos y testers para ofrecerte un desarrollo de software a medida sin límites, sin dependencias y con visión a largo plazo. <br> No integramos la IA como una función más — construimos software donde Claude es un componente central de la lógica del producto. Desde pipelines de procesamiento de documentos hasta backends basados en agentes, nuestro equipo de ingeniería tiene la experiencia para producir sistemas de IA que funcionen en producción, no solo en demos. Nuestros Claude Certified Architects diseñan cada integración de IA siguiendo las mejores prácticas de Anthropic: prompts estructurados, uso de herramientas, memoria multi-turno, despliegue seguro y uso eficiente de la API.",
+      "description": "Tener un software que se adapte a tu empresa - y no al revés - marca la diferencia. En Gigson Solutions trabajamos para diseñar, construir y mantener soluciones tecnológicas a medida, preparadas para escalar, integrarse y evolucionar contigo.<br> Desde desarrollar nuevas funcionalidades o productos completos hasta integrar herramientas existentes y asegurar su rendimiento en el tiempo, cubrimos todo el ciclo de vida del software. <br> Nuestro equipo está formado por desarrolladores, arquitectos y testers para ofrecerte un desarrollo de software a medida sin límites, sin dependencias y con visión a largo plazo. <br> No integramos la IA como una función más - construimos software donde Claude es un componente central de la lógica del producto. Desde pipelines de procesamiento de documentos hasta backends basados en agentes, nuestro equipo de ingeniería tiene la experiencia para producir sistemas de IA que funcionen en producción, no solo en demos. Nuestros Claude Certified Architects diseñan cada integración de IA siguiendo las mejores prácticas de Anthropic: prompts estructurados, uso de herramientas, memoria multi-turno, despliegue seguro y uso eficiente de la API.",
       "buttonText": "Contáctanos"
     },
     "solutionsApplications": {
@@ -2733,7 +2830,7 @@
         },
         {
           "title": "Entrega",
-          "description": "QA, despliegue en producción e integración con tu stack existente — completamente probado antes del go-live."
+          "description": "QA, despliegue en producción e integración con tu stack existente - completamente probado antes del go-live."
         },
         {
           "title": "Soporte",
@@ -2759,6 +2856,23 @@
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
         }
       ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre ingeniería de software a medida",
+      "items": [
+        {
+          "question": "¿Cuándo tiene sentido desarrollar software a medida en lugar de usar soluciones estándar?",
+          "answer": "Cuando los productos estándar no cubren procesos clave de tu negocio, cuando el coste de adaptarte a herramientas genéricas es mayor que construir la solución, o cuando necesitas integraciones complejas entre sistemas existentes. El software a medida también aporta ventaja competitiva en sectores donde los procesos son el diferencial."
+        },
+        {
+          "question": "¿Cuánto cuesta un proyecto de software a medida?",
+          "answer": "Los proyectos de software a medida varían mucho según alcance. Un MVP funcional puede partir desde 15.000-25.000€. Aplicaciones más complejas con múltiples módulos e integraciones suelen estar entre 40.000-150.000€. Trabajamos con presupuesto fijo y entrega por fases para dar visibilidad desde el inicio."
+        },
+        {
+          "question": "¿Cómo garantizáis la calidad del código y el mantenimiento a largo plazo?",
+          "answer": "Seguimos prácticas de desarrollo estándar: revisión de código, tests automatizados, CI/CD, documentación técnica y arquitecturas bien definidas. Entregamos el código fuente completo y podemos ofrecer contratos de mantenimiento y soporte continuo o formación a tu equipo interno."
+        }
+      ]
     }
   },
   "consultoriaTec": {
@@ -2767,12 +2881,12 @@
     "hero": {
       "suptitle": "SERVICIOS",
       "title": "Consultoría tecnológica <span> para empresas </span>",
-      "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. <br> Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. <br>  Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento. <br> Como Anthropic Claude Partner certificado, también te ayudamos a identificar dónde los agentes de IA pueden hacerse cargo de procesos repetitivos y de alto esfuerzo — y los construimos.",
+      "description": "En Gigson Solutions creemos que la tecnología no debería limitarnos, si no ayudarnos a conseguir los objetivos de la empresa. <br> Nuestro servicio de consultoría tecnológica para empresas está diseñado para analizar, transformar, optimizar y evolucionar tu negocio con soluciones a medida, sin fricciones, sin improvisaciones y con una visión de futuro clara, externa y objetiva. <br>  Diagnóstico, estrategia y acción, todo en un solo partner. Te acompañamos desde el análisis de tu situación actual hasta la definición y ejecución de proyectos tecnológicos que impulsan tu crecimiento. <br> Como Anthropic Claude Partner certificado, también te ayudamos a identificar dónde los agentes de IA pueden hacerse cargo de procesos repetitivos y de alto esfuerzo - y los construimos.",
       "buttonText": "Contáctanos"
     },
     "solutionsApplications": {
       "title": "Asesoramiento tecnológico para empresas que quieren crecer sin fricciones",
-      "subTitle": "Cada empresa tiene su propio contexto, sus procesos y sus desafíos. Por eso nuestro asesoramiento tecnológico no parte de soluciones prefabricadas, sino de entender a fondo tu situación, tus necesidades y tus objetivos de negocio.Nuestro enfoque combina experiencia técnica y conocimiento de negocio para que cada decisión tecnológica sume.",
+      "subTitle": "Cada empresa tiene su propio contexto, sus procesos y sus desafíos. Por eso nuestro asesoramiento tecnológico no parte de soluciones prefabricadas, sino de entender a fondo tu situación, tus necesidades y tus objetivos de negocio. Nuestro enfoque combina experiencia técnica y conocimiento de negocio para que cada decisión tecnológica sume.",
       "containers": [
         {
           "title": "Consultoría tecnológica y transformación digital para empresas",
@@ -2804,7 +2918,7 @@
             },
             {
               "title": "Optimización y evolución de toda arquitectura de sistemas",
-              "description": "Analizamos en profundidad tu infraestructura de TI —servidores, bases de datos, microservicios y conexiones— para detectar cuellos de botella, redundancias o vulnerabilidades. A partir de ese diagnóstico, replanteamos la topología de tu ecosistema (incluyendo orquestación de contenedores, balanceo de carga y políticas de backup), aplicando mejoras en rendimiento y seguridad (hardening, encriptación en tránsito y en reposo, control de accesos). Además, adaptamos tu entorno a nuevos volúmenes de datos y requisitos de negocio, migrando componentes a arquitecturas más sostenibles (por ejemplo, a nubes híbridas o modelos serverless) y estableciendo prácticas de DevOps y CI/CD que faciliten futuras iteraciones."
+              "description": "Analizamos en profundidad tu infraestructura de TI - servidores, bases de datos, microservicios y conexiones - para detectar cuellos de botella, redundancias o vulnerabilidades. A partir de ese diagnóstico, replanteamos la topología de tu ecosistema (incluyendo orquestación de contenedores, balanceo de carga y políticas de backup), aplicando mejoras en rendimiento y seguridad (hardening, encriptación en tránsito y en reposo, control de accesos). Además, adaptamos tu entorno a nuevos volúmenes de datos y requisitos de negocio, migrando componentes a arquitecturas más sostenibles (por ejemplo, a nubes híbridas o modelos serverless) y estableciendo prácticas de DevOps y CI/CD que faciliten futuras iteraciones."
             },
             {
               "title": "Optimización y transformación de sistemas monolíticos",
@@ -2833,7 +2947,7 @@
         },
         {
           "title": "Despliegue de agentes de IA",
-          "description": "La automatización estándar conecta herramientas. Los agentes de IA toman decisiones.\n\nDiseñamos y desplegamos agentes impulsados por Claude que van más allá de la automatización basada en reglas: entienden el contexto, procesan entradas no estructuradas, razonan en flujos de trabajo de múltiples pasos y actúan — manteniendo a las personas en control de lo que importa.\n\nTanto si necesitas un agente que gestione solicitudes de clientes, procese documentos, apoye a equipos internos u orqueste tus integraciones existentes, lo construimos a estándar de producción y lo mantenemos en un retainer recurrente.",
+          "description": "La automatización estándar conecta herramientas. Los agentes de IA toman decisiones.\n\nDiseñamos y desplegamos agentes impulsados por Claude que van más allá de la automatización basada en reglas: entienden el contexto, procesan entradas no estructuradas, razonan en flujos de trabajo de múltiples pasos y actúan - manteniendo a las personas en control de lo que importa.\n\nTanto si necesitas un agente que gestione solicitudes de clientes, procese documentos, apoye a equipos internos u orqueste tus integraciones existentes, lo construimos a estándar de producción y lo mantenemos en un retainer recurrente.",
           "type": "Retos",
           "cards": [
             {
@@ -2846,7 +2960,7 @@
             },
             {
               "title": "Retainer de agentes recurrente",
-              "description": "Los agentes de IA no son plug-and-play. Ofrecemos paquetes de retainer mensual para monitorizar, iterar y ampliar tus despliegues de agentes a medida que evolucionan tus necesidades — incluyendo actualizaciones de modelo cuando Anthropic lanza nuevas versiones."
+              "description": "Los agentes de IA no son plug-and-play. Ofrecemos paquetes de retainer mensual para monitorizar, iterar y ampliar tus despliegues de agentes a medida que evolucionan tus necesidades - incluyendo actualizaciones de modelo cuando Anthropic lanza nuevas versiones."
             }
           ]
         },
@@ -2911,6 +3025,23 @@
         {
           "title": "Consultoría tecnologica",
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre consultoría tecnológica",
+      "items": [
+        {
+          "question": "¿Qué diferencia hay entre consultoría tecnológica y desarrollo de software?",
+          "answer": "La consultoría tecnológica es el paso previo: analizamos tu situación actual, identificamos ineficiencias, definimos la arquitectura de sistemas más adecuada y priorizamos las iniciativas de mayor impacto. No siempre la solución es desarrollar software nuevo: a veces es optimizar lo que ya tienes o cambiar de herramientas."
+        },
+        {
+          "question": "¿Cuánto dura un proceso de consultoría tecnológica?",
+          "answer": "Un diagnóstico inicial puede completarse en 2-4 semanas. Un proyecto de consultoría más completo que incluya hoja de ruta, análisis de proveedores y plan de implementación puede durar 1-3 meses. Adaptamos el alcance a la urgencia y presupuesto de cada empresa."
+        },
+        {
+          "question": "¿Cuándo necesito una consultoría tecnológica?",
+          "answer": "Cuando sientes que la tecnología frena en lugar de impulsar tu negocio, cuando tienes demasiadas herramientas que no se integran bien, cuando tu equipo invierte demasiado tiempo en tareas manuales o cuando vas a emprender un proyecto de digitalización importante y quieres hacerlo bien desde el inicio."
         }
       ]
     }
@@ -3083,6 +3214,27 @@
           "description": "Nuestro equipo de ingenieros de software, arquitectos y desarrolladores experimentados utiliza las mejores tecnologías adaptadas a tu industria. Gigson solutions es tu socio de confianza en el desarrollo de software. Entendemos que detrás de cada línea de código hay una oportunidad para obtener una ventaja competitiva."
         }
       ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre ciberseguridad empresarial",
+      "items": [
+        {
+          "question": "¿Qué incluye un servicio de ciberseguridad para empresas en España?",
+          "answer": "Un servicio completo incluye: auditoría de vulnerabilidades, análisis de riesgos, implementación de controles de seguridad, monitorización continua, formación del equipo y respuesta a incidentes. En Gigson adaptamos el alcance a tu sector y nivel de madurez tecnológica."
+        },
+        {
+          "question": "¿Cuánto cuesta implementar ciberseguridad en una PYME?",
+          "answer": "Depende del alcance. Un proyecto de auditoría básica parte desde 3.000-6.000€. Servicios continuos de monitorización y gestión pueden estar entre 800-2.500€/mes. Siempre hacemos una evaluación previa gratuita para dimensionar correctamente el servicio."
+        },
+        {
+          "question": "¿Es obligatorio el cumplimiento del RGPD para mi empresa?",
+          "answer": "Sí, todas las empresas que traten datos personales de ciudadanos europeos están obligadas. Las sanciones por incumplimiento pueden alcanzar el 4% de la facturación anual global o 20 millones de euros. Te ayudamos a cumplir con RGPD, ENS y otros marcos regulatorios relevantes para tu sector."
+        },
+        {
+          "question": "¿Qué es un test de penetración (pentest) y cuándo necesito uno?",
+          "answer": "Un pentest es una simulación controlada de un ataque real para identificar vulnerabilidades antes de que lo hagan atacantes reales. Se recomienda al menos una vez al año, tras cambios importantes en la infraestructura o antes de lanzar nuevos servicios digitales."
+        }
+      ]
     }
   },
   "pageSeo": {
@@ -3210,7 +3362,7 @@
         "Logística",
         "Servicios",
         "Real State",
-        "RR.HH"
+        "RR. HH"
       ]
     },
     "form": {
@@ -3281,7 +3433,7 @@
   },
   "ai_manifest": {
     "h2_1": "Construimos con IA. Decidimos con personas.",
-    "pc_intro": "La inteligencia artificial está integrada en cómo trabajamos y en lo que entregamos. La usamos para ir más rápido, reducir errores y hacer que el software a medida de calidad sea accesible para empresas que históricamente no podían permitírselo. Pero la IA no reemplaza el criterio — lo requiere.",
+    "pc_intro": "La inteligencia artificial está integrada en cómo trabajamos y en lo que entregamos. La usamos para ir más rápido, reducir errores y hacer que el software a medida de calidad sea accesible para empresas que históricamente no podían permitírselo. Pero la IA no reemplaza el criterio - lo requiere.",
     "h3_1": "Cómo usamos la IA",
     "pc_1_1": "Aplicamos IA a lo largo del ciclo de entrega: extracción de requisitos, documentación técnica, revisión de código, mapeo de integraciones y análisis de sistemas. Cada entregable es revisado por un responsable técnico antes de llegar al cliente.",
     "h3_2": "Qué aporta a nuestros clientes",
@@ -3304,7 +3456,7 @@
       {
         "number": "01",
         "title": "CTO como Servicio",
-        "tagline": "Liderazgo técnico integrado en tu negocio — sin el coste ni el compromiso de una contratación a tiempo completo.",
+        "tagline": "Liderazgo técnico integrado en tu negocio - sin el coste ni el compromiso de una contratación a tiempo completo.",
         "sections": [
           {
             "heading": "Qué hacemos",
@@ -3330,7 +3482,7 @@
       {
         "number": "02",
         "title": "Consultoría Tech",
-        "tagline": "Asesoramiento estratégico sobre arquitectura, producto y adopción de IA — con los pies en la tierra.",
+        "tagline": "Asesoramiento estratégico sobre arquitectura, producto y adopción de IA - con los pies en la tierra.",
         "sections": [
           {
             "heading": "Qué hacemos",
@@ -3363,7 +3515,7 @@
       {
         "number": "03",
         "title": "Desarrollo de Software",
-        "tagline": "Desde integraciones y automatizaciones hasta productos completos — incluyendo funcionalidades y flujos con IA.",
+        "tagline": "Desde integraciones y automatizaciones hasta productos completos - incluyendo funcionalidades y flujos con IA.",
         "sections": [
           {
             "heading": "Ingeniería",
@@ -3410,7 +3562,7 @@
       {
         "number": "04",
         "title": "Agentes IA",
-        "tagline": "Agentes de IA personalizados que automatizan flujos de trabajo reales — no demos, sistemas listos para producción integrados en tus herramientas.",
+        "tagline": "Agentes de IA personalizados que automatizan flujos de trabajo reales - no demos, sistemas listos para producción integrados en tus herramientas.",
         "sections": [
           {
             "heading": "Qué construimos",
@@ -3435,13 +3587,13 @@
       {
         "number": "05",
         "title": "Compliance",
-        "tagline": "Implantación de ISO 27001 e ISO 9001 que tu equipo realmente usa — no carpetas de documentos que nadie lee.",
+        "tagline": "Implantación de ISO 27001 e ISO 9001 que tu equipo realmente usa - no carpetas de documentos que nadie lee.",
         "sections": [
           {
             "heading": "Qué implantamos",
             "items": [
-              "ISO 27001 — Sistema de Gestión de Seguridad de la Información (SGSI)",
-              "ISO 9001 — Sistema de Gestión de la Calidad (SGC)",
+              "ISO 27001 - Sistema de Gestión de Seguridad de la Información (SGSI)",
+              "ISO 9001 - Sistema de Gestión de la Calidad (SGC)",
               "Sistemas integrados (ambas normas, documentación compartida)",
               "Controles técnicos: gestión de accesos, cifrado, copias de seguridad, MDM",
               "Automatización de controles y registros (n8n, flujos de aprobación)",
@@ -3452,10 +3604,10 @@
             "heading": "Cómo trabajamos",
             "numbered": true,
             "items": [
-              "Diagnóstico y análisis de brecha — Informe de gaps + plan priorizado",
-              "Implantación técnica y documental — Sistema operativo + conjunto documental completo",
-              "Validación interna y formación — Auditoría interna + plan de acciones correctivas cerrado",
-              "Mantenimiento y mejora continua — Plan de mantenimiento activo + calendario de revisiones"
+              "Diagnóstico y análisis de brecha - Informe de gaps + plan priorizado",
+              "Implantación técnica y documental - Sistema operativo + conjunto documental completo",
+              "Validación interna y formación - Auditoría interna + plan de acciones correctivas cerrado",
+              "Mantenimiento y mejora continua - Plan de mantenimiento activo + calendario de revisiones"
             ]
           }
         ],
@@ -3504,23 +3656,23 @@
       "items": [
         {
           "question": "¿Cuál es la diferencia entre Consultoría Tech y CTO como Servicio?",
-          "answer": "CTO como Servicio es liderazgo técnico continuo — actuamos como parte del equipo directivo y tomamos decisiones. La Consultoría Tech es asesoramiento puntual: traes un problema concreto (arquitectura, estrategia de IA, revisión de producto) y lo resolvemos contigo."
+          "answer": "CTO como Servicio es liderazgo técnico continuo - actuamos como parte del equipo directivo y tomamos decisiones. La Consultoría Tech es asesoramiento puntual: traes un problema concreto (arquitectura, estrategia de IA, revisión de producto) y lo resolvemos contigo."
         },
         {
           "question": "¿Necesito implantar una ISO para trabajar con vosotros en Compliance?",
-          "answer": "No. Podemos ayudar en cualquier etapa — desde un análisis de brecha inicial hasta la implantación completa de ISO 27001 o ISO 9001. La certificación es opcional: muchos clientes quieren un sistema funcional sin pasar por una auditoría externa."
+          "answer": "No. Podemos ayudar en cualquier etapa - desde un análisis de brecha inicial hasta la implantación completa de ISO 27001 o ISO 9001. La certificación es opcional: muchos clientes quieren un sistema funcional sin pasar por una auditoría externa."
         },
         {
           "question": "¿Qué madurez en datos necesito para aprovechar los servicios de IA?",
-          "answer": "Menos de lo que crees. Parte de nuestra consultoría de IA es evaluar tu landscape de datos e identificar qué puede generar ROI ahora frente a qué necesita más preparación. No proponemos IA por proponerla — si no está lista, te lo decimos."
+          "answer": "Menos de lo que crees. Parte de nuestra consultoría de IA es evaluar tu landscape de datos e identificar qué puede generar ROI ahora frente a qué necesita más preparación. No proponemos IA por proponerla - si no está lista, te lo decimos."
         },
         {
           "question": "¿Podéis trabajar junto a nuestro equipo de desarrollo existente?",
-          "answer": "Sí. Nos integramos en tus herramientas actuales — Slack, Jira, GitHub, lo que uses. Podemos co-desarrollar con tus ingenieros u operar de forma independiente si aún no tienes equipo técnico."
+          "answer": "Sí. Nos integramos en tus herramientas actuales - Slack, Jira, GitHub, lo que uses. Podemos co-desarrollar con tus ingenieros u operar de forma independiente si aún no tienes equipo técnico."
         },
         {
           "question": "¿Cuánto cuesta implantar ISO 27001 en una empresa mediana?",
-          "answer": "Para empresas de 50–100 empleados, el rango habitual es de 8.000–20.000 € según el alcance y el punto de partida. Ofrecemos un diagnóstico gratuito antes de proponer nada — sin sorpresas, sin presupuestos genéricos."
+          "answer": "Para empresas de 50–100 empleados, el rango habitual es de 8.000–20.000 € según el alcance y el punto de partida. Ofrecemos un diagnóstico gratuito antes de proponer nada - sin sorpresas, sin presupuestos genéricos."
         }
       ]
     },
@@ -3540,7 +3692,7 @@
       "h1b": "a certificarte en",
       "h1c": "ISO 27001.",
       "h1d": "Te lo resolvemos.",
-      "sub": "Implantamos un Sistema de Gestión de Seguridad de la Información (SGSI) sobre tu operativa real — no documentación que nadie va a usar. Para empresas pequeñas y medianas — un despacho de abogados, una consultora, una agencia, una pyme tecnológica — que necesitan el certificado sin paralizar su día a día.",
+      "sub": "Implantamos un Sistema de Gestión de Seguridad de la Información (SGSI) sobre tu operativa real - no documentación que nadie va a usar. Para empresas pequeñas y medianas - un despacho de abogados, una consultora, una agencia, una pyme tecnológica - que necesitan el certificado sin paralizar su día a día.",
       "pill1": "Controles técnicos reales",
       "pill2": "Sistema mínimo viable, sin burocracia",
       "pill3": "Diagnóstico gratuito en 24 h",
@@ -3564,9 +3716,9 @@
       "card2title": "La licitación la puntúa o la exige directamente",
       "card2p": "En concursos públicos y privados, tener ISO 27001 suma puntos o es requisito de admisión. Competir sin ella significa ceder terreno a quienes ya la tienen.",
       "card3title": "Cada venta se atasca en un cuestionario de seguridad",
-      "card3p": "Tus clientes —sobre todo si están regulados o tienen NIS2 detrás— te envían cuestionarios de seguridad cada vez más exigentes. Sin ISO 27001 cada cuestionario es semanas de trabajo; con ella, una sola respuesta.",
+      "card3p": "Tus clientes - sobre todo si están regulados o tienen NIS2 detrás - te envían cuestionarios de seguridad cada vez más exigentes. Sin ISO 27001 cada cuestionario es semanas de trabajo; con ella, una sola respuesta.",
       "card4title": "Tu competencia ya la tiene",
-      "card4p": "Más de 3.000 empresas españolas están certificadas en ISO 27001. En cada vez más sectores la certificación ya es un estándar de facto — no un diferencial."
+      "card4p": "Más de 3.000 empresas españolas están certificadas en ISO 27001. En cada vez más sectores la certificación ya es un estándar de facto - no un diferencial."
     },
     "diff": {
       "eyebrow": "Nuestro enfoque",
@@ -3574,17 +3726,17 @@
       "h2b": "con rigor técnico.",
       "lead": "La mayoría de consultoras ISO redactan documentos. Nosotros implementamos los controles sobre tu operativa real, los sistemas, accesos y procesos que ya usas cada día, y te dejamos un SGSI que funciona, no uno que solo pasa la auditoría.",
       "item1title": "Controles reales, no solo documentación",
-      "item1p": "Evaluamos cómo funciona tu empresa de verdad — sistemas, accesos, datos, proveedores, procesos críticos — e implementamos los controles del Anexo A sobre lo que ya tienes.",
+      "item1p": "Evaluamos cómo funciona tu empresa de verdad - sistemas, accesos, datos, proveedores, procesos críticos - e implementamos los controles del Anexo A sobre lo que ya tienes.",
       "item2title": "Un sistema mínimo viable, fácil de sostener",
-      "item2p": "Sabemos que muchas empresas no tienen responsable de seguridad — ni equipo de IT, en algunos casos. Diseñamos el SGSI más sencillo que pasa la auditoría: sin burocracia innecesaria, fácil de mantener aunque la seguridad la lleve quien ya tiene cinco cosas en la mano.",
+      "item2p": "Sabemos que muchas empresas no tienen responsable de seguridad - ni equipo de IT, en algunos casos. Diseñamos el SGSI más sencillo que pasa la auditoría: sin burocracia innecesaria, fácil de mantener aunque la seguridad la lleve quien ya tiene cinco cosas en la mano.",
       "item3title": "Sabemos qué es certificable y qué no",
-      "item3p": "No te venderemos que te certifiques en todo. NIS2, por ejemplo, no es una certificación — es cumplimiento; ISO 27001 sí lo es. Te explicamos exactamente qué necesitas según tu situación, sin sobreingeniería ni papel innecesario."
+      "item3p": "No te venderemos que te certifiques en todo. NIS2, por ejemplo, no es una certificación - es cumplimiento; ISO 27001 sí lo es. Te explicamos exactamente qué necesitas según tu situación, sin sobreingeniería ni papel innecesario."
     },
     "process": {
       "eyebrow": "Cómo trabajamos",
       "h2a": "Cuatro fases,",
       "h2b": "un certificado.",
-      "lead": "Un proceso pensado para pymes: diagnóstico de tu operativa real, implantación sobre lo que ya tienes y coordinación de la certificadora — sin paralizar tu día a día.",
+      "lead": "Un proceso pensado para pymes: diagnóstico de tu operativa real, implantación sobre lo que ya tienes y coordinación de la certificadora - sin paralizar tu día a día.",
       "step1title": "Diagnóstico",
       "step1p": "Gap analysis de tu situación actual. Identificamos qué controles ya cumples sin saberlo y qué falta realmente.",
       "step2title": "Implantación",
@@ -3599,7 +3751,7 @@
       "h2a": "Te decimos qué controles de ISO 27001",
       "h2accent": "ya cumples",
       "h2b": "sin saberlo.",
-      "lead": "Si te están empujando a certificarte —un cliente, una licitación, un cuestionario de seguridad que no para de crecer— probablemente ya cumples más controles de los que crees. Sea un despacho de abogados, una consultora o una pyme tecnológica, cuéntanos tu situación y te lo aterrizamos.",
+      "lead": "Si te están empujando a certificarte - un cliente, una licitación, un cuestionario de seguridad que no para de crecer - probablemente ya cumples más controles de los que crees. Sea un despacho de abogados, una consultora o una pyme tecnológica, cuéntanos tu situación y te lo aterrizamos.",
       "deliver1tag": "El diagnóstico gratuito",
       "deliver1p": "Revisamos tu operativa actual y te enviamos por escrito <b>qué controles de ISO 27001 ya cumples</b> y cuáles te faltan. Sin compromiso.",
       "deliver2tag": "La llamada posterior",
@@ -3619,7 +3771,7 @@
       "placeholderRole": "socio, gerente, responsable de IT…",
       "next": "Siguiente →",
       "step2h3": "¿Qué necesitas?",
-      "step2note": "Si todavía no lo tienes claro, no pasa nada — para eso es el diagnóstico.",
+      "step2note": "Si todavía no lo tienes claro, no pasa nada - para eso es el diagnóstico.",
       "needLabel": "Necesito…",
       "chip1": "Implantación",
       "chip2": "Certificación",
@@ -3636,7 +3788,126 @@
       "successTitle": "Recibido. Te enviamos el diagnóstico en 24 h.",
       "successP": "Revisaremos tu situación y te enviaremos por escrito qué controles de ISO 27001 ya cumples sin saberlo. Si quieres, reserva ahora una llamada de 30 minutos para repasarlo y ver plazo, coste y cómo te afecta NIS2.",
       "successCta": "Reservar llamada en Calendly →",
-      "successSoft": "O espera nuestro correo — te respondemos antes de 24 horas laborables."
+      "successSoft": "O espera nuestro correo - te respondemos antes de 24 horas laborables."
+    }
+  },
+  "claudePartner": {
+    "seo": {
+      "title": "Sobre Claude Partner | Gigson Solutions · Partner Certificado de Anthropic en España",
+      "description": "Gigson Solutions es Partner Certificado de Anthropic en España. Conoce qué significa ser miembro de la Claude Partner Network y qué ventajas concretas aporta a tu proyecto de IA."
+    },
+    "hero": {
+      "eyebrow": "CERTIFIED ANTHROPIC CLAUDE PARTNER",
+      "h1": "Por qué ser <span>Claude Partner</span> importa para tu empresa.",
+      "sub": "No todos los proveedores de IA son iguales. Somos uno de los pocos partners certificados de Anthropic en España - con acceso directo, soporte técnico prioritario y formación continua del equipo en los últimos modelos Claude.",
+      "cta": "HABLEMOS DE TU PROYECTO"
+    },
+    "what": {
+      "eyebrow": "QUÉ ES",
+      "h2": "¿Qué es la Claude Partner Network?",
+      "p1": "La Claude Partner Network es el programa oficial de Anthropic para empresas que diseñan, construyen y despliegan soluciones basadas en Claude para clientes empresariales. No es un programa de afiliados ni un badge de marketing - es una certificación técnica con requisitos de formación, proyectos reales y acceso a recursos exclusivos.",
+      "p2": "Los partners tienen acceso a los mismos playbooks, herramientas y soporte técnico que las principales consultoras de IA del mundo. Anthropic forma directamente al equipo técnico y audita la calidad de las implementaciones."
+    },
+    "network": {
+      "eyebrow": "GIGSON EN LA RED",
+      "h2": "Gigson Solutions como Claude Partner.",
+      "p1": "Nuestro equipo tiene la certificación Claude Certified Architect y lleva más de dos años implementando soluciones basadas en modelos de Anthropic. Hemos entregado agentes en producción para empresas de logística, retail, software y servicios profesionales.",
+      "p2": "Como partner certificado, tenemos canal directo con el equipo técnico de Anthropic, acceso anticipado a nuevas capacidades y soporte prioritario para proyectos en producción."
+    },
+    "benefits": {
+      "h2": "¿Qué ventajas concretas tiene para tu empresa?",
+      "lead": "Trabajar con un Claude Partner certificado no es lo mismo que contratar a cualquier proveedor de IA. Estas son las diferencias que impactan directamente en tu proyecto.",
+      "items": [
+        {
+          "num": "01",
+          "title": "Acceso a los modelos más avanzados",
+          "description": "Como partners certificados tenemos acceso anticipado a los últimos modelos Claude y a capacidades que aún no están disponibles públicamente - lo que significa que tu implementación puede usar lo mejor disponible."
+        },
+        {
+          "num": "02",
+          "title": "Soporte técnico directo de Anthropic",
+          "description": "Cuando hay un problema técnico complejo, tenemos canal directo con el equipo de ingeniería de Anthropic. No dependemos de foros o documentación pública para resolver issues en producción."
+        },
+        {
+          "num": "03",
+          "title": "Equipo formado y certificado",
+          "description": "Nuestros arquitectos tienen la certificación Claude Certified Architect - que valida que conocemos en profundidad las mejores prácticas de diseño, seguridad y despliegue de sistemas basados en Claude."
+        },
+        {
+          "num": "04",
+          "title": "Enfoque safety-first en IA empresarial",
+          "description": "Anthropic es la empresa de IA con el enfoque más riguroso en seguridad y alineación. Como partner, aplicamos ese mismo estándar en cada implementación: trazabilidad completa, control de datos y despliegues auditables."
+        }
+      ]
+    },
+    "vs": {
+      "h2": "Claude Partner vs. proveedor estándar de IA.",
+      "headers": [
+        "Criterio",
+        "Gigson (Claude Partner)",
+        "Proveedor estándar"
+      ],
+      "rows": [
+        {
+          "feature": "Acceso a modelos",
+          "partner": "Anticipado + capacidades exclusivas",
+          "standard": "Solo API pública"
+        },
+        {
+          "feature": "Soporte técnico",
+          "partner": "Canal directo con Anthropic",
+          "standard": "Documentación y foros"
+        },
+        {
+          "feature": "Formación del equipo",
+          "partner": "Claude Certified Architect",
+          "standard": "Autoformación"
+        },
+        {
+          "feature": "Auditoría de implementación",
+          "partner": "Revisada por Anthropic",
+          "standard": "Sin validación externa"
+        },
+        {
+          "feature": "Seguridad y compliance",
+          "partner": "Safety-first, RGPD, auditables",
+          "standard": "Varía según proveedor"
+        }
+      ]
+    },
+    "cert": {
+      "h2": "Certificación Claude Certified Architect.",
+      "p1": "La certificación Claude Certified Architect es la acreditación técnica más alta del programa de partners de Anthropic. Valida que el equipo domina el diseño de sistemas multi-agente, la seguridad en despliegues empresariales y las mejores prácticas de uso de Claude en producción.",
+      "p2": "No es una certificación que se compra - requiere demostrar proyectos reales, superar evaluaciones técnicas y mantenerse actualizado con cada nueva versión de Claude.",
+      "items": [
+        "Diseño de arquitecturas multi-agente con Claude",
+        "Integración segura con sistemas empresariales (ERP, CRM, bases de datos)",
+        "Gestión de contexto, memoria y herramientas en agentes Claude",
+        "Despliegue en producción: monitorización, trazabilidad y rollback",
+        "Compliance: RGPD, auditoría de datos y políticas de retención"
+      ]
+    },
+    "faq": {
+      "title": "Preguntas frecuentes sobre la Claude Partner Network",
+      "items": [
+        {
+          "question": "¿Qué diferencia hay entre un Claude Partner y alguien que usa la API de Claude?",
+          "answer": "Cualquier empresa puede usar la API pública de Claude. Un Claude Partner certificado ha superado un proceso de selección y formación por Anthropic, tiene acceso a recursos exclusivos, soporte técnico directo y está validado para implementar soluciones Claude en entornos empresariales complejos. Es la diferencia entre un desarrollador que conoce una tecnología y un arquitecto certificado en ella."
+        },
+        {
+          "question": "¿Cómo sé que Gigson Solutions es realmente un partner certificado?",
+          "answer": "La certificación es verificable directamente con Anthropic. Podemos facilitar documentación oficial del programa y referencias de proyectos entregados. Si tienes dudas, te invitamos a contactarnos y te explicamos el proceso de certificación en detalle."
+        },
+        {
+          "question": "¿Ser Claude Partner significa que usáis solo Claude? ¿Qué pasa si necesito otro modelo?",
+          "answer": "La certificación es específica para soluciones basadas en Claude, que es el modelo que recomendamos para la mayoría de casos de uso empresariales. Sin embargo, trabajamos con arquitecturas que pueden integrar diferentes modelos según las necesidades - Claude no es la única herramienta en nuestro stack."
+        }
+      ]
+    },
+    "ctaBottom": {
+      "h2": "¿Quieres implementar IA en tu empresa con un partner certificado?",
+      "p": "Empieza con un diagnóstico gratuito. En 45 minutos identificamos el caso de uso de mayor impacto para tu negocio y te explicamos cómo lo implementaríamos.",
+      "cta": "SOLICITAR DIAGNÓSTICO GRATUITO"
     }
   }
 }

@@ -16,6 +16,7 @@ export const MARKETING_PAGE_KEYS = [
   'faqs',
   'book',
   'aiAgents',
+  'claudePartner',
   'contact',
   'policy',
   'notice',

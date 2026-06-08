@@ -3,11 +3,13 @@ import Brand from 'shared/Brand.jsx';
 import DigitalProduct from 'shared/DigitalProduct.jsx';
 import Hero from 'shared/Hero.jsx';
 import ProcessSteps from 'shared/ProcessSteps.jsx';
+import { ServiceFaq } from 'shared/ServiceFaq.jsx';
 import SolutionsApplications from 'shared/SolutionsApplications.jsx';
+import { ServiceSchema } from '../../../seo/SchemaOrg';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const CTO = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const {
     title,
     metadescription,
@@ -15,15 +17,26 @@ const CTO = () => {
     solutionsApplications,
     howWeWork,
     digitalProduct,
+    faq,
   } = t('CTO');
+
+  const lang = i18n.language || 'en';
+  const serviceUrl = lang === 'es' ? '/es/cto-as-service' : '/cto-as-service';
 
   return (
     <>
       <SeoHelmet title={title} description={metadescription} />
+      <ServiceSchema
+        name={title}
+        description={metadescription}
+        url={serviceUrl}
+        serviceType="CTO as a Service"
+      />
       <Hero {...hero} />
       <SolutionsApplications {...solutionsApplications} />
       <ProcessSteps {...howWeWork} />
       <DigitalProduct {...digitalProduct} />
+      {faq && <ServiceFaq title={faq.title} faqs={faq.items} />}
       <Brand />
     </>
   );
