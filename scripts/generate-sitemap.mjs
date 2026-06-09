@@ -47,12 +47,14 @@ function main() {
   }
 
   const pathnames = getAllMarketingPathnames();
+  const today = new Date().toISOString().split('T')[0];
   const urlEntries = pathnames
     .map((p) => {
       const loc = `${siteUrl}${p === '/' ? '/' : p}`;
       const { priority, changefreq } = priorityAndChangefreq(p);
       return `  <url>
     <loc>${escapeXml(loc)}</loc>
+    <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;

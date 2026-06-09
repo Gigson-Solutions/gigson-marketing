@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 import solutionsBg from '../../../assets/solutions-applications-bg-gradients-1.svg';
 import { DEFAULT_LANG, ROUTE_SLUGS } from '../../../router/routerSlugs';
+import { ServiceSchema } from '../../../seo/SchemaOrg';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const TOTAL_STEPS = 3;
@@ -150,6 +151,12 @@ const Iso27001 = () => {
       <SeoHelmet
         title={t('iso27001.seo.title')}
         description={t('iso27001.seo.description')}
+      />
+      <ServiceSchema
+        name={t('iso27001.seo.title')}
+        description={t('iso27001.seo.description')}
+        url="/iso-27001-certification"
+        serviceType="ISO 27001 Certification"
       />
 
       {/* HERO */}
