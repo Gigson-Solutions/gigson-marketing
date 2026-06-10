@@ -1,101 +1,64 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
+/* Design System tokens — single source of truth */
+@import "./design-system/tokens.css";
 
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/preflight.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-:root {
-   --media-desktop-up: 1024px;
-   --global-padding: 2.8rem;
-   --max-width-xl: 88.875rem;
-}
-
+/* ── TAILWIND @theme — mapped to --gs-* tokens ──────────────── */
 @theme {
-   --spacing-8xl: var(--max-width-xl);
-   --spacing-landing: var(--global-padding);
-   --spacing-contained: 1040px;
-   /* colors */
-   --color-dark-primary: #3C3C3B;
-   --color-dark-medium: #868685;
+   /* Layout spacing */
+   --spacing-8xl:       88.875rem;
+   --spacing-landing:   var(--gs-padding-inline);
+   --spacing-contained: var(--gs-contained);
 
-   --color-purple-accents: #7874F4;
-   --color-purple-light: #C1BFF3;
-   --color-purple-light-a: #EEECF0;
-   --color-purple-light-b: #E3E1EE;
-   --color-purple-dark: #5E5BC6;
+   /* Colors — Tailwind utilities (bg-purple-accents, text-ink, etc.) */
+   --color-ink:           var(--gs-ink);
+   --color-graphite:      var(--gs-graphite);
+   --color-cream:         var(--gs-cream);
+   --color-purple:        var(--gs-purple);
+   --color-purple-deep:   var(--gs-purple-deep);
+   --color-purple-dark:   var(--gs-purple-dark);
+   --color-purple-light:  var(--gs-purple-light);
+   --color-lavender:      var(--gs-lavender);
+   --color-lavender-2:    var(--gs-lavender-2);
+   --color-mist:          var(--gs-mist);
+   --color-lime:          var(--gs-lime);
+   --color-error:         var(--gs-error);
 
-   /* TYPOGRAPHY */
+   /* Legacy aliases — keep Tailwind classes used in JSX working */
+   --color-dark-primary:    var(--gs-ink);
+   --color-dark-medium:     var(--gs-graphite);
+   --color-purple-accents:  var(--gs-purple);
+   --color-purple-light-a:  var(--gs-bg-dropdown);
+   --color-purple-light-b:  var(--gs-lavender);
 
-   /* Mobile */
-   --text-h1: 48px;
-   --text-h1--font-weight: 400;
-   --text-h2: 40px;
-   --text-h2--font-weight: 400;
-   --text-h2--line-height: 1.3;
-   --text-h3: 32px;
-   --text-h3--line-height: 34px;
-   --text-h3--font-weight: 400;
-   --text-h4: 20px;
-   --text-h4--font-weight: 400;
-   --text-h5: 16px;
-   --text-h5--font-weight: 400;
-   --text-l: 40px;
-   --text-l--font-weight: 400;
-   --text-subtitle: 20px;
-   --text-subtitle--line-height: 26px;
-   --text-subtitle--font-weight: 400;
-   --text-body: 16px;
-   --text-body--line-height: 28px;
-   --text-body--font-weight: 400;
-   --text-bigTag: 20px;
-   --text-bigTag--line-height: 28px;
-   --text-bigTag--font-weight: 400;
-   --text-smallTag: 14px;
-   --text-smallTag--line-height: 28px;
-   --text-smallTag--font-weight: 400;
-   --text-button: 18px;
-   --text-button--line-height: 22px;
-   --text-button--font-weight: 400;
+   /* Typography */
+   --text-h1:    var(--gs-text-3xl);
+   --text-h2:    var(--gs-text-2xl);
+   --text-h3:    var(--gs-text-lg);
+   --text-h4:    var(--gs-text-md);
+   --text-h5:    var(--gs-text-sm);
+   --text-body:  var(--gs-text-sm);
+   --text-button: var(--gs-text-base);
+   --text-subtitle: var(--gs-text-md);
+   --text-bigTag:   var(--gs-text-md);
+   --text-smallTag: var(--gs-text-xs);
+   --text-l:     var(--gs-text-xl);
 }
 
-@media (min-width: 1024px) {
-   :root {
-      --text-h1: 64px;
-      --text-h1--font-weight: 400;
-      --text-h2: 40px;
-      --text-h2--font-weight: 400;
-      --text-h3: 32px;
-      --text-h3--line-height: 34px;
-      --text-h3--font-weight: 400;
-      --text-h4: 28px;
-      --text-h4--font-weight: 400;
-      --text-h5: 16px;
-      --text-h5--font-weight: 400;
-      --text-l: 40px;
-      --text-l--font-weight: 400;
-   }
+/* ── LEGACY CSS CUSTOM PROPERTY BRIDGE ──────────────────────────
+   Components that reference --global-padding, --max-width-xl, or
+   --text-h* as plain CSS vars (not Tailwind utilities) keep working. */
+:root {
+   --global-padding: var(--gs-padding-inline);
+   --max-width-xl:   88.875rem;
+   --media-desktop-up: 1024px;
 }
 
-@media (min-width: 1440px) {
-   :root {
-      --text-h1: 80px;
-      --text-h1--font-weight: 400;
-      --text-h2: 56px;
-      --text-h2--font-weight: 400;
-      --text-h3: 44px;
-      --text-h3--line-height: 46px;
-      --text-h3--font-weight: 400;
-      --text-h4: 32px;
-      --text-h4--font-weight: 400;
-      --text-h5: 24px;
-      --text-h5--font-weight: 400;
-      --text-l: 56px;
-      --text-l--font-weight: 400;
-   }
-}
-
+/* ── GLOBAL RESETS & BASE ────────────────────────────────────── */
 * {
-   font-family: "DM Sans", sans-serif;
+   font-family: var(--gs-font-sans);
 }
 
 li {
@@ -128,6 +91,13 @@ svg {
    display: inline;
 }
 
+body {
+   min-height: 100vh;
+   font-size: 100%;
+   background-color: var(--gs-bg);
+}
+
+/* ── LAYOUT UTILITIES ────────────────────────────────────────── */
 .mt-fixed-navbar {
    margin-top: 91px;
 }
@@ -136,38 +106,13 @@ main > * {
    margin-inline: auto;
 }
 
-@media (min-width: 550px) {
-   :root {
-      --global-padding: 4.8rem;
-   }
-}
-
-@media (min-width: 800px) {
-   :root {
-      --global-padding: 6rem;
-   }
-}
-
-@media (min-width: 1200px) {
-   :root {
-      --global-padding: 8.8rem;
-   }
-}
-
 .wrapper {
-   padding-inline: var(--global-padding);
-   /* overflow-x: hidden; */
+   padding-inline: var(--gs-padding-inline);
 }
 
 .wrapper > * {
    max-width: var(--max-width-xl);
    margin-inline: auto;
-}
-
-body {
-   min-height: 100vh;
-   font-size: 100%;
-   background-color: #f4f3ef;
 }
 
 .content-in-progress {

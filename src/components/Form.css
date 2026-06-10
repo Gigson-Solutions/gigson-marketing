@@ -1,7 +1,7 @@
 .form-section {
    margin: 4rem 0 5rem;
    margin-inline: auto;
-   color: #3c3c3b;
+   color: var(--gs-ink);
 }
 .form-h2 {
    font-size: 2rem;
@@ -18,11 +18,11 @@
    font-size: 1rem;
    border-bottom: 0.0625rem solid;
    width: 100%;
-   color: #868685;
+   color: var(--gs-graphite);
    padding: 0.3rem 0 0.07rem;
 }
 .form-section input[placeholder]::placeholder {
-   color: #868685;
+   color: var(--gs-graphite);
    opacity: 1;
 }
 
@@ -30,11 +30,11 @@
    font-size: 1rem;
    border-bottom: 0.0625rem solid;
    width: 100%;
-   color: #868685;
+   color: var(--gs-graphite);
    padding: 0.3rem 0 0.07rem;
 }
 .form-container select option {
-   background-color: #f4f3ef;
+   background-color: var(--gs-cream);
    outline: none;
 }
 .form-budget {
@@ -46,9 +46,9 @@
 }
 input[type="radio"]:checked + label {
    transition: 0.2s linear;
-   background: #e3e1ee;
-   color: #7874f4;
-   border-color: #7874f4;
+   background: var(--gs-lavender);
+   color: var(--gs-purple);
+   border-color: var(--gs-purple);
 }
 .form-budget input[type="radio"] {
    position: absolute;
@@ -70,20 +70,20 @@ input[type="radio"]:checked + label {
    all: unset;
    padding: 0.5rem;
    appearance: none;
-   background-color: #eeedf0;
+   background-color: var(--gs-mist);
    border: 1px solid #000;
    border-radius: 50%;
    cursor: pointer;
 }
 .form-section input[type="checkbox"]:checked {
-   background-color: #7874f4;
+   background-color: var(--gs-purple);
 }
 
 .form-btn-send {
    margin-top: 2rem;
 }
 .legal-policity-form {
-   color: #7874f4;
+   color: var(--gs-purple);
 }
 @media (min-width: 40rem) {
    .form-h2 {

@@ -1,36 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap");
-
 /* ─────────────────────────  TOKENS + BASE  ───────────────────────── */
+/* All --gs-* tokens are inherited from :root via design-system/tokens.css */
 .iso27001 {
-  --gs-ink: #3c3c3b;
-  --gs-graphite: #868685;
-  --gs-cream: #f4f3ef;
-  --gs-paper: #ffffff;
-  --gs-black: #000000;
-  --gs-purple: #7874f4;
-  --gs-purple-deep: #9747ff;
-  --gs-purple-70: rgba(120, 116, 244, 0.7);
-  --gs-purple-30: rgba(120, 116, 244, 0.3);
-  --gs-lavender: #e3e1ee;
-  --gs-lavender-2: #e9e8f1;
-  --gs-mist: #eeedf0;
-  --gs-mist-2: #f4f0f0;
-
-  --gs-font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Helvetica, Arial, sans-serif;
-
-  --gs-radius-sm: 5px;
-  --gs-radius-md: 15px;
-  --gs-radius-lg: 30px;
-  --gs-radius-pill: 999px;
-
-  --gs-ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --gs-dur-fast: 120ms;
-  --gs-dur-base: 200ms;
-
-  /* Align page margins with the site header/footer:
-     reuse the global layout tokens defined in App.css (:root). */
-  --gs-gutter: var(--global-padding);
+  --gs-gutter: var(--gs-padding-inline);
   --gs-content-w: var(--max-width-xl);
 
   background: var(--gs-cream);
@@ -297,7 +268,7 @@
   position: absolute;
   width: 320px;
   height: 320px;
-  border: 1.5px solid #7874f4;
+  border: 1.5px solid var(--gs-purple);
 }
 
 /* Caras: fondo oscuro-purple con variación de luminosidad por cara (iluminación) */

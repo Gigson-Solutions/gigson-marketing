@@ -63,7 +63,7 @@
 }
 
 .pin-city {
-  color: #7874f4;
+  color: var(--gs-purple);
   font-size: 9px;
   letter-spacing: 0.04em;
   line-height: 1;
