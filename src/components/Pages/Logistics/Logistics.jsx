@@ -8,6 +8,7 @@ import ImproveAreas from 'shared/ImproveAreas.jsx';
 import { ServiceFaq } from 'shared/ServiceFaq.jsx';
 import SolutionsApplications from 'shared/SolutionsApplications.jsx';
 import UseCases from 'shared/UseCases.jsx';
+
 import { ServiceSchema } from '../../../seo/SchemaOrg';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
@@ -26,7 +27,8 @@ const Logistics = () => {
   } = t('cases-logistics');
 
   const lang = i18n.language || 'en';
-  const serviceUrl = lang === 'es' ? '/es/tecnologia-logistica' : '/logistics-technology';
+  const serviceUrl =
+    lang === 'es' ? '/es/tecnologia-logistica' : '/logistics-technology';
 
   return (
     <>

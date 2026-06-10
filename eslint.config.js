@@ -8,6 +8,7 @@ import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 
 export default defineConfig([
+  { ignores: ['dist/**', 'node_modules/**'] },
   js.configs.recommended,
   reactPlugin.configs.flat.recommended,
 
@@ -36,6 +37,8 @@ export default defineConfig([
 
       'unicorn/no-array-reduce': 'off',
       'unicorn/no-nested-ternary': 'off',
+      'unicorn/no-useless-undefined': 'off',
+      'unicorn/number-literal-case': 'off',
       'unicorn/prefer-query-selector': 'warn',
       'unicorn/prevent-abbreviations': 'off',
       'unicorn/filename-case': [
