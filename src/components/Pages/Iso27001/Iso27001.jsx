@@ -1,13 +1,14 @@
 import './Iso27001.css';
 
-import { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import solutionsBg from '../../../assets/solutions-applications-bg-gradients-1.svg';
 import { DEFAULT_LANG, ROUTE_SLUGS } from '../../../router/routerSlugs';
+import { ServiceSchema } from '../../../seo/SchemaOrg';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const TOTAL_STEPS = 3;
@@ -38,7 +39,6 @@ const Iso27001 = () => {
   const formSectionRef = useRef(null);
   const chipRowRef = useRef(null);
   const inputRefs = useRef({});
-
 
   const setField = (name, value) =>
     setValues((prev) => ({ ...prev, [name]: value }));
@@ -151,6 +151,12 @@ const Iso27001 = () => {
         title={t('iso27001.seo.title')}
         description={t('iso27001.seo.description')}
       />
+      <ServiceSchema
+        name={t('iso27001.seo.title')}
+        description={t('iso27001.seo.description')}
+        url="/iso-27001-certification"
+        serviceType="ISO 27001 Certification"
+      />
 
       {/* HERO */}
       <section className="hero">
@@ -163,7 +169,8 @@ const Iso27001 = () => {
             </span>
             <h1>
               {t('iso27001.hero.h1a')}
-              <br />{t('iso27001.hero.h1b')}
+              <br />
+              {t('iso27001.hero.h1b')}
               <br />
               <em className="accent-italic">ISO 27001</em>.<br />
               {t('iso27001.hero.h1d')}
@@ -172,15 +179,15 @@ const Iso27001 = () => {
             <div className="hero-pills">
               <span className="pill">{t('iso27001.hero.pill1')}</span>
               <span className="pill">{t('iso27001.hero.pill2')}</span>
-              <span className="pill pill--accent">{t('iso27001.hero.pill3')}</span>
+              <span className="pill pill--accent">
+                {t('iso27001.hero.pill3')}
+              </span>
             </div>
             <div className="hero-cta-row">
               <a href="#form" className="btn is-wide" onClick={scrollToForm}>
                 {t('iso27001.hero.cta')}
               </a>
-              <span className="hero-note">
-                {t('iso27001.hero.note')}
-              </span>
+              <span className="hero-note">{t('iso27001.hero.note')}</span>
             </div>
           </div>
         </div>
@@ -208,121 +215,128 @@ const Iso27001 = () => {
           backgroundSize: 'cover',
         }}
       >
-
-      {/* PAIN */}
-      <section className="pain">
-        <div className="pain-inner">
-          <div className="section-head">
-            <span className="eyebrow eyebrow--purple">{t('iso27001.pain.eyebrow')}</span>
-            <h2>
-              {t('iso27001.pain.h2a')}
-              <br />
-              {t('iso27001.pain.h2b')} <em className="accent-italic">{t('iso27001.pain.h2accent')}</em>.
-            </h2>
-          </div>
-          <div className="pain-grid">
-            <article className="card">
-              <div className="card-num">01</div>
-              <h3>{t('iso27001.pain.card1title')}</h3>
-              <p>{t('iso27001.pain.card1p')}</p>
-            </article>
-            <article className="card">
-              <div className="card-num">02</div>
-              <h3>{t('iso27001.pain.card2title')}</h3>
-              <p>{t('iso27001.pain.card2p')}</p>
-            </article>
-            <article className="card">
-              <div className="card-num">03</div>
-              <h3>{t('iso27001.pain.card3title')}</h3>
-              <p>{t('iso27001.pain.card3p')}</p>
-            </article>
-            <article className="card">
-              <div className="card-num">04</div>
-              <h3>{t('iso27001.pain.card4title')}</h3>
-              <p>{t('iso27001.pain.card4p')}</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* DIFFERENTIAL */}
-      <section className="diff">
-        <div className="diff-inner">
-          <div className="diff-slab">
+        {/* PAIN */}
+        <section className="pain">
+          <div className="pain-inner">
             <div className="section-head">
-              <span className="eyebrow eyebrow--oncream">{t('iso27001.diff.eyebrow')}</span>
+              <span className="eyebrow eyebrow--purple">
+                {t('iso27001.pain.eyebrow')}
+              </span>
               <h2>
-                {t('iso27001.diff.h2a')}
+                {t('iso27001.pain.h2a')}
                 <br />
-                {t('iso27001.diff.h2b')}
+                {t('iso27001.pain.h2b')}{' '}
+                <em className="accent-italic">{t('iso27001.pain.h2accent')}</em>
+                .
               </h2>
-              <p className="lead">{t('iso27001.diff.lead')}</p>
             </div>
-            <div className="diff-grid">
-              <div className="diff-item">
-                <span className="diff-num">01</span>
-                <h3>{t('iso27001.diff.item1title')}</h3>
-                <p>{t('iso27001.diff.item1p')}</p>
+            <div className="pain-grid">
+              <article className="card">
+                <div className="card-num">01</div>
+                <h3>{t('iso27001.pain.card1title')}</h3>
+                <p>{t('iso27001.pain.card1p')}</p>
+              </article>
+              <article className="card">
+                <div className="card-num">02</div>
+                <h3>{t('iso27001.pain.card2title')}</h3>
+                <p>{t('iso27001.pain.card2p')}</p>
+              </article>
+              <article className="card">
+                <div className="card-num">03</div>
+                <h3>{t('iso27001.pain.card3title')}</h3>
+                <p>{t('iso27001.pain.card3p')}</p>
+              </article>
+              <article className="card">
+                <div className="card-num">04</div>
+                <h3>{t('iso27001.pain.card4title')}</h3>
+                <p>{t('iso27001.pain.card4p')}</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* DIFFERENTIAL */}
+        <section className="diff">
+          <div className="diff-inner">
+            <div className="diff-slab">
+              <div className="section-head">
+                <span className="eyebrow eyebrow--oncream">
+                  {t('iso27001.diff.eyebrow')}
+                </span>
+                <h2>
+                  {t('iso27001.diff.h2a')}
+                  <br />
+                  {t('iso27001.diff.h2b')}
+                </h2>
+                <p className="lead">{t('iso27001.diff.lead')}</p>
               </div>
-              <div className="diff-item">
-                <span className="diff-num">02</span>
-                <h3>{t('iso27001.diff.item2title')}</h3>
-                <p>{t('iso27001.diff.item2p')}</p>
-              </div>
-              <div className="diff-item">
-                <span className="diff-num">03</span>
-                <h3>{t('iso27001.diff.item3title')}</h3>
-                <p>{t('iso27001.diff.item3p')}</p>
+              <div className="diff-grid">
+                <div className="diff-item">
+                  <span className="diff-num">01</span>
+                  <h3>{t('iso27001.diff.item1title')}</h3>
+                  <p>{t('iso27001.diff.item1p')}</p>
+                </div>
+                <div className="diff-item">
+                  <span className="diff-num">02</span>
+                  <h3>{t('iso27001.diff.item2title')}</h3>
+                  <p>{t('iso27001.diff.item2p')}</p>
+                </div>
+                <div className="diff-item">
+                  <span className="diff-num">03</span>
+                  <h3>{t('iso27001.diff.item3title')}</h3>
+                  <p>{t('iso27001.diff.item3p')}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* PROCESS */}
-      <section className="process">
-        <div className="process-inner">
-          <div className="section-head">
-            <span className="eyebrow eyebrow--purple">{t('iso27001.process.eyebrow')}</span>
-            <h2>
-              {t('iso27001.process.h2a')}
-              <br />
-              {t('iso27001.process.h2b')}
-            </h2>
-            <p className="lead" style={{ maxWidth: '38ch' }}>
-              {t('iso27001.process.lead')}
-            </p>
+        {/* PROCESS */}
+        <section className="process">
+          <div className="process-inner">
+            <div className="section-head">
+              <span className="eyebrow eyebrow--purple">
+                {t('iso27001.process.eyebrow')}
+              </span>
+              <h2>
+                {t('iso27001.process.h2a')}
+                <br />
+                {t('iso27001.process.h2b')}
+              </h2>
+              <p className="lead" style={{ maxWidth: '38ch' }}>
+                {t('iso27001.process.lead')}
+              </p>
+            </div>
+
+            <div
+              className={`steps${revealed ? ' is-revealed' : ''}`}
+              ref={stepsRef}
+            >
+              <div className="step">
+                <div className="step-num">01</div>
+                <h4>{t('iso27001.process.step1title')}</h4>
+                <p>{t('iso27001.process.step1p')}</p>
+              </div>
+              <div className="step">
+                <div className="step-num">02</div>
+                <h4>{t('iso27001.process.step2title')}</h4>
+                <p>{t('iso27001.process.step2p')}</p>
+              </div>
+              <div className="step">
+                <div className="step-num">03</div>
+                <h4>{t('iso27001.process.step3title')}</h4>
+                <p>{t('iso27001.process.step3p')}</p>
+              </div>
+              <div className="step">
+                <div className="step-num">04</div>
+                <h4>{t('iso27001.process.step4title')}</h4>
+                <p>{t('iso27001.process.step4p')}</p>
+              </div>
+            </div>
           </div>
-
-          <div
-            className={`steps${revealed ? ' is-revealed' : ''}`}
-            ref={stepsRef}
-          >
-            <div className="step">
-              <div className="step-num">01</div>
-              <h4>{t('iso27001.process.step1title')}</h4>
-              <p>{t('iso27001.process.step1p')}</p>
-            </div>
-            <div className="step">
-              <div className="step-num">02</div>
-              <h4>{t('iso27001.process.step2title')}</h4>
-              <p>{t('iso27001.process.step2p')}</p>
-            </div>
-            <div className="step">
-              <div className="step-num">03</div>
-              <h4>{t('iso27001.process.step3title')}</h4>
-              <p>{t('iso27001.process.step3p')}</p>
-            </div>
-            <div className="step">
-              <div className="step-num">04</div>
-              <h4>{t('iso27001.process.step4title')}</h4>
-              <p>{t('iso27001.process.step4p')}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      </div>{/* end content-bg */}
+        </section>
+      </div>
+      {/* end content-bg */}
 
       {/* FORM */}
       <section className="formsec" id="form" ref={formSectionRef}>
@@ -343,15 +357,27 @@ const Iso27001 = () => {
 
             <div className="deliver-block">
               <div className="deliver">
-                <span className="deliver-tag">{t('iso27001.form.deliver1tag')}</span>
-                <p dangerouslySetInnerHTML={{ __html: t('iso27001.form.deliver1p') }} />
+                <span className="deliver-tag">
+                  {t('iso27001.form.deliver1tag')}
+                </span>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: t('iso27001.form.deliver1p'),
+                  }}
+                />
               </div>
               <div className="deliver">
                 <span className="deliver-tag">
                   {t('iso27001.form.deliver2tag')}{' '}
-                  <span className="deliver-tag-soft">{t('iso27001.form.deliver2tagSoft')}</span>
+                  <span className="deliver-tag-soft">
+                    {t('iso27001.form.deliver2tagSoft')}
+                  </span>
                 </span>
-                <p dangerouslySetInnerHTML={{ __html: t('iso27001.form.deliver2p') }} />
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: t('iso27001.form.deliver2p'),
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -360,7 +386,8 @@ const Iso27001 = () => {
             {!submitted && (
               <div id="form-content">
                 <div className="formtag">
-                  {t('iso27001.form.step')} {step} {t('iso27001.form.of')} {TOTAL_STEPS}
+                  {t('iso27001.form.step')} {step} {t('iso27001.form.of')}{' '}
+                  {TOTAL_STEPS}
                 </div>
                 <div className="step-bar" aria-hidden="true">
                   <div
@@ -383,7 +410,9 @@ const Iso27001 = () => {
 
                     <div className="convo">
                       <div className="convo-field">
-                        <span className="convo-label">{t('iso27001.form.labelName')}</span>
+                        <span className="convo-label">
+                          {t('iso27001.form.labelName')}
+                        </span>
                         <span
                           className="convo-fill"
                           style={invalidStyle('nombre')}
@@ -400,7 +429,9 @@ const Iso27001 = () => {
                         </span>
                       </div>
                       <div className="convo-field">
-                        <span className="convo-label">{t('iso27001.form.labelCompany')}</span>
+                        <span className="convo-label">
+                          {t('iso27001.form.labelCompany')}
+                        </span>
                         <span
                           className="convo-fill"
                           style={invalidStyle('empresa')}
@@ -419,7 +450,9 @@ const Iso27001 = () => {
                         </span>
                       </div>
                       <div className="convo-field">
-                        <span className="convo-label">{t('iso27001.form.labelSector')}</span>
+                        <span className="convo-label">
+                          {t('iso27001.form.labelSector')}
+                        </span>
                         <span className="convo-fill">
                           <input
                             type="text"
@@ -431,7 +464,9 @@ const Iso27001 = () => {
                         </span>
                       </div>
                       <div className="convo-field">
-                        <span className="convo-label">{t('iso27001.form.labelRole')}</span>
+                        <span className="convo-label">
+                          {t('iso27001.form.labelRole')}
+                        </span>
                         <span className="convo-fill">
                           <input
                             type="text"
@@ -464,7 +499,9 @@ const Iso27001 = () => {
 
                     <div className="convo">
                       <div className="convo-field convo-field--stack">
-                        <span className="convo-label">{t('iso27001.form.needLabel')}</span>
+                        <span className="convo-label">
+                          {t('iso27001.form.needLabel')}
+                        </span>
                         <div
                           className="chip-row"
                           role="radiogroup"
@@ -474,7 +511,10 @@ const Iso27001 = () => {
                           {[
                             ['implantacion', t('iso27001.form.chip1')],
                             ['certificacion', t('iso27001.form.chip2')],
-                            ['implantacion-certificacion', t('iso27001.form.chip3')],
+                            [
+                              'implantacion-certificacion',
+                              t('iso27001.form.chip3'),
+                            ],
                             ['no-seguro', t('iso27001.form.chip4')],
                           ].map(([value, label]) => (
                             <label className="chip" key={value}>
@@ -520,7 +560,9 @@ const Iso27001 = () => {
 
                     <div className="convo">
                       <div className="convo-field">
-                        <span className="convo-label">{t('iso27001.form.labelEmail')}</span>
+                        <span className="convo-label">
+                          {t('iso27001.form.labelEmail')}
+                        </span>
                         <span className="convo-fill">
                           <input
                             type="email"
@@ -537,7 +579,9 @@ const Iso27001 = () => {
                         </span>
                       </div>
                       <div className="convo-field">
-                        <span className="convo-label">{t('iso27001.form.labelPhone')}</span>
+                        <span className="convo-label">
+                          {t('iso27001.form.labelPhone')}
+                        </span>
                         <span className="convo-fill">
                           <input
                             type="tel"
@@ -557,7 +601,9 @@ const Iso27001 = () => {
                     {contactHint && (
                       <p
                         className="contact-hint"
-                        dangerouslySetInnerHTML={{ __html: t('iso27001.form.contactHint') }}
+                        dangerouslySetInnerHTML={{
+                          __html: t('iso27001.form.contactHint'),
+                        }}
                       />
                     )}
 
@@ -579,11 +625,17 @@ const Iso27001 = () => {
                       </button>
                     </div>
                     <p className="form-legal">
-                      {t('iso27001.form.legal', {
-                        defaultValue: '',
-                      }).split('<a>')[0]}
+                      {
+                        t('iso27001.form.legal', {
+                          defaultValue: '',
+                        }).split('<a>')[0]
+                      }
                       <Link to={policyPath}>
-                        {t('iso27001.form.legal').split('<a>')[1]?.split('</a>')[0]}
+                        {
+                          t('iso27001.form.legal')
+                            .split('<a>')[1]
+                            ?.split('</a>')[0]
+                        }
                       </Link>
                       {t('iso27001.form.legal').split('</a>')[1]}
                     </p>

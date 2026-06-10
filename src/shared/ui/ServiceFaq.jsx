@@ -4,12 +4,12 @@ import { AccordionAnimation } from '../../components/Accordion/AccordionAnimatio
 import { FAQPageSchema } from '../../seo/SchemaOrg';
 
 export function ServiceFaq({ title, faqs }) {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState();
 
   const handleClick = (index) =>
-    setActiveIndex((prev) => (prev === index ? null : index));
+    setActiveIndex((prev) => (prev === index ? undefined : index));
 
-  if (!faqs || faqs.length === 0) return null;
+  if (!faqs || faqs.length === 0) return;
 
   return (
     <section className="wrapper service-faq-section">
@@ -24,7 +24,10 @@ export function ServiceFaq({ title, faqs }) {
               aria-expanded={activeIndex === i}
             >
               <span className="accordion-title faqs">{question}</span>
-              <AccordionAnimation accordionOpen={activeIndex === i} faqs="faqs" />
+              <AccordionAnimation
+                accordionOpen={activeIndex === i}
+                faqs="faqs"
+              />
             </button>
             <div
               className={`accordion-content ${activeIndex === i ? 'accordion-show-content' : ''}`}

@@ -2,12 +2,12 @@ import './ClaudePartner.css';
 
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { ServiceFaq } from 'shared/ServiceFaq.jsx';
 
 import solutionsBg from '../../../assets/solutions-applications-bg-gradients-1.svg';
+import { DEFAULT_LANG, ROUTE_SLUGS } from '../../../router/routerSlugs';
 import { OrganizationSchema, ServiceSchema } from '../../../seo/SchemaOrg';
 import { SeoHelmet } from '../../../seo/seoHelmet';
-import { ServiceFaq } from 'shared/ServiceFaq.jsx';
-import { DEFAULT_LANG, ROUTE_SLUGS } from '../../../router/routerSlugs';
 
 const ClaudePartner = () => {
   const { t, i18n } = useTranslation();

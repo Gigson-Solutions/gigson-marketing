@@ -1,4 +1,5 @@
 import './ProcessSteps.css';
+
 import { useEffect, useRef, useState } from 'react';
 
 const ProcessSteps = ({ eyebrow, h2a, h2b, lead, steps }) => {

@@ -4,24 +4,40 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import logoFooter from '../../assets/LogoFooter.svg';
-import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import { DEFAULT_LANG, ROUTE_SLUGS } from '../../router/routerSlugs';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
   const slugs = ROUTE_SLUGS[i18n.language] || ROUTE_SLUGS[DEFAULT_LANG];
   const langPrefix = i18n.language === DEFAULT_LANG ? '' : `/${i18n.language}`;
 
-  const { about, services, cases, faqs, book, contact, legal, cookies, notice, ai_manifest } =
-    t('menu');
+  const {
+    about,
+    services,
+    cases,
+    faqs,
+    book,
+    contact,
+    legal,
+    cookies,
+    notice,
+    ai_manifest,
+  } = t('menu');
 
   const menuLinks = [
-    { name: services, link: `${langPrefix}/${slugs.services}`.replace('//', '/') },
+    {
+      name: services,
+      link: `${langPrefix}/${slugs.services}`.replace('//', '/'),
+    },
     { name: cases, link: `${langPrefix}/${slugs.cases}`.replace('//', '/') },
     { name: about, link: `${langPrefix}/${slugs.about}`.replace('//', '/') },
     { name: faqs, link: `${langPrefix}/${slugs.faqs}`.replace('//', '/') },
     { name: book, link: `${langPrefix}/${slugs.book}`.replace('//', '/') },
-    { name: contact, link: `${langPrefix}/${slugs.contact}`.replace('//', '/') },
+    {
+      name: contact,
+      link: `${langPrefix}/${slugs.contact}`.replace('//', '/'),
+    },
   ];
 
   return (
@@ -52,7 +68,9 @@ const Footer = () => {
         </div>
 
         <div className="footer-policy max-w-[88.875rem] mx-auto">
-          <span>Developed by Gigson Solutions © {new Date().getFullYear()}</span>
+          <span>
+            Developed by Gigson Solutions © {new Date().getFullYear()}
+          </span>
           <ul className="footer-policy-links">
             <li>
               <Link to="/policy">{legal}</Link>

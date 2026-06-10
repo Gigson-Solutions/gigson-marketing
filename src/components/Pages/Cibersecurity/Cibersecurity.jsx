@@ -5,6 +5,7 @@ import Hero from 'shared/Hero.jsx';
 import HowWeWork from 'shared/HowWeWork.jsx';
 import { ServiceFaq } from 'shared/ServiceFaq.jsx';
 import SolutionsApplications from 'shared/SolutionsApplications.jsx';
+
 import { ServiceSchema } from '../../../seo/SchemaOrg';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
@@ -26,7 +27,12 @@ const Cibersecurity = () => {
   return (
     <>
       <SeoHelmet title={title} description={metadescription} />
-      <ServiceSchema name={title} description={metadescription} url={serviceUrl} serviceType="Cybersecurity" />
+      <ServiceSchema
+        name={title}
+        description={metadescription}
+        url={serviceUrl}
+        serviceType="Cybersecurity"
+      />
       <Hero {...hero} />
       <SolutionsApplications {...solutionsApplications} />
       <HowWeWork {...howWeWork} />
