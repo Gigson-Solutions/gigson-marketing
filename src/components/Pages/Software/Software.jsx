@@ -5,6 +5,7 @@ import Hero from 'shared/Hero.jsx';
 import ProcessSteps from 'shared/ProcessSteps.jsx';
 import { ServiceFaq } from 'shared/ServiceFaq.jsx';
 import SolutionsApplications from 'shared/SolutionsApplications.jsx';
+
 import { ServiceSchema } from '../../../seo/SchemaOrg';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
@@ -21,12 +22,18 @@ const Software = () => {
   } = t('software');
 
   const lang = i18n.language || 'en';
-  const serviceUrl = lang === 'es' ? '/es/ingenieria-software' : '/software-engineering';
+  const serviceUrl =
+    lang === 'es' ? '/es/ingenieria-software' : '/software-engineering';
 
   return (
     <>
       <SeoHelmet title={title} description={metadescription} />
-      <ServiceSchema name={title} description={metadescription} url={serviceUrl} serviceType="Software Engineering" />
+      <ServiceSchema
+        name={title}
+        description={metadescription}
+        url={serviceUrl}
+        serviceType="Software Engineering"
+      />
       <Hero {...hero} />
       <SolutionsApplications {...solutionsApplications} />
       <ProcessSteps {...howWeWork} />

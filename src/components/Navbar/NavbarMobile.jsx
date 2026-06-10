@@ -86,12 +86,20 @@ const NavbarMobile = ({ menu }) => {
                     <div className="flex items-center menu-item__link">
                       <a
                         href={link}
-                        onClick={(e) => { e.stopPropagation(); closeMobileMenu(); }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          closeMobileMenu();
+                        }}
                         style={{ flex: 1 }}
                       >
                         {name}
                       </a>
-                      <span onClick={(e) => { e.stopPropagation(); isMobileMenuOpen && toggleDropdown(index); }}>
+                      <span
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          isMobileMenuOpen && toggleDropdown(index);
+                        }}
+                      >
                         <ChevronDown />
                       </span>
                     </div>

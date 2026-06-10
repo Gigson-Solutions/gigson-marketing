@@ -5,6 +5,7 @@ import Hero from 'shared/Hero.jsx';
 import ProcessSteps from 'shared/ProcessSteps.jsx';
 import { ServiceFaq } from 'shared/ServiceFaq.jsx';
 import SolutionsApplications from 'shared/SolutionsApplications.jsx';
+
 import { ServiceSchema } from '../../../seo/SchemaOrg';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
@@ -21,12 +22,18 @@ const ConsultoriaTec = () => {
   } = t('consultoriaTec');
 
   const lang = i18n.language || 'en';
-  const serviceUrl = lang === 'es' ? '/es/consultoria-tecnologica' : '/technology-consulting';
+  const serviceUrl =
+    lang === 'es' ? '/es/consultoria-tecnologica' : '/technology-consulting';
 
   return (
     <>
       <SeoHelmet title={title} description={metadescription} />
-      <ServiceSchema name={title} description={metadescription} url={serviceUrl} serviceType="Technology Consulting" />
+      <ServiceSchema
+        name={title}
+        description={metadescription}
+        url={serviceUrl}
+        serviceType="Technology Consulting"
+      />
       <Hero {...hero} />
       <SolutionsApplications {...solutionsApplications} />
       <ProcessSteps {...howWeWork} />

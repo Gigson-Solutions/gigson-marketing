@@ -8,9 +8,13 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useBreakpoint } from 'shared/hooks/useBreakpoint.jsx';
 
+import {
+  DEFAULT_LANG,
+  ROUTE_SLUGS,
+  SUPPORTED_LANGS,
+} from '../../router/routerSlugs';
 import { SeoHelmet } from '../../seo/seoHelmet';
 import { ButtonLink } from '../../shared/ui/Button';
-import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from '../../router/routerSlugs';
 import { AccordionAnimation } from '../Accordion/AccordionAnimation';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -26,7 +30,17 @@ const ClaudeBadge = () => (
   </div>
 );
 
-const OffMenuCard = ({ label, title, price, tagline, isDark, ctaText, sections, badge, link }) => {
+const OffMenuCard = ({
+  label,
+  title,
+  price,
+  tagline,
+  isDark,
+  ctaText,
+  sections,
+  badge,
+  link,
+}) => {
   const cardInnerRef = useRef(null);
   const { isDesktop } = useBreakpoint();
   const [flipped, setFlipped] = useState(false);

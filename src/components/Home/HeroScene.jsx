@@ -1,5 +1,5 @@
-import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import { useEffect, useRef } from 'react';
 
 const DOT_COLOR = '120, 116, 244';
 const LARGE_COUNT = 340;
@@ -9,8 +9,8 @@ const WOBBLE_AMP = 0.16;
 function randomSphere(n, seed) {
   let s = seed;
   const rand = () => {
-    s = (s * 1664525 + 1013904223) & 0xffffffff;
-    return (s >>> 0) / 0xffffffff;
+    s = (s * 1_664_525 + 1_013_904_223) & 0xff_ff_ff_ff;
+    return (s >>> 0) / 0xff_ff_ff_ff;
   };
   const points = [];
   for (let i = 0; i < n; i++) {
@@ -21,12 +21,18 @@ function randomSphere(n, seed) {
       y: Math.sin(phi) * Math.sin(theta),
       z: Math.cos(phi),
       // Two harmonics per axis at incommensurable frequencies → quasi-random path
-      fA:  0.12 + rand() * 0.7,  phA:  rand() * Math.PI * 2,
-      fA2: 0.45 + rand() * 1.1,  phA2: rand() * Math.PI * 2,
-      fB:  0.12 + rand() * 0.7,  phB:  rand() * Math.PI * 2,
-      fB2: 0.45 + rand() * 1.1,  phB2: rand() * Math.PI * 2,
-      fC:  0.12 + rand() * 0.7,  phC:  rand() * Math.PI * 2,
-      fC2: 0.45 + rand() * 1.1,  phC2: rand() * Math.PI * 2,
+      fA: 0.12 + rand() * 0.7,
+      phA: rand() * Math.PI * 2,
+      fA2: 0.45 + rand() * 1.1,
+      phA2: rand() * Math.PI * 2,
+      fB: 0.12 + rand() * 0.7,
+      phB: rand() * Math.PI * 2,
+      fB2: 0.45 + rand() * 1.1,
+      phB2: rand() * Math.PI * 2,
+      fC: 0.12 + rand() * 0.7,
+      phC: rand() * Math.PI * 2,
+      fC2: 0.45 + rand() * 1.1,
+      phC2: rand() * Math.PI * 2,
     });
   }
   return points;
@@ -46,31 +52,56 @@ function drawDot(ctx, cx, cy, size, opacity) {
   ctx.fill();
 }
 
-function renderSphere(ctx, points, cx, cy, rotY, radius, dotSize, mouseX, mouseY, time) {
+function renderSphere(
+  ctx,
+  points,
+  cx,
+  cy,
+  rotY,
+  radius,
+  dotSize,
+  mouseX,
+  mouseY,
+  time
+) {
   const perspective = 600;
   const mouseR = radius * 0.55;
-  const isMouseOver = Math.sqrt((mouseX - cx) ** 2 + (mouseY - cy) ** 2) < radius * 1.1;
+  const isMouseOver = Math.hypot(mouseX - cx, mouseY - cy) < radius * 1.1;
 
   const projected = points.map((p) => {
-    const wx = (Math.sin(time * p.fA  + p.phA)  * 0.6 + Math.sin(time * p.fA2 + p.phA2) * 0.4) * WOBBLE_AMP;
-    const wy = (Math.cos(time * p.fB  + p.phB)  * 0.6 + Math.cos(time * p.fB2 + p.phB2) * 0.4) * WOBBLE_AMP;
-    const wz = (Math.sin(time * p.fC  + p.phC)  * 0.6 + Math.sin(time * p.fC2 + p.phC2) * 0.4) * WOBBLE_AMP;
+    const wx =
+      (Math.sin(time * p.fA + p.phA) * 0.6 +
+        Math.sin(time * p.fA2 + p.phA2) * 0.4) *
+      WOBBLE_AMP;
+    const wy =
+      (Math.cos(time * p.fB + p.phB) * 0.6 +
+        Math.cos(time * p.fB2 + p.phB2) * 0.4) *
+      WOBBLE_AMP;
+    const wz =
+      (Math.sin(time * p.fC + p.phC) * 0.6 +
+        Math.sin(time * p.fC2 + p.phC2) * 0.4) *
+      WOBBLE_AMP;
 
-    const r = rotateY((p.x + wx) * radius, (p.y + wy) * radius, (p.z + wz) * radius, rotY);
+    const r = rotateY(
+      (p.x + wx) * radius,
+      (p.y + wy) * radius,
+      (p.z + wz) * radius,
+      rotY
+    );
     const scale = perspective / (perspective + r.z + radius);
     const px = cx + r.x * scale;
     const py = cy + r.y * scale;
 
     const normalizedZ = (r.z / radius + 1) / 2;
     // Edge factor: 0 at poles, 1 at the visible silhouette of the sphere
-    const edgeFactor = Math.min(1, Math.sqrt(r.x * r.x + r.y * r.y) / radius);
+    const edgeFactor = Math.min(1, Math.hypot(r.x, r.y) / radius);
     const edgeBoost = Math.pow(edgeFactor, 2.2) * 0.55;
     let opacity = Math.min(1, 0.22 + normalizedZ * 0.78 + edgeBoost);
 
     if (isMouseOver) {
       const dx = px - mouseX;
       const dy = py - mouseY;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+      const dist = Math.hypot(dx, dy);
       const proximity = Math.max(0, 1 - dist / mouseR);
       opacity = Math.max(0.08, opacity * (1 - proximity * 0.85));
     }
@@ -112,7 +143,7 @@ function renderPentagon(ctx, cx, cy, radius, rotZ, mouseX, mouseY, spheres) {
       for (const sp of spheres) {
         const sdx = pmx - sp.cx;
         const sdy = pmy - sp.cy;
-        const d = Math.sqrt(sdx * sdx + sdy * sdy);
+        const d = Math.hypot(sdx, sdy);
         const t = Math.max(0, 1 - d / sp.r);
         if (t > overlap) overlap = t;
       }
@@ -141,7 +172,9 @@ function HeroScene({ className }) {
     const anim = { rotY: 0, rotY2: 0, pentRotZ: 0 };
     const mouse = { x: -9999, y: -9999 };
 
-    let w = 0, h = 0, dpr = 1;
+    let w = 0,
+      h = 0,
+      dpr = 1;
 
     function resize() {
       dpr = window.devicePixelRatio || 1;
@@ -160,30 +193,76 @@ function HeroScene({ className }) {
       if (!w || !h) return;
       ctx.clearRect(0, 0, w, h);
 
-      const largeR = Math.min(w * 0.40, h * 0.36);
+      const largeR = Math.min(w * 0.4, h * 0.36);
       const smallR = largeR * 0.28;
       const pentR = largeR * 0.587;
 
-      const largeCx = w * 0.60;
+      const largeCx = w * 0.6;
       const largeCy = h * 0.65;
       const smallCx = w * 0.84;
-      const smallCy = h * 0.30;
+      const smallCy = h * 0.3;
       const pentCx = w * 0.74;
       const pentCy = h * 0.35;
 
       const time = gsap.ticker.time;
 
-      renderPentagon(ctx, pentCx, pentCy, pentR, anim.pentRotZ + 0.15, mouse.x, mouse.y, [
-        { cx: largeCx, cy: largeCy, r: largeR },
-        { cx: smallCx, cy: smallCy, r: smallR },
-      ]);
-      renderSphere(ctx, largePts, largeCx, largeCy, anim.rotY, largeR, 15, mouse.x, mouse.y, time);
-      renderSphere(ctx, smallPts, smallCx, smallCy, anim.rotY2, smallR, 8, mouse.x, mouse.y, time);
+      renderPentagon(
+        ctx,
+        pentCx,
+        pentCy,
+        pentR,
+        anim.pentRotZ + 0.15,
+        mouse.x,
+        mouse.y,
+        [
+          { cx: largeCx, cy: largeCy, r: largeR },
+          { cx: smallCx, cy: smallCy, r: smallR },
+        ]
+      );
+      renderSphere(
+        ctx,
+        largePts,
+        largeCx,
+        largeCy,
+        anim.rotY,
+        largeR,
+        15,
+        mouse.x,
+        mouse.y,
+        time
+      );
+      renderSphere(
+        ctx,
+        smallPts,
+        smallCx,
+        smallCy,
+        anim.rotY2,
+        smallR,
+        8,
+        mouse.x,
+        mouse.y,
+        time
+      );
     }
 
-    gsap.to(anim, { rotY: Math.PI * 2, duration: 28, ease: 'none', repeat: -1 });
-    gsap.to(anim, { rotY2: Math.PI * 2, duration: 20, ease: 'none', repeat: -1 });
-    gsap.to(anim, { pentRotZ: Math.PI * 2, duration: 65, ease: 'none', repeat: -1 });
+    gsap.to(anim, {
+      rotY: Math.PI * 2,
+      duration: 28,
+      ease: 'none',
+      repeat: -1,
+    });
+    gsap.to(anim, {
+      rotY2: Math.PI * 2,
+      duration: 20,
+      ease: 'none',
+      repeat: -1,
+    });
+    gsap.to(anim, {
+      pentRotZ: Math.PI * 2,
+      duration: 65,
+      ease: 'none',
+      repeat: -1,
+    });
 
     gsap.ticker.add(render);
 
@@ -197,14 +276,14 @@ function HeroScene({ className }) {
       mouse.y = -9999;
     }
 
-    window.addEventListener('mousemove', handleMouse);
+    globalThis.addEventListener('mousemove', handleMouse);
     canvas.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
       gsap.ticker.remove(render);
       gsap.killTweensOf(anim);
       ro.disconnect();
-      window.removeEventListener('mousemove', handleMouse);
+      globalThis.removeEventListener('mousemove', handleMouse);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, []);

@@ -13,9 +13,7 @@ export function OrganizationSchema() {
       'Certified Anthropic Claude Partner. Diseñamos, construimos y desplegamos agentes de IA basados en Claude para operaciones empresariales en España. CTO as a Service, integraciones de sistemas y ciberseguridad.',
     foundingDate: '2022',
     areaServed: 'ES',
-    sameAs: [
-      'https://www.linkedin.com/company/gigson-solutions',
-    ],
+    sameAs: ['https://www.linkedin.com/company/gigson-solutions'],
     knowsAbout: [
       'Inteligencia Artificial',
       'Agentes IA',
@@ -43,7 +41,13 @@ export function OrganizationSchema() {
   );
 }
 
-export function ServiceSchema({ name, description, url, serviceType, areaServed = 'ES' }) {
+export function ServiceSchema({
+  name,
+  description,
+  url,
+  serviceType,
+  areaServed = 'ES',
+}) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -67,7 +71,7 @@ export function ServiceSchema({ name, description, url, serviceType, areaServed 
 }
 
 export function FAQPageSchema({ faqs }) {
-  if (!faqs || faqs.length === 0) return null;
+  if (!faqs || faqs.length === 0) return;
 
   const schema = {
     '@context': 'https://schema.org',
