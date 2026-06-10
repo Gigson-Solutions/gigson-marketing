@@ -3,7 +3,6 @@ import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from './routerSlugs.js';
 export const MARKETING_PAGE_KEYS = [
   'integrations',
   'services',
-  'industries',
   'logistics',
   'CTO',
   'software',
