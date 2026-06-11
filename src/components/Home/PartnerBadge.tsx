@@ -1,0 +1,42 @@
+'use client';
+
+import './PartnerBadge.css';
+
+import { useLocale, useTranslations } from 'next-intl';
+
+import { Link } from '../../../i18n/navigation';
+
+export const PartnerBadge = () => {
+  const t = useTranslations('partnerBadge');
+  const locale = useLocale();
+  const items = t.raw('items') as string[];
+
+  return (
+    <div className="partner-badge">
+      <div className="partner-badge__inner">
+        <div className="partner-badge__content">
+          <div className="partner-badge__logo">
+            <img src="/anthropic-logo.svg" alt="Anthropic" />
+          </div>
+          <h2 className="partner-badge__title">{t('title')}</h2>
+          <p className="partner-badge__body">{t('body')}</p>
+          <ul className="partner-badge__items">
+            {items.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+          <Link href="/ai-agents" className="partner-badge__cta">
+            {t('cta')}
+          </Link>
+        </div>
+        <div className="partner-badge__visual">
+          <div className="partner-badge__card">
+            <img src="/anthropic-logo.svg" alt="Anthropic logo" />
+            <span className="partner-badge__card-label">Official certification</span>
+            <span className="partner-badge__card-name">Claude Partner Network</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
