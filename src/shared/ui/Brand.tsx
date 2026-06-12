@@ -1,36 +1,33 @@
 'use client';
 
-import a6Img from 'assets/brands/A6.svg';
-import adockImg from 'assets/brands/Adock.svg';
-import brandtiaImg from 'assets/brands/Brandtia.svg';
-import caritasImg from 'assets/brands/Caritas.svg';
-import colvinLogo from 'assets/brands/colvin.svg';
-import elogiaImg from 'assets/brands/Elogia.svg';
-import europcarGroupImg from 'assets/brands/EuropcarGroup.svg';
-import kmmImg from 'assets/brands/KMM.svg';
-import logoImg from 'assets/brands/Logo.svg';
-import modareImg from 'assets/brands/Modare.svg';
-import quicksmileLogo from 'assets/brands/quicksmile.svg';
-import spainRevealedGisgsonImg from 'assets/brands/SpainRevealed_Gisgson.svg';
-import stkImg from 'assets/brands/STK.svg';
-import tarbozImg from 'assets/brands/Tarboz.svg';
-import unavetsLogo from 'assets/brands/unavets.svg';
-import vikoImg from 'assets/brands/Viko.svg';
 import { useTranslations } from 'next-intl';
 
 const logos = [
-  caritasImg, vikoImg, europcarGroupImg, logoImg, a6Img, kmmImg,
-  elogiaImg, stkImg, adockImg, modareImg, spainRevealedGisgsonImg,
-  brandtiaImg, tarbozImg, colvinLogo, unavetsLogo, quicksmileLogo,
+  { src: '/brands/Caritas.svg', alt: 'Cáritas' },
+  { src: '/brands/Viko.svg', alt: 'Viko' },
+  { src: '/brands/EuropcarGroup.svg', alt: 'Europcar Mobility Group' },
+  { src: '/brands/Logo.svg', alt: 'MU DAN ZA' },
+  { src: '/brands/A6.svg', alt: 'A6' },
+  { src: '/brands/KMM.svg', alt: 'KMM' },
+  { src: '/brands/Elogia.svg', alt: 'Elogia' },
+  { src: '/brands/STK.svg', alt: 'STK' },
+  { src: '/brands/Adock.svg', alt: 'Adock' },
+  { src: '/brands/Modare.svg', alt: 'Modare' },
+  { src: '/brands/SpainRevealed_Gisgson.svg', alt: 'Spain Revealed' },
+  { src: '/brands/Brandtia.svg', alt: 'Brandtia' },
+  { src: '/brands/Tarboz.svg', alt: 'Tarboz' },
+  { src: '/brands/colvin.svg', alt: 'Colvin' },
+  { src: '/brands/unavets.svg', alt: 'UNAVETS' },
+  { src: '/brands/quicksmile.svg', alt: 'QuickSmile' },
 ];
 
 const LogoGrid = () => (
-  <div className="w-full flex flex-wrap gap-x-8 gap-y-6 md:gap-x-2 md:gap-y-6 justify-items-center items-center">
-    {logos.map((img, index) => (
+  <div className="w-full flex flex-wrap gap-x-8 gap-y-6 items-center">
+    {logos.map(({ src, alt }) => (
       <img
-        key={index}
-        src={typeof img === 'string' ? img : (img as { src: string }).src}
-        alt={`Client logo ${index + 1}`}
+        key={src}
+        src={src}
+        alt={alt}
         className="max-w-full h-[30px] lg:h-[55px] object-contain lg:p-2"
       />
     ))}
@@ -41,22 +38,21 @@ const Brand = () => {
   const t = useTranslations('brand');
 
   return (
-    <section className="px-landing mt-fixed-navbar pb-14 lg:pb-40">
+    <section className="px-landing py-14 lg:py-40">
       <div className="max-w-[88.875rem] mx-auto">
         <div className="flex flex-col lg:flex-row w-full gap-15">
-          <div className="flex flex-col">
-            <p className="text-h2 text-dark-primary mb-4 md:mb-6">
-              {t.rich('brand_title', {
-                span: (chunks) => <span className="block text-purple-accents">{chunks}</span>,
-              })}
+          <div className="flex flex-col flex-shrink-0">
+            <p className="gs-small uppercase tracking-widest text-graphite mb-3">
+              {t('brand_eyebrow')}
             </p>
-            <p className="text-dark-primary text-left text-subtitle max-w-contained mb-6 md:mb-10">
-              {t.rich('brand_description', {
-                span: (chunks) => <span className="block text-purple-accents">{chunks}</span>,
-              })}
+            <p className="text-h2 text-purple-accents mb-4 md:mb-6">
+              {t('brand_title')}
+            </p>
+            <p className="text-dark-primary text-left text-subtitle mb-6 md:mb-10">
+              {t('brand_description')}
             </p>
           </div>
-          <div className="lg:w-2/3 flex items-center justify-start">
+          <div className="flex items-center justify-start lg:flex-1">
             <LogoGrid />
           </div>
         </div>

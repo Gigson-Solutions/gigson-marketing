@@ -1,5 +1,7 @@
 'use client';
 
+import './ServiceFaq.css';
+
 import { useState } from 'react';
 
 import { AccordionAnimation } from '../../components/Accordion/AccordionAnimation';

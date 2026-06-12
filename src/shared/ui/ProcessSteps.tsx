@@ -44,26 +44,28 @@ const ProcessSteps = ({ eyebrow, h2a, h2b, lead, steps }: ProcessStepsProps) => 
   }, []);
 
   return (
-    <section className="process-steps-section wrapper">
-      <header className="process-steps-header">
-        {eyebrow && <p className="process-steps-eyebrow">{eyebrow}</p>}
-        <h2 className="process-steps-h2">
-          {h2a}
-          {h2b && <span className="text-purple-accents"> {h2b}</span>}
-        </h2>
-        {lead && <p className="process-steps-lead">{lead}</p>}
-      </header>
-      <div
-        ref={stepsRef}
-        className={`process-steps-list ${revealed ? 'process-steps-list--revealed' : ''}`}
-      >
-        {steps.map(({ title, description }, i) => (
-          <div key={i} className="process-step">
-            <span className="process-step-nr">{String(i + 1).padStart(2, '0')}</span>
-            <h3 className="process-step-title">{title}</h3>
-            <p className="process-step-desc">{description}</p>
-          </div>
-        ))}
+    <section className="process-steps">
+      <div className="ps-inner">
+        <header className="ps-head">
+          {eyebrow && <p className="ps-eyebrow">{eyebrow}</p>}
+          <h2>
+            {h2a}
+            {h2b && <span className="text-purple-accents"> {h2b}</span>}
+          </h2>
+          {lead && <p className="ps-lead">{lead}</p>}
+        </header>
+        <div
+          ref={stepsRef}
+          className={`ps-steps${revealed ? ' is-revealed' : ''}`}
+        >
+          {steps.map(({ title, description }, i) => (
+            <div key={i} className="ps-step">
+              <span className="ps-step-num">{String(i + 1).padStart(2, '0')}</span>
+              <h4>{title}</h4>
+              <p>{description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

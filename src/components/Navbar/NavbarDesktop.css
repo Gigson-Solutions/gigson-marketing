@@ -114,3 +114,39 @@
 .menu-box--desktop .menu-item:hover .dropdown {
     display: flex;
 }
+
+/* Language selector */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.language-selector__btn {
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: var(--gs-ink);
+    background: none;
+    border: none;
+    padding: 0 0.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    opacity: 0.45;
+}
+
+.language-selector__btn--active {
+    opacity: 1;
+    border-bottom: 2px solid var(--gs-purple);
+}
+
+.language-selector__btn:hover {
+    color: var(--gs-purple);
+    opacity: 1;
+}
+
+.language-selector__sep {
+    color: var(--gs-ink);
+    font-size: 1.0625rem;
+    opacity: 0.45;
+}

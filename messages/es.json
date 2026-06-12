@@ -2579,7 +2579,8 @@
         }
     },
     "brand": {
-        "brand_title": "Respaldados por <span> grandes marcas </span>",
+        "brand_eyebrow": "Respaldados por",
+        "brand_title": "grandes marcas",
         "brand_description": "Descubre nuestros clientes y lo que hacemos por ellos"
     },
     "CTO": {

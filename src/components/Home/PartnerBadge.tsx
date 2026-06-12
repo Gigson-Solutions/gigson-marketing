@@ -1,14 +1,14 @@
 'use client';
 
 import './PartnerBadge.css';
+import '../Button.css';
 
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 import { Link } from '../../../i18n/navigation';
 
 export const PartnerBadge = () => {
   const t = useTranslations('partnerBadge');
-  const locale = useLocale();
   const items = t.raw('items') as string[];
 
   return (
@@ -25,13 +25,14 @@ export const PartnerBadge = () => {
               <li key={i}>{item}</li>
             ))}
           </ul>
-          <Link href="/ai-agents" className="partner-badge__cta">
+          <Link href="/ai-agents" className="button-main partner-badge__cta-btn">
             {t('cta')}
           </Link>
         </div>
         <div className="partner-badge__visual">
           <div className="partner-badge__card">
-            <img src="/anthropic-logo.svg" alt="Anthropic logo" />
+            <img src="/claude-logo.png" alt="Claude" className="partner-badge__card-claude" />
+            <img src="/anthropic-logo.svg" alt="Anthropic" className="partner-badge__card-anthropic" />
             <span className="partner-badge__card-label">Official certification</span>
             <span className="partner-badge__card-name">Claude Partner Network</span>
           </div>

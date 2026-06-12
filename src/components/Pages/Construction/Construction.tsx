@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 
 import useCasesBgGradient from '../../../assets/casos-de-uso-bg-gradient-1.svg';
-import DigitalProduct from '../../../shared/ui/DigitalProduct';
+import { ButtonLink } from '../../../shared/ui/Button';
 import Hero from '../../../shared/ui/Hero';
 import HowWeWork from '../../../shared/ui/HowWeWork';
 import ImproveAreas from '../../../shared/ui/ImproveAreas';
@@ -28,7 +28,7 @@ const Construction = () => {
   const useCases = t.raw('useCases') as Parameters<typeof UseCases>[0];
   const improveAreas = t.raw('improveAreas') as Parameters<typeof ImproveAreas>[0];
   const howWeWork = t.raw('howWeWork') as Parameters<typeof HowWeWork>[0];
-  const digitalProduct = t.raw('digitalProduct') as Parameters<typeof DigitalProduct>[0];
+  const digitalProduct = t.raw('digitalProduct') as { buttonText: string };
 
   return (
     <>
@@ -39,7 +39,9 @@ const Construction = () => {
       </section>
       <SolutionsApplications {...solutionsApplications} />
       <HowWeWork {...howWeWork} />
-      <DigitalProduct {...digitalProduct} />
+      <section className="flex justify-center py-14 lg:py-20 px-landing">
+        <ButtonLink link="/contact" text={digitalProduct.buttonText} outlined />
+      </section>
     </>
   );
 };

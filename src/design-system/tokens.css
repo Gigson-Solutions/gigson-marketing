@@ -208,107 +208,105 @@
 @font-face { font-family: "DM Sans"; font-style: italic; font-weight: 900; font-display: swap; src: url("../assets/fonts/DMSans-BlackItalic.ttf") format("truetype"); }
 
 /* ── BASE TEXT STYLES ────────────────────────────────────────── */
+/* In @layer base so Tailwind @layer utilities can override colors/sizes. */
 /* html intentionally has no explicit font-size so 1rem stays at
    the browser default (16px). Body text size is set separately. */
-html, body {
-  background: var(--gs-bg);
-  color: var(--gs-fg-1);
-  font-family: var(--gs-font-sans);
-  line-height: var(--gs-lh-body);
-  font-weight: var(--gs-weight-regular);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+@layer base {
+  html, body {
+    background: var(--gs-bg);
+    color: var(--gs-fg-1);
+    font-family: var(--gs-font-sans);
+    line-height: var(--gs-lh-body);
+    font-weight: var(--gs-weight-regular);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-body {
-  font-size: var(--gs-text-base);
-}
+  body {
+    font-size: var(--gs-text-base);
+  }
 
-h1, .gs-h1 {
-  font-family: var(--gs-font-display);
-  font-size: var(--gs-text-3xl);
-  line-height: var(--gs-lh-display);
-  font-weight: var(--gs-weight-regular);
-  letter-spacing: var(--gs-tracking-tight);
-  color: var(--gs-fg-1);
-  margin: 0;
-}
+  h1, .gs-h1 {
+    font-family: var(--gs-font-display);
+    font-size: var(--gs-text-3xl);
+    line-height: var(--gs-lh-display);
+    font-weight: var(--gs-weight-regular);
+    letter-spacing: var(--gs-tracking-tight);
+    color: var(--gs-fg-1);
+  }
 
-h2, .gs-h2 {
-  font-family: var(--gs-font-display);
-  font-size: var(--gs-text-2xl);
-  line-height: var(--gs-lh-display);
-  font-weight: var(--gs-weight-regular);
-  color: var(--gs-fg-1);
-  margin: 0;
-}
+  h2, .gs-h2 {
+    font-family: var(--gs-font-display);
+    font-size: var(--gs-text-2xl);
+    line-height: var(--gs-lh-display);
+    font-weight: var(--gs-weight-regular);
+    color: var(--gs-fg-1);
+  }
 
-h3, .gs-h3 {
-  font-family: var(--gs-font-sans);
-  font-size: var(--gs-text-xl);
-  line-height: var(--gs-lh-heading);
-  font-weight: var(--gs-weight-regular);
-  color: var(--gs-fg-1);
-  margin: 0;
-}
+  h3, .gs-h3 {
+    font-family: var(--gs-font-sans);
+    font-size: var(--gs-text-xl);
+    line-height: var(--gs-lh-heading);
+    font-weight: var(--gs-weight-regular);
+    color: var(--gs-fg-1);
+  }
 
-h4, .gs-h4 {
-  font-family: var(--gs-font-sans);
-  font-size: var(--gs-text-lg);
-  line-height: 1.17;
-  font-weight: var(--gs-weight-regular);
-  color: var(--gs-fg-1);
-  margin: 0;
-}
+  h4, .gs-h4 {
+    font-family: var(--gs-font-sans);
+    font-size: var(--gs-text-lg);
+    line-height: 1.17;
+    font-weight: var(--gs-weight-regular);
+    color: var(--gs-fg-1);
+  }
 
-p, .gs-body {
-  font-size: var(--gs-text-base);
-  line-height: var(--gs-lh-body);
-  color: var(--gs-fg-1);
-  margin: 0;
-}
+  p, .gs-body {
+    font-size: var(--gs-text-base);
+    line-height: var(--gs-lh-body);
+    color: var(--gs-fg-1);
+  }
 
-.gs-lead {
-  font-size: var(--gs-text-lg);
-  line-height: 1.17;
-  color: var(--gs-fg-1);
-}
+  .gs-lead {
+    font-size: var(--gs-text-lg);
+    line-height: 1.17;
+    color: var(--gs-fg-1);
+  }
 
-.gs-small {
-  font-size: var(--gs-text-sm);
-  line-height: var(--gs-lh-button);
-  color: var(--gs-fg-1);
-}
+  .gs-small {
+    font-size: var(--gs-text-sm);
+    line-height: var(--gs-lh-button);
+    color: var(--gs-fg-1);
+  }
 
-/* Uppercase eyebrow label */
-.gs-eyebrow {
-  font-size: var(--gs-text-base);
-  line-height: 1.10;
-  letter-spacing: var(--gs-tracking-eyebrow);
-  text-transform: uppercase;
-  color: var(--gs-fg-2);
-}
+  /* Uppercase eyebrow label */
+  .gs-eyebrow {
+    font-size: var(--gs-text-base);
+    line-height: 1.10;
+    letter-spacing: var(--gs-tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--gs-fg-2);
+  }
 
-/* Uppercase button label */
-.gs-button-label {
-  font-size: var(--gs-text-base);
-  line-height: var(--gs-lh-button);
-  letter-spacing: var(--gs-tracking-button);
-  text-transform: uppercase;
-  color: var(--gs-accent);
-}
+  /* Uppercase button label */
+  .gs-button-label {
+    font-size: var(--gs-text-base);
+    line-height: var(--gs-lh-button);
+    letter-spacing: var(--gs-tracking-button);
+    text-transform: uppercase;
+    color: var(--gs-accent);
+  }
 
-/* Mega-display (nosotros hero "8 años") */
-.gs-display-mega {
-  font-family: var(--gs-font-display);
-  font-size: var(--gs-text-5xl);
-  line-height: 0.99;
-  font-weight: var(--gs-weight-regular);
-  letter-spacing: -0.02em;
-  color: var(--gs-fg-1);
-}
+  /* Mega-display (nosotros hero "8 años") */
+  .gs-display-mega {
+    font-family: var(--gs-font-display);
+    font-size: var(--gs-text-5xl);
+    line-height: 0.99;
+    font-weight: var(--gs-weight-regular);
+    letter-spacing: -0.02em;
+    color: var(--gs-fg-1);
+  }
 
-/* On-purple text */
-.gs-on-purple {
-  color: var(--gs-fg-on-purple);
+  /* On-purple text */
+  .gs-on-purple {
+    color: var(--gs-fg-on-purple);
+  }
 }

@@ -2575,7 +2575,8 @@
         }
     },
     "brand": {
-        "brand_title": "Trusted by <span> Great Brands </span>",
+        "brand_eyebrow": "Trusted by",
+        "brand_title": "Great Brands",
         "brand_description": "Meet our clients and discover how we create value for them."
     },
     "CTO": {
