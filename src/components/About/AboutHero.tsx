@@ -18,7 +18,7 @@ const AboutHero = () => {
   const t = useTranslations('about');
   const seo = useTranslations('pageSeo').raw('about') as { title: string; description: string };
 
-  const title = t('title');
+  const title = t.raw('title') as string;
   const description = t('description');
   const cta = t('cta');
   const titleH2 = t('titleH2');

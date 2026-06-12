@@ -71,7 +71,7 @@ const HomeCases = () => {
         <div className="home-case-flex">
           <div className="home-hero-cases">
             <section className="home-hero-cases">
-              <RichText as="h1" content={tc('heroH1')} className="home-hero-cases-h1" />
+              <RichText as="h1" content={tc.raw('heroH1') as string} className="home-hero-cases-h1" />
               <p className="home-hero-cases-p">{tc('heroP')}</p>
             </section>
           </div>

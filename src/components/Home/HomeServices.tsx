@@ -24,7 +24,7 @@ function HomeServices() {
           <h2 className="home-services-h2">
             {genArray(10).map((_, k) => (
               <span key={k}>
-                <RichText as="span" content={t('servicesTitle')} />{' '}
+                <RichText as="span" content={t.raw('servicesTitle') as string} />{' '}
               </span>
             ))}
           </h2>

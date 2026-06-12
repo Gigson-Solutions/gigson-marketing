@@ -28,7 +28,7 @@ const Cases = () => {
   const t = useTranslations('cases');
   const tRoot = useTranslations();
 
-  const heroH1 = t('heroH1');
+  const heroH1 = t.raw('heroH1') as string;
   const heroP = t('heroP');
   const featuresTitle = t('featuresTitle');
   const tagTitle = t('tagTitle');

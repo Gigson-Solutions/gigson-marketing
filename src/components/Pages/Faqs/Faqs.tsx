@@ -14,7 +14,7 @@ type FaqItem = { title?: string; question: string; answer: string; cta?: string 
 
 const Faqs = () => {
   const t = useTranslations();
-  const title = t('faqsH1');
+  const title = t.raw('faqsH1') as string;
   const faqsData = t.raw('faqsDropdown') as FaqItem[];
 
   const [activeIndex, setActiveIndex] = useState<number | undefined>();

@@ -243,14 +243,14 @@ const Iso27001 = () => {
             <div className="deliver-block">
               <div className="deliver">
                 <span className="deliver-tag">{t('form.deliver1tag')}</span>
-                <p dangerouslySetInnerHTML={{ __html: t('form.deliver1p') }} />
+                <p dangerouslySetInnerHTML={{ __html: t.raw('form.deliver1p') as string }} />
               </div>
               <div className="deliver">
                 <span className="deliver-tag">
                   {t('form.deliver2tag')}{' '}
                   <span className="deliver-tag-soft">{t('form.deliver2tagSoft')}</span>
                 </span>
-                <p dangerouslySetInnerHTML={{ __html: t('form.deliver2p') }} />
+                <p dangerouslySetInnerHTML={{ __html: t.raw('form.deliver2p') as string }} />
               </div>
             </div>
           </div>
@@ -367,7 +367,7 @@ const Iso27001 = () => {
                       </div>
                     </div>
                     {contactHint && (
-                      <p className="contact-hint" dangerouslySetInnerHTML={{ __html: t('form.contactHint') }} />
+                      <p className="contact-hint" dangerouslySetInnerHTML={{ __html: t.raw('form.contactHint') as string }} />
                     )}
                     <div className="step-nav">
                       <button type="button" className="btn step-prev" onClick={() => setStep(2)}>{t('form.back')}</button>

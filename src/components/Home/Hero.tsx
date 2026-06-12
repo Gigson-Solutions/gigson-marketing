@@ -19,7 +19,7 @@ function Hero() {
         <header className="hero-top-content">
           <div className="hero-text">
             <p className="hero-p">{t('heroP')}</p>
-            <RichText as="h1" content={t('heroH1')} className="hero-h1" />
+            <RichText as="h1" content={t.raw('heroH1') as string} className="hero-h1" />
             <Link href="/contact" className="hero-btn button-main">
               {t('heroBtn')}
             </Link>
