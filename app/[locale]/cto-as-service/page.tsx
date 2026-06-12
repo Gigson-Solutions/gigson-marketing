@@ -17,7 +17,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'CTO' });
   const title = t('title');
   const description = t('metadescription');
-  const canonical = `${ORIGIN}/cto-as-service`;
+  const canonical = locale === 'es' ? `${ORIGIN}/es/cto-as-service` : `${ORIGIN}/cto-as-service`;
 
   return {
     title,

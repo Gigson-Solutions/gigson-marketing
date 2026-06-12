@@ -35,6 +35,25 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   };
 }
 
-export default function IntegrationsPage() {
-  return <Integrations />;
+export default async function IntegrationsPage(props: Props) {
+  const { locale } = await props.params;
+  const t = await getTranslations({ locale, namespace: 'integrations-holded' });
+  const title = t('title');
+  const description = t('metadescription');
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: title,
+    description,
+    url: locale === 'es' ? `${ORIGIN}/es/integraciones-holded` : `${ORIGIN}/integrations-holded`,
+    provider: { '@type': 'Organization', name: 'Gigson Solutions', url: ORIGIN },
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <Integrations />
+    </>
+  );
 }
