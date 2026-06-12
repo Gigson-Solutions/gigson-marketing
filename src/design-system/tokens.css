@@ -208,15 +208,20 @@
 @font-face { font-family: "DM Sans"; font-style: italic; font-weight: 900; font-display: swap; src: url("../assets/fonts/DMSans-BlackItalic.ttf") format("truetype"); }
 
 /* ── BASE TEXT STYLES ────────────────────────────────────────── */
+/* html intentionally has no explicit font-size so 1rem stays at
+   the browser default (16px). Body text size is set separately. */
 html, body {
   background: var(--gs-bg);
   color: var(--gs-fg-1);
   font-family: var(--gs-font-sans);
-  font-size: var(--gs-text-base);
   line-height: var(--gs-lh-body);
   font-weight: var(--gs-weight-regular);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+body {
+  font-size: var(--gs-text-base);
 }
 
 h1, .gs-h1 {
