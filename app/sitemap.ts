@@ -29,7 +29,6 @@ const STATIC_ROUTES: RouteConfig[] = [
   { en: '/iso-27001-certification', es: '/certificacion-iso-27001', priority: 0.6, changeFrequency: 'monthly' },
   { en: '/integrations-holded', es: '/integraciones-holded', priority: 0.5, changeFrequency: 'monthly' },
   { en: '/ai-manifest', es: '/manifiesto-ia', priority: 0.5, changeFrequency: 'monthly' },
-  { en: '/book', es: '/reservas', priority: 0.5, changeFrequency: 'monthly' },
   { en: '/policy', es: '/politica', priority: 0.3, changeFrequency: 'yearly' },
   { en: '/notice', es: '/aviso-legal', priority: 0.3, changeFrequency: 'yearly' },
   { en: '/cookies', es: '/cookies', priority: 0.3, changeFrequency: 'yearly' },

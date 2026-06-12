@@ -28,6 +28,24 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   };
 }
 
-export default function ServicesPage() {
-  return <Services />;
+export default async function ServicesPage(props: Props) {
+  const { locale } = await props.params;
+  const t = await getTranslations({ locale, namespace: 'pageSeo' });
+  const seo = t.raw('services') as { title: string; description: string };
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: seo.title,
+    description: seo.description,
+    url: locale === 'es' ? `${ORIGIN}/es/servicios` : `${ORIGIN}/services`,
+    provider: { '@type': 'Organization', name: 'Gigson Solutions', url: ORIGIN },
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <Services />
+    </>
+  );
 }
