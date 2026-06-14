@@ -121,6 +121,10 @@
   /* Responsive padding (overridden via breakpoints below) */
   --gs-padding-inline: 2.8rem;
 
+  /* Accordion component */
+  --gs-accordion-padding-inline:    var(--gs-space-5);  /* 24px — mobile / default */
+  --gs-accordion-padding-inline-lg: var(--gs-space-7);  /* 48px — desktop (≥ 65rem) */
+
   /* ── 5. RADII & STROKES ─────────────────────────────────── */
   --gs-radius-sm:  5px;    /* footer wrapper / small cards        */
   --gs-radius-md:  15px;

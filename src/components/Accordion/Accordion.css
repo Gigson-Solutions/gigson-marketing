@@ -12,7 +12,7 @@
 
 .cases .accordion-container {
    padding-block: 1rem;
-   padding-inline: 1rem;
+   padding-inline: var(--gs-accordion-padding-inline);
 }
 
 .cases-dropdown-solution p,
@@ -209,7 +209,7 @@
 }
 @media (min-width: 65rem) {
    .cases .accordion-container {
-      padding-inline: 2.81rem;
+      padding-inline: var(--gs-accordion-padding-inline-lg);
       padding-block: 2.31rem;
    }
 }
