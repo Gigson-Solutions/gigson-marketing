@@ -1,5 +1,7 @@
 'use client';
 
+import '../../../Accordion/Accordion.css';
+
 import { Link } from '../../../../../i18n/navigation';
 import { AccordionAnimation } from '../../../Accordion/AccordionAnimation';
 
