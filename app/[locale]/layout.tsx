@@ -4,10 +4,6 @@ import { notFound } from 'next/navigation';
 import Script from 'next/script';
 import React from 'react';
 
-import CookieBanner from '../../src/CookieBanner';
-import Footer from '../../src/components/Footer/Footer';
-import Navbar from '../../src/components/Navbar/Navbar';
-import WhatsappButton from '../../src/shared/ui/WhatssapButton';
 import { routing } from '../../i18n/routing';
 import '../../src/App.css';
 
@@ -44,11 +40,7 @@ export default async function LocaleLayout(props: Props) {
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <CookieBanner />
-          <WhatsappButton />
+          {children}
         </NextIntlClientProvider>
 
         {/* Google Analytics */}

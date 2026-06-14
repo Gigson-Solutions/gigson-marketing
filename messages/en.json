@@ -3774,6 +3774,116 @@
             "successSoft": "Or wait for our email - we respond within 24 business hours."
         }
     },
+    "iso27001Service": {
+        "title": "ISO 27001 Certification for businesses · Gigson Solutions",
+        "metadescription": "We implement your ISO 27001 ISMS on your real operations. Real technical controls, minimum viable system without bureaucracy. For SMEs, law firms and consultancies.",
+        "hero": {
+            "suptitle": "ISO/IEC 27001:2022 · Information Security",
+            "title": "<span>ISO 27001</span> Certification for businesses that need the certificate without grinding their operations to a halt.",
+            "description": "We implement an Information Security Management System on your real operations — not documentation nobody will ever use. For tech SMEs, law firms and consultancies with 10 to 250 employees.",
+            "buttonText": "Request free diagnosis"
+        },
+        "solutionsApplications": {
+            "title": "Why get certified now",
+            "subTitle": "There are strong reasons not to wait any longer.",
+            "containers": [
+                {
+                    "title": "Situations that demand it",
+                    "description": "The most common scenarios pushing companies to get ISO 27001 certified.",
+                    "type": "grid",
+                    "cards": [
+                        {
+                            "title": "Your client requires it",
+                            "description": "More and more companies include ISO 27001 as a contractual requirement for their suppliers. It's not optional: either you get certified or you lose the contract."
+                        },
+                        {
+                            "title": "Public and private tenders",
+                            "description": "In public and private tenders, having ISO 27001 earns points or is a mandatory requirement. Competing without it means ceding ground."
+                        },
+                        {
+                            "title": "Security questionnaires",
+                            "description": "Your regulated clients send increasingly demanding questionnaires. With ISO 27001, a single answer covers them all."
+                        },
+                        {
+                            "title": "Your competition already has it",
+                            "description": "More than 3,000 Spanish companies are certified. In many sectors it's already a de facto standard, not a differentiator."
+                        }
+                    ]
+                },
+                {
+                    "title": "Our approach",
+                    "description": "The difference between a consultancy that writes documents and one that implements real controls.",
+                    "type": "list",
+                    "cards": [
+                        {
+                            "title": "Real controls, not just documentation",
+                            "description": "We assess how your company truly works and implement the Annex A controls on what you already have: systems, accesses, data, suppliers."
+                        },
+                        {
+                            "title": "Minimum viable system, easy to maintain",
+                            "description": "We design the simplest ISMS that passes the audit — no unnecessary bureaucracy, maintainable even if security is handled by a single person."
+                        },
+                        {
+                            "title": "We know what is certifiable and what is not",
+                            "description": "NIS2 is not a certification, it's compliance. ISO 27001 is. We explain exactly what you need based on your situation, without over-engineering."
+                        }
+                    ]
+                }
+            ]
+        },
+        "howWeWork": {
+            "eyebrow": "How we work",
+            "h2a": "Four phases,",
+            "h2b": "one certificate.",
+            "lead": "A process designed for SMEs: diagnosis of your real operations, implementation on what you already have, and coordination with the certification body — without grinding your day-to-day to a halt.",
+            "steps": [
+                {
+                    "title": "Diagnosis",
+                    "description": "Gap analysis of your current situation. We identify which controls you already meet without knowing it and what is actually missing."
+                },
+                {
+                    "title": "Implementation",
+                    "description": "Documentation, risk analysis, operational controls on what you already have, and training for the team involved."
+                },
+                {
+                    "title": "Internal audit",
+                    "description": "Pre-certification check so you go into the external audit with certification assured."
+                },
+                {
+                    "title": "Certification",
+                    "description": "We coordinate the phase 1 and phase 2 audits with the certification body. ISO 27001 certificate obtained."
+                }
+            ]
+        },
+        "faq": {
+            "title": "Frequently asked questions about ISO 27001",
+            "items": [
+                {
+                    "question": "How long does it take to get ISO 27001 certified?",
+                    "answer": "For an SME with 10 to 100 employees, the full process typically takes 4 to 8 months. The initial diagnosis takes 2 to 4 weeks. The actual duration depends on the complexity of your operations and how many controls you already have in place."
+                },
+                {
+                    "question": "What is the difference between implementation and certification?",
+                    "answer": "Implementation is the process of designing and building the ISMS (Information Security Management System) in your company. Certification is the external audit by an accredited body that validates your ISMS meets the ISO 27001 standard. You can implement without certifying, though most companies seek the certificate to demonstrate it to clients."
+                },
+                {
+                    "question": "Does NIS2 require ISO 27001 certification?",
+                    "answer": "NIS2 is a European compliance directive, not a certification. It does not directly require ISO 27001, but many of its technical requirements are covered by a well-implemented ISMS. In practice, having ISO 27001 is the most efficient way to demonstrate NIS2 compliance to clients and auditors."
+                },
+                {
+                    "question": "How much does ISO 27001 certification cost?",
+                    "answer": "The cost has two parts: consultancy fees for the implementation (which vary by company size and complexity) and the certification body's fees for the phase 1 and phase 2 audits. We do a free diagnosis before giving you any figures, to tailor them exactly to your situation."
+                },
+                {
+                    "question": "Do I need a dedicated internal security officer to maintain certification?",
+                    "answer": "Not necessarily. We design the ISMS to be maintainable with the resources you already have. Many companies we work with have no dedicated security officer — the system is designed to be managed by whoever already handles other responsibilities, without extra burden."
+                }
+            ]
+        },
+        "digitalProduct": {
+            "buttonText": "Request free diagnosis"
+        }
+    },
     "claudePartner": {
         "seo": {
             "title": "Certified Anthropic Partner Spain | Gigson Solutions",

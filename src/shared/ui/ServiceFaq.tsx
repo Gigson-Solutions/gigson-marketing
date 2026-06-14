@@ -1,5 +1,6 @@
 'use client';
 
+import '../../components/Accordion/Accordion.css';
 import './ServiceFaq.css';
 
 import { useState } from 'react';
