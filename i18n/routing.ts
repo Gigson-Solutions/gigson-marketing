@@ -33,6 +33,7 @@ export const routing = defineRouting({
     '/book': { en: '/book', es: '/reservas' },
     '/ai-agents': { en: '/ai-agents', es: '/agentes-ia' },
     '/ai-manifest': { en: '/ai-manifest', es: '/manifiesto-ia' },
+    '/iso-27001': '/iso-27001',
     '/iso-27001-certification': {
       en: '/iso-27001-certification',
       es: '/certificacion-iso-27001',
