@@ -1,3 +1,4 @@
+FOUND three: ^0.183.2
 {
   "name": "gigson",
   "private": true,
@@ -25,7 +26,6 @@
     "react-floating-whatsapp": "^5.0.8",
     "sharp": "^0.35.0",
     "swiper": "^11.2.6",
-    "three": "^0.183.2",
     "tailwindcss": "^4.0.12"
   },
   "homepage": "gigsonsolutions.com",
