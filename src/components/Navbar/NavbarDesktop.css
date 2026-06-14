@@ -74,7 +74,7 @@
 
 @media (min-width: 72rem) {
     .menu-box--desktop .menu-item {
-        font-size: 1.0625rem;
+        font-size: 17px; /* was 1.0625rem — fixed to px so it doesn't scale with browser root font-size */
         font-weight: 500;
     }
 }
@@ -124,7 +124,7 @@
 }
 
 .language-selector__btn {
-    font-size: 1.0625rem;
+    font-size: 17px; /* was 1.0625rem — fixed to px */
     font-weight: 500;
     color: var(--gs-ink);
     background: none;
@@ -147,6 +147,6 @@
 
 .language-selector__sep {
     color: var(--gs-ink);
-    font-size: 1.0625rem;
+    font-size: 17px; /* was 1.0625rem — fixed to px */
     opacity: 0.45;
 }
