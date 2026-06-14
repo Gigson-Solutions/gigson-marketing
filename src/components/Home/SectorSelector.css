@@ -2,7 +2,7 @@
   font-size: 1.25em;
   margin-bottom: 1.4rem;
   margin-left: 2rem;
-  color: #7874f4;
+  color: var(--gs-purple);
 }
 
 .sector-selector__grid {
@@ -23,9 +23,9 @@
   align-items: center;
   padding: 0.58rem 1.25rem;
   border-radius: 100px;
-  border: 1.5px solid #3c3c3b;
+  border: 1.5px solid var(--gs-ink);
   background: transparent;
-  color: #3c3c3b;
+  color: var(--gs-ink);
   cursor: pointer;
   font-family: inherit;
   font-size: 0.875rem;
@@ -37,7 +37,7 @@
 .sector-pill__fill {
   position: absolute;
   inset: 0;
-  background: #7874f4;
+  background: var(--gs-purple);
   transform: scaleX(0);
   transform-origin: left center;
   pointer-events: none;

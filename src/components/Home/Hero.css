@@ -28,19 +28,19 @@
 .hero-p {
    font-size: 0.875rem;
    text-align: center;
-   color: #868685;
+   color: var(--gs-graphite);
    line-height: 1.375rem;
 }
 .hero-h1 {
    margin: 0.4rem 0;
    font-size: 2em;
    line-height: 2.375rem;
-   color: #3c3c3b;
+   color: var(--gs-ink);
    text-align: center;
    text-wrap: balance;
 }
 .hero-h1 span {
-   color: #7874f4;
+   color: var(--gs-purple);
 }
 .hero-godown {
    position: absolute;
@@ -49,7 +49,7 @@
    left: 0;
    bottom: 1rem;
    font-size: 0.9em;
-   color: #7874f4;
+   color: var(--gs-purple);
    z-index: 2;
 }
 
@@ -84,7 +84,7 @@
    .hero-p {
       font-size: 1.05rem;
       text-align: center;
-      color: #868685;
+      color: var(--gs-graphite);
       line-height: 1.375rem;
    }
    .hero-h1 {

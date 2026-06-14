@@ -22,8 +22,8 @@
 }
 
 .partner-badge__logo img {
-  height: 3.2rem;
-  filter: invert(1);
+  height: 2rem;
+  filter: brightness(0) invert(1);
 }
 
 .partner-badge__title {
@@ -65,22 +65,16 @@
   color: var(--color-purple-accents);
 }
 
-.partner-badge__cta {
-  display: inline-block;
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-  padding: 1.2rem 2.4rem;
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+/* CTA button — overrides for dark background context */
+.partner-badge__cta-btn {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  margin: 0;
 }
 
-.partner-badge__cta:hover {
-  background-color: #ffffff;
-  color: var(--color-dark-primary);
-  border-color: #ffffff;
+.partner-badge__cta-btn:hover {
+  background-color: #ffffff !important;
+  color: var(--color-dark-primary) !important;
 }
 
 .partner-badge__visual {
@@ -99,9 +93,17 @@
   width: 100%;
 }
 
-.partner-badge__card img {
-  height: 3.2rem;
-  filter: invert(1);
+/* Claude logo — keep original colors (asterisk is salmon, text is black → invert to white) */
+.partner-badge__card-claude {
+  height: 2.4rem;
+  filter: brightness(0) invert(1);
+}
+
+/* Anthropic wordmark in card */
+.partner-badge__card-anthropic {
+  height: 1.4rem;
+  filter: brightness(0) invert(1);
+  opacity: 0.5;
 }
 
 .partner-badge__card-label {

@@ -1,0 +1,312 @@
+/* ============================================================
+   Gigson Solutions — Design System Tokens
+   Single source of truth for all design decisions.
+   Prefix: --gs-* (Gigson Solutions)
+
+   Structure:
+   1. Raw palette
+   2. Semantic aliases
+   3. Typography (families, scale, line-heights, tracking, weights)
+   4. Spacing & layout
+   5. Radii & strokes
+   6. Elevation
+   7. Motion
+   ============================================================ */
+
+:root {
+  /* ── 1. RAW PALETTE ─────────────────────────────────────── */
+
+  /* Neutrals */
+  --gs-ink:          #3C3C3B;   /* primary text, dark UI, icons    */
+  --gs-graphite:     #868685;   /* secondary text, captions, dim   */
+  --gs-cream:        #F4F3EF;   /* page background — warm off-white */
+  --gs-black:        #000000;
+  --gs-white:        #FFFFFF;
+
+  /* Brand purple — single accent */
+  --gs-purple:       #7874F4;   /* primary brand color             */
+  --gs-purple-deep:  #9747FF;   /* deep purple — strokes, hover    */
+  --gs-purple-dark:  #5E5BC6;   /* darker tint                     */
+  --gs-purple-light: #C1BFF3;   /* light tint                      */
+  --gs-purple-70:    rgba(120, 116, 244, 0.70);
+  --gs-purple-30:    rgba(120, 116, 244, 0.30);
+
+  /* Section washes */
+  --gs-lavender:     #E3E1EE;   /* "elegir gigson" / section bg    */
+  --gs-lavender-2:   #E9E8F1;   /* sphere protection wash          */
+  --gs-mist:         #EEEDF0;   /* form section bg                 */
+  --gs-mist-2:       #F4F0F0;   /* very faint wash                 */
+
+  /* Utility */
+  --gs-lime:         #6EE96C;   /* sparingly — label dot           */
+  --gs-error:        #FF1111;
+  --gs-divider:      #D9D9D9;
+
+  /* ── 2. SEMANTIC ────────────────────────────────────────── */
+  --gs-bg:               var(--gs-cream);
+  --gs-bg-section:       var(--gs-lavender);
+  --gs-bg-form:          var(--gs-mist);
+  --gs-bg-elevated:      var(--gs-cream);
+  --gs-bg-dropdown:      #EEECF0;   /* navbar dropdown panel        */
+
+  --gs-fg-1:             var(--gs-ink);       /* h1, body             */
+  --gs-fg-2:             var(--gs-graphite);  /* secondary            */
+  --gs-fg-on-purple:     var(--gs-cream);     /* over purple gradient */
+
+  --gs-accent:           var(--gs-purple);
+  --gs-accent-hover:     var(--gs-purple-deep);
+  --gs-accent-active:    var(--gs-purple);    /* nav active state     */
+
+  --gs-stroke-soft:      rgba(60, 60, 59, 0.30);
+  --gs-stroke-strong:    var(--gs-ink);
+  --gs-stroke-accent:    var(--gs-purple);
+  --gs-stroke-divider:   var(--gs-divider);
+
+  /* ── 3. TYPOGRAPHY ──────────────────────────────────────── */
+
+  /* Font families */
+  --gs-font-sans:    "DM Sans", "DM Sans Fallback", -apple-system, BlinkMacSystemFont,
+                     "Segoe UI", Helvetica, Arial, sans-serif;
+  --gs-font-display: var(--gs-font-sans);
+  --gs-font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Type scale — mobile first (≤ 1024px) */
+  --gs-text-xs:      14px;   /* small tag                         */
+  --gs-text-sm:      16px;   /* footnote, body base               */
+  --gs-text-base:    18px;   /* body, button label                */
+  --gs-text-md:      20px;   /* big tag, subtitle                 */
+  --gs-text-lg:      32px;   /* h3 / subtitle                     */
+  --gs-text-xl:      40px;   /* h2 / section heading              */
+  --gs-text-2xl:     48px;   /* h1 mobile                         */
+  --gs-text-3xl:     56px;   /* large display                     */
+  --gs-text-4xl:     70px;   /* page title (services)             */
+  --gs-text-5xl:     150px;  /* numerical hero ("8 años")         */
+
+  /* Line-heights */
+  --gs-lh-tight:     1.05;   /* very large display                */
+  --gs-lh-display:   1.10;   /* hero                              */
+  --gs-lh-heading:   1.16;
+  --gs-lh-body:      1.40;   /* 20/28                             */
+  --gs-lh-subtitle:  1.30;   /* subtitle, 20px                    */
+  --gs-lh-label:     1.30;
+  --gs-lh-button:    1.22;   /* 18/22                             */
+  --gs-lh-tag:       1.40;   /* 14-20/28                          */
+
+  /* Letter-spacing */
+  --gs-tracking-eyebrow: 0.04em;  /* UPPERCASE labels              */
+  --gs-tracking-button:  0.06em;  /* UPPERCASE buttons             */
+  --gs-tracking-tight:   -0.01em; /* hero display only             */
+
+  /* Weights — DM Sans is Regular-first */
+  --gs-weight-light:   300;
+  --gs-weight-regular: 400;
+  --gs-weight-medium:  500;
+
+  /* ── 4. SPACING & LAYOUT ────────────────────────────────── */
+  --gs-space-1:    4px;
+  --gs-space-2:    8px;
+  --gs-space-3:    12px;
+  --gs-space-4:    16px;
+  --gs-space-5:    24px;
+  --gs-space-6:    32px;
+  --gs-space-7:    48px;
+  --gs-space-8:    72px;
+  --gs-space-9:    104px;  /* page gutter on 1440 grid            */
+
+  --gs-canvas-w:   1440px;
+  --gs-gutter:     71px;   /* source page gutter                  */
+  --gs-content-w:  1298px; /* central card max-width              */
+  --gs-contained:  1040px; /* inner content max-width             */
+
+  /* Responsive padding (overridden via breakpoints below) */
+  --gs-padding-inline: 2.8rem;
+
+  /* ── 5. RADII & STROKES ─────────────────────────────────── */
+  --gs-radius-sm:  5px;    /* footer wrapper / small cards        */
+  --gs-radius-md:  15px;
+  --gs-radius-lg:  30px;   /* signature card radius               */
+  --gs-radius-xl:  78px;
+  --gs-radius-2xl: 110px;
+  --gs-radius-pill: 999px; /* every button + tag is fully round   */
+
+  --gs-stroke-w:   1px;
+  --gs-hairline:   0.5px;  /* true 0.5 hairlines                  */
+
+  /* ── 6. ELEVATION ───────────────────────────────────────── */
+  /* The system is FLAT — depth comes from blend modes on 3D shapes.
+     These tokens exist only for off-system usage. */
+  --gs-shadow-soft: 0 6px 24px -8px rgba(60, 60, 59, 0.18);
+  --gs-shadow-card: 0 1px 0 rgba(60, 60, 59, 0.06);
+
+  /* ── 7. MOTION ──────────────────────────────────────────── */
+  --gs-ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --gs-ease-in:  cubic-bezier(0.55, 0.06, 0.68, 0.19);
+  --gs-ease-std: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --gs-dur-fast: 120ms;
+  --gs-dur-base: 200ms;
+  --gs-dur-slow: 360ms;
+}
+
+/* ── RESPONSIVE TYPE SCALE ──────────────────────────────────── */
+/* Tablet (≥ 1024px) */
+@media (min-width: 1024px) {
+  :root {
+    --gs-text-sm:   16px;
+    --gs-text-base: 20px;
+    --gs-text-md:   20px;
+    --gs-text-lg:   32px;
+    --gs-text-xl:   40px;
+    --gs-text-2xl:  40px;  /* h2 desktop matches DS 45px approx   */
+    --gs-text-3xl:  64px;  /* h1 desktop                          */
+  }
+}
+
+/* Large desktop (≥ 1440px) */
+@media (min-width: 1440px) {
+  :root {
+    --gs-text-sm:   17px;
+    --gs-text-base: 20px;
+    --gs-text-md:   24px;
+    --gs-text-lg:   30px;
+    --gs-text-xl:   35px;
+    --gs-text-2xl:  45px;  /* DS canonical h2                     */
+    --gs-text-3xl:  55px;  /* DS canonical h1 / hero              */
+    --gs-text-4xl:  80px;  /* page title 1440+                    */
+  }
+}
+
+/* ── RESPONSIVE LAYOUT PADDING ──────────────────────────────── */
+@media (min-width: 550px) {
+  :root { --gs-padding-inline: 4.8rem; }
+}
+@media (min-width: 800px) {
+  :root { --gs-padding-inline: 6rem; }
+}
+@media (min-width: 1200px) {
+  :root { --gs-padding-inline: 8.8rem; }
+}
+
+/* ── FONT FACES — DM Sans locally hosted ────────────────────── */
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 100; font-display: swap; src: url("../assets/fonts/DMSans-Thin.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: italic; font-weight: 100; font-display: swap; src: url("../assets/fonts/DMSans-ThinItalic.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 200; font-display: swap; src: url("../assets/fonts/DMSans-ExtraLight.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: italic; font-weight: 200; font-display: swap; src: url("../assets/fonts/DMSans-ExtraLightItalic.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 300; font-display: swap; src: url("../assets/fonts/DMSans-Light.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: italic; font-weight: 300; font-display: swap; src: url("../assets/fonts/DMSans-LightItalic.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/DMSans-Regular.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: italic; font-weight: 400; font-display: swap; src: url("../assets/fonts/DMSans-Italic.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("../assets/fonts/DMSans-Medium.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: italic; font-weight: 500; font-display: swap; src: url("../assets/fonts/DMSans-MediumItalic.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("../assets/fonts/DMSans-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: italic; font-weight: 600; font-display: swap; src: url("../assets/fonts/DMSans-SemiBoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/DMSans-Bold.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: italic; font-weight: 700; font-display: swap; src: url("../assets/fonts/DMSans-BoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 800; font-display: swap; src: url("../assets/fonts/DMSans-ExtraBold.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: italic; font-weight: 800; font-display: swap; src: url("../assets/fonts/DMSans-ExtraBoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 900; font-display: swap; src: url("../assets/fonts/DMSans-Black.ttf") format("truetype"); }
+@font-face { font-family: "DM Sans"; font-style: italic; font-weight: 900; font-display: swap; src: url("../assets/fonts/DMSans-BlackItalic.ttf") format("truetype"); }
+
+/* ── BASE TEXT STYLES ────────────────────────────────────────── */
+/* In @layer base so Tailwind @layer utilities can override colors/sizes. */
+/* html intentionally has no explicit font-size so 1rem stays at
+   the browser default (16px). Body text size is set separately. */
+@layer base {
+  html, body {
+    background: var(--gs-bg);
+    color: var(--gs-fg-1);
+    font-family: var(--gs-font-sans);
+    line-height: var(--gs-lh-body);
+    font-weight: var(--gs-weight-regular);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-size: var(--gs-text-base);
+  }
+
+  h1, .gs-h1 {
+    font-family: var(--gs-font-display);
+    font-size: var(--gs-text-3xl);
+    line-height: var(--gs-lh-display);
+    font-weight: var(--gs-weight-regular);
+    letter-spacing: var(--gs-tracking-tight);
+    color: var(--gs-fg-1);
+  }
+
+  h2, .gs-h2 {
+    font-family: var(--gs-font-display);
+    font-size: var(--gs-text-2xl);
+    line-height: var(--gs-lh-display);
+    font-weight: var(--gs-weight-regular);
+    color: var(--gs-fg-1);
+  }
+
+  h3, .gs-h3 {
+    font-family: var(--gs-font-sans);
+    font-size: var(--gs-text-xl);
+    line-height: var(--gs-lh-heading);
+    font-weight: var(--gs-weight-regular);
+    color: var(--gs-fg-1);
+  }
+
+  h4, .gs-h4 {
+    font-family: var(--gs-font-sans);
+    font-size: var(--gs-text-lg);
+    line-height: 1.17;
+    font-weight: var(--gs-weight-regular);
+    color: var(--gs-fg-1);
+  }
+
+  p, .gs-body {
+    font-size: var(--gs-text-base);
+    line-height: var(--gs-lh-body);
+    color: var(--gs-fg-1);
+  }
+
+  .gs-lead {
+    font-size: var(--gs-text-lg);
+    line-height: 1.17;
+    color: var(--gs-fg-1);
+  }
+
+  .gs-small {
+    font-size: var(--gs-text-sm);
+    line-height: var(--gs-lh-button);
+    color: var(--gs-fg-1);
+  }
+
+  /* Uppercase eyebrow label */
+  .gs-eyebrow {
+    font-size: var(--gs-text-base);
+    line-height: 1.10;
+    letter-spacing: var(--gs-tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--gs-fg-2);
+  }
+
+  /* Uppercase button label */
+  .gs-button-label {
+    font-size: var(--gs-text-base);
+    line-height: var(--gs-lh-button);
+    letter-spacing: var(--gs-tracking-button);
+    text-transform: uppercase;
+    color: var(--gs-accent);
+  }
+
+  /* Mega-display (nosotros hero "8 años") */
+  .gs-display-mega {
+    font-family: var(--gs-font-display);
+    font-size: var(--gs-text-5xl);
+    line-height: 0.99;
+    font-weight: var(--gs-weight-regular);
+    letter-spacing: -0.02em;
+    color: var(--gs-fg-1);
+  }
+
+  /* On-purple text */
+  .gs-on-purple {
+    color: var(--gs-fg-on-purple);
+  }
+}

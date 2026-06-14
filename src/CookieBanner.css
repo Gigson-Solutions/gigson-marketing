@@ -4,8 +4,8 @@
   left: 20px; 
   width: auto; 
   max-width: 650px;
-  background-color: #F4F3EF;
-  border: 1px solid #7874F4;
+  background-color: var(--gs-cream);
+  border: 1px solid var(--gs-purple);
   border-radius: 28px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 1.25rem 2rem;
@@ -15,7 +15,7 @@
   .cookie-banner h2 {
     margin: 1rem 0 ;
     font-size: 1.25em;
-    color: #7874F4;
+    color: var(--gs-purple);
   }
   
   .cookie-banner p {
@@ -50,10 +50,10 @@
   }
 }
   .cookie-buttons button:hover {
-    color: #7874F4;
+    color: var(--gs-purple);
   }
   
   .cookie-buttons button:last-child:hover {
-    color: #7874F4;
+    color: var(--gs-purple);
   }
   

@@ -1,20 +1,12 @@
 /* ─── ProcessSteps — shared "How we engage" section ─── */
 
 .process-steps {
-  --gs-ink: #3c3c3b;
-  --gs-graphite: #868685;
-  --gs-cream: #f4f3ef;
-  --gs-purple: #7874f4;
-  --gs-font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  --gs-ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --gs-gutter: var(--global-padding);
-  --gs-content-w: var(--max-width-xl);
-  padding: 120px var(--gs-gutter);
-  background: var(--gs-cream);
+  padding: 120px var(--gs-padding-inline);
+  background: var(--gs-bg);
 }
 
 .ps-inner {
-  max-width: var(--gs-content-w);
+  max-width: 88.875rem;
   margin: 0 auto;
 }
 

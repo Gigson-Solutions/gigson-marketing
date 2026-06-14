@@ -17,15 +17,15 @@
    font-size: 2em;
    line-height: 2.4rem;
    padding-top: 0.3rem;
-   color: #3c3c3b;
+   color: var(--gs-ink);
    text-wrap: ballance;
 }
 .hero-cases-h1 > span {
-   color: #7874f4;
+   color: var(--gs-purple);
 }
 .hero-cases-p {
    font-size: 1em;
-   color: #3c3c3b;
+   color: var(--gs-ink);
    margin-top: 1rem;
    margin: 1rem auto 0;
    text-wrap: ballance;
@@ -33,7 +33,7 @@
 }
 .cases-reset-filters {
    margin: 2rem auto;
-   color: #7874f4;
+   color: var(--gs-purple);
    cursor: pointer;
 }
 

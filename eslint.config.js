@@ -8,7 +8,7 @@ import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 
 export default defineConfig([
-  { ignores: ['dist/**', 'node_modules/**'] },
+  { ignores: ['dist/**', 'node_modules/**', 'app/**/importMap.js'] },
   js.configs.recommended,
   reactPlugin.configs.flat.recommended,
 

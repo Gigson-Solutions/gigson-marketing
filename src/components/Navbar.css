@@ -4,13 +4,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: .0813rem solid #3c3c3bcc ;
+    border-bottom: .0813rem solid var(--gs-ink)cc ;
 }
 
 .nav-links{
     display: flex;
     gap: 3rem;
-    color:#3c3c3bcc;  
+    color:var(--gs-ink)cc;  
 }
 
 .logo-header{
@@ -91,7 +91,7 @@
 
     list-style: none;
 
-    background-color: #F4F3EF;
+    background-color: var(--gs-cream);
     box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
 
     transition-duration: .45s;
@@ -109,7 +109,7 @@
 }
 
 .menu__item:hover {
-    background-color: #F4F3EF;
+    background-color: var(--gs-cream);
 }
 
 @media(min-width:900px){

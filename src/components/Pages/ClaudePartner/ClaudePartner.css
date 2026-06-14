@@ -3,7 +3,7 @@
 .claude-partner {
   max-width: 120rem;
   margin: 0 auto;
-  color: #3c3c3b;
+  color: var(--gs-ink);
 }
 
 /* ── HERO ── */
@@ -18,14 +18,14 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #7874f4;
+  color: var(--gs-purple);
   margin-bottom: 1.25rem;
 }
 
 .cp-hero h1 {
   font-size: 2rem;
   line-height: 1.15;
-  color: #3c3c3b;
+  color: var(--gs-ink);
   max-width: 22ch;
   margin: 0 auto 1.5rem;
   text-wrap: pretty;
@@ -33,12 +33,12 @@
 }
 
 .cp-hero h1 span {
-  color: #7874f4;
+  color: var(--gs-purple);
 }
 
 .cp-hero-sub {
   font-size: 1rem;
-  color: #3c3c3b;
+  color: var(--gs-ink);
   max-width: 52ch;
   margin: 0 auto 2.5rem;
   line-height: 1.6;
@@ -50,7 +50,7 @@
 }
 
 .cp-section--cream {
-  background: #f4f3ef;
+  background: var(--gs-cream);
 }
 
 .cp-inner {
@@ -60,7 +60,7 @@
 
 .cp-section h2 {
   font-size: 1.5rem;
-  color: #3c3c3b;
+  color: var(--gs-ink);
   font-weight: 400;
   margin-bottom: 0.75rem;
   line-height: 1.2;
@@ -68,7 +68,7 @@
 
 .cp-lead {
   font-size: 1rem;
-  color: #3c3c3b;
+  color: var(--gs-ink);
   line-height: 1.7;
   margin-bottom: 1rem;
   max-width: 58ch;
@@ -97,7 +97,7 @@
 .cp-card-num {
   font-size: 0.72rem;
   font-weight: 700;
-  color: #7874f4;
+  color: var(--gs-purple);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
@@ -105,14 +105,14 @@
 
 .cp-card h3 {
   font-size: 1rem;
-  color: #3c3c3b;
+  color: var(--gs-ink);
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
 
 .cp-card p {
   font-size: 0.9rem;
-  color: #3c3c3b;
+  color: var(--gs-ink);
   line-height: 1.65;
 }
 
@@ -136,7 +136,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: #3c3c3b;
+  color: var(--gs-ink);
 }
 
 .cp-table thead th:first-child {
@@ -145,16 +145,16 @@
 
 .cp-table td:first-child {
   font-weight: 500;
-  color: #3c3c3b;
+  color: var(--gs-ink);
 }
 
 .cp-table td:nth-child(2) {
-  color: #7874f4;
+  color: var(--gs-purple);
   font-weight: 600;
 }
 
 .cp-table td:nth-child(3) {
-  color: #868685;
+  color: var(--gs-graphite);
 }
 
 /* ── CERT BOX ── */
@@ -179,13 +179,13 @@
   align-items: flex-start;
   gap: 0.6rem;
   font-size: 0.92rem;
-  color: #3c3c3b;
+  color: var(--gs-ink);
   line-height: 1.5;
 }
 
 .cp-cert-items li::before {
   content: '→';
-  color: #7874f4;
+  color: var(--gs-purple);
   flex-shrink: 0;
 }
 
@@ -197,7 +197,7 @@
 
 .cp-cta-bottom h2 {
   font-size: 1.6rem;
-  color: #3c3c3b;
+  color: var(--gs-ink);
   font-weight: 400;
   margin-bottom: 1rem;
   max-width: 32ch;
