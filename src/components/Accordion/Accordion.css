@@ -133,6 +133,11 @@
    width: 18px;
    height: 18px;
 }
+.accordion-svg svg {
+   display: block;
+   width: 100%;
+   height: 100%;
+}
 .cases-why-gigson-btn {
    margin-top: 2rem;
    color: var(--gs-purple);
