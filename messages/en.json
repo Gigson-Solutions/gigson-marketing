@@ -3790,7 +3790,7 @@
                 {
                     "title": "Situations that demand it",
                     "description": "The most common scenarios pushing companies to get ISO 27001 certified.",
-                    "type": "grid",
+                    "type": "Use Cases",
                     "cards": [
                         {
                             "title": "Your client requires it",
@@ -3813,7 +3813,7 @@
                 {
                     "title": "Our approach",
                     "description": "The difference between a consultancy that writes documents and one that implements real controls.",
-                    "type": "list",
+                    "type": "Methodology",
                     "cards": [
                         {
                             "title": "Real controls, not just documentation",

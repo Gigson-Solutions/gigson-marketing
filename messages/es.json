@@ -3808,7 +3808,7 @@
                 {
                     "title": "Situaciones que lo exigen",
                     "description": "Los casos más habituales que empujan a las empresas a certificarse en ISO 27001.",
-                    "type": "grid",
+                    "type": "Casos",
                     "cards": [
                         {
                             "title": "Tu cliente lo exige",
@@ -3831,7 +3831,7 @@
                 {
                     "title": "Nuestro enfoque",
                     "description": "La diferencia entre una consultoría que redacta documentos y una que implementa controles reales.",
-                    "type": "list",
+                    "type": "Metodología",
                     "cards": [
                         {
                             "title": "Controles reales, no solo documentación",
