@@ -528,9 +528,12 @@
             "label": "y estoy interesado en",
             "placeholder": "Servicio",
             "services": [
-                "Desarrollo software",
+                "CTO as a Service",
+                "Agentes IA",
+                "Ingeniería de software",
+                "Consultoría tecnológica",
                 "Ciberseguridad",
-                "Consultoría tecnológica"
+                "Compliance ISO 27001"
             ]
         },
         "budget": {
@@ -3745,7 +3748,7 @@
             "step3title": "Auditoría interna",
             "step3p": "Verificación previa para que llegues a la auditoría externa con la certificación asegurada.",
             "step4title": "Certificación",
-            "step4p": "Coordinamos las auditorías de fase 1 y fase 2 con la entidad certificadora. Certificado ISO 27001 obtenido."
+            "step4p": "Coordinamos las auditorías de fase 1 y fase 2 con la entidad certificadora."
         },
         "form": {
             "eyebrow": "Diagnóstico gratuito",
@@ -3869,7 +3872,7 @@
                 },
                 {
                     "title": "Certificación",
-                    "description": "Coordinamos las auditorías de fase 1 y fase 2 con la entidad certificadora. Certificado ISO 27001 obtenido."
+                    "description": "Coordinamos las auditorías de fase 1 y fase 2 con la entidad certificadora."
                 }
             ]
         },

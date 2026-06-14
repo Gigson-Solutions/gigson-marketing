@@ -528,9 +528,12 @@
             "label": "and I'm interested in",
             "placeholder": "Service",
             "services": [
-                "Software engineering services",
-                "Cybersecurity services",
-                "Consulting services"
+                "CTO as a Service",
+                "AI Agents",
+                "Software Engineering",
+                "Technology Consulting",
+                "Cybersecurity",
+                "ISO 27001 Compliance"
             ]
         },
         "budget": {
@@ -3727,7 +3730,7 @@
             "step3title": "Internal audit",
             "step3p": "Pre-certification check so you go into the external audit with certification assured.",
             "step4title": "Certification",
-            "step4p": "We coordinate the phase 1 and phase 2 audits with the certification body. ISO 27001 certificate obtained."
+            "step4p": "We coordinate the phase 1 and phase 2 audits with the certification body."
         },
         "form": {
             "eyebrow": "Free diagnosis",
@@ -3851,7 +3854,7 @@
                 },
                 {
                     "title": "Certification",
-                    "description": "We coordinate the phase 1 and phase 2 audits with the certification body. ISO 27001 certificate obtained."
+                    "description": "We coordinate the phase 1 and phase 2 audits with the certification body."
                 }
             ]
         },
