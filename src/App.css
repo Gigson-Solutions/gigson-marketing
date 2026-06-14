@@ -91,7 +91,7 @@ svg {
 
 body {
    min-height: 100vh;
-   font-size: 100%;
+   /* font-size is set by tokens.css @layer base → var(--gs-text-base) */
    background-color: var(--gs-bg);
 }
 

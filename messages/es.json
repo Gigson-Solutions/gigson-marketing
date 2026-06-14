@@ -528,9 +528,12 @@
             "label": "y estoy interesado en",
             "placeholder": "Servicio",
             "services": [
-                "Desarrollo software",
+                "CTO as a Service",
+                "Agentes IA",
+                "Ingeniería de software",
+                "Consultoría tecnológica",
                 "Ciberseguridad",
-                "Consultoría tecnológica"
+                "Compliance ISO 27001"
             ]
         },
         "budget": {
@@ -3745,7 +3748,7 @@
             "step3title": "Auditoría interna",
             "step3p": "Verificación previa para que llegues a la auditoría externa con la certificación asegurada.",
             "step4title": "Certificación",
-            "step4p": "Coordinamos las auditorías de fase 1 y fase 2 con la entidad certificadora. Certificado ISO 27001 obtenido."
+            "step4p": "Coordinamos las auditorías de fase 1 y fase 2 con la entidad certificadora."
         },
         "form": {
             "eyebrow": "Diagnóstico gratuito",
@@ -3790,6 +3793,116 @@
             "successP": "Revisaremos tu situación y te enviaremos por escrito qué controles de ISO 27001 ya cumples sin saberlo. Si quieres, reserva ahora una llamada de 30 minutos para repasarlo y ver plazo, coste y cómo te afecta NIS2.",
             "successCta": "Reservar llamada en Calendly →",
             "successSoft": "O espera nuestro correo - te respondemos antes de 24 horas laborables."
+        }
+    },
+    "iso27001Service": {
+        "title": "Certificación ISO 27001 para empresas · Gigson Solutions",
+        "metadescription": "Implantamos tu SGSI ISO 27001 sobre tu operativa real. Controles técnicos reales, sistema mínimo viable sin burocracia. Para pymes, despachos y consultoras en España.",
+        "hero": {
+            "suptitle": "ISO/IEC 27001:2022 · Seguridad de la información",
+            "title": "Certificación <span>ISO 27001</span> para empresas que necesitan el certificado sin paralizar su negocio.",
+            "description": "Implantamos un Sistema de Gestión de Seguridad de la Información sobre tu operativa real — no documentación que nadie va a usar. Para pymes tecnológicas, despachos y consultoras de 10 a 250 personas.",
+            "buttonText": "Solicitar diagnóstico gratuito"
+        },
+        "solutionsApplications": {
+            "title": "Por qué certificarse ahora",
+            "subTitle": "Hay razones de peso para no esperar más.",
+            "containers": [
+                {
+                    "title": "Situaciones que lo exigen",
+                    "description": "Los casos más habituales que empujan a las empresas a certificarse en ISO 27001.",
+                    "type": "Casos",
+                    "cards": [
+                        {
+                            "title": "Tu cliente lo exige",
+                            "description": "Cada vez más empresas incluyen ISO 27001 como requisito contractual para sus proveedores. No es opcional: o te certificas o pierdes el contrato."
+                        },
+                        {
+                            "title": "Licitaciones públicas y privadas",
+                            "description": "En concursos públicos y privados, tener ISO 27001 suma puntos o es requisito de admisión. Competir sin ella significa ceder terreno."
+                        },
+                        {
+                            "title": "Cuestionarios de seguridad",
+                            "description": "Tus clientes regulados te envían cuestionarios cada vez más exigentes. Con ISO 27001, una sola respuesta cubre todos."
+                        },
+                        {
+                            "title": "Tu competencia ya la tiene",
+                            "description": "Más de 3.000 empresas españolas están certificadas. En muchos sectores ya es un estándar de facto, no un diferencial."
+                        }
+                    ]
+                },
+                {
+                    "title": "Nuestro enfoque",
+                    "description": "La diferencia entre una consultoría que redacta documentos y una que implementa controles reales.",
+                    "type": "Metodología",
+                    "cards": [
+                        {
+                            "title": "Controles reales, no solo documentación",
+                            "description": "Evaluamos cómo funciona tu empresa de verdad e implementamos los controles del Anexo A sobre lo que ya tienes: sistemas, accesos, datos, proveedores."
+                        },
+                        {
+                            "title": "Sistema mínimo viable, fácil de sostener",
+                            "description": "Diseñamos el SGSI más sencillo que pasa la auditoría — sin burocracia innecesaria, mantenible aunque la seguridad la lleve una sola persona."
+                        },
+                        {
+                            "title": "Sabemos qué es certificable y qué no",
+                            "description": "NIS2 no es una certificación, es cumplimiento. ISO 27001 sí lo es. Te explicamos exactamente qué necesitas según tu situación, sin sobreingeniería."
+                        }
+                    ]
+                }
+            ]
+        },
+        "howWeWork": {
+            "eyebrow": "Cómo trabajamos",
+            "h2a": "Cuatro fases,",
+            "h2b": "un certificado.",
+            "lead": "Un proceso pensado para pymes: diagnóstico de tu operativa real, implantación sobre lo que ya tienes y coordinación de la certificadora — sin paralizar tu día a día.",
+            "steps": [
+                {
+                    "title": "Diagnóstico",
+                    "description": "Gap analysis de tu situación actual. Identificamos qué controles ya cumples sin saberlo y qué falta realmente."
+                },
+                {
+                    "title": "Implantación",
+                    "description": "Documentación, análisis de riesgos, controles operativos sobre lo que ya tienes y formación al equipo implicado."
+                },
+                {
+                    "title": "Auditoría interna",
+                    "description": "Verificación previa para que llegues a la auditoría externa con la certificación asegurada."
+                },
+                {
+                    "title": "Certificación",
+                    "description": "Coordinamos las auditorías de fase 1 y fase 2 con la entidad certificadora."
+                }
+            ]
+        },
+        "faq": {
+            "title": "Preguntas frecuentes sobre ISO 27001",
+            "items": [
+                {
+                    "question": "¿Cuánto tiempo lleva obtener la certificación ISO 27001?",
+                    "answer": "Para una pyme de 10 a 100 personas, el proceso completo suele durar entre 4 y 8 meses. El diagnóstico inicial tarda entre 2 y 4 semanas. La duración real depende de la complejidad de tu operativa y de cuántos controles ya tienes implementados."
+                },
+                {
+                    "question": "¿Qué diferencia hay entre implantación y certificación?",
+                    "answer": "La implantación es el proceso de diseñar e implementar el SGSI (Sistema de Gestión de Seguridad de la Información) en tu empresa. La certificación es la auditoría externa realizada por una entidad acreditada que valida que tu SGSI cumple la norma ISO 27001. Puedes implantar sin certificarte, aunque la mayoría de empresas busca el certificado para acreditarlo ante clientes."
+                },
+                {
+                    "question": "¿NIS2 me obliga a certificarme en ISO 27001?",
+                    "answer": "NIS2 es una directiva europea de cumplimiento, no una certificación. No obliga directamente a obtener ISO 27001, pero muchos de sus requisitos técnicos se cubren con un SGSI bien implantado. En la práctica, tener ISO 27001 es la manera más eficiente de demostrar cumplimiento NIS2 ante clientes y auditores."
+                },
+                {
+                    "question": "¿Cuánto cuesta la certificación ISO 27001?",
+                    "answer": "El coste tiene dos partes: los honorarios de consultoría para la implantación (que varían según el tamaño y complejidad de la empresa) y las tasas de la entidad certificadora para las auditorías de fase 1 y fase 2. Hacemos un diagnóstico gratuito antes de darte cualquier cifra, para ajustarlo exactamente a tu situación."
+                },
+                {
+                    "question": "¿Necesito un responsable de seguridad interno para mantener la certificación?",
+                    "answer": "No necesariamente. Diseñamos el SGSI para que sea mantenible con los recursos que ya tienes. Muchas de las empresas con las que trabajamos no tienen un responsable de seguridad dedicado — el sistema está pensado para que lo gestione quien ya lleva otras responsabilidades, sin sobrecarga."
+                }
+            ]
+        },
+        "digitalProduct": {
+            "buttonText": "Solicitar diagnóstico gratuito"
         }
     },
     "claudePartner": {
