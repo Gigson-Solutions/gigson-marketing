@@ -1,15 +1,19 @@
 import useCasesBgGradient from 'assets/casos-de-uso-bg-gradient-1.svg';
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import Brand from 'shared/Brand.jsx';
 import DigitalProduct from 'shared/DigitalProduct.jsx';
 import Hero from 'shared/Hero.jsx';
 import HowWeWork from 'shared/HowWeWork.jsx';
 import ImproveAreas from 'shared/ImproveAreas.jsx';
+import { ServiceFaq } from 'shared/ServiceFaq.jsx';
 import SolutionsApplications from 'shared/SolutionsApplications.jsx';
 import UseCases from 'shared/UseCases.jsx';
+
+import { ServiceSchema } from '../../../seo/SchemaOrg';
+import { SeoHelmet } from '../../../seo/seoHelmet';
+
 const Logistics = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const {
     title,
     metadescription,
@@ -19,14 +23,22 @@ const Logistics = () => {
     improveAreas,
     howWeWork,
     digitalProduct,
+    faq,
   } = t('cases-logistics');
+
+  const lang = i18n.language || 'en';
+  const serviceUrl =
+    lang === 'es' ? '/es/tecnologia-logistica' : '/logistics-technology';
 
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={metadescription} />
-      </Helmet>
+      <SeoHelmet title={title} description={metadescription} />
+      <ServiceSchema
+        name={title}
+        description={metadescription}
+        url={serviceUrl}
+        serviceType="Logistics Technology"
+      />
       <Hero {...hero} />
       <section
         style={{
@@ -42,6 +54,7 @@ const Logistics = () => {
       <SolutionsApplications {...solutionsApplications} />
       <HowWeWork {...howWeWork} />
       <DigitalProduct {...digitalProduct} />
+      {faq && <ServiceFaq title={faq.title} faqs={faq.items} />}
       <Brand />
     </>
   );

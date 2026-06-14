@@ -5,16 +5,20 @@ import { createBrowserRouter } from 'react-router-dom';
 import AboutHero from '../components/About/AboutHero';
 import Home from '../components/Home/Home';
 import Layout from '../components/Layout/Layout';
+import AiAgents from '../components/Pages/AiAgents/AiAgents';
+import AiManifest from '../components/Pages/AiManifest';
+import Book from '../components/Pages/Book/Book';
 import Cases from '../components/Pages/Cases/Cases';
 import Cibersecurity from '../components/Pages/Cibersecurity/Cibersecurity';
+import ClaudePartner from '../components/Pages/ClaudePartner/ClaudePartner';
 import Construction from '../components/Pages/Construction/Construction';
 import ConsultoriaTec from '../components/Pages/ConsultoriaTec/ConsultoriaTec';
-import Book from '../components/Pages/Book/Book';
 import Contact from '../components/Pages/Contact';
 import CookiesPage from '../components/Pages/CookiesPage';
 import CTO from '../components/Pages/CTO/CTO';
 import Faqs from '../components/Pages/Faqs/Faqs';
 import HoldedLandingStatic from '../components/Pages/HoldedLandingStatic/HoldedLandingStatic';
+import Iso27001 from '../components/Pages/Iso27001/Iso27001';
 import Logistics from '../components/Pages/Logistics/Logistics';
 import NotFound from '../components/Pages/NotFound/NotFound';
 import Notice from '../components/Pages/Notice';
@@ -24,19 +28,6 @@ import Software from '../components/Pages/Software/Software';
 import Services from '../components/Services/Services';
 import { DEFAULT_LANG, ROUTE_SLUGS } from './routerSlugs';
 
-/** En integrations.* y staging.* la home es la landing Holded estática (iframe). */
-function HomeOrIntegrationsLanding() {
-  if (typeof window === 'undefined') return <Home />;
-  const host = window.location.hostname;
-  if (
-    host === 'integrations.gigsonsolutions.com' ||
-    host === 'staging.gigsonsolutions.com'
-  ) {
-    return <HoldedLandingStatic />;
-  }
-  return <Home />;
-}
-
 const generateRoutes = (lang) => {
   const slugs = ROUTE_SLUGS[lang];
   const langPrefix = lang === DEFAULT_LANG ? '' : `/${lang}`;
@@ -45,32 +36,34 @@ const generateRoutes = (lang) => {
     path: langPrefix || '/',
     element: <Layout />,
     children: [
-      { index: true, element: <HomeOrIntegrationsLanding /> },
+      { index: true, element: <Home /> },
+      { path: slugs.integrations, element: <HoldedLandingStatic /> },
       { path: slugs.services, element: <Services /> },
       { path: slugs.logistics, element: <Logistics /> },
-      { path: slugs.integrations, element: <HoldedLandingStatic /> },
       { path: slugs.CTO, element: <CTO /> },
       { path: slugs.software, element: <Software /> },
       { path: slugs.ConsultoriaTec, element: <ConsultoriaTec /> },
       { path: slugs.cibersecurity, element: <Cibersecurity /> },
+      { path: slugs.iso27001, element: <Iso27001 /> },
       { path: slugs.retail, element: <Retail /> },
       { path: slugs.construction, element: <Construction /> },
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },
+      { path: slugs.aiAgents, element: <AiAgents /> },
+      { path: slugs.claudePartner, element: <ClaudePartner /> },
       { path: slugs.book, element: <Book /> },
       { path: slugs.contact, element: <Contact /> },
       { path: slugs.policy, element: <Policity /> },
       { path: slugs.notice, element: <Notice /> },
       { path: slugs.cookies, element: <CookiesPage /> },
+      { path: slugs.aiManifest, element: <AiManifest /> },
       { path: '*', element: <NotFound /> },
     ],
   };
 };
 
 export const router = createBrowserRouter([
-  { path: '/landing-holded.html', element: <HoldedLandingStatic /> },
-  { path: '/landing-holded', element: <HoldedLandingStatic /> },
   generateRoutes('en'),
   generateRoutes('es'),
   { path: '*', element: <NotFound /> },

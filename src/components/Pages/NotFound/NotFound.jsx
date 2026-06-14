@@ -7,13 +7,16 @@ import { Link } from 'react-router-dom';
 
 import bg from '../../../assets/mesh-gradient-2.png';
 import { genArray } from '../../../hooks/genArray';
+import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const NotFound = () => {
   const { t } = useTranslation();
   const { banner404, title, title2, description, cta } = t('notFound');
+  const seo = t('pageSeo.notFound');
 
   return (
     <div className="div">
+      <SeoHelmet title={seo.title} description={seo.description} noindex />
       <section className="not-home-services" id="homeServices">
         <div className="home-services-bg not_home-services-bg">
           <img src={bg} alt="" />

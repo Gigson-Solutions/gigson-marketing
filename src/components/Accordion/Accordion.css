@@ -1,7 +1,7 @@
 .accordion-container {
    max-width: 105rem;
    margin-block: -1px;
-   border: 1px solid #7874f4;
+   border: 1px solid var(--gs-purple);
    border-radius: 1.25rem;
    cursor: pointer;
 }
@@ -12,7 +12,7 @@
 
 .cases .accordion-container {
    padding-block: 1rem;
-   padding-inline: 1rem;
+   padding-inline: var(--gs-accordion-padding-inline);
 }
 
 .cases-dropdown-solution p,
@@ -35,7 +35,7 @@
    justify-content: space-between;
    align-items: center;
    gap: 0.5rem;
-   color: #3c3c3b;
+   color: var(--gs-ink);
    cursor: pointer;
 }
 .accordion-title {
@@ -73,7 +73,7 @@
    max-width: 55rem;
    margin-right: 2rem;
 
-   color: #868685;
+   color: var(--gs-graphite);
 }
 .without-border {
    padding: 0 0 2rem;
@@ -82,7 +82,7 @@
 .oadljkgvbadojgbaed {
    margin-bottom: 1rem;
    padding: 1rem 0 2rem;
-   border-bottom: 1px solid #868685;
+   border-bottom: 1px solid var(--gs-graphite);
 }
 
 .cases-dropdown-features > h4 {
@@ -102,7 +102,7 @@
 
 .cases-dropdown-features > h4,
 .cases-dropdown-solution h4 {
-   color: #7874f4;
+   color: var(--gs-purple);
    text-transform: uppercase;
    padding-bottom: 0.5rem;
 }
@@ -116,13 +116,13 @@
 
 .cases-dropdown-features li,
 .cases-dropdown-tools li {
-   color: #868685;
+   color: var(--gs-graphite);
    list-style: disc;
 }
 .cases-dropdown-solution {
    max-width: 40rem;
    padding: 1rem 0;
-   color: #868685;
+   color: var(--gs-graphite);
 }
 .cases-dropdown-solution p {
    max-width: 55rem;
@@ -133,9 +133,14 @@
    width: 18px;
    height: 18px;
 }
+.accordion-svg svg {
+   display: block;
+   width: 100%;
+   height: 100%;
+}
 .cases-why-gigson-btn {
    margin-top: 2rem;
-   color: #7874f4;
+   color: var(--gs-purple);
    text-transform: uppercase;
    height: fit-content;
 }
@@ -144,10 +149,10 @@
    font-size: 1rem;
    margin: 1rem 0 0;
    padding: 1.5rem 1rem 1.5rem;
-   background-color: #eeedf0;
+   background-color: var(--gs-mist);
    color: black;
    border-radius: 1.25rem;
-   border: 1px solid #7874f4;
+   border: 1px solid var(--gs-purple);
    gap: 2rem;
 }
 
@@ -161,7 +166,7 @@
 
    .cases-why-gigson-btn {
       margin-top: 0;
-      color: #7874f4;
+      color: var(--gs-purple);
       text-wrap: nowrap;
    }
    .div-cta {
@@ -209,7 +214,7 @@
 }
 @media (min-width: 65rem) {
    .cases .accordion-container {
-      padding-inline: 2.81rem;
+      padding-inline: var(--gs-accordion-padding-inline-lg);
       padding-block: 2.31rem;
    }
 }

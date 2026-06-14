@@ -1,13 +1,16 @@
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import Brand from 'shared/Brand.jsx';
 import DigitalProduct from 'shared/DigitalProduct.jsx';
 import Hero from 'shared/Hero.jsx';
 import HowWeWork from 'shared/HowWeWork.jsx';
+import { ServiceFaq } from 'shared/ServiceFaq.jsx';
 import SolutionsApplications from 'shared/SolutionsApplications.jsx';
 
+import { ServiceSchema } from '../../../seo/SchemaOrg';
+import { SeoHelmet } from '../../../seo/seoHelmet';
+
 const Cibersecurity = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const {
     title,
     metadescription,
@@ -15,18 +18,26 @@ const Cibersecurity = () => {
     solutionsApplications,
     howWeWork,
     digitalProduct,
+    faq,
   } = t('cibersecurity');
+
+  const lang = i18n.language || 'en';
+  const serviceUrl = lang === 'es' ? '/es/ciberseguridad' : '/cybersecurity';
 
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={metadescription} />
-      </Helmet>
+      <SeoHelmet title={title} description={metadescription} />
+      <ServiceSchema
+        name={title}
+        description={metadescription}
+        url={serviceUrl}
+        serviceType="Cybersecurity"
+      />
       <Hero {...hero} />
       <SolutionsApplications {...solutionsApplications} />
       <HowWeWork {...howWeWork} />
       <DigitalProduct {...digitalProduct} />
+      {faq && <ServiceFaq title={faq.title} faqs={faq.items} />}
       <Brand />
     </>
   );

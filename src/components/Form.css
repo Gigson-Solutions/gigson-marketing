@@ -1,6 +1,7 @@
 .form-section {
    margin: 4rem 0 5rem;
-   color: #3c3c3b;
+   margin-inline: auto;
+   color: var(--gs-ink);
 }
 .form-h2 {
    font-size: 2rem;
@@ -17,11 +18,11 @@
    font-size: 1rem;
    border-bottom: 0.0625rem solid;
    width: 100%;
-   color: #868685;
+   color: var(--gs-graphite);
    padding: 0.3rem 0 0.07rem;
 }
 .form-section input[placeholder]::placeholder {
-   color: #868685;
+   color: var(--gs-graphite);
    opacity: 1;
 }
 
@@ -29,11 +30,11 @@
    font-size: 1rem;
    border-bottom: 0.0625rem solid;
    width: 100%;
-   color: #868685;
+   color: var(--gs-graphite);
    padding: 0.3rem 0 0.07rem;
 }
 .form-container select option {
-   background-color: #f4f3ef;
+   background-color: var(--gs-cream);
    outline: none;
 }
 .form-budget {
@@ -45,9 +46,9 @@
 }
 input[type="radio"]:checked + label {
    transition: 0.2s linear;
-   background: #e3e1ee;
-   color: #7874f4;
-   border-color: #7874f4;
+   background: var(--gs-lavender);
+   color: var(--gs-purple);
+   border-color: var(--gs-purple);
 }
 .form-budget input[type="radio"] {
    position: absolute;
@@ -69,20 +70,20 @@ input[type="radio"]:checked + label {
    all: unset;
    padding: 0.5rem;
    appearance: none;
-   background-color: #eeedf0;
+   background-color: var(--gs-mist);
    border: 1px solid #000;
    border-radius: 50%;
    cursor: pointer;
 }
 .form-section input[type="checkbox"]:checked {
-   background-color: #7874f4;
+   background-color: var(--gs-purple);
 }
 
 .form-btn-send {
    margin-top: 2rem;
 }
 .legal-policity-form {
-   color: #7874f4;
+   color: var(--gs-purple);
 }
 @media (min-width: 40rem) {
    .form-h2 {
@@ -106,7 +107,7 @@ input[type="radio"]:checked + label {
 }
 @media (min-width: 45rem) {
    .form-section {
-      margin: 4rem 0 7rem;
+      margin-block: 4rem 7rem;
    }
 }
 @media (min-width: 56.25rem) {
@@ -169,14 +170,18 @@ input[type="radio"]:checked + label {
       flex-direction: row;
    }
 
-   .home-form .form-container .first {
-      width: auto;
-   }
+   .home-form .form-container .first,
    .home-form .form-container .second {
-      width: auto;
+      flex: 1;
+      min-width: 0;
+   }
+   .home-form .form-container .first input,
+   .home-form .form-container .second select {
+      flex: 1;
+      min-width: 0;
    }
    .form-section {
-      margin: 4rem 0 6rem;
+      margin-block: 4rem 6rem;
    }
    .form-check {
       margin: 0;
@@ -186,7 +191,7 @@ input[type="radio"]:checked + label {
 }
 @media (min-width: 80.125rem) {
    .form-section {
-      margin: 2rem 0 7rem;
+      margin-block: 2rem 7rem;
    }
 }
 
@@ -197,7 +202,7 @@ input[type="radio"]:checked + label {
    }
    .form-section {
       overflow-x: hidden;
-      margin: 2rem 0 8rem;
+      margin-block: 2rem 8rem;
    }
    .input-container {
       margin: 0;
@@ -240,11 +245,9 @@ input[type="radio"]:checked + label {
    }
 }
 @media (min-width: 119.375rem) {
-   .home-form .form-container .first {
-      width: 39%;
-   }
+   .home-form .form-container .first,
    .home-form .form-container .second {
-      width: auto;
+      flex: 1;
    }
 }
 

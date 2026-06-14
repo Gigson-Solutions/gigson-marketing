@@ -1,9 +1,9 @@
 .button-main {
    padding: 0.5rem 1.25rem;
-   border: 0.0313rem solid #7874f4;
+   border: 0.0313rem solid var(--gs-purple);
    border-radius: 2rem;
    cursor: pointer;
-   color: #7874f4;
+   color: var(--gs-purple);
    font-size: 0.875rem;
 }
 .hero-btn,
@@ -19,26 +19,15 @@
 .form-btn-budget {
    font-size: 1.25rem;
    padding: 0.4rem 0.9rem;
-   color: #3c3c3b;
+   color: var(--gs-ink);
    border: 0.0625rem solid #000;
    border-radius: 2rem;
    cursor: pointer;
 }
 .form-btn-budget:hover {
    transition: 0.2s linear;
-   background-color: #e3e1ee;
-   color: #7874f4;
-}
-.filters-btn {
-   font-size: 0.9rem;
-   padding: 0.3rem 0.8rem;
-   color: #3c3c3b;
-   border: 0.0625rem solid #3c3c3bbd;
-}
-.filter-btn-active {
-   transition: 0.2s linear;
-   background-color: #e3e1ee;
-   color: #7874f4;
+   background-color: var(--gs-lavender);
+   color: var(--gs-purple);
 }
 .form-btn-send {
    margin: 1rem 0 1rem;
@@ -51,8 +40,8 @@
 
    .button-main:hover {
       transition: 0.2s linear;
-      background-color: #e3e1ee;
-      color: #7874f4;
+      background-color: var(--gs-lavender);
+      color: var(--gs-purple);
    }
 }
 
@@ -64,9 +53,6 @@
    .form-btn-send {
       margin: 0.5rem 0 1rem;
    }
-   .filters-btn {
-      padding: 0.45rem 1.5rem;
-   }
 }
 
 @media (min-width: 100rem) {
@@ -74,8 +60,4 @@
       max-width: 20rem;
    }
 
-   .filters-btn {
-      font-size: 1em;
-      padding: 0.4rem 1.2rem;
-   }
 }

@@ -5,7 +5,9 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import CasesBg from '../../../assets/CasesBg.png';
+import { SeoHelmet } from '../../../seo/seoHelmet';
 import { Accordion } from '../../Accordion/Accordion';
+import SectorSelector from '../../Home/SectorSelector';
 
 const Cases = () => {
   const [activeIndex, setActiveIndex] = useState();
@@ -17,6 +19,7 @@ const Cases = () => {
   const [selectedNeeds, setSelectedNeeds] = useState([]);
 
   const { t } = useTranslation();
+  const seo = t('pageSeo.cases');
   const {
     heroH1,
     heroP,
@@ -64,45 +67,35 @@ const Cases = () => {
 
   return (
     <div className="cases mt-28">
+      <SeoHelmet title={seo.title} description={seo.description} />
       <section className="relative py-20">
-        <img 
-          src={CasesBg} 
-          alt="" 
-          className="absolute inset-0 h-full w-auto min-w-full object-cover opacity-[0.14] -z-10" 
+        <img
+          src={CasesBg}
+          alt=""
+          className="absolute inset-0 h-full w-auto min-w-full object-cover opacity-[0.14] -z-10"
         />
-        
-          <h1 className="hero-cases-h1">
-            <Trans i18nKey={heroH1} components={{ span: <span /> }} />
-          </h1>
-          <p className="hero-cases-p">{heroP}</p>
-       
+
+        <h1 className="hero-cases-h1">
+          <Trans i18nKey={heroH1} components={{ span: <span /> }} />
+        </h1>
+        <p className="hero-cases-p">{heroP}</p>
       </section>
 
-      <h3 className="cases-filters-title">{tagTitle}</h3>
-      <div className="cases-container-filters">
-        {uniqueTags.map((tag) => (
-          <button
-            key={tag}
-            onClick={() => handleTagFilter(tag)}
-            className={`button-main filters-btn ${selectedTags.includes(tag) && 'filter-btn-active'}`}
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
+      <SectorSelector
+        title={tagTitle}
+        sectors={uniqueTags}
+        selected={selectedTags}
+        onToggle={handleTagFilter}
+        centered
+      />
 
-      <h3 className="cases-filters-title">{needTitle}</h3>
-      <div className="cases-container-filters">
-        {uniqueNeeds.map((need) => (
-          <button
-            key={need}
-            onClick={() => handleNeedFilter(need)}
-            className={`button-main filters-btn ${selectedNeeds.includes(need) && 'filter-btn-active'}`}
-          >
-            {need}
-          </button>
-        ))}
-      </div>
+      <SectorSelector
+        title={needTitle}
+        sectors={uniqueNeeds}
+        selected={selectedNeeds}
+        onToggle={handleNeedFilter}
+        centered
+      />
 
       <button className="cases-reset-filters" onClick={handleResetFilters}>
         {resetFilters}

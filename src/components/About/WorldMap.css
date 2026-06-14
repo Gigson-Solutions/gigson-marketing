@@ -1,0 +1,112 @@
+.world-map-section {
+  background-color: #0e0e1a;
+  padding: 2.5rem 0 3rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Globe wrapper — positions canvas + labels together */
+.world-map-globe-wrap {
+  position: relative;
+  width: 640px;
+  height: 640px;
+  margin: 0 auto;
+}
+
+/* Canvas fills the wrap */
+.world-map-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 48px rgba(120, 116, 244, 0.22));
+}
+
+.world-map-canvas:active {
+  cursor: grabbing;
+}
+
+/* Label pills — positioned by JS relative to globe wrap */
+.world-map-pin {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 122px;
+  height: 40px;
+  background: rgba(14, 14, 26, 0.88);
+  border: 1px solid rgba(120, 116, 244, 0.55);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8px;
+  gap: 1px;
+  pointer-events: none;
+  transition: opacity 0.25s ease, border-color 0.2s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.world-map-pin:hover {
+  border-color: rgba(120, 116, 244, 0.9);
+}
+
+.pin-role {
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pin-city {
+  color: var(--gs-purple);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .world-map-globe-wrap {
+    width: 360px;
+    height: 360px;
+  }
+
+  .world-map-pin {
+    width: 96px;
+    height: 34px;
+    border-radius: 5px;
+  }
+
+  .pin-role {
+    font-size: 8px;
+  }
+
+  .pin-city {
+    font-size: 7px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .world-map-globe-wrap {
+    width: 520px;
+    height: 520px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .world-map-globe-wrap {
+    width: 780px;
+    height: 780px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .world-map-canvas {
+    animation: none;
+  }
+}

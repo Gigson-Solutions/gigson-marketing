@@ -41,23 +41,23 @@
    margin: 0 auto;
    font-size: 2rem;
    padding-top: 0.3rem;
-   color: #3c3c3b;
+   color: var(--gs-ink);
    text-wrap: pretty;
    line-height: 2.375rem;
 }
 .hero-faqs-h1 > span {
-   color: #7874f4;
+   color: var(--gs-purple);
 }
 .faqs-accordion-h2 {
    font-size: 1.7rem;
    margin: 2rem auto;
-   color: #3c3c3b;
+   color: var(--gs-ink);
 }
 
 .faqs-container {
    border: none;
    border-radius: 0;
-   border-bottom: 1px solid #3c3c3b;
+   border-bottom: 1px solid var(--gs-ink);
    padding-bottom: 1rem;
    margin: 1rem;
    margin-left: 0;
@@ -67,7 +67,7 @@
 .accordion-title.faqs {
    font-size: 24px;
    font-weight: 400;
-   color: #3c3c3b;
+   color: var(--gs-ink);
 }
 
 .faqs-container > .accordion-btn {
@@ -129,7 +129,7 @@
       font-size: 3.4375rem;
       line-height: 3.75rem;
       padding-top: 0.3rem;
-      color: #3c3c3b;
+      color: var(--gs-ink);
       text-wrap: pretty;
    }
    .faqs-accordion {

@@ -22,10 +22,14 @@ const ROUTE_SLUGS = {
     software: 'software-engineering',
     cibersecurity: 'cybersecurity',
     book: 'book',
-    integrations: 'holded-integrations',
+    aiAgents: 'ai-agents',
+    aiManifest: 'ai-manifest',
+    iso27001: 'iso-27001-certification',
+    claudePartner: 'about-claude-partner',
   },
   es: {
     home: '',
+    integrations: 'integraciones-holded',
     services: 'servicios',
     industries: 'industrias',
     logistics: 'tecnologia-logistica',
@@ -43,7 +47,10 @@ const ROUTE_SLUGS = {
     software: 'ingenieria-software',
     cibersecurity: 'ciberseguridad',
     book: 'reservas',
-    integrations: 'integraciones-holded',
+    aiAgents: 'agentes-ia',
+    aiManifest: 'manifiesto-ia',
+    iso27001: 'certificacion-iso-27001',
+    claudePartner: 'sobre-claude-partner',
   },
 };
 

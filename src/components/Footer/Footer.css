@@ -1,5 +1,5 @@
 .footer {
-   background: linear-gradient(to right, #7874f441, #f4f3ef);
+   background: linear-gradient(to right, var(--gs-purple-30), var(--gs-cream));
    padding-block: 1.8rem;
    margin: 3rem 0 0;
 }
@@ -7,13 +7,13 @@
    display: grid;
    grid-template-columns: repeat(2, 1fr);
    gap: 1.5rem;
-   color: #3c3c3b;
+   color: var(--gs-ink);
 }
 .footer-mid {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   border-bottom: 1px solid #3c3c3bcc;
+   border-bottom: 1px solid var(--gs-ink)cc;
    padding-bottom: 1.44rem;
 }
 .language-selector-container {
@@ -27,7 +27,7 @@
 }
 .footer-icon {
    width: 2.125rem;
-   color: #3c3c3b;
+   color: var(--gs-ink);
 }
 .logo-footer {
    width: 7.375rem;
@@ -42,10 +42,10 @@
 }
 .language-link {
    font-weight: 100;
-   color: #3c3c3b;
+   color: var(--gs-ink);
 }
 .spam-lng {
-   color: #3c3c3b7c;
+   color: var(--gs-ink)7c;
 }
 
 @media (min-width: 34.375rem) {
@@ -68,7 +68,7 @@
 
       display: flex;
       gap: 3.5rem;
-      color: #3c3c3b;
+      color: var(--gs-ink);
       font-size: 20px;
       font-style: normal;
    }

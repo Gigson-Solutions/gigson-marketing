@@ -3,28 +3,24 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 import CookieBanner from '../../CookieBanner';
 import ScrollTop from '../../hooks/ScrollTop';
+import { DEFAULT_LANG, ROUTE_SLUGS } from '../../router/routerSlugs';
 import Whatsapp from '../../shared/ui/WhatssapButton';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
-import { DEFAULT_LANG, ROUTE_SLUGS } from '../../router/routerSlugs';
 
-const holdedIntegrationsPath = (lang) =>
-  lang === DEFAULT_LANG
-    ? `/${ROUTE_SLUGS[lang].integrations}`
-    : `/${lang}/${ROUTE_SLUGS[lang].integrations}`;
+const holdedIntegrationsPath = (lang) => {
+  const slug = ROUTE_SLUGS[lang]?.integrations;
+  if (!slug) return;
+  return lang === DEFAULT_LANG ? `/${slug}` : `/${lang}/${slug}`;
+};
 
 const Layout = () => {
   const { pathname } = useLocation();
-  const host = typeof window !== 'undefined' ? window.location.hostname : '';
-  const holdedHost =
-    host === 'integrations.gigsonsolutions.com' || host === 'staging.gigsonsolutions.com';
-  /** Raíz EN/ES en integrations/staging: igual que /landing-holded (sin navbar/footer). */
-  const onHoldedIntegrationsSlug =
-    pathname === holdedIntegrationsPath('en') || pathname === holdedIntegrationsPath('es');
-  const fullBleed =
-    (holdedHost && (pathname === '/' || pathname === '/es')) || onHoldedIntegrationsSlug;
+  const onHoldedIntegrationsSlug = ['en', 'es'].some(
+    (l) => holdedIntegrationsPath(l) && pathname === holdedIntegrationsPath(l)
+  );
 
-  if (fullBleed) {
+  if (onHoldedIntegrationsSlug) {
     return (
       <ScrollTop>
         <Outlet />

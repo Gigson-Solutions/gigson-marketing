@@ -1,0 +1,130 @@
+.partner-badge {
+  padding: var(--global-padding) 0;
+  background-color: var(--color-dark-primary);
+  color: #ffffff;
+}
+
+.partner-badge__inner {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: var(--global-padding) var(--global-padding);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.partner-badge__logo {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2.4rem;
+}
+
+.partner-badge__logo img {
+  height: 2rem;
+  filter: brightness(0) invert(1);
+}
+
+.partner-badge__title {
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.partner-badge__body {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 3.2rem;
+}
+
+.partner-badge__items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.partner-badge__items li {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding-left: 2rem;
+  position: relative;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.partner-badge__items li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-purple-accents);
+}
+
+/* CTA button — overrides for dark background context */
+.partner-badge__cta-btn {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  margin: 0;
+}
+
+.partner-badge__cta-btn:hover {
+  background-color: #ffffff !important;
+  color: var(--color-dark-primary) !important;
+}
+
+.partner-badge__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-badge__card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+/* Claude logo — keep original colors (asterisk is salmon, text is black → invert to white) */
+.partner-badge__card-claude {
+  height: 2.4rem;
+  filter: brightness(0) invert(1);
+}
+
+/* Anthropic wordmark in card */
+.partner-badge__card-anthropic {
+  height: 1.4rem;
+  filter: brightness(0) invert(1);
+  opacity: 0.5;
+}
+
+.partner-badge__card-label {
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.partner-badge__card-name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .partner-badge__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-badge__visual {
+    display: none;
+  }
+}

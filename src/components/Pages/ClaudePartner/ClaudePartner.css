@@ -1,0 +1,248 @@
+/* Claude Partner page — follows the site design system */
+
+.claude-partner {
+  max-width: 120rem;
+  margin: 0 auto;
+  color: var(--gs-ink);
+}
+
+/* ── HERO ── */
+.cp-hero {
+  padding: 8rem 1.5rem 5rem;
+  text-align: center;
+}
+
+.cp-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gs-purple);
+  margin-bottom: 1.25rem;
+}
+
+.cp-hero h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+  color: var(--gs-ink);
+  max-width: 22ch;
+  margin: 0 auto 1.5rem;
+  text-wrap: pretty;
+  font-weight: 400;
+}
+
+.cp-hero h1 span {
+  color: var(--gs-purple);
+}
+
+.cp-hero-sub {
+  font-size: 1rem;
+  color: var(--gs-ink);
+  max-width: 52ch;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+/* ── SECTION SHARED ── */
+.cp-section {
+  padding: 4rem 1.5rem;
+}
+
+.cp-section--cream {
+  background: var(--gs-cream);
+}
+
+.cp-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.cp-section h2 {
+  font-size: 1.5rem;
+  color: var(--gs-ink);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.cp-lead {
+  font-size: 1rem;
+  color: var(--gs-ink);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  max-width: 58ch;
+}
+
+/* ── TWO-COL ── */
+.cp-two-col {
+  display: grid;
+  gap: 3rem;
+}
+
+/* ── BENEFITS GRID ── */
+.cp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.cp-card {
+  border: 1px solid #e0dff8;
+  border-radius: 8px;
+  padding: 1.75rem 1.5rem;
+}
+
+.cp-card-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gs-purple);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.cp-card h3 {
+  font-size: 1rem;
+  color: var(--gs-ink);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.cp-card p {
+  font-size: 0.9rem;
+  color: var(--gs-ink);
+  line-height: 1.65;
+}
+
+/* ── VS TABLE ── */
+.cp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.cp-table th,
+.cp-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.cp-table thead th {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--gs-ink);
+}
+
+.cp-table thead th:first-child {
+  width: 38%;
+}
+
+.cp-table td:first-child {
+  font-weight: 500;
+  color: var(--gs-ink);
+}
+
+.cp-table td:nth-child(2) {
+  color: var(--gs-purple);
+  font-weight: 600;
+}
+
+.cp-table td:nth-child(3) {
+  color: var(--gs-graphite);
+}
+
+/* ── CERT BOX ── */
+.cp-cert-box {
+  border: 1px solid #e0dff8;
+  border-radius: 10px;
+  padding: 2.5rem 2rem;
+  background: #fff;
+}
+
+.cp-cert-items {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cp-cert-items li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--gs-ink);
+  line-height: 1.5;
+}
+
+.cp-cert-items li::before {
+  content: '→';
+  color: var(--gs-purple);
+  flex-shrink: 0;
+}
+
+/* ── CTA BOTTOM ── */
+.cp-cta-bottom {
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.cp-cta-bottom h2 {
+  font-size: 1.6rem;
+  color: var(--gs-ink);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  max-width: 32ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cp-cta-bottom .cp-lead {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (min-width: 40rem) {
+  .cp-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .cp-hero {
+    padding: 11rem 2rem 7rem;
+  }
+
+  .cp-hero h1 {
+    font-size: 3.4375rem;
+    line-height: 3.75rem;
+    max-width: 18ch;
+  }
+
+  .cp-hero-sub {
+    font-size: 1.05rem;
+  }
+
+  .cp-section {
+    padding: 6rem 2rem;
+  }
+
+  .cp-two-col {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .cp-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

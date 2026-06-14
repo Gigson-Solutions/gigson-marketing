@@ -17,36 +17,23 @@
    font-size: 2em;
    line-height: 2.4rem;
    padding-top: 0.3rem;
-   color: #3c3c3b;
+   color: var(--gs-ink);
    text-wrap: ballance;
 }
 .hero-cases-h1 > span {
-   color: #7874f4;
+   color: var(--gs-purple);
 }
 .hero-cases-p {
    font-size: 1em;
-   color: #3c3c3b;
+   color: var(--gs-ink);
    margin-top: 1rem;
    margin: 1rem auto 0;
    text-wrap: ballance;
    max-width: 25rem;
 }
-.cases-filters-title {
-   font-size: 1.25em;
-   text-align: center;
-   margin-bottom: 2rem;
-}
-.cases-container-filters {
-   max-width: 35rem;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   gap: 0.7rem 0.5rem;
-   margin: 1.5rem auto;
-}
 .cases-reset-filters {
    margin: 2rem auto;
-   color: #7874f4;
+   color: var(--gs-purple);
    cursor: pointer;
 }
 
@@ -79,15 +66,7 @@
       font-size: 3.4em;
       line-height: 1.15em;
    }
-   .cases-container-filters {
-      gap: 0.9rem 0.6rem;
-      margin: 0 auto 2.5rem;
-   }
-   .cases-filters-title {
-      font-size: 1.875em;
-      margin-bottom: 2.5rem;
-   }
-   .cases-reset-filters {
+.cases-reset-filters {
       margin: 2rem auto;
    }
 }

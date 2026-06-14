@@ -10,6 +10,7 @@ import circSvg from '../../assets/circulo-about.svg';
 import cubeSvg from '../../assets/cubo-about.svg';
 import piraSvg from '../../assets/Piramide-about.svg';
 import { Accordion } from '../../components/Accordion/Accordion.jsx';
+import SectorSelector from './SectorSelector';
 
 const HomeCases = () => {
   const [activeIndex, setActiveIndex] = useState();
@@ -132,31 +133,19 @@ const HomeCases = () => {
             </section>
           </div>
           <div className="case-selector-flex">
-            <h3 className="home-cases-filters-title">{tagTitle}</h3>
-            <div className="home-cases-container-filters">
-              {uniqueTags.map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => handleTagFilter(tag)}
-                  className={`button-main filters-btn ${selectedTags.includes(tag) && 'filter-btn-active'}`}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
+            <SectorSelector
+              title={tagTitle}
+              sectors={uniqueTags}
+              selected={selectedTags}
+              onToggle={handleTagFilter}
+            />
 
-            <h3 className="home-cases-filters-title">{needTitle}</h3>
-            <div className="home-cases-container-filters">
-              {uniqueNeeds.map((need) => (
-                <button
-                  key={need}
-                  onClick={() => handleNeedFilter(need)}
-                  className={`button-main filters-btn ${selectedNeeds.includes(need) && 'filter-btn-active'}`}
-                >
-                  {need}
-                </button>
-              ))}
-            </div>
+            <SectorSelector
+              title={needTitle}
+              sectors={uniqueNeeds}
+              selected={selectedNeeds}
+              onToggle={handleNeedFilter}
+            />
 
             <button
               className="cases-reset-filters home"
