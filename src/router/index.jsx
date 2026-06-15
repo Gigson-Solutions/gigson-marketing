@@ -3,20 +3,22 @@ import '../App.css';
 import { createBrowserRouter } from 'react-router-dom';
 
 import AboutHero from '../components/About/AboutHero';
-import AiAgents from '../components/Pages/AiAgents/AiAgents';
-import AiManifest from '../components/Pages/AiManifest';
 import Home from '../components/Home/Home';
 import Layout from '../components/Layout/Layout';
+import AiAgents from '../components/Pages/AiAgents/AiAgents';
+import AiManifest from '../components/Pages/AiManifest';
+import Book from '../components/Pages/Book/Book';
 import Cases from '../components/Pages/Cases/Cases';
 import Cibersecurity from '../components/Pages/Cibersecurity/Cibersecurity';
+import ClaudePartner from '../components/Pages/ClaudePartner/ClaudePartner';
 import Construction from '../components/Pages/Construction/Construction';
 import ConsultoriaTec from '../components/Pages/ConsultoriaTec/ConsultoriaTec';
-import Book from '../components/Pages/Book/Book';
 import Contact from '../components/Pages/Contact';
 import CookiesPage from '../components/Pages/CookiesPage';
 import CTO from '../components/Pages/CTO/CTO';
 import Faqs from '../components/Pages/Faqs/Faqs';
 import HoldedLandingStatic from '../components/Pages/HoldedLandingStatic/HoldedLandingStatic';
+import Iso27001 from '../components/Pages/Iso27001/Iso27001';
 import Logistics from '../components/Pages/Logistics/Logistics';
 import NotFound from '../components/Pages/NotFound/NotFound';
 import Notice from '../components/Pages/Notice';
@@ -42,12 +44,14 @@ const generateRoutes = (lang) => {
       { path: slugs.software, element: <Software /> },
       { path: slugs.ConsultoriaTec, element: <ConsultoriaTec /> },
       { path: slugs.cibersecurity, element: <Cibersecurity /> },
+      { path: slugs.iso27001, element: <Iso27001 /> },
       { path: slugs.retail, element: <Retail /> },
       { path: slugs.construction, element: <Construction /> },
       { path: slugs.cases, element: <Cases /> },
       { path: slugs.about, element: <AboutHero /> },
       { path: slugs.faqs, element: <Faqs /> },
       { path: slugs.aiAgents, element: <AiAgents /> },
+      { path: slugs.claudePartner, element: <ClaudePartner /> },
       { path: slugs.book, element: <Book /> },
       { path: slugs.contact, element: <Contact /> },
       { path: slugs.policy, element: <Policity /> },

@@ -23,7 +23,9 @@ const IntegrationUseCases = () => {
                 </span>
                 <div className="flex flex-col gap-2">
                   <h3 className="text-h4 text-dark-primary">{item.title}</h3>
-                  <p className="text-body text-dark-medium">{item.description}</p>
+                  <p className="text-body text-dark-medium">
+                    {item.description}
+                  </p>
                 </div>
               </div>
               <a

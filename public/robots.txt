@@ -1,5 +1,0 @@
-# https://gigsonsolutions.com — marketing SPA (Vite + React)
-User-agent: *
-Allow: /
-
-Sitemap: https://gigsonsolutions.com/sitemap.xml

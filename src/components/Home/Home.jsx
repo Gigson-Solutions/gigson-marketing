@@ -4,6 +4,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Bgcont from '../../assets/Group 33770.svg';
+import { OrganizationSchema } from '../../seo/SchemaOrg';
 import { SeoHelmet } from '../../seo/seoHelmet';
 import Form from '../Form';
 import { CtaServices } from './CtaServices';
@@ -18,6 +19,7 @@ const Home = () => {
   return (
     <div className="home-content">
       <SeoHelmet title={title} description={metadescription} />
+      <OrganizationSchema />
       <Hero />
       <HomeServices />
       <HomeCases />

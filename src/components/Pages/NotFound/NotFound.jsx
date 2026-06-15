@@ -6,8 +6,8 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import bg from '../../../assets/mesh-gradient-2.png';
-import { SeoHelmet } from '../../../seo/seoHelmet';
 import { genArray } from '../../../hooks/genArray';
+import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const NotFound = () => {
   const { t } = useTranslation();

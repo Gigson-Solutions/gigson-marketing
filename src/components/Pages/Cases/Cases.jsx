@@ -4,11 +4,10 @@ import { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import SectorSelector from '../../Home/SectorSelector';
-
 import CasesBg from '../../../assets/CasesBg.png';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 import { Accordion } from '../../Accordion/Accordion';
+import SectorSelector from '../../Home/SectorSelector';
 
 const Cases = () => {
   const [activeIndex, setActiveIndex] = useState();
@@ -70,17 +69,16 @@ const Cases = () => {
     <div className="cases mt-28">
       <SeoHelmet title={seo.title} description={seo.description} />
       <section className="relative py-20">
-        <img 
-          src={CasesBg} 
-          alt="" 
-          className="absolute inset-0 h-full w-auto min-w-full object-cover opacity-[0.14] -z-10" 
+        <img
+          src={CasesBg}
+          alt=""
+          className="absolute inset-0 h-full w-auto min-w-full object-cover opacity-[0.14] -z-10"
         />
-        
-          <h1 className="hero-cases-h1">
-            <Trans i18nKey={heroH1} components={{ span: <span /> }} />
-          </h1>
-          <p className="hero-cases-p">{heroP}</p>
-       
+
+        <h1 className="hero-cases-h1">
+          <Trans i18nKey={heroH1} components={{ span: <span /> }} />
+        </h1>
+        <p className="hero-cases-p">{heroP}</p>
       </section>
 
       <SectorSelector

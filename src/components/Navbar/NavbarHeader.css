@@ -2,7 +2,7 @@
    width: 100%;
    position: fixed;
    top: 0;
-   background-color: #f4f3ef;
+   background-color: var(--gs-cream);
    z-index: 5;
    padding-inline: var(--global-padding);
 }
@@ -11,13 +11,18 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   border-bottom: 0.0813rem solid #3c3c3b;
+   border-bottom: 0.0813rem solid var(--gs-ink);
    max-width: var(--max-width-xl);
    margin-inline: auto;
 }
 
 .logo-header {
    width: 9rem;
+   flex-shrink: 0;
+}
+
+.div-header > a {
+   flex-shrink: 0;
 }
 
 
@@ -28,7 +33,7 @@
 }
 
 
-@media (min-width: 65rem) {
+@media (min-width: 72rem) {
    .logo-header {
       width: 10rem;
    }

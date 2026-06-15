@@ -2,7 +2,11 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
-import { DEFAULT_LANG, ROUTE_SLUGS, SUPPORTED_LANGS } from '../router/routerSlugs';
+import {
+  DEFAULT_LANG,
+  ROUTE_SLUGS,
+  SUPPORTED_LANGS,
+} from '../router/routerSlugs';
 
 const ORIGIN = 'https://gigsonsolutions.com';
 const DEFAULT_OG_IMAGE = `${ORIGIN}/img/gigson-solutions-logo.png`;
@@ -14,8 +18,11 @@ function getAlternateUrls(pathname, currentLang) {
       : pathname.replace(new RegExp(`^/${currentLang}`), '') || '/';
 
   const currentSlugs = ROUTE_SLUGS[currentLang] || {};
-  const currentSlug = withoutPrefix === '/' ? '' : withoutPrefix.replace(/^\//, '');
-  const pageKey = Object.entries(currentSlugs).find(([, slug]) => slug === currentSlug)?.[0];
+  const currentSlug =
+    withoutPrefix === '/' ? '' : withoutPrefix.replace(/^\//, '');
+  const pageKey = Object.entries(currentSlugs).find(
+    ([, slug]) => slug === currentSlug
+  )?.[0];
 
   const urls = {};
   for (const lang of SUPPORTED_LANGS) {
@@ -82,10 +89,14 @@ export function SeoHelmet({
       <meta name="twitter:image" content={ogImage} />
 
       {hreflangLinks.map(({ lang, url }) => (
-        <link key={lang} rel="alternate" hreflang={lang} href={url} />
+        <link key={lang} rel="alternate" hrefLang={lang} href={url} />
       ))}
       {alternateUrls[DEFAULT_LANG] && (
-        <link rel="alternate" hreflang="x-default" href={alternateUrls[DEFAULT_LANG]} />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={alternateUrls[DEFAULT_LANG]}
+        />
       )}
     </Helmet>
   );

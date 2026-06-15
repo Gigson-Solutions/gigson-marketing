@@ -24,6 +24,8 @@ const ROUTE_SLUGS = {
     book: 'book',
     aiAgents: 'ai-agents',
     aiManifest: 'ai-manifest',
+    iso27001: 'iso-27001-certification',
+    claudePartner: 'about-claude-partner',
   },
   es: {
     home: '',
@@ -47,6 +49,8 @@ const ROUTE_SLUGS = {
     book: 'reservas',
     aiAgents: 'agentes-ia',
     aiManifest: 'manifiesto-ia',
+    iso27001: 'certificacion-iso-27001',
+    claudePartner: 'sobre-claude-partner',
   },
 };
 

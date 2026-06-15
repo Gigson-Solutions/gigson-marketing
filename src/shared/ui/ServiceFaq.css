@@ -1,0 +1,61 @@
+.service-faq-section {
+  padding-block: 80px;
+}
+
+.service-faq-title {
+  font-family: var(--gs-font-display);
+  font-size: clamp(28px, 3.5vw, 48px);
+  line-height: 1.08;
+  font-weight: 400;
+  color: var(--gs-ink);
+  margin-bottom: 40px;
+}
+
+.service-faq-list {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--gs-content-w, 88.875rem);
+}
+
+@media (min-width: 64rem) {
+  .service-faq-section {
+    padding-block: 120px;
+  }
+
+  .service-faq-title {
+    margin-bottom: 56px;
+  }
+}
+
+/* Override .accordion-container defaults so FAQ items use flat bottom-border style */
+.faqs-container {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--gs-ink);
+  padding-bottom: 1rem;
+  margin: 1rem 0 0;
+}
+
+.accordion-title.faqs {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--gs-ink);
+}
+
+.faqs-container > .accordion-btn {
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.faqs-container > .accordion-content {
+  padding: 0;
+}
+
+.svg-faqs {
+  transition: transform 300ms ease-out;
+}
+
+.svg-faqs-close {
+  transform: rotate(180deg);
+  transition: transform 300ms ease-out;
+}

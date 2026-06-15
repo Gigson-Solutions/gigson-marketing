@@ -1,9 +1,9 @@
 .button-main {
    padding: 0.5rem 1.25rem;
-   border: 0.0313rem solid #7874f4;
+   border: 0.0313rem solid var(--gs-purple);
    border-radius: 2rem;
    cursor: pointer;
-   color: #7874f4;
+   color: var(--gs-purple);
    font-size: 0.875rem;
 }
 .hero-btn,
@@ -19,15 +19,15 @@
 .form-btn-budget {
    font-size: 1.25rem;
    padding: 0.4rem 0.9rem;
-   color: #3c3c3b;
+   color: var(--gs-ink);
    border: 0.0625rem solid #000;
    border-radius: 2rem;
    cursor: pointer;
 }
 .form-btn-budget:hover {
    transition: 0.2s linear;
-   background-color: #e3e1ee;
-   color: #7874f4;
+   background-color: var(--gs-lavender);
+   color: var(--gs-purple);
 }
 .form-btn-send {
    margin: 1rem 0 1rem;
@@ -40,8 +40,8 @@
 
    .button-main:hover {
       transition: 0.2s linear;
-      background-color: #e3e1ee;
-      color: #7874f4;
+      background-color: var(--gs-lavender);
+      color: var(--gs-purple);
    }
 }
 

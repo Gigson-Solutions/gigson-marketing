@@ -3,30 +3,20 @@ import './AboutHero.css';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import { SeoHelmet } from '../../seo/seoHelmet';
 import circSvg from '../../assets/circunferencia1.svg';
 import cubeSvg from '../../assets/cubo1.svg';
 import piraSvg from '../../assets/tri1.svg';
 import triaSvg from '../../assets/Trianguloycirculo.png';
+import { OrganizationSchema } from '../../seo/SchemaOrg';
+import { SeoHelmet } from '../../seo/seoHelmet';
+import WorldMap from './WorldMap';
 
 const AboutHero = () => {
   const { t } = useTranslation();
   const { title, description, cta, titleH2, belive, need } = t('about');
   const seo = t('pageSeo.about');
   const { t1, t2, t3, t4, p1, p2, p3, p4 } = belive;
-  const {
-    specialist1,
-    specialist2,
-    specialist3,
-    specialist4,
-    specialist5,
-    specialist6,
-    specialist7,
-    specialist8,
-    specialist9,
-    label,
-    cta2,
-  } = need;
+  const { cta2 } = need;
 
   const dataBelive = [
     { img: cubeSvg, title: t1, description: p1 },
@@ -35,21 +25,10 @@ const AboutHero = () => {
     { img: circSvg, title: t4, description: p4 },
   ];
 
-  const dataSpecialist = [
-    { title: 'Product Manager', desc: specialist1 },
-    { title: 'FullStack', desc: specialist2 },
-    { title: 'Solution Architect', desc: specialist3 },
-    { title: 'Backend Developer', desc: specialist4 },
-    { title: 'Business Analyst', desc: specialist5 },
-    { title: 'Frontend Developer', desc: specialist6 },
-    { title: 'Quality Assurance', desc: specialist7 },
-    { title: 'UX/UI Designer', desc: specialist8 },
-    { title: 'Security Engineer', desc: specialist9 },
-  ];
-
   return (
     <>
       <SeoHelmet title={seo.title} description={seo.description} />
+      <OrganizationSchema />
       <section className="div-about-hero">
         <div className="about-bg" />
         <div className="text-center">
@@ -105,33 +84,21 @@ const AboutHero = () => {
       </div>
       <div className="wrapper" style={{ overflowX: 'hidden' }}>
         <section className="about-section-need">
-          <img
-            className="about-background-image-DgPrd"
-            src={triaSvg}
-            alt="tria"
-          />{' '}
-          {}
           <h2 className="about-hero-need-h2">
             <Trans i18nKey={need.t} components={{ span: <span /> }} />
           </h2>
           <p className="about-need-p">{need.d}</p>
-          <div className="about-div-specialist">
-            {dataSpecialist.map(({ title, desc }, i) => (
-              <div key={i}>
-                <h3 className="about-need-h3">{title}</h3>
-                <p className="about-need-p1">{desc}</p>
-              </div>
-            ))}
-          </div>
-          <p className="about-believe-p" style={{ marginBottom: 0 }}>
-            {label}
-          </p>
-          <div className="about-button-container">
-            <Link to="/contact" className="about-button-contact button-main">
-              {cta2}
-            </Link>
-          </div>
         </section>
+      </div>
+
+      <WorldMap />
+
+      <div className="wrapper">
+        <div className="about-map-footer">
+          <Link to="/contact" className="about-button-contact button-main">
+            {cta2}
+          </Link>
+        </div>
       </div>
     </>
   );

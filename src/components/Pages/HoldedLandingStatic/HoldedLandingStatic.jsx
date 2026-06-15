@@ -1,7 +1,7 @@
-import { useLocation } from 'react-router-dom';
-import holdedLandingHtml from '../../../assets/holded-landing.html?raw';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
+import holdedLandingHtml from '../../../assets/holded-landing.html?raw';
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
 function injectBaseHref(html) {

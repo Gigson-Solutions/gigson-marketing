@@ -13,7 +13,7 @@
 
 .not-h1 {
    text-align: center;
-   color: #7874f4;
+   color: var(--gs-purple);
    font-size: 3.4375rem;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .not-p {
-   color: #3c3c3b;
+   color: var(--gs-ink);
    font-size: 1.25rem;
    max-width: 27.625rem;
    margin-top: 0rem;
@@ -58,10 +58,10 @@
 .not-home-services-h2 {
    font-weight: 400;
    text-shadow: 0 0 1.6px #0601b0; /*#1400ff*/
-   /*-webkit-text-stroke: .5px #7874f4;
-   text-stroke: 1px #7874f4;*/
+   /*-webkit-text-stroke: .5px var(--gs-purple);
+   text-stroke: 1px var(--gs-purple);*/
    font-size: 2.1875rem;
-   color: #f4f3ef;
+   color: var(--gs-cream);
 }
 
 .not-about-hero-btn {
