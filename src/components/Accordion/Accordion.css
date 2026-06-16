@@ -10,7 +10,8 @@
    margin-bottom: 0;
 }
 
-.cases .accordion-container {
+.cases .accordion-container,
+.improve-areas-faq .accordion-container {
    padding-block: 1rem;
    padding-inline: var(--gs-accordion-padding-inline);
 }
@@ -213,7 +214,8 @@
    }
 }
 @media (min-width: 65rem) {
-   .cases .accordion-container {
+   .cases .accordion-container,
+   .improve-areas-faq .accordion-container {
       padding-inline: var(--gs-accordion-padding-inline-lg);
       padding-block: 2.31rem;
    }
