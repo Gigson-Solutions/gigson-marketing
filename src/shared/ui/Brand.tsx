@@ -41,7 +41,7 @@ const Brand = () => {
     <section className="px-landing py-14 lg:py-40">
       <div className="max-w-[88.875rem] mx-auto">
         <div className="flex flex-col lg:flex-row w-full gap-15">
-          <div className="flex flex-col flex-shrink-0">
+          <div className="flex flex-col lg:w-1/3 shrink-0">
             <p className="gs-small uppercase tracking-widest text-graphite mb-3">
               {t('brand_eyebrow')}
             </p>
@@ -52,7 +52,7 @@ const Brand = () => {
               {t('brand_description')}
             </p>
           </div>
-          <div className="flex items-center justify-start lg:flex-1">
+          <div className="flex items-center justify-start lg:w-2/3">
             <LogoGrid />
           </div>
         </div>
