@@ -125,7 +125,7 @@ const FaqList = ({ faqs, selectedPainPoints }: { faqs: Faq[]; selectedPainPoints
     setActiveIndex((prev) => (prev === index ? undefined : index));
 
   return (
-    <div>
+    <div className="improve-areas-faq">
       {faqs.map(({ question, answer, types }, faqIndex) => {
         const isVisible = types.some((t) => selectedPainPoints.includes(t));
         return (
