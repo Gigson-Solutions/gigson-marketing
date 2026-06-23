@@ -30,9 +30,9 @@
    top: 0;
    left: -4rem;
    z-index: -1;
-   background: url("../../assets/aboutBg.svg") no-repeat;
-   background-size: contain;
-   background-position: 50% 0;
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
 }
 
 .about-bg:before {
@@ -42,6 +42,14 @@
    position: absolute;
    top: 0;
    background: linear-gradient(0deg, var(--gs-cream) 0%, #ffffff00 100%);
+   pointer-events: none;
+   z-index: 1;
+}
+
+.about-hero-circle-img {
+   height: 100%;
+   width: auto;
+   max-width: none;
 }
 .about-belive-max {
    background-color: var(--gs-lavender);
@@ -171,9 +179,9 @@
       top: 5rem;
       left: 0rem;
       z-index: -1;
-      background: url("../../assets/aboutBg.svg") no-repeat;
-      background-size: contain;
-      background-position: 50% 0;
+   }
+   .about-bg:before {
+      all: unset;
    }
    .div-about-hero {
       height: calc(100vh - 9rem);

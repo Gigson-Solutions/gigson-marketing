@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 
 import circSvg from '../../assets/circunferencia1.svg';
 import cubeSvg from '../../assets/cubo1.svg';
+import heroCircleSvg from '../../assets/about-hero-circle.svg';
 import triaSvg from '../../assets/Trianguloycirculo.png';
 import piraSvg from '../../assets/tri1.svg';
 import { Link } from '../../../i18n/navigation';
@@ -35,7 +36,14 @@ const AboutHero = () => {
   return (
     <>
       <section className="div-about-hero">
-        <div className="about-bg" />
+        <div className="about-bg">
+          <img
+            src={getImgSrc(heroCircleSvg as { src: string } | string)}
+            alt=""
+            aria-hidden="true"
+            className="about-hero-circle-img"
+          />
+        </div>
         <div className="text-center">
           <RichText as="h1" content={title} className="about-hero-h1" />
           <p className="about-hero-p mb-8">{description}</p>

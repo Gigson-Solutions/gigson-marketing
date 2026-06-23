@@ -12,15 +12,17 @@ type Props = {
   title: string;
   subTitle?: string;
   challenge: string;
-  features: string[];
-  solution: string;
-  tools: string[];
-  featuresTitle: string;
-  solutionTitle: string;
+  features?: string[];
+  solution?: string;
+  tools?: string[];
+  featuresTitle?: string;
+  solutionTitle?: string;
   toolsTitle?: string;
   isOpen: boolean;
   onClick: () => void;
   classContainer: string;
+  ctaHref?: string;
+  ctaLabel?: string;
 };
 
 export const Accordion = ({
@@ -34,6 +36,8 @@ export const Accordion = ({
   isOpen,
   onClick,
   classContainer,
+  ctaHref,
+  ctaLabel,
 }: Props) => {
   const t = useTranslations('casesctaacordion');
   const accordionRef = useRef<HTMLDivElement>(null);
@@ -57,38 +61,50 @@ export const Accordion = ({
           <div className="accordion-content-text">
             <div className="oadljkgvbadojgbaed">
               <p className="cases-dropdown-challenge">{challenge}</p>
-              <div className="cases-dropdown-features">
-                <h4>{featuresTitle}</h4>
-                <ul>
-                  {features.map((feature, i) => (
-                    <div key={i}>
-                      <span />
-                      <li>{feature}</li>
-                    </div>
-                  ))}
-                </ul>
-              </div>
+              {features && features.length > 0 && featuresTitle && (
+                <div className="cases-dropdown-features">
+                  <h4>{featuresTitle}</h4>
+                  <ul>
+                    {features.map((feature, i) => (
+                      <div key={i}>
+                        <span />
+                        <li>{feature}</li>
+                      </div>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
-            <div className="cases-dropdown-solution">
-              <div>
-                <h4>{solutionTitle}</h4>
-                <p>{solution}</p>
+            {solution && solutionTitle && (
+              <div className="cases-dropdown-solution">
+                <div>
+                  <h4>{solutionTitle}</h4>
+                  <p>{solution}</p>
+                </div>
+                {tools && tools.length > 0 && (
+                  <ul className="cases-dropdown-tools">
+                    {tools.map((tool, i) => (
+                      <div key={i}>
+                        <span />
+                        <li>{tool}</li>
+                      </div>
+                    ))}
+                  </ul>
+                )}
               </div>
-              <ul className="cases-dropdown-tools">
-                {tools.map((tool, i) => (
-                  <div key={i}>
-                    <span />
-                    <li>{tool}</li>
-                  </div>
-                ))}
-              </ul>
-            </div>
+            )}
             <div className="cases-cta-acordion">
               <div className="div-cta">
                 <p>{t('pcasesctaacordion')}</p>
-                <Link href="/contact" className="button-main cases-why-gigson-btn">
-                  {t('talk')}
-                </Link>
+                {ctaHref ? (
+                  <a href={ctaHref} className="button-main cases-why-gigson-btn">
+                    {ctaLabel ?? t('talk')}
+                  </a>
+                ) : (
+                  <Link href="/contact" className="button-main cases-why-gigson-btn">
+                    {ctaLabel ?? t('talk')}
+                  </Link>
+                )}
               </div>
             </div>
           </div>
