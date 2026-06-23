@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import circSvg from '../../assets/circunferencia1.svg';
 import cubeSvg from '../../assets/cubo1.svg';
+import heroCircleSvg from '../../assets/about-hero-circle.svg';
 import piraSvg from '../../assets/tri1.svg';
 import triaSvg from '../../assets/Trianguloycirculo.png';
 import { OrganizationSchema } from '../../seo/SchemaOrg';
@@ -30,7 +31,9 @@ const AboutHero = () => {
       <SeoHelmet title={seo.title} description={seo.description} />
       <OrganizationSchema />
       <section className="div-about-hero">
-        <div className="about-bg" />
+        <div className="about-bg">
+          <img src={heroCircleSvg} alt="" aria-hidden="true" className="about-hero-circle-img" />
+        </div>
         <div className="text-center">
           <h1 className="about-hero-h1">
             <Trans i18nKey={title} components={{ span: <span /> }} />

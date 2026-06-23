@@ -5,6 +5,8 @@ import '../../Form.css';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
+import Button from '../../../shared/ui/Button';
+
 type FlowOption = { value: string; label: string };
 type FormData = {
   sectionTitle: string;
@@ -31,15 +33,10 @@ const IntegrationContactForm = () => {
   const { sectionTitle, sectionDescription, title, fields, send, checkbox, legalNotice } = form;
 
   return (
-    <section id="contacto" className="px-landing py-14 lg:py-20 bg-white">
+    <section id="contacto" className="px-landing bg-white">
       <div className="max-w-[88.875rem] mx-auto">
-        <div className="mb-10 lg:mb-14">
-          <h2 className="text-h2 text-dark-primary mb-4">{sectionTitle}</h2>
-          <p className="text-subtitle text-dark-medium max-w-[600px]">{sectionDescription}</p>
-        </div>
-
-        <section className="form-section" style={{ margin: 0 }}>
-          <h3 className="form-h2" style={{ fontSize: '1.75rem' }}>{title}</h3>
+        <section className="form-section">
+          <h2 className="form-h2">{title}</h2>
           <form
             className="form"
             action="https://formsubmit.co/jaume@somosgigson.com"
@@ -54,49 +51,64 @@ const IntegrationContactForm = () => {
                 <label className="input-container-label">{fields.name.label}</label>
                 <input type="text" name="name" required placeholder={fields.name.placeholder} />
               </div>
+
               <div className="input-container">
                 <label className="input-container-label">{fields.email.label}</label>
                 <input type="email" name="email" required placeholder={fields.email.placeholder} />
               </div>
+
               <div className="input-container input-container-text">
                 <label className="input-container-label">{fields.tool.label}</label>
                 <input type="text" name="tool" placeholder={fields.tool.placeholder} />
               </div>
+
               <div className="input-container">
                 <label className="input-container-label">{fields.phone.label}</label>
                 <input type="tel" name="phone" required placeholder={fields.phone.placeholder} />
               </div>
+
               <div className="input-container">
                 <label className="input-container-label">{fields.company.label}</label>
                 <input type="text" name="company" required placeholder={fields.company.placeholder} />
               </div>
 
-              <div className="input-container" style={{ flexDirection: 'column' }}>
+              <div className="input-container">
                 <label className="label-budget">{fields.dataTypes.label}</label>
-                <div className="form-budget" style={{ marginTop: '0.5rem' }}>
+                <div className="form-budget">
                   {fields.dataTypes.options.map((option) => (
-                    <label key={option} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', cursor: 'pointer' }}>
+                    <label key={option}>
                       <input
                         type="checkbox"
                         name={`data_${option.toLowerCase()}`}
                         value={option}
                         className="input-radio"
-                        style={{ width: 'auto', all: 'revert', accentColor: '#7874F4' } as React.CSSProperties}
                       />
-                      <span>{option}</span>
+                      {option}
                     </label>
                   ))}
                 </div>
               </div>
 
-              <div className="input-container" style={{ flexDirection: 'column' }}>
+              <div className="input-container">
                 <label className="label-budget">{fields.flow.label}</label>
-                <div className="form-budget" style={{ marginTop: '0.5rem', flexDirection: 'column', gap: '0.5rem' }}>
+                <div className="form-budget">
                   {fields.flow.options.map((option) => (
-                    <div key={option.value} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <input type="radio" id={`flow_${option.value}`} name="data_flow" value={option.value} style={{ position: 'absolute', width: 0 }} />
-                      <label htmlFor={`flow_${option.value}`} className="form-btn-budget">{option.label}</label>
-                    </div>
+                    <>
+                      <input
+                        key={`input_${option.value}`}
+                        type="radio"
+                        id={`flow_${option.value}`}
+                        name="data_flow"
+                        value={option.value}
+                      />
+                      <label
+                        key={`label_${option.value}`}
+                        htmlFor={`flow_${option.value}`}
+                        className="form-btn-budget"
+                      >
+                        {option.label}
+                      </label>
+                    </>
                   ))}
                 </div>
               </div>
@@ -118,21 +130,14 @@ const IntegrationContactForm = () => {
               </div>
             </div>
 
-            <button
-              type="submit"
-              className="form-btn-send mt-8 text-white bg-purple-accents text-center cursor-pointer text-button rounded-full py-3 px-6 hover:opacity-80"
-            >
-              {send}
-            </button>
+            <Button type="submit" name={send} classStyle="form-btn-send" />
           </form>
         </section>
-      </div>
 
-      {legalNotice && (
-        <div className="max-w-[88.875rem] mx-auto mt-12 pt-8 border-t border-[#E0DFDF]">
-          <p className="text-smallTag text-dark-medium">{legalNotice}</p>
-        </div>
-      )}
+        {legalNotice && (
+          <p className="text-smallTag text-dark-medium pb-14 lg:pb-20">{legalNotice}</p>
+        )}
+      </div>
     </section>
   );
 };
