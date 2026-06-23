@@ -13,8 +13,8 @@ type UseCasesData = {
   solutionTitle?: string;
 };
 
-const IntegrationUseCases = () => {
-  const t = useTranslations('integrations-holded');
+const IntegrationUseCases = ({ namespace }: { namespace: string }) => {
+  const t = useTranslations(namespace);
   const useCases = t.raw('useCases') as UseCasesData;
   const [activeIndex, setActiveIndex] = useState<number | undefined>();
 

@@ -1,15 +1,12 @@
-import IntegrationContactForm from './IntegrationContactForm';
-import IntegrationLogosGrid from './IntegrationLogosGrid';
-import IntegrationsHero from './IntegrationsHero';
-import IntegrationUseCases from './IntegrationUseCases';
+import IntegrationPageLayout from './IntegrationPageLayout';
 
 const Integrations = () => (
-  <>
-    <IntegrationsHero />
-    <IntegrationUseCases />
-    <IntegrationLogosGrid />
-    <IntegrationContactForm />
-  </>
+  <IntegrationPageLayout
+    namespace="integrations-holded"
+    formEmail="jaume@somosgigson.com"
+    formSubject="Nueva consulta de integraciones Holded"
+    showLogosGrid
+  />
 );
 
 export default Integrations;

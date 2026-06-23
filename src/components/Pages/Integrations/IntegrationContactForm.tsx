@@ -27,8 +27,14 @@ type FormData = {
   };
 };
 
-const IntegrationContactForm = () => {
-  const t = useTranslations('integrations-holded');
+type FormProps = {
+  namespace: string;
+  formEmail: string;
+  formSubject: string;
+};
+
+const IntegrationContactForm = ({ namespace, formEmail, formSubject }: FormProps) => {
+  const t = useTranslations(namespace);
   const form = t.raw('form') as FormData;
   const { sectionTitle, sectionDescription, title, fields, send, checkbox, legalNotice } = form;
 
@@ -39,10 +45,10 @@ const IntegrationContactForm = () => {
           <h2 className="form-h2">{title}</h2>
           <form
             className="form"
-            action="https://formsubmit.co/jaume@somosgigson.com"
+            action={`https://formsubmit.co/${formEmail}`}
             method="POST"
           >
-            <input type="hidden" name="_subject" value="Nueva consulta de integraciones Holded" />
+            <input type="hidden" name="_subject" value={formSubject} />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="box" />
 

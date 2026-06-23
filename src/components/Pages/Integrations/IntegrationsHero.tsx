@@ -6,8 +6,10 @@ import { ButtonLink } from '../../../shared/ui/Button';
 
 const HOLDED_LOGO_URL = 'https://cdn.worldvectorlogo.com/logos/holded-1.svg';
 
-const IntegrationsHero = () => {
-  const t = useTranslations('integrations-holded');
+type Props = { namespace: string; logoUrl?: string };
+
+const IntegrationsHero = ({ namespace, logoUrl = HOLDED_LOGO_URL }: Props) => {
+  const t = useTranslations(namespace);
   const hero = t.raw('hero') as {
     badge: string;
     title: string;
@@ -41,7 +43,7 @@ const IntegrationsHero = () => {
         </div>
 
         <div className="flex-1 flex justify-center lg:justify-end">
-          <img src={HOLDED_LOGO_URL} alt="Holded" className="w-full max-w-[280px] object-contain" />
+          <img src={logoUrl} alt={hero.badge} className="w-full max-w-[280px] object-contain" />
         </div>
       </div>
     </section>
