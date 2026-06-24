@@ -23,6 +23,8 @@ type Props = {
   classContainer: string;
   ctaHref?: string;
   ctaLabel?: string;
+  hideCTADescription?: boolean;
+  inlineCTA?: boolean;
 };
 
 export const Accordion = ({
@@ -38,6 +40,8 @@ export const Accordion = ({
   classContainer,
   ctaHref,
   ctaLabel,
+  hideCTADescription = false,
+  inlineCTA = false,
 }: Props) => {
   const t = useTranslations('casesctaacordion');
   const accordionRef = useRef<HTMLDivElement>(null);
@@ -59,23 +63,47 @@ export const Accordion = ({
         </button>
         <div className={`accordion-content ${isOpen ? 'accordion-show-content' : ''}`}>
           <div className="accordion-content-text">
-            <div className="oadljkgvbadojgbaed">
+            <div className="oadljkgvbadojgbaed" style={inlineCTA ? { borderBottom: 'none' } : undefined}>
               <p className="cases-dropdown-challenge">{challenge}</p>
-              {features && features.length > 0 && featuresTitle && (
-                <div className="cases-dropdown-features">
-                  <h4>{featuresTitle}</h4>
-                  <ul>
-                    {features.map((feature, i) => (
-                      <div key={i}>
-                        <span />
-                        <li>{feature}</li>
-                      </div>
-                    ))}
-                  </ul>
+              {inlineCTA ? (
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  {ctaHref ? (
+                    <a
+                      href={ctaHref}
+                      className="button-main cases-why-gigson-btn"
+                      style={{ marginTop: 0 }}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {ctaLabel ?? t('talk')}
+                    </a>
+                  ) : (
+                    <Link
+                      href="/contact"
+                      className="button-main cases-why-gigson-btn"
+                      style={{ marginTop: 0 }}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {ctaLabel ?? t('talk')}
+                    </Link>
+                  )}
                 </div>
+              ) : (
+                features && features.length > 0 && featuresTitle && (
+                  <div className="cases-dropdown-features">
+                    <h4>{featuresTitle}</h4>
+                    <ul>
+                      {features.map((feature, i) => (
+                        <div key={i}>
+                          <span />
+                          <li>{feature}</li>
+                        </div>
+                      ))}
+                    </ul>
+                  </div>
+                )
               )}
             </div>
-            {solution && solutionTitle && (
+            {!inlineCTA && solution && solutionTitle && (
               <div className="cases-dropdown-solution">
                 <div>
                   <h4>{solutionTitle}</h4>
@@ -93,20 +121,22 @@ export const Accordion = ({
                 )}
               </div>
             )}
-            <div className="cases-cta-acordion">
-              <div className="div-cta">
-                <p>{t('pcasesctaacordion')}</p>
-                {ctaHref ? (
-                  <a href={ctaHref} className="button-main cases-why-gigson-btn">
-                    {ctaLabel ?? t('talk')}
-                  </a>
-                ) : (
-                  <Link href="/contact" className="button-main cases-why-gigson-btn">
-                    {ctaLabel ?? t('talk')}
-                  </Link>
-                )}
+            {!inlineCTA && (
+              <div className="cases-cta-acordion">
+                <div className="div-cta">
+                  {!hideCTADescription && <p>{t('pcasesctaacordion')}</p>}
+                  {ctaHref ? (
+                    <a href={ctaHref} className="button-main cases-why-gigson-btn">
+                      {ctaLabel ?? t('talk')}
+                    </a>
+                  ) : (
+                    <Link href="/contact" className="button-main cases-why-gigson-btn">
+                      {ctaLabel ?? t('talk')}
+                    </Link>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
