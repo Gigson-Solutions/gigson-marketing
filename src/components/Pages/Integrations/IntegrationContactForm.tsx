@@ -287,7 +287,7 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) =>
                         name={`data_${option.toLowerCase()}`}
                         value={option}
                         className="input-radio"
-                        style={{ flexShrink: 0, width: '16px', height: '16px', borderRadius: '50%' }}
+                        style={{ flexShrink: 0, width: '16px', height: '16px', padding: 0, boxSizing: 'border-box', borderRadius: '50%' }}
                       />
                       {option}
                     </label>
@@ -305,7 +305,7 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) =>
                   type="checkbox"
                   required
                   className="input-radio"
-                  style={{ flexShrink: 0, width: '16px', height: '16px', borderRadius: '50%' }}
+                  style={{ flexShrink: 0, width: '16px', height: '16px', padding: 0, boxSizing: 'border-box', borderRadius: '50%' }}
                 />
                 <label>
                   {checkbox.first}
