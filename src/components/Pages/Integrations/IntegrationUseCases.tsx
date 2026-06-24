@@ -5,21 +5,22 @@ import { useTranslations } from 'next-intl';
 
 import { Accordion } from '../../Accordion/Accordion';
 
+// JSON uses "description", not "challenge"
 type UseCaseItem = { title: string; description: string };
 type UseCasesData = {
   label: string;
   items: UseCaseItem[];
 };
 
-const IntegrationUseCases = () => {
-  const t = useTranslations('integrations-holded');
+const IntegrationUseCases = ({ namespace }: { namespace: string }) => {
+  const t = useTranslations(namespace);
   const useCases = t.raw('useCases') as UseCasesData;
   const [activeIndex, setActiveIndex] = useState<number | undefined>();
 
   return (
     <section id="casos" className="px-landing py-14 lg:py-20 bg-white">
       <div className="max-w-[88.875rem] mx-auto flex flex-col lg:flex-row lg:gap-20">
-        {/* Left label */}
+        {/* Left label — sticky on desktop */}
         <div className="lg:w-48 flex-shrink-0 mb-8 lg:mb-0">
           <p className="text-purple-accents text-body1 uppercase tracking-widest lg:sticky lg:top-32">
             {useCases.label}

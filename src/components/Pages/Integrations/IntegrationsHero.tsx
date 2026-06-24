@@ -4,8 +4,13 @@ import { useTranslations } from 'next-intl';
 
 import { ButtonLink } from '../../../shared/ui/Button';
 
-const IntegrationsHero = () => {
-  const t = useTranslations('integrations-holded');
+// Default to the local contextual image; can be overridden per integration page
+const DEFAULT_HERO_IMAGE = '/img/conectar-holded.png';
+
+type Props = { namespace: string; logoUrl?: string };
+
+const IntegrationsHero = ({ namespace, logoUrl = DEFAULT_HERO_IMAGE }: Props) => {
+  const t = useTranslations(namespace);
   const hero = t.raw('hero') as {
     badge: string;
     title: string;
@@ -47,13 +52,11 @@ const IntegrationsHero = () => {
 
         {/* Right column */}
         <div className="flex-1 flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-[480px]">
-            <img
-              src="/img/conectar-holded.png"
-              alt="Integraciones Holded"
-              className="w-full object-contain"
-            />
-          </div>
+          <img
+            src={logoUrl}
+            alt={hero.badge}
+            className="w-full max-w-[480px] object-contain"
+          />
         </div>
       </div>
     </section>

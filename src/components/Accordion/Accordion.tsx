@@ -63,9 +63,14 @@ export const Accordion = ({
         </button>
         <div className={`accordion-content ${isOpen ? 'accordion-show-content' : ''}`}>
           <div className="accordion-content-text">
-            <div className="oadljkgvbadojgbaed" style={inlineCTA ? { borderBottom: 'none' } : undefined}>
+            <div
+              className="oadljkgvbadojgbaed"
+              style={inlineCTA ? { borderBottom: 'none' } : undefined}
+            >
               <p className="cases-dropdown-challenge">{challenge}</p>
+
               {inlineCTA ? (
+                /* CTA inline with description text — no gray box */
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   {ctaHref ? (
                     <a
@@ -103,6 +108,7 @@ export const Accordion = ({
                 )
               )}
             </div>
+
             {!inlineCTA && solution && solutionTitle && (
               <div className="cases-dropdown-solution">
                 <div>
@@ -121,6 +127,7 @@ export const Accordion = ({
                 )}
               </div>
             )}
+
             {!inlineCTA && (
               <div className="cases-cta-acordion">
                 <div className="div-cta">
