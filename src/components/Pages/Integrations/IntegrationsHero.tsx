@@ -35,8 +35,8 @@ const IntegrationsHero = ({ namespace, logoUrl = DEFAULT_HERO_IMAGE }: Props) =>
           <p className="text-h3 text-dark-primary mb-6">{hero.specialists.title}</p>
           <ul className="flex flex-col gap-4 mb-6">
             {hero.specialists.bullets.map((bullet: string, i: number) => (
-              <li key={i} className="flex items-start gap-3 text-subtitle text-dark-primary">
-                <span className="mt-[6px] w-2 h-2 rounded-full bg-purple-accents flex-shrink-0" />
+              <li key={i} className="flex items-center gap-3 text-subtitle text-dark-primary">
+                <span className="w-2 h-2 rounded-full bg-purple-accents flex-shrink-0" />
                 {bullet}
               </li>
             ))}
