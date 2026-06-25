@@ -18,8 +18,8 @@ function Hero() {
         <HeroScene className="hero-scene-overlay" />
         <header className="hero-top-content">
           <div className="hero-text">
-            <p className="hero-p">{t('heroP')}</p>
-            <RichText as="h1" content={t.raw('heroH1') as string} className="hero-h1" />
+            <h1 className="hero-p">{t('heroP')}</h1>
+            <RichText as="h2" content={t.raw('heroH1') as string} className="hero-h1" />
             <Link href="/contact" className="hero-btn button-main">
               {t('heroBtn')}
             </Link>

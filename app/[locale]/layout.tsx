@@ -1,11 +1,14 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Script from 'next/script';
 import React from 'react';
 
 import { routing } from '../../i18n/routing';
 import '../../src/App.css';
+
+const BASE_URL = 'https://gigsonsolutions.com';
 
 type Props = {
   children: React.ReactNode;
@@ -14,6 +17,18 @@ type Props = {
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  return {
+    alternates: {
+      languages: {
+        'en': BASE_URL,
+        'es-ES': `${BASE_URL}/es`,
+        'x-default': BASE_URL,
+      },
+    },
+  };
 }
 
 export default async function LocaleLayout(props: Props) {
