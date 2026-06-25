@@ -93,6 +93,13 @@ export default async function LocaleLayout(props: Props) {
           `}
         </Script>
 
+        {/* Ahrefs Web Analytics */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="SbrLEFG41Hv7JClirbEntQ"
+          strategy="afterInteractive"
+        />
+
         {/* Apollo.io tracker */}
         <Script id="apollo-init" strategy="afterInteractive">
           {`
