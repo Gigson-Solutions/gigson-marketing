@@ -9,8 +9,8 @@ import { useEffect, useRef, useState } from 'react';
 import Bgcont from '../../../assets/Group 33770.svg';
 import Button from '../../../shared/ui/Button';
 
-// ─── All integrations available in the multiselect ───────────────────────────
-const ALL_TOOLS = [
+/* ── Tool list (mirrors the logos grid) ─────────────────────────── */
+const TOOL_OPTIONS = [
   'Shopify', 'WooCommerce', 'Printify', 'Square', 'PrestaShop',
   'Gestor Vet', 'Provetcloud', 'QVET', 'Wakyma Vets', 'WinVet',
   'Dentalink', 'Gesden', 'Orisdent', 'Dendoo', 'DasieClinic',
@@ -26,148 +26,149 @@ const ALL_TOOLS = [
   'Otra',
 ];
 
-// ─── ToolMultiSelect ──────────────────────────────────────────────────────────
-type ToolMultiSelectProps = { selected: string[]; onChange: (values: string[]) => void };
-
-const ToolMultiSelect = ({ selected, onChange }: ToolMultiSelectProps) => {
-  const [open, setOpen] = useState(false);
+/* ── Multi-select dropdown ───────────────────────────────────────── */
+const ToolMultiSelect = ({ placeholder }: { placeholder: string }) => {
+  const [selected, setSelected] = useState<string[]>([]);
   const [search, setSearch] = useState('');
-  const ref = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Close on outside click
   useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    const onOutside = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+        setSearch('');
+      }
     };
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
+    document.addEventListener('mousedown', onOutside);
+    return () => document.removeEventListener('mousedown', onOutside);
   }, []);
 
-  const filtered = ALL_TOOLS.filter((t) =>
+  const toggle = (tool: string) =>
+    setSelected(prev =>
+      prev.includes(tool) ? prev.filter(t => t !== tool) : [...prev, tool],
+    );
+
+  const filtered = TOOL_OPTIONS.filter(t =>
     t.toLowerCase().includes(search.toLowerCase()),
   );
 
-  const toggle = (tool: string) => {
-    onChange(selected.includes(tool) ? selected.filter((s) => s !== tool) : [...selected, tool]);
-  };
-
-  const displayValue =
-    selected.length === 0
-      ? 'Shopify, Odoo, Prestashop, ERP propio…'
-      : selected.join(', ');
+  const displayText = selected.length > 0 ? selected.join(', ') : placeholder;
+  const isPlaceholder = selected.length === 0;
 
   return (
-    <div ref={ref} style={{ position: 'relative', width: '100%' }}>
+    <div ref={containerRef} style={{ position: 'relative', width: '100%' }}>
+      {/* Hidden field for form submission */}
+      <input type="hidden" name="tool" value={selected.join(', ')} />
+
       {/* Trigger */}
-      <div
-        onClick={() => setOpen((o) => !o)}
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
         style={{
-          border: '1px solid #d1d5db',
-          borderRadius: '6px',
-          padding: '10px 14px',
-          cursor: 'pointer',
-          background: '#fff',
           display: 'flex',
-          alignItems: 'center',
           justifyContent: 'space-between',
-          minHeight: '42px',
-          color: selected.length ? '#111' : '#9ca3af',
-          fontSize: '0.9rem',
-          userSelect: 'none',
+          alignItems: 'center',
+          width: '100%',
+          fontSize: '1rem',
+          color: isPlaceholder ? 'var(--gs-graphite)' : 'var(--gs-ink)',
+          background: 'none',
+          border: 'none',
+          borderBottom: '0.0625rem solid',
+          padding: '0.3rem 0 0.07rem',
+          cursor: 'pointer',
+          textAlign: 'left',
+          fontFamily: 'inherit',
+          gap: '0.5rem',
         }}
       >
-        <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-          {displayValue}
+        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, minWidth: 0 }}>
+          {displayText}
         </span>
-        <span style={{ marginLeft: '8px', flexShrink: 0, color: '#6b7280' }}>{open ? '▲' : '▼'}</span>
-      </div>
-
-      {/* Dropdown */}
-      {open && (
-        <div
-          style={{
-            position: 'absolute',
-            top: 'calc(100% + 4px)',
-            left: 0,
-            right: 0,
-            background: '#fff',
-            border: '1px solid #d1d5db',
-            borderRadius: '8px',
-            boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-            zIndex: 50,
-            maxHeight: '260px',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
+        <svg
+          width="14" height="14" viewBox="0 0 14 14" fill="none"
+          style={{ flexShrink: 0, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}
         >
-          {/* Search */}
-          <div style={{ padding: '8px 10px', borderBottom: '1px solid #f0f0f0' }}>
+          <path d="M2 5L7 10L12 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
+      {/* Dropdown panel */}
+      {open && (
+        <div style={{
+          position: 'absolute',
+          top: 'calc(100% + 0.5rem)',
+          left: 0,
+          right: 0,
+          zIndex: 100,
+          background: 'white',
+          border: '1px solid var(--gs-purple)',
+          borderRadius: '0.9375rem',
+          boxShadow: '0 8px 24px rgba(120,116,244,0.15)',
+          overflow: 'hidden',
+        }}>
+          <div style={{ padding: '0.6rem 1rem', borderBottom: '1px solid #E0DFDF' }}>
             <input
               type="text"
+              placeholder="Buscar herramienta..."
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Buscar herramienta…"
-              onClick={(e) => e.stopPropagation()}
+              onChange={e => setSearch(e.target.value)}
+              onClick={e => e.stopPropagation()}
+              autoFocus
               style={{
+                display: 'block',
                 width: '100%',
-                border: '1px solid #e5e7eb',
-                borderRadius: '4px',
-                padding: '6px 10px',
-                fontSize: '0.85rem',
+                fontSize: '1rem',
+                color: 'var(--gs-ink)',
+                background: 'transparent',
+                border: 'none',
+                borderBottom: 'none',
                 outline: 'none',
+                padding: 0,
+                margin: 0,
+                fontFamily: 'inherit',
               }}
             />
           </div>
-          {/* Options */}
-          <div style={{ overflowY: 'auto', flex: 1 }}>
-            {filtered.map((tool) => {
-              const isSelected = selected.includes(tool);
+          <div style={{ maxHeight: '240px', overflowY: 'auto' }}>
+            {filtered.map(tool => {
+              const checked = selected.includes(tool);
               return (
-                <div
+                <label
                   key={tool}
-                  onClick={() => toggle(tool)}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '10px',
-                    padding: '9px 14px',
+                    gap: '0.6rem',
+                    padding: '0.55rem 1rem',
                     cursor: 'pointer',
-                    background: isSelected ? '#f5f3ff' : 'transparent',
-                    color: isSelected ? '#5b21b6' : '#111',
-                    fontSize: '0.875rem',
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!isSelected) (e.currentTarget as HTMLElement).style.background = '#fafafa';
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!isSelected) (e.currentTarget as HTMLElement).style.background = 'transparent';
+                    fontSize: '0.95rem',
+                    color: 'var(--gs-ink)',
+                    backgroundColor: checked ? 'var(--gs-lavender)' : 'transparent',
                   }}
                 >
-                  <span
+                  <input
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() => toggle(tool)}
+                    onClick={e => e.stopPropagation()}
                     style={{
-                      width: '16px',
-                      height: '16px',
-                      borderRadius: '4px',
-                      border: `2px solid ${isSelected ? '#7c3aed' : '#d1d5db'}`,
-                      background: isSelected ? '#7c3aed' : 'transparent',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
                       flexShrink: 0,
+                      width: '1rem',
+                      height: '1rem',
+                      padding: 0,
+                      boxSizing: 'border-box',
+                      borderRadius: '3px',
+                      accentColor: 'var(--gs-purple)',
+                      cursor: 'pointer',
                     }}
-                  >
-                    {isSelected && (
-                      <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                        <path d="M1 4l3 3 5-6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    )}
-                  </span>
+                  />
                   {tool}
-                </div>
+                </label>
               );
             })}
             {filtered.length === 0 && (
-              <div style={{ padding: '12px 14px', color: '#9ca3af', fontSize: '0.875rem' }}>
+              <div style={{ padding: '0.75rem 1rem', color: 'var(--gs-graphite)', fontSize: '0.9rem' }}>
                 Sin resultados
               </div>
             )}
@@ -178,7 +179,7 @@ const ToolMultiSelect = ({ selected, onChange }: ToolMultiSelectProps) => {
   );
 };
 
-// ─── Types ────────────────────────────────────────────────────────────────────
+/* ── Types ────────────────────────────────────────────────────────── */
 type FormData = {
   sectionTitle: string;
   sectionDescription: string;
@@ -197,15 +198,22 @@ type FormData = {
   };
 };
 
-// ─── Component ────────────────────────────────────────────────────────────────
+/* ── Checkbox style — overrides Form.css padding that inflates circles ── */
+const CHECKBOX_STYLE: React.CSSProperties = {
+  flexShrink: 0,
+  width: '1rem',
+  height: '1rem',
+  padding: 0,
+  boxSizing: 'border-box',
+};
+
+/* ── Component ───────────────────────────────────────────────────── */
 type Props = { namespace: string; formEmail: string; formSubject: string };
 
 const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) => {
   const t = useTranslations(namespace);
   const form = t.raw('form') as FormData;
   const { title, fields, send, checkbox, legalNotice } = form;
-
-  const [selectedTools, setSelectedTools] = useState<string[]>([]);
 
   const bgSrc = typeof Bgcont === 'string' ? Bgcont : (Bgcont as { src: string }).src;
 
@@ -215,7 +223,7 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) =>
       className="px-landing bg-white overflow-hidden"
       style={{ scrollMarginTop: '91px' }}
     >
-      {/* Decorative SVG — top right, matches /contacto page */}
+      {/* Decorative SVG — top right, matches /contacto style */}
       <div style={{ textAlign: 'right', margin: '0 1.3rem 0 0' }}>
         <img
           src={bgSrc}
@@ -244,8 +252,6 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) =>
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="box" />
             <input type="hidden" name="_cc" value="alfonso.ojeda@gigsonsolutions.com" />
-            {/* Pass selected tools as a hidden input */}
-            <input type="hidden" name="tool" value={selectedTools.join(', ')} />
 
             <div className="form-container">
               <div className="input-container">
@@ -261,7 +267,7 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) =>
               {/* Tool — multiselect with search */}
               <div className="input-container input-container-text">
                 <label className="input-container-label">{fields.tool.label}</label>
-                <ToolMultiSelect selected={selectedTools} onChange={setSelectedTools} />
+                <ToolMultiSelect placeholder={fields.tool.placeholder} />
               </div>
 
               <div className="input-container">
@@ -274,10 +280,11 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) =>
                 <input type="text" name="company" required placeholder={fields.company.placeholder} />
               </div>
 
+              {/* Data types — checkboxes */}
               <div className="input-container">
                 <label className="label-budget">{fields.dataTypes.label}</label>
                 <div className="form-budget">
-                  {fields.dataTypes.options.map((option) => (
+                  {fields.dataTypes.options.map(option => (
                     <label
                       key={option}
                       style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}
@@ -286,8 +293,7 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) =>
                         type="checkbox"
                         name={`data_${option.toLowerCase()}`}
                         value={option}
-                        className="input-radio"
-                        style={{ flexShrink: 0, width: '16px', height: '16px', padding: 0, boxSizing: 'border-box', borderRadius: '50%' }}
+                        style={CHECKBOX_STYLE}
                       />
                       {option}
                     </label>
@@ -295,17 +301,18 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) =>
                 </div>
               </div>
 
+              {/* Problem */}
               <div className="input-container input-container-text">
                 <label className="input-container-label">{fields.problem.label}</label>
                 <input type="text" name="problem" placeholder={fields.problem.placeholder} />
               </div>
 
+              {/* Privacy checkbox */}
               <div className="input-container form-check">
                 <input
                   type="checkbox"
                   required
-                  className="input-radio"
-                  style={{ flexShrink: 0, width: '16px', height: '16px', padding: 0, boxSizing: 'border-box', borderRadius: '50%' }}
+                  style={CHECKBOX_STYLE}
                 />
                 <label>
                   {checkbox.first}

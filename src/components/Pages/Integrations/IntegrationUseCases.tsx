@@ -36,7 +36,7 @@ const IntegrationUseCases = ({ namespace }: { namespace: string }) => {
                 title={title}
                 challenge={description}
                 isOpen={activeIndex === i}
-                onClick={() => setActiveIndex((prev) => (prev === i ? undefined : i))}
+                onClick={() => setActiveIndex(prev => (prev === i ? undefined : i))}
                 classContainer="accordions-container"
                 ctaHref="#contacto"
                 inlineCTA

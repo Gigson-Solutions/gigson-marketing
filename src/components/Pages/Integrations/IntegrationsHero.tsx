@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 
 import { ButtonLink } from '../../../shared/ui/Button';
 
-// Default to the local contextual image; can be overridden per integration page
 const DEFAULT_HERO_IMAGE = '/img/conectar-holded.png';
 
 type Props = { namespace: string; logoUrl?: string };

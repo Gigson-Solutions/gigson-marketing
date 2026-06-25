@@ -70,14 +70,14 @@ export const Accordion = ({
               <p className="cases-dropdown-challenge">{challenge}</p>
 
               {inlineCTA ? (
-                /* CTA inline with description text — no gray box */
+                /* CTA inline — right of the description text, no gray box */
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   {ctaHref ? (
                     <a
                       href={ctaHref}
                       className="button-main cases-why-gigson-btn"
                       style={{ marginTop: 0 }}
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={e => e.stopPropagation()}
                     >
                       {ctaLabel ?? t('talk')}
                     </a>
@@ -86,7 +86,7 @@ export const Accordion = ({
                       href="/contact"
                       className="button-main cases-why-gigson-btn"
                       style={{ marginTop: 0 }}
-                      onClick={(e) => e.stopPropagation()}
+                      onClick={e => e.stopPropagation()}
                     >
                       {ctaLabel ?? t('talk')}
                     </Link>
