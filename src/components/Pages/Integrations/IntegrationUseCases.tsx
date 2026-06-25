@@ -6,12 +6,11 @@ import { useTranslations } from 'next-intl';
 
 import { Accordion } from '../../Accordion/Accordion';
 
-type UseCaseItem = { title: string; challenge: string };
+// JSON uses "description", not "challenge"
+type UseCaseItem = { title: string; description: string };
 type UseCasesData = {
   label: string;
   items: UseCaseItem[];
-  featuresTitle?: string;
-  solutionTitle?: string;
 };
 
 const IntegrationUseCases = ({ namespace }: { namespace: string }) => {
@@ -21,21 +20,27 @@ const IntegrationUseCases = ({ namespace }: { namespace: string }) => {
 
   return (
     <section id="casos" className="px-landing py-14 lg:py-20 bg-white">
-      <div className="max-w-[88.875rem] mx-auto">
-        <p className="text-purple-accents text-body1 uppercase mb-10 tracking-widest">
-          {useCases.label}
-        </p>
-        <div className="cases">
+      <div className="max-w-[88.875rem] mx-auto flex flex-col lg:flex-row lg:gap-20">
+        {/* Left label — sticky on desktop */}
+        <div className="lg:w-48 flex-shrink-0 mb-8 lg:mb-0">
+          <p className="text-purple-accents text-body1 uppercase tracking-widest lg:sticky lg:top-32">
+            {useCases.label}
+          </p>
+        </div>
+
+        {/* Right accordions */}
+        <div className="flex-1 cases">
           <div className="accordions-container">
-            {useCases.items.map(({ title, challenge }, i) => (
+            {useCases.items.map(({ title, description }, i) => (
               <Accordion
                 key={i}
                 title={title}
-                challenge={challenge}
+                challenge={description}
                 isOpen={activeIndex === i}
-                onClick={() => setActiveIndex((prev) => (prev === i ? undefined : i))}
+                onClick={() => setActiveIndex(prev => (prev === i ? undefined : i))}
                 classContainer="accordions-container"
                 ctaHref="#contacto"
+                inlineCTA
               />
             ))}
           </div>

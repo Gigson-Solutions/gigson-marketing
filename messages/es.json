@@ -199,7 +199,7 @@
         }
     },
     "about": {
-        "title": "Somos un equipo de profesionales expertos con más de <span>9 años</span> de experiencia.",
+        "title": "Somos un equipo de profesionales expertos con más de <span>11 años</span> de experiencia.",
         "description": "Contamos con todos los perfiles necesarios para el desarrollo de productos digitales y sistemas de agentes de IA - todo in-house. Como Anthropic Claude Partner certificado, nuestro equipo incluye Claude Certified Architects formados directamente por Anthropic.",
         "cta": "HABLEMOS",
         "titleH2": "Descubre lo que nos mueve",
@@ -3295,13 +3295,13 @@
             "title": "Integraciones holded con el software que necesites",
             "subtitle": "Integraciones con Holded a medida para tu negocio.",
             "description": "Hablamos contigo, definimos la mejor solución y construimos la integración que realmente necesitas.",
-            "cta": "habla con un experto en holded",
+            "cta": "Habla con un experto en Holded",
             "specialists": {
-                "title": "Especialistas en conectar Holded con las herramientas que ya usas.",
+                "title": "Tu equipo técnico para integrar Holded con cualquier software.",
                 "bullets": [
-                    "Somos partner oficial de Holded.",
-                    "Integraciones para todo tipo de industrias.",
-                    "Asesoramiento antes de cualquier integración."
+                    "Partner oficial de Holded con proyectos en toda España.",
+                    "Más de 60 integraciones para cualquier sector.",
+                    "Analizamos tu caso sin coste antes de empezar."
                 ],
                 "link": "Ver ejemplos de uso"
             },

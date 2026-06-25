@@ -3,103 +3,136 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
+// ─── Logo data with local PNG paths ──────────────────────────────────────────
+type Logo = { name: string; industries: string[]; img: string };
+
+const LOGOS: Logo[] = [
+  // Retail
+  { name: 'Shopify',            industries: ['Retail'],       img: '/img/logos-negros/holded-shopify.png' },
+  { name: 'WooCommerce',        industries: ['Retail'],       img: '/img/logos-negros/holded-woocomerce.png' },
+  { name: 'Printify',           industries: ['Retail'],       img: '/img/logos-negros/printify.png' },
+  { name: 'Square',             industries: ['Retail'],       img: '/img/logos-negros/square-holded.png' },
+  { name: 'PrestaShop',         industries: ['Retail'],       img: '/img/logos-negros/prestashop-holded.png' },
+  // Veterinario
+  { name: 'Gestor Vet',         industries: ['Veterinario'],  img: '/img/logos-negros/gestor-vet-holded.png' },
+  { name: 'Provetcloud',        industries: ['Veterinario'],  img: '/img/logos-negros/provetcloud-holded.png' },
+  { name: 'QVET',               industries: ['Veterinario'],  img: '/img/logos-negros/qvet-holded.png' },
+  { name: 'Wakyma Vets',        industries: ['Veterinario'],  img: '/img/logos-negros/wakyma-vets-holded.png' },
+  { name: 'WinVet',             industries: ['Veterinario'],  img: '/img/logos-negros/winvet-holded.png' },
+  // Dental
+  { name: 'Dentalink',          industries: ['Dental'],       img: '/img/logos-negros/dentalink-holded.png' },
+  { name: 'Gesden',             industries: ['Dental'],       img: '/img/logos-negros/gesden-holded.png' },
+  { name: 'Orisdent',           industries: ['Dental'],       img: '/img/logos-negros/orisdent-holded.png' },
+  { name: 'Dendoo',             industries: ['Dental'],       img: '/img/logos-negros/dendoo-holded.png' },
+  { name: 'DasieClinic',        industries: ['Dental'],       img: '/img/logos-negros/dasieclinic-holded.png' },
+  // Construcción
+  { name: 'Presto',             industries: ['Construcción'], img: '/img/logos-negros/presto-holded.png' },
+  { name: 'Revit',              industries: ['Construcción'], img: '/img/logos-negros/revit-holded.png' },
+  { name: 'BuildingMe',         industries: ['Construcción'], img: '/img/logos-negros/buildingme-holded.png' },
+  { name: 'Construdata',        industries: ['Construcción'], img: '/img/logos-negros/construdata-holded.png' },
+  { name: 'PlanHopper',         industries: ['Construcción'], img: '/img/logos-negros/planhopper-holded.png' },
+  // Educación
+  { name: 'Kajabi',             industries: ['Educación'],    img: '/img/logos-negros/kajabi-holded.png' },
+  { name: 'Teachable',          industries: ['Educación'],    img: '/img/logos-negros/teachable-holded.png' },
+  { name: 'Moodle',             industries: ['Educación'],    img: '/img/logos-negros/moodle-holded.png' },
+  { name: 'Thinkific',          industries: ['Educación'],    img: '/img/logos-negros/thinkific-holded.png' },
+  { name: 'Classlife',          industries: ['Educación'],    img: '/img/logos-negros/classlife-holded.png' },
+  // Clínicas
+  { name: 'Cliniko',            industries: ['Clínicas'],     img: '/img/logos-negros/cliniko-holded.png' },
+  { name: 'Timp',               industries: ['Clínicas'],     img: '/img/logos-negros/timp-holded.png' },
+  { name: 'Flow',               industries: ['Clínicas'],     img: '/img/logos-negros/flow-holded.png' },
+  { name: 'Doctoralia',         industries: ['Clínicas'],     img: '/img/logos-negros/doctoralia-holded.png' },
+  { name: 'AgendaPro',          industries: ['Clínicas'],     img: '/img/logos-negros/agendapro-holded.png' },
+  // Hostelería
+  { name: 'CoverManager',       industries: ['Hostelería'],   img: '/img/logos-negros/covermanager-holded.png' },
+  { name: 'Revo',               industries: ['Hostelería'],   img: '/img/logos-negros/revo-holded.png' },
+  { name: 'LastApp',            industries: ['Hostelería'],   img: '/img/logos-negros/lastapp-holded.png' },
+  { name: 'FrontRest',          industries: ['Hostelería'],   img: '/img/logos-negros/frontrest-holded.png' },
+  { name: 'MissTipsi',          industries: ['Hostelería'],   img: '/img/logos-negros/misstipsi-holded.png' },
+  // CRM/ERP
+  { name: 'SAP',                industries: ['CRM/ERP'],      img: '/img/logos-negros/sap-holded.png' },
+  { name: 'Odoo',               industries: ['CRM/ERP'],      img: '/img/logos-negros/odoo-holded.png' },
+  { name: 'Sage',               industries: ['CRM/ERP'],      img: '/img/logos-negros/sage-holded.png' },
+  { name: 'NetSuite',           industries: ['CRM/ERP'],      img: '/img/logos-negros/netsuite-holded.png' },
+  { name: 'Microsoft Dynamics', industries: ['CRM/ERP'],      img: '/img/logos-negros/microsoftdynamics-holded.png' },
+  // Logística
+  { name: 'Sendcloud',          industries: ['Logística'],    img: '/img/logos-negros/sendcloud-holded.png' },
+  { name: 'ShipStation',        industries: ['Logística'],    img: '/img/logos-negros/shipstation-holded.png' },
+  { name: 'EasyPost',           industries: ['Logística'],    img: '/img/logos-negros/easypost-holded.png' },
+  { name: 'Saloodo',            industries: ['Logística'],    img: '/img/logos-negros/saloodo-holded.png' },
+  { name: 'Amazon Seller',      industries: ['Logística'],    img: '/img/logos-negros/amazonseller-holded.png' },
+  // Servicios
+  { name: 'HubSpot',            industries: ['Servicios'],    img: '/img/logos-negros/hubspot-holded.png' },
+  { name: 'Harvest',            industries: ['Servicios'],    img: '/img/logos-negros/harvest-holded.png' },
+  { name: 'Pipedrive',          industries: ['Servicios'],    img: '/img/logos-negros/pipedrive-holded.png' },
+  { name: 'FreshBooks',         industries: ['Servicios'],    img: '/img/logos-negros/freshbooks-holded.png' },
+  { name: 'TemaLeader',         industries: ['Servicios'],    img: '/img/logos-negros/temaleader-holded.png' },
+  // Real State
+  { name: 'Fotocasa',           industries: ['Real State'],   img: '/img/logos-negros/fotocasa-holded.png' },
+  { name: 'Witei',              industries: ['Real State'],   img: '/img/logos-negros/witei-holded.png' },
+  { name: 'Tokko',              industries: ['Real State'],   img: '/img/logos-negros/tokko-holded.png' },
+  { name: 'InmoVilla',          industries: ['Real State'],   img: '/img/logos-negros/inmovilla-holded.png' },
+  { name: 'Idealista',          industries: ['Real State'],   img: '/img/logos-negros/idealista-holded.png' },
+  // RR.HH
+  { name: 'Sesame',             industries: ['RR.HH'],        img: '/img/logos-negros/sesame-holded.png' },
+  { name: 'Personio',           industries: ['RR.HH'],        img: '/img/logos-negros/personio-holded.png' },
+  { name: 'PayFit',             industries: ['RR.HH'],        img: '/img/logos-negros/payfit-holded.png' },
+  { name: 'Factorial',          industries: ['RR.HH'],        img: '/img/logos-negros/factorial-holded.png' },
+  { name: 'Bizneo',             industries: ['RR.HH'],        img: '/img/logos-negros/bizneo-holded.png' },
+];
+
 const INDUSTRIES = [
   'Todos', 'Retail', 'Veterinario', 'Dental', 'Construcción', 'Educación',
   'Clínicas', 'Hostelería', 'CRM/ERP', 'Logística', 'Servicios', 'Real State', 'RR.HH',
 ];
 
-type Logo = { name: string; industries: string[]; url: string };
-
-const LOGOS: Logo[] = [
-  { name: 'Shopify', industries: ['Retail'], url: 'https://cdn.worldvectorlogo.com/logos/shopify.svg' },
-  { name: 'WooCommerce', industries: ['Retail'], url: 'https://cdn.worldvectorlogo.com/logos/woocommerce.svg' },
-  { name: 'Printify', industries: ['Retail'], url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Printify_logo.svg/320px-Printify_logo.svg.png' },
-  { name: 'Square', industries: ['Retail'], url: 'https://cdn.worldvectorlogo.com/logos/square-2.svg' },
-  { name: 'PrestaShop', industries: ['Retail'], url: 'https://cdn.worldvectorlogo.com/logos/prestashop.svg' },
-  { name: 'Gestor Vet', industries: ['Veterinario'], url: '' },
-  { name: 'Provetcloud', industries: ['Veterinario'], url: '' },
-  { name: 'QVET', industries: ['Veterinario'], url: '' },
-  { name: 'Wakyma Vets', industries: ['Veterinario'], url: '' },
-  { name: 'WinVet', industries: ['Veterinario'], url: '' },
-  { name: 'Dentalink', industries: ['Dental'], url: '' },
-  { name: 'Gesden', industries: ['Dental'], url: '' },
-  { name: 'Orisdent', industries: ['Dental'], url: '' },
-  { name: 'Dendoo', industries: ['Dental'], url: '' },
-  { name: 'DasieClinic', industries: ['Dental'], url: '' },
-  { name: 'Presto', industries: ['Construcción'], url: '' },
-  { name: 'Revit', industries: ['Construcción'], url: 'https://cdn.worldvectorlogo.com/logos/autodesk-revit.svg' },
-  { name: 'BuildingMe', industries: ['Construcción'], url: '' },
-  { name: 'Construdata', industries: ['Construcción'], url: '' },
-  { name: 'PlanHopper', industries: ['Construcción'], url: '' },
-  { name: 'Kajabi', industries: ['Educación'], url: 'https://cdn.worldvectorlogo.com/logos/kajabi.svg' },
-  { name: 'Teachable', industries: ['Educación'], url: '' },
-  { name: 'Moodle', industries: ['Educación'], url: 'https://cdn.worldvectorlogo.com/logos/moodle.svg' },
-  { name: 'Thinkific', industries: ['Educación'], url: '' },
-  { name: 'Classlife', industries: ['Educación'], url: '' },
-  { name: 'Cliniko', industries: ['Clínicas'], url: '' },
-  { name: 'Timp', industries: ['Clínicas'], url: '' },
-  { name: 'Flow', industries: ['Clínicas'], url: '' },
-  { name: 'Doctoralia', industries: ['Clínicas'], url: '' },
-  { name: 'AgendaPro', industries: ['Clínicas'], url: '' },
-  { name: 'CoverManager', industries: ['Hostelería'], url: '' },
-  { name: 'Revo', industries: ['Hostelería'], url: '' },
-  { name: 'LastApp', industries: ['Hostelería'], url: '' },
-  { name: 'FrontRest', industries: ['Hostelería'], url: '' },
-  { name: 'MissTipsi', industries: ['Hostelería'], url: '' },
-  { name: 'SAP', industries: ['CRM/ERP'], url: 'https://cdn.worldvectorlogo.com/logos/sap-3.svg' },
-  { name: 'Odoo', industries: ['CRM/ERP'], url: 'https://cdn.worldvectorlogo.com/logos/odoo.svg' },
-  { name: 'Sage', industries: ['CRM/ERP'], url: '' },
-  { name: 'NetSuite', industries: ['CRM/ERP'], url: '' },
-  { name: 'Microsoft Dynamics', industries: ['CRM/ERP'], url: 'https://cdn.worldvectorlogo.com/logos/microsoft-dynamics-2.svg' },
-  { name: 'Sendcloud', industries: ['Logística'], url: '' },
-  { name: 'ShipStation', industries: ['Logística'], url: '' },
-  { name: 'EasyPost', industries: ['Logística'], url: '' },
-  { name: 'Saloodo', industries: ['Logística'], url: '' },
-  { name: 'Amazon Seller', industries: ['Logística'], url: 'https://cdn.worldvectorlogo.com/logos/amazon-2.svg' },
-  { name: 'HubSpot', industries: ['Servicios'], url: 'https://cdn.worldvectorlogo.com/logos/hubspot.svg' },
-  { name: 'Harvest', industries: ['Servicios'], url: '' },
-  { name: 'Pipedrive', industries: ['Servicios'], url: 'https://cdn.worldvectorlogo.com/logos/pipedrive.svg' },
-  { name: 'FreshBooks', industries: ['Servicios'], url: 'https://cdn.worldvectorlogo.com/logos/freshbooks.svg' },
-  { name: 'TemaLeader', industries: ['Servicios'], url: '' },
-  { name: 'Fotocasa', industries: ['Real State'], url: '' },
-  { name: 'Witei', industries: ['Real State'], url: '' },
-  { name: 'Tokko', industries: ['Real State'], url: '' },
-  { name: 'InmoVilla', industries: ['Real State'], url: '' },
-  { name: 'Idealista', industries: ['Real State'], url: '' },
-  { name: 'Sesame', industries: ['RR.HH'], url: '' },
-  { name: 'Personio', industries: ['RR.HH'], url: '' },
-  { name: 'PayFit', industries: ['RR.HH'], url: '' },
-  { name: 'Factorial', industries: ['RR.HH'], url: 'https://cdn.worldvectorlogo.com/logos/factorial.svg' },
-  { name: 'Bizneo', industries: ['RR.HH'], url: '' },
-];
-
-const LogoBadge = ({ name, url }: Logo) => (
-  <div className="flex items-center justify-center bg-white rounded-xl px-5 py-4 min-w-[120px] min-h-[70px] shadow-sm">
-    {url ? (
-      <img src={url} alt={name} className="max-h-[40px] max-w-[110px] object-contain grayscale hover:grayscale-0 transition duration-300" />
-    ) : (
-      <span className="text-dark-primary text-smallTag font-medium text-center">{name}</span>
-    )}
-  </div>
+// ─── Logo badge — clickable card ──────────────────────────────────────────────
+const LogoBadge = ({ name, img }: Logo) => (
+  <a
+    href="#contacto"
+    title={`Conectar ${name} con Holded`}
+    className="group flex items-center justify-center bg-white rounded-xl border border-transparent hover:border-purple-accents transition duration-200 cursor-pointer"
+    style={{ padding: '12px 10px', minHeight: '60px' }}
+  >
+    <img
+      src={img}
+      alt={name}
+      className="max-h-[30px] max-w-[80px] lg:max-h-[40px] lg:max-w-[110px] object-contain opacity-70 group-hover:opacity-100 transition duration-200"
+    />
+  </a>
 );
 
+// ─── Grid component ───────────────────────────────────────────────────────────
 const IntegrationLogosGrid = () => {
   const t = useTranslations('integrations-holded');
   const logos = t.raw('logos') as { title: string; subtitle: string; mainCta: string };
-  const [activeIndustry, setActiveIndustry] = useState('Todos');
 
-  const filtered = activeIndustry === 'Todos' ? LOGOS : LOGOS.filter((l) => l.industries.includes(activeIndustry));
+  const [activeIndustry, setActiveIndustry] = useState('Todos');
+  const [collapsed, setCollapsed] = useState(true);
+
+  const filtered =
+    activeIndustry === 'Todos'
+      ? LOGOS
+      : LOGOS.filter((l) => l.industries.includes(activeIndustry));
+
+  // Reset collapse when filter changes
+  const handleIndustryChange = (ind: string) => {
+    setActiveIndustry(ind);
+    setCollapsed(true);
+  };
 
   return (
     <section className="px-landing py-14 lg:py-20 bg-[#f4f3ef]">
       <div className="max-w-[88.875rem] mx-auto">
         <h2 className="text-h2 text-dark-primary mb-4">{logos.title}</h2>
         <p className="text-subtitle text-dark-medium mb-10">{logos.subtitle}</p>
+
+        {/* Industry filters */}
         <div className="flex flex-wrap gap-3 mb-10">
           {INDUSTRIES.map((ind) => (
             <button
               key={ind}
-              onClick={() => setActiveIndustry(ind)}
+              onClick={() => handleIndustryChange(ind)}
               className={`text-smallTag rounded-full px-4 py-2 border transition duration-200 ${
                 activeIndustry === ind
                   ? 'bg-purple-accents text-white border-purple-accents'
@@ -110,10 +143,42 @@ const IntegrationLogosGrid = () => {
             </button>
           ))}
         </div>
-        <div className="flex flex-wrap gap-4 mb-12">
-          {filtered.map((logo) => <LogoBadge key={logo.name} {...logo} />)}
+
+        {/* Logo grid with mobile collapse */}
+        <div className="relative mb-6">
+          <div
+            className={`grid grid-cols-2 gap-3 lg:flex lg:flex-wrap lg:gap-4 ${
+              collapsed ? 'max-h-[260px] overflow-hidden lg:max-h-none lg:overflow-visible' : ''
+            }`}
+          >
+            {filtered.map((logo) => (
+              <LogoBadge key={logo.name} {...logo} />
+            ))}
+          </div>
+
+          {/* Gradient fade + "Mostrar más" — mobile only */}
+          {collapsed && (
+            <div className="lg:hidden">
+              <div
+                className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
+                style={{
+                  background: 'linear-gradient(to bottom, transparent, #f4f3ef)',
+                }}
+              />
+              <div className="flex justify-center pt-4">
+                <button
+                  onClick={() => setCollapsed(false)}
+                  className="text-purple-accents text-button underline hover:opacity-70 transition"
+                >
+                  Mostrar más
+                </button>
+              </div>
+            </div>
+          )}
         </div>
-        <div className="flex justify-center">
+
+        {/* Main CTA */}
+        <div className="flex justify-center mt-8">
           <a
             href="#contacto"
             className="inline-block bg-purple-accents text-white text-button rounded-full py-3 px-8 hover:opacity-80 transition duration-200 ease-linear uppercase"
