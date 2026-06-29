@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Accesible solo por el enlace directo: fuera de buscadores -->
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <title>SDR — Software &amp; IA · gigson solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple:#7874F4; --purple-dark:#5E5BC6; --purple-soft:#C1BFF3;
+      --lavender:#E3E1EE; --lavender-2:#EEEDF0;
+      --ink:#3C3C3B; --muted:#868685;
+      --bg:#F4F3EF; --card:#FFFFFF; --field:#FAFAF8;
+      --line:#E3E1EE;
+      --font-display:"DM Sans", ui-sans-serif, system-ui, -apple-system, Arial, sans-serif;
+      --font-body:"Inter", ui-sans-serif, system-ui, -apple-system, Arial, sans-serif;
+      --r:24px;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; background:var(--bg); color:var(--ink);
+      font-family:var(--font-body); font-size:17px; line-height:1.6;
+      -webkit-font-smoothing:antialiased; padding:56px 20px 96px;
+    }
+    .wrap { max-width:640px; margin:0 auto; }
+
+    .logo { width:190px; height:auto; display:block; margin-bottom:34px; }
+    .eyebrow {
+      font-family:var(--font-display); font-weight:600; font-size:13px;
+      letter-spacing:.12em; text-transform:uppercase; color:var(--purple); margin-bottom:12px;
+    }
+    h1 { font-family:var(--font-display); font-weight:700; font-size:36px; line-height:1.08; letter-spacing:-.02em; margin:0 0 10px; color:var(--ink); }
+    .sub { font-family:var(--font-display); font-weight:500; font-size:15px; color:var(--muted); }
+
+    .intro {
+      background:var(--card); border:.5px solid var(--line); border-radius:var(--r);
+      padding:26px 28px; margin:28px 0 40px; font-size:16px; color:var(--ink);
+    }
+    .intro p { margin:0 0 10px; } .intro p:last-child { margin-bottom:0; }
+
+    form { display:flex; flex-direction:column; gap:12px; }
+    .section-title {
+      font-family:var(--font-display); font-weight:600; font-size:12px; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--purple); margin:34px 0 6px; padding-left:4px;
+    }
+    .field {
+      background:var(--card); border:.5px solid var(--line); border-radius:var(--r); padding:22px 24px;
+    }
+    .qnum { font-family:var(--font-display); color:var(--purple); font-weight:700; margin-right:9px; }
+    label.q { display:block; font-family:var(--font-display); font-weight:600; font-size:16px; margin-bottom:4px; color:var(--ink); }
+    .hint { color:var(--muted); font-size:14px; margin:0 0 14px; }
+    .req { color:var(--purple); }
+    input[type="text"],input[type="email"],input[type="tel"],input[type="url"],
+    input[type="number"],select,textarea {
+      width:100%; padding:13px 14px; font-size:16px; font-family:inherit;
+      border:1px solid var(--line); border-radius:12px;
+      background:var(--field); color:var(--ink);
+    }
+    input:focus,select:focus,textarea:focus {
+      outline:none; border-color:var(--purple); background:#fff;
+    }
+    textarea { resize:vertical; min-height:96px; }
+
+    /* subida de archivo visible */
+    .file-row { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+    .file-btn {
+      font-family:var(--font-display); font-weight:600; font-size:14px; letter-spacing:.02em;
+      background:var(--lavender); color:var(--purple-dark); border:none; border-radius:999px;
+      padding:12px 22px; cursor:pointer; display:inline-block;
+    }
+    .file-btn:hover { background:var(--purple); color:#fff; }
+    .file-name { font-size:14px; color:var(--muted); }
+
+    .opts { display:flex; gap:10px; flex-wrap:wrap; margin-top:6px; }
+    .opts label {
+      font-weight:500; font-size:15px; display:flex; align-items:center; gap:8px;
+      border:1px solid var(--line); border-radius:999px; padding:11px 18px; cursor:pointer;
+      background:var(--field);
+    }
+    .opts label:hover { border-color:var(--purple-soft); }
+    .opts.col { flex-direction:column; align-items:stretch; gap:8px; }
+    .opts.col label { border-radius:14px; }
+    .opts input { accent-color:var(--purple); }
+
+    .consent {
+      background:var(--lavender-2); border-radius:var(--r); padding:24px 26px; margin-top:6px;
+    }
+    .consent .legal { font-size:13px; color:var(--muted); margin:0 0 16px; line-height:1.55; }
+    .consent .legal a { color:var(--purple-dark); }
+    .consent label { display:flex; gap:11px; align-items:flex-start; font-size:15px; cursor:pointer; }
+    .consent input { accent-color:var(--purple); margin-top:3px; width:18px; height:18px; }
+
+    button.submit {
+      margin-top:22px; background:var(--purple); color:#fff; border:none;
+      padding:17px; font-family:var(--font-display); font-weight:600; font-size:15px;
+      letter-spacing:.04em; text-transform:uppercase; cursor:pointer; border-radius:999px;
+    }
+    button.submit:hover { background:var(--purple-dark); }
+    button.submit:disabled { background:var(--muted); cursor:not-allowed; }
+
+    .thanks {
+      display:none; background:var(--card); border:.5px solid var(--line); border-radius:var(--r);
+      padding:56px 36px; text-align:center;
+    }
+    .thanks h2 { font-family:var(--font-display); font-weight:700; font-size:30px; margin:0 0 12px; color:var(--ink); }
+    .thanks p { color:var(--muted); font-size:17px; margin:0 auto; max-width:420px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <svg class="logo" viewBox="0 0 437 122" fill="none" role="img" aria-label="gigson solutions" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1_28)">
+        <path d="M37.2584 15.5353H36.8352L36.807 15.9605L36.4684 21.9564C32.7016 17.3071 27.242 14.6707 21.2744 14.6707C9.55091 14.6707 0 24.5786 0 36.7404C0 48.9021 9.55091 58.9093 21.2885 58.9093C27.1996 58.9093 32.4336 56.4996 36.158 52.1055V60.4685C36.158 65.5713 32.0245 69.8945 27.1291 69.8945H4.47214V77.1094H27.1291C36.0169 77.1094 43.2542 69.6394 43.2542 60.4685V15.5353H37.2584ZM27.1291 76.6699H4.90948H27.115C28.8079 76.6699 30.4303 76.3865 31.9539 75.8762C30.4303 76.3865 28.7938 76.6699 27.115 76.6699H27.1291ZM21.2885 51.6945C13.5152 51.6945 7.18082 44.9899 7.18082 36.7545C7.18082 28.5191 13.5011 21.8997 21.2885 21.8997C29.076 21.8997 36.2427 28.8452 36.2427 36.7545C36.2427 44.6639 29.3863 51.6945 21.2885 51.6945ZM42.8169 60.4827C42.8169 61.319 42.7604 62.1411 42.6335 62.949C42.7463 62.1411 42.8169 61.319 42.8169 60.4827Z" fill="#3C3C3B"/>
+        <path d="M51.3804 15.5354H50.929V15.989V57.6762V58.1298H51.3804H57.6583H58.1098V57.6762V15.989V15.5354H57.6583H51.3804Z" fill="#3C3C3B"/>
+        <path d="M54.5121 0C51.7752 0 49.6309 2.19705 49.6309 4.98943C49.6309 7.78181 51.8176 9.97885 54.5121 9.97885C57.2067 9.97885 59.3934 7.73928 59.3934 4.98943C59.3934 2.23957 57.249 0 54.5121 0Z" fill="#3C3C3B"/>
+        <path d="M101.237 15.5353H100.814L100.785 15.9605L100.447 21.9564C96.6801 17.3071 91.2204 14.6707 85.2529 14.6707C73.5153 14.6707 63.9644 24.5786 63.9644 36.7404C63.9644 48.9021 73.5153 58.9093 85.2529 58.9093C91.164 58.9093 96.3979 56.4996 100.122 52.1055V60.4827C100.122 65.5855 95.9888 69.9087 91.0935 69.9087H68.4365V77.1235H91.0935C99.9813 77.1235 107.219 69.6536 107.219 60.4827V15.5353H101.223H101.237ZM91.1076 76.67C92.8005 76.67 94.4229 76.3865 95.9465 75.8762C94.4229 76.3865 92.7864 76.67 91.1076 76.67ZM85.267 51.6945C77.4936 51.6945 71.1593 44.9899 71.1593 36.7545C71.1593 28.5191 77.4795 21.8997 85.267 21.8997C93.0544 21.8997 100.221 28.8452 100.221 36.7545C100.221 44.6639 93.3648 51.6945 85.267 51.6945ZM106.795 60.4827C106.795 61.319 106.739 62.1411 106.612 62.949C106.725 62.1411 106.795 61.319 106.795 60.4827Z" fill="#3C3C3B"/>
+        <path d="M131.131 32.2896C121.199 30.7162 121.199 28.5475 121.199 26.8182C121.199 26.2938 121.425 21.7154 129.452 21.7154C134.305 21.7154 137.903 24.5361 139.313 29.4405L139.61 30.4611L139.751 30.9572L140.216 30.7445L145.676 28.2498L146.029 28.0939L145.916 27.7254L145.69 26.96C143.419 19.2632 137.282 14.6707 129.269 14.6707C123.075 14.6707 119.464 17.052 117.531 19.0648C115.062 21.6162 114.018 24.8621 114.075 26.96C114.272 34.1181 118.73 37.6334 129.988 39.4902C140.611 41.2195 140.611 44.6923 140.611 45.9963C140.611 49.5116 136.901 51.7937 131.145 51.7937C124.895 51.7937 121.679 49.7384 118.885 43.941L118.476 43.0905L118.279 42.6795L117.87 42.8921L112.325 45.7979L111.958 45.9963L112.128 46.379L112.466 47.1586C115.965 55.1956 121.947 58.9376 131.314 58.9376C141.218 58.9376 147.877 53.7072 147.877 45.9254C147.877 38.6397 142.234 34.0614 131.103 32.3179L131.131 32.2896ZM139.751 29.3129C139.567 28.6751 139.342 28.0656 139.102 27.4986C139.356 28.0656 139.567 28.6751 139.751 29.3129ZM112.904 46.946C113.623 48.6044 114.456 50.0786 115.401 51.3543C114.456 50.0644 113.623 48.5902 112.904 46.946Z" fill="#3C3C3B"/>
+        <path d="M172.565 14.6707C160.687 14.6707 151.023 24.607 151.023 36.8396C151.023 49.0722 160.687 58.9093 172.565 58.9093C184.444 58.9093 194.108 49.0013 194.108 36.8396C194.108 24.6779 184.444 14.6707 172.565 14.6707ZM172.565 51.6945C164.651 51.6945 158.204 45.0325 158.204 36.8396C158.204 28.6467 164.651 21.8997 172.565 21.8997C180.48 21.8997 186.927 28.6042 186.927 36.8396C186.927 45.075 180.48 51.6945 172.565 51.6945Z" fill="#3C3C3B"/>
+        <path d="M219.459 14.6707C214.465 14.6707 209.753 16.7968 206.396 20.5531L205.958 15.9464L205.916 15.5353H199.539V58.1297H206.72V34.0756C206.72 27.4702 212.547 21.8997 219.445 21.8997C225.864 21.8997 230.717 27.13 230.717 34.0756V58.1297H237.898V34.0756C237.898 23.0194 229.97 14.6707 219.445 14.6707H219.459Z" fill="#3C3C3B"/>
+        <path d="M130.863 95.2808C120.705 93.6649 120.705 91.4253 120.705 89.6251C120.705 88.7463 121.115 84.338 129.184 84.338C134.164 84.338 137.832 87.2155 139.285 92.2474L139.694 93.6507L145.845 90.8441L145.535 89.7952C143.292 82.1835 136.957 77.4492 129.029 77.4492C122.793 77.4492 119.182 79.8447 117.235 81.8575C114.766 84.4089 113.722 87.669 113.779 89.7527C114.004 98.0306 120.339 100.766 129.791 102.325C140.64 104.083 140.64 107.683 140.64 109.03C140.64 112.715 136.929 115.012 130.948 115.012C124.486 115.012 121.326 112.985 118.434 106.989L117.87 105.812L111.677 109.058L112.142 110.136C115.655 118.229 121.693 121.986 131.117 121.986C141.077 121.986 147.764 116.741 147.764 108.931C147.764 101.631 142.079 97.0242 130.877 95.2808H130.863Z" fill="#7874F4"/>
+        <path d="M172.833 77.4492C160.87 77.4492 151.135 87.4564 151.135 99.7599C151.135 112.063 160.87 121.986 172.833 121.986C184.796 121.986 194.531 112.007 194.531 99.7599C194.531 87.5131 184.796 77.4492 172.833 77.4492ZM187.491 99.7599C187.491 108.123 180.917 114.912 172.833 114.912C164.749 114.912 158.175 108.109 158.175 99.7599C158.175 91.4111 164.749 84.5081 172.833 84.5081C180.917 84.5081 187.491 91.3544 187.491 99.7599Z" fill="#7874F4"/>
+        <path d="M206.339 63.0625H199.3V121.206H206.339V63.0625Z" fill="#7874F4"/>
+        <path d="M244.514 102.383C244.514 109.115 238.406 115.012 231.422 115.012C224.905 115.012 219.981 109.583 219.981 102.383V78.3142H212.941V102.383C212.941 113.566 220.884 121.986 231.408 121.986C236.614 121.986 241.425 119.746 244.811 115.862L245.304 121.192H251.54V78.3H244.5V102.368L244.514 102.383Z" fill="#7874F4"/>
+        <path d="M274.324 64.5225H267.284V78.3284H257.282V85.4015H267.284V113.58C267.284 117.79 271.009 121.22 275.58 121.22H290.576V114.147H275.58C274.973 114.147 274.31 113.793 274.31 113.141V85.4015H290.562V78.3284H274.31V64.5225H274.324Z" fill="#7874F4"/>
+        <path d="M297.672 72.4599C300.337 72.4599 302.497 70.2515 302.497 67.5272C302.497 64.8029 300.337 62.5945 297.672 62.5945C295.008 62.5945 292.848 64.8029 292.848 67.5272C292.848 70.2515 295.008 72.4599 297.672 72.4599Z" fill="#7874F4"/>
+        <path d="M301.199 78.3284H294.159V121.22H301.199V78.3284Z" fill="#7874F4"/>
+        <path d="M329.062 77.4492C317.099 77.4492 307.364 87.4564 307.364 99.7599C307.364 112.063 317.099 121.986 329.062 121.986C341.025 121.986 350.76 112.007 350.76 99.7599C350.76 87.5131 341.025 77.4492 329.062 77.4492ZM343.72 99.7599C343.72 108.123 337.146 114.912 329.062 114.912C320.978 114.912 314.404 108.109 314.404 99.7599C314.404 91.4111 320.978 84.5081 329.062 84.5081C337.146 84.5081 343.72 91.3544 343.72 99.7599Z" fill="#7874F4"/>
+        <path d="M376.535 77.4492C371.385 77.4492 366.603 79.6888 363.217 83.5726L362.723 78.328H356.488V121.22H363.527V96.9817C363.527 90.2346 369.481 84.5365 376.535 84.5365C383.208 84.5365 388.061 89.7669 388.061 96.9817V121.22H395.1V96.9817C395.1 85.8547 387.115 77.4634 376.535 77.4634V77.4492Z" fill="#7874F4"/>
+        <path d="M420.113 95.2808C409.956 93.6649 409.956 91.4253 409.956 89.6251C409.956 88.7463 410.365 84.338 418.434 84.338C423.414 84.338 427.082 87.2155 428.535 92.2474L428.945 93.6507L435.095 90.8441L434.785 89.7952C432.542 82.1835 426.208 77.4492 418.279 77.4492C412.043 77.4492 408.432 79.8447 406.485 81.8575C404.016 84.4089 402.972 87.669 403.029 89.7527C403.254 98.0306 409.589 100.766 419.041 102.325C429.89 104.083 429.89 107.683 429.89 109.03C429.89 112.715 426.179 115.012 420.198 115.012C413.736 115.012 410.576 112.985 407.684 106.989L407.12 105.812L400.927 109.058L401.392 110.136C404.905 118.229 410.943 121.986 420.367 121.986C430.327 121.986 437.014 116.741 437.014 108.931C437.014 101.631 431.329 97.0242 420.127 95.2808H420.113Z" fill="#7874F4"/>
+        </g>
+        <defs><clipPath id="clip0_1_28"><rect width="437" height="122" fill="white"/></clipPath></defs>
+      </svg>
+      <h1>Sales Development Representative — Software &amp; IA</h1>
+      <div class="sub">freelance / part-time · 100% remoto</div>
+    </header>
+
+    <div class="intro">
+      <p>Gracias por tu interés en trabajar con gigson solutions. Construimos software a medida e implementamos IA con Claude para empresas — somos Partner certificado de Anthropic — y ayudamos a marcas de consumo, retail y servicios a crecer con tecnología. Buscamos un/a SDR para construir nuestro primer pipeline de outbound.</p>
+      <p>Este formulario nos ayuda a conocerte y ver si encajamos. Te llevará unos 7 minutos. Cuéntanoslo con tus palabras.</p>
+    </div>
+
+    <form id="sdr-form" novalidate>
+      <div class="section-title">sobre ti</div>
+
+      <div class="field">
+        <label class="q"><span class="qnum">01</span>Nombre completo <span class="req">*</span></label>
+        <input type="text" name="Full name" required />
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">02</span>Email <span class="req">*</span></label>
+        <input type="email" name="Email" required />
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">03</span>Teléfono / WhatsApp</label>
+        <input type="tel" name="Phone" />
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">04</span>Ciudad y país de residencia <span class="req">*</span></label>
+        <p class="hint">¿Dónde estás ahora mismo?</p>
+        <input type="text" name="Country" required />
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">05</span>Perfil de LinkedIn <span class="req">*</span></label>
+        <input type="url" name="LinkedIn" placeholder="https://linkedin.com/in/..." required />
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">06</span>Sube tu CV <span class="req">*</span></label>
+        <p class="hint">PDF preferiblemente · máx. 10 MB</p>
+        <div class="file-row">
+          <label class="file-btn" for="cv">Elegir archivo</label>
+          <span class="file-name" id="file-name">Ningún archivo seleccionado</span>
+        </div>
+        <input type="file" id="cv" name="CV" accept=".pdf,.doc,.docx" required hidden />
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">07</span>Portfolio / web</label>
+        <p class="hint">Opcional</p>
+        <input type="url" name="Portfolio" placeholder="https://..." />
+      </div>
+
+      <div class="section-title">experiencia</div>
+
+      <div class="field">
+        <label class="q"><span class="qnum">08</span>¿Tienes experiencia demostrable en outbound B2B (prospección en frío, agendar reuniones)? <span class="req">*</span></label>
+        <div class="opts">
+          <label><input type="radio" name="Outbound experience" value="Sí" required /> Sí</label>
+          <label><input type="radio" name="Outbound experience" value="No" /> No</label>
+        </div>
+        <p class="hint" style="margin-top:16px">Descríbela brevemente — roles, empresas, tipo de cliente. <span class="req">*</span></p>
+        <textarea name="Outbound experience detail" required></textarea>
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">09</span>¿Has vendido software, IA o consultoría tecnológica? <span class="req">*</span></label>
+        <div class="opts">
+          <label><input type="radio" name="Sold software/AI" value="Sí" required /> Sí</label>
+          <label><input type="radio" name="Sold software/AI" value="No" /> No</label>
+        </div>
+        <p class="hint" style="margin-top:16px">Si es que sí, ¿qué vendías y a qué tipo de empresa?</p>
+        <input type="text" name="Sold software/AI detail" />
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">10</span>Años de experiencia en outbound B2B <span class="req">*</span></label>
+        <select name="Outbound years" required>
+          <option value="">Selecciona…</option>
+          <option>Ninguno</option><option>Menos de 1 año</option>
+          <option>1–3 años</option><option>3–5 años</option><option>Más de 5 años</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">11</span>Cuéntanos el mayor reto que has tenido en una campaña de outbound en frío <span class="req">*</span></label>
+        <p class="hint">Sé concreto/a — una situación real, qué la hizo difícil y cómo la resolviste.</p>
+        <textarea name="Biggest outbound challenge" required></textarea>
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">12</span>¿Qué herramientas de prospección has usado?</label>
+        <p class="hint">Marca todas las que apliquen.</p>
+        <div class="opts col">
+          <label><input type="checkbox" name="Tools" value="LinkedIn Sales Navigator" /> LinkedIn Sales Navigator</label>
+          <label><input type="checkbox" name="Tools" value="Apollo" /> Apollo</label>
+          <label><input type="checkbox" name="Tools" value="Lemlist" /> Lemlist</label>
+          <label><input type="checkbox" name="Tools" value="Instantly" /> Instantly</label>
+          <label><input type="checkbox" name="Tools" value="Clay" /> Clay</label>
+          <label><input type="checkbox" name="Tools" value="Hunter" /> Hunter</label>
+          <label><input type="checkbox" name="Tools" value="HubSpot" /> HubSpot</label>
+          <label><input type="checkbox" name="Tools" value="Pipedrive" /> Pipedrive</label>
+          <label style="gap:10px"><input type="checkbox" id="tools-other-cb" /> Otra:
+            <input type="text" id="tools-other-txt" name="Tools other" style="flex:1; margin-left:6px" placeholder="¿cuáles?" />
+          </label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">13</span>¿Te interesa la IA? ¿La has usado en tu trabajo, incluida la prospección? <span class="req">*</span></label>
+        <p class="hint">No hace falta ser técnico/a — queremos ver que entiendes de qué hablas.</p>
+        <textarea name="AI interest" required></textarea>
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">14</span>¿Te sientes cómodo/a con la llamada en frío? <span class="req">*</span></label>
+        <div class="opts">
+          <label><input type="radio" name="Cold calling" value="Sí" required /> Sí</label>
+          <label><input type="radio" name="Cold calling" value="No" /> No</label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">15</span>Nivel de español <span class="req">*</span></label>
+        <select name="Spanish level" required>
+          <option value="">Selecciona…</option>
+          <option>Nativo</option><option>Bilingüe</option>
+          <option>C1 — Avanzado</option><option>B2 — Intermedio alto</option>
+          <option>Inferior a B2</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">16</span>Nivel de inglés</label>
+        <p class="hint">Es un plus, no un requisito.</p>
+        <select name="English level">
+          <option value="">Selecciona…</option>
+          <option>Nativo / Bilingüe</option><option>C1 — Avanzado</option>
+          <option>B2 — Intermedio alto</option><option>Básico</option><option>Ninguno</option>
+        </select>
+      </div>
+
+      <div class="section-title">cómo trabajas</div>
+
+      <div class="field">
+        <label class="q"><span class="qnum">17</span>Este rol implica mantener el CRM al día cada día y enviar un reporte semanal. ¿Cómo te organizas para que no se te escape ningún lead ni follow-up? <span class="req">*</span></label>
+        <p class="hint">Cuéntanos tu sistema — herramientas, rutinas, cómo haces seguimiento.</p>
+        <textarea name="Organization system" required></textarea>
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">18</span>Describe una vez que gestionaste un alto volumen de leads o tareas a la vez. ¿Cómo lo mantuviste bajo control? <span class="req">*</span></label>
+        <textarea name="High volume example" required></textarea>
+      </div>
+
+      <div class="section-title">logística</div>
+
+      <div class="field">
+        <label class="q"><span class="qnum">19</span>¿Cuántas horas por semana puedes dedicar? <span class="req">*</span></label>
+        <select name="Weekly hours" required>
+          <option value="">Selecciona…</option>
+          <option>Menos de 10 horas</option>
+          <option>10–20 horas</option>
+          <option>Más de 20 horas</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">20</span>¿En qué zona horaria estás? <span class="req">*</span></label>
+        <select name="Time zone" required>
+          <option value="">Selecciona…</option>
+          <option>GMT+1 — España / Centroeuropa</option>
+          <option>GMT — UK / Portugal</option>
+          <option>GMT-3 — Argentina / Uruguay</option>
+          <option>GMT-3 — Brasil</option>
+          <option>GMT-5 — Colombia / Perú / Ecuador</option>
+          <option>GMT-6 — México / Centroamérica</option>
+          <option>Otra</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">21</span>¿Qué días y horas estás disponible? <span class="req">*</span></label>
+        <p class="hint">Parte de tu jornada debe solapar con el horario laboral de España.</p>
+        <input type="text" name="Availability" required />
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">22</span>Trabajamos con un fijo mensual + comisión sobre la facturación que generes. ¿Te encaja este modelo? <span class="req">*</span></label>
+        <div class="opts">
+          <label><input type="radio" name="Comp model fit" value="Sí" required /> Sí</label>
+          <label><input type="radio" name="Comp model fit" value="Con matices" /> Con matices</label>
+          <label><input type="radio" name="Comp model fit" value="No" /> No</label>
+        </div>
+        <p class="hint" style="margin-top:16px">Si quieres, añade algún comentario.</p>
+        <input type="text" name="Comp model comment" />
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">23</span>Expectativa de fijo mensual (€) <span class="req">*</span></label>
+        <p class="hint">Solo la parte fija; la comisión la cerramos juntos.</p>
+        <input type="number" name="Expected retainer EUR" min="0" required />
+      </div>
+      <div class="field">
+        <label class="q"><span class="qnum">24</span>¿Puedes emitir facturas legalmente a día de hoy (autónomo/a)? <span class="req">*</span></label>
+        <div class="opts">
+          <label><input type="radio" name="Can invoice today" value="Sí" required /> Sí</label>
+          <label><input type="radio" name="Can invoice today" value="No" /> No</label>
+        </div>
+      </div>
+
+      <div class="section-title">una última cosa</div>
+
+      <div class="field">
+        <label class="q"><span class="qnum">25</span>Un escenario <span class="req">*</span></label>
+        <p class="hint">Una pyme española de ecommerce / retail tiene muchos procesos manuales pero nunca se ha planteado usar IA. Tienes un primer mensaje para su CEO o COO. ¿Cuál es tu ángulo, y cómo manejas el "eso no es para nosotros" o "es demasiado caro"?</p>
+        <textarea name="Scenario answer" required style="min-height:120px"></textarea>
+      </div>
+
+      <div class="consent">
+        <p class="legal">
+          Al enviar este formulario consientes que <strong>Awesomely, Sociedad Limitada</strong>
+          (CIF <strong>B22482137</strong>, <strong>C/ Lepant 270, 08013 Barcelona</strong>), como responsable del
+          tratamiento, procese los datos personales que facilitas con la única finalidad de
+          gestionar este proceso de selección, sobre la base jurídica de medidas precontractuales
+          y nuestro interés legítimo. Tus datos se conservan solo el tiempo necesario para este
+          proceso y no se ceden a terceros. Puedes ejercer tus derechos de acceso, rectificación,
+          supresión, portabilidad, limitación u oposición escribiendo a
+          <a href="mailto:legal@awesomelygroup.com">legal@awesomelygroup.com</a>.
+        </p>
+        <label>
+          <input type="checkbox" id="consent" name="Consent" value="Sí" required />
+          <span>He leído y acepto el aviso de protección de datos. <span class="req">*</span></span>
+        </label>
+      </div>
+
+      <button type="submit" class="submit" id="submit-btn">Enviar candidatura</button>
+    </form>
+
+    <div class="thanks" id="thanks">
+      <h2>Gracias</h2>
+      <p>Tu candidatura está en camino. Te responderemos lo antes posible.</p>
+    </div>
+  </div>
+
+  <script>
+    // ── Pega aquí la URL del Web App de Google Apps Script desplegado ──
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxe_16Dvq_7GH02TrajvHs_3nTXPbfdd5yKhnIlyY-VMcZgbdpBOcvwiAQYYfzKVSMOng/exec";
+
+    const form = document.getElementById('sdr-form');
+    const btn = document.getElementById('submit-btn');
+
+    // nombre del archivo
+    const cvInput = document.getElementById('cv');
+    const fileName = document.getElementById('file-name');
+    cvInput.addEventListener('change', () => {
+      fileName.textContent = cvInput.files[0] ? cvInput.files[0].name : 'Ningún archivo seleccionado';
+    });
+
+    // el texto "Otra" marca su checkbox automáticamente
+    const otherCb = document.getElementById('tools-other-cb');
+    const otherTxt = document.getElementById('tools-other-txt');
+    otherTxt.addEventListener('input', () => { otherCb.checked = otherTxt.value.trim() !== ''; });
+
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const r = new FileReader();
+        r.onload = () => resolve(r.result.split(',')[1]);
+        r.onerror = reject;
+        r.readAsDataURL(file);
+      });
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      btn.disabled = true; btn.textContent = 'Enviando…';
+
+      const data = {};
+      const fd = new FormData(form);
+      for (const key of new Set([...fd.keys()])) {
+        if (key === 'CV') continue;
+        const all = fd.getAll(key).filter(v => v !== '');
+        if (all.length) data[key] = all.join(', ');
+      }
+
+      const cv = cvInput.files[0];
+      if (cv) {
+        data['_fileName'] = cv.name;
+        data['_fileType'] = cv.type || 'application/octet-stream';
+        data['_fileBase64'] = await fileToBase64(cv);
+      }
+
+      try {
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(data)
+        });
+        form.style.display = 'none';
+        document.querySelectorAll('.section-title').forEach(el => el.style.display = 'none');
+        document.getElementById('thanks').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (err) {
+        btn.disabled = false; btn.textContent = 'Enviar candidatura';
+        alert('Algo ha fallado al enviar tu candidatura. Inténtalo de nuevo.');
+      }
+    });
+  </script>
+</body>
+</html>
