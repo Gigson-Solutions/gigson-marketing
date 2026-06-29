@@ -6,7 +6,7 @@ export default createMiddleware(routing);
 
 export const config = {
   matcher: [
-    // Exclude Payload admin, API routes, Next.js internals, and static files
-    '/((?!admin|api|_next/static|_next/image|fav\\.png|img|.*\\..*).*)',
+    // Exclude Payload admin, API routes, Next.js internals, static files, and standalone public pages
+    '/((?!admin|api|_next/static|_next/image|fav\\.png|img|apply-sdr|.*\\..*).*)',
   ],
 };
