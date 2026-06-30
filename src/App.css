@@ -67,18 +67,25 @@ html {
    scroll-behavior: smooth;
 }
 
-form,
-input,
-textarea,
-select,
-button,
-label {
-   font-family: inherit;
-   font-size: inherit;
-   hyphens: auto;
-   background-color: transparent;
-   display: block;
-   color: inherit;
+/* Form-element reset lives in @layer base so Tailwind utility classes
+   (@layer utilities, which cascades later) can still override display /
+   font-size / color on form, input, button, etc. Unlayered, this reset
+   would beat every Tailwind utility on those elements — see the chatbot
+   widget, whose flex/text-xs/inline-flex utilities need to win here. */
+@layer base {
+   form,
+   input,
+   textarea,
+   select,
+   button,
+   label {
+      font-family: inherit;
+      font-size: inherit;
+      hyphens: auto;
+      background-color: transparent;
+      display: block;
+      color: inherit;
+   }
 }
 
 a {
