@@ -56,8 +56,10 @@ const STRINGS: Record<Locale, Record<string, string>> = {
     leadSubmitting: 'Enviando…',
     leadSuccess:
       'Gracias. Te contactamos en menos de 24 horas. Si quieres, sigue contándome lo que necesitas mientras tanto.',
-    leadError: 'No se ha podido enviar',
-    leadErrorRetry: '. Vuelve a intentarlo.',
+    leadError: 'No se ha podido enviar. Vuelve a intentarlo.',
+    leadRgpd: 'He leído y acepto la',
+    leadRgpdLink: 'Política de Privacidad',
+    leadRgpdRequired: 'Debes aceptar la política de privacidad para continuar.',
     closeForm: 'Cerrar formulario',
   },
   en: {
@@ -79,11 +81,28 @@ const STRINGS: Record<Locale, Record<string, string>> = {
     leadSubmitting: 'Sending…',
     leadSuccess:
       "Thanks. We'll be in touch within 24 hours. Meanwhile, feel free to keep telling me what you need.",
-    leadError: "Couldn't send",
-    leadErrorRetry: '. Please try again.',
+    leadError: "Couldn't send. Please try again.",
+    leadRgpd: 'I have read and accept the',
+    leadRgpdLink: 'Privacy Policy',
+    leadRgpdRequired: 'You must accept the privacy policy to continue.',
     closeForm: 'Close form',
   },
 };
+
+/**
+ * Parses `[OPTIONS: A | B | C]` out of a bot reply.
+ * Returns the clean text (marker removed) and the option labels.
+ */
+function parseOptions(reply: string): { text: string; options: string[] } {
+  const match = reply.match(/\[OPTIONS:\s*([^\]]+)\]/i);
+  if (!match) return { text: reply, options: [] };
+  const options = match[1]
+    .split('|')
+    .map((o) => o.trim())
+    .filter(Boolean);
+  const text = reply.replace(match[0], '').trim();
+  return { text, options };
+}
 
 function newId(): string {
   if (typeof globalThis.crypto?.randomUUID === 'function') return globalThis.crypto.randomUUID();
@@ -131,7 +150,6 @@ export function GigsonChatbotWidget({
   const [input, setInput] = useState('');
   const [sending, setSending] = useState(false);
   const [leadForm, setLeadForm] = useState<LeadFormState>('hidden');
-  const [leadError, setLeadError] = useState<string | null>(null);
   const [sessionId, setSessionId] = useState(loadOrCreateSessionId);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -156,7 +174,6 @@ export function GigsonChatbotWidget({
     setMessages([makeWelcome(locale)]);
     setInput('');
     setLeadForm('hidden');
-    setLeadError(null);
     inputRef.current?.focus();
   }
 
@@ -182,7 +199,8 @@ export function GigsonChatbotWidget({
       }
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = (await res.json()) as { reply: string; shouldOpenLeadForm?: boolean };
-      pushMsg({ role: 'bot', text: data.reply });
+      const { text: botText, options: botOptions } = parseOptions(data.reply);
+      pushMsg({ role: 'bot', text: botText, suggestions: botOptions.length > 0 ? botOptions : undefined });
       if (data.shouldOpenLeadForm) setLeadForm('open');
       touchActivity();
     } catch {
@@ -194,8 +212,8 @@ export function GigsonChatbotWidget({
 
   async function submitLead(form: HTMLFormElement) {
     setLeadForm('submitting');
-    setLeadError(null);
-    const data = Object.fromEntries(new FormData(form).entries());
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
     // Full conversation (minus the static welcome) so the email carries context.
     const transcript = messages
       .filter((m) => m.id !== 'welcome' && m.text.trim().length > 0)
@@ -212,15 +230,14 @@ export function GigsonChatbotWidget({
           locale,
           pagePath,
           transcript,
-          rgpd: true,
+          rgpd: formData.get('rgpd') === 'on',
         }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setLeadForm('ok');
       pushMsg({ role: 'bot', text: t.leadSuccess });
-    } catch (err) {
+    } catch {
       setLeadForm('error');
-      setLeadError(err instanceof Error ? err.message : 'Error');
     }
   }
 
@@ -275,7 +292,6 @@ export function GigsonChatbotWidget({
           {leadForm !== 'hidden' && leadForm !== 'ok' && (
             <LeadFormCard
               state={leadForm}
-              error={leadError}
               strings={t}
               messageDraft={computeMessageDraft(messages)}
               onSubmit={(form) => void submitLead(form)}
@@ -370,14 +386,12 @@ function computeMessageDraft(messages: Msg[]): string {
 
 function LeadFormCard({
   state,
-  error,
   strings,
   messageDraft,
   onSubmit,
   onClose,
 }: {
   state: Exclude<LeadFormState, 'ok' | 'hidden'>;
-  error: string | null;
   strings: Record<string, string>;
   messageDraft: string;
   onSubmit: (form: HTMLFormElement) => void;
@@ -442,6 +456,29 @@ function LeadFormCard({
         className="mt-2 w-full rounded-md border border-[#E3E1EE] bg-white px-2 py-1.5 text-sm text-[#3C3C3B] focus:border-[#7874F4] focus:outline-none"
       />
       {messageDraft && <p className="mt-1 text-[11px] text-[#868685]">{t.leadDraftNote}</p>}
+
+      {/* LOPD / RGPD consent */}
+      <label className="mt-3 flex items-start gap-2 cursor-pointer">
+        <input
+          type="checkbox"
+          name="rgpd"
+          required
+          className="mt-0.5 h-3.5 w-3.5 shrink-0 accent-[#7874F4]"
+        />
+        <span className="text-[11px] text-[#868685] leading-tight">
+          {t.leadRgpd}{' '}
+          <a
+            href="/policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-[#7874F4] hover:text-[#5E5BC6]"
+          >
+            {t.leadRgpdLink}
+          </a>
+          . {t.leadRgpdRequired}
+        </span>
+      </label>
+
       <button
         type="submit"
         disabled={state === 'submitting'}
@@ -450,11 +487,7 @@ function LeadFormCard({
         {state === 'submitting' ? t.leadSubmitting : t.leadSubmit}
       </button>
       {state === 'error' && (
-        <p className="mt-2 text-xs text-red-500">
-          {t.leadError}
-          {error ? ` (${error})` : ''}
-          {t.leadErrorRetry}
-        </p>
+        <p className="mt-2 text-xs text-red-500">{t.leadError}</p>
       )}
     </form>
   );

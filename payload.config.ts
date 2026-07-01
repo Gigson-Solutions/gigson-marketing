@@ -6,6 +6,7 @@ import { postgresAdapter } from '@payloadcms/db-postgres';
 // @ts-ignore — sharp types incompatible with moduleResolution:bundler; safe at runtime
 import sharp from 'sharp';
 
+import { ChatbotLeads } from './collections/ChatbotLeads';
 import { Posts } from './collections/Posts';
 import { Users } from './collections/Users';
 
@@ -19,7 +20,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Posts, Users],
+  collections: [Posts, Users, ChatbotLeads],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET ?? '',
   typescript: {

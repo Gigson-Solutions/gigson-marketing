@@ -7,7 +7,7 @@ export const runtime = 'nodejs';
 
 const MODEL = process.env.ANTHROPIC_MODEL ?? 'claude-sonnet-4-6';
 const MAX_TURNS = 12;
-const MAX_TOKENS = 600;
+const MAX_TOKENS = 280;
 
 type Turn = { role: 'user' | 'assistant'; content: string };
 
