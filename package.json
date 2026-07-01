@@ -9,6 +9,7 @@
     "lint": "eslint . --ext js,jsx,ts,tsx --fix"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
     "@gsap/react": "^2.1.2",
     "@payloadcms/db-postgres": "^3.85.1",
     "@payloadcms/next": "^3.85.1",
