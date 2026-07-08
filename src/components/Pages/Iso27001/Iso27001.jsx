@@ -28,6 +28,8 @@ const Iso27001 = () => {
   const [invalidField, setInvalidField] = useState();
   const [contactHint, setContactHint] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [revealed, setRevealed] = useState(false);
 
   const stepsRef = useRef(null);
@@ -92,7 +94,7 @@ const Iso27001 = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const hasEmail = values.email.trim().length > 0;
     const hasTel = values.telefono.trim().length > 0;
@@ -102,11 +104,34 @@ const Iso27001 = () => {
       return;
     }
     setContactHint(false);
-    setSubmitted(true);
-    formCardRef.current?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
-    });
+    setSending(true);
+    setSubmitError(false);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_ISO27001_FORM_KEY,
+          subject: 'Nuevo lead ISO 27001 — diagnóstico gratuito',
+          from_name: 'gigson solutions · ISO 27001',
+          name: values.nombre,
+          email: values.email || '(sin email)',
+          phone: values.telefono || '(sin teléfono)',
+          empresa: values.empresa,
+          sector: values.sector || '(no indicado)',
+          cargo: values.cargo || '(no indicado)',
+          necesitas: values.necesitas,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error('submit failed');
+      setSubmitted(true);
+      formCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   const scrollToForm = (e) => {
@@ -653,10 +678,17 @@ const Iso27001 = () => {
                         type="submit"
                         className="btn is-wide step-submit"
                         style={{ justifyContent: 'center' }}
+                        disabled={sending}
                       >
-                        Solicitar diagnóstico gratuito
+                        {sending ? 'Enviando…' : 'Solicitar diagnóstico gratuito'}
                       </button>
                     </div>
+                    {submitError && (
+                      <p className="contact-hint">
+                        No hemos podido enviar el formulario. Escríbenos directamente a{' '}
+                        <a href="mailto:hello@gigsonsolutions.com">hello@gigsonsolutions.com</a>.
+                      </p>
+                    )}
                     <p className="form-legal">
                       Al enviar este formulario aceptas que gigson solutions se
                       ponga en contacto contigo en relación a tu solicitud. No
@@ -683,12 +715,12 @@ const Iso27001 = () => {
                   plazo, coste y cómo te afecta NIS2.
                 </p>
                 <a
-                  href="https://calendly.com/gigson"
+                  href="https://calendar.app.google/ZAYNg9onVuqktmxH6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn is-wide"
                 >
-                  Reservar llamada en Calendly →
+                  Reservar llamada →
                 </a>
                 <p className="success-soft">
                   O espera nuestro correo — te respondemos antes de 24 horas
