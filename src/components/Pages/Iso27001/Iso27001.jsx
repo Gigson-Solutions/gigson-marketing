@@ -107,13 +107,12 @@ const Iso27001 = () => {
     setSending(true);
     setSubmitError(false);
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('https://formsubmit.co/ajax/hello@gigsonsolutions.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: import.meta.env.VITE_ISO27001_FORM_KEY,
-          subject: 'Nuevo lead ISO 27001 — diagnóstico gratuito',
-          from_name: 'gigson solutions · ISO 27001',
+          _subject: 'Nuevo lead ISO 27001 — diagnóstico gratuito',
+          _captcha: 'false',
           name: values.nombre,
           email: values.email || '(sin email)',
           phone: values.telefono || '(sin teléfono)',
@@ -124,7 +123,7 @@ const Iso27001 = () => {
         }),
       });
       const data = await res.json();
-      if (!res.ok || !data.success) throw new Error('submit failed');
+      if (!res.ok || data.success !== 'true') throw new Error('submit failed');
       setSubmitted(true);
       formCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } catch {
