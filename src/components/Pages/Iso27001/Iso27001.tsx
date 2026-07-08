@@ -27,6 +27,8 @@ const Iso27001 = () => {
   const [invalidField, setInvalidField] = useState<string | undefined>();
   const [contactHint, setContactHint] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [revealed, setRevealed] = useState(false);
 
   const stepsRef = useRef<HTMLDivElement>(null);
@@ -82,7 +84,7 @@ const Iso27001 = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const hasEmail = values.email.trim().length > 0;
     const hasTel = values.telefono.trim().length > 0;
@@ -92,8 +94,35 @@ const Iso27001 = () => {
       return;
     }
     setContactHint(false);
-    setSubmitted(true);
-    formCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setSubmitError(false);
+    setSubmitting(true);
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/jaume@somosgigson.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          nombre: values.nombre,
+          empresa: values.empresa,
+          sector: values.sector,
+          cargo: values.cargo,
+          necesitas: values.necesitas,
+          email: values.email,
+          telefono: values.telefono,
+          _subject: 'Nuevo lead ISO 27001',
+          _cc: 'alfonso.ojeda@gigsonsolutions.com,hello@gigsonsolutions.com',
+          _captcha: 'false',
+          _template: 'box',
+        }),
+      });
+      if (!res.ok) throw new Error(`FormSubmit responded ${res.status}`);
+      setSubmitted(true);
+      formCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (error) {
+      console.error('ISO 27001 lead submit failed', error);
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const scrollToForm = (e: React.MouseEvent) => {
@@ -369,9 +398,12 @@ const Iso27001 = () => {
                     {contactHint && (
                       <p className="contact-hint" dangerouslySetInnerHTML={{ __html: t.raw('form.contactHint') as string }} />
                     )}
+                    {submitError && (
+                      <p className="contact-hint">{t('form.errorSubmit')}</p>
+                    )}
                     <div className="step-nav">
-                      <button type="button" className="btn step-prev" onClick={() => setStep(2)}>{t('form.back')}</button>
-                      <button type="submit" className="btn is-wide step-submit" style={{ justifyContent: 'center' }}>
+                      <button type="button" className="btn step-prev" onClick={() => setStep(2)} disabled={submitting}>{t('form.back')}</button>
+                      <button type="submit" className="btn is-wide step-submit" style={{ justifyContent: 'center' }} disabled={submitting}>
                         {t('form.submit')}
                       </button>
                     </div>
