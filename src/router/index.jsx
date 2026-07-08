@@ -43,7 +43,7 @@ const generateRoutes = (lang) => {
       { path: slugs.software, element: <Software /> },
       { path: slugs.ConsultoriaTec, element: <ConsultoriaTec /> },
       { path: slugs.cibersecurity, element: <Cibersecurity /> },
-      { path: slugs.iso27001, element: <Iso27001 /> },
+      ...(lang === 'es' ? [{ path: slugs.iso27001, element: <Iso27001 /> }] : []),
       { path: slugs.retail, element: <Retail /> },
       { path: slugs.construction, element: <Construction /> },
       { path: slugs.cases, element: <Cases /> },
