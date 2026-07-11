@@ -21,6 +21,7 @@
     "next": "^15.4.11",
     "next-intl": "^3.26.0",
     "payload": "^3.85.1",
+    "payload-oauth2": "^1.0.21",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-floating-whatsapp": "^5.0.8",
