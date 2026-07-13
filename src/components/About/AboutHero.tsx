@@ -84,7 +84,7 @@ const AboutHero = () => {
         </div>
       </div>
 
-      <div className="wrapper" style={{ overflowX: 'hidden' }}>
+      <div className="wrapper">
         <section className="about-section-need">
           <RichText as="h2" content={need.t} className="about-hero-need-h2" />
           <p className="about-need-p">{need.d}</p>

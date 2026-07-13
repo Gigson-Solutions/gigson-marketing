@@ -9,6 +9,7 @@
     "lint": "eslint . --ext js,jsx,ts,tsx --fix"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
     "@gsap/react": "^2.1.2",
     "@payloadcms/db-postgres": "^3.85.1",
     "@payloadcms/next": "^3.85.1",
@@ -20,6 +21,7 @@
     "next": "^15.4.11",
     "next-intl": "^3.26.0",
     "payload": "^3.85.1",
+    "payload-oauth2": "^1.0.21",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-floating-whatsapp": "^5.0.8",

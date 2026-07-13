@@ -1,12 +1,16 @@
 name: PR Source Guard
 
 # Solo se permite integrar a `main` desde `staging` (release) o `hotfix/*`.
-# Este job es un "status check" requerido por el ruleset de main, así que
-# bloquea el merge de cualquier PR a main cuyo origen no sea válido.
+# Este job es un "status check" requerido por los rulesets de `main` y de
+# `staging`. Un check requerido debe reportar estado en TODAS las PRs a esas
+# ramas, o el merge se queda bloqueado esperando. Por eso el workflow corre
+# también en PRs a `staging`, donde no hay origen que restringir y pasa
+# siempre. La validación real de origen solo aplica a las PRs hacia `main`.
 on:
   pull_request:
     branches:
       - main
+      - staging
 
 jobs:
   pr-source-guard:
@@ -16,8 +20,13 @@ jobs:
       - name: Validar rama de origen
         env:
           HEAD_REF: ${{ github.head_ref }}
+          BASE_REF: ${{ github.base_ref }}
         run: |
-          echo "Rama origen de la PR: '$HEAD_REF'"
+          echo "PR: '$HEAD_REF' -> '$BASE_REF'"
+          if [ "$BASE_REF" != "main" ]; then
+            echo "✓ PR hacia '$BASE_REF' (no es main): sin restricción de origen."
+            exit 0
+          fi
           if [ "$HEAD_REF" = "staging" ] || [ "${HEAD_REF#hotfix/}" != "$HEAD_REF" ]; then
             echo "✓ Origen permitido para una PR hacia main."
             exit 0
