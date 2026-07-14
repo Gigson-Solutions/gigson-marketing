@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next';
 
 import useCasesBgGradient from '../../../assets/casos-de-uso-bg-gradient-1.svg';
+import { SeoHelmet } from '../../../seo/seoHelmet';
 import DigitalProduct from '../../../shared/ui/DigitalProduct.jsx';
 import Hero from '../../../shared/ui/Hero.jsx';
 import HowWeWork from '../../../shared/ui/HowWeWork.jsx';
 import ImproveAreas from '../../../shared/ui/ImproveAreas.jsx';
 import SolutionsApplications from '../../../shared/ui/SolutionsApplications.jsx';
 import UseCases from '../../../shared/ui/UseCases.jsx';
-import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const Construction = () => {
   const { t } = useTranslation();

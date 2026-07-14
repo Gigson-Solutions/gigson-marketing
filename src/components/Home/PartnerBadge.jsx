@@ -2,9 +2,13 @@ import './PartnerBadge.css';
 
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-
-import { ROUTE_SLUGS, DEFAULT_LANG, SUPPORTED_LANGS } from '../../router/routerSlugs';
 import { useLocation } from 'react-router-dom';
+
+import {
+  DEFAULT_LANG,
+  ROUTE_SLUGS,
+  SUPPORTED_LANGS,
+} from '../../router/routerSlugs';
 
 export const PartnerBadge = () => {
   const { t } = useTranslation();
@@ -12,7 +16,9 @@ export const PartnerBadge = () => {
   const { title, body, items, cta } = t('partnerBadge');
 
   const segment = location.pathname.split('/').find(Boolean);
-  const currentLang = SUPPORTED_LANGS.includes(segment) ? segment : DEFAULT_LANG;
+  const currentLang = SUPPORTED_LANGS.includes(segment)
+    ? segment
+    : DEFAULT_LANG;
   const aiAgentsPath =
     currentLang === DEFAULT_LANG
       ? `/${ROUTE_SLUGS[currentLang].aiAgents}`
@@ -39,8 +45,12 @@ export const PartnerBadge = () => {
         <div className="partner-badge__visual">
           <div className="partner-badge__card">
             <img src="/anthropic-logo.svg" alt="Anthropic logo" />
-            <span className="partner-badge__card-label">Official certification</span>
-            <span className="partner-badge__card-name">Claude Partner Network</span>
+            <span className="partner-badge__card-label">
+              Official certification
+            </span>
+            <span className="partner-badge__card-name">
+              Claude Partner Network
+            </span>
           </div>
         </div>
       </div>

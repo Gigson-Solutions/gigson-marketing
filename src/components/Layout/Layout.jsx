@@ -3,10 +3,10 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 import CookieBanner from '../../CookieBanner';
 import ScrollTop from '../../hooks/ScrollTop';
+import { DEFAULT_LANG, ROUTE_SLUGS } from '../../router/routerSlugs';
 import Whatsapp from '../../shared/ui/WhatssapButton';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
-import { DEFAULT_LANG, ROUTE_SLUGS } from '../../router/routerSlugs';
 
 const holdedIntegrationsPath = (lang) => {
   const slug = ROUTE_SLUGS[lang]?.integrations;
@@ -16,8 +16,9 @@ const holdedIntegrationsPath = (lang) => {
 
 const Layout = () => {
   const { pathname } = useLocation();
-  const onHoldedIntegrationsSlug =
-    ['en', 'es'].some((l) => holdedIntegrationsPath(l) && pathname === holdedIntegrationsPath(l));
+  const onHoldedIntegrationsSlug = ['en', 'es'].some(
+    (l) => holdedIntegrationsPath(l) && pathname === holdedIntegrationsPath(l)
+  );
 
   if (onHoldedIntegrationsSlug) {
     return (

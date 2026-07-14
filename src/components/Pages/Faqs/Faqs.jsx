@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import cono from '../../../assets/cone.svg';
-import { SeoHelmet } from '../../../seo/seoHelmet';
 import pentagono from '../../../assets/pentagon.svg';
+import { SeoHelmet } from '../../../seo/seoHelmet';
 import { FaqsAccordion } from './FaqsAccordion/FaqsAccordion';
 
 const Faqs = () => {

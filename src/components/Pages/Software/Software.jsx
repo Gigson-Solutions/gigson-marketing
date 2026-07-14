@@ -4,6 +4,7 @@ import DigitalProduct from 'shared/DigitalProduct.jsx';
 import Hero from 'shared/Hero.jsx';
 import HowWeWork from 'shared/HowWeWork.jsx';
 import SolutionsApplications from 'shared/SolutionsApplications.jsx';
+
 import { SeoHelmet } from '../../../seo/seoHelmet';
 
 const Software = () => {
