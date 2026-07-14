@@ -13,10 +13,16 @@ import { GigsonChatbotWidget } from './GigsonChatbotWidget';
  * (replacing the old FloatingWhatsApp button). The locale comes from next-intl
  * so the bot speaks the language the page is rendered in.
  */
+const LAUNCHER_STRINGS: Record<Locale, { open: string; close: string }> = {
+  es: { open: 'Abrir chat con Jaume', close: 'Cerrar chat' },
+  en: { open: 'Open chat with Jaume', close: 'Close chat' },
+};
+
 export default function GigsonChatLauncher() {
   const activeLocale = useLocale();
   const locale: Locale = activeLocale === 'es' ? 'es' : 'en';
   const [open, setOpen] = useState(false);
+  const t = LAUNCHER_STRINGS[locale];
 
   return (
     <div className="gcb-root">
@@ -28,7 +34,7 @@ export default function GigsonChatLauncher() {
 
       <button
         type="button"
-        aria-label={open ? 'Cerrar chat' : 'Abrir chat con Jaume'}
+        aria-label={open ? t.close : t.open}
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
         className="fixed bottom-6 right-6 z-[1000] inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#7874F4] text-white shadow-[0_10px_30px_-6px_rgba(120,116,244,0.6)] transition hover:bg-[#5E5BC6]"

@@ -38,6 +38,7 @@ function detectPagePath(override?: string): string | undefined {
 
 const STRINGS: Record<Locale, Record<string, string>> = {
   es: {
+    botName: 'Jaume de Gigson Solutions',
     available: 'Disponible ahora',
     newConversation: 'Empezar nueva conversación',
     typing: 'Jaume está escribiendo',
@@ -63,6 +64,7 @@ const STRINGS: Record<Locale, Record<string, string>> = {
     closeForm: 'Cerrar formulario',
   },
   en: {
+    botName: 'Jaume from Gigson Solutions',
     available: 'Available now',
     newConversation: 'Start a new conversation',
     typing: 'Jaume is typing',
@@ -256,7 +258,7 @@ export function GigsonChatbotWidget({
             className="h-11 w-11 rounded-full object-cover ring-2 ring-[#7874F4]/40"
           />
           <div className="flex-1">
-            <p className="text-sm font-semibold leading-tight text-white">Jaume de Gigson Solutions</p>
+            <p className="text-sm font-semibold leading-tight text-white">{t.botName}</p>
             <p className="mt-0.5 flex items-center gap-1.5 text-xs text-white/70">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
