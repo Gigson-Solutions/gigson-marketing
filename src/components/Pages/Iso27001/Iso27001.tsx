@@ -109,7 +109,7 @@ const Iso27001 = () => {
           email: values.email,
           telefono: values.telefono,
           _subject: 'Nuevo lead ISO 27001',
-          _cc: 'alfonso.ojeda@gigsonsolutions.com,hello@gigsonsolutions.com',
+          _cc: 'emmelin@gigsonsolutions.com,hello@gigsonsolutions.com',
           _captcha: 'false',
           _template: 'box',
         }),

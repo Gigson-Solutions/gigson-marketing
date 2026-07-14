@@ -251,7 +251,7 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) =>
             <input type="hidden" name="_subject" value={formSubject} />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="box" />
-            <input type="hidden" name="_cc" value="alfonso.ojeda@gigsonsolutions.com" />
+            <input type="hidden" name="_cc" value="emmelin@gigsonsolutions.com" />
 
             <div className="form-container">
               <div className="input-container">

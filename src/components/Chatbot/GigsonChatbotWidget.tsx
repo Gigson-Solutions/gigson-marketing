@@ -14,7 +14,7 @@ type LeadFormState = 'hidden' | 'open' | 'submitting' | 'ok' | 'error';
 
 const CHAT_ENDPOINT = '/api/chatbot/chat';
 const EMAIL_ENDPOINT = '/api/chatbot/email';
-const AVATAR_SRC = '/img/alfonso.jpg';
+const AVATAR_SRC = '/img/jaume.jpg';
 const ANTHROPIC_LOGO_SRC = '/img/anthropic-logo.svg';
 
 const SESSION_KEY = 'gigson-chat-session';
@@ -40,7 +40,7 @@ const STRINGS: Record<Locale, Record<string, string>> = {
   es: {
     available: 'Disponible ahora',
     newConversation: 'Empezar nueva conversación',
-    typing: 'Alfonso está escribiendo',
+    typing: 'Jaume está escribiendo',
     placeholder: 'Escribe tu mensaje…',
     rateLimit:
       'Has enviado muchos mensajes en poco tiempo. Espera un momento o escríbenos a info@gigsonsolutions.com.',
@@ -65,7 +65,7 @@ const STRINGS: Record<Locale, Record<string, string>> = {
   en: {
     available: 'Available now',
     newConversation: 'Start a new conversation',
-    typing: 'Alfonso is typing',
+    typing: 'Jaume is typing',
     placeholder: 'Type your message…',
     rateLimit:
       "You've sent too many messages in a short time. Wait a moment or email us at info@gigsonsolutions.com.",
@@ -252,11 +252,11 @@ export function GigsonChatbotWidget({
         <header className="flex items-center gap-3 bg-[#2a2a2a] px-4 py-3.5 text-white">
           <img
             src={AVATAR_SRC}
-            alt="Alfonso"
+            alt="Jaume"
             className="h-11 w-11 rounded-full object-cover ring-2 ring-[#7874F4]/40"
           />
           <div className="flex-1">
-            <p className="text-sm font-semibold leading-tight text-white">Alfonso de Gigson Solutions</p>
+            <p className="text-sm font-semibold leading-tight text-white">Jaume de Gigson Solutions</p>
             <p className="mt-0.5 flex items-center gap-1.5 text-xs text-white/70">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
