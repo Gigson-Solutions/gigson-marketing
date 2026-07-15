@@ -633,7 +633,8 @@
         "pc_3_1": "Most browsers accept cookies by default and, independently of that, allow you to delete or block them from their security settings.",
         "pc_3_2": "Please note that blocking certain cookies may affect your browsing experience or prevent you from fully using some of the website's features.",
         "h3_4": "4. CONTACT",
-        "pc_4_1": "For any questions about this policy, you may write to us at legal@awesomelygroup.com."
+        "pc_4_1": "For any questions about this policy, you may write to us at legal@awesomelygroup.com.",
+        "manageBtn": "Change my cookie preference"
     },
     "cookiesBanner": {
         "h2": "WE USE COOKIES",
