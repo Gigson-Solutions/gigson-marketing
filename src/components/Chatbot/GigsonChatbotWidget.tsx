@@ -46,7 +46,7 @@ const STRINGS: Record<Locale, Record<string, string>> = {
     rateLimit:
       'Has enviado muchos mensajes en poco tiempo. Espera un momento o escríbenos a info@gigsonsolutions.com.',
     networkError:
-      'Disculpa, no puedo responder ahora. Escríbenos a info@gigsonsolutions.com y te contactamos pronto.',
+      'Ahora mismo he tenido un problema de conexión. Te dejo aquí el formulario para que te contactemos directamente.',
     leadTitle: 'Te contactamos',
     leadName: 'Tu nombre',
     leadEmail: 'Email',
@@ -72,7 +72,7 @@ const STRINGS: Record<Locale, Record<string, string>> = {
     rateLimit:
       "You've sent too many messages in a short time. Wait a moment or email us at info@gigsonsolutions.com.",
     networkError:
-      "Sorry, I can't reply right now. Email us at info@gigsonsolutions.com and we'll get back to you soon.",
+      "I've hit a connection issue right now. Here's the contact form so we can reach out to you directly.",
     leadTitle: "We'll contact you",
     leadName: 'Your name',
     leadEmail: 'Email',
@@ -207,6 +207,7 @@ export function GigsonChatbotWidget({
       touchActivity();
     } catch {
       pushMsg({ role: 'bot', text: t.networkError });
+      setLeadForm('open');
     } finally {
       setSending(false);
     }
