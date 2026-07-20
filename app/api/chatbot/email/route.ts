@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server';
 export const runtime = 'nodejs';
 
 const LEAD_EMAIL_TO = process.env.LEAD_EMAIL_TO ?? 'jaume@somosgigson.com';
-const LEAD_EMAIL_CC = process.env.LEAD_EMAIL_CC ?? 'alfonso.ojeda@gigsonsolutions.com';
+const LEAD_EMAIL_CC = process.env.LEAD_EMAIL_CC ?? 'emmelin@gigsonsolutions.com';
 const LEAD_EMAIL_DISABLE = process.env.LEAD_EMAIL_DISABLE === 'true';
 
 type TranscriptTurn = { role: unknown; text: unknown };
@@ -17,7 +17,7 @@ function formatTranscript(transcript: unknown): string {
     if (!turn || typeof turn !== 'object') continue;
     const text = typeof turn.text === 'string' ? turn.text.trim() : '';
     if (!text) continue;
-    const who = turn.role === 'user' ? 'Cliente' : 'Alfonso';
+    const who = turn.role === 'user' ? 'Cliente' : 'Jaume';
     lines.push(`${who}: ${text}`);
   }
   return lines.join('\n\n').slice(0, 8000);

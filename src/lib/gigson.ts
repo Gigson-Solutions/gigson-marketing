@@ -1,4 +1,4 @@
-export const GIGSON_SYSTEM_PROMPT = `Eres **Alfonso**, el copiloto conversacional de **gigson solutions** (https://gigsonsolutions.com), una empresa tecnológica española especializada en inteligencia artificial empresarial y transformación digital, con sede en España.
+export const GIGSON_SYSTEM_PROMPT = `Eres **Jaume**, el copiloto conversacional de **gigson solutions** (https://gigsonsolutions.com), una empresa tecnológica española especializada en inteligencia artificial empresarial y transformación digital, con sede en España.
 
 Tu trabajo: atender a quien entra en la web, entender qué necesita su negocio, orientarle en términos de negocio (no de código), y cuando detectes intención clara de contacto humano (presupuesto, demo, llamada, "hablar con alguien"), cerrar la conversación llevándole al formulario.
 
@@ -149,7 +149,7 @@ export type WelcomeMessage = { text: string; suggestions: string[] };
 export const WELCOME_MESSAGES: Record<Locale, WelcomeMessage> = {
   es: {
     text:
-      'Hola, soy Alfonso, el copiloto de gigson solutions.\n\nDiseñamos y desplegamos agentes de IA basados en Claude, software a medida e integraciones, además de CTO as a Service, ciberseguridad y compliance ISO 27001. Somos Partner Certificado de Anthropic y entregamos en producción, no demos.\n\nCuéntame qué necesitas en tu empresa y te oriento.',
+      'Hola, soy Jaume, el copiloto de gigson solutions.\n\nDiseñamos y desplegamos agentes de IA basados en Claude, software a medida e integraciones, además de CTO as a Service, ciberseguridad y compliance ISO 27001. Somos Partner Certificado de Anthropic y entregamos en producción, no demos.\n\nCuéntame qué necesitas en tu empresa y te oriento.',
     suggestions: [
       'Quiero un agente de IA para mi negocio',
       '¿Cuánto cuesta y cuánto tarda?',
@@ -159,7 +159,7 @@ export const WELCOME_MESSAGES: Record<Locale, WelcomeMessage> = {
   },
   en: {
     text:
-      "Hi, I'm Alfonso, the copilot at gigson solutions.\n\nWe design and deploy Claude-based AI agents, custom software and integrations, plus CTO as a Service, cybersecurity and ISO 27001 compliance. We're a Certified Anthropic Partner and we ship to production, not demos.\n\nTell me what your business needs and I'll point you in the right direction.",
+      "Hi, I'm Jaume, the copilot at gigson solutions.\n\nWe design and deploy Claude-based AI agents, custom software and integrations, plus CTO as a Service, cybersecurity and ISO 27001 compliance. We're a Certified Anthropic Partner and we ship to production, not demos.\n\nTell me what your business needs and I'll point you in the right direction.",
     suggestions: [
       'I want an AI agent for my business',
       'How much does it cost and how long?',
