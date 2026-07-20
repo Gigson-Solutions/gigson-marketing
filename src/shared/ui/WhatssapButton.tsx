@@ -13,7 +13,7 @@ const WhatsappButton = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     <FloatingWhatsApp
       allowClickAway
-      avatar="/img/alfonso.jpg"
+      avatar="/img/jaume.jpg"
       phoneNumber={(whatsappData as any).phoneNumber ?? ''}
       accountName={(whatsappData as any).accountName ?? 'Gigson Solutions'}
       {...(whatsappData as any)}

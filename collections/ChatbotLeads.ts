@@ -5,7 +5,7 @@ export const ChatbotLeads: CollectionConfig = {
   admin: {
     useAsTitle: 'name',
     defaultColumns: ['name', 'email', 'company', 'locale', 'pagePath', 'createdAt'],
-    description: 'Leads capturados por el chatbot Alfonso. Incluye el transcript completo de la conversación.',
+    description: 'Leads capturados por el chatbot Jaume. Incluye el transcript completo de la conversación.',
   },
   access: {
     // Only authenticated admins can read / update / delete leads.
@@ -42,7 +42,7 @@ export const ChatbotLeads: CollectionConfig = {
       name: 'conversation',
       type: 'textarea',
       admin: {
-        description: 'Transcript completo de la conversación con Alfonso antes de enviar el formulario',
+        description: 'Transcript completo de la conversación con Jaume antes de enviar el formulario',
       },
     },
     {

@@ -11,6 +11,11 @@ const MAX_TOKENS = 280;
 
 type Turn = { role: 'user' | 'assistant'; content: string };
 
+const FALLBACK_REPLY: Record<Locale, string> = {
+  es: 'Ahora mismo he tenido un problema técnico para responderte, pero no quiero dejarte sin ayuda: cuéntame por aquí lo que necesitas y te contactamos en menos de 24 horas.',
+  en: "I've hit a technical issue replying right now, but I don't want to leave you without help: tell me here what you need and we'll get back to you within 24 hours.",
+};
+
 // In-memory session store. Fine for a single long-lived Node process; each
 // serverless cold start resets it. Swap for Redis/Upstash for real persistence.
 const sessions = new Map<string, { messages: Turn[]; updatedAt: number }>();
@@ -112,10 +117,7 @@ export async function POST(req: Request) {
     }
     console.error('[chatbot] anthropic error', err);
     return NextResponse.json(
-      {
-        reply:
-          'Disculpa, ahora mismo no puedo responder. Escríbenos a info@gigsonsolutions.com y te contactamos.',
-      },
+      { reply: FALLBACK_REPLY[locale], shouldOpenLeadForm: true },
       { status: 200 },
     );
   }
