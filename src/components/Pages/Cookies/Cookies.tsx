@@ -4,8 +4,15 @@ import '../Policity.css';
 
 import { useTranslations } from 'next-intl';
 
+import { resetConsent } from '../../../lib/cookieConsent';
+
 const Cookies = () => {
   const t = useTranslations('cookies');
+
+  const handleManagePreference = () => {
+    resetConsent();
+    window.location.reload();
+  };
 
   return (
     <div className="wrapper">
@@ -22,6 +29,9 @@ const Cookies = () => {
         <p className="p-sub">{t('ps_2_5')}</p>
         <p className="p-sub">{t('ps_2_6')}</p>
         <p className="p-comun">{t('pc_2_2')}</p>
+        <button type="button" className="underline text-sm font-semibold" onClick={handleManagePreference}>
+          {t('manageBtn')}
+        </button>
         <h3 className="policity-h3">{t('h3_3')}</h3>
         <p className="p-comun">{t('pc_3_1')}</p>
         <p className="p-comun">{t('pc_3_2')}</p>

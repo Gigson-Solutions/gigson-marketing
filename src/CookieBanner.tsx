@@ -2,11 +2,11 @@
 
 import './CookieBanner.css';
 
-import Cookies from 'js-cookie';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
 import { useRouter } from '../i18n/navigation';
+import { COOKIE_CONSENT_EVENT, getConsent, setConsent } from './lib/cookieConsent';
 
 const CookieBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,18 +14,20 @@ const CookieBanner = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!Cookies.get('cookieConsent')) {
-      setIsVisible(true);
-    }
+    const syncVisibility = () => setIsVisible(!getConsent());
+
+    syncVisibility();
+    window.addEventListener(COOKIE_CONSENT_EVENT, syncVisibility);
+    return () => window.removeEventListener(COOKIE_CONSENT_EVENT, syncVisibility);
   }, []);
 
   const handleAccept = () => {
-    Cookies.set('cookieConsent', 'accepted', { expires: 365 });
+    setConsent('accepted');
     setIsVisible(false);
   };
 
   const handleReject = () => {
-    Cookies.set('cookieConsent', 'rejected', { expires: 365 });
+    setConsent('rejected');
     setIsVisible(false);
   };
 

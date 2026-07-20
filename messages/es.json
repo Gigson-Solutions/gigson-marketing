@@ -633,7 +633,8 @@
         "pc_3_1": "La mayoría de los navegadores aceptan las cookies de forma estándar y, con independencia de ello, permiten eliminarlas o bloquearlas desde sus ajustes de seguridad.",
         "pc_3_2": "Tenga en cuenta que bloquear determinadas cookies puede afectar a su experiencia de navegación o impedirle el uso pleno de algunas funcionalidades del sitio web.",
         "h3_4": "4. CONTACTO",
-        "pc_4_1": "Para cualquier consulta sobre esta política, puede escribirnos a legal@awesomelygroup.com."
+        "pc_4_1": "Para cualquier consulta sobre esta política, puede escribirnos a legal@awesomelygroup.com.",
+        "manageBtn": "Cambiar mi preferencia de cookies"
     },
     "cookiesBanner": {
         "h2": "USAMOS COOKIES",
