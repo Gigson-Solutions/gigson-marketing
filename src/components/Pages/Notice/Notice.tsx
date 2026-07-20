@@ -24,6 +24,7 @@ const Notice = () => {
         <p className="p-comun">{t('pc_2_6')}</p>
         <p className="p-comun">{t('pc_2_7')}</p>
         <p className="p-comun">{t('pc_2_8')}</p>
+        <p className="p-comun">{t('pc_2_9')}</p>
         <h3 className="policity-h3">{t('h3_3')}</h3>
         <p className="p-comun">{t('pc_3_1')}</p>
         <p className="p-comun">{t('pc_3_2')}</p>
@@ -32,27 +33,14 @@ const Notice = () => {
         <p className="p-sub">{t('ps_3_2')}</p>
         <p className="p-sub">{t('ps_3_3')}</p>
         <p className="p-sub">{t('ps_3_4')}</p>
-        <p className="p-sub">{t('ps_3_5')}</p>
-        <p className="p-sub">{t('ps_3_6')}</p>
-        <p className="p-sub">{t('ps_3_7')}</p>
         <p className="p-comun">{t('pc_3_4')}</p>
         <p className="p-comun">{t('pc_3_5')}</p>
         <p className="p-comun">{t('pc_3_6')}</p>
         <p className="p-comun">{t('pc_3_7')}</p>
-        <p className="p-comun">{t('pc_3_8')}</p>
-        <p className="p-comun">{t('pc_3_9')}</p>
-        <p className="p-comun">{t('pc_3_10')}</p>
         <h3 className="policity-h3">{t('h3_4')}</h3>
         <p className="p-comun">{t('pc_4_1')}</p>
-        <p className="p-comun">{t('pc_4_2')}</p>
-        <p className="p-comun">{t('pc_4_3')}</p>
-        <p className="p-comun">{t('pc_4_4')}</p>
-        <p className="p-sub">{t('ps_4_1')}</p>
-        <p className="p-sub">{t('ps_4_2')}</p>
-        <p className="p-sub">{t('ps_4_3')}</p>
-        <p className="p-sub">{t('ps_4_4')}</p>
-        <p className="p-comun">{t('pc_4_5')}</p>
-        <p className="p-comun">{t('pc_4_6')}</p>
+        <h3 className="policity-h3">{t('h3_5')}</h3>
+        <p className="p-comun">{t('pc_5_1')}</p>
       </div>
     </div>
   );
