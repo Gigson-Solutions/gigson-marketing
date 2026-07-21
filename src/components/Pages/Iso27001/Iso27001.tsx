@@ -6,13 +6,14 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 
 import solutionsBg from '../../../assets/solutions-applications-bg-gradients-1.svg';
-import { Link } from '../../../../i18n/navigation';
+import { Link, useRouter } from '../../../../i18n/navigation';
 
 const TOTAL_STEPS = 3;
 const bgSrc = typeof solutionsBg === 'string' ? solutionsBg : (solutionsBg as { src: string }).src;
 
 const Iso27001 = () => {
   const t = useTranslations('iso27001');
+  const router = useRouter();
 
   const [step, setStep] = useState(1);
   const [values, setValues] = useState({
@@ -118,7 +119,7 @@ const Iso27001 = () => {
       const data = await res.json();
       if (data.success !== 'true') throw new Error('FormSubmit reported failure');
       setSubmitted(true);
-      formCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      router.push('/gracias-iso27001');
     } catch (error) {
       console.error('ISO 27001 lead submit failed', error);
       setSubmitError(true);
@@ -271,18 +272,12 @@ const Iso27001 = () => {
               <em style={{ fontStyle: 'italic', color: 'var(--gs-purple)' }}>{t('form.h2accent')}</em> {t('form.h2b')}
             </h2>
             <p className="lead">{t('form.lead')}</p>
-            <div className="deliver-block">
-              <div className="deliver">
-                <span className="deliver-tag">{t('form.deliver1tag')}</span>
-                <p dangerouslySetInnerHTML={{ __html: t.raw('form.deliver1p') as string }} />
-              </div>
-              <div className="deliver">
-                <span className="deliver-tag">
-                  {t('form.deliver2tag')}{' '}
-                  <span className="deliver-tag-soft">{t('form.deliver2tagSoft')}</span>
-                </span>
-                <p dangerouslySetInnerHTML={{ __html: t.raw('form.deliver2p') as string }} />
-              </div>
+            <div className="post-call">
+              <span className="deliver-tag">
+                {t('form.deliver2tag')}{' '}
+                <span className="deliver-tag-soft">{t('form.deliver2tagSoft')}</span>
+              </span>
+              <p dangerouslySetInnerHTML={{ __html: t.raw('form.deliver2p') as string }} />
             </div>
           </div>
 
@@ -410,11 +405,11 @@ const Iso27001 = () => {
                       </button>
                     </div>
                     <p className="form-legal">
-                      {t('form.legal').split('<a>')[0]}
+                      {(t.raw('form.legal') as string).split('<a>')[0]}
                       <Link href="/policy">
-                        {t('form.legal').split('<a>')[1]?.split('</a>')[0]}
+                        {(t.raw('form.legal') as string).split('<a>')[1]?.split('</a>')[0]}
                       </Link>
-                      {t('form.legal').split('</a>')[1]}
+                      {(t.raw('form.legal') as string).split('</a>')[1]}
                     </p>
                   </div>
                 </form>
