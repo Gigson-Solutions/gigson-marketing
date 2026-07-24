@@ -24,7 +24,7 @@ export default buildConfig({
     },
     components: {
       // Botón "Continue with Google" sobre el formulario de login
-      beforeLogin: ['@/src/components/GoogleLoginButton#default'],
+      beforeLogin: ['@/components/GoogleLoginButton#default'],
     },
   },
   collections: [Posts, Users, ChatbotLeads],
