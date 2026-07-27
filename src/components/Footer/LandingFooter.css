@@ -1,0 +1,42 @@
+/* Smaller footer for single-page landings — overrides the site-wide Footer.css sizes */
+.footer.landing-footer {
+  padding-block: 1.75rem;
+  margin-top: 0;
+}
+.landing-footer .footer-mid {
+  padding-bottom: 1.25rem;
+}
+.landing-footer .logo-footer {
+  width: 5.75rem;
+}
+.landing-footer .footer-icon {
+  width: 1.3rem;
+}
+.landing-footer .footer-policy {
+  font-size: 0.85rem;
+  padding-top: 1rem;
+}
+.landing-footer .footer-policy-links {
+  gap: 1.25rem;
+}
+
+@media (min-width: 34.375rem) {
+  .landing-footer .logo-footer {
+    width: 6.25rem;
+  }
+}
+
+@media (min-width: 56.25rem) {
+  .landing-footer .logo-footer {
+    width: 7.5rem;
+  }
+  .landing-footer .footer-policy {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 90rem) {
+  .landing-footer .footer-icon {
+    width: 1.6rem;
+  }
+}

@@ -52,13 +52,12 @@ export default async function LocaleLayout(props: Props) {
     <html lang={locale}>
       <head>
         <link rel="icon" type="image/png" href="/fav.png" />
+        <ConsentScripts />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
-
-        <ConsentScripts />
       </body>
     </html>
   );
