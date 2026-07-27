@@ -135,11 +135,14 @@
    .faqs-accordion {
       display: grid;
       grid-template-columns: 24rem auto;
+      align-items: start;
+   }
+   /* Las preguntas van siempre en la columna derecha, tenga cabecera el grupo
+      o no, para que todas queden alineadas entre sí. */
+   .faqs-accordion-items {
+      grid-column: 2;
    }
    .faqs-accordion-h2 {
-      position: relative;
-      top: 5.5rem;
-      left: 0;
       font-size: 2.1875rem;
       margin: 1rem 1rem 1rem 0;
    }
