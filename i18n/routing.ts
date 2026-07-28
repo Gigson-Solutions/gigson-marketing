@@ -42,6 +42,7 @@ export const routing = defineRouting({
       en: '/iso-27001-lp',
       es: '/certificacion-iso-27001-lp',
     },
+    '/gracias-iso27001': '/gracias-iso27001',
     '/about-claude-partner': { en: '/about-claude-partner', es: '/sobre-claude-partner' },
     '/integrations-holded': { en: '/integrations-holded', es: '/integraciones-holded' },
     '/blog': '/blog',

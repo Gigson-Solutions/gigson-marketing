@@ -28,3 +28,8 @@ dist-ssr
 .next
 next-env.d.ts
 payload-types.ts
+
+# design-sync tool (local scratch/cache, not project source)
+.design-sync/
+.ds-sync/
+ds-bundle/
