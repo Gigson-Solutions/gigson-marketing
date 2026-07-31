@@ -10,6 +10,14 @@ const nextConfig = {
   redirects: async () => [
     // Standalone public pages live outside i18n routing — redirect locale-prefixed URLs to the canonical path
     { source: '/:locale(en|es)/apply-sdr', destination: '/apply-sdr', permanent: true },
+    // Removed duplicate Ads landing page (/iso-27001-lp) — consolidated into the
+    // live campaign landing at /iso-27001-certification (es: /certificacion-iso-27001)
+    { source: '/iso-27001-lp', destination: '/iso-27001-certification', permanent: true },
+    {
+      source: '/es/certificacion-iso-27001-lp',
+      destination: '/es/certificacion-iso-27001',
+      permanent: true,
+    },
   ],
 };
 
