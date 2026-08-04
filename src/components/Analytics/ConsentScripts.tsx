@@ -5,25 +5,60 @@ import { useEffect, useState } from 'react';
 
 import { COOKIE_CONSENT_EVENT, getConsent } from '../../lib/cookieConsent';
 
-// Renders the third-party tracking scripts only after the user has accepted
-// cookies via CookieBanner. Re-evaluates on COOKIE_CONSENT_EVENT so accepting
-// or resetting consent takes effect without a page reload.
-const ConsentScripts = () => {
-  const [accepted, setAccepted] = useState(false);
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 
+const buildConsentState = (granted: boolean) => ({
+  ad_storage: granted ? 'granted' : 'denied',
+  analytics_storage: granted ? 'granted' : 'denied',
+  ad_user_data: granted ? 'granted' : 'denied',
+  ad_personalization: granted ? 'granted' : 'denied',
+});
+
+// Google's own tags (GA4 + Google Ads) support Consent Mode v2: they always load, but
+// a `consent` default of "denied" tells Google not to set ad/analytics cookies or
+// personalize until the user opts in. Google can still use the resulting anonymous
+// pings to *model* conversions and traffic instead of losing that data entirely —
+// unlike the previous all-or-nothing gate, which sent zero signal pre-consent.
+const GoogleConsentScripts = () => {
   useEffect(() => {
-    const syncConsent = () => setAccepted(getConsent() === 'accepted');
+    const syncConsent = () => {
+      const granted = getConsent() === 'accepted';
+      window.gtag?.('consent', 'update', buildConsentState(granted));
+    };
 
     syncConsent();
     window.addEventListener(COOKIE_CONSENT_EVENT, syncConsent);
     return () => window.removeEventListener(COOKIE_CONSENT_EVENT, syncConsent);
   }, []);
 
-  if (!accepted) return null;
-
   return (
     <>
-      {/* Google Analytics */}
+      {/* Consent Mode v2 default — must be set before gtag.js starts sending hits,
+          so it runs as an inline, dependency-free script reading the raw cookie. */}
+      <Script id="consent-default" strategy="beforeInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          window.gtag = gtag;
+          var match = document.cookie.match(/(?:^|;\\s*)cookieConsent=([^;]*)/);
+          var granted = match ? decodeURIComponent(match[1]) === 'accepted' : false;
+          gtag('consent', 'default', {
+            ad_storage: granted ? 'granted' : 'denied',
+            analytics_storage: granted ? 'granted' : 'denied',
+            ad_user_data: granted ? 'granted' : 'denied',
+            ad_personalization: granted ? 'granted' : 'denied',
+            wait_for_update: 500
+          });
+        `}
+      </Script>
+
+      {/* Google Analytics + Google Ads — always loaded now; Consent Mode governs
+          what each tag is allowed to do based on the signal above. */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-0JDRL7J7JF"
         strategy="afterInteractive"
@@ -38,15 +73,34 @@ const ConsentScripts = () => {
       />
       <Script id="gtag-init" strategy="afterInteractive">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-0JDRL7J7JF');
           gtag('config', 'AW-17149750168');
           gtag('config', 'AW-17165031999');
         `}
       </Script>
+    </>
+  );
+};
 
+// Third-party trackers with no Consent Mode support of their own — these have no
+// concept of "denied but modeled", so they keep the original behavior: nothing
+// loads until the user has explicitly accepted cookies via CookieBanner.
+const ThirdPartyConsentScripts = () => {
+  const [accepted, setAccepted] = useState(false);
+
+  useEffect(() => {
+    const syncConsent = () => setAccepted(getConsent() === 'accepted');
+
+    syncConsent();
+    window.addEventListener(COOKIE_CONSENT_EVENT, syncConsent);
+    return () => window.removeEventListener(COOKIE_CONSENT_EVENT, syncConsent);
+  }, []);
+
+  if (!accepted) return null;
+
+  return (
+    <>
       {/* Microsoft Clarity */}
       <Script id="clarity-init" strategy="afterInteractive">
         {`
@@ -81,5 +135,12 @@ const ConsentScripts = () => {
     </>
   );
 };
+
+const ConsentScripts = () => (
+  <>
+    <GoogleConsentScripts />
+    <ThirdPartyConsentScripts />
+  </>
+);
 
 export default ConsentScripts;
