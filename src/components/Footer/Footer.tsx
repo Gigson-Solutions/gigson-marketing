@@ -17,6 +17,7 @@ const Footer = () => {
   const menuLinks = [
     { name: t('services'), href: '/services' as NavPathname },
     { name: t('cases'), href: '/cases' as NavPathname },
+    { name: t('blog'), href: '/blog' as NavPathname },
     { name: t('about'), href: '/about' as NavPathname },
     { name: t('faqs'), href: '/faqs' as NavPathname },
     { name: t('book'), href: '/book' as NavPathname },

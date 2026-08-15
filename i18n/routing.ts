@@ -16,6 +16,10 @@ export const routing = defineRouting({
       en: '/construction-technology',
       es: '/tecnologia-construccion',
     },
+    '/professional-services-technology': {
+      en: '/professional-services-technology',
+      es: '/servicios-profesionales',
+    },
     '/cases': { en: '/cases', es: '/casos' },
     '/about': { en: '/about', es: '/sobre-nosotros' },
     '/faqs': { en: '/faqs', es: '/preguntas-frecuentes' },

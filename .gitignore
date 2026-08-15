@@ -33,3 +33,4 @@ payload-types.ts
 .design-sync/
 .ds-sync/
 ds-bundle/
+.env*

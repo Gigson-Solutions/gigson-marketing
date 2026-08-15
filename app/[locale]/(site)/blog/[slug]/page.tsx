@@ -10,11 +10,11 @@ const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export async function generateStaticParams() {
-  const slugs = await getPostSlugs();
-  return slugs.flatMap((slug) => [
-    { locale: 'en', slug },
-    { locale: 'es', slug },
-  ]);
+  const [esSlugs, enSlugs] = await Promise.all([getPostSlugs('es'), getPostSlugs('en')]);
+  return [
+    ...esSlugs.map((slug) => ({ locale: 'es', slug })),
+    ...enSlugs.map((slug) => ({ locale: 'en', slug })),
+  ];
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
@@ -25,7 +25,10 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     slug
   } = params;
 
-  const post = await getPostBySlug(slug);
+  // Each post exists in exactly one locale (`Posts.locale` field) — filtering
+  // here means a request for the "wrong" locale 404s instead of silently
+  // rendering the same document twice with incorrect hreflang alternates.
+  const post = await getPostBySlug(slug, locale);
   if (!post) return {};
 
   const title = post.seoTitle ?? post.title;
@@ -33,17 +36,14 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const canonical = locale === 'es'
     ? `${ORIGIN}/es/blog/${slug}`
     : `${ORIGIN}/blog/${slug}`;
+  const coverUrl = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
 
   return {
     title,
     description,
     alternates: {
       canonical,
-      languages: {
-        en: `${ORIGIN}/blog/${slug}`,
-        es: `${ORIGIN}/es/blog/${slug}`,
-        'x-default': `${ORIGIN}/blog/${slug}`,
-      },
+      languages: { 'x-default': canonical, [locale]: canonical },
     },
     openGraph: {
       title,
@@ -52,7 +52,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       type: 'article',
       publishedTime: post.publishedAt,
       authors: post.author ? [post.author] : undefined,
-      images: post.coverImage ? [{ url: post.coverImage.url, alt: post.coverImage.alt }] : undefined,
+      images: coverUrl ? [{ url: coverUrl, alt: post.coverImage?.alt }] : undefined,
     },
   };
 }
@@ -65,8 +65,10 @@ export default async function BlogPostPage(props: Props) {
     locale
   } = params;
 
-  const post = await getPostBySlug(slug);
+  const post = await getPostBySlug(slug, locale);
   if (!post) notFound();
+
+  const coverUrl = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -84,7 +86,7 @@ export default async function BlogPostPage(props: Props) {
       name: 'Gigson Solutions',
       url: ORIGIN,
     },
-    ...(post.coverImage && { image: post.coverImage.url }),
+    ...(coverUrl && { image: coverUrl }),
   };
 
   return (

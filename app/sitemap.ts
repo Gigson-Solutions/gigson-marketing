@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next';
 
+import { getPostSlugs } from '../lib/posts';
+
 const ORIGIN = 'https://gigsonsolutions.com';
 
 type RouteConfig = {
@@ -21,6 +23,7 @@ const STATIC_ROUTES: RouteConfig[] = [
   { en: '/logistics-technology', es: '/tecnologia-logistica', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/retail-ecommerce-technology', es: '/tecnologia-retail-ecommerce', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/construction-technology', es: '/tecnologia-construccion', priority: 0.8, changeFrequency: 'monthly' },
+  { en: '/professional-services-technology', es: '/servicios-profesionales', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/cases', es: '/casos', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/blog', es: '/blog', priority: 0.8, changeFrequency: 'weekly' },
   { en: '/about', es: '/sobre-nosotros', priority: 0.7, changeFrequency: 'monthly' },
@@ -47,26 +50,23 @@ function makeStaticEntries(): MetadataRoute.Sitemap {
 }
 
 async function getBlogEntries(): Promise<MetadataRoute.Sitemap> {
-  const apiUrl = process.env.PAYLOAD_API_URL;
-  if (!apiUrl) return [];
-
   try {
-    const res = await fetch(
-      `${apiUrl}/posts?where[status][equals]=published&limit=100&select[slug]=true`,
-      { next: { revalidate: 3600 } },
-    );
-    if (!res.ok) return [];
-
-    const data = (await res.json()) as { docs: { slug: string }[] };
-    return data.docs.flatMap(({ slug }) => {
-      const enUrl = `${ORIGIN}/blog/${slug}`;
-      const esUrl = `${ORIGIN}/es/blog/${slug}`;
-      const alternates = { languages: { en: enUrl, es: esUrl } };
-      return [
-        { url: enUrl, alternates, priority: 0.7, changeFrequency: 'monthly' as const },
-        { url: esUrl, alternates, priority: 0.7, changeFrequency: 'monthly' as const },
-      ];
-    });
+    // Each post exists in exactly one locale (`Posts.locale`), so only its
+    // real URL is listed — no fabricated alternate for a language it was
+    // never published in.
+    const [esSlugs, enSlugs] = await Promise.all([getPostSlugs('es'), getPostSlugs('en')]);
+    return [
+      ...esSlugs.map((slug) => ({
+        url: `${ORIGIN}/es/blog/${slug}`,
+        priority: 0.7,
+        changeFrequency: 'monthly' as const,
+      })),
+      ...enSlugs.map((slug) => ({
+        url: `${ORIGIN}/blog/${slug}`,
+        priority: 0.7,
+        changeFrequency: 'monthly' as const,
+      })),
+    ];
   } catch {
     return [];
   }

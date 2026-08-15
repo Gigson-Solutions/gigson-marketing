@@ -14,6 +14,7 @@
     "@payloadcms/db-postgres": "3.85.1",
     "@payloadcms/next": "3.85.1",
     "@payloadcms/richtext-lexical": "3.85.1",
+    "@payloadcms/storage-vercel-blob": "3.85.1",
     "cobe": "^2.0.1",
     "graphql": "^16.14.2",
     "gsap": "^3.14.2",

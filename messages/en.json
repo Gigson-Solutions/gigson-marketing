@@ -10,6 +10,7 @@
         "news": "LANDING",
         "industries": "INDUSTRIES",
         "cases": "CASES",
+        "blog": "BLOG",
         "about": "ABOUT",
         "faqs": "FAQs",
         "contact": "CONTACT US",
@@ -22,10 +23,18 @@
         "CTO": "CTO as a service",
         "tech_consulting": "Technology consulting",
         "construction": "Construction",
+        "professional_services": "Professional Services",
         "software": "Software engineering",
         "cibersecurity": "Cybersecurity",
         "ai_agents": "AI Agents",
         "compliance": "Compliance"
+    },
+    "blog": {
+        "title": "Blog",
+        "empty": "No posts yet. Check back soon.",
+        "readMore": "READ MORE →",
+        "backToBlog": "← BACK TO BLOG",
+        "contentUnavailable": "Content unavailable."
     },
     "hero_link": "/contact",
     "home": {
@@ -196,6 +205,9 @@
                     "answer": "Yes. Anthropic's Claude is designed with a safety-first approach. Data is not used to train models. We can deploy agents on your own infrastructure (on-premise or private cloud) for greater control. We comply with GDPR and can support compliance processes."
                 }
             ]
+        },
+        "sectorsCta": {
+            "title": "Use cases by sector"
         }
     },
     "about": {
@@ -311,6 +323,7 @@
         "needTitle": "What’s your actual need?",
         "resetFilters": "RESET FILTERS",
         "featuresTitle": "Features",
+        "resultsTitle": "Results",
         "solutionTitle": "Solution",
         "toolsTitle": "specifications"
     },
@@ -342,7 +355,8 @@
             "tags": [
                 "Design agency",
                 "Creative agency",
-                "Building"
+                "Building",
+                "Professional Services"
             ],
             "need": [
                 "Customer Management",
@@ -439,7 +453,7 @@
         },
         {
             "title": "AI Agent for Operations",
-            "challenge": "Deploy an AI agent powered by Claude that handles document processing, internal Q&A, workflow routing, and decision support - integrated with your existing ERP, CRM, or project management tools.",
+            "challenge": "Before the agent, the team spent several hours a week on manual work: reviewing incoming documents one by one, searching across disconnected systems to answer internal questions, and manually re-entering data into the ERP, CRM, or project management tools. We deployed an AI agent powered by Claude that handles document processing, internal Q&A, workflow routing, and decision support - integrated with those same systems, without replacing the team's judgment on critical decisions.",
             "features": [
                 "Conversational agent connected to internal systems via API",
                 "Document ingestion and structured data extraction",
@@ -447,7 +461,13 @@
                 "Human-in-the-loop approval gates for critical actions",
                 "Audit trail and compliance logging"
             ],
-            "solution": "Built on Anthropic's Claude API with a custom integration layer connecting your existing stack. Deployed on your infrastructure or cloud of choice. Ongoing retainer model for iteration and maintenance.",
+            "results": [
+                "Estimated 30-50% reduction in time spent on manual document processing, in line with comparable deployments",
+                "Fewer classification and data-entry errors thanks to human approval gates before every critical action",
+                "Typical payback period of 3-6 months depending on document volume and automated workflows",
+                "Full traceability of every agent decision via the audit log"
+            ],
+            "solution": "Built on Anthropic's Claude API with a custom integration layer connecting your existing stack. Deployed on your infrastructure or cloud of choice. Ongoing retainer model for iteration and maintenance. Applicable to industrial operations as well as professional firms, consultancies, and advisory practices with high document and internal-query volume.",
             "tools": [
                 "Claude API (Anthropic)",
                 "n8n or custom orchestration",
@@ -511,6 +531,17 @@
         {
             "question": "Can I coordinate the product development myself?",
             "answer": "Yes, however, we do not recommend it as a lack of experience in managing technical teams can lead to communication misunderstandings, poor risk management, and resource management."
+        },
+        {
+            "title": "AI Agents"
+        },
+        {
+            "question": "Does Gigson Solutions implement AI agents for businesses?",
+            "answer": "Yes. We are a Certified Anthropic Partner and we design, build, and deploy Claude-based agents for document processing, workflow automation, and customer support. See the full details on our AI Agents page."
+        },
+        {
+            "question": "How much does an AI agent cost for my company?",
+            "answer": "It depends on complexity: from 8,000-15,000€ for basic cases (internal Q&A, document processing) up to 20,000-50,000€ for projects with multiple integrations. Contact us for a personalized estimate."
         },
         {
             "question": "Have we left anything unanswered?",
@@ -1439,6 +1470,11 @@
                     "answer": "It depends on scope. A single integration (e.g. connecting ERP with a carrier platform) takes 3–6 weeks. A broader digital transformation project can take 3–6 months with iterative phases. We always start with the highest-impact process to show quick results."
                 }
             ]
+        },
+        "aiAgentsCta": {
+            "title": "Want an AI agent for your logistics operation?",
+            "description": "Automate order tracking, carrier communication, and incident management with an AI agent connected to your systems.",
+            "buttonText": "See AI Agents"
         }
     },
     "cases-construction": {
@@ -1836,6 +1872,10 @@
                         {
                             "title": "Custom solutions to digitalize processes and projects",
                             "description": "We analyze your workflows and design specific solutions to improve team coordination, traceability of decisions, and project oversight from the office, the site, or your phone."
+                        },
+                        {
+                            "title": "AI applied to construction site management",
+                            "description": "AI agents that classify site documentation, summarize daily work reports, and answer team questions by consulting centralized information - connected to your ERP, BIM or document management system."
                         }
                     ]
                 },
@@ -1916,6 +1956,10 @@
             "title": "Frequently asked questions about construction technology",
             "items": [
                 {
+                    "question": "Can an AI agent help with document management on my construction sites?",
+                    "answer": "Yes. An AI agent can automatically classify daily work reports, site photos and delivery notes, detect and summarize project changes, and answer questions from field or office teams by consulting centralized documentation. The usual result is a noticeable reduction in time spent on repetitive administrative tasks and fewer errors passing information between site and office."
+                },
+                {
                     "question": "How can technology improve construction project management?",
                     "answer": "Technology enables digitizing site management: real-time progress tracking, cost control by item, centralized document management, communication between field and office teams, and automatic deviation alerts. We reduce time spent on manual reports and improve visibility across each project."
                 },
@@ -1928,6 +1972,11 @@
                     "answer": "Yes. Most construction companies we work with do not have their own IT team. We handle implementation, team training, ongoing support and adaptation of tools to your company processes. The goal is for technology to work without needing internal experts for day-to-day operations."
                 }
             ]
+        },
+        "aiAgentsCta": {
+            "title": "Want an AI agent for your construction company?",
+            "description": "Automate document management, change control, and communication between site and office with an AI agent connected to your ERP.",
+            "buttonText": "See AI Agents"
         }
     },
     "cases-retail": {
@@ -2514,6 +2563,345 @@
                     "answer": "It depends on scope. A single integration (e.g. connecting your ERP with Shopify) takes 3-6 weeks. A broader transformation project that includes AI, omnichannel and multiple integrations can take 3-6 months with iterative phases. We always start with the highest-impact process to show quick results."
                 }
             ]
+        },
+        "aiAgentsCta": {
+            "title": "Want an AI agent for your store or eCommerce business?",
+            "description": "Automate customer support, returns management, and inventory analysis with an AI agent connected to your systems.",
+            "buttonText": "See AI Agents"
+        }
+    },
+    "cases-professional-services": {
+        "title": "Technology and AI Agents for Professional Services and Law Firms in Spain | Gigson Solutions",
+        "metadescription": "Custom software and AI agents for law firms, consultancies and advisory practices in Spain: document management, CRM, billing and AI automation.",
+        "hero": {
+            "suptitle": "PROFESSIONAL SERVICES AND LEGAL",
+            "title": "<span>Technology and AI agents</span> for law firms, advisory practices <br/> and <span>consultancies</span> in Spain",
+            "description": "Law firms and consultancies spend a large share of their time on administrative and document work that can be automated without losing control or professional judgment. At Gigson Solutions we help you integrate technology and AI agents that adapt to the way your team already works.",
+            "buttonText": "Contact us"
+        },
+        "useCases": {
+            "title": "Key cases",
+            "description": "Discover how technology and AI agents can solve the challenges law firms, consultancies and advisory practices face most often. These examples are illustrative, based on common patterns in the sector, meant to show the level of detail we work with.",
+            "cards": [
+                {
+                    "title": "Contract review without losing a whole afternoon",
+                    "supTitle": "Challenge",
+                    "description": "A law firm with several offices spent hours of manual work every week reviewing clauses and extracting key data from incoming contracts before moving forward with each case.",
+                    "buttonText": "See case",
+                    "dialog": {
+                        "backButtonText": "Use cases",
+                        "title": "Contract review without losing a whole afternoon",
+                        "quote": "",
+                        "challengeDescription": "A law firm with several offices spent hours of manual work every week reviewing clauses and extracting key data from incoming contracts before moving forward with each case. Manual review created bottlenecks and delays in responding to clients.",
+                        "functionalitiesText": "Features",
+                        "functionalities": [
+                            {
+                                "title": "Document ingestion",
+                                "description": "Receives contracts and attachments by email or manual upload, in any common format (PDF, Word, scanned)."
+                            },
+                            {
+                                "title": "Key clause extraction",
+                                "description": "Automatically identifies deadlines, amounts, parties and risk clauses relevant to the case."
+                            },
+                            {
+                                "title": "Structured summary",
+                                "description": "Generates a summary for the responsible lawyer or consultant, flagging points that need human attention."
+                            },
+                            {
+                                "title": "Deadline alerts",
+                                "description": "Automatic notifications for deadlines and renewals detected in the document."
+                            },
+                            {
+                                "title": "Audit trail",
+                                "description": "Full traceability of every processed document and every agent decision."
+                            }
+                        ],
+                        "solutionText": "Solution",
+                        "solutionDescription": "We deployed a Claude-based agent that classifies and extracts key information from each incoming contract, generates a structured summary, and always leaves a human approval gate before any action on the case. The team shifted its time toward reviewing what matters, instead of manually searching for information.",
+                        "technologiesText": "Technologies",
+                        "technologies": [
+                            {
+                                "title": "AI agent",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Orchestration",
+                                "description": "n8n"
+                            },
+                            {
+                                "title": "Integrations",
+                                "description": "REST APIs and email"
+                            },
+                            {
+                                "title": "Storage",
+                                "description": "Encrypted at rest and in transit"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Find the answer without interrupting a colleague",
+                    "supTitle": "Challenge",
+                    "description": "At a consultancy with a distributed team, finding the internal policy or the criteria applied in a past case meant interrupting a colleague or digging through scattered folders and emails.",
+                    "buttonText": "See case",
+                    "dialog": {
+                        "backButtonText": "Use cases",
+                        "title": "Find the answer without interrupting a colleague",
+                        "quote": "",
+                        "challengeDescription": "At a consultancy with a distributed team, finding the internal policy or the criteria applied in a past case meant interrupting a colleague or digging through scattered folders and emails, at a real time cost for the whole team.",
+                        "functionalitiesText": "Features",
+                        "functionalities": [
+                            {
+                                "title": "Q&A connected to internal knowledge base",
+                                "description": "The agent answers questions by consulting internal documents, policies and past cases."
+                            },
+                            {
+                                "title": "Semantic search",
+                                "description": "Finds relevant information even when the question doesn't use the same words as the original document."
+                            },
+                            {
+                                "title": "Source citations",
+                                "description": "Every answer indicates which internal document the information comes from."
+                            },
+                            {
+                                "title": "Escalation to a human",
+                                "description": "If the agent isn't confident enough, it routes the question to the responsible person."
+                            }
+                        ],
+                        "solutionText": "Solution",
+                        "solutionDescription": "We deployed an internal Q&A agent connected to the consultancy's documentation and policies, available to the whole team. Repetitive queries stopped depending on the availability of a specific colleague, freeing up senior team time.",
+                        "technologiesText": "Technologies",
+                        "technologies": [
+                            {
+                                "title": "AI agent",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Knowledge base",
+                                "description": "Indexing of internal documents and wikis"
+                            },
+                            {
+                                "title": "Integrations",
+                                "description": "REST APIs"
+                            },
+                            {
+                                "title": "Infrastructure",
+                                "description": "Private cloud or own infrastructure"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "improveAreas": {
+            "title": "Areas",
+            "filtersText": "Filters",
+            "applyFiltersText": "Apply filters",
+            "filtersClearAllText": "Clear all",
+            "painPoints": [
+                {
+                    "type": "A",
+                    "name": "Document automation"
+                },
+                {
+                    "type": "B",
+                    "name": "Compliance and audit"
+                }
+            ],
+            "faqs": [
+                {
+                    "types": [
+                        "A"
+                    ],
+                    "question": "Less time reviewing documents, more time advising clients",
+                    "answer": {
+                        "challengeDescription": "At law firms and consultancies with high document volume, much of the team's time goes to repetitive tasks: classifying incoming emails and documents, extracting data and manually moving it into other systems. This work is systematic but consumes hours that could go toward advising clients.",
+                        "solutionText": "Solution",
+                        "solutionDescription": "An AI agent connected to email and document management systems classifies, extracts and moves relevant information, leaving human approval gates before any action on a case. In comparable deployments, this typically translates into a 20-30% reduction in time spent on document review and several recovered hours per week per professional.",
+                        "functionalitiesText": "Features",
+                        "functionalities": [
+                            {
+                                "title": "Automatic classification",
+                                "description": "Organizes incoming documents and emails by case type or client."
+                            },
+                            {
+                                "title": "Data extraction",
+                                "description": "Automatically moves relevant data into your CRM, ERP or case management system."
+                            },
+                            {
+                                "title": "Human approval gates",
+                                "description": "No critical action runs without validation from a responsible person."
+                            },
+                            {
+                                "title": "Tracking dashboard",
+                                "description": "Visibility into which documents have been processed and which need manual review."
+                            }
+                        ],
+                        "technologiesText": "Technologies",
+                        "technologies": [
+                            {
+                                "title": "AI agent",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Orchestration",
+                                "description": "n8n"
+                            },
+                            {
+                                "title": "Document management",
+                                "description": "Integration with your DMS/case management system"
+                            },
+                            {
+                                "title": "Notifications",
+                                "description": "Email and internal alerts"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "types": [
+                        "B"
+                    ],
+                    "question": "Traceability and compliance without extra workload",
+                    "answer": {
+                        "challengeDescription": "Law firms and consultancies subject to compliance and audit requirements need to justify every decision and every access to case information, which becomes costly to maintain manually as case volume grows.",
+                        "solutionText": "Solution",
+                        "solutionDescription": "An automatic audit trail is added to every AI agent action, alongside the human approval gates already built into the workflow. This keeps full traceability of every decision without adding administrative workload to the team.",
+                        "functionalitiesText": "Features",
+                        "functionalities": [
+                            {
+                                "title": "Audit trail",
+                                "description": "Every agent action is logged with date, affected document and outcome."
+                            },
+                            {
+                                "title": "Access control",
+                                "description": "Agents only access the information needed for each specific task."
+                            },
+                            {
+                                "title": "GDPR compliance",
+                                "description": "Data is not used to train models and can be deployed on your own infrastructure or a private cloud."
+                            },
+                            {
+                                "title": "Compliance reports",
+                                "description": "Generation of exportable reports for internal or external audits."
+                            }
+                        ],
+                        "technologiesText": "Technologies",
+                        "technologies": [
+                            {
+                                "title": "AI agent",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Audit trail",
+                                "description": "Structured logging"
+                            },
+                            {
+                                "title": "Cloud infrastructure",
+                                "description": "AWS / GCP / Hetzner or private cloud"
+                            },
+                            {
+                                "title": "Security",
+                                "description": "Encryption in transit and at rest"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "solutionsApplications": {
+            "title": "Technology and AI agents <span>at the service of your firm or consultancy</span>",
+            "subTitle": "We integrate the tools you already use and add AI agents where they truly add value: fewer repetitive tasks, more time for professional judgment.",
+            "containers": [
+                {
+                    "title": "Integrations and document management",
+                    "description": "We connect the tools your firm or consultancy already uses so information flows without duplication or manual work.",
+                    "type": "Integration",
+                    "cards": [
+                        {
+                            "title": "Document management (DMS)",
+                            "description": "Integration with your document management system to centralize contracts, case files and communications."
+                        },
+                        {
+                            "title": "Electronic signature",
+                            "description": "Connection with e-signature platforms to speed up document formalization."
+                        },
+                        {
+                            "title": "CRM for firms and consultancies",
+                            "description": "Synchronizes clients, case files and opportunities in a single view."
+                        },
+                        {
+                            "title": "Billing and time tracking",
+                            "description": "Automates the recording of billable hours and their transfer to your billing system."
+                        }
+                    ]
+                },
+                {
+                    "title": "AI agents for professional services",
+                    "description": "Claude-based agents designed for the most common workflows at law firms, advisory practices and consultancies.",
+                    "type": "AI Agents",
+                    "cards": [
+                        {
+                            "title": "Internal Q&A",
+                            "description": "Answers team questions by consulting the internal knowledge base, policies and past cases."
+                        },
+                        {
+                            "title": "Document review and extraction",
+                            "description": "Classifies, extracts and summarizes key information from contracts and incoming documentation."
+                        },
+                        {
+                            "title": "Lead qualification",
+                            "description": "Prioritizes and routes new prospective client inquiries based on case type and team availability."
+                        }
+                    ]
+                }
+            ]
+        },
+        "howWeWork": {
+            "title": "How we work",
+            "methods": [
+                {
+                    "title": "Discovery",
+                    "description": "Identification of document-handling and internal-query processes with the highest automation potential."
+                },
+                {
+                    "title": "Design and architecture",
+                    "description": "Design of the agent and its integrations with your document management, CRM or billing tools."
+                },
+                {
+                    "title": "Implementation",
+                    "description": "Development, testing and production deployment with human approval gates configured from day one."
+                },
+                {
+                    "title": "Support and maintenance",
+                    "description": "Monitoring, adjustments and evolution of the agent as your processes change."
+                }
+            ]
+        },
+        "digitalProduct": {
+            "buttonText": "How we can help you"
+        },
+        "faq": {
+            "title": "Frequently asked questions about technology and AI agents for professional services",
+            "items": [
+                {
+                    "question": "How much does an AI agent cost for a law firm or consultancy?",
+                    "answer": "Cost varies with complexity: from 8,000-15,000€ for basic cases (internal Q&A, document processing) up to 20,000-50,000€ for projects with multiple integrations (document management, CRM, billing). Contact us for a personalized estimate."
+                },
+                {
+                    "question": "How long does implementation take?",
+                    "answer": "The average time is 4 to 8 weeks from kickoff to production, same as our other AI agent projects. We always start with the highest-impact, lowest-friction process for your team."
+                },
+                {
+                    "question": "How is the confidentiality of legal or client documentation handled?",
+                    "answer": "Data is not used to train models, and we can deploy the agent on your own infrastructure or a private cloud for greater control. Every action is logged in an audit trail, and critical decisions always go through a human approval gate."
+                }
+            ]
+        },
+        "aiAgentsCta": {
+            "title": "Want an AI agent for your firm or consultancy?",
+            "description": "Automate document review, internal Q&A, and lead qualification with an AI agent connected to your systems.",
+            "buttonText": "See AI Agents"
         }
     },
     "brand": {
@@ -3188,6 +3576,10 @@
         "cases": {
             "title": "Case studies | Gigson Solutions",
             "description": "Examples of projects by sector and need: CRM, ERP, integrations, automation and custom software."
+        },
+        "blog": {
+            "title": "Blog | Gigson Solutions",
+            "description": "Insights, guides and case studies on AI, software engineering and technology consulting from the Gigson Solutions team."
         },
         "faqs": {
             "title": "FAQs | Gigson Solutions",

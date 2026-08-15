@@ -1,6 +1,14 @@
 import type { CollectionConfig } from 'payload';
-import { lexicalEditor } from '@payloadcms/richtext-lexical';
-import { convertLexicalToHTML } from '@payloadcms/richtext-lexical/html';
+import {
+  lexicalEditor,
+  UploadFeature,
+  HorizontalRuleFeature,
+  FixedToolbarFeature,
+  BlocksFeature,
+} from '@payloadcms/richtext-lexical';
+
+import { CtaBlock } from './blocks/CtaBlock';
+import { HighlightBlock } from './blocks/HighlightBlock';
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -9,21 +17,18 @@ export const Posts: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'status', 'publishedAt', 'author'],
-  },
-  hooks: {
-    beforeChange: [
-      ({ data }) => {
-        if (data.content) {
-          try {
-            data.contentHtml = convertLexicalToHTML({ data: data.content });
-          } catch {
-            // keep existing contentHtml if conversion fails
-          }
-        }
-        return data;
-      },
-    ],
+    defaultColumns: ['title', 'status', 'locale', 'publishedAt', 'author'],
+    preview: (doc) => {
+      const slug = doc?.slug as string | undefined;
+      const locale = (doc?.locale as string | undefined) ?? 'es';
+      if (!slug) return null;
+
+      const serverURL = process.env.NEXT_PUBLIC_SERVER_URL ?? 'http://localhost:3000';
+      const secret = process.env.PAYLOAD_PREVIEW_SECRET ?? '';
+      const path = locale === 'es' ? `/es/blog/${slug}` : `/blog/${slug}`;
+
+      return `${serverURL}/api/preview?secret=${secret}&path=${encodeURIComponent(path)}`;
+    },
   },
   fields: [
     {
@@ -38,6 +43,20 @@ export const Posts: CollectionConfig = {
       unique: true,
       admin: {
         description: 'URL identifier — use lowercase letters, numbers and hyphens (e.g. "automatizacion-erp-2026")',
+      },
+    },
+    {
+      name: 'locale',
+      type: 'select',
+      options: [
+        { label: 'Español', value: 'es' },
+        { label: 'English', value: 'en' },
+      ],
+      defaultValue: 'es',
+      required: true,
+      admin: {
+        position: 'sidebar',
+        description: 'Idioma de este post. Cada post existe en un único idioma (sin gemelo automático).',
       },
     },
     {
@@ -79,37 +98,30 @@ export const Posts: CollectionConfig = {
     },
     {
       name: 'coverImage',
-      type: 'group',
+      type: 'upload',
+      relationTo: 'media',
       admin: {
-        description: 'Featured image',
+        description: 'Featured image (elige o sube desde la librería de Media).',
       },
-      fields: [
-        {
-          name: 'url',
-          type: 'text',
-          admin: {
-            description: 'Full image URL (Cloudinary, imgix, etc.)',
-          },
-        },
-        {
-          name: 'alt',
-          type: 'text',
-        },
-      ],
     },
     {
       name: 'content',
       type: 'richText',
-      editor: lexicalEditor(),
-    },
-    {
-      name: 'contentHtml',
-      type: 'textarea',
-      admin: {
-        readOnly: true,
-        hidden: true,
-        description: 'Auto-generated HTML from content. Do not edit manually.',
-      },
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          UploadFeature({
+            collections: {
+              media: {
+                fields: [{ name: 'caption', type: 'text' }],
+              },
+            },
+          }),
+          HorizontalRuleFeature(),
+          FixedToolbarFeature(),
+          BlocksFeature({ blocks: [CtaBlock, HighlightBlock] }),
+        ],
+      }),
     },
     {
       name: 'seoTitle',
