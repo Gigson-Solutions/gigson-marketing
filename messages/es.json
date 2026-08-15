@@ -11,6 +11,7 @@
         "news": "LANDING",
         "industries": "INDUSTRIAS",
         "cases": "CASOS",
+        "blog": "BLOG",
         "faqs": "FAQs",
         "contact": "CONTÁCTANOS",
         "legal": "Política legal",
@@ -22,10 +23,18 @@
         "CTO": "CTO as a service",
         "software": "Ingenieria software",
         "construction": "Construcción",
+        "professional_services": "Servicios Profesionales",
         "tech_consulting": "Consultoría tecnologica",
         "cibersecurity": "Ciberseguridad",
         "ai_agents": "Agentes IA",
         "compliance": "Compliance"
+    },
+    "blog": {
+        "title": "Blog",
+        "empty": "Aún no hay artículos. Vuelve pronto.",
+        "readMore": "LEER MÁS →",
+        "backToBlog": "← VOLVER AL BLOG",
+        "contentUnavailable": "Contenido no disponible."
     },
     "hero_link": "/es/contacto",
     "home": {
@@ -196,6 +205,9 @@
                     "answer": "Sí. Claude de Anthropic está diseñado con un enfoque safety-first. Los datos no se usan para entrenar modelos. Podemos desplegar los agentes en tu infraestructura (on-premise o cloud privado) para mayor control. Cumplimos con RGPD y podemos acompañar procesos de compliance."
                 }
             ]
+        },
+        "sectorsCta": {
+            "title": "Casos de uso por sector"
         }
     },
     "about": {
@@ -311,6 +323,7 @@
         "needTitle": "¿Cuál es tu necesidad actual?",
         "resetFilters": "BORRAR FILTROS",
         "featuresTitle": "Funcionalidades",
+        "resultsTitle": "Resultados",
         "solutionTitle": "Solución",
         "toolsTitle": "Especificaciones"
     },
@@ -342,7 +355,8 @@
             "tags": [
                 "Estudio diseño",
                 "Agencia creativa",
-                "Construcción"
+                "Construcción",
+                "Servicios profesionales"
             ],
             "need": [
                 "Gestión de clientes",
@@ -439,7 +453,7 @@
         },
         {
             "title": "Agente de IA para Operaciones",
-            "challenge": "Despliega un agente de IA impulsado por Claude que gestione el procesamiento de documentos, Q&A interno, enrutamiento de flujos de trabajo y soporte a la toma de decisiones - integrado con tu ERP, CRM o herramientas de gestión de proyectos existentes.",
+            "challenge": "Antes del agente, el equipo dedicaba varias horas a la semana a tareas manuales: revisar documentos entrantes uno a uno, buscar información dispersa entre distintos sistemas para responder preguntas internas, y trasladar a mano los datos al ERP, CRM o herramientas de gestión de proyectos. Desplegamos un agente de IA impulsado por Claude que gestiona el procesamiento de documentos, Q&A interno, enrutamiento de flujos de trabajo y soporte a la toma de decisiones - integrado con esos mismos sistemas, sin sustituir el criterio del equipo en las decisiones críticas.",
             "features": [
                 "Agente conversacional conectado a sistemas internos vía API",
                 "Ingesta de documentos y extracción de datos estructurados",
@@ -447,7 +461,13 @@
                 "Puntos de aprobación humana para acciones críticas",
                 "Registro de auditoría y conformidad"
             ],
-            "solution": "Construido sobre la API de Claude de Anthropic con una capa de integración personalizada que conecta tu stack existente. Desplegado en tu infraestructura o nube de elección. Modelo de retainer recurrente para iteración y mantenimiento.",
+            "results": [
+                "Reducción estimada de 30-50% en el tiempo dedicado a tareas manuales de procesamiento documental, en línea con lo observado en despliegues similares",
+                "Menos errores de clasificación y traspaso de datos gracias a los puntos de aprobación humana antes de cada acción crítica",
+                "Retorno de la inversión típico en 3-6 meses según el volumen de documentos y flujos automatizados",
+                "Trazabilidad completa de cada decisión del agente mediante el registro de auditoría"
+            ],
+            "solution": "Construido sobre la API de Claude de Anthropic con una capa de integración personalizada que conecta tu stack existente. Desplegado en tu infraestructura o nube de elección. Modelo de retainer recurrente para iteración y mantenimiento. Aplicable tanto a operaciones industriales como a despachos profesionales, consultoras y asesorías con alto volumen de documentación y consultas internas.",
             "tools": [
                 "Claude API (Anthropic)",
                 "n8n u orquestación personalizada",
@@ -511,6 +531,17 @@
         {
             "question": "¿Puedo coordinar yo mismo el desarrollo del producto?",
             "answer": "Sí, no obstante no lo recomendamos ya que la falta de experiencia en la gestión de equipos técnicos puede conducir a malentendidos en la comunicación, una mala gestión de riesgos y de recursos."
+        },
+        {
+            "title": "Agentes IA"
+        },
+        {
+            "question": "¿Gigson Solutions implementa agentes de IA para empresas?",
+            "answer": "Sí. Somos Partner Certificado de Anthropic y diseñamos, construimos y desplegamos agentes basados en Claude para procesamiento de documentos, automatización de flujos de trabajo y atención al cliente. Puedes ver el detalle completo en nuestra página de Agentes IA."
+        },
+        {
+            "question": "¿Cuánto cuesta un agente de IA para mi empresa?",
+            "answer": "Depende de la complejidad: desde 8.000-15.000€ para casos básicos (Q&A interno, procesamiento de documentos) hasta 20.000-50.000€ para proyectos con múltiples integraciones. Contáctanos para una estimación personalizada."
         },
         {
             "question": "¿Nos hemos dejado algo por contestar?",
@@ -1439,6 +1470,11 @@
                     "answer": "Depende del alcance. Una integración puntual (ej. conectar ERP con plataforma de transportistas) tarda 3–6 semanas. Un proyecto de transformación digital más amplio puede tomar 3–6 meses con fases iterativas. Siempre empezamos con el proceso de mayor impacto para mostrar resultados rápidos."
                 }
             ]
+        },
+        "aiAgentsCta": {
+            "title": "¿Quieres un agente IA para tu operación logística?",
+            "description": "Automatiza el seguimiento de pedidos, la comunicación con transportistas y la gestión de incidencias con un agente de IA conectado a tus sistemas.",
+            "buttonText": "Ver Agentes IA"
         }
     },
     "cases-construction": {
@@ -1836,6 +1872,10 @@
                         {
                             "title": "Soluciones personalizadas para digitalizar procesos o coordinar proyectos",
                             "description": "Analizamos tus flujos y diseñamos soluciones específicas para mejorar la coordinación entre equipos, la trazabilidad de decisiones o la supervisión de proyectos desde la oficina, la obra o el móvil"
+                        },
+                        {
+                            "title": "Aplicación de inteligencia artificial en la gestión de obra",
+                            "description": "Agentes IA que clasifican documentación de obra, resumen partes de trabajo y responden preguntas del equipo consultando la información centralizada - conectados a tu ERP, BIM o gestor documental."
                         }
                     ]
                 },
@@ -1916,6 +1956,10 @@
             "title": "Preguntas frecuentes sobre tecnología en construcción",
             "items": [
                 {
+                    "question": "¿Puede un agente de IA ayudar en la gestión documental de mis obras?",
+                    "answer": "Sí. Un agente IA puede clasificar automáticamente partes de trabajo, fotos de obra y albaranes, detectar y resumir cambios en los proyectos, y responder preguntas del equipo de campo u oficina consultando la documentación centralizada. El resultado habitual es una reducción notable del tiempo dedicado a tareas administrativas repetitivas y menos errores de traspaso de información entre obra y oficina."
+                },
+                {
                     "question": "¿Cómo puede la tecnología mejorar la gestión de proyectos de construcción?",
                     "answer": "La tecnología permite digitalizar la gestión de obra: seguimiento de avance en tiempo real, control de costes por partida, gestión documental centralizada, comunicación entre equipos de campo y oficina, y alertas automáticas de desviaciones. Reducimos el tiempo dedicado a reportes manuales y mejoramos la visibilidad sobre cada proyecto."
                 },
@@ -1928,6 +1972,11 @@
                     "answer": "Sí. La mayoría de empresas constructoras con las que trabajamos no tienen equipo IT propio. Nos encargamos de la implementación, formación del equipo, soporte continuo y adaptación de las herramientas a los procesos de tu empresa. El objetivo es que la tecnología funcione sin necesidad de expertos internos para el día a día."
                 }
             ]
+        },
+        "aiAgentsCta": {
+            "title": "¿Quieres un agente IA para tu constructora?",
+            "description": "Automatiza la gestión documental, el control de cambios y la comunicación entre obra y oficina con un agente de IA conectado a tu ERP.",
+            "buttonText": "Ver Agentes IA"
         }
     },
     "cases-retail": {
@@ -2518,6 +2567,345 @@
                     "answer": "Depende del alcance. Una integración puntual (ej. conectar tu ERP con Shopify) tarda 3-6 semanas. Un proyecto de transformación más amplio que incluya IA, omnicanalidad e integraciones múltiples puede durar 3-6 meses con fases iterativas. Siempre empezamos con el proceso de mayor impacto para mostrar resultados rápidos."
                 }
             ]
+        },
+        "aiAgentsCta": {
+            "title": "¿Quieres un agente IA para tu tienda o ecommerce?",
+            "description": "Automatiza la atención al cliente, la gestión de devoluciones y el análisis de inventario con un agente de IA conectado a tus sistemas.",
+            "buttonText": "Ver Agentes IA"
+        }
+    },
+    "cases-professional-services": {
+        "title": "Tecnología y Agentes IA para Servicios Profesionales y Despachos en España | Gigson Solutions",
+        "metadescription": "Software a medida y agentes IA para despachos, consultoras y asesorías en España: gestión documental, CRM, facturación y automatización con IA.",
+        "hero": {
+            "suptitle": "SERVICIOS PROFESIONALES Y LEGAL",
+            "title": "<span>Tecnología y agentes IA</span> para despachos, asesorías <br/> y <span>consultoras</span> en España",
+            "description": "Los despachos y consultoras dedican gran parte de su tiempo a tareas administrativas y documentales que se pueden automatizar sin perder el control ni el criterio profesional. En Gigson Solutions te ayudamos a integrar tecnología y agentes IA que se adaptan a la forma de trabajar de tu equipo.",
+            "buttonText": "Contáctanos"
+        },
+        "useCases": {
+            "title": "Casos clave",
+            "description": "Descubre cómo la tecnología y los agentes IA pueden resolver los retos habituales de despachos, consultoras y asesorías. Estos ejemplos son ilustrativos, basados en patrones frecuentes del sector, pensados para mostrar el nivel de detalle con el que trabajamos.",
+            "cards": [
+                {
+                    "title": "Revisión de contratos sin perder una tarde entera",
+                    "supTitle": "Desafío",
+                    "description": "Un despacho con varias sedes dedicaba horas manuales cada semana a revisar cláusulas y extraer datos clave de los contratos entrantes antes de poder avanzar con cada expediente.",
+                    "buttonText": "Ver caso",
+                    "dialog": {
+                        "backButtonText": "Casos de uso",
+                        "title": "Revisión de contratos sin perder una tarde entera",
+                        "quote": "",
+                        "challengeDescription": "Un despacho con varias sedes dedicaba horas manuales cada semana a revisar cláusulas y extraer datos clave de los contratos entrantes antes de poder avanzar con cada expediente. La revisión manual generaba cuellos de botella y retrasos en la respuesta al cliente.",
+                        "functionalitiesText": "Funcionalidades",
+                        "functionalities": [
+                            {
+                                "title": "Ingesta de documentos",
+                                "description": "Recepción de contratos y anexos por email o carga manual, en cualquier formato habitual (PDF, Word, escaneado)."
+                            },
+                            {
+                                "title": "Extracción de cláusulas clave",
+                                "description": "Identificación automática de plazos, importes, partes y cláusulas de riesgo relevantes para el caso."
+                            },
+                            {
+                                "title": "Resumen estructurado",
+                                "description": "Generación de un resumen para el abogado o consultor responsable, con los puntos que requieren atención humana."
+                            },
+                            {
+                                "title": "Alertas de vencimiento",
+                                "description": "Notificaciones automáticas de plazos y renovaciones detectados en el documento."
+                            },
+                            {
+                                "title": "Registro de auditoría",
+                                "description": "Trazabilidad completa de cada documento procesado y cada decisión del agente."
+                            }
+                        ],
+                        "solutionText": "Solución",
+                        "solutionDescription": "Se implementó un agente basado en Claude que clasifica y extrae la información clave de cada contrato entrante, genera un resumen estructurado y deja siempre un punto de aprobación humana antes de cualquier acción sobre el expediente. El equipo pasó a dedicar su tiempo a la revisión de lo relevante, no a la búsqueda manual de información.",
+                        "technologiesText": "Tecnologías",
+                        "technologies": [
+                            {
+                                "title": "Agente IA",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Orquestación",
+                                "description": "n8n"
+                            },
+                            {
+                                "title": "Integraciones",
+                                "description": "REST APIs y email"
+                            },
+                            {
+                                "title": "Almacenamiento",
+                                "description": "Cifrado en reposo y en tránsito"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Encuentra la respuesta sin preguntar a un compañero",
+                    "supTitle": "Desafío",
+                    "description": "En una consultora con equipo distribuido, encontrar la política interna o el criterio aplicado en un caso anterior implicaba interrumpir a un compañero o buscar entre carpetas y correos dispersos.",
+                    "buttonText": "Ver caso",
+                    "dialog": {
+                        "backButtonText": "Casos de uso",
+                        "title": "Encuentra la respuesta sin preguntar a un compañero",
+                        "quote": "",
+                        "challengeDescription": "En una consultora con equipo distribuido, encontrar la política interna o el criterio aplicado en un caso anterior implicaba interrumpir a un compañero o buscar entre carpetas y correos dispersos, con el consiguiente coste de tiempo para todo el equipo.",
+                        "functionalitiesText": "Funcionalidades",
+                        "functionalities": [
+                            {
+                                "title": "Q&A conectado a la base de conocimiento interna",
+                                "description": "El agente responde preguntas consultando documentos internos, políticas y casos anteriores."
+                            },
+                            {
+                                "title": "Búsqueda semántica",
+                                "description": "Encuentra información relevante aunque la pregunta no use las mismas palabras que el documento original."
+                            },
+                            {
+                                "title": "Citas a la fuente",
+                                "description": "Cada respuesta indica de qué documento interno procede la información."
+                            },
+                            {
+                                "title": "Escalado a un humano",
+                                "description": "Si el agente no tiene suficiente certeza, deriva la pregunta a la persona responsable."
+                            }
+                        ],
+                        "solutionText": "Solución",
+                        "solutionDescription": "Se desplegó un agente de Q&A interno conectado a la documentación y políticas de la consultora, disponible para todo el equipo. Las consultas repetitivas dejaron de depender de la disponibilidad de un compañero concreto, liberando tiempo del equipo senior.",
+                        "technologiesText": "Tecnologías",
+                        "technologies": [
+                            {
+                                "title": "Agente IA",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Base de conocimiento",
+                                "description": "Indexación de documentos internos y wikis"
+                            },
+                            {
+                                "title": "Integraciones",
+                                "description": "REST APIs"
+                            },
+                            {
+                                "title": "Infraestructura",
+                                "description": "Cloud privado o infraestructura propia"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "improveAreas": {
+            "title": "Áreas",
+            "filtersText": "Filtros",
+            "applyFiltersText": "Aplicar filtros",
+            "filtersClearAllText": "Limpiar todo",
+            "painPoints": [
+                {
+                    "type": "A",
+                    "name": "Automatización documental"
+                },
+                {
+                    "type": "B",
+                    "name": "Cumplimiento y auditoría"
+                }
+            ],
+            "faqs": [
+                {
+                    "types": [
+                        "A"
+                    ],
+                    "question": "Menos tiempo revisando documentos, más tiempo asesorando",
+                    "answer": {
+                        "challengeDescription": "En despachos y consultoras con alto volumen documental, gran parte del tiempo del equipo se dedica a tareas repetitivas: clasificar correos y documentos entrantes, extraer datos y trasladarlos manualmente a otros sistemas. Este tipo de trabajo es sistemático pero consume horas que podrían dedicarse al asesoramiento al cliente.",
+                        "solutionText": "Solución",
+                        "solutionDescription": "Un agente de IA conectado al correo y a los sistemas de gestión documental clasifica, extrae y traslada la información relevante, dejando puntos de aprobación humana antes de cualquier acción sobre un expediente. En despliegues similares, esto suele traducirse en una reducción de 20-30% del tiempo dedicado a revisión documental y en la recuperación de varias horas a la semana por profesional.",
+                        "functionalitiesText": "Funcionalidades",
+                        "functionalities": [
+                            {
+                                "title": "Clasificación automática",
+                                "description": "Organiza documentos y correos entrantes por tipo de expediente o cliente."
+                            },
+                            {
+                                "title": "Extracción de datos",
+                                "description": "Traslada automáticamente los datos relevantes a tu CRM, ERP o gestor de expedientes."
+                            },
+                            {
+                                "title": "Puntos de aprobación humana",
+                                "description": "Ninguna acción crítica se ejecuta sin la validación de una persona responsable."
+                            },
+                            {
+                                "title": "Panel de seguimiento",
+                                "description": "Visibilidad sobre qué documentos se han procesado y cuáles requieren revisión manual."
+                            }
+                        ],
+                        "technologiesText": "Tecnologías",
+                        "technologies": [
+                            {
+                                "title": "Agente IA",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Orquestación",
+                                "description": "n8n"
+                            },
+                            {
+                                "title": "Gestión documental",
+                                "description": "Integración con DMS/gestor de expedientes"
+                            },
+                            {
+                                "title": "Notificaciones",
+                                "description": "Email y alertas internas"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "types": [
+                        "B"
+                    ],
+                    "question": "Trazabilidad y cumplimiento sin más carga de trabajo",
+                    "answer": {
+                        "challengeDescription": "Los despachos y consultoras sujetos a requisitos de cumplimiento y auditoría necesitan poder justificar cada decisión y cada acceso a la información de un expediente, algo que resulta costoso de mantener manualmente conforme crece el volumen de casos.",
+                        "solutionText": "Solución",
+                        "solutionDescription": "Se incorpora un registro de auditoría automático a cada acción del agente de IA, junto con los puntos de aprobación humana ya existentes en el flujo. Esto permite mantener trazabilidad completa de cada decisión sin añadir carga administrativa adicional al equipo.",
+                        "functionalitiesText": "Funcionalidades",
+                        "functionalities": [
+                            {
+                                "title": "Registro de auditoría",
+                                "description": "Cada acción del agente queda registrada con fecha, documento afectado y resultado."
+                            },
+                            {
+                                "title": "Control de acceso",
+                                "description": "Los agentes solo acceden a la información necesaria para cada tarea concreta."
+                            },
+                            {
+                                "title": "Cumplimiento RGPD",
+                                "description": "Los datos no se usan para entrenar modelos y pueden desplegarse en infraestructura propia o cloud privado."
+                            },
+                            {
+                                "title": "Reportes de cumplimiento",
+                                "description": "Generación de informes exportables para auditorías internas o externas."
+                            }
+                        ],
+                        "technologiesText": "Tecnologías",
+                        "technologies": [
+                            {
+                                "title": "Agente IA",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Registro de auditoría",
+                                "description": "Logging estructurado"
+                            },
+                            {
+                                "title": "Infraestructura cloud",
+                                "description": "AWS / GCP / Hetzner o cloud privado"
+                            },
+                            {
+                                "title": "Seguridad",
+                                "description": "Cifrado en tránsito y en reposo"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "solutionsApplications": {
+            "title": "Tecnología y agentes IA <span>al servicio de tu despacho o consultora</span>",
+            "subTitle": "Integramos las herramientas que ya usas y añadimos agentes IA donde realmente aportan valor: menos tareas repetitivas, más tiempo para el criterio profesional.",
+            "containers": [
+                {
+                    "title": "Integraciones y gestión documental",
+                    "description": "Conectamos las herramientas que ya usa tu despacho o consultora para que la información fluya sin duplicidades ni tareas manuales.",
+                    "type": "Integración",
+                    "cards": [
+                        {
+                            "title": "Gestión documental (DMS)",
+                            "description": "Integración con tu gestor documental para centralizar contratos, expedientes y comunicaciones."
+                        },
+                        {
+                            "title": "Firma electrónica",
+                            "description": "Conexión con plataformas de firma electrónica para agilizar la formalización de documentos."
+                        },
+                        {
+                            "title": "CRM para despachos y consultoras",
+                            "description": "Sincronización de clientes, expedientes y oportunidades en una única vista."
+                        },
+                        {
+                            "title": "Facturación y control de horas",
+                            "description": "Automatización del registro de horas facturables y su traslado a tu sistema de facturación."
+                        }
+                    ]
+                },
+                {
+                    "title": "Agentes IA para servicios profesionales",
+                    "description": "Agentes basados en Claude diseñados para los flujos de trabajo más habituales en despachos, asesorías y consultoras.",
+                    "type": "Agentes IA",
+                    "cards": [
+                        {
+                            "title": "Q&A interno",
+                            "description": "Responde preguntas del equipo consultando la base de conocimiento interna, políticas y casos anteriores."
+                        },
+                        {
+                            "title": "Revisión y extracción documental",
+                            "description": "Clasifica, extrae y resume la información clave de contratos y documentación entrante."
+                        },
+                        {
+                            "title": "Cualificación de leads",
+                            "description": "Prioriza y enruta nuevas consultas de clientes potenciales según el tipo de caso y la disponibilidad del equipo."
+                        }
+                    ]
+                }
+            ]
+        },
+        "howWeWork": {
+            "title": "¿Cómo trabajamos?",
+            "methods": [
+                {
+                    "title": "Discovery",
+                    "description": "Identificación de los procesos documentales y de consulta interna con mayor potencial de automatización."
+                },
+                {
+                    "title": "Diseño y arquitectura",
+                    "description": "Diseño del agente y de las integraciones con tu gestor documental, CRM o herramientas de facturación."
+                },
+                {
+                    "title": "Implementación",
+                    "description": "Desarrollo, pruebas y despliegue en producción con puntos de aprobación humana configurados desde el primer día."
+                },
+                {
+                    "title": "Soporte y mantenimiento",
+                    "description": "Monitorización, ajustes y evolución del agente a medida que cambian tus procesos."
+                }
+            ]
+        },
+        "digitalProduct": {
+            "buttonText": "Cómo podemos ayudarte"
+        },
+        "faq": {
+            "title": "Preguntas frecuentes sobre tecnología y agentes IA para servicios profesionales",
+            "items": [
+                {
+                    "question": "¿Cuánto cuesta un agente de IA para un despacho o consultora?",
+                    "answer": "El coste varía según la complejidad: desde 8.000-15.000€ para casos básicos (Q&A interno, procesamiento de documentos) hasta 20.000-50.000€ para proyectos con múltiples integraciones (gestión documental, CRM, facturación). Contáctanos para una estimación personalizada."
+                },
+                {
+                    "question": "¿Cuánto tiempo tarda la implementación?",
+                    "answer": "El tiempo medio es de 4 a 8 semanas desde el kickoff hasta producción, igual que en el resto de nuestros proyectos de agentes IA. Empezamos siempre por el proceso de mayor impacto y menor fricción para tu equipo."
+                },
+                {
+                    "question": "¿Cómo se gestiona la confidencialidad de la documentación legal o de clientes?",
+                    "answer": "Los datos no se usan para entrenar modelos y podemos desplegar el agente en tu infraestructura o en un cloud privado para mayor control. Todas las acciones quedan registradas en un log de auditoría, y las decisiones críticas siempre pasan por un punto de aprobación humana."
+                }
+            ]
+        },
+        "aiAgentsCta": {
+            "title": "¿Quieres un agente IA para tu despacho o consultora?",
+            "description": "Automatiza la revisión documental, el Q&A interno y la cualificación de leads con un agente de IA conectado a tus sistemas.",
+            "buttonText": "Ver Agentes IA"
         }
     },
     "brand": {
@@ -3192,6 +3580,10 @@
         "cases": {
             "title": "Casos de éxito | Gigson Solutions",
             "description": "Ejemplos de proyectos por sector y necesidad: CRM, ERP, integraciones, automatización y software a medida."
+        },
+        "blog": {
+            "title": "Blog | Gigson Solutions",
+            "description": "Artículos, guías y casos de éxito sobre IA, ingeniería de software y consultoría tecnológica del equipo de Gigson Solutions."
         },
         "faqs": {
             "title": "Preguntas frecuentes | Gigson Solutions",

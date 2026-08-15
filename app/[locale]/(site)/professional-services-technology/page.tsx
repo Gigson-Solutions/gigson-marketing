@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
-import Construction from '../../../../src/components/Pages/Construction/Construction';
+import ProfessionalServices from '../../../../src/components/Pages/ProfessionalServices/ProfessionalServices';
 
 const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string }> };
@@ -13,34 +13,34 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     locale
   } = params;
 
-  const t = await getTranslations({ locale, namespace: 'cases-construction' });
+  const t = await getTranslations({ locale, namespace: 'cases-professional-services' });
   const title = t('title');
   const description = t('metadescription');
-  const canonical = locale === 'es' ? `${ORIGIN}/es/tecnologia-construccion` : `${ORIGIN}/construction-technology`;
+  const canonical = locale === 'es' ? `${ORIGIN}/es/servicios-profesionales` : `${ORIGIN}/professional-services-technology`;
 
   return {
     title,
     description,
     alternates: {
       canonical,
-      languages: { en: `${ORIGIN}/construction-technology`, es: `${ORIGIN}/es/tecnologia-construccion`, 'x-default': `${ORIGIN}/construction-technology` },
+      languages: { en: `${ORIGIN}/professional-services-technology`, es: `${ORIGIN}/es/servicios-profesionales`, 'x-default': `${ORIGIN}/professional-services-technology` },
     },
     openGraph: { title, description, url: canonical },
   };
 }
 
-export default async function ConstructionTechnologyPage(props: Props) {
+export default async function ProfessionalServicesTechnologyPage(props: Props) {
   const params = await props.params;
 
   const {
     locale
   } = params;
 
-  const t = await getTranslations({ locale, namespace: 'cases-construction' });
+  const t = await getTranslations({ locale, namespace: 'cases-professional-services' });
   const serviceSchema = {
     '@context': 'https://schema.org', '@type': 'Service',
     name: t('title'), description: t('metadescription'),
-    url: `${ORIGIN}/construction-technology`, serviceType: 'Construction Technology',
+    url: `${ORIGIN}/professional-services-technology`, serviceType: 'Professional Services Technology',
     areaServed: 'ES', provider: { '@type': 'Organization', name: 'Gigson Solutions', url: ORIGIN },
   };
   const faqItems = (t.raw('faq') as { items?: { question: string; answer: string }[] } | undefined)?.items ?? [];
@@ -61,7 +61,7 @@ export default async function ConstructionTechnologyPage(props: Props) {
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
-      <Construction />
+      <ProfessionalServices />
     </>
   );
 }

@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 
 import useCasesBgGradient from '../../../assets/casos-de-uso-bg-gradient-1.svg';
+import Brand from '../../../shared/ui/Brand';
 import { ButtonLink } from '../../../shared/ui/Button';
 import Hero from '../../../shared/ui/Hero';
 import HowWeWork from '../../../shared/ui/HowWeWork';
@@ -23,8 +24,8 @@ const bgStyle = {
 type FaqItem = { question: string; answer: string };
 type AiAgentsCta = { title: string; description: string; buttonText: string };
 
-const Retail = () => {
-  const t = useTranslations('cases-retail');
+const ProfessionalServices = () => {
+  const t = useTranslations('cases-professional-services');
 
   const hero = t.raw('hero') as Parameters<typeof Hero>[0];
   const solutionsApplications = t.raw('solutionsApplications') as Parameters<typeof SolutionsApplications>[0];
@@ -55,8 +56,9 @@ const Retail = () => {
           <ButtonLink link="/ai-agents" text={aiAgentsCta.buttonText} />
         </section>
       )}
+      <Brand />
     </>
   );
 };
 
-export default Retail;
+export default ProfessionalServices;
