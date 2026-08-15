@@ -5,6 +5,14 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // `@payloadcms/storage-vercel-blob`'s client-upload handler pulls in
+  // `payload/dist/uploads/safeFetch.js` -> `undici`'s mock utilities, which
+  // use `node:*` scheme imports and `worker_threads` that break the
+  // production webpack build (works fine in `next dev`). Same issue with
+  // `pino`/`pino-abstract-transport` (Payload's logger). Marking them as
+  // server externals keeps them as real `require()` calls at runtime
+  // instead of being statically bundled/analyzed.
+  serverExternalPackages: ['undici', 'pino', 'pino-abstract-transport'],
   // Pages that used to be Vite SPA routes now live under app/[locale]/
   // Add 301 redirects for any legacy paths that changed during migration here.
   redirects: async () => [
