@@ -22,7 +22,7 @@ const Home = () => {
         <div className="contact-img">
           <img className="Bgcont" src={bgSrc} alt="" />
         </div>
-        <Form customClass="home-form" />
+        <Form customClass="home-form" formId="home" />
       </div>
     </div>
   );
