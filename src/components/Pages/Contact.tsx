@@ -13,7 +13,7 @@ const Contact = () => {
         <div className="contact-img">
           <img className="Bgcont" src={bgSrc} alt="" />
         </div>
-        <Form />
+        <Form formId="contact" />
       </div>
     </div>
   );

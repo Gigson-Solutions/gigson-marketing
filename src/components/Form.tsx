@@ -7,12 +7,23 @@ import { useTranslations } from 'next-intl';
 import NextLink from 'next/link';
 
 import Button from '../shared/ui/Button';
+import AttributionFields from './Analytics/AttributionFields';
+
+// This form is rendered on both the home page and /contact, so the id has to
+// come from the call site — otherwise every lead looks like a home lead.
+type FormId = 'home' | 'contact';
+
+const SUBJECTS: Record<FormId, string> = {
+  home: 'Lead · Home · gigsonsolutions.com',
+  contact: 'Lead · Contacto · gigsonsolutions.com',
+};
 
 type FormProps = {
   customClass?: string;
+  formId: FormId;
 };
 
-const Form = ({ customClass }: FormProps) => {
+const Form = ({ customClass, formId }: FormProps) => {
   const t = useTranslations('form');
   const title = t('title');
   const name = t.raw('name') as { label: string; placeholder: string };
@@ -88,9 +99,11 @@ const Form = ({ customClass }: FormProps) => {
               {checkbox.third}
             </label>
           </div>
+          <input type="hidden" name="_subject" value={SUBJECTS[formId]} />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="box" />
           <input type="hidden" name="_cc" value="emmelin@gigsonsolutions.com" />
+          <AttributionFields formId={formId} />
         </div>
         <Button type="submit" name={send} classStyle="form-btn-send" />
       </form>
