@@ -64,10 +64,6 @@ const GoogleConsentScripts = () => {
         strategy="afterInteractive"
       />
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-17149750168"
-        strategy="afterInteractive"
-      />
-      <Script
         src="https://www.googletagmanager.com/gtag/js?id=AW-17165031999"
         strategy="afterInteractive"
       />
@@ -75,7 +71,6 @@ const GoogleConsentScripts = () => {
         {`
           gtag('js', new Date());
           gtag('config', 'G-0JDRL7J7JF');
-          gtag('config', 'AW-17149750168');
           gtag('config', 'AW-17165031999');
         `}
       </Script>
