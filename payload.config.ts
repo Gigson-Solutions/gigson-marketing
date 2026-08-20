@@ -9,6 +9,7 @@ import sharp from 'sharp';
 import { OAuth2Plugin } from 'payload-oauth2';
 
 import { ChatbotLeads } from './collections/ChatbotLeads';
+import { EstimatorSessions } from './collections/EstimatorSessions';
 import { Media } from './collections/Media';
 import { Posts } from './collections/Posts';
 import { Users } from './collections/Users';
@@ -29,7 +30,7 @@ export default buildConfig({
       beforeLogin: ['@/components/GoogleLoginButton#default'],
     },
   },
-  collections: [Posts, Media, Users, ChatbotLeads],
+  collections: [Posts, Media, Users, ChatbotLeads, EstimatorSessions],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET ?? '',
   typescript: {
