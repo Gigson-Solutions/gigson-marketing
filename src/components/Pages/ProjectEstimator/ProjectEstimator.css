@@ -7,7 +7,10 @@
 .project-estimator {
   max-width: var(--gs-content-w);
   margin: 0 auto;
-  padding: var(--gs-space-7) var(--gs-padding-inline) var(--gs-space-9);
+  /* Navbar is `position: fixed` (see NavbarHeader.css) — 96px top padding
+     matches the offset used by other (site) pages (e.g. Iso27001's .hero)
+     so the title doesn't render underneath it. */
+  padding: 96px var(--gs-padding-inline) var(--gs-space-9);
 }
 
 .pe-header {
@@ -94,6 +97,9 @@
   min-width: 0;
   background: var(--gs-white);
   border-radius: var(--gs-radius-lg);
+  /* Keeps the scrollIntoView() step-change effect from tucking the top of
+     the card under the fixed navbar. */
+  scroll-margin-top: 100px;
   padding: var(--gs-space-7);
   box-shadow: var(--gs-shadow-soft);
 }
