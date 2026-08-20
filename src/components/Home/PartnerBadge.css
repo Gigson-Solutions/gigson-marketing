@@ -65,6 +65,13 @@
   color: var(--color-purple-accents);
 }
 
+.partner-badge__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.6rem 2.4rem;
+}
+
 /* CTA button — overrides for dark background context */
 .partner-badge__cta-btn {
   border-color: #ffffff !important;
@@ -75,6 +82,16 @@
 .partner-badge__cta-btn:hover {
   background-color: #ffffff !important;
   color: var(--color-dark-primary) !important;
+}
+
+.partner-badge__cta-secondary {
+  font-size: 1.4rem;
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.partner-badge__cta-secondary:hover {
+  color: #ffffff;
 }
 
 .partner-badge__visual {

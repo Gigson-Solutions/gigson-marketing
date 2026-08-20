@@ -9,25 +9,8 @@ import { useEffect, useRef, useState } from 'react';
 import Bgcont from '../../../assets/Group 33770.svg';
 import Button from '../../../shared/ui/Button';
 
-/* ── Tool list (mirrors the logos grid) ─────────────────────────── */
-const TOOL_OPTIONS = [
-  'Shopify', 'WooCommerce', 'Printify', 'Square', 'PrestaShop',
-  'Gestor Vet', 'Provetcloud', 'QVET', 'Wakyma Vets', 'WinVet',
-  'Dentalink', 'Gesden', 'Orisdent', 'Dendoo', 'DasieClinic',
-  'Presto', 'Revit', 'BuildingMe', 'Construdata', 'PlanHopper',
-  'Kajabi', 'Teachable', 'Moodle', 'Thinkific', 'Classlife',
-  'Cliniko', 'Timp', 'Flow', 'Doctoralia', 'AgendaPro',
-  'CoverManager', 'Revo', 'LastApp', 'FrontRest', 'MissTipsi',
-  'SAP', 'Odoo', 'Sage', 'NetSuite', 'Microsoft Dynamics',
-  'Sendcloud', 'ShipStation', 'EasyPost', 'Saloodo', 'Amazon Seller',
-  'HubSpot', 'Harvest', 'Pipedrive', 'FreshBooks', 'TemaLeader',
-  'Fotocasa', 'Witei', 'Tokko', 'InmoVilla', 'Idealista',
-  'Sesame', 'Personio', 'PayFit', 'Factorial', 'Bizneo',
-  'Otra',
-];
-
 /* ── Multi-select dropdown ───────────────────────────────────────── */
-const ToolMultiSelect = ({ placeholder }: { placeholder: string }) => {
+const ToolMultiSelect = ({ placeholder, options }: { placeholder: string; options: string[] }) => {
   const [selected, setSelected] = useState<string[]>([]);
   const [search, setSearch] = useState('');
   const [open, setOpen] = useState(false);
@@ -49,7 +32,7 @@ const ToolMultiSelect = ({ placeholder }: { placeholder: string }) => {
       prev.includes(tool) ? prev.filter(t => t !== tool) : [...prev, tool],
     );
 
-  const filtered = TOOL_OPTIONS.filter(t =>
+  const filtered = options.filter(t =>
     t.toLowerCase().includes(search.toLowerCase()),
   );
 
@@ -208,9 +191,9 @@ const CHECKBOX_STYLE: React.CSSProperties = {
 };
 
 /* ── Component ───────────────────────────────────────────────────── */
-type Props = { namespace: string; formEmail: string; formSubject: string };
+type Props = { namespace: string; formEmail: string; formSubject: string; toolOptions: string[] };
 
-const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) => {
+const IntegrationContactForm = ({ namespace, formEmail, formSubject, toolOptions }: Props) => {
   const t = useTranslations(namespace);
   const form = t.raw('form') as FormData;
   const { title, fields, send, checkbox, legalNotice } = form;
@@ -267,7 +250,7 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) =>
               {/* Tool — multiselect with search */}
               <div className="input-container input-container-text">
                 <label className="input-container-label">{fields.tool.label}</label>
-                <ToolMultiSelect placeholder={fields.tool.placeholder} />
+                <ToolMultiSelect placeholder={fields.tool.placeholder} options={toolOptions} />
               </div>
 
               <div className="input-container">

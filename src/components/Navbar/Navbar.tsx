@@ -22,6 +22,7 @@ const Navbar = () => {
         { name: t('ai_agents'), href: '/ai-agents' as const },
         { name: t('software'), href: '/software-engineering' as const },
         { name: t('compliance'), href: '/iso-27001-certification' as const },
+        { name: t('estimator'), href: '/project-estimator' as const },
       ],
     },
     {
@@ -33,6 +34,15 @@ const Navbar = () => {
         { name: t('professional_services'), href: '/professional-services-technology' as const },
       ],
     },
+    {
+      name: t('erp_solutions'),
+      children: [
+        { name: t('erp_odoo'), href: '/integrations-odoo' as const },
+        { name: t('erp_custom'), href: '/custom-erp' as const },
+        { name: t('erp_holded'), href: '/integrations-holded' as const },
+      ],
+    },
+    { name: t('claude_partner'), href: '/about-claude-partner' as const },
     { name: t('cases'), href: '/cases' as const },
     { name: t('blog'), href: '/blog' as const },
     { name: t('about'), href: '/about' as const },

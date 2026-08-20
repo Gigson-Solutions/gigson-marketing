@@ -25,9 +25,14 @@ export const PartnerBadge = () => {
               <li key={i}>{item}</li>
             ))}
           </ul>
-          <Link href="/ai-agents" className="button-main partner-badge__cta-btn">
-            {t('cta')}
-          </Link>
+          <div className="partner-badge__ctas">
+            <Link href="/ai-agents" className="button-main partner-badge__cta-btn">
+              {t('cta')}
+            </Link>
+            <Link href="/about-claude-partner" className="partner-badge__cta-secondary">
+              {t('ctaSecondary')}
+            </Link>
+          </div>
         </div>
         <div className="partner-badge__visual">
           <div className="partner-badge__card">

@@ -27,7 +27,12 @@
         "tech_consulting": "Consultoría tecnologica",
         "cibersecurity": "Ciberseguridad",
         "ai_agents": "Agentes IA",
-        "compliance": "Compliance"
+        "compliance": "Compliance",
+        "claude_partner": "Claude Partner",
+        "erp_solutions": "Soluciones ERP",
+        "erp_odoo": "Odoo",
+        "erp_custom": "ERP a medida",
+        "erp_holded": "Holded"
     },
     "blog": {
         "title": "Blog",
@@ -75,7 +80,17 @@
             "Te beneficias del enfoque safety-first de Anthropic en despliegue de IA",
             "Acceso directo al canal de soporte técnico para partners de Anthropic"
         ],
-        "cta": "CONOCE NUESTROS SERVICIOS DE IA →"
+        "cta": "CONOCE NUESTROS SERVICIOS DE IA →",
+        "ctaSecondary": "Ver nuestra certificación oficial"
+    },
+    "erpSolutionsBadge": {
+        "eyebrow": "Partners oficiales de ERP",
+        "title": "Implementamos Odoo y Holded - o construimos tu ERP a medida.",
+        "odooLabel": "Official Odoo partner",
+        "holdedLabel": "Official Holded partner",
+        "customLabel": "¿Ninguno encaja? Te construimos tu ERP desde cero: facturación, WMS o cualquier sistema que necesites.",
+        "cta": "Ver integraciones →",
+        "customCta": "Hablemos →"
     },
     "aiAgents": {
         "title": "Agentes IA para Empresas en España | Gigson Solutions",
@@ -3764,6 +3779,252 @@
                 "third": ""
             },
             "legalNotice": "Gigson Solutions es una entidad independiente y no está afiliada ni forma parte de Holded. No representamos a Holded ni actuamos en su nombre. Nuestra condición es exclusivamente la de partner oficial autorizado para la implementación y asesoramiento sobre sus productos y servicios."
+        }
+    },
+    "integrations-odoo": {
+        "title": "Integraciones Odoo | Gigson Solutions",
+        "metadescription": "Partner oficial de implementación de Odoo. Configuración de tu ERP Odoo a medida e integraciones con las herramientas que ya usas: inventario, facturación, CRM, fabricación y más.",
+        "hero": {
+            "badge": "Partner oficial",
+            "title": "Implementación de Odoo e integraciones con el software que necesites",
+            "subtitle": "Un ERP Odoo completo, adaptado a cómo funciona tu negocio.",
+            "description": "Somos partner oficial de Odoo. Implementamos, personalizamos y conectamos Odoo con los sistemas que ya usas, para que toda tu operación funcione sobre una única fuente de verdad.",
+            "cta": "HABLA CON UN EXPERTO EN ODOO",
+            "specialists": {
+                "title": "Especialistas en implementar Odoo y conectarlo con las herramientas que ya usas.",
+                "bullets": [
+                    "Somos partner oficial de Odoo.",
+                    "Implementación de cualquier módulo: ventas, inventario, fabricación, contabilidad, CRM.",
+                    "Asesoramiento antes de cualquier implementación o integración."
+                ],
+                "link": "Ver casos de uso"
+            }
+        },
+        "useCases": {
+            "label": "CASOS DE USO",
+            "items": [
+                {
+                    "title": "Contabilidad multiempresa y multidivisa",
+                    "description": "Configura Odoo Contabilidad para gestionar varias empresas, divisas y regímenes fiscales desde una única instancia.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "Gestión de inventario y almacén (WMS)",
+                    "description": "Configura Odoo Inventario como un WMS completo: multi-almacén, lectura de código de barras y reglas de reabastecimiento automático.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "Fabricación (MRP) y lista de materiales",
+                    "description": "Modela tu proceso de producción en Odoo Fabricación, desde la lista de materiales hasta las órdenes de trabajo y el control de calidad.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "Ventas, e-commerce y sincronización de pagos",
+                    "description": "Conecta tu tienda online o TPV con Odoo para que pedidos, clientes y pagos se sincronicen en tiempo real.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "CRM y automatización del pipeline de ventas",
+                    "description": "Centraliza leads y oportunidades en Odoo CRM, conectado con tus herramientas de marketing y soporte.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "Personalización específica de sector",
+                    "description": "Adapta los módulos de Odoo a los flujos de trabajo concretos de tu sector, en lugar de forzar una plantilla genérica.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "Migración desde otro ERP o desde hojas de cálculo",
+                    "description": "Traslada tus datos de forma segura desde Holded, SAP, Sage o Excel a un Odoo correctamente configurado.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                }
+            ]
+        },
+        "logos": {
+            "title": "Odoo se conecta con las herramientas que ya usas",
+            "subtitle": "Software compatible",
+            "mainCta": "Empieza a implementar Odoo"
+        },
+        "form": {
+            "sectionTitle": "Una implementación de Odoo adaptada a cómo trabajas.",
+            "sectionDescription": "Diseñamos contigo tu configuración e integraciones de Odoo. Antes de construir nada, analizamos tu caso para definir la solución más eficiente.",
+            "title": "¿Qué necesitas implementar o integrar?",
+            "fields": {
+                "name": {
+                    "label": "Nombre",
+                    "placeholder": "Tu nombre"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "tu@empresa.com"
+                },
+                "phone": {
+                    "label": "Teléfono",
+                    "placeholder": "+34 600 000 000"
+                },
+                "company": {
+                    "label": "Empresa",
+                    "placeholder": "Nombre de tu empresa"
+                },
+                "tool": {
+                    "label": "Herramienta a integrar",
+                    "placeholder": "Shopify, HubSpot, SAP..."
+                },
+                "dataTypes": {
+                    "label": "¿Qué datos necesitas sincronizar?",
+                    "options": [
+                        "Facturas",
+                        "Pedidos",
+                        "Clientes",
+                        "Productos",
+                        "Otro"
+                    ]
+                },
+                "problem": {
+                    "label": "Cuéntanos tu problema o necesidad",
+                    "placeholder": "Describe qué quieres implementar, automatizar o conectar..."
+                }
+            },
+            "send": "ENVIAR",
+            "checkbox": {
+                "first": "He leído y acepto la ",
+                "second": "Política de privacidad",
+                "third": ""
+            },
+            "legalNotice": "Gigson Solutions es una entidad independiente y no está afiliada ni forma parte de Odoo S.A. No representamos a Odoo ni actuamos en su nombre. Nuestra condición es exclusivamente la de partner oficial autorizado para la implementación y asesoramiento sobre sus productos y servicios."
+        }
+    },
+    "customErp": {
+        "title": "Desarrollo de ERP a medida | Gigson Solutions",
+        "metadescription": "Diseñamos y construimos sistemas de gestión a medida - facturación, WMS, fabricación o cualquier otro sistema - cuando las plataformas estándar no encajan con tu forma de trabajar.",
+        "hero": {
+            "suptitle": "ERP A MEDIDA",
+            "title": "Un ERP construido alrededor de tu negocio, no al revés",
+            "description": "Cuando Odoo, Holded o cualquier otro ERP estándar no encaja con cómo trabajas realmente, diseñamos y construimos un sistema desde cero. No tiene por qué ser de facturación: puede ser un WMS, un sistema de control de producción o cualquier otra herramienta que tu operación necesite.",
+            "buttonText": "Contáctanos"
+        },
+        "solutionsApplications": {
+            "title": "Un sistema de gestión diseñado para tu operación.",
+            "subTitle": "Partimos de tus procesos reales, no de una plantilla genérica. El resultado es un sistema que tu equipo usa de verdad, y que crece con tu negocio.",
+            "containers": [
+                {
+                    "title": "Qué entregamos",
+                    "description": "Desde la gestión de almacén hasta sistemas de facturación o producción totalmente a medida, construimos el sistema exacto que tu operación necesita, integrado con las herramientas que ya usas.",
+                    "type": "Casos de uso",
+                    "cards": [
+                        {
+                            "title": "Gestión de almacén (WMS)",
+                            "description": "Un sistema construido alrededor de la distribución real de tu almacén, tus rutas de picking y tus reglas de stock, no una plantilla genérica forzada sobre tu operación."
+                        },
+                        {
+                            "title": "Facturación y billing a medida",
+                            "description": "Una lógica de facturación que se ajusta exactamente a tu modelo de precios, tus regímenes fiscales y tus reglas de negocio, sin parches."
+                        },
+                        {
+                            "title": "Control de producción y fabricación",
+                            "description": "Sigue las órdenes de trabajo, materiales y fases de producción tal y como funciona realmente tu planta."
+                        },
+                        {
+                            "title": "Hub de integración multi-sistema",
+                            "description": "Un sistema central que conecta tus herramientas actuales (CRM, e-commerce, contabilidad) en lugar de obligarte a migrarlo todo."
+                        },
+                        {
+                            "title": "Cualquier otro sistema de gestión",
+                            "description": "Si no encaja en ninguna categoría, lo construimos igual: primero el proceso, después el software diseñado a su alrededor."
+                        }
+                    ]
+                },
+                {
+                    "title": "Por qué construir a medida",
+                    "description": "Los ERP estándar están diseñados para la empresa media. Cuando tus flujos de trabajo son lo bastante específicos como para que estés luchando contra el software en lugar de usarlo, construir a medida compensa.",
+                    "type": "Enfoque",
+                    "cards": [
+                        {
+                            "title": "Sin dependencia de licencias",
+                            "description": "El sistema es tuyo, sin cuotas de licencia por usuario que crecen en tu contra a medida que creces."
+                        },
+                        {
+                            "title": "Diseñado para tu flujo exacto",
+                            "description": "Sin parches ni módulos sin usar: cada pantalla y proceso corresponde a cómo trabaja realmente tu equipo."
+                        },
+                        {
+                            "title": "Mantenibilidad a largo plazo",
+                            "description": "Documentamos y entregamos el sistema para que no dependa de un único desarrollador o proveedor."
+                        }
+                    ]
+                }
+            ]
+        },
+        "howWeWork": {
+            "eyebrow": "Cómo trabajamos",
+            "h2a": "Del mapeo de procesos",
+            "h2b": "a un sistema en producción.",
+            "lead": "Empezamos por entender cómo trabajas realmente hoy, antes de escribir una sola línea de código.",
+            "steps": [
+                {
+                    "title": "Descubrimiento",
+                    "description": "Mapeamos tus procesos actuales de principio a fin e identificamos dónde un ERP estándar te obligaría a hacer concesiones."
+                },
+                {
+                    "title": "Diseño y prototipo",
+                    "description": "Diseñamos el modelo de datos y los flujos de trabajo, y construimos un prototipo funcional del proceso principal."
+                },
+                {
+                    "title": "Desarrollo e integración",
+                    "description": "Construimos el sistema completo y lo conectamos con las herramientas que ya usas (contabilidad, e-commerce, CRM)."
+                },
+                {
+                    "title": "Soporte e iteración",
+                    "description": "Mantenimiento e iteración continua a medida que evolucionan tus procesos: el sistema crece con tu negocio."
+                }
+            ]
+        },
+        "digitalProduct": {
+            "title": "¿Listo para diseñar tu ERP a medida?",
+            "description": "Reserva una llamada de descubrimiento. Mapeamos tu proceso actual y te decimos honestamente si te conviene más un desarrollo a medida o un ERP estándar (Odoo u Holded).",
+            "buttonText": "Reservar una llamada",
+            "cards": [
+                {
+                    "title": "Mapeo de procesos y arquitectura",
+                    "description": "Mapeamos tus flujos de trabajo de principio a fin y diseñamos un modelo de datos y una arquitectura de sistema adaptada a cómo operas realmente."
+                },
+                {
+                    "title": "Desarrollo full-stack",
+                    "description": "Construimos el sistema y lo integramos con las herramientas que ya usas (contabilidad, e-commerce, CRM) para que nada se duplique."
+                },
+                {
+                    "title": "Retainer continuo",
+                    "description": "Ofrecemos paquetes de retainer mensual para mantener, iterar y ampliar el sistema a medida que tu negocio evoluciona."
+                }
+            ]
+        },
+        "faq": {
+            "title": "Preguntas frecuentes sobre desarrollo de ERP a medida",
+            "items": [
+                {
+                    "question": "¿Por qué construir un ERP a medida en lugar de usar Odoo o Holded?",
+                    "answer": "Los ERP estándar cubren bien la mayoría de procesos habituales. Un desarrollo a medida tiene sentido cuando tu operación tiene flujos de trabajo específicos que no encajan bien en un producto estándar: por ejemplo, una distribución de almacén muy particular, un proceso de producción concreto o una lógica de facturación especial. Te diremos honestamente si una opción estándar como Odoo o Holded te serviría mejor antes de recomendarte un desarrollo a medida."
+                },
+                {
+                    "question": "¿\"ERP a medida\" significa siempre un sistema de facturación?",
+                    "answer": "No. Puede ser un sistema de gestión de almacén (WMS), un sistema de control de producción o fabricación, o cualquier otro sistema de gestión que tu operación necesite: la facturación es solo uno de los posibles casos de uso."
+                },
+                {
+                    "question": "¿Cuánto tiempo lleva un proyecto de ERP a medida?",
+                    "answer": "Depende totalmente del alcance. Empezamos con una fase de descubrimiento para mapear tus procesos, y después te damos un plazo realista y un plan de entrega por fases en lugar de un único lanzamiento monolítico."
+                },
+                {
+                    "question": "¿Qué pasa después de entregar el sistema?",
+                    "answer": "Documentamos el sistema y ofrecemos soporte continuo en modalidad retainer para mantenimiento, iteración y nuevas funcionalidades a medida que tu negocio evoluciona."
+                },
+                {
+                    "question": "¿Un ERP a medida puede integrarse con las herramientas que ya usamos?",
+                    "answer": "Sí. Diseñamos las integraciones con tu contabilidad, e-commerce, CRM u otras herramientas actuales como parte del proyecto, para que no tengas que migrarlo todo de golpe."
+                }
+            ]
+        },
+        "sectorsCta": {
+            "title": "Casos de uso por sector"
         }
     },
     "ai_manifest": {

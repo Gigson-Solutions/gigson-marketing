@@ -27,7 +27,12 @@
         "software": "Software engineering",
         "cibersecurity": "Cybersecurity",
         "ai_agents": "AI Agents",
-        "compliance": "Compliance"
+        "compliance": "Compliance",
+        "claude_partner": "Claude Partner",
+        "erp_solutions": "ERP Solutions",
+        "erp_odoo": "Odoo",
+        "erp_custom": "Custom ERP",
+        "erp_holded": "Holded"
     },
     "blog": {
         "title": "Blog",
@@ -75,7 +80,17 @@
             "You benefit from Anthropic's safety-first approach to AI deployment",
             "Direct access to Anthropic's partner technical support channel"
         ],
-        "cta": "LEARN ABOUT OUR AI SERVICES →"
+        "cta": "LEARN ABOUT OUR AI SERVICES →",
+        "ctaSecondary": "See our official certification"
+    },
+    "erpSolutionsBadge": {
+        "eyebrow": "Official ERP partners",
+        "title": "Odoo and Holded implementation - or a custom ERP built for how you work.",
+        "odooLabel": "Official Odoo partner",
+        "holdedLabel": "Official Holded partner",
+        "customLabel": "Neither one fits? We build your ERP from scratch - invoicing, WMS or any system you need.",
+        "cta": "See integrations →",
+        "customCta": "Talk to us →"
     },
     "aiAgents": {
         "title": "AI Agents for Business in Spain | Gigson Solutions",
@@ -3746,6 +3761,252 @@
                 "third": ""
             },
             "legalNotice": "Gigson Solutions is an independent entity and is not affiliated with or part of Holded. We do not represent Holded or act on its behalf. Our status is solely that of an authorised official partner for the implementation of and advice on its products and services."
+        }
+    },
+    "integrations-odoo": {
+        "title": "Odoo Integrations | Gigson Solutions",
+        "metadescription": "Official Odoo implementation partner. Custom Odoo ERP setup and integrations with the tools you already use - inventory, invoicing, CRM, manufacturing and more.",
+        "hero": {
+            "badge": "Official partner",
+            "title": "Odoo implementation and integrations with <span>the tools you need</span>",
+            "subtitle": "A complete Odoo ERP, tailored to how your business runs.",
+            "description": "We are an official Odoo partner. We implement, customise and connect Odoo with the systems you already use, so your whole operation runs on a single source of truth.",
+            "cta": "TALK TO AN ODOO EXPERT",
+            "specialists": {
+                "title": "Specialists in implementing Odoo and connecting it with the tools you already use.",
+                "bullets": [
+                    "We are an official Odoo partner.",
+                    "Implementation for every module: sales, inventory, manufacturing, accounting, CRM.",
+                    "Advice before any implementation or integration."
+                ],
+                "link": "See use cases"
+            }
+        },
+        "useCases": {
+            "label": "USE CASES",
+            "items": [
+                {
+                    "title": "Multi-company & multi-currency accounting",
+                    "description": "Set up Odoo Accounting to manage several companies, currencies and tax regimes from a single instance.",
+                    "cta": "TALK TO AN ODOO EXPERT"
+                },
+                {
+                    "title": "Inventory & warehouse management (WMS)",
+                    "description": "Configure Odoo Inventory as a full WMS: multi-warehouse, barcode scanning and automated replenishment rules.",
+                    "cta": "TALK TO AN ODOO EXPERT"
+                },
+                {
+                    "title": "Manufacturing (MRP) & bill of materials",
+                    "description": "Model your production process in Odoo Manufacturing, from bill of materials to work orders and quality control.",
+                    "cta": "TALK TO AN ODOO EXPERT"
+                },
+                {
+                    "title": "Sales, e-commerce & payment sync",
+                    "description": "Connect your online store or POS with Odoo so orders, customers and payments sync in real time.",
+                    "cta": "TALK TO AN ODOO EXPERT"
+                },
+                {
+                    "title": "CRM & sales pipeline automation",
+                    "description": "Centralise leads and opportunities in Odoo CRM, connected to your marketing and support tools.",
+                    "cta": "TALK TO AN ODOO EXPERT"
+                },
+                {
+                    "title": "Sector-specific customisation",
+                    "description": "Adapt Odoo's modules to your sector's specific workflows instead of forcing a generic template.",
+                    "cta": "TALK TO AN ODOO EXPERT"
+                },
+                {
+                    "title": "Migration from another ERP or spreadsheets",
+                    "description": "Move your data safely from Holded, SAP, Sage or spreadsheets into a properly configured Odoo.",
+                    "cta": "TALK TO AN ODOO EXPERT"
+                }
+            ]
+        },
+        "logos": {
+            "title": "Odoo connects with the tools you already use",
+            "subtitle": "Compatible software",
+            "mainCta": "Start implementing Odoo"
+        },
+        "form": {
+            "sectionTitle": "An Odoo implementation tailored to how you work.",
+            "sectionDescription": "We design your Odoo setup and integrations together with you. Before we build anything, we analyse your case to define the most efficient solution.",
+            "title": "What do you need to implement or integrate?",
+            "fields": {
+                "name": {
+                    "label": "Name",
+                    "placeholder": "Your name"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "you@company.com"
+                },
+                "phone": {
+                    "label": "Phone",
+                    "placeholder": "+34 600 000 000"
+                },
+                "company": {
+                    "label": "Company",
+                    "placeholder": "Your company name"
+                },
+                "tool": {
+                    "label": "Tool to integrate",
+                    "placeholder": "Shopify, HubSpot, SAP..."
+                },
+                "dataTypes": {
+                    "label": "What data do you need to sync?",
+                    "options": [
+                        "Invoices",
+                        "Orders",
+                        "Customers",
+                        "Products",
+                        "Other"
+                    ]
+                },
+                "problem": {
+                    "label": "Tell us about your problem or need",
+                    "placeholder": "Describe what you want to implement, automate or connect..."
+                }
+            },
+            "send": "SEND",
+            "checkbox": {
+                "first": "I have read and accept the ",
+                "second": "Privacy Policy",
+                "third": ""
+            },
+            "legalNotice": "Gigson Solutions is an independent entity and is not affiliated with or part of Odoo S.A. We do not represent Odoo or act on its behalf. Our status is solely that of an authorised official partner for the implementation of and advice on its products and services."
+        }
+    },
+    "customErp": {
+        "title": "Custom ERP Development | Gigson Solutions",
+        "metadescription": "We design and build custom ERP systems - invoicing, WMS, manufacturing or any management system - when off-the-shelf platforms don't fit how you work.",
+        "hero": {
+            "suptitle": "CUSTOM ERP DEVELOPMENT",
+            "title": "An ERP <span>built around your business</span>, not the other way round",
+            "description": "When Odoo, Holded or any other off-the-shelf ERP doesn't fit how you actually work, we design and build a system from scratch. It doesn't have to be about invoicing - it can be a WMS, a production management system, or any other tool your operation needs.",
+            "buttonText": "Contact us"
+        },
+        "solutionsApplications": {
+            "title": "A management system <span>designed for your operation.</span>",
+            "subTitle": "We start from your real processes, not a generic template. The result is a system your team actually uses, that grows as your business does.",
+            "containers": [
+                {
+                    "title": "What we deliver",
+                    "description": "From warehouse management to fully custom invoicing or production systems, we build the exact system your operation needs - integrated with the tools you already use.",
+                    "type": "Use cases",
+                    "cards": [
+                        {
+                            "title": "Warehouse management (WMS)",
+                            "description": "A system built around your real warehouse layout, picking routes and stock rules - not a generic template forced onto your operation."
+                        },
+                        {
+                            "title": "Custom invoicing & billing",
+                            "description": "Billing logic that matches your pricing model, tax regimes and business rules exactly, without workarounds."
+                        },
+                        {
+                            "title": "Production & manufacturing control",
+                            "description": "Track work orders, materials and production stages the way your factory actually operates."
+                        },
+                        {
+                            "title": "Multi-system integration hub",
+                            "description": "A central system that connects your existing tools (CRM, e-commerce, accounting) instead of forcing you to migrate everything."
+                        },
+                        {
+                            "title": "Any other management system",
+                            "description": "If it doesn't fit a category, we still build it: the process comes first, the software is designed around it."
+                        }
+                    ]
+                },
+                {
+                    "title": "Why build custom",
+                    "description": "Off-the-shelf ERPs are designed for the average company. When your workflows are specific enough that you're fighting the software instead of using it, custom development pays off.",
+                    "type": "Approach",
+                    "cards": [
+                        {
+                            "title": "No licensing lock-in",
+                            "description": "You own the system - no per-user licensing fees that scale against you as you grow."
+                        },
+                        {
+                            "title": "Built for your exact workflow",
+                            "description": "No workarounds, no unused modules - every screen and process maps to how your team actually works."
+                        },
+                        {
+                            "title": "Long-term maintainability",
+                            "description": "We document and hand over the system so it doesn't depend on a single developer or vendor."
+                        }
+                    ]
+                }
+            ]
+        },
+        "howWeWork": {
+            "eyebrow": "How we engage",
+            "h2a": "From process mapping",
+            "h2b": "to a system in production.",
+            "lead": "We start by understanding how you actually work today, before writing a single line of code.",
+            "steps": [
+                {
+                    "title": "Discovery",
+                    "description": "We map your current processes end-to-end and identify where an off-the-shelf ERP would force compromises."
+                },
+                {
+                    "title": "Design & prototype",
+                    "description": "We design the data model and workflows, and build a working prototype of the core process."
+                },
+                {
+                    "title": "Development & integration",
+                    "description": "We build the full system and connect it with the tools you already use (accounting, e-commerce, CRM)."
+                },
+                {
+                    "title": "Support & iteration",
+                    "description": "Ongoing maintenance and iteration as your processes evolve - the system grows with your business."
+                }
+            ]
+        },
+        "digitalProduct": {
+            "title": "Ready to design <span>your custom ERP</span>?",
+            "description": "Book a discovery call. We'll map your current process and tell you honestly whether a custom build or an off-the-shelf ERP (Odoo or Holded) makes more sense for you.",
+            "buttonText": "Book a discovery call",
+            "cards": [
+                {
+                    "title": "Process mapping & architecture",
+                    "description": "We map your workflows end-to-end and design a data model and system architecture that fits how you actually operate."
+                },
+                {
+                    "title": "Full-stack development",
+                    "description": "We build the system and integrate it with the tools you already use - accounting, e-commerce, CRM - so nothing is duplicated."
+                },
+                {
+                    "title": "Ongoing retainer",
+                    "description": "We offer monthly retainer packages to maintain, iterate and expand the system as your business evolves."
+                }
+            ]
+        },
+        "faq": {
+            "title": "Frequently asked questions about custom ERP development",
+            "items": [
+                {
+                    "question": "Why build a custom ERP instead of using Odoo or Holded?",
+                    "answer": "Off-the-shelf ERPs cover most common processes well. A custom build makes sense when your operation has specific workflows that don't map cleanly onto a standard product - for example, a very particular warehouse layout, production process or billing logic. We'll tell you honestly if an off-the-shelf option like Odoo or Holded would serve you better before recommending custom development."
+                },
+                {
+                    "question": "Does \"custom ERP\" always mean an invoicing system?",
+                    "answer": "No. It can be a warehouse management system (WMS), a production or manufacturing control system, or any other management system your operation needs - invoicing is just one possible use case."
+                },
+                {
+                    "question": "How long does a custom ERP project take?",
+                    "answer": "It depends entirely on scope. We start with a discovery phase to map your processes, then give you a realistic timeline and a phased delivery plan rather than a single big-bang release."
+                },
+                {
+                    "question": "What happens after the system is delivered?",
+                    "answer": "We document the system and offer ongoing retainer support for maintenance, iteration and new features as your business evolves."
+                },
+                {
+                    "question": "Can a custom ERP integrate with the tools we already use?",
+                    "answer": "Yes. We design the integrations with your existing accounting, e-commerce, CRM or other tools as part of the project, so you don't need to migrate everything at once."
+                }
+            ]
+        },
+        "sectorsCta": {
+            "title": "Use cases by sector"
         }
     },
     "ai_manifest": {
