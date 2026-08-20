@@ -49,6 +49,13 @@ const ProjectEstimator = () => {
   const pagePath = usePathname();
 
   const [step, setStep] = useState(1);
+  const mainRef = useRef<HTMLDivElement>(null);
+
+  // Scroll back to the top of the form on every step change — otherwise a
+  // user who scrolled down to read step N lands mid-scroll on step N+1.
+  useEffect(() => {
+    mainRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [step]);
   const [values, setValues] = useState<EstimatorInputs>({
     ...initialValues,
     businessDomain: undefined as unknown as EstimatorInputs['businessDomain'],
@@ -232,7 +239,7 @@ const ProjectEstimator = () => {
           </ol>
         </aside>
 
-        <main className="pe-main">
+        <main className="pe-main" ref={mainRef}>
           <div className="pe-progress" aria-hidden="true">
             <div className="pe-progress-fill" style={{ width: `${(step / TOTAL_STEPS) * 100}%` }} />
           </div>
@@ -324,6 +331,8 @@ const ProjectEstimator = () => {
         onClose={() => setFeatureModalOpen(false)}
         onSave={saveFeature}
         initial={editingFeature}
+        token={token}
+        existingFeatureNames={features.map((f) => f.name)}
       />
       <LeadCaptureModal
         isOpen={leadModalOpen}
