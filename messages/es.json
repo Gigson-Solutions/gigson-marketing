@@ -35,7 +35,19 @@
         "empty": "Aún no hay artículos. Vuelve pronto.",
         "readMore": "LEER MÁS →",
         "backToBlog": "← VOLVER AL BLOG",
-        "contentUnavailable": "Contenido no disponible."
+        "contentUnavailable": "Contenido no disponible.",
+        "allCategories": "Todos",
+        "readingTime": "{minutes} min de lectura",
+        "relatedPosts": "Sigue leyendo",
+        "categories": {
+            "agentes-ia": "Agentes IA",
+            "integraciones-erp": "Integraciones ERP",
+            "ciberseguridad": "Ciberseguridad",
+            "ingenieria-software": "Ingeniería de software",
+            "consultoria-tecnologica": "Consultoría tecnológica",
+            "casos-exito": "Casos de éxito",
+            "sectores": "Sectores"
+        }
     },
     "hero_link": "/es/contacto",
     "home": {
