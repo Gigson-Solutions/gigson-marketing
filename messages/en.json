@@ -35,7 +35,19 @@
         "empty": "No posts yet. Check back soon.",
         "readMore": "READ MORE →",
         "backToBlog": "← BACK TO BLOG",
-        "contentUnavailable": "Content unavailable."
+        "contentUnavailable": "Content unavailable.",
+        "allCategories": "All",
+        "readingTime": "{minutes} min read",
+        "relatedPosts": "Keep reading",
+        "categories": {
+            "agentes-ia": "AI Agents",
+            "integraciones-erp": "ERP Integrations",
+            "ciberseguridad": "Cybersecurity",
+            "ingenieria-software": "Software Engineering",
+            "consultoria-tecnologica": "Technology Consulting",
+            "casos-exito": "Case Studies",
+            "sectores": "Sectors"
+        }
     },
     "hero_link": "/contact",
     "home": {

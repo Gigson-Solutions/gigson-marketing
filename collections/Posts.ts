@@ -9,6 +9,7 @@ import {
 
 import { CtaBlock } from './blocks/CtaBlock';
 import { HighlightBlock } from './blocks/HighlightBlock';
+import { FaqBlock } from './blocks/FaqBlock';
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -43,6 +44,23 @@ export const Posts: CollectionConfig = {
       unique: true,
       admin: {
         description: 'URL identifier — use lowercase letters, numbers and hyphens (e.g. "automatizacion-erp-2026")',
+      },
+    },
+    {
+      name: 'category',
+      type: 'select',
+      options: [
+        { label: 'Agentes IA', value: 'agentes-ia' },
+        { label: 'Integraciones ERP (Holded/Odoo)', value: 'integraciones-erp' },
+        { label: 'Ciberseguridad', value: 'ciberseguridad' },
+        { label: 'Ingeniería de software', value: 'ingenieria-software' },
+        { label: 'Consultoría tecnológica / CTO as a Service', value: 'consultoria-tecnologica' },
+        { label: 'Casos de éxito', value: 'casos-exito' },
+        { label: 'Sectores (logística, retail, construcción, servicios profesionales)', value: 'sectores' },
+      ],
+      admin: {
+        position: 'sidebar',
+        description: 'Pilar temático del post — se usa para filtrar en /blog y agrupar posts relacionados.',
       },
     },
     {
@@ -119,7 +137,7 @@ export const Posts: CollectionConfig = {
           }),
           HorizontalRuleFeature(),
           FixedToolbarFeature(),
-          BlocksFeature({ blocks: [CtaBlock, HighlightBlock] }),
+          BlocksFeature({ blocks: [CtaBlock, HighlightBlock, FaqBlock] }),
         ],
       }),
     },
