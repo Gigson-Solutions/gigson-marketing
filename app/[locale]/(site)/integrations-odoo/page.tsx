@@ -31,7 +31,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/integrations-odoo`,
       },
     },
-    openGraph: { title, description, url: canonical },
+    openGraph: { title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

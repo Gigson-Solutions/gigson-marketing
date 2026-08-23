@@ -108,6 +108,20 @@
   align-items: flex-start;
   gap: 1.6rem;
   width: 100%;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.partner-badge__card:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.partner-badge__card-link {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: underline;
+  color: #ffffff;
 }
 
 /* Claude logo — keep original colors (asterisk is salmon, text is black → invert to white) */

@@ -21,6 +21,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   return {
+    metadataBase: new URL(BASE_URL),
     alternates: {
       languages: {
         'en': BASE_URL,

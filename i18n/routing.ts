@@ -47,7 +47,6 @@ export const routing = defineRouting({
     '/integrations-holded': { en: '/integrations-holded', es: '/integraciones-holded' },
     '/integrations-odoo': { en: '/integrations-odoo', es: '/integraciones-odoo' },
     '/custom-erp': { en: '/custom-erp', es: '/erp-a-medida' },
-    '/project-estimator': { en: '/project-estimator', es: '/estimador-de-proyecto' },
     '/blog': '/blog',
     '/blog/[slug]': '/blog/[slug]',
   },

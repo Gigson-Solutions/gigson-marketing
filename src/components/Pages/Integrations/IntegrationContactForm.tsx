@@ -203,24 +203,12 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject, toolOptions
   return (
     <section
       id="contacto"
-      className="px-landing bg-white overflow-hidden"
+      className="px-landing overflow-hidden"
       style={{ scrollMarginTop: '91px' }}
     >
-      {/* Decorative SVG — top right, matches /contacto style */}
-      <div style={{ textAlign: 'right', margin: '0 1.3rem 0 0' }}>
-        <img
-          src={bgSrc}
-          alt=""
-          aria-hidden="true"
-          style={{
-            width: '14rem',
-            height: '14rem',
-            objectFit: 'cover',
-            position: 'relative',
-            top: '5.5rem',
-            zIndex: -1,
-          }}
-        />
+      {/* Decorative SVG — top right, matches /contacto sizing (Form.css) */}
+      <div className="form-decorative-img-wrap">
+        <img src={bgSrc} alt="" aria-hidden="true" className="form-decorative-img" />
       </div>
 
       <div className="max-w-[88.875rem] mx-auto">
