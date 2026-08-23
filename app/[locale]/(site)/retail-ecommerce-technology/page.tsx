@@ -25,7 +25,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       canonical,
       languages: { en: `${ORIGIN}/retail-ecommerce-technology`, es: `${ORIGIN}/es/tecnologia-retail-ecommerce`, 'x-default': `${ORIGIN}/retail-ecommerce-technology` },
     },
-    openGraph: { title, description, url: canonical },
+    openGraph: { title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

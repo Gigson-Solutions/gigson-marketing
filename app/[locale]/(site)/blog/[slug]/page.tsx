@@ -52,7 +52,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       type: 'article',
       publishedTime: post.publishedAt,
       authors: post.author ? [post.author] : undefined,
-      images: coverUrl ? [{ url: coverUrl, alt: post.coverImage?.alt }] : undefined,
+      images: coverUrl ? [{ url: coverUrl, alt: post.coverImage?.alt }] : ['/opengraph-image'],
     },
   };
 }
