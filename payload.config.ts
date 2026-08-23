@@ -11,6 +11,7 @@ import { OAuth2Plugin } from 'payload-oauth2';
 import { ChatbotLeads } from './collections/ChatbotLeads';
 import { EstimatorSessions } from './collections/EstimatorSessions';
 import { Media } from './collections/Media';
+import { migrations } from './migrations';
 import { Posts } from './collections/Posts';
 import { Users } from './collections/Users';
 
@@ -40,6 +41,12 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI ?? '',
     },
+    migrationDir: path.resolve(dirname, 'migrations'),
+    // Applied automatically on every production boot (see connect.js:
+    // `if (NODE_ENV === 'production' && this.prodMigrations) await this.migrate(...)`).
+    // Local dev keeps using the automatic schema push (NODE_ENV=development),
+    // so this only matters for Preview/Production deployments on Vercel.
+    prodMigrations: migrations,
   }),
   sharp,
   plugins: [
