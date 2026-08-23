@@ -14,10 +14,14 @@ import { Client } from 'pg';
  * runtime, where the real value is injected but never exposed to a human
  * or to this code's own response. Idempotent: safe to call more than once.
  *
- * Gated by PAYLOAD_PREVIEW_SECRET (already exists for `/api/preview`) so
- * it isn't a public open endpoint while it's live.
+ * Gated by a one-time random token generated for this commit (not an env
+ * var — `PAYLOAD_PREVIEW_SECRET` turned out not to be set on staging) so
+ * it isn't a publicly open endpoint during the short window it's live.
+ * This whole route is deleted in the very next commit after use.
  */
 export const runtime = 'nodejs';
+
+const ONE_TIME_TOKEN = '534e1970da04cfa4b02ae63e79de8fa52f8cf7d67e0faf42';
 
 const CHECK_SQL = `SELECT column_name FROM information_schema.columns WHERE table_name = 'posts' AND column_name = 'category';`;
 
@@ -34,7 +38,7 @@ ALTER TABLE "posts" ADD COLUMN IF NOT EXISTS "category" "public"."enum_posts_cat
 
 export async function GET(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get('secret');
-  if (!process.env.PAYLOAD_PREVIEW_SECRET || secret !== process.env.PAYLOAD_PREVIEW_SECRET) {
+  if (secret !== ONE_TIME_TOKEN) {
     return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
   }
   if (!process.env.DATABASE_URI) {
