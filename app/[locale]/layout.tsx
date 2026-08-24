@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import React from 'react';
 
 import { routing } from '../../i18n/routing';
+import AttributionCapture from '../../src/components/Analytics/AttributionCapture';
 import ConsentScripts from '../../src/components/Analytics/ConsentScripts';
 import '../../src/App.css';
 
@@ -57,6 +58,7 @@ export default async function LocaleLayout(props: Props) {
         <ConsentScripts />
       </head>
       <body>
+        <AttributionCapture />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
