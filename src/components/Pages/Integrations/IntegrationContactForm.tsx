@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import Bgcont from '../../../assets/Group 33770.svg';
 import Button from '../../../shared/ui/Button';
+import AttributionFields from '../../Analytics/AttributionFields';
 
 /* ── Tool list (mirrors the logos grid) ─────────────────────────── */
 const TOOL_OPTIONS = [
@@ -252,6 +253,7 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject }: Props) =>
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="box" />
             <input type="hidden" name="_cc" value="emmelin@gigsonsolutions.com" />
+            <AttributionFields formId="integrations" />
 
             <div className="form-container">
               <div className="input-container">
