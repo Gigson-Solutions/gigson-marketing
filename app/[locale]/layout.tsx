@@ -7,6 +7,7 @@ import React from 'react';
 import { routing } from '../../i18n/routing';
 import AttributionCapture from '../../src/components/Analytics/AttributionCapture';
 import ConsentScripts from '../../src/components/Analytics/ConsentScripts';
+import PageViewTracker from '../../src/components/Analytics/PageViewTracker';
 import '../../src/App.css';
 
 const BASE_URL = 'https://gigsonsolutions.com';
@@ -57,6 +58,7 @@ export default async function LocaleLayout(props: Props) {
       </head>
       <body>
         <AttributionCapture />
+        <PageViewTracker />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
