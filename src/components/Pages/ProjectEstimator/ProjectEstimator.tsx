@@ -16,6 +16,7 @@ import {
   APP_SIZES,
   BUSINESS_DOMAINS,
   PLATFORMS,
+  PROJECT_TYPES,
   QUALITY_LEVELS,
   ROLE_KEYS,
   type EstimatorFeature,
@@ -30,6 +31,7 @@ const TOTAL_STEPS = 6;
 type GenerationStatus = 'idle' | 'generating' | 'ready' | 'failed';
 
 const initialValues: EstimatorInputs = {
+  projectType: 'software_development' as never, // placeholder, cleared below — no type pre-selected
   hourlyRate: 50,
   projectDescription: '',
   businessDomain: 'ecommerce' as never, // placeholder, cleared below — no domain pre-selected
@@ -42,6 +44,14 @@ const initialValues: EstimatorInputs = {
   timelineMode: 'overall',
   timelineOverallMonths: undefined,
 };
+
+const blankSelectFields = () => ({
+  projectType: undefined as unknown as EstimatorInputs['projectType'],
+  businessDomain: undefined as unknown as EstimatorInputs['businessDomain'],
+  appSize: undefined as unknown as EstimatorInputs['appSize'],
+  uiLevel: undefined as unknown as EstimatorInputs['uiLevel'],
+  qaLevel: undefined as unknown as EstimatorInputs['qaLevel'],
+});
 
 const ProjectEstimator = () => {
   const t = useTranslations('projectEstimator');
@@ -58,10 +68,7 @@ const ProjectEstimator = () => {
   }, [step]);
   const [values, setValues] = useState<EstimatorInputs>({
     ...initialValues,
-    businessDomain: undefined as unknown as EstimatorInputs['businessDomain'],
-    appSize: undefined as unknown as EstimatorInputs['appSize'],
-    uiLevel: undefined as unknown as EstimatorInputs['uiLevel'],
-    qaLevel: undefined as unknown as EstimatorInputs['qaLevel'],
+    ...blankSelectFields(),
   });
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [website, setWebsite] = useState(''); // honeypot for session creation
@@ -90,6 +97,7 @@ const ProjectEstimator = () => {
   const validateStep = (n: number): boolean => {
     const next: Record<string, boolean> = {};
     if (n === 1) {
+      if (!values.projectType) next.projectType = true;
       if (!values.projectDescription.trim()) next.projectDescription = true;
       if (!values.businessDomain) next.businessDomain = true;
       if (!values.roles || values.roles.length === 0) next.roles = true;
@@ -204,10 +212,7 @@ const ProjectEstimator = () => {
     setStep(1);
     setValues({
       ...initialValues,
-      businessDomain: undefined as unknown as EstimatorInputs['businessDomain'],
-      appSize: undefined as unknown as EstimatorInputs['appSize'],
-      uiLevel: undefined as unknown as EstimatorInputs['uiLevel'],
-      qaLevel: undefined as unknown as EstimatorInputs['qaLevel'],
+      ...blankSelectFields(),
     });
     setToken(null);
     setFeatures([]);
@@ -354,8 +359,45 @@ type Step1Props = {
   clearError: (key: string) => void;
 };
 
+// Maps each ProjectType value to its i18n key suffix (snake_case values
+// don't auto-derive to PascalCase like the other enums' key suffixes do).
+const PROJECT_TYPE_I18N_KEY: Record<string, string> = {
+  software_development: 'SoftwareDevelopment',
+  erp_implementation: 'ErpImplementation',
+  integrations: 'Integrations',
+  consulting: 'Consulting',
+  other: 'Other',
+};
+
 const Step1 = ({ t, values, errors, setField, clearError }: Step1Props) => (
   <div className="pe-step">
+    <section className="pe-field">
+      <h3>{t('step1.projectTypeLabel')}</h3>
+      <p className="pe-help">{t('step1.projectTypeHelp')}</p>
+      <ChipSelect
+        ariaLabel={t('step1.projectTypeLabel')}
+        options={PROJECT_TYPES.map((pt) => ({
+          value: pt,
+          title: t(`step1.projectType${PROJECT_TYPE_I18N_KEY[pt]}`),
+        }))}
+        value={values.projectType ? [values.projectType] : []}
+        onChange={([v]) => {
+          setField('projectType', v as EstimatorInputs['projectType']);
+          clearError('projectType');
+        }}
+      />
+      {values.projectType === 'other' && (
+        <input
+          type="text"
+          className="pe-input"
+          placeholder={t('step1.projectTypeOtherPlaceholder')}
+          value={values.projectTypeOther ?? ''}
+          onChange={(e) => setField('projectTypeOther', e.target.value)}
+        />
+      )}
+      {errors.projectType && <p className="pe-error">{t('step1.projectTypeError')}</p>}
+    </section>
+
     <section className="pe-field">
       <h3>{t('step1.rateLabel')}</h3>
       <p className="pe-help">{t('step1.rateHelp')}</p>

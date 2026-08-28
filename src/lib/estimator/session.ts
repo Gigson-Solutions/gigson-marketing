@@ -11,6 +11,8 @@ export type EstimatorSessionDoc = {
   publicToken: string;
   status: string;
   locale?: string | null;
+  projectType?: string | null;
+  projectTypeOther?: string | null;
   hourlyRate?: number | null;
   projectDescription?: string | null;
   businessDomain?: string | null;
