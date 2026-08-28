@@ -30,6 +30,8 @@ const STATIC_ROUTES: RouteConfig[] = [
   { en: '/contact', es: '/contacto', priority: 0.7, changeFrequency: 'monthly' },
   { en: '/faqs', es: '/preguntas-frecuentes', priority: 0.6, changeFrequency: 'monthly' },
   { en: '/iso-27001-certification', es: '/certificacion-iso-27001', priority: 0.6, changeFrequency: 'monthly' },
+  { en: '/integrations-odoo', es: '/integraciones-odoo', priority: 0.75, changeFrequency: 'monthly' },
+  { en: '/custom-erp', es: '/erp-a-medida', priority: 0.75, changeFrequency: 'monthly' },
   { en: '/integrations-holded', es: '/integraciones-holded', priority: 0.5, changeFrequency: 'monthly' },
   { en: '/ai-manifest', es: '/manifiesto-ia', priority: 0.5, changeFrequency: 'monthly' },
   { en: '/policy', es: '/politica', priority: 0.3, changeFrequency: 'yearly' },

@@ -3,6 +3,34 @@
    margin-inline: auto;
    color: var(--gs-ink);
 }
+
+/* Decorative wireframe figure — matches /contact (Contact.css) sizing so the
+   figure looks consistent wherever a contact-style form is embedded. */
+.form-decorative-img-wrap {
+   text-align: right;
+   margin: 0 1.3rem 0 0;
+}
+.form-decorative-img {
+   object-fit: cover;
+   margin: 0;
+   width: 9.375rem;
+   height: 9.375rem;
+   position: relative;
+   top: 5.5rem;
+   z-index: -1;
+}
+@media (min-width: 37.5rem) {
+   .form-decorative-img {
+      width: 11.375rem;
+      height: 11.375rem;
+   }
+}
+@media (min-width: 60rem) {
+   .form-decorative-img {
+      width: 14.375rem;
+      height: 14.375rem;
+   }
+}
 .form-h2 {
    font-size: 2rem;
 }

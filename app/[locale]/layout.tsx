@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { getMessages } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import React from 'react';
@@ -22,6 +22,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   return {
+    metadataBase: new URL(BASE_URL),
     alternates: {
       languages: {
         'en': BASE_URL,
@@ -46,8 +47,6 @@ export default async function LocaleLayout(props: Props) {
   if (!(routing.locales as readonly string[]).includes(locale)) {
     notFound();
   }
-
-  setRequestLocale(locale);
 
   const messages = await getMessages();
 

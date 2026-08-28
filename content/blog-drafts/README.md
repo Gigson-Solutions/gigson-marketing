@@ -14,8 +14,9 @@ solo texto en el repo, listos para copiar y pegar.
 | Título | Slug | Estado | Enlace destino | Palabras (aprox.) | Creado | Preview HTML |
 |---|---|---|---|---|---|---|
 | Automatiza tu Holded con IA: qué puedes conectar sin tocar tu ERP | `automatiza-tu-holded-con-ia` | draft | `/integrations-holded` | ~950 | 2026-08-13 | `preview/automatiza-tu-holded-con-ia.html` |
-| Odoo + IA: 3 casos reales de automatización (fichajes, logística y presupuestos) | `odoo-ia-casos-reales-automatizacion` | draft | `/integrations-holded` | ~900 | 2026-08-13 | `preview/odoo-ia-casos-reales-automatizacion.html` |
+| Odoo + IA: 3 casos reales de automatización (fichajes, logística y presupuestos) | `odoo-ia-casos-reales-automatizacion` | draft | `/integrations-odoo` | ~900 | 2026-08-13 | `preview/odoo-ia-casos-reales-automatizacion.html` |
 | Agentes de IA conectados a tu ERP: cómo automatizar sin reescribir Holded u Odoo | `agentes-ia-conectados-erp-holded-odoo` | draft | `/ai-agents` | ~1000 | 2026-08-13 | `preview/agentes-ia-conectados-erp-holded-odoo.html` |
+| Odoo vs Holded vs ERP a medida: ¿cuál elegir? | `odoo-vs-holded-vs-erp-a-medida` | draft | `/custom-erp` | ~950 | 2026-08-20 | _pendiente_ |
 
 ## Cómo revisar
 

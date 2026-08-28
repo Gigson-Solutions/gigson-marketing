@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
-import Integrations from '../../../../src/components/Pages/Integrations/Integrations';
+import IntegrationsOdoo from '../../../../src/components/Pages/Integrations/IntegrationsOdoo';
 
 const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string }> };
@@ -13,12 +13,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     locale
   } = params;
 
-  const t = await getTranslations({ locale, namespace: 'integrations-holded' });
+  const t = await getTranslations({ locale, namespace: 'integrations-odoo' });
   const title = t('title');
   const description = t('metadescription');
   const canonical = locale === 'es'
-    ? `${ORIGIN}/es/integraciones-holded`
-    : `${ORIGIN}/integrations-holded`;
+    ? `${ORIGIN}/es/integraciones-odoo`
+    : `${ORIGIN}/integrations-odoo`;
 
   return {
     title,
@@ -26,18 +26,18 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical,
       languages: {
-        en: `${ORIGIN}/integrations-holded`,
-        es: `${ORIGIN}/es/integraciones-holded`,
-        'x-default': `${ORIGIN}/integrations-holded`,
+        en: `${ORIGIN}/integrations-odoo`,
+        es: `${ORIGIN}/es/integraciones-odoo`,
+        'x-default': `${ORIGIN}/integrations-odoo`,
       },
     },
     openGraph: { title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 
-export default async function IntegrationsPage(props: Props) {
+export default async function IntegrationsOdooPage(props: Props) {
   const { locale } = await props.params;
-  const t = await getTranslations({ locale, namespace: 'integrations-holded' });
+  const t = await getTranslations({ locale, namespace: 'integrations-odoo' });
   const title = t('title');
   const description = t('metadescription');
 
@@ -46,14 +46,14 @@ export default async function IntegrationsPage(props: Props) {
     '@type': 'Service',
     name: title,
     description,
-    url: locale === 'es' ? `${ORIGIN}/es/integraciones-holded` : `${ORIGIN}/integrations-holded`,
+    url: locale === 'es' ? `${ORIGIN}/es/integraciones-odoo` : `${ORIGIN}/integrations-odoo`,
     provider: { '@type': 'Organization', name: 'Gigson Solutions', url: ORIGIN },
   };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <Integrations />
+      <IntegrationsOdoo />
     </>
   );
 }

@@ -1,21 +1,23 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
-import Iso27001Service from '../../../../src/components/Pages/Iso27001Service/Iso27001Service';
+import CustomErp from '../../../../src/components/Pages/CustomErp/CustomErp';
 
 const ORIGIN = 'https://gigsonsolutions.com';
+
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
-  const { locale } = params;
 
-  const t = await getTranslations({ locale, namespace: 'iso27001Service' });
+  const {
+    locale
+  } = params;
+
+  const t = await getTranslations({ locale, namespace: 'customErp' });
   const title = t('title');
   const description = t('metadescription');
-  const canonical = locale === 'es'
-    ? `${ORIGIN}/es/iso-27001`
-    : `${ORIGIN}/iso-27001`;
+  const canonical = locale === 'es' ? `${ORIGIN}/es/erp-a-medida` : `${ORIGIN}/custom-erp`;
 
   return {
     title,
@@ -23,22 +25,26 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical,
       languages: {
-        en: `${ORIGIN}/iso-27001`,
-        es: `${ORIGIN}/es/iso-27001`,
-        'x-default': `${ORIGIN}/iso-27001`,
+        en: `${ORIGIN}/custom-erp`,
+        es: `${ORIGIN}/es/erp-a-medida`,
+        'x-default': `${ORIGIN}/custom-erp`,
       },
     },
     openGraph: { title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 
-export default async function Iso27001ServicePage(props: Props) {
+export default async function CustomErpPage(props: Props) {
   const params = await props.params;
-  const { locale } = params;
 
-  const t = await getTranslations({ locale, namespace: 'iso27001Service' });
+  const {
+    locale
+  } = params;
+
+  const t = await getTranslations({ locale, namespace: 'customErp' });
   const title = t('title');
   const description = t('metadescription');
+  const serviceUrl = locale === 'es' ? '/es/erp-a-medida' : '/custom-erp';
   const faqItems = (t.raw('faq') as { items?: { question: string; answer: string }[] } | undefined)?.items ?? [];
 
   const serviceSchema = {
@@ -46,14 +52,10 @@ export default async function Iso27001ServicePage(props: Props) {
     '@type': 'Service',
     name: title,
     description,
-    url: `${ORIGIN}/iso-27001`,
-    serviceType: 'ISO 27001 Certification',
+    url: `${ORIGIN}${serviceUrl}`,
+    serviceType: 'Custom ERP Development',
     areaServed: 'ES',
-    provider: {
-      '@type': 'Organization',
-      name: 'Gigson Solutions',
-      url: ORIGIN,
-    },
+    provider: { '@type': 'Organization', name: 'Gigson Solutions', url: ORIGIN },
   };
 
   const faqSchema = faqItems.length > 0
@@ -74,7 +76,7 @@ export default async function Iso27001ServicePage(props: Props) {
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
-      <Iso27001Service />
+      <CustomErp />
     </>
   );
 }

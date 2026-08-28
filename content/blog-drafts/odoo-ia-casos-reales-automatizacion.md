@@ -8,8 +8,8 @@ seoTitle: "Odoo + IA: 3 casos reales de automatización | gigson solutions"
 seoDescription: "Fichaje por WhatsApp, un orquestador de ecommerce y presupuestos dinámicos: 3 automatizaciones reales con Odoo, con resultados medibles."
 coverImageBrief: "Tres formas 3D geométricas (esfera, cono, cubo) en tonos morados flotando sobre fondo crema, conectadas por líneas finas — sugiere tres casos/flujos distintos convergiendo en un mismo sistema (Odoo)."
 internalLink:
-  targetPage: "/integrations-holded"
-  anchorTextSuggestion: "Habla con nosotros sobre tus integraciones"
+  targetPage: "/integrations-odoo"
+  anchorTextSuggestion: "Habla con un experto en Odoo"
 dateCreated: 2026-08-13
 ---
 
@@ -47,4 +47,4 @@ Ninguno sustituye Odoo. Los tres construyen encima: agentes y automatizaciones q
 
 Y en los tres casos, la automatización libera horas de trabajo manual y elimina una fuente de errores concreta — no es tecnología por la tecnología, es resolver un problema medible.
 
-¿Tienes un proceso parecido conectado (o sin conectar) a Odoo? [Habla con nosotros sobre tus integraciones](/integrations-holded) y vemos si encaja alguno de estos enfoques.
+¿Tienes un proceso parecido conectado (o sin conectar) a Odoo? [Habla con un experto en Odoo](/integrations-odoo) y vemos si encaja alguno de estos enfoques.

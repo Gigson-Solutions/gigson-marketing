@@ -219,6 +219,18 @@ const PAGE_CONTEXTS: { match: string[]; hint: string }[] = [
     hint: 'Está en la página de Claude Partner. Puedes hablar con naturalidad del partnership con Anthropic y de la certificación Claude Certified Architect.',
   },
   {
+    match: ['/integraciones-holded', '/integrations-holded'],
+    hint: 'Está en la página de integraciones con Holded. Somos partner oficial de Holded; prioriza casos de facturación electrónica/VeriFactu, sincronización de ventas/clientes/pagos, conciliación bancaria y conectores con software vertical.',
+  },
+  {
+    match: ['/integraciones-odoo', '/integrations-odoo'],
+    hint: 'Está en la página de integraciones con Odoo. Somos partner oficial de Odoo; prioriza implementación y personalización de Odoo como ERP (facturación multi-empresa, inventario, CRM, fabricación) y su conexión con las herramientas que el cliente ya usa.',
+  },
+  {
+    match: ['/erp-a-medida', '/custom-erp'],
+    hint: 'Está en la página de ERP a medida. Aclara que no está limitado a facturación: puede ser un WMS o cualquier otro sistema de gestión diseñado a medida del cliente, como alternativa a Odoo/Holded cuando ningún ERP estándar encaja.',
+  },
+  {
     match: ['/casos', '/cases'],
     hint: 'Está en la página de Casos de éxito. Apóyate en los casos reales por sector para generar confianza.',
   },

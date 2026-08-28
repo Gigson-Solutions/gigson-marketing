@@ -16,6 +16,10 @@ const Footer = () => {
 
   const menuLinks = [
     { name: t('services'), href: '/services' as NavPathname },
+    { name: t('claude_partner'), href: '/about-claude-partner' as NavPathname },
+    { name: t('erp_odoo'), href: '/integrations-odoo' as NavPathname },
+    { name: t('erp_custom'), href: '/custom-erp' as NavPathname },
+    { name: t('erp_holded'), href: '/integrations-holded' as NavPathname },
     { name: t('cases'), href: '/cases' as NavPathname },
     { name: t('blog'), href: '/blog' as NavPathname },
     { name: t('about'), href: '/about' as NavPathname },
