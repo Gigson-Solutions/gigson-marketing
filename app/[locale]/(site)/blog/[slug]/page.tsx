@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
 import BlogPost from '../../../../../src/components/Blog/BlogPost';
-import { getPostBySlug, getPostSlugs } from '../../../../../lib/posts';
+import { getPostBySlug, getPostSlugs, getRelatedPosts } from '../../../../../lib/posts';
 
 export const revalidate = 3600;
 
@@ -68,6 +68,8 @@ export default async function BlogPostPage(props: Props) {
   const post = await getPostBySlug(slug, locale);
   if (!post) notFound();
 
+  const relatedPosts = await getRelatedPosts(post, 2);
+
   const coverUrl = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
 
   const articleSchema = {
@@ -95,7 +97,7 @@ export default async function BlogPostPage(props: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <BlogPost post={post} />
+      <BlogPost post={post} relatedPosts={relatedPosts} />
     </>
   );
 }

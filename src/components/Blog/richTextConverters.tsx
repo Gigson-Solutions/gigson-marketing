@@ -3,6 +3,7 @@ import type { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext
 
 import { Link } from '../../../i18n/navigation';
 import type { AppPathnames } from '../../../i18n/routing';
+import FaqAccordion from './FaqAccordion';
 
 // `/blog/[slug]` is a dynamic route pattern requiring params — the CTA
 // block only ever links to static service pages, so it's excluded here
@@ -22,13 +23,22 @@ type HighlightBlockFields = {
   attribution?: string;
 };
 
-type NodeTypes = DefaultNodeTypes | SerializedBlockNode<CtaBlockFields | HighlightBlockFields>;
+type FaqBlockFields = {
+  blockType: 'faq';
+  heading?: string;
+  items: { question: string; answer: string }[];
+};
+
+type NodeTypes =
+  | DefaultNodeTypes
+  | SerializedBlockNode<CtaBlockFields | HighlightBlockFields | FaqBlockFields>;
 
 /**
  * Converts Payload's Lexical `content` field to JSX for `BlogPost.tsx`,
  * replacing the previous `contentHtml` (convertLexicalToHTML) pipeline.
- * Handles the two custom blocks (`cta`, `highlight`) plus inline uploaded
- * images — none of which the generic HTML converter can render on its own.
+ * Handles the three custom blocks (`cta`, `highlight`, `faq`) plus inline
+ * uploaded images — none of which the generic HTML converter can render
+ * on its own.
  */
 export const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) => ({
   ...defaultConverters,
@@ -56,6 +66,9 @@ export const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConvert
           </p>
         )}
       </div>
+    ),
+    faq: ({ node }) => (
+      <FaqAccordion heading={node.fields.heading} items={node.fields.items ?? []} />
     ),
   },
 });

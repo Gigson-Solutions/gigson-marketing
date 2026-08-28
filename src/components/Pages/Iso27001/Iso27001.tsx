@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 
 import solutionsBg from '../../../assets/solutions-applications-bg-gradients-1.svg';
+import { getAttribution } from '../../../lib/attribution';
 import { Link, useRouter } from '../../../../i18n/navigation';
 
 const TOTAL_STEPS = 3;
@@ -109,7 +110,11 @@ const Iso27001 = () => {
           necesitas: values.necesitas,
           email: values.email,
           telefono: values.telefono,
-          _subject: 'Nuevo lead ISO 27001',
+          // This form posts JSON rather than form fields, so attribution goes
+          // in the body instead of as hidden inputs.
+          ...getAttribution(),
+          form_id: 'iso27001',
+          _subject: 'Lead · ISO 27001 · gigsonsolutions.com',
           _cc: 'emmelin@gigsonsolutions.com,hello@gigsonsolutions.com',
           _captcha: 'false',
           _template: 'box',

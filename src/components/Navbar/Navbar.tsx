@@ -24,6 +24,7 @@ const Navbar = () => {
         { name: t('compliance'), href: '/iso-27001-certification' as const },
       ],
     },
+    { name: t('estimator'), href: '/project-estimator' as const },
     {
       name: t('industries'),
       children: [
