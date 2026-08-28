@@ -4,6 +4,41 @@
 // no need for the Vercel AI SDK/Gateway here; see plan notes for rationale.
 import type { EstimatorInputs } from './types';
 
+const FEATURE_ITEM_SCHEMA = {
+  type: 'object' as const,
+  properties: {
+    name: { type: 'string' as const, description: 'Short, specific feature name.' },
+    userStory: {
+      type: 'string' as const,
+      description: 'Format: "As a [role], I want to [action] so that [benefit]."',
+    },
+    acceptanceCriteria: {
+      type: 'array' as const,
+      items: { type: 'string' as const },
+      minItems: 3,
+      maxItems: 6,
+      description: 'Numbered, testable acceptance criteria (without the leading number).',
+    },
+    thirdPartyServices: {
+      type: 'string' as const,
+      description: 'Comma-separated third-party services/APIs this feature would realistically use, or "-" if none.',
+    },
+    hours: {
+      type: 'object' as const,
+      description: 'Estimated development hours this feature requires, broken down by role.',
+      properties: {
+        frontend: { type: 'number' as const },
+        qa: { type: 'number' as const },
+        backend: { type: 'number' as const },
+        uiux: { type: 'number' as const },
+        bapm: { type: 'number' as const },
+      },
+      required: ['frontend', 'qa', 'backend', 'uiux', 'bapm'],
+    },
+  },
+  required: ['name', 'userStory', 'acceptanceCriteria', 'thirdPartyServices', 'hours'],
+};
+
 export const GENERATE_FEATURES_TOOL = {
   name: 'submit_features',
   description: 'Submit the generated list of features for this software project estimate.',
@@ -14,43 +49,20 @@ export const GENERATE_FEATURES_TOOL = {
         type: 'array' as const,
         minItems: 6,
         maxItems: 20,
-        items: {
-          type: 'object' as const,
-          properties: {
-            name: { type: 'string' as const, description: 'Short, specific feature name.' },
-            userStory: {
-              type: 'string' as const,
-              description: 'Format: "As a [role], I want to [action] so that [benefit]."',
-            },
-            acceptanceCriteria: {
-              type: 'array' as const,
-              items: { type: 'string' as const },
-              minItems: 3,
-              maxItems: 6,
-              description: 'Numbered, testable acceptance criteria (without the leading number).',
-            },
-            thirdPartyServices: {
-              type: 'string' as const,
-              description: 'Comma-separated third-party services/APIs this feature would realistically use, or "-" if none.',
-            },
-            hours: {
-              type: 'object' as const,
-              description: 'Estimated development hours this feature requires, broken down by role.',
-              properties: {
-                frontend: { type: 'number' as const },
-                qa: { type: 'number' as const },
-                backend: { type: 'number' as const },
-                uiux: { type: 'number' as const },
-                bapm: { type: 'number' as const },
-              },
-              required: ['frontend', 'qa', 'backend', 'uiux', 'bapm'],
-            },
-          },
-          required: ['name', 'userStory', 'acceptanceCriteria', 'thirdPartyServices', 'hours'],
-        },
+        items: FEATURE_ITEM_SCHEMA,
       },
     },
     required: ['features'],
+  },
+};
+
+export const GENERATE_SINGLE_FEATURE_TOOL = {
+  name: 'submit_feature',
+  description: 'Submit the rewritten, properly scoped feature.',
+  input_schema: {
+    type: 'object' as const,
+    properties: { feature: FEATURE_ITEM_SCHEMA },
+    required: ['feature'],
   },
 };
 
@@ -113,6 +125,43 @@ export function buildEstimatorUserPrompt(inputs: EstimatorInputs): string {
     months ? `Target overall timeline: ~${months} months` : null,
     `Assumed blended hourly rate: €${inputs.hourlyRate}/hour (for context only, do not include pricing in your output).`,
   ].filter(Boolean);
+
+  return lines.join('\n');
+}
+
+export function buildSingleFeatureSystemPrompt(): string {
+  return [
+    'You are a senior software delivery estimator working for Gigson Solutions, a software development agency.',
+    "A prospective client is adding ONE more feature to their project estimate, described in their own plain words — they are not a developer and don't know about story points, acceptance criteria, or per-role hour breakdowns.",
+    'Rewrite their description into a single, properly scoped feature: a clear user story, testable acceptance criteria, plausible third-party services, and honest hour estimates per role (frontend, qa, backend, uiux, bapm), calibrated to the overall project context you are given (app size, quality levels).',
+    'If their description is vague, make reasonable, conservative assumptions rather than asking questions — this is a one-shot, non-interactive tool.',
+    'Do not duplicate a feature that (by name or clear intent) already exists in the project — if the description matches an existing feature, scope it as the smallest sensible addition/variation instead.',
+    'Respond ONLY by calling the submit_feature tool — no prose.',
+  ].join(' ');
+}
+
+export function buildSingleFeatureUserPrompt(
+  inputs: EstimatorInputs,
+  description: string,
+  existingFeatureNames: string[],
+): string {
+  const domain = inputs.businessDomain === 'other' && inputs.businessDomainOther
+    ? inputs.businessDomainOther
+    : DOMAIN_LABEL[inputs.businessDomain] ?? inputs.businessDomain;
+
+  const lines = [
+    `Project domain: ${domain}`,
+    `Project description: ${inputs.projectDescription}`,
+    `App size: ${SIZE_LABEL[inputs.appSize] ?? inputs.appSize}`,
+    `Platforms: ${inputs.platforms.join(', ')}`,
+    `UI polish level: ${LEVEL_LABEL[inputs.uiLevel] ?? inputs.uiLevel}`,
+    `QA rigor level: ${LEVEL_LABEL[inputs.qaLevel] ?? inputs.qaLevel}`,
+    existingFeatureNames.length > 0
+      ? `Features already in the estimate (avoid duplicating): ${existingFeatureNames.join(', ')}`
+      : null,
+    '',
+    `The client wants to add this feature, in their own words: "${description}"`,
+  ].filter((line) => line !== null);
 
   return lines.join('\n');
 }
