@@ -14,18 +14,18 @@ import LanguageSelector from '../LanguageSelector/LanguageSelector';
 const Footer = () => {
   const t = useTranslations('menu');
 
+  // Mirrors the navbar order (Estimator, Services, Cases, Blog, Contact),
+  // plus Claude Partner, About and FAQs — which live in the navbar's
+  // dropdowns/footer only, not as standalone navbar entries.
   const menuLinks = [
+    { name: t('estimator'), href: '/project-estimator' as NavPathname },
     { name: t('services'), href: '/services' as NavPathname },
-    { name: t('claude_partner'), href: '/about-claude-partner' as NavPathname },
-    { name: t('erp_odoo'), href: '/integrations-odoo' as NavPathname },
-    { name: t('erp_custom'), href: '/custom-erp' as NavPathname },
-    { name: t('erp_holded'), href: '/integrations-holded' as NavPathname },
     { name: t('cases'), href: '/cases' as NavPathname },
     { name: t('blog'), href: '/blog' as NavPathname },
+    { name: t('contact'), href: '/contact' as NavPathname },
+    { name: t('claude_partner'), href: '/about-claude-partner' as NavPathname },
     { name: t('about'), href: '/about' as NavPathname },
     { name: t('faqs'), href: '/faqs' as NavPathname },
-    { name: t('book'), href: '/book' as NavPathname },
-    { name: t('contact'), href: '/contact' as NavPathname },
   ];
 
   const policyLinks = [
