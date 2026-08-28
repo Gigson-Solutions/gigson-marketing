@@ -3998,6 +3998,53 @@
                 }
             ]
         },
+        "form": {
+            "sectionTitle": "Un sistema a medida, ajustado a cómo trabajas.",
+            "sectionDescription": "Diseñamos contigo tu ERP a medida. Antes de construir nada, analizamos tu proceso para definir el sistema más eficiente.",
+            "title": "¿Qué necesitas construir?",
+            "fields": {
+                "name": {
+                    "label": "Nombre",
+                    "placeholder": "Tu nombre"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "tu@empresa.com"
+                },
+                "phone": {
+                    "label": "Teléfono",
+                    "placeholder": "+34 600 000 000"
+                },
+                "company": {
+                    "label": "Empresa",
+                    "placeholder": "Nombre de tu empresa"
+                },
+                "tool": {
+                    "label": "¿Qué tipo de sistema necesitas?",
+                    "placeholder": "Facturación, WMS, producción..."
+                },
+                "dataTypes": {
+                    "label": "¿Qué datos necesitas gestionar?",
+                    "options": [
+                        "Facturas",
+                        "Pedidos",
+                        "Clientes",
+                        "Productos",
+                        "Otro"
+                    ]
+                },
+                "problem": {
+                    "label": "Cuéntanos tu problema o necesidad",
+                    "placeholder": "Describe el proceso que quieres construir o mejorar..."
+                }
+            },
+            "send": "ENVIAR",
+            "checkbox": {
+                "first": "He leído y acepto la ",
+                "second": "Política de privacidad",
+                "third": ""
+            }
+        },
         "faq": {
             "title": "Preguntas frecuentes sobre desarrollo de ERP a medida",
             "items": [

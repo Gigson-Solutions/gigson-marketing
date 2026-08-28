@@ -3980,6 +3980,53 @@
                 }
             ]
         },
+        "form": {
+            "sectionTitle": "A custom system, scoped to how you work.",
+            "sectionDescription": "We design your custom ERP together with you. Before we build anything, we analyse your process to define the most efficient system.",
+            "title": "What do you need to build?",
+            "fields": {
+                "name": {
+                    "label": "Name",
+                    "placeholder": "Your name"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "you@company.com"
+                },
+                "phone": {
+                    "label": "Phone",
+                    "placeholder": "+34 600 000 000"
+                },
+                "company": {
+                    "label": "Company",
+                    "placeholder": "Your company name"
+                },
+                "tool": {
+                    "label": "What type of system do you need?",
+                    "placeholder": "Invoicing, WMS, production..."
+                },
+                "dataTypes": {
+                    "label": "What data do you need to manage?",
+                    "options": [
+                        "Invoices",
+                        "Orders",
+                        "Customers",
+                        "Products",
+                        "Other"
+                    ]
+                },
+                "problem": {
+                    "label": "Tell us about your problem or need",
+                    "placeholder": "Describe the process you want to build or improve..."
+                }
+            },
+            "send": "SEND",
+            "checkbox": {
+                "first": "I have read and accept the ",
+                "second": "Privacy Policy",
+                "third": ""
+            }
+        },
         "faq": {
             "title": "Frequently asked questions about custom ERP development",
             "items": [

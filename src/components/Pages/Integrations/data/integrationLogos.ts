@@ -133,3 +133,16 @@ export const ODOO_TOOL_OPTIONS: string[] = [
   ...ODOO_INTEGRATION_LOGOS.map((l) => l.name),
   'Otra',
 ];
+
+// ─── Custom ERP ─────────────────────────────────────────────────────────
+// Not a partner/integration page — there's no third-party tool to connect,
+// so this reuses the "tool" field of IntegrationContactForm to ask what
+// *type* of system the lead needs instead of which product to integrate.
+export const CUSTOM_ERP_TOOL_OPTIONS: string[] = [
+  'Facturación',
+  'Gestión de almacén (WMS)',
+  'Producción / Fabricación',
+  'CRM',
+  'Inventario',
+  'Otro',
+];
