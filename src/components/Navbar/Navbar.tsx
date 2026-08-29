@@ -16,7 +16,6 @@ const Navbar = () => {
     { name: t('estimator'), href: '/project-estimator' as const },
     {
       name: t('services'),
-      href: '/services' as const,
       children: [
         { name: t('CTO'), href: '/cto-as-service' as const },
         { name: t('tech_consulting'), href: '/technology-consulting' as const },

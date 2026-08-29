@@ -13,7 +13,6 @@ type RouteConfig = {
 
 const STATIC_ROUTES: RouteConfig[] = [
   { en: '/', es: '/', priority: 1.0, changeFrequency: 'weekly' },
-  { en: '/services', es: '/servicios', priority: 0.9, changeFrequency: 'monthly' },
   { en: '/ai-agents', es: '/agentes-ia', priority: 0.9, changeFrequency: 'monthly' },
   { en: '/cto-as-service', es: '/cto-as-service', priority: 0.9, changeFrequency: 'monthly' },
   { en: '/about-claude-partner', es: '/sobre-claude-partner', priority: 0.85, changeFrequency: 'monthly' },
