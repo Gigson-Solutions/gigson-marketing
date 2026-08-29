@@ -2,6 +2,25 @@
 // Mirrors the flow reverse-engineered from https://estimate.geniusee.com/,
 // adapted to Gigson's brand and stack. See STRATEGY.md / plan notes for context.
 
+// What kind of engagement this is — Gigson does more than custom app
+// development (ERP implementation/configuration, integrations/connectors,
+// technical consulting), and this drives both the AI prompt and the
+// wording of later steps.
+export type ProjectType =
+  | 'software_development'
+  | 'erp_implementation'
+  | 'integrations'
+  | 'consulting'
+  | 'other';
+
+export const PROJECT_TYPES: ProjectType[] = [
+  'software_development',
+  'erp_implementation',
+  'integrations',
+  'consulting',
+  'other',
+];
+
 export type BusinessDomain =
   | 'fintech'
   | 'edtech'
@@ -40,6 +59,8 @@ export const QUALITY_LEVELS: QualityLevel[] = ['mvp', 'standard', 'polished'];
 export type TimelineMode = 'overall' | 'phased';
 
 export interface EstimatorInputs {
+  projectType: ProjectType;
+  projectTypeOther?: string;
   hourlyRate: number;
   projectDescription: string;
   businessDomain: BusinessDomain;

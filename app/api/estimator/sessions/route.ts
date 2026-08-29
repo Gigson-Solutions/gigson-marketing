@@ -62,6 +62,8 @@ export async function POST(req: Request) {
     status: 'generating' as const,
     locale: locale === 'en' ? ('en' as const) : ('es' as const),
     pagePath: typeof pagePath === 'string' ? pagePath.slice(0, 256) : undefined,
+    projectType: validated.value.projectType,
+    projectTypeOther: validated.value.projectTypeOther,
     hourlyRate: validated.value.hourlyRate,
     projectDescription: validated.value.projectDescription,
     businessDomain: validated.value.businessDomain,

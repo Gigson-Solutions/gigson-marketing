@@ -62,6 +62,8 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
   }
 
   const inputs: EstimatorInputs = {
+    projectType: (session.projectType ?? 'software_development') as EstimatorInputs['projectType'],
+    projectTypeOther: session.projectTypeOther ?? undefined,
     hourlyRate: session.hourlyRate ?? 0,
     projectDescription: session.projectDescription ?? '',
     businessDomain: (session.businessDomain ?? 'other') as EstimatorInputs['businessDomain'],

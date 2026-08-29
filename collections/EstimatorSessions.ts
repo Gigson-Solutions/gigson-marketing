@@ -41,6 +41,14 @@ export const EstimatorSessions: CollectionConfig = {
     { name: 'source', type: 'text', defaultValue: 'project-estimator', admin: { position: 'sidebar' } },
 
     // ── Step 1-4 inputs (flat fields; simpler for a v1 than a nested group) ──
+    // `projectType` is plain text (like businessDomain/appSize/uiLevel below),
+    // NOT a Payload `select` — `select` fields on this collection generate a
+    // real Postgres ENUM (see status/locale), which needs its own migration.
+    // A text column only needs one additive ALTER TABLE, validated at the
+    // app layer (src/lib/estimator/validate.ts) like every other enum-like
+    // field here already is.
+    { name: 'projectType', type: 'text' },
+    { name: 'projectTypeOther', type: 'text' },
     { name: 'hourlyRate', type: 'number', required: true },
     { name: 'projectDescription', type: 'textarea', required: true },
     { name: 'businessDomain', type: 'text', required: true },

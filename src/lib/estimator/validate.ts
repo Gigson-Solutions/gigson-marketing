@@ -6,6 +6,7 @@ import {
   APP_SIZES,
   BUSINESS_DOMAINS,
   PLATFORMS,
+  PROJECT_TYPES,
   QUALITY_LEVELS,
   ROLE_KEYS,
   type EstimatorFeature,
@@ -24,6 +25,11 @@ const MAX_MONTHS = 36;
 export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs } | { ok: false; error: string } {
   if (!raw || typeof raw !== 'object') return { ok: false, error: 'Missing inputs' };
   const r = raw as Record<string, unknown>;
+
+  const projectType = r.projectType;
+  if (typeof projectType !== 'string' || !PROJECT_TYPES.includes(projectType as never)) {
+    return { ok: false, error: 'Invalid projectType' };
+  }
 
   const hourlyRate = Number(r.hourlyRate);
   if (!Number.isFinite(hourlyRate) || hourlyRate < MIN_HOURLY_RATE || hourlyRate > MAX_HOURLY_RATE) {
@@ -77,6 +83,11 @@ export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs
   return {
     ok: true,
     value: {
+      projectType: projectType as EstimatorInputs['projectType'],
+      projectTypeOther:
+        projectType === 'other' && typeof r.projectTypeOther === 'string'
+          ? r.projectTypeOther.trim().slice(0, 80)
+          : undefined,
       hourlyRate,
       projectDescription,
       businessDomain: businessDomain as EstimatorInputs['businessDomain'],
