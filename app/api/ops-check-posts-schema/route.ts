@@ -19,6 +19,21 @@ const EXPECTED_COLUMNS = [
   'seo_description', 'updated_at', 'created_at',
 ];
 
+const FIX_SQL = `
+DO $$ BEGIN
+  CREATE TYPE "public"."enum_posts_locale" AS ENUM('en', 'es');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+ALTER TABLE "posts" ADD COLUMN IF NOT EXISTS "locale" "public"."enum_posts_locale" NOT NULL DEFAULT 'es';
+ALTER TABLE "posts" ADD COLUMN IF NOT EXISTS "cover_image_id" integer;
+DO $$ BEGIN
+  ALTER TABLE "posts" ADD CONSTRAINT "posts_cover_image_id_media_id_fk"
+    FOREIGN KEY ("cover_image_id") REFERENCES "media"("id") ON DELETE SET NULL;
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+CREATE INDEX IF NOT EXISTS "posts_cover_image_idx" ON "posts" ("cover_image_id");
+`;
+
 export async function GET(request: NextRequest) {
   const secret = request.nextUrl.searchParams.get('secret');
   if (secret !== ONE_TIME_TOKEN) {
@@ -28,25 +43,23 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'DATABASE_URI not set' }, { status: 500 });
   }
 
+  const apply = request.nextUrl.searchParams.get('apply') === 'true';
+
   const client = new Client({ connectionString: process.env.DATABASE_URI });
   try {
     await client.connect();
+
+    if (apply) {
+      await client.query(FIX_SQL);
+    }
+
     const cols = await client.query(
       `SELECT column_name, data_type, udt_name FROM information_schema.columns WHERE table_name = 'posts' ORDER BY ordinal_position;`
     );
     const actual = cols.rows.map((r) => r.column_name as string);
     const missing = EXPECTED_COLUMNS.filter((c) => !actual.includes(c));
 
-    const enums = await client.query(
-      `SELECT t.typname, e.enumlabel FROM pg_type t JOIN pg_enum e ON t.oid = e.enumtypid WHERE t.typname LIKE 'enum_posts_%' ORDER BY t.typname, e.enumsortorder;`
-    );
-
-    return NextResponse.json({
-      ok: true,
-      columns: cols.rows,
-      missing,
-      enums: enums.rows,
-    });
+    return NextResponse.json({ ok: true, applied: apply, columns: cols.rows, missing });
   } catch (err) {
     return NextResponse.json(
       { ok: false, error: err instanceof Error ? err.message : String(err) },
