@@ -26,6 +26,11 @@ const nextConfig = {
       destination: '/es/certificacion-iso-27001',
       permanent: true,
     },
+    // Removed the standalone /services (/servicios) overview page — every
+    // individual service already has its own dedicated page, linked from
+    // the Navbar dropdown and the footer's services directory.
+    { source: '/services', destination: '/', permanent: true },
+    { source: '/es/servicios', destination: '/es', permanent: true },
   ],
 };
 

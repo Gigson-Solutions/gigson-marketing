@@ -14,12 +14,27 @@ import LanguageSelector from '../LanguageSelector/LanguageSelector';
 const Footer = () => {
   const t = useTranslations('menu');
 
-  // Mirrors the navbar order (Estimator, Services, Cases, Blog, Contact),
-  // plus Claude Partner, About and FAQs — which live in the navbar's
-  // dropdowns/footer only, not as standalone navbar entries.
-  const menuLinks = [
+  // Real services directory (replaces a single flat "Servicios" link that
+  // pointed at a since-removed overview page — every service already has
+  // its own dedicated page) organized the same way as the Navbar's
+  // Servicios dropdown, split into the two engagement-type columns.
+  const consultingLinks = [
+    { name: t('CTO'), href: '/cto-as-service' as NavPathname },
+    { name: t('tech_consulting'), href: '/technology-consulting' as NavPathname },
+    { name: t('compliance'), href: '/iso-27001-certification' as NavPathname },
+    { name: t('erp_odoo'), href: '/integrations-odoo' as NavPathname },
+    { name: t('erp_holded'), href: '/integrations-holded' as NavPathname },
+  ];
+
+  const buildingLinks = [
+    { name: t('ai_agents'), href: '/ai-agents' as NavPathname },
+    { name: t('software'), href: '/software-engineering' as NavPathname },
+    { name: t('erp_custom'), href: '/custom-erp' as NavPathname },
+  ];
+
+  // Everything else that used to sit alongside "Servicios" in one flat list.
+  const generalLinks = [
     { name: t('estimator'), href: '/project-estimator' as NavPathname },
-    { name: t('services'), href: '/services' as NavPathname },
     { name: t('cases'), href: '/cases' as NavPathname },
     { name: t('blog'), href: '/blog' as NavPathname },
     { name: t('contact'), href: '/contact' as NavPathname },
@@ -35,17 +50,30 @@ const Footer = () => {
     { name: t('ai_manifest'), href: '/ai-manifest' as NavPathname },
   ];
 
+  const groups = [
+    { label: t('consultingLabel'), links: consultingLinks },
+    { label: t('buildingLabel'), links: buildingLinks },
+    { label: null, links: generalLinks },
+  ];
+
   return (
     <footer className="footer">
       <div className="wrapper">
         <nav className="footer-nav-container">
-          <ul className="footer-nav-links">
-            {menuLinks.map(({ name, href }, index) => (
-              <li key={index}>
-                <Link href={href}>{name}</Link>
-              </li>
+          <div className="footer-nav-groups">
+            {groups.map((group, groupIndex) => (
+              <div className="footer-nav-group" key={groupIndex}>
+                {group.label && <span className="footer-nav-label">{group.label}</span>}
+                <ul className="footer-nav-links">
+                  {group.links.map(({ name, href }, index) => (
+                    <li key={index}>
+                      <Link href={href}>{name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
           <div className="language-selector-container">
             <LanguageSelector />
           </div>
