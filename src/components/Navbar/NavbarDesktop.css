@@ -115,6 +115,17 @@
     display: flex;
 }
 
+/* Dropdowns with many entries (e.g. Servicios) lay out as a 2-column grid
+   instead of one long vertical list. */
+.menu-box--desktop .dropdown--grid {
+    min-width: 380px;
+}
+
+.menu-box--desktop .menu-item:hover .dropdown--grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+}
+
 /* Language selector */
 .language-selector {
     display: flex;
