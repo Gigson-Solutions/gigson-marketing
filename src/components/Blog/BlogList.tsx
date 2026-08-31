@@ -60,9 +60,9 @@ const FeaturedPost = ({ post }: { post: Post }) => {
   return (
     <Link
       href={`/blog/${post.slug}` as Parameters<typeof Link>[0]['href']}
-      className="group grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-14 items-center border border-ink/20 rounded-[30px] p-6 lg:p-10 hover:border-purple-accents transition-colors"
+      className="group grid grid-cols-1 lg:grid-cols-[0.7fr_1fr] gap-8 lg:gap-14 items-center border border-ink/20 rounded-[30px] p-6 lg:p-10 hover:border-purple-accents transition-colors"
     >
-      <div className="aspect-[4/3] rounded-[22px] overflow-hidden bg-cream">
+      <div className="aspect-[16/9] rounded-[22px] overflow-hidden bg-cream">
         {coverUrl ? (
           <img
             src={coverUrl}
