@@ -115,15 +115,36 @@
     display: flex;
 }
 
-/* Dropdowns with many entries (e.g. Servicios) lay out as a 2-column grid
-   instead of one long vertical list. */
-.menu-box--desktop .dropdown--grid {
-    min-width: 380px;
+/* Dropdowns with named groups (e.g. Servicios: Consulting / Building) lay out
+   as two titled side-by-side columns instead of one long vertical list. */
+.menu-box--desktop .dropdown--columns {
+    flex-direction: row;
+    min-width: 420px;
 }
 
-.menu-box--desktop .menu-item:hover .dropdown--grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(180px, 1fr));
+.menu-box--desktop .dropdown-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.menu-box--desktop .dropdown-column:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.menu-box--desktop .dropdown-column__title {
+    padding: 12px 16px 4px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-purple-accents);
+    opacity: 0.7;
+}
+
+.menu-box--desktop .dropdown-column__items {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Language selector */
