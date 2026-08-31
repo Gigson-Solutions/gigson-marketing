@@ -60,7 +60,7 @@ const NavbarDesktop = ({ menu }: { menu: MenuItem[] }) => {
                         <ChevronDown />
                       </span>
                     )}
-                    <ul className="dropdown">
+                    <ul className={`dropdown${children.length > 5 ? ' dropdown--grid' : ''}`}>
                       {children.map(({ href: childHref, name: childName }, childIndex) => (
                         <li className="menu-item__child" key={childIndex}>
                           <Link
