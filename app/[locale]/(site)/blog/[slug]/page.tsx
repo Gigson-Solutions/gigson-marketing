@@ -2,12 +2,20 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
 import BlogPost from '../../../../../src/components/Blog/BlogPost';
-import { getPostBySlug, getPostSlugs, getRelatedPosts } from '../../../../../lib/posts';
+import { getPostBySlug, getPostSlugs, getRelatedPosts, type Post } from '../../../../../lib/posts';
 
 export const revalidate = 3600;
 
 const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string; slug: string }> };
+
+/** Absolute canonical URL for a post, from its own `locale`/`slug` — used
+ * both for the post itself and for its `localizedVersion` sibling, which
+ * may have a different slug (translated slugs are more idiomatic for SEO
+ * than forcing the same one across languages). */
+function postUrl(post: Post): string {
+  return post.locale === 'es' ? `${ORIGIN}/es/blog/${post.slug}` : `${ORIGIN}/blog/${post.slug}`;
+}
 
 export async function generateStaticParams() {
   const [esSlugs, enSlugs] = await Promise.all([getPostSlugs('es'), getPostSlugs('en')]);
@@ -33,17 +41,21 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   const title = post.seoTitle ?? post.title;
   const description = post.seoDescription ?? post.excerpt ?? '';
-  const canonical = locale === 'es'
-    ? `${ORIGIN}/es/blog/${slug}`
-    : `${ORIGIN}/blog/${slug}`;
+  const canonical = postUrl(post);
   const coverUrl = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
+
+  const sibling = post.localizedVersion && typeof post.localizedVersion === 'object' ? post.localizedVersion : null;
+  const languages: Record<string, string> = { 'x-default': canonical, [locale]: canonical };
+  if (sibling?.locale && sibling.slug) {
+    languages[sibling.locale] = postUrl(sibling);
+  }
 
   return {
     title,
     description,
     alternates: {
       canonical,
-      languages: { 'x-default': canonical, [locale]: canonical },
+      languages,
     },
     openGraph: {
       title,
@@ -77,7 +89,7 @@ export default async function BlogPostPage(props: Props) {
     '@type': 'Article',
     headline: post.title,
     description: post.excerpt,
-    url: `${ORIGIN}${locale === 'es' ? '/es' : ''}/blog/${slug}`,
+    url: postUrl(post),
     datePublished: post.publishedAt,
     author: {
       '@type': 'Person',

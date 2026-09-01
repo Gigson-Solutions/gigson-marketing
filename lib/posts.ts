@@ -35,6 +35,9 @@ export type Post = {
   // Serialized Lexical editor state — rendered via `<RichText>` +
   // `src/components/Blog/richTextConverters.tsx`, not pre-converted HTML.
   content?: unknown;
+  // Populated (depth >= 1) or a bare id/null. The same article in the other
+  // locale — kept in sync both ways by a Payload hook (collections/Posts.ts).
+  localizedVersion?: Post | string | null;
 };
 
 async function getPayloadInstance() {

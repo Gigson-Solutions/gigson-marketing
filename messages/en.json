@@ -46,6 +46,8 @@
         "allCategories": "All",
         "readingTime": "{minutes} min read",
         "relatedPosts": "Keep reading",
+        "readInEnglish": "Read in English →",
+        "readInSpanish": "Read in Spanish →",
         "categories": {
             "agentes-ia": "AI Agents",
             "integraciones-erp": "ERP Integrations",
