@@ -1,0 +1,88 @@
+.erp-solutions-badge {
+  padding: calc(var(--global-padding) * 0.6) 0;
+  background-color: #f4f3ef;
+}
+
+.erp-solutions-badge__inner {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 var(--global-padding);
+}
+
+.erp-solutions-badge__eyebrow {
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-purple-accents);
+  margin-bottom: 0.8rem;
+}
+
+.erp-solutions-badge__title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-dark-primary);
+  margin-bottom: 2.4rem;
+  max-width: 48rem;
+}
+
+.erp-solutions-badge__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.erp-solutions-badge__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem 2rem 2.4rem;
+  background-color: #ffffff;
+  border: 1px solid #e0dfdf;
+  border-radius: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.erp-solutions-badge__card:hover {
+  border-color: var(--color-purple-accents);
+}
+
+.erp-solutions-badge__card-logo {
+  height: 1.8rem;
+  max-width: 9rem;
+  object-fit: contain;
+}
+
+.erp-solutions-badge__card-label {
+  font-size: 1.3rem;
+  color: var(--color-dark-medium);
+  line-height: 1.4;
+}
+
+.erp-solutions-badge__card-cta {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-purple-accents);
+  text-decoration: underline;
+  margin-top: auto;
+}
+
+.erp-solutions-badge__card--custom {
+  background-color: var(--color-dark-primary);
+  border-color: var(--color-dark-primary);
+}
+
+.erp-solutions-badge__card--custom .erp-solutions-badge__card-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.erp-solutions-badge__card--custom .erp-solutions-badge__card-cta {
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .erp-solutions-badge__cards {
+    grid-template-columns: 1fr;
+  }
+}

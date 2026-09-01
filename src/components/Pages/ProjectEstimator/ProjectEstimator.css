@@ -1,0 +1,689 @@
+/* AI Project Estimator (/project-estimator) — namespaced under
+   .project-estimator, following the same "own small CSS file, gs-* tokens"
+   convention as Iso27001.css. Deliberately NOT extracting shared wizard
+   chrome from Iso27001.css to avoid touching a page that already converts
+   ad traffic — see plan notes. */
+
+.project-estimator {
+  /* Wider than the site's usual --gs-content-w (1298px) — the use-case
+     cards in step 5 need the extra horizontal room to stay readable. */
+  max-width: 1600px;
+  margin: 0 auto;
+  /* Navbar is `position: fixed` (see NavbarHeader.css: .div-header has
+     2rem vertical padding + ~33px of nav-item content + a hairline border,
+     i.e. ~100px tall on desktop). 96px was cutting the hero tag by a few
+     px — bumped with headroom since the navbar's real height can grow
+     independently of this page (e.g. new top-level nav entries). */
+  padding: 128px var(--gs-padding-inline) var(--gs-space-9);
+}
+
+.pe-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--gs-space-8);
+}
+.pe-header-tag {
+  display: inline-block;
+  font-size: var(--gs-text-xs);
+  letter-spacing: var(--gs-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--gs-accent);
+  background: var(--gs-lavender);
+  border-radius: var(--gs-radius-pill);
+  padding: 6px 16px;
+  margin-bottom: var(--gs-space-4);
+}
+.pe-header h1 {
+  margin-bottom: var(--gs-space-4);
+}
+.pe-header p {
+  color: var(--gs-fg-2);
+}
+
+.pe-shell {
+  display: flex;
+  gap: var(--gs-space-7);
+  align-items: flex-start;
+}
+
+/* ── Sidebar (numbered vertical stepper) ─────────────────────── */
+.pe-sidebar {
+  flex: 0 0 260px;
+  position: sticky;
+  top: var(--gs-space-6);
+}
+.pe-sidebar ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gs-space-2);
+}
+.pe-sidebar li {
+  display: flex;
+  align-items: center;
+  gap: var(--gs-space-3);
+  padding: 9px 14px;
+  border-radius: var(--gs-radius-pill);
+  color: var(--gs-graphite);
+  font-size: 13px;
+  transition: background var(--gs-dur-base) var(--gs-ease-std);
+}
+.pe-sidebar li.is-active {
+  background: var(--gs-lavender);
+  color: var(--gs-accent);
+  font-weight: var(--gs-weight-medium);
+}
+.pe-sidebar li.is-done {
+  color: var(--gs-accent);
+}
+.pe-sidebar-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--gs-stroke-soft);
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.pe-sidebar li.is-active .pe-sidebar-num {
+  background: var(--gs-accent);
+  color: var(--gs-white);
+  border-color: var(--gs-accent);
+}
+.pe-sidebar li.is-done .pe-sidebar-num {
+  border-color: var(--gs-accent);
+}
+
+/* ── Main column ──────────────────────────────────────────────── */
+.pe-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: var(--gs-white);
+  border-radius: var(--gs-radius-lg);
+  /* Keeps the scrollIntoView() step-change effect from tucking the top of
+     the card under the fixed navbar. */
+  scroll-margin-top: 128px;
+  padding: var(--gs-space-7);
+  box-shadow: var(--gs-shadow-soft);
+}
+
+.pe-progress {
+  height: 4px;
+  width: 100%;
+  background: rgba(120, 116, 244, 0.18);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.pe-progress-fill {
+  height: 100%;
+  background: var(--gs-purple);
+  border-radius: 999px;
+  transition: width 360ms var(--gs-ease-out);
+}
+.pe-step-of {
+  font-size: var(--gs-text-xs);
+  color: var(--gs-graphite);
+  margin-bottom: var(--gs-space-6);
+}
+
+.pe-step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gs-space-7);
+}
+.pe-field h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: var(--gs-weight-medium);
+  margin-bottom: 6px;
+}
+.pe-eyebrow {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: var(--gs-weight-medium);
+  margin-bottom: var(--gs-space-3);
+}
+.pe-help {
+  color: var(--gs-graphite);
+  font-size: var(--gs-text-sm);
+  margin-bottom: var(--gs-space-4);
+}
+.pe-error {
+  color: var(--gs-error);
+  font-size: var(--gs-text-xs);
+  margin-top: 6px;
+}
+.pe-notice {
+  background: var(--gs-mist);
+  border-radius: var(--gs-radius-md);
+  padding: var(--gs-space-4) var(--gs-space-5);
+}
+
+.pe-textarea,
+.pe-input,
+textarea.pe-textarea {
+  width: 100%;
+  border: 1px solid var(--gs-stroke-soft);
+  border-radius: var(--gs-radius-md);
+  padding: 14px 16px;
+  font-size: var(--gs-text-sm);
+  font-family: inherit;
+  background: var(--gs-mist);
+}
+.pe-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+.pe-textarea.has-error,
+.pe-input.has-error {
+  border-color: var(--gs-error);
+}
+.pe-counter {
+  display: block;
+  text-align: right;
+  font-size: var(--gs-text-xs);
+  color: var(--gs-graphite);
+  margin-top: 4px;
+}
+.pe-input {
+  margin-top: var(--gs-space-3);
+}
+
+/* ── Chip / card select (shared/ui/ChipSelect.tsx) ───────────── */
+.gs-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.gs-chip {
+  font-size: 15px;
+  line-height: 1.3;
+  color: var(--gs-ink);
+  border: 0.5px solid var(--gs-ink);
+  border-radius: 78px;
+  padding: 9px 20px;
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--gs-dur-base) var(--gs-ease-std);
+}
+.gs-chip.is-active {
+  background: var(--gs-purple);
+  border-color: var(--gs-purple);
+  color: var(--gs-white);
+}
+.gs-chip:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.gs-card-select {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--gs-space-3);
+}
+.gs-card-option {
+  text-align: left;
+  border: 1px solid var(--gs-stroke-soft);
+  border-radius: var(--gs-radius-md);
+  padding: var(--gs-space-4);
+  background: var(--gs-white);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all var(--gs-dur-base) var(--gs-ease-std);
+}
+.gs-card-option-title {
+  font-weight: var(--gs-weight-medium);
+  color: var(--gs-ink);
+}
+.gs-card-option-desc {
+  font-size: var(--gs-text-xs);
+  color: var(--gs-graphite);
+}
+.gs-card-option.is-active {
+  border-color: var(--gs-purple);
+  background: var(--gs-lavender);
+}
+.gs-card-option.is-active .gs-card-option-title {
+  color: var(--gs-purple-dark);
+}
+
+/* ── Numeric stepper (shared/ui/NumericStepper.tsx) ──────────── */
+.gs-numeric-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gs-mist);
+  border-radius: var(--gs-radius-pill);
+  padding: 6px 10px;
+}
+.gs-numeric-stepper input {
+  width: 90px;
+  border: none;
+  background: transparent;
+  font-size: var(--gs-text-base);
+  font-weight: var(--gs-weight-medium);
+  text-align: center;
+}
+.gs-numeric-stepper-suffix {
+  color: var(--gs-graphite);
+  font-size: var(--gs-text-xs);
+}
+.gs-numeric-stepper button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gs-lavender);
+  color: var(--gs-purple-dark);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ── Tag input (shared/ui/TagInput.tsx) ──────────────────────── */
+.gs-tag-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid var(--gs-stroke-soft);
+  border-radius: var(--gs-radius-md);
+  padding: 10px 14px;
+  background: var(--gs-mist);
+}
+.gs-tag-input-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.gs-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gs-lavender);
+  color: var(--gs-purple-dark);
+  border-radius: var(--gs-radius-pill);
+  padding: 4px 10px;
+  font-size: var(--gs-text-xs);
+}
+.gs-tag button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--gs-purple-dark);
+}
+.gs-tag-input input {
+  flex: 1 1 160px;
+  border: none;
+  background: transparent;
+  font-size: var(--gs-text-sm);
+}
+
+/* ── Tabs (step 4) ────────────────────────────────────────────── */
+.pe-tabs {
+  display: inline-flex;
+  gap: 4px;
+  background: var(--gs-mist);
+  border-radius: var(--gs-radius-pill);
+  padding: 4px;
+  margin-bottom: var(--gs-space-5);
+}
+.pe-tabs button {
+  border: none;
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: var(--gs-radius-pill);
+  cursor: pointer;
+  font-size: var(--gs-text-sm);
+  color: var(--gs-graphite);
+}
+.pe-tabs button.is-active {
+  background: var(--gs-white);
+  color: var(--gs-ink);
+  box-shadow: var(--gs-shadow-card);
+}
+.pe-timeline-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gs-space-4);
+  padding: var(--gs-space-3) 0;
+  border-bottom: 1px solid var(--gs-divider);
+}
+
+/* ── Buttons ──────────────────────────────────────────────────── */
+.project-estimator .btn,
+.project-estimator .btn-secondary {
+  border-radius: var(--gs-radius-pill);
+  padding: 12px 28px;
+  font-size: var(--gs-text-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: opacity var(--gs-dur-base) var(--gs-ease-std);
+}
+.project-estimator .btn {
+  background: var(--gs-purple);
+  color: var(--gs-white);
+}
+.project-estimator .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.project-estimator .btn-secondary {
+  background: transparent;
+  border: 1px solid var(--gs-ink);
+  color: var(--gs-ink);
+}
+.project-estimator .btn:hover:not(:disabled),
+.project-estimator .btn-secondary:hover {
+  opacity: 0.85;
+}
+.project-estimator .btn.is-wide {
+  width: 100%;
+  text-align: center;
+}
+
+.pe-step-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gs-space-4);
+  margin-top: var(--gs-space-4);
+}
+
+/* ── Step 5: generating screen ────────────────────────────────── */
+.pe-generating {
+  align-items: center;
+  text-align: center;
+  padding: var(--gs-space-8) 0;
+}
+.pe-spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 4px solid var(--gs-lavender);
+  border-top-color: var(--gs-purple);
+  animation: pe-spin 900ms linear infinite;
+  margin: 0 auto var(--gs-space-5);
+}
+@keyframes pe-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.pe-generating ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: var(--gs-space-5);
+}
+.pe-generating li {
+  color: var(--gs-graphite);
+  font-size: var(--gs-text-sm);
+  opacity: 0.4;
+  transition: opacity var(--gs-dur-slow) var(--gs-ease-std);
+}
+.pe-generating li.is-active {
+  opacity: 1;
+  color: var(--gs-purple-dark);
+  font-weight: var(--gs-weight-medium);
+}
+
+/* ── Step 5: feature list ─────────────────────────────────────── */
+.pe-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gs-space-4);
+}
+.pe-feature-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1.4fr auto;
+  gap: var(--gs-space-5);
+  border: 1px solid var(--gs-divider);
+  border-radius: var(--gs-radius-md);
+  padding: var(--gs-space-5);
+  background: var(--gs-mist);
+}
+.pe-feature-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 6px;
+}
+.pe-feature-actions button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gs-ink);
+  color: var(--gs-white);
+  cursor: pointer;
+}
+.pe-feature-eyebrow {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gs-graphite);
+  margin-bottom: 4px;
+}
+.pe-feature-main h4 {
+  font-size: 16px;
+  margin-bottom: var(--gs-space-3);
+}
+.pe-feature-main ol {
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--gs-fg-2);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pe-feature-side p {
+  font-size: 13px;
+  margin-bottom: var(--gs-space-3);
+}
+.pe-feature-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 90px;
+}
+.pe-feature-hours div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pe-feature-hours span {
+  font-size: 10px;
+  color: var(--gs-graphite);
+  text-transform: uppercase;
+}
+.pe-feature-hours strong {
+  font-size: 16px;
+  color: var(--gs-purple-dark);
+}
+
+@media (max-width: 900px) {
+  .pe-shell {
+    flex-direction: column;
+  }
+  .pe-sidebar {
+    position: static;
+    flex: none;
+    width: 100%;
+  }
+  .pe-sidebar ol {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .pe-feature-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Step 6: delivery team + timeline + gated totals ─────────── */
+.pe-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--gs-space-4);
+}
+.pe-team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--gs-mist);
+  border-radius: var(--gs-radius-md);
+  padding: var(--gs-space-4);
+  text-align: center;
+}
+.pe-team-card strong {
+  font-size: 24px;
+  color: var(--gs-purple);
+}
+
+.pe-gantt {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pe-gantt-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  gap: var(--gs-space-3);
+}
+.pe-gantt-role {
+  font-size: var(--gs-text-xs);
+  text-transform: uppercase;
+  color: var(--gs-graphite);
+}
+.pe-gantt-track {
+  position: relative;
+  height: 14px;
+  background: var(--gs-mist);
+  border-radius: var(--gs-radius-pill);
+  overflow: hidden;
+}
+.pe-gantt-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--gs-purple);
+  border-radius: var(--gs-radius-pill);
+}
+
+.pe-final-estimate {
+  background: var(--gs-lavender);
+  border-radius: var(--gs-radius-lg);
+  padding: var(--gs-space-6);
+}
+.pe-totals {
+  display: flex;
+  gap: var(--gs-space-7);
+  margin: var(--gs-space-4) 0 var(--gs-space-5);
+}
+.pe-totals span {
+  display: block;
+  font-size: var(--gs-text-xs);
+  color: var(--gs-graphite);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.pe-totals strong {
+  font-size: 28px;
+  color: var(--gs-ink);
+}
+.pe-totals strong.is-blurred {
+  filter: blur(4px);
+  user-select: none;
+}
+.pe-success h4 {
+  margin-bottom: 6px;
+}
+.pe-success p {
+  color: var(--gs-fg-2);
+  margin-bottom: var(--gs-space-4);
+}
+
+/* ── Feature + lead modals (rendered via shared/ui/Dialog.tsx) ──── */
+.feature-modal,
+.lead-modal {
+  padding: var(--gs-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gs-space-4);
+}
+.feature-modal-field,
+.lead-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: var(--gs-text-sm);
+}
+.feature-modal-field input,
+.feature-modal-field textarea,
+.lead-modal-field input {
+  border: 1px solid var(--gs-stroke-soft);
+  border-radius: var(--gs-radius-md);
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: var(--gs-text-sm);
+}
+.feature-modal-hours {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.feature-modal-hours label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  text-align: center;
+}
+.feature-modal-hours input {
+  border: 1px solid var(--gs-stroke-soft);
+  border-radius: 8px;
+  padding: 6px;
+  text-align: center;
+}
+.feature-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gs-space-3);
+}
+.lead-modal {
+  position: relative;
+}
+.lead-modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--gs-graphite);
+}
+.lead-modal-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--gs-text-xs);
+}
+.lead-modal-error {
+  color: var(--gs-error);
+  font-size: var(--gs-text-xs);
+}

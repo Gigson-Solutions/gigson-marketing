@@ -24,7 +24,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       canonical,
       languages: { en: `${ORIGIN}/about`, es: `${ORIGIN}/es/sobre-nosotros`, 'x-default': `${ORIGIN}/about` },
     },
-    openGraph: { title: seo.title, description: seo.description, url: canonical },
+    openGraph: { title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

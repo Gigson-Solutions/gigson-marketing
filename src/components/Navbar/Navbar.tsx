@@ -13,15 +13,28 @@ const Navbar = () => {
   const t = useTranslations('menu');
 
   const menuLinks = [
+    { name: t('estimator'), href: '/project-estimator' as const },
     {
       name: t('services'),
-      href: '/services' as const,
-      children: [
-        { name: t('CTO'), href: '/cto-as-service' as const },
-        { name: t('tech_consulting'), href: '/technology-consulting' as const },
-        { name: t('ai_agents'), href: '/ai-agents' as const },
-        { name: t('software'), href: '/software-engineering' as const },
-        { name: t('compliance'), href: '/iso-27001-certification' as const },
+      columns: [
+        {
+          title: t('consultingLabel'),
+          items: [
+            { name: t('ai_agents'), href: '/ai-agents' as const },
+            { name: t('erp_custom'), href: '/custom-erp' as const },
+            { name: t('software'), href: '/software-engineering' as const },
+          ],
+        },
+        {
+          title: t('buildingLabel'),
+          items: [
+            { name: t('CTO'), href: '/cto-as-service' as const },
+            { name: t('tech_consulting'), href: '/technology-consulting' as const },
+            { name: t('compliance'), href: '/iso-27001-certification' as const },
+            { name: t('erp_odoo'), href: '/integrations-odoo' as const },
+            { name: t('erp_holded'), href: '/integrations-holded' as const },
+          ],
+        },
       ],
     },
     {
@@ -30,11 +43,11 @@ const Navbar = () => {
         { name: t('logistics'), href: '/logistics-technology' as const },
         { name: t('retail'), href: '/retail-ecommerce-technology' as const },
         { name: t('construction'), href: '/construction-technology' as const },
+        { name: t('professional_services'), href: '/professional-services-technology' as const },
       ],
     },
     { name: t('cases'), href: '/cases' as const },
-    { name: t('about'), href: '/about' as const },
-    { name: t('faqs'), href: '/faqs' as const },
+    { name: t('blog'), href: '/blog' as const },
     { name: t('contact'), href: '/contact' as const },
   ];
 

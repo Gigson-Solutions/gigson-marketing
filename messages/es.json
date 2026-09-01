@@ -11,6 +11,7 @@
         "news": "LANDING",
         "industries": "INDUSTRIAS",
         "cases": "CASOS",
+        "blog": "BLOG",
         "faqs": "FAQs",
         "contact": "CONTÁCTANOS",
         "legal": "Política legal",
@@ -22,10 +23,40 @@
         "CTO": "CTO as a service",
         "software": "Ingenieria software",
         "construction": "Construcción",
+        "professional_services": "Servicios Profesionales",
         "tech_consulting": "Consultoría tecnologica",
         "cibersecurity": "Ciberseguridad",
         "ai_agents": "Agentes IA",
-        "compliance": "Compliance"
+        "compliance": "Compliance",
+        "claude_partner": "Claude Partner",
+        "erp_solutions": "Soluciones ERP",
+        "erp_odoo": "Odoo",
+        "erp_custom": "ERP a medida",
+        "erp_holded": "Holded",
+        "estimator": "Estimador",
+        "consultingLabel": "Consulting",
+        "buildingLabel": "Building"
+    },
+    "blog": {
+        "title": "Blog",
+        "empty": "Aún no hay artículos. Vuelve pronto.",
+        "readMore": "LEER MÁS →",
+        "backToBlog": "← VOLVER AL BLOG",
+        "contentUnavailable": "Contenido no disponible.",
+        "allCategories": "Todos",
+        "readingTime": "{minutes} min de lectura",
+        "relatedPosts": "Sigue leyendo",
+        "readInEnglish": "Leer en inglés →",
+        "readInSpanish": "Leer en español →",
+        "categories": {
+            "agentes-ia": "Agentes IA",
+            "integraciones-erp": "Integraciones ERP",
+            "ciberseguridad": "Ciberseguridad",
+            "ingenieria-software": "Ingeniería de software",
+            "consultoria-tecnologica": "Consultoría tecnológica",
+            "casos-exito": "Casos de éxito",
+            "sectores": "Sectores"
+        }
     },
     "hero_link": "/es/contacto",
     "home": {
@@ -66,7 +97,17 @@
             "Te beneficias del enfoque safety-first de Anthropic en despliegue de IA",
             "Acceso directo al canal de soporte técnico para partners de Anthropic"
         ],
-        "cta": "CONOCE NUESTROS SERVICIOS DE IA →"
+        "cta": "CONOCE NUESTROS SERVICIOS DE IA →",
+        "ctaSecondary": "Ver nuestra certificación oficial"
+    },
+    "erpSolutionsBadge": {
+        "eyebrow": "Partners oficiales de ERP",
+        "title": "Implementamos Odoo y Holded - o construimos tu ERP a medida.",
+        "odooLabel": "Official Odoo partner",
+        "holdedLabel": "Official Holded partner",
+        "customLabel": "¿Ninguno encaja? Te construimos tu ERP desde cero: facturación, WMS o cualquier sistema que necesites.",
+        "cta": "Ver integraciones →",
+        "customCta": "Hablemos →"
     },
     "aiAgents": {
         "title": "Agentes IA para Empresas en España | Gigson Solutions",
@@ -196,6 +237,9 @@
                     "answer": "Sí. Claude de Anthropic está diseñado con un enfoque safety-first. Los datos no se usan para entrenar modelos. Podemos desplegar los agentes en tu infraestructura (on-premise o cloud privado) para mayor control. Cumplimos con RGPD y podemos acompañar procesos de compliance."
                 }
             ]
+        },
+        "sectorsCta": {
+            "title": "Casos de uso por sector"
         }
     },
     "about": {
@@ -311,6 +355,7 @@
         "needTitle": "¿Cuál es tu necesidad actual?",
         "resetFilters": "BORRAR FILTROS",
         "featuresTitle": "Funcionalidades",
+        "resultsTitle": "Resultados",
         "solutionTitle": "Solución",
         "toolsTitle": "Especificaciones"
     },
@@ -342,7 +387,8 @@
             "tags": [
                 "Estudio diseño",
                 "Agencia creativa",
-                "Construcción"
+                "Construcción",
+                "Servicios profesionales"
             ],
             "need": [
                 "Gestión de clientes",
@@ -439,7 +485,7 @@
         },
         {
             "title": "Agente de IA para Operaciones",
-            "challenge": "Despliega un agente de IA impulsado por Claude que gestione el procesamiento de documentos, Q&A interno, enrutamiento de flujos de trabajo y soporte a la toma de decisiones - integrado con tu ERP, CRM o herramientas de gestión de proyectos existentes.",
+            "challenge": "Antes del agente, el equipo dedicaba varias horas a la semana a tareas manuales: revisar documentos entrantes uno a uno, buscar información dispersa entre distintos sistemas para responder preguntas internas, y trasladar a mano los datos al ERP, CRM o herramientas de gestión de proyectos. Desplegamos un agente de IA impulsado por Claude que gestiona el procesamiento de documentos, Q&A interno, enrutamiento de flujos de trabajo y soporte a la toma de decisiones - integrado con esos mismos sistemas, sin sustituir el criterio del equipo en las decisiones críticas.",
             "features": [
                 "Agente conversacional conectado a sistemas internos vía API",
                 "Ingesta de documentos y extracción de datos estructurados",
@@ -447,7 +493,13 @@
                 "Puntos de aprobación humana para acciones críticas",
                 "Registro de auditoría y conformidad"
             ],
-            "solution": "Construido sobre la API de Claude de Anthropic con una capa de integración personalizada que conecta tu stack existente. Desplegado en tu infraestructura o nube de elección. Modelo de retainer recurrente para iteración y mantenimiento.",
+            "results": [
+                "Reducción estimada de 30-50% en el tiempo dedicado a tareas manuales de procesamiento documental, en línea con lo observado en despliegues similares",
+                "Menos errores de clasificación y traspaso de datos gracias a los puntos de aprobación humana antes de cada acción crítica",
+                "Retorno de la inversión típico en 3-6 meses según el volumen de documentos y flujos automatizados",
+                "Trazabilidad completa de cada decisión del agente mediante el registro de auditoría"
+            ],
+            "solution": "Construido sobre la API de Claude de Anthropic con una capa de integración personalizada que conecta tu stack existente. Desplegado en tu infraestructura o nube de elección. Modelo de retainer recurrente para iteración y mantenimiento. Aplicable tanto a operaciones industriales como a despachos profesionales, consultoras y asesorías con alto volumen de documentación y consultas internas.",
             "tools": [
                 "Claude API (Anthropic)",
                 "n8n u orquestación personalizada",
@@ -511,6 +563,17 @@
         {
             "question": "¿Puedo coordinar yo mismo el desarrollo del producto?",
             "answer": "Sí, no obstante no lo recomendamos ya que la falta de experiencia en la gestión de equipos técnicos puede conducir a malentendidos en la comunicación, una mala gestión de riesgos y de recursos."
+        },
+        {
+            "title": "Agentes IA"
+        },
+        {
+            "question": "¿Gigson Solutions implementa agentes de IA para empresas?",
+            "answer": "Sí. Somos Partner Certificado de Anthropic y diseñamos, construimos y desplegamos agentes basados en Claude para procesamiento de documentos, automatización de flujos de trabajo y atención al cliente. Puedes ver el detalle completo en nuestra página de Agentes IA."
+        },
+        {
+            "question": "¿Cuánto cuesta un agente de IA para mi empresa?",
+            "answer": "Depende de la complejidad: desde 8.000-15.000€ para casos básicos (Q&A interno, procesamiento de documentos) hasta 20.000-50.000€ para proyectos con múltiples integraciones. Contáctanos para una estimación personalizada."
         },
         {
             "question": "¿Nos hemos dejado algo por contestar?",
@@ -1439,6 +1502,11 @@
                     "answer": "Depende del alcance. Una integración puntual (ej. conectar ERP con plataforma de transportistas) tarda 3–6 semanas. Un proyecto de transformación digital más amplio puede tomar 3–6 meses con fases iterativas. Siempre empezamos con el proceso de mayor impacto para mostrar resultados rápidos."
                 }
             ]
+        },
+        "aiAgentsCta": {
+            "title": "¿Quieres un agente IA para tu operación logística?",
+            "description": "Automatiza el seguimiento de pedidos, la comunicación con transportistas y la gestión de incidencias con un agente de IA conectado a tus sistemas.",
+            "buttonText": "Ver Agentes IA"
         }
     },
     "cases-construction": {
@@ -1836,6 +1904,10 @@
                         {
                             "title": "Soluciones personalizadas para digitalizar procesos o coordinar proyectos",
                             "description": "Analizamos tus flujos y diseñamos soluciones específicas para mejorar la coordinación entre equipos, la trazabilidad de decisiones o la supervisión de proyectos desde la oficina, la obra o el móvil"
+                        },
+                        {
+                            "title": "Aplicación de inteligencia artificial en la gestión de obra",
+                            "description": "Agentes IA que clasifican documentación de obra, resumen partes de trabajo y responden preguntas del equipo consultando la información centralizada - conectados a tu ERP, BIM o gestor documental."
                         }
                     ]
                 },
@@ -1916,6 +1988,10 @@
             "title": "Preguntas frecuentes sobre tecnología en construcción",
             "items": [
                 {
+                    "question": "¿Puede un agente de IA ayudar en la gestión documental de mis obras?",
+                    "answer": "Sí. Un agente IA puede clasificar automáticamente partes de trabajo, fotos de obra y albaranes, detectar y resumir cambios en los proyectos, y responder preguntas del equipo de campo u oficina consultando la documentación centralizada. El resultado habitual es una reducción notable del tiempo dedicado a tareas administrativas repetitivas y menos errores de traspaso de información entre obra y oficina."
+                },
+                {
                     "question": "¿Cómo puede la tecnología mejorar la gestión de proyectos de construcción?",
                     "answer": "La tecnología permite digitalizar la gestión de obra: seguimiento de avance en tiempo real, control de costes por partida, gestión documental centralizada, comunicación entre equipos de campo y oficina, y alertas automáticas de desviaciones. Reducimos el tiempo dedicado a reportes manuales y mejoramos la visibilidad sobre cada proyecto."
                 },
@@ -1928,6 +2004,11 @@
                     "answer": "Sí. La mayoría de empresas constructoras con las que trabajamos no tienen equipo IT propio. Nos encargamos de la implementación, formación del equipo, soporte continuo y adaptación de las herramientas a los procesos de tu empresa. El objetivo es que la tecnología funcione sin necesidad de expertos internos para el día a día."
                 }
             ]
+        },
+        "aiAgentsCta": {
+            "title": "¿Quieres un agente IA para tu constructora?",
+            "description": "Automatiza la gestión documental, el control de cambios y la comunicación entre obra y oficina con un agente de IA conectado a tu ERP.",
+            "buttonText": "Ver Agentes IA"
         }
     },
     "cases-retail": {
@@ -2518,6 +2599,345 @@
                     "answer": "Depende del alcance. Una integración puntual (ej. conectar tu ERP con Shopify) tarda 3-6 semanas. Un proyecto de transformación más amplio que incluya IA, omnicanalidad e integraciones múltiples puede durar 3-6 meses con fases iterativas. Siempre empezamos con el proceso de mayor impacto para mostrar resultados rápidos."
                 }
             ]
+        },
+        "aiAgentsCta": {
+            "title": "¿Quieres un agente IA para tu tienda o ecommerce?",
+            "description": "Automatiza la atención al cliente, la gestión de devoluciones y el análisis de inventario con un agente de IA conectado a tus sistemas.",
+            "buttonText": "Ver Agentes IA"
+        }
+    },
+    "cases-professional-services": {
+        "title": "Tecnología y Agentes IA para Servicios Profesionales y Despachos en España | Gigson Solutions",
+        "metadescription": "Software a medida y agentes IA para despachos, consultoras y asesorías en España: gestión documental, CRM, facturación y automatización con IA.",
+        "hero": {
+            "suptitle": "SERVICIOS PROFESIONALES Y LEGAL",
+            "title": "<span>Tecnología y agentes IA</span> para despachos, asesorías <br/> y <span>consultoras</span> en España",
+            "description": "Los despachos y consultoras dedican gran parte de su tiempo a tareas administrativas y documentales que se pueden automatizar sin perder el control ni el criterio profesional. En Gigson Solutions te ayudamos a integrar tecnología y agentes IA que se adaptan a la forma de trabajar de tu equipo.",
+            "buttonText": "Contáctanos"
+        },
+        "useCases": {
+            "title": "Casos clave",
+            "description": "Descubre cómo la tecnología y los agentes IA pueden resolver los retos habituales de despachos, consultoras y asesorías. Estos ejemplos son ilustrativos, basados en patrones frecuentes del sector, pensados para mostrar el nivel de detalle con el que trabajamos.",
+            "cards": [
+                {
+                    "title": "Revisión de contratos sin perder una tarde entera",
+                    "supTitle": "Desafío",
+                    "description": "Un despacho con varias sedes dedicaba horas manuales cada semana a revisar cláusulas y extraer datos clave de los contratos entrantes antes de poder avanzar con cada expediente.",
+                    "buttonText": "Ver caso",
+                    "dialog": {
+                        "backButtonText": "Casos de uso",
+                        "title": "Revisión de contratos sin perder una tarde entera",
+                        "quote": "",
+                        "challengeDescription": "Un despacho con varias sedes dedicaba horas manuales cada semana a revisar cláusulas y extraer datos clave de los contratos entrantes antes de poder avanzar con cada expediente. La revisión manual generaba cuellos de botella y retrasos en la respuesta al cliente.",
+                        "functionalitiesText": "Funcionalidades",
+                        "functionalities": [
+                            {
+                                "title": "Ingesta de documentos",
+                                "description": "Recepción de contratos y anexos por email o carga manual, en cualquier formato habitual (PDF, Word, escaneado)."
+                            },
+                            {
+                                "title": "Extracción de cláusulas clave",
+                                "description": "Identificación automática de plazos, importes, partes y cláusulas de riesgo relevantes para el caso."
+                            },
+                            {
+                                "title": "Resumen estructurado",
+                                "description": "Generación de un resumen para el abogado o consultor responsable, con los puntos que requieren atención humana."
+                            },
+                            {
+                                "title": "Alertas de vencimiento",
+                                "description": "Notificaciones automáticas de plazos y renovaciones detectados en el documento."
+                            },
+                            {
+                                "title": "Registro de auditoría",
+                                "description": "Trazabilidad completa de cada documento procesado y cada decisión del agente."
+                            }
+                        ],
+                        "solutionText": "Solución",
+                        "solutionDescription": "Se implementó un agente basado en Claude que clasifica y extrae la información clave de cada contrato entrante, genera un resumen estructurado y deja siempre un punto de aprobación humana antes de cualquier acción sobre el expediente. El equipo pasó a dedicar su tiempo a la revisión de lo relevante, no a la búsqueda manual de información.",
+                        "technologiesText": "Tecnologías",
+                        "technologies": [
+                            {
+                                "title": "Agente IA",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Orquestación",
+                                "description": "n8n"
+                            },
+                            {
+                                "title": "Integraciones",
+                                "description": "REST APIs y email"
+                            },
+                            {
+                                "title": "Almacenamiento",
+                                "description": "Cifrado en reposo y en tránsito"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Encuentra la respuesta sin preguntar a un compañero",
+                    "supTitle": "Desafío",
+                    "description": "En una consultora con equipo distribuido, encontrar la política interna o el criterio aplicado en un caso anterior implicaba interrumpir a un compañero o buscar entre carpetas y correos dispersos.",
+                    "buttonText": "Ver caso",
+                    "dialog": {
+                        "backButtonText": "Casos de uso",
+                        "title": "Encuentra la respuesta sin preguntar a un compañero",
+                        "quote": "",
+                        "challengeDescription": "En una consultora con equipo distribuido, encontrar la política interna o el criterio aplicado en un caso anterior implicaba interrumpir a un compañero o buscar entre carpetas y correos dispersos, con el consiguiente coste de tiempo para todo el equipo.",
+                        "functionalitiesText": "Funcionalidades",
+                        "functionalities": [
+                            {
+                                "title": "Q&A conectado a la base de conocimiento interna",
+                                "description": "El agente responde preguntas consultando documentos internos, políticas y casos anteriores."
+                            },
+                            {
+                                "title": "Búsqueda semántica",
+                                "description": "Encuentra información relevante aunque la pregunta no use las mismas palabras que el documento original."
+                            },
+                            {
+                                "title": "Citas a la fuente",
+                                "description": "Cada respuesta indica de qué documento interno procede la información."
+                            },
+                            {
+                                "title": "Escalado a un humano",
+                                "description": "Si el agente no tiene suficiente certeza, deriva la pregunta a la persona responsable."
+                            }
+                        ],
+                        "solutionText": "Solución",
+                        "solutionDescription": "Se desplegó un agente de Q&A interno conectado a la documentación y políticas de la consultora, disponible para todo el equipo. Las consultas repetitivas dejaron de depender de la disponibilidad de un compañero concreto, liberando tiempo del equipo senior.",
+                        "technologiesText": "Tecnologías",
+                        "technologies": [
+                            {
+                                "title": "Agente IA",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Base de conocimiento",
+                                "description": "Indexación de documentos internos y wikis"
+                            },
+                            {
+                                "title": "Integraciones",
+                                "description": "REST APIs"
+                            },
+                            {
+                                "title": "Infraestructura",
+                                "description": "Cloud privado o infraestructura propia"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "improveAreas": {
+            "title": "Áreas",
+            "filtersText": "Filtros",
+            "applyFiltersText": "Aplicar filtros",
+            "filtersClearAllText": "Limpiar todo",
+            "painPoints": [
+                {
+                    "type": "A",
+                    "name": "Automatización documental"
+                },
+                {
+                    "type": "B",
+                    "name": "Cumplimiento y auditoría"
+                }
+            ],
+            "faqs": [
+                {
+                    "types": [
+                        "A"
+                    ],
+                    "question": "Menos tiempo revisando documentos, más tiempo asesorando",
+                    "answer": {
+                        "challengeDescription": "En despachos y consultoras con alto volumen documental, gran parte del tiempo del equipo se dedica a tareas repetitivas: clasificar correos y documentos entrantes, extraer datos y trasladarlos manualmente a otros sistemas. Este tipo de trabajo es sistemático pero consume horas que podrían dedicarse al asesoramiento al cliente.",
+                        "solutionText": "Solución",
+                        "solutionDescription": "Un agente de IA conectado al correo y a los sistemas de gestión documental clasifica, extrae y traslada la información relevante, dejando puntos de aprobación humana antes de cualquier acción sobre un expediente. En despliegues similares, esto suele traducirse en una reducción de 20-30% del tiempo dedicado a revisión documental y en la recuperación de varias horas a la semana por profesional.",
+                        "functionalitiesText": "Funcionalidades",
+                        "functionalities": [
+                            {
+                                "title": "Clasificación automática",
+                                "description": "Organiza documentos y correos entrantes por tipo de expediente o cliente."
+                            },
+                            {
+                                "title": "Extracción de datos",
+                                "description": "Traslada automáticamente los datos relevantes a tu CRM, ERP o gestor de expedientes."
+                            },
+                            {
+                                "title": "Puntos de aprobación humana",
+                                "description": "Ninguna acción crítica se ejecuta sin la validación de una persona responsable."
+                            },
+                            {
+                                "title": "Panel de seguimiento",
+                                "description": "Visibilidad sobre qué documentos se han procesado y cuáles requieren revisión manual."
+                            }
+                        ],
+                        "technologiesText": "Tecnologías",
+                        "technologies": [
+                            {
+                                "title": "Agente IA",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Orquestación",
+                                "description": "n8n"
+                            },
+                            {
+                                "title": "Gestión documental",
+                                "description": "Integración con DMS/gestor de expedientes"
+                            },
+                            {
+                                "title": "Notificaciones",
+                                "description": "Email y alertas internas"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "types": [
+                        "B"
+                    ],
+                    "question": "Trazabilidad y cumplimiento sin más carga de trabajo",
+                    "answer": {
+                        "challengeDescription": "Los despachos y consultoras sujetos a requisitos de cumplimiento y auditoría necesitan poder justificar cada decisión y cada acceso a la información de un expediente, algo que resulta costoso de mantener manualmente conforme crece el volumen de casos.",
+                        "solutionText": "Solución",
+                        "solutionDescription": "Se incorpora un registro de auditoría automático a cada acción del agente de IA, junto con los puntos de aprobación humana ya existentes en el flujo. Esto permite mantener trazabilidad completa de cada decisión sin añadir carga administrativa adicional al equipo.",
+                        "functionalitiesText": "Funcionalidades",
+                        "functionalities": [
+                            {
+                                "title": "Registro de auditoría",
+                                "description": "Cada acción del agente queda registrada con fecha, documento afectado y resultado."
+                            },
+                            {
+                                "title": "Control de acceso",
+                                "description": "Los agentes solo acceden a la información necesaria para cada tarea concreta."
+                            },
+                            {
+                                "title": "Cumplimiento RGPD",
+                                "description": "Los datos no se usan para entrenar modelos y pueden desplegarse en infraestructura propia o cloud privado."
+                            },
+                            {
+                                "title": "Reportes de cumplimiento",
+                                "description": "Generación de informes exportables para auditorías internas o externas."
+                            }
+                        ],
+                        "technologiesText": "Tecnologías",
+                        "technologies": [
+                            {
+                                "title": "Agente IA",
+                                "description": "Claude API (Anthropic)"
+                            },
+                            {
+                                "title": "Registro de auditoría",
+                                "description": "Logging estructurado"
+                            },
+                            {
+                                "title": "Infraestructura cloud",
+                                "description": "AWS / GCP / Hetzner o cloud privado"
+                            },
+                            {
+                                "title": "Seguridad",
+                                "description": "Cifrado en tránsito y en reposo"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "solutionsApplications": {
+            "title": "Tecnología y agentes IA <span>al servicio de tu despacho o consultora</span>",
+            "subTitle": "Integramos las herramientas que ya usas y añadimos agentes IA donde realmente aportan valor: menos tareas repetitivas, más tiempo para el criterio profesional.",
+            "containers": [
+                {
+                    "title": "Integraciones y gestión documental",
+                    "description": "Conectamos las herramientas que ya usa tu despacho o consultora para que la información fluya sin duplicidades ni tareas manuales.",
+                    "type": "Integración",
+                    "cards": [
+                        {
+                            "title": "Gestión documental (DMS)",
+                            "description": "Integración con tu gestor documental para centralizar contratos, expedientes y comunicaciones."
+                        },
+                        {
+                            "title": "Firma electrónica",
+                            "description": "Conexión con plataformas de firma electrónica para agilizar la formalización de documentos."
+                        },
+                        {
+                            "title": "CRM para despachos y consultoras",
+                            "description": "Sincronización de clientes, expedientes y oportunidades en una única vista."
+                        },
+                        {
+                            "title": "Facturación y control de horas",
+                            "description": "Automatización del registro de horas facturables y su traslado a tu sistema de facturación."
+                        }
+                    ]
+                },
+                {
+                    "title": "Agentes IA para servicios profesionales",
+                    "description": "Agentes basados en Claude diseñados para los flujos de trabajo más habituales en despachos, asesorías y consultoras.",
+                    "type": "Agentes IA",
+                    "cards": [
+                        {
+                            "title": "Q&A interno",
+                            "description": "Responde preguntas del equipo consultando la base de conocimiento interna, políticas y casos anteriores."
+                        },
+                        {
+                            "title": "Revisión y extracción documental",
+                            "description": "Clasifica, extrae y resume la información clave de contratos y documentación entrante."
+                        },
+                        {
+                            "title": "Cualificación de leads",
+                            "description": "Prioriza y enruta nuevas consultas de clientes potenciales según el tipo de caso y la disponibilidad del equipo."
+                        }
+                    ]
+                }
+            ]
+        },
+        "howWeWork": {
+            "title": "¿Cómo trabajamos?",
+            "methods": [
+                {
+                    "title": "Discovery",
+                    "description": "Identificación de los procesos documentales y de consulta interna con mayor potencial de automatización."
+                },
+                {
+                    "title": "Diseño y arquitectura",
+                    "description": "Diseño del agente y de las integraciones con tu gestor documental, CRM o herramientas de facturación."
+                },
+                {
+                    "title": "Implementación",
+                    "description": "Desarrollo, pruebas y despliegue en producción con puntos de aprobación humana configurados desde el primer día."
+                },
+                {
+                    "title": "Soporte y mantenimiento",
+                    "description": "Monitorización, ajustes y evolución del agente a medida que cambian tus procesos."
+                }
+            ]
+        },
+        "digitalProduct": {
+            "buttonText": "Cómo podemos ayudarte"
+        },
+        "faq": {
+            "title": "Preguntas frecuentes sobre tecnología y agentes IA para servicios profesionales",
+            "items": [
+                {
+                    "question": "¿Cuánto cuesta un agente de IA para un despacho o consultora?",
+                    "answer": "El coste varía según la complejidad: desde 8.000-15.000€ para casos básicos (Q&A interno, procesamiento de documentos) hasta 20.000-50.000€ para proyectos con múltiples integraciones (gestión documental, CRM, facturación). Contáctanos para una estimación personalizada."
+                },
+                {
+                    "question": "¿Cuánto tiempo tarda la implementación?",
+                    "answer": "El tiempo medio es de 4 a 8 semanas desde el kickoff hasta producción, igual que en el resto de nuestros proyectos de agentes IA. Empezamos siempre por el proceso de mayor impacto y menor fricción para tu equipo."
+                },
+                {
+                    "question": "¿Cómo se gestiona la confidencialidad de la documentación legal o de clientes?",
+                    "answer": "Los datos no se usan para entrenar modelos y podemos desplegar el agente en tu infraestructura o en un cloud privado para mayor control. Todas las acciones quedan registradas en un log de auditoría, y las decisiones críticas siempre pasan por un punto de aprobación humana."
+                }
+            ]
+        },
+        "aiAgentsCta": {
+            "title": "¿Quieres un agente IA para tu despacho o consultora?",
+            "description": "Automatiza la revisión documental, el Q&A interno y la cualificación de leads con un agente de IA conectado a tus sistemas.",
+            "buttonText": "Ver Agentes IA"
         }
     },
     "brand": {
@@ -3181,10 +3601,6 @@
         }
     },
     "pageSeo": {
-        "services": {
-            "title": "Servicios | Gigson Solutions",
-            "description": "Descubre nuestros servicios: ciberseguridad, ingeniería de software, cloud, integraciones y producto digital a medida para tu negocio."
-        },
         "about": {
             "title": "Sobre nosotros | Gigson Solutions",
             "description": "Conoce al equipo de Gigson Solutions: ingenieros, arquitectos y diseñadores especializados en productos digitales y agentes IA. Anthropic Claude Partner certificado."
@@ -3192,6 +3608,10 @@
         "cases": {
             "title": "Casos de éxito | Gigson Solutions",
             "description": "Ejemplos de proyectos por sector y necesidad: CRM, ERP, integraciones, automatización y software a medida."
+        },
+        "blog": {
+            "title": "Blog | Gigson Solutions",
+            "description": "Artículos, guías y casos de éxito sobre IA, ingeniería de software y consultoría tecnológica del equipo de Gigson Solutions."
         },
         "faqs": {
             "title": "Preguntas frecuentes | Gigson Solutions",
@@ -3374,6 +3794,299 @@
             "legalNotice": "Gigson Solutions es una entidad independiente y no está afiliada ni forma parte de Holded. No representamos a Holded ni actuamos en su nombre. Nuestra condición es exclusivamente la de partner oficial autorizado para la implementación y asesoramiento sobre sus productos y servicios."
         }
     },
+    "integrations-odoo": {
+        "title": "Partner Oficial de Odoo en España | Gigson Solutions",
+        "metadescription": "Partner oficial de Odoo en España: implementamos tu ERP y lo conectamos con las herramientas que ya usas (inventario, facturación, CRM).",
+        "hero": {
+            "badge": "Partner oficial",
+            "title": "Implementación de Odoo e integraciones con el software que necesites",
+            "subtitle": "Un ERP Odoo completo, adaptado a cómo funciona tu negocio.",
+            "description": "Somos partner oficial de Odoo. Implementamos, personalizamos y conectamos Odoo con los sistemas que ya usas, para que toda tu operación funcione sobre una única fuente de verdad.",
+            "cta": "HABLA CON UN EXPERTO EN ODOO",
+            "specialists": {
+                "title": "Especialistas en implementar Odoo y conectarlo con las herramientas que ya usas.",
+                "bullets": [
+                    "Somos partner oficial de Odoo.",
+                    "Implementación de cualquier módulo: ventas, inventario, fabricación, contabilidad, CRM.",
+                    "Asesoramiento antes de cualquier implementación o integración."
+                ],
+                "link": "Ver casos de uso"
+            }
+        },
+        "useCases": {
+            "label": "CASOS DE USO",
+            "items": [
+                {
+                    "title": "Contabilidad multiempresa y multidivisa",
+                    "description": "Configura Odoo Contabilidad para gestionar varias empresas, divisas y regímenes fiscales desde una única instancia.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "Gestión de inventario y almacén (WMS)",
+                    "description": "Configura Odoo Inventario como un WMS completo: multi-almacén, lectura de código de barras y reglas de reabastecimiento automático.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "Fabricación (MRP) y lista de materiales",
+                    "description": "Modela tu proceso de producción en Odoo Fabricación, desde la lista de materiales hasta las órdenes de trabajo y el control de calidad.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "Ventas, e-commerce y sincronización de pagos",
+                    "description": "Conecta tu tienda online o TPV con Odoo para que pedidos, clientes y pagos se sincronicen en tiempo real.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "CRM y automatización del pipeline de ventas",
+                    "description": "Centraliza leads y oportunidades en Odoo CRM, conectado con tus herramientas de marketing y soporte.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "Personalización específica de sector",
+                    "description": "Adapta los módulos de Odoo a los flujos de trabajo concretos de tu sector, en lugar de forzar una plantilla genérica.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                },
+                {
+                    "title": "Migración desde otro ERP o desde hojas de cálculo",
+                    "description": "Traslada tus datos de forma segura desde Holded, SAP, Sage o Excel a un Odoo correctamente configurado.",
+                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                }
+            ]
+        },
+        "logos": {
+            "title": "Odoo se conecta con las herramientas que ya usas",
+            "subtitle": "Software compatible",
+            "mainCta": "Empieza a implementar Odoo"
+        },
+        "form": {
+            "sectionTitle": "Una implementación de Odoo adaptada a cómo trabajas.",
+            "sectionDescription": "Diseñamos contigo tu configuración e integraciones de Odoo. Antes de construir nada, analizamos tu caso para definir la solución más eficiente.",
+            "title": "¿Qué necesitas implementar o integrar?",
+            "fields": {
+                "name": {
+                    "label": "Nombre",
+                    "placeholder": "Tu nombre"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "tu@empresa.com"
+                },
+                "phone": {
+                    "label": "Teléfono",
+                    "placeholder": "+34 600 000 000"
+                },
+                "company": {
+                    "label": "Empresa",
+                    "placeholder": "Nombre de tu empresa"
+                },
+                "tool": {
+                    "label": "Herramienta a integrar",
+                    "placeholder": "Shopify, HubSpot, SAP..."
+                },
+                "dataTypes": {
+                    "label": "¿Qué datos necesitas sincronizar?",
+                    "options": [
+                        "Facturas",
+                        "Pedidos",
+                        "Clientes",
+                        "Productos",
+                        "Otro"
+                    ]
+                },
+                "problem": {
+                    "label": "Cuéntanos tu problema o necesidad",
+                    "placeholder": "Describe qué quieres implementar, automatizar o conectar..."
+                }
+            },
+            "send": "ENVIAR",
+            "checkbox": {
+                "first": "He leído y acepto la ",
+                "second": "Política de privacidad",
+                "third": ""
+            },
+            "legalNotice": "Gigson Solutions es una entidad independiente y no está afiliada ni forma parte de Odoo S.A. No representamos a Odoo ni actuamos en su nombre. Nuestra condición es exclusivamente la de partner oficial autorizado para la implementación y asesoramiento sobre sus productos y servicios."
+        }
+    },
+    "customErp": {
+        "title": "Desarrollo de ERP a medida | Gigson Solutions",
+        "metadescription": "Diseñamos sistemas de gestión a medida -facturación, WMS, fabricación o cualquier otro- cuando un ERP estándar no encaja con tu forma de trabajar.",
+        "hero": {
+            "suptitle": "ERP A MEDIDA",
+            "title": "Un ERP construido alrededor de tu negocio, no al revés",
+            "description": "Cuando Odoo, Holded o cualquier otro ERP estándar no encaja con cómo trabajas realmente, diseñamos y construimos un sistema desde cero. No tiene por qué ser de facturación: puede ser un WMS, un sistema de control de producción o cualquier otra herramienta que tu operación necesite.",
+            "buttonText": "Contáctanos"
+        },
+        "solutionsApplications": {
+            "title": "Un sistema de gestión diseñado para tu operación.",
+            "subTitle": "Partimos de tus procesos reales, no de una plantilla genérica. El resultado es un sistema que tu equipo usa de verdad, y que crece con tu negocio.",
+            "containers": [
+                {
+                    "title": "Qué entregamos",
+                    "description": "Desde la gestión de almacén hasta sistemas de facturación o producción totalmente a medida, construimos el sistema exacto que tu operación necesita, integrado con las herramientas que ya usas.",
+                    "type": "Casos de uso",
+                    "cards": [
+                        {
+                            "title": "Gestión de almacén (WMS)",
+                            "description": "Un sistema construido alrededor de la distribución real de tu almacén, tus rutas de picking y tus reglas de stock, no una plantilla genérica forzada sobre tu operación."
+                        },
+                        {
+                            "title": "Facturación y billing a medida",
+                            "description": "Una lógica de facturación que se ajusta exactamente a tu modelo de precios, tus regímenes fiscales y tus reglas de negocio, sin parches."
+                        },
+                        {
+                            "title": "Control de producción y fabricación",
+                            "description": "Sigue las órdenes de trabajo, materiales y fases de producción tal y como funciona realmente tu planta."
+                        },
+                        {
+                            "title": "Hub de integración multi-sistema",
+                            "description": "Un sistema central que conecta tus herramientas actuales (CRM, e-commerce, contabilidad) en lugar de obligarte a migrarlo todo."
+                        },
+                        {
+                            "title": "Cualquier otro sistema de gestión",
+                            "description": "Si no encaja en ninguna categoría, lo construimos igual: primero el proceso, después el software diseñado a su alrededor."
+                        }
+                    ]
+                },
+                {
+                    "title": "Por qué construir a medida",
+                    "description": "Los ERP estándar están diseñados para la empresa media. Cuando tus flujos de trabajo son lo bastante específicos como para que estés luchando contra el software en lugar de usarlo, construir a medida compensa.",
+                    "type": "Enfoque",
+                    "cards": [
+                        {
+                            "title": "Sin dependencia de licencias",
+                            "description": "El sistema es tuyo, sin cuotas de licencia por usuario que crecen en tu contra a medida que creces."
+                        },
+                        {
+                            "title": "Diseñado para tu flujo exacto",
+                            "description": "Sin parches ni módulos sin usar: cada pantalla y proceso corresponde a cómo trabaja realmente tu equipo."
+                        },
+                        {
+                            "title": "Mantenibilidad a largo plazo",
+                            "description": "Documentamos y entregamos el sistema para que no dependa de un único desarrollador o proveedor."
+                        }
+                    ]
+                }
+            ]
+        },
+        "howWeWork": {
+            "eyebrow": "Cómo trabajamos",
+            "h2a": "Del mapeo de procesos",
+            "h2b": "a un sistema en producción.",
+            "lead": "Empezamos por entender cómo trabajas realmente hoy, antes de escribir una sola línea de código.",
+            "steps": [
+                {
+                    "title": "Descubrimiento",
+                    "description": "Mapeamos tus procesos actuales de principio a fin e identificamos dónde un ERP estándar te obligaría a hacer concesiones."
+                },
+                {
+                    "title": "Diseño y prototipo",
+                    "description": "Diseñamos el modelo de datos y los flujos de trabajo, y construimos un prototipo funcional del proceso principal."
+                },
+                {
+                    "title": "Desarrollo e integración",
+                    "description": "Construimos el sistema completo y lo conectamos con las herramientas que ya usas (contabilidad, e-commerce, CRM)."
+                },
+                {
+                    "title": "Soporte e iteración",
+                    "description": "Mantenimiento e iteración continua a medida que evolucionan tus procesos: el sistema crece con tu negocio."
+                }
+            ]
+        },
+        "digitalProduct": {
+            "title": "¿Listo para diseñar tu ERP a medida?",
+            "description": "Reserva una llamada de descubrimiento. Mapeamos tu proceso actual y te decimos honestamente si te conviene más un desarrollo a medida o un ERP estándar (Odoo u Holded).",
+            "buttonText": "Reservar una llamada",
+            "cards": [
+                {
+                    "title": "Mapeo de procesos y arquitectura",
+                    "description": "Mapeamos tus flujos de trabajo de principio a fin y diseñamos un modelo de datos y una arquitectura de sistema adaptada a cómo operas realmente."
+                },
+                {
+                    "title": "Desarrollo full-stack",
+                    "description": "Construimos el sistema y lo integramos con las herramientas que ya usas (contabilidad, e-commerce, CRM) para que nada se duplique."
+                },
+                {
+                    "title": "Retainer continuo",
+                    "description": "Ofrecemos paquetes de retainer mensual para mantener, iterar y ampliar el sistema a medida que tu negocio evoluciona."
+                }
+            ]
+        },
+        "form": {
+            "sectionTitle": "Un sistema a medida, ajustado a cómo trabajas.",
+            "sectionDescription": "Diseñamos contigo tu ERP a medida. Antes de construir nada, analizamos tu proceso para definir el sistema más eficiente.",
+            "title": "¿Qué necesitas construir?",
+            "fields": {
+                "name": {
+                    "label": "Nombre",
+                    "placeholder": "Tu nombre"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "tu@empresa.com"
+                },
+                "phone": {
+                    "label": "Teléfono",
+                    "placeholder": "+34 600 000 000"
+                },
+                "company": {
+                    "label": "Empresa",
+                    "placeholder": "Nombre de tu empresa"
+                },
+                "tool": {
+                    "label": "¿Qué tipo de sistema necesitas?",
+                    "placeholder": "Facturación, WMS, producción..."
+                },
+                "dataTypes": {
+                    "label": "¿Qué datos necesitas gestionar?",
+                    "options": [
+                        "Facturas",
+                        "Pedidos",
+                        "Clientes",
+                        "Productos",
+                        "Otro"
+                    ]
+                },
+                "problem": {
+                    "label": "Cuéntanos tu problema o necesidad",
+                    "placeholder": "Describe el proceso que quieres construir o mejorar..."
+                }
+            },
+            "send": "ENVIAR",
+            "checkbox": {
+                "first": "He leído y acepto la ",
+                "second": "Política de privacidad",
+                "third": ""
+            }
+        },
+        "faq": {
+            "title": "Preguntas frecuentes sobre desarrollo de ERP a medida",
+            "items": [
+                {
+                    "question": "¿Por qué construir un ERP a medida en lugar de usar Odoo o Holded?",
+                    "answer": "Los ERP estándar cubren bien la mayoría de procesos habituales. Un desarrollo a medida tiene sentido cuando tu operación tiene flujos de trabajo específicos que no encajan bien en un producto estándar: por ejemplo, una distribución de almacén muy particular, un proceso de producción concreto o una lógica de facturación especial. Te diremos honestamente si una opción estándar como Odoo o Holded te serviría mejor antes de recomendarte un desarrollo a medida."
+                },
+                {
+                    "question": "¿\"ERP a medida\" significa siempre un sistema de facturación?",
+                    "answer": "No. Puede ser un sistema de gestión de almacén (WMS), un sistema de control de producción o fabricación, o cualquier otro sistema de gestión que tu operación necesite: la facturación es solo uno de los posibles casos de uso."
+                },
+                {
+                    "question": "¿Cuánto tiempo lleva un proyecto de ERP a medida?",
+                    "answer": "Depende totalmente del alcance. Empezamos con una fase de descubrimiento para mapear tus procesos, y después te damos un plazo realista y un plan de entrega por fases en lugar de un único lanzamiento monolítico."
+                },
+                {
+                    "question": "¿Qué pasa después de entregar el sistema?",
+                    "answer": "Documentamos el sistema y ofrecemos soporte continuo en modalidad retainer para mantenimiento, iteración y nuevas funcionalidades a medida que tu negocio evoluciona."
+                },
+                {
+                    "question": "¿Un ERP a medida puede integrarse con las herramientas que ya usamos?",
+                    "answer": "Sí. Diseñamos las integraciones con tu contabilidad, e-commerce, CRM u otras herramientas actuales como parte del proyecto, para que no tengas que migrarlo todo de golpe."
+                }
+            ]
+        },
+        "sectorsCta": {
+            "title": "Casos de uso por sector"
+        }
+    },
     "ai_manifest": {
         "h2_1": "Construimos con IA. Decidimos con personas.",
         "pc_intro": "La inteligencia artificial está integrada en cómo trabajamos y en lo que entregamos. La usamos para ir más rápido, reducir errores y hacer que el software a medida de calidad sea accesible para empresas que históricamente no podían permitírselo. Pero la IA no reemplaza el criterio - lo requiere.",
@@ -3388,241 +4101,6 @@
         "h3_4": "Nuestro compromiso",
         "pc_4_1": "Cada proceso asistido por IA que entregamos tiene un responsable humano en ambos lados. Construimos con puntos de control, no con cajas negras.",
         "pc_4_2": "Gigson Solutions es Partner certificado de Anthropic Claude."
-    },
-    "servicesPage": {
-        "hero": {
-            "suptitle": "Servicios",
-            "title": "Tecnología que funciona en el mundo real.",
-            "description": "CTO como Servicio, Consultoría Tech con IA, Desarrollo de Software e ISO Compliance."
-        },
-        "services": [
-            {
-                "number": "01",
-                "title": "CTO como Servicio",
-                "tagline": "Liderazgo técnico integrado en tu negocio - sin el coste ni el compromiso de una contratación a tiempo completo.",
-                "sections": [
-                    {
-                        "heading": "Qué hacemos",
-                        "items": [
-                            "CTO fraccional o interino para empresas en crecimiento",
-                            "Diseño y priorización del roadmap tecnológico",
-                            "Decisiones de arquitectura y selección de stack tecnológico",
-                            "Gestión del equipo de ingeniería y apoyo en selección",
-                            "Evaluación de vendors y partners tecnológicos",
-                            "Reporting a consejo e inversores"
-                        ]
-                    },
-                    {
-                        "heading": "Ideal para",
-                        "items": [
-                            "Scale-ups que necesitan liderazgo técnico senior sin contratar a tiempo completo",
-                            "Fundadores que quieren un co-piloto técnico para validar decisiones",
-                            "Empresas en transición entre CTOs o reestructurando su área tecnológica"
-                        ]
-                    }
-                ]
-            },
-            {
-                "number": "02",
-                "title": "Consultoría Tech",
-                "tagline": "Asesoramiento estratégico sobre arquitectura, producto y adopción de IA - con los pies en la tierra.",
-                "sections": [
-                    {
-                        "heading": "Qué hacemos",
-                        "items": [
-                            "Consultoría tecnológica y de arquitectura",
-                            "Estrategia de IA y descubrimiento de casos de uso",
-                            "Evaluación de madurez en IA (datos y procesos)",
-                            "Gestión de proyectos y producto",
-                            "Gestión de SLAs y supervisión end-to-end del producto",
-                            "Consultoría UX/UI y revisión de diseño"
-                        ]
-                    },
-                    {
-                        "heading": "Consultoría IA",
-                        "items": [
-                            "Identificar dónde la IA genera ROI real en tu operación",
-                            "Evaluación de LLMs y herramientas IA para tu caso de uso concreto",
-                            "Diseño de flujos de trabajo aumentados con IA que los equipos adoptan",
-                            "Gobernanza IA y guía de despliegue responsable"
-                        ]
-                    }
-                ],
-                "tags": [
-                    "Estrategia IA",
-                    "Evaluación LLM",
-                    "UX/UI",
-                    "Product Management"
-                ]
-            },
-            {
-                "number": "03",
-                "title": "Desarrollo de Software",
-                "tagline": "Desde integraciones y automatizaciones hasta productos completos - incluyendo funcionalidades y flujos con IA.",
-                "sections": [
-                    {
-                        "heading": "Ingeniería",
-                        "items": [
-                            "Desarrollo de software a medida y APIs",
-                            "Integraciones con ERP, CRM y terceros",
-                            "Infraestructura cloud: AWS, Azure, GCP",
-                            "Contenedores, CI/CD y pipelines DevOps",
-                            "Bases de datos, mensajería y monitorización",
-                            "QA y testing automatizado"
-                        ],
-                        "tags": [
-                            "AWS",
-                            "Azure",
-                            "GCP",
-                            "Docker",
-                            "Kubernetes",
-                            "Kafka",
-                            "PostgreSQL",
-                            "MongoDB",
-                            "GitHub Actions"
-                        ]
-                    },
-                    {
-                        "heading": "IA & Automatización",
-                        "items": [
-                            "Desarrollo de funcionalidades IA integradas en el producto",
-                            "Herramientas con LLM: análisis de documentos, asistentes, extracción de datos",
-                            "Automatización de procesos con n8n, Zapier y flujos personalizados",
-                            "Sistemas RAG e integraciones con bases de datos vectoriales",
-                            "Agentes IA para operaciones internas y flujos de cara al cliente"
-                        ],
-                        "tags": [
-                            "Integración LLM",
-                            "RAG",
-                            "n8n",
-                            "Zapier",
-                            "Agentes IA",
-                            "Vector DBs"
-                        ]
-                    }
-                ]
-            },
-            {
-                "number": "04",
-                "title": "Agentes IA",
-                "tagline": "Agentes de IA personalizados que automatizan flujos de trabajo reales - no demos, sistemas listos para producción integrados en tus herramientas.",
-                "sections": [
-                    {
-                        "heading": "Qué construimos",
-                        "items": [
-                            "Agentes IA para operaciones internas y flujos de cara al cliente",
-                            "Análisis de documentos, asistentes y extracción de datos con LLMs",
-                            "Sistemas RAG e integración con bases de datos vectoriales",
-                            "Automatización de procesos con n8n, Zapier y flujos personalizados",
-                            "Orquestación multi-agente para lógica de negocio compleja"
-                        ]
-                    },
-                    {
-                        "heading": "Ideal para",
-                        "items": [
-                            "Equipos que dedican horas a tareas repetitivas con muchos documentos",
-                            "Empresas que quieren IA integrada en sus herramientas actuales",
-                            "Negocios que necesitan agentes a medida, no chatbots genéricos"
-                        ]
-                    }
-                ]
-            },
-            {
-                "number": "05",
-                "title": "Compliance",
-                "tagline": "Implantación de ISO 27001 e ISO 9001 que tu equipo realmente usa - no carpetas de documentos que nadie lee.",
-                "sections": [
-                    {
-                        "heading": "Qué implantamos",
-                        "items": [
-                            "ISO 27001 - Sistema de Gestión de Seguridad de la Información (SGSI)",
-                            "ISO 9001 - Sistema de Gestión de la Calidad (SGC)",
-                            "Sistemas integrados (ambas normas, documentación compartida)",
-                            "Controles técnicos: gestión de accesos, cifrado, copias de seguridad, MDM",
-                            "Automatización de controles y registros (n8n, flujos de aprobación)",
-                            "Integración con Google Workspace, Microsoft 365, Holded"
-                        ]
-                    },
-                    {
-                        "heading": "Cómo trabajamos",
-                        "numbered": true,
-                        "items": [
-                            "Diagnóstico y análisis de brecha - Informe de gaps + plan priorizado",
-                            "Implantación técnica y documental - Sistema operativo + conjunto documental completo",
-                            "Validación interna y formación - Auditoría interna + plan de acciones correctivas cerrado",
-                            "Mantenimiento y mejora continua - Plan de mantenimiento activo + calendario de revisiones"
-                        ]
-                    }
-                ],
-                "tags": [
-                    "ISO 27001",
-                    "ISO 9001",
-                    "ENS",
-                    "RGPD"
-                ],
-                "cta": {
-                    "text": "Solicitar diagnóstico gratuito",
-                    "link": "/contact"
-                }
-            }
-        ],
-        "engagement": {
-            "title": "Cómo trabajamos",
-            "models": [
-                {
-                    "type": "Retainer",
-                    "subtitle": "Soporte continuo",
-                    "price": "15k /mes",
-                    "description": "Soporte técnico mensual continuo para equipos con un backlog constante. Un workstream activo, respuesta rápida, sin compromiso mínimo.",
-                    "items": [
-                        "Respuesta en 2–5 días por solicitud",
-                        "Pausable en cualquier momento, los días no usados se acumulan",
-                        "Async-first, integrado con las herramientas del cliente",
-                        "Revisiones ilimitadas hasta que esté bien"
-                    ]
-                },
-                {
-                    "type": "Proyecto",
-                    "subtitle": "Sprint de alcance fijo",
-                    "description": "Contratación de alcance fijo para equipos con una fecha límite. Alcance claro, equipo dedicado, entrega funcional.",
-                    "items": [
-                        "Plazos y entregables acordados desde el inicio",
-                        "Equipo dedicado, atención completa",
-                        "Sincronizaciones semanales y actualizaciones de progreso",
-                        "Entrega al equipo cliente o soporte continuo tras la entrega"
-                    ]
-                }
-            ]
-        },
-        "faq": {
-            "title": "Preguntas frecuentes",
-            "items": [
-                {
-                    "question": "¿Cuál es la diferencia entre Consultoría Tech y CTO como Servicio?",
-                    "answer": "CTO como Servicio es liderazgo técnico continuo - actuamos como parte del equipo directivo y tomamos decisiones. La Consultoría Tech es asesoramiento puntual: traes un problema concreto (arquitectura, estrategia de IA, revisión de producto) y lo resolvemos contigo."
-                },
-                {
-                    "question": "¿Necesito implantar una ISO para trabajar con vosotros en Compliance?",
-                    "answer": "No. Podemos ayudar en cualquier etapa - desde un análisis de brecha inicial hasta la implantación completa de ISO 27001 o ISO 9001. La certificación es opcional: muchos clientes quieren un sistema funcional sin pasar por una auditoría externa."
-                },
-                {
-                    "question": "¿Qué madurez en datos necesito para aprovechar los servicios de IA?",
-                    "answer": "Menos de lo que crees. Parte de nuestra consultoría de IA es evaluar tu landscape de datos e identificar qué puede generar ROI ahora frente a qué necesita más preparación. No proponemos IA por proponerla - si no está lista, te lo decimos."
-                },
-                {
-                    "question": "¿Podéis trabajar junto a nuestro equipo de desarrollo existente?",
-                    "answer": "Sí. Nos integramos en tus herramientas actuales - Slack, Jira, GitHub, lo que uses. Podemos co-desarrollar con tus ingenieros u operar de forma independiente si aún no tienes equipo técnico."
-                },
-                {
-                    "question": "¿Cuánto cuesta implantar ISO 27001 en una empresa mediana?",
-                    "answer": "Para empresas de 50–100 empleados, el rango habitual es de 8.000–20.000 € según el alcance y el punto de partida. Ofrecemos un diagnóstico gratuito antes de proponer nada - sin sorpresas, sin presupuestos genéricos."
-                }
-            ]
-        },
-        "cta": {
-            "title": "Construyamos algo que realmente funcione.",
-            "buttonText": "Hablemos"
-        }
     },
     "iso27001": {
         "seo": {
@@ -3960,6 +4438,220 @@
             "h2": "¿Quieres implementar IA en tu empresa con un partner certificado?",
             "p": "Empieza con un diagnóstico gratuito. En 45 minutos identificamos el caso de uso de mayor impacto para tu negocio y te explicamos cómo lo implementaríamos.",
             "cta": "SOLICITAR DIAGNÓSTICO GRATUITO"
+        }
+    },
+    "projectEstimator": {
+        "seo": {
+            "title": "Estimador de proyecto con IA · Gigson Solutions",
+            "description": "Describe tu proyecto — desarrollo a medida, implantación ERP, integraciones o consultoría — y recibe en minutos un desglose de casos de uso, equipo, cronograma y presupuesto generado con IA. Sin compromiso."
+        },
+        "hero": {
+            "eyebrow": "Estimador con IA",
+            "title": "Calcula el coste y el plazo de tu proyecto",
+            "subtitle": "Responde unas preguntas sobre tu proyecto — desarrollo de software, implantación ERP, integraciones o consultoría — y nuestra IA genera al instante un desglose de casos de uso, equipo y presupuesto. Al final, nuestro equipo revisa tu estimación contigo.",
+            "cta": "EMPEZAR ESTIMACIÓN"
+        },
+        "sidebar": {
+            "step1": "Detalles del proyecto",
+            "step2": "Alcance y entrega",
+            "step3": "Nivel de UI y QA",
+            "step4": "Cronograma",
+            "step5": "Revisa los casos de uso",
+            "step6": "Estimación final",
+            "backToSite": "VOLVER AL SITIO",
+            "questionsLink": "¿Tienes preguntas?"
+        },
+        "stepOf": "Paso {current} de {total}",
+        "back": "ATRÁS",
+        "next": "SIGUIENTE",
+        "step1": {
+            "projectTypeLabel": "¿QUÉ TIPO DE PROYECTO ES?",
+            "projectTypeHelp": "Así adaptamos las preguntas siguientes y el resultado a tu proyecto.",
+            "projectTypeSoftwareDevelopment": "Desarrollo de software a medida",
+            "projectTypeErpImplementation": "Implantación o integración ERP (Odoo, Holded…)",
+            "projectTypeIntegrations": "Conectores e integraciones entre sistemas",
+            "projectTypeConsulting": "Consultoría tecnológica",
+            "projectTypeOther": "Otro",
+            "projectTypeOtherPlaceholder": "Especifica el tipo de proyecto",
+            "projectTypeError": "Elige el tipo de proyecto.",
+            "rateLabel": "TARIFA HORARIA ESPERADA",
+            "rateHelp": "Define la tarifa media por hora de tu equipo. Puede ser el coste medio de tu equipo interno o la tarifa que pagas a tu partner tecnológico.",
+            "rateSuffix": "€/hora",
+            "descLabel": "DESCRIBE TU PROYECTO",
+            "descHelp": "Cuéntanos brevemente el propósito, los objetivos y los casos de uso principales del proyecto (ej. una plataforma de reservas para clínicas dentales, una implantación de Odoo para gestionar tu facturación, o un conector entre Holded y tu CRM interno).",
+            "descPlaceholder": "Describe tu proyecto…",
+            "descCounter": "{count}/10000",
+            "descError": "Cuéntanos un poco más sobre tu proyecto.",
+            "domainLabel": "ELIGE EL SECTOR",
+            "domainHelp": "Cuéntanos un poco más sobre el sector en el que quieres trabajar.",
+            "domainFintech": "Fintech",
+            "domainEdtech": "Edtech",
+            "domainRetail": "Retail",
+            "domainHealthcare": "Salud",
+            "domainIot": "IoT",
+            "domainBlockchain": "Blockchain",
+            "domainAgriculture": "Agricultura",
+            "domainEcommerce": "E-Commerce",
+            "domainOther": "Otro",
+            "domainOtherPlaceholder": "Especifica el sector",
+            "domainError": "Elige un sector.",
+            "competitorsLabel": "INDICA TUS COMPETIDORES",
+            "competitorsHelp": "Escribe el nombre de tus principales competidores y pulsa Intro tras cada uno. Puedes añadir hasta 10.",
+            "competitorsPlaceholder": "Escribe y pulsa Intro…",
+            "rolesLabel": "ELIGE LOS ROLES",
+            "rolesHelp": "Elige quién usará o se beneficiará del resultado de este proyecto.",
+            "rolesEmptyHelp": "Elige primero un sector.",
+            "roleUser": "Usuario",
+            "roleAdmin": "Administrador",
+            "roleOther": "Otro",
+            "rolesError": "Elige al menos un rol."
+        },
+        "step2": {
+            "sizeLabel": "¿CUÁL ES EL ALCANCE DEL PROYECTO?",
+            "sizePocTitle": "Piloto / prueba de concepto",
+            "sizePocDesc": "Alcance reducido: valida la idea o el proceso antes de invertir en algo más grande.",
+            "sizeMvpTitle": "Alcance medio",
+            "sizeMvpDesc": "Cubre lo esencial para empezar a usarlo, venderlo o ponerlo en producción.",
+            "sizeProductTitle": "Alcance completo",
+            "sizeProductDesc": "Cubre el proyecto entero, con todas sus fases, integraciones y casos de uso.",
+            "sizeError": "Elige el alcance del proyecto.",
+            "platformsLabel": "¿DÓNDE SE USARÁ O ENTREGARÁ?",
+            "platformWebTitle": "Web",
+            "platformWebDesc": "Aplicación, portal o panel accesible desde el navegador.",
+            "platformIosTitle": "iOS",
+            "platformIosDesc": "App nativa o híbrida para iPhone/iPad.",
+            "platformAndroidTitle": "Android",
+            "platformAndroidDesc": "App nativa o híbrida para Android.",
+            "platformHybridTitle": "Otro / no aplica",
+            "platformHybridDesc": "Integración, backend, ERP u otra entrega que no depende de una plataforma concreta.",
+            "platformsError": "Elige al menos una opción."
+        },
+        "step3": {
+            "uiLabel": "¿QUÉ NIVEL DE UI QUIERES?",
+            "uiMvpTitle": "Básico",
+            "uiMvpDesc": "Diseño basado en un kit de UI, con mínima personalización de marca.",
+            "uiStandardTitle": "Estándar",
+            "uiStandardDesc": "Uso parcial de un kit de UI combinado con diseño personalizado.",
+            "uiPolishedTitle": "Pulido",
+            "uiPolishedDesc": "Diseño completamente personalizado, prácticamente sin componentes prediseñados.",
+            "uiError": "Elige un nivel de UI.",
+            "qaLabel": "¿QUÉ NIVEL DE CALIDAD (QA) QUIERES?",
+            "qaMvpTitle": "Básico",
+            "qaMvpDesc": "Testing funcional y de regresión del área afectada, en 1 dispositivo/resolución.",
+            "qaStandardTitle": "Estándar",
+            "qaStandardDesc": "Testing funcional y de regresión en 1-2 dispositivos/resoluciones, más testing de API y BD.",
+            "qaPolishedTitle": "Pulido",
+            "qaPolishedDesc": "Testing funcional, de regresión completa, no funcional (seguridad, rendimiento) y de usabilidad.",
+            "qaError": "Elige un nivel de QA."
+        },
+        "step4": {
+            "label": "¿QUÉ CRONOGRAMA ESPERAS PARA EL PROYECTO?",
+            "tabOverall": "Cronograma general",
+            "tabPhased": "Cronograma por fases",
+            "overallLabel": "Cronograma general del proyecto",
+            "monthsSuffix": "meses",
+            "phaseMvpLabel": "Fase MVP",
+            "phase2Label": "Fase 2",
+            "phaseFutureLabel": "Fases futuras",
+            "timelineError": "Indica una duración.",
+            "generate": "GENERAR CASOS DE USO",
+            "skip": "SALTAR ESTE PASO"
+        },
+        "step5": {
+            "generating": {
+                "title": "PREPARANDO TU ESTIMACIÓN",
+                "note": "Puede tardar un par de minutos.",
+                "status1": "Leyendo los detalles de tu proyecto",
+                "status2": "Redactando los casos de uso esenciales",
+                "status3": "Preparando el mejor equipo",
+                "status4": "Calculando el cronograma"
+            },
+            "failedTitle": "No hemos podido generar tu estimación automáticamente",
+            "failedNote": "No pasa nada — puedes añadir casos de uso manualmente y seguir con el proceso.",
+            "title": "REVISA LOS CASOS DE USO",
+            "subtitle": "Puedes editar, eliminar, mover o añadir casos de uso. El presupuesto se actualiza automáticamente.",
+            "colFeature": "Descripción del caso de uso",
+            "colSupporting": "Detalles de soporte",
+            "colFrontend": "Frontend",
+            "colQa": "QA",
+            "colBackend": "Backend",
+            "colUiux": "UI/UX",
+            "colBapm": "BA/PM",
+            "featureName": "Nombre del caso de uso",
+            "acceptanceCriteria": "Criterios de aceptación",
+            "thirdPartyServices": "Servicios de terceros",
+            "userStory": "Historia de usuario",
+            "addFeature": "AÑADIR CASO DE USO",
+            "seeFinalEstimate": "VER ESTIMACIÓN FINAL",
+            "edit": "Editar",
+            "delete": "Eliminar",
+            "modal": {
+                "createTitle": "Nuevo caso de uso",
+                "editTitle": "Editar caso de uso",
+                "describeLabel": "Describe el caso de uso",
+                "describeHelp": "Cuéntanos en pocas palabras qué necesitas — no hace falta que sepas de horas, roles o requisitos técnicos, nuestra IA lo convierte en un caso de uso completo.",
+                "describePlaceholder": "Ej: quiero que los usuarios puedan pagar con tarjeta desde la app",
+                "describeError": "No hemos podido generar este caso de uso. Inténtalo de nuevo.",
+                "addManually": "AÑADIR MANUALMENTE",
+                "generateWithAi": "GENERAR CON IA",
+                "generating": "GENERANDO…",
+                "reviewHint": "Esto es lo que ha generado la IA. Puedes ajustar cualquier campo antes de guardar.",
+                "nameLabel": "Nombre",
+                "userStoryLabel": "Historia de usuario",
+                "acceptanceCriteriaLabel": "Criterios de aceptación (uno por línea)",
+                "thirdPartyLabel": "Servicios de terceros",
+                "hoursLabel": "Horas estimadas por rol",
+                "save": "GUARDAR",
+                "cancel": "CANCELAR"
+            },
+            "deleteConfirm": {
+                "title": "¿Eliminar este caso de uso?",
+                "description": "Esta acción no se puede deshacer.",
+                "confirm": "ELIMINAR",
+                "cancel": "CANCELAR"
+            }
+        },
+        "step6": {
+            "title": "HEMOS PREPARADO UNA ESTIMACIÓN PARA TU PROYECTO",
+            "subtitle": "Consulta el desglose a continuación.",
+            "deliveryTeam": "EQUIPO DE ENTREGA",
+            "teamMember": "persona a tiempo completo",
+            "roleFrontend": "Frontend",
+            "roleQa": "QA",
+            "roleBackend": "Backend",
+            "roleUiux": "UI/UX",
+            "roleBapm": "BA/PM",
+            "timelineTitle": "CRONOGRAMA DEL PROYECTO",
+            "timelineWeek": "Semana {n}",
+            "finalEstimateTitle": "ESTIMACIÓN FINAL",
+            "finalEstimateNote": "Ya hemos preparado tu estimación final. Introduce tu email para verla al completo.",
+            "totalBudget": "Presupuesto total",
+            "totalHours": "Horas totales",
+            "gateCta": "OBTENER MI ESTIMACIÓN COMPLETA",
+            "modal": {
+                "title": "OBTÉN TU ESTIMACIÓN COMPLETA",
+                "copy": "Introduce tu email para recibir tu estimación completa: presupuesto, horas y desglose de casos de uso. Nuestro equipo revisará el resultado contigo antes de confirmarlo.",
+                "nameLabel": "Nombre",
+                "namePlaceholder": "Tu nombre",
+                "companyLabel": "Empresa",
+                "companyPlaceholder": "Nombre de tu empresa (opcional)",
+                "emailLabel": "Tu email",
+                "emailPlaceholder": "email@ejemplo.com",
+                "emailRequired": "Introduce un email.",
+                "emailInvalid": "Introduce un email válido.",
+                "rgpdLabel": "Acepto la política de privacidad",
+                "rgpdRequired": "Debes aceptar la política de privacidad.",
+                "submit": "OBTENER ESTIMACIÓN",
+                "submitting": "ENVIANDO…",
+                "close": "Cerrar"
+            },
+            "successTitle": "¡Gracias! Aquí tienes tu estimación",
+            "successNote": "Hemos enviado los detalles a nuestro equipo. Te contactaremos en menos de 24-48h para afinar juntos el resultado.",
+            "restart": "EMPEZAR OTRA ESTIMACIÓN"
+        },
+        "errors": {
+            "generic": "Algo ha ido mal. Inténtalo de nuevo.",
+            "rateLimited": "Has generado demasiadas estimaciones. Inténtalo de nuevo en un rato."
         }
     }
 }

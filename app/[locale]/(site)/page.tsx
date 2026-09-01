@@ -28,7 +28,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': ORIGIN,
       },
     },
-    openGraph: { title: t('title'), description: t('metadescription'), url: canonical },
+    openGraph: { title: t('title'), description: t('metadescription'), url: canonical, images: ['/opengraph-image'] },
   };
 }
 
