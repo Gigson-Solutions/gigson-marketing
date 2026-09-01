@@ -57,12 +57,28 @@ const BlogPost = ({ post, relatedPosts = [] }: Props) => {
   const readingTime = estimateReadingTime(post.content);
   const coverUrl = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
 
+  // `localizedVersion` may have a different slug than `post` — translated
+  // slugs are more idiomatic for SEO than forcing the same one across
+  // languages — so this is a plain relative href, not next-intl's typed
+  // `Link` (which assumes one shared pathname per locale).
+  const sibling = post.localizedVersion && typeof post.localizedVersion === 'object' ? post.localizedVersion : null;
+  const siblingHref = sibling
+    ? sibling.locale === 'es' ? `/es/blog/${sibling.slug}` : `/blog/${sibling.slug}`
+    : null;
+
   return (
     <article className="px-landing mt-fixed-navbar pt-14 lg:pt-20 pb-20 lg:pb-32">
       <div className="max-w-[52rem] mx-auto">
-        <Link href="/blog" className="inline-block mb-8 text-purple-accents text-button hover:opacity-70 transition">
-          {t('backToBlog')}
-        </Link>
+        <div className="flex items-center justify-between mb-8">
+          <Link href="/blog" className="inline-block text-purple-accents text-button hover:opacity-70 transition">
+            {t('backToBlog')}
+          </Link>
+          {siblingHref && sibling && (
+            <a href={siblingHref} className="inline-block text-purple-accents text-button underline hover:opacity-70 transition">
+              {sibling.locale === 'es' ? t('readInSpanish') : t('readInEnglish')}
+            </a>
+          )}
+        </div>
 
         {coverUrl && (
           <div className="aspect-[16/9] rounded-[30px] overflow-hidden mb-10 bg-cream">
