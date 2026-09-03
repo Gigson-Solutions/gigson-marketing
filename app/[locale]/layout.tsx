@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import React from 'react';
@@ -47,6 +47,15 @@ export default async function LocaleLayout(props: Props) {
   if (!(routing.locales as readonly string[]).includes(locale)) {
     notFound();
   }
+
+  // Without this, every Server Component using next-intl's server APIs
+  // (getTranslations, etc.) falls back to reading the locale from a request
+  // header, which opts every single page into fully dynamic rendering
+  // site-wide. Routes that also declare `generateStaticParams` + a numeric
+  // `revalidate` (like /blog/[slug]) can't be both static and dynamic at
+  // once — Next throws `DYNAMIC_SERVER_USAGE` and the request 500s. This is
+  // what caused every blog post page to fail in production.
+  setRequestLocale(locale);
 
   const messages = await getMessages();
 

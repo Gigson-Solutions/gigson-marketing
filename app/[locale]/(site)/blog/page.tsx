@@ -34,7 +34,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   };
 }
 
-export default async function BlogPage() {
-  const posts = await getPosts();
+export default async function BlogPage(props: Props) {
+  const { locale } = await props.params;
+  const posts = await getPosts(locale);
   return <BlogList posts={posts} />;
 }

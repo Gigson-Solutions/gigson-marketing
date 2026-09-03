@@ -9,7 +9,7 @@ export const Posts: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'status', 'publishedAt', 'author'],
+    defaultColumns: ['title', 'status', 'locale', 'publishedAt', 'author'],
   },
   hooks: {
     beforeChange: [
@@ -38,6 +38,20 @@ export const Posts: CollectionConfig = {
       unique: true,
       admin: {
         description: 'URL identifier — use lowercase letters, numbers and hyphens (e.g. "automatizacion-erp-2026")',
+      },
+    },
+    {
+      name: 'locale',
+      type: 'select',
+      options: [
+        { label: 'Español', value: 'es' },
+        { label: 'English', value: 'en' },
+      ],
+      defaultValue: 'es',
+      required: true,
+      admin: {
+        position: 'sidebar',
+        description: 'Idioma de este post. Cada post existe en un único idioma (sin gemelo automático).',
       },
     },
     {

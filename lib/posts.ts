@@ -1,10 +1,12 @@
 import { getPayload } from 'payload';
+import type { Where } from 'payload';
 import configPromise from '@payload-config';
 
 export type Post = {
   id: string;
   title: string;
   slug: string;
+  locale?: 'en' | 'es';
   excerpt?: string;
   coverImage?: { url: string; alt?: string };
   publishedAt?: string;
@@ -18,12 +20,16 @@ async function getPayloadInstance() {
   return getPayload({ config: configPromise });
 }
 
-export async function getPosts(): Promise<Post[]> {
+export async function getPosts(locale?: string): Promise<Post[]> {
   try {
     const payload = await getPayloadInstance();
+
+    const conditions: Where[] = [{ status: { equals: 'published' } }];
+    if (locale) conditions.push({ locale: { equals: locale } });
+
     const result = await payload.find({
       collection: 'posts',
-      where: { status: { equals: 'published' } },
+      where: { and: conditions },
       sort: '-publishedAt',
       limit: 50,
     });
@@ -33,14 +39,16 @@ export async function getPosts(): Promise<Post[]> {
   }
 }
 
-export async function getPostBySlug(slug: string): Promise<Post | null> {
+export async function getPostBySlug(slug: string, locale?: string): Promise<Post | null> {
   try {
     const payload = await getPayloadInstance();
+
+    const conditions: Where[] = [{ slug: { equals: slug } }, { status: { equals: 'published' } }];
+    if (locale) conditions.push({ locale: { equals: locale } });
+
     const result = await payload.find({
       collection: 'posts',
-      where: {
-        and: [{ slug: { equals: slug } }, { status: { equals: 'published' } }],
-      },
+      where: { and: conditions },
       limit: 1,
     });
     return (result.docs[0] as unknown as Post) ?? null;
@@ -49,12 +57,16 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   }
 }
 
-export async function getPostSlugs(): Promise<string[]> {
+export async function getPostSlugs(locale?: string): Promise<string[]> {
   try {
     const payload = await getPayloadInstance();
+
+    const conditions: Where[] = [{ status: { equals: 'published' } }];
+    if (locale) conditions.push({ locale: { equals: locale } });
+
     const result = await payload.find({
       collection: 'posts',
-      where: { status: { equals: 'published' } },
+      where: { and: conditions },
       select: { slug: true },
       limit: 200,
     });
