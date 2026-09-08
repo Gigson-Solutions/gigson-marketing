@@ -3663,10 +3663,6 @@
                     "Analizamos tu caso sin coste antes de empezar."
                 ],
                 "link": "Ver ejemplos de uso"
-            },
-            "whatsapp": {
-                "title": "¿Alguna duda? hablemos",
-                "cta": "Hablar por WhatsApp"
             }
         },
         "useCases": {
@@ -3674,38 +3670,35 @@
             "items": [
                 {
                     "title": "Facturación electrónica y cumplimiento VeriFactu",
-                    "description": "Automatización de la facturación desde sistemas externos (TPV, ecommerce, software sectorial) hacia Holded para cumplir con VeriFactu sin cambiar toda la operativa del negocio.",
-                    "cta": "habla con un experto en holded"
+                    "description": "Automatización de la facturación desde sistemas externos (TPV, ecommerce, software sectorial) hacia Holded para cumplir con VeriFactu sin cambiar toda la operativa del negocio."
                 },
                 {
                     "title": "Sincronización de ventas, clientes y cobros",
-                    "description": "Conexión entre Holded y herramientas de venta (retail, clínicas, reservas, plataformas online) para unificar clientes, facturas y estados de cobro sin duplicar trabajo.",
-                    "cta": "habla con un experto en holded"
+                    "description": "Conexión entre Holded y herramientas de venta (retail, clínicas, reservas, plataformas online) para unificar clientes, facturas y estados de cobro sin duplicar trabajo."
                 },
                 {
                     "title": "Control económico a partir de software sectorial",
-                    "description": "Integración de herramientas específicas (clínicas, veterinaria, hostelería, construcción) con Holded para tener control financiero real: ingresos, costes, márgenes y reporting centralizado.",
-                    "cta": "habla con un experto en holded"
+                    "description": "Integración de herramientas específicas (clínicas, veterinaria, hostelería, construcción) con Holded para tener control financiero real: ingresos, costes, márgenes y reporting centralizado."
                 },
                 {
                     "title": "Conciliación bancaria avanzada",
-                    "description": "Leemos movimientos y facturas desde Holded y aplicamos reglas inteligentes para proponer conciliaciones automáticas.",
-                    "cta": "habla con un experto en holded"
+                    "description": "Leemos movimientos y facturas desde Holded y aplicamos reglas inteligentes para proponer conciliaciones automáticas."
                 },
                 {
                     "title": "Análisis de productividad por empleado",
-                    "description": "Analizamos horas y facturación asociada para medir productividad por persona.",
-                    "cta": "habla con un experto en holded"
+                    "description": "Analizamos horas y facturación asociada para medir productividad por persona."
                 },
                 {
                     "title": "Sincronización avanzada ecommerce",
-                    "description": "Creamos integración personalizada que sincroniza pedidos, stock y facturación.",
-                    "cta": "habla con un experto en holded"
+                    "description": "Creamos integración personalizada que sincroniza pedidos, stock y facturación."
                 },
                 {
                     "title": "Sincronización automática de emails en CRM",
-                    "description": "Registramos automáticamente los emails en la ficha del cliente.",
-                    "cta": "habla con un experto en holded"
+                    "description": "Registramos automáticamente los emails en la ficha del cliente."
+                },
+                {
+                    "title": "Reporting y cuadros de mando conectados",
+                    "description": "Sincronizamos tus datos de Holded con Google Sheets, Looker Studio o Power BI para tener reporting financiero centralizado y siempre actualizado."
                 }
             ]
         },
@@ -3763,23 +3756,6 @@
                         "Otros"
                     ]
                 },
-                "flow": {
-                    "label": "¿Quieres que los datos vayan de Holded hacia la otra herramienta, al revés, o en ambos sentidos?",
-                    "options": [
-                        {
-                            "value": "holded_to_tool",
-                            "label": "De Holded → otra herramienta"
-                        },
-                        {
-                            "value": "tool_to_holded",
-                            "label": "De otra herramienta → Holded"
-                        },
-                        {
-                            "value": "bidirectional",
-                            "label": "En ambos sentidos"
-                        }
-                    ]
-                },
                 "problem": {
                     "label": "¿Qué problema quieres resolver con esta integración?",
                     "placeholder": "Explica de forma breve"
@@ -3818,38 +3794,35 @@
             "items": [
                 {
                     "title": "Contabilidad multiempresa y multidivisa",
-                    "description": "Configura Odoo Contabilidad para gestionar varias empresas, divisas y regímenes fiscales desde una única instancia.",
-                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                    "description": "Configura Odoo Contabilidad para gestionar varias empresas, divisas y regímenes fiscales desde una única instancia."
                 },
                 {
                     "title": "Gestión de inventario y almacén (WMS)",
-                    "description": "Configura Odoo Inventario como un WMS completo: multi-almacén, lectura de código de barras y reglas de reabastecimiento automático.",
-                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                    "description": "Configura Odoo Inventario como un WMS completo: multi-almacén, lectura de código de barras y reglas de reabastecimiento automático."
                 },
                 {
                     "title": "Fabricación (MRP) y lista de materiales",
-                    "description": "Modela tu proceso de producción en Odoo Fabricación, desde la lista de materiales hasta las órdenes de trabajo y el control de calidad.",
-                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                    "description": "Modela tu proceso de producción en Odoo Fabricación, desde la lista de materiales hasta las órdenes de trabajo y el control de calidad."
                 },
                 {
                     "title": "Ventas, e-commerce y sincronización de pagos",
-                    "description": "Conecta tu tienda online o TPV con Odoo para que pedidos, clientes y pagos se sincronicen en tiempo real.",
-                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                    "description": "Conecta tu tienda online o TPV con Odoo para que pedidos, clientes y pagos se sincronicen en tiempo real."
                 },
                 {
                     "title": "CRM y automatización del pipeline de ventas",
-                    "description": "Centraliza leads y oportunidades en Odoo CRM, conectado con tus herramientas de marketing y soporte.",
-                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                    "description": "Centraliza leads y oportunidades en Odoo CRM, conectado con tus herramientas de marketing y soporte."
                 },
                 {
                     "title": "Personalización específica de sector",
-                    "description": "Adapta los módulos de Odoo a los flujos de trabajo concretos de tu sector, en lugar de forzar una plantilla genérica.",
-                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                    "description": "Adapta los módulos de Odoo a los flujos de trabajo concretos de tu sector, en lugar de forzar una plantilla genérica."
                 },
                 {
                     "title": "Migración desde otro ERP o desde hojas de cálculo",
-                    "description": "Traslada tus datos de forma segura desde Holded, SAP, Sage o Excel a un Odoo correctamente configurado.",
-                    "cta": "HABLA CON UN EXPERTO EN ODOO"
+                    "description": "Traslada tus datos de forma segura desde Holded, SAP, Sage o Excel a un Odoo correctamente configurado."
+                },
+                {
+                    "title": "Integraciones EDI y B2B con distribuidores",
+                    "description": "Conectamos Odoo con las plataformas EDI de tus clientes o distribuidores para automatizar pedidos, facturas y avisos de envío."
                 }
             ]
         },

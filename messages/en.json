@@ -3655,14 +3655,10 @@
                 "title": "Specialists in connecting Holded with the tools you already use.",
                 "bullets": [
                     "We are an official Holded partner.",
-                    "Integrations for every industry.",
+                    "60+ integrations across every industry.",
                     "Advice before any integration."
                 ],
                 "link": "See use cases"
-            },
-            "whatsapp": {
-                "title": "Questions? Let's talk",
-                "cta": "Chat on WhatsApp"
             }
         },
         "useCases": {
@@ -3670,43 +3666,40 @@
             "items": [
                 {
                     "title": "Electronic invoicing & VeriFactu",
-                    "description": "Automate VeriFactu compliance and electronic invoice issuance directly from Holded, without any manual work.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Automate VeriFactu compliance and electronic invoice issuance directly from Holded, without any manual work."
                 },
                 {
                     "title": "Sales, customer & payment sync",
-                    "description": "Connect your POS or e-commerce with Holded so orders, customers and payments sync in real time.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Connect your POS or e-commerce with Holded so orders, customers and payments sync in real time."
                 },
                 {
                     "title": "Sector-specific financial control",
-                    "description": "Integrate your sector-specific software (veterinary, clinic, construction…) with Holded to unify all financial data.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Integrate your sector-specific software (veterinary, clinic, construction…) with Holded to unify all financial data."
                 },
                 {
                     "title": "Advanced bank reconciliation",
-                    "description": "Automate bank reconciliation by connecting your bank with Holded and eliminate manual transaction entry.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Automate bank reconciliation by connecting your bank with Holded and eliminate manual transaction entry."
                 },
                 {
                     "title": "Employee productivity analysis",
-                    "description": "Connect HR and time management tools with Holded for full visibility into team performance.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Connect HR and time management tools with Holded for full visibility into team performance."
                 },
                 {
                     "title": "Advanced e-commerce synchronisation",
-                    "description": "Keep stock, prices and catalogue in sync between your online store (Shopify, WooCommerce, Amazon…) and Holded.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Keep stock, prices and catalogue in sync between your online store (Shopify, WooCommerce, Amazon…) and Holded."
                 },
                 {
                     "title": "Automatic lead registration in CRM",
-                    "description": "Connect your forms and email campaigns with Holded or your CRM so leads are registered automatically without manual intervention.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Connect your forms and email campaigns with Holded or your CRM so leads are registered automatically without manual intervention."
+                },
+                {
+                    "title": "Connected reporting & dashboards",
+                    "description": "We sync your Holded data with Google Sheets, Looker Studio or Power BI so you get centralised, always-up-to-date financial reporting."
                 }
             ]
         },
         "logos": {
-            "title": "More than 50 tools integrated with Holded",
+            "title": "60+ tools integrated with Holded",
             "subtitle": "Compatible software",
             "mainCta": "Start connecting Holded"
         },
@@ -3743,23 +3736,6 @@
                         "Customers",
                         "Products",
                         "Other"
-                    ]
-                },
-                "flow": {
-                    "label": "In which direction?",
-                    "options": [
-                        {
-                            "value": "holded_to_tool",
-                            "label": "Holded → Tool"
-                        },
-                        {
-                            "value": "tool_to_holded",
-                            "label": "Tool → Holded"
-                        },
-                        {
-                            "value": "bidirectional",
-                            "label": "Bidirectional"
-                        }
                     ]
                 },
                 "problem": {
@@ -3800,38 +3776,35 @@
             "items": [
                 {
                     "title": "Multi-company & multi-currency accounting",
-                    "description": "Set up Odoo Accounting to manage several companies, currencies and tax regimes from a single instance.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Set up Odoo Accounting to manage several companies, currencies and tax regimes from a single instance."
                 },
                 {
                     "title": "Inventory & warehouse management (WMS)",
-                    "description": "Configure Odoo Inventory as a full WMS: multi-warehouse, barcode scanning and automated replenishment rules.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Configure Odoo Inventory as a full WMS: multi-warehouse, barcode scanning and automated replenishment rules."
                 },
                 {
                     "title": "Manufacturing (MRP) & bill of materials",
-                    "description": "Model your production process in Odoo Manufacturing, from bill of materials to work orders and quality control.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Model your production process in Odoo Manufacturing, from bill of materials to work orders and quality control."
                 },
                 {
                     "title": "Sales, e-commerce & payment sync",
-                    "description": "Connect your online store or POS with Odoo so orders, customers and payments sync in real time.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Connect your online store or POS with Odoo so orders, customers and payments sync in real time."
                 },
                 {
                     "title": "CRM & sales pipeline automation",
-                    "description": "Centralise leads and opportunities in Odoo CRM, connected to your marketing and support tools.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Centralise leads and opportunities in Odoo CRM, connected to your marketing and support tools."
                 },
                 {
                     "title": "Sector-specific customisation",
-                    "description": "Adapt Odoo's modules to your sector's specific workflows instead of forcing a generic template.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Adapt Odoo's modules to your sector's specific workflows instead of forcing a generic template."
                 },
                 {
                     "title": "Migration from another ERP or spreadsheets",
-                    "description": "Move your data safely from Holded, SAP, Sage or spreadsheets into a properly configured Odoo.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Move your data safely from Holded, SAP, Sage or spreadsheets into a properly configured Odoo."
+                },
+                {
+                    "title": "EDI & B2B distributor integrations",
+                    "description": "We connect Odoo to your distributors' or retail partners' EDI platforms to automate purchase orders, invoices and shipping notices."
                 }
             ]
         },
