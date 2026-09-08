@@ -3665,6 +3665,22 @@
                 "link": "Ver ejemplos de uso"
             }
         },
+        "stats": {
+            "items": [
+                {
+                    "value": "+60",
+                    "label": "herramientas ya integradas con Holded"
+                },
+                {
+                    "value": "12",
+                    "label": "sectores con integraciones propias"
+                },
+                {
+                    "value": "2",
+                    "label": "ERPs de los que somos partner oficial"
+                }
+            ]
+        },
         "useCases": {
             "label": "casos de uso",
             "items": [
@@ -3702,6 +3718,106 @@
                 }
             ]
         },
+        "edi": {
+            "eyebrow": "EDI y facturación",
+            "title": "Documentos de compra-venta conectados con Holded",
+            "description": "Conectamos Holded con los documentos de compra-venta de tus proveedores y clientes que ya llegan en formato estructurado, para automatizar la facturación.",
+            "tags": ["VeriFactu", "XML", "EDIFACT (INVOIC)", "CSV"],
+            "features": [
+                {
+                    "title": "Facturas de proveedor automatizadas",
+                    "description": "Recibimos las facturas de tus proveedores en formato estructurado y las registramos en Holded."
+                },
+                {
+                    "title": "Facturación electrónica a clientes",
+                    "description": "Se emite cumpliendo VeriFactu directamente desde el sistema que uses para vender."
+                },
+                {
+                    "title": "Pedidos de compra",
+                    "description": "Sincronizamos pedidos y albaranes de compra con tus proveedores habituales."
+                },
+                {
+                    "title": "Conciliación con lo recibido",
+                    "description": "Cruzamos lo facturado con lo realmente entregado antes de dar por cerrado el proceso."
+                }
+            ]
+        },
+        "shipping": {
+            "eyebrow": "Envíos",
+            "title": "El estado de tus envíos, reflejado en Holded",
+            "description": "Holded no gestiona transportistas directamente — sincronizamos el estado de tus envíos desde la herramienta que ya uses hacia Holded, para cerrar el ciclo de facturación y cobro.",
+            "tags": ["Tu plataforma de envíos", "Tu TPV", "Multi-transportista"],
+            "features": [
+                {
+                    "title": "Estado de envío en la venta",
+                    "description": "El tracking de tu plataforma de envíos se refleja en Holded para saber qué está facturado y qué está pendiente."
+                },
+                {
+                    "title": "Facturación al confirmar entrega",
+                    "description": "Automatizamos la generación de factura cuando el pedido se marca como entregado."
+                },
+                {
+                    "title": "Coste de envío por pedido",
+                    "description": "Incorporamos el coste real de transporte en el margen de cada venta."
+                },
+                {
+                    "title": "Varias plataformas, una sola Holded",
+                    "description": "Si usas varias herramientas de envío, centralizamos todos los estados en Holded."
+                }
+            ]
+        },
+        "ecommerce": {
+            "eyebrow": "Ecommerce",
+            "title": "Tu tienda online, sincronizada con Holded",
+            "description": "Sincronizamos tu tienda online (o varias) con Holded para no llevar la contabilidad a mano.",
+            "tags": ["Shopify", "WooCommerce", "Amazon", "PrestaShop"],
+            "features": [
+                {
+                    "title": "Catálogo y precios",
+                    "description": "Mantenemos alineados productos y precios entre tu tienda y Holded."
+                },
+                {
+                    "title": "Pedidos y clientes",
+                    "description": "Cada venta online genera su ficha de cliente y su documento en Holded automáticamente."
+                },
+                {
+                    "title": "Stock actualizado",
+                    "description": "El stock se sincroniza para evitar vender lo que no tienes."
+                },
+                {
+                    "title": "Facturación automática",
+                    "description": "Se genera la factura o el recibo correspondiente sin trabajo manual."
+                }
+            ]
+        },
+        "howWeWork": {
+            "eyebrow": "Cómo trabajamos",
+            "h2a": "Un proceso claro",
+            "h2b": "de principio a fin.",
+            "lead": "Así avanzamos en cada integración, tanto si es con Odoo como con Holded.",
+            "steps": [
+                {
+                    "title": "Diagnóstico inicial",
+                    "description": "Analizamos tu operativa y las herramientas que ya usas para definir qué hay que integrar, sin coste ni compromiso."
+                },
+                {
+                    "title": "Mapeo técnico",
+                    "description": "Documentamos qué datos deben moverse, con qué frecuencia y en qué formato (API, EDI, CSV) entre cada sistema."
+                },
+                {
+                    "title": "Construcción en entorno de pruebas",
+                    "description": "Desarrollamos la integración en un entorno de staging, separado de tu operativa real."
+                },
+                {
+                    "title": "Validación",
+                    "description": "Probamos casos reales — pedidos, facturas, stock — antes de tocar producción, incluyendo pruebas con tus proveedores o plataformas externas cuando aplica."
+                },
+                {
+                    "title": "Puesta en marcha y soporte",
+                    "description": "Activamos la integración en producción y damos soporte para ajustar lo que haga falta."
+                }
+            ]
+        },
         "logos": {
             "title": "Integraciones con Holded para todo tipo de negocios:",
             "subtitle": "Estas son algunos de los software de diferentes industrias que hemos integrado con Holded.",
@@ -3719,6 +3835,43 @@
                 "Servicios",
                 "Real State",
                 "RR. HH"
+            ]
+        },
+        "faq": {
+            "title": "Preguntas frecuentes",
+            "items": [
+                {
+                    "question": "¿Holded puede recibir facturas o pedidos de proveedores en EDI?",
+                    "answer": "Sí, para documentos de compra-venta (facturas, pedidos) siempre que el proveedor soporte intercambio estructurado (XML, CSV); Holded no gestiona logística de almacén."
+                },
+                {
+                    "question": "¿Puede Holded recibir el estado de mis envíos automáticamente?",
+                    "answer": "Sí, sincronizamos el tracking desde tu plataforma de envíos o TPV hacia Holded, para cerrar el ciclo de facturación y cobro."
+                },
+                {
+                    "question": "¿Se puede conectar Holded con varias tiendas online a la vez?",
+                    "answer": "Sí, centralizamos pedidos, stock y facturación de varias plataformas en una única cuenta."
+                },
+                {
+                    "question": "¿La facturación cumple VeriFactu?",
+                    "answer": "Sí, la facturación automatizada desde sistemas externos se genera cumpliendo VeriFactu."
+                },
+                {
+                    "question": "¿Qué pasa si cambio de plataforma de envíos o de tienda online?",
+                    "answer": "Adaptamos la integración a la nueva herramienta; no depende de un proveedor concreto."
+                },
+                {
+                    "question": "¿Necesito conocimientos técnicos para el día a día?",
+                    "answer": "No, una vez activa la integración el equipo sigue trabajando desde Holded con normalidad."
+                },
+                {
+                    "question": "¿Cuánto tarda una integración estándar?",
+                    "answer": "Depende del alcance; se define en el diagnóstico inicial sin coste."
+                },
+                {
+                    "question": "¿Puedo pedir una sincronización solo en un sentido (por ejemplo, de la tienda a Holded)?",
+                    "answer": "Sí, se define el sentido del flujo de datos durante el diagnóstico técnico."
+                }
             ]
         },
         "form": {
@@ -3789,6 +3942,18 @@
                 "link": "Ver casos de uso"
             }
         },
+        "stats": {
+            "items": [
+                {
+                    "value": "+20",
+                    "label": "herramientas compatibles con Odoo"
+                },
+                {
+                    "value": "2",
+                    "label": "ERPs de los que somos partner oficial"
+                }
+            ]
+        },
         "useCases": {
             "label": "CASOS DE USO",
             "items": [
@@ -3826,10 +3991,147 @@
                 }
             ]
         },
+        "edi": {
+            "eyebrow": "EDI",
+            "title": "Integraciones EDI para Odoo",
+            "description": "Conectamos Odoo con las plataformas EDI de tus distribuidores, centrales de compra o grandes clientes, para automatizar el ciclo pedido-factura sin salir de Odoo.",
+            "tags": ["EDIFACT", "X12 / ANSI", "AS2", "SFTP", "FTP"],
+            "features": [
+                {
+                    "title": "Pedidos automáticos",
+                    "description": "El pedido de compra que llega por EDI se convierte en pedido de venta en Odoo sin captura manual."
+                },
+                {
+                    "title": "Facturación electrónica",
+                    "description": "La factura se genera y se envía en el formato que exige cada socio comercial."
+                },
+                {
+                    "title": "Aviso de expedición (ASN)",
+                    "description": "Se genera automáticamente al confirmar la entrega, con los datos de seguimiento que pida el partner."
+                },
+                {
+                    "title": "Trazabilidad de errores",
+                    "description": "Cada documento EDI queda confirmado o marcado como erróneo dentro de Odoo, sin depender de un portal externo."
+                }
+            ]
+        },
+        "shipping": {
+            "eyebrow": "Logística",
+            "title": "Odoo conectado con tus transportistas",
+            "description": "Adaptamos Odoo Inventario y Entregas para trabajar con los transportistas y operadores logísticos que ya usa tu empresa.",
+            "tags": ["Transportistas nacionales", "Transportistas internacionales", "Operadores 3PL"],
+            "features": [
+                {
+                    "title": "Multi-transportista",
+                    "description": "Conectamos Odoo con varios transportistas a la vez, sin depender de uno solo."
+                },
+                {
+                    "title": "Tarifas en tiempo real",
+                    "description": "Calculamos el coste de envío según peso, volumen y destino antes de confirmar el pedido."
+                },
+                {
+                    "title": "Etiquetas y seguimiento",
+                    "description": "Generamos etiquetas y actualizamos el número de seguimiento automáticamente en la entrega."
+                },
+                {
+                    "title": "Compatibilidad con 3PL",
+                    "description": "Si trabajas con un operador logístico externo, sincronizamos también sus avisos de expedición y recepción de mercancía."
+                }
+            ]
+        },
+        "ecommerce": {
+            "eyebrow": "Ecommerce",
+            "title": "Odoo, el centro de tu operación online",
+            "description": "Centralizamos catálogo, pedidos y stock de tu tienda online (o de varias) dentro de Odoo.",
+            "tags": ["Shopify", "WooCommerce", "PrestaShop", "Marketplaces"],
+            "features": [
+                {
+                    "title": "Catálogo sincronizado",
+                    "description": "Productos, precios y variantes se mantienen iguales en la tienda y en Odoo."
+                },
+                {
+                    "title": "Pedidos en tiempo real",
+                    "description": "Cada pedido online entra en Odoo y dispara el proceso de preparación y envío."
+                },
+                {
+                    "title": "Stock sin sobreventa",
+                    "description": "El stock se actualiza en ambos sentidos para evitar vender lo que no tienes."
+                },
+                {
+                    "title": "Reporting centralizado",
+                    "description": "Usas los informes de Odoo para ver ventas, rotación y rendimiento por canal."
+                }
+            ]
+        },
+        "howWeWork": {
+            "eyebrow": "Cómo trabajamos",
+            "h2a": "Un proceso claro",
+            "h2b": "de principio a fin.",
+            "lead": "Así avanzamos en cada integración, tanto si es con Odoo como con Holded.",
+            "steps": [
+                {
+                    "title": "Diagnóstico inicial",
+                    "description": "Analizamos tu operativa y las herramientas que ya usas para definir qué hay que integrar, sin coste ni compromiso."
+                },
+                {
+                    "title": "Mapeo técnico",
+                    "description": "Documentamos qué datos deben moverse, con qué frecuencia y en qué formato (API, EDI, CSV) entre cada sistema."
+                },
+                {
+                    "title": "Construcción en entorno de pruebas",
+                    "description": "Desarrollamos la integración en un entorno de staging, separado de tu operativa real."
+                },
+                {
+                    "title": "Validación",
+                    "description": "Probamos casos reales — pedidos, facturas, stock — antes de tocar producción, incluyendo pruebas con tus proveedores o plataformas externas cuando aplica."
+                },
+                {
+                    "title": "Puesta en marcha y soporte",
+                    "description": "Activamos la integración en producción y damos soporte para ajustar lo que haga falta."
+                }
+            ]
+        },
         "logos": {
             "title": "Odoo se conecta con las herramientas que ya usas",
             "subtitle": "Software compatible",
             "mainCta": "Empieza a implementar Odoo"
+        },
+        "faq": {
+            "title": "Preguntas frecuentes",
+            "items": [
+                {
+                    "question": "¿Puedo conectar Odoo con proveedores o clientes que usan EDI?",
+                    "answer": "Sí, adaptando el flujo de pedidos, facturas y avisos de envío a las especificaciones de cada partner, usando protocolos como AS2, SFTP o FTP."
+                },
+                {
+                    "question": "¿Qué formatos EDI soporta la integración?",
+                    "answer": "Trabajamos con estándares habituales como EDIFACT y X12/ANSI, además de XML o CSV cuando el partner lo requiere."
+                },
+                {
+                    "question": "¿Odoo puede calcular tarifas de envío y generar etiquetas con transportistas?",
+                    "answer": "Sí, mediante los conectores de transportista disponibles para Odoo, adaptados a tu operativa de almacén."
+                },
+                {
+                    "question": "¿Qué pasa si mi transportista o proveedor logístico no tiene conector estándar?",
+                    "answer": "Desarrollamos una integración a medida contra su API o su formato de intercambio de ficheros."
+                },
+                {
+                    "question": "¿Puedo sincronizar varias tiendas online con un único Odoo?",
+                    "answer": "Sí, Odoo permite centralizar catálogo, pedidos y stock de varias plataformas en una única instancia."
+                },
+                {
+                    "question": "¿Necesito conocimientos técnicos para el día a día?",
+                    "answer": "No. La integración se configura para que el equipo trabaje desde la interfaz de Odoo; el mantenimiento técnico es nuestro."
+                },
+                {
+                    "question": "¿Cuánto tarda una integración estándar?",
+                    "answer": "Depende del alcance; lo definimos juntos en el diagnóstico inicial antes de dar cualquier plazo."
+                },
+                {
+                    "question": "¿Qué pasa si un socio comercial cambia sus requisitos?",
+                    "answer": "Se actualiza la configuración como un cambio puntual, sin rehacer todo el proyecto."
+                }
+            ]
         },
         "form": {
             "sectionTitle": "Una implementación de Odoo adaptada a cómo trabajas.",
