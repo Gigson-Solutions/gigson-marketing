@@ -5,6 +5,12 @@ import {
   APP_ROLES,
   APP_SIZES,
   BUSINESS_DOMAINS,
+  CONSULTING_ENGAGEMENTS,
+  CONSULTING_SCOPE_ITEMS,
+  ERP_MODULES,
+  ERP_SYSTEMS,
+  INTEGRATION_DIRECTIONS,
+  INTEGRATION_FREQUENCIES,
   PLATFORMS,
   PROJECT_TYPES,
   QUALITY_LEVELS,
@@ -18,9 +24,10 @@ const MAX_COMPETITORS = 10;
 const MAX_COMPETITOR_LENGTH = 80;
 const MAX_FEATURES = 30;
 const MAX_HOURS_PER_ROLE = 400;
-const MIN_HOURLY_RATE = 5;
-const MAX_HOURLY_RATE = 500;
 const MAX_MONTHS = 36;
+const MAX_INTEGRATION_SYSTEMS = 10;
+const MAX_INTEGRATION_SYSTEM_LENGTH = 80;
+const MAX_ERP_USERS = 100000;
 
 export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs } | { ok: false; error: string } {
   if (!raw || typeof raw !== 'object') return { ok: false, error: 'Missing inputs' };
@@ -29,11 +36,6 @@ export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs
   const projectType = r.projectType;
   if (typeof projectType !== 'string' || !PROJECT_TYPES.includes(projectType as never)) {
     return { ok: false, error: 'Invalid projectType' };
-  }
-
-  const hourlyRate = Number(r.hourlyRate);
-  if (!Number.isFinite(hourlyRate) || hourlyRate < MIN_HOURLY_RATE || hourlyRate > MAX_HOURLY_RATE) {
-    return { ok: false, error: 'Invalid hourlyRate' };
   }
 
   const projectDescription = typeof r.projectDescription === 'string' ? r.projectDescription.trim() : '';
@@ -56,22 +58,102 @@ export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs
   const roles = rolesRaw.filter((rr): rr is string => typeof rr === 'string' && APP_ROLES.includes(rr as never));
   if (roles.length === 0) return { ok: false, error: 'Invalid roles' };
 
-  const appSize = r.appSize;
-  if (typeof appSize !== 'string' || !APP_SIZES.includes(appSize as never)) {
-    return { ok: false, error: 'Invalid appSize' };
+  // Steps 2-3 branch by projectType — see types.ts for which fields belong
+  // to which type. `software_development` and the `other` fallback keep the
+  // original appSize/platforms/uiLevel(/qaLevel) questions; erp/integrations/
+  // consulting each get their own, more relevant set instead.
+  const usesGenericAppFields = projectType === 'software_development' || projectType === 'other';
+
+  let appSize: EstimatorInputs['appSize'];
+  let platforms: EstimatorInputs['platforms'];
+  let uiLevel: EstimatorInputs['uiLevel'];
+  if (usesGenericAppFields) {
+    if (typeof r.appSize !== 'string' || !APP_SIZES.includes(r.appSize as never)) {
+      return { ok: false, error: 'Invalid appSize' };
+    }
+    appSize = r.appSize as EstimatorInputs['appSize'];
+
+    const platformsRaw = Array.isArray(r.platforms) ? r.platforms : [];
+    const platformsValue = platformsRaw.filter(
+      (p): p is string => typeof p === 'string' && PLATFORMS.includes(p as never),
+    );
+    if (platformsValue.length === 0) return { ok: false, error: 'Invalid platforms' };
+    platforms = platformsValue as EstimatorInputs['platforms'];
+
+    if (typeof r.uiLevel !== 'string' || !QUALITY_LEVELS.includes(r.uiLevel as never)) {
+      return { ok: false, error: 'Invalid uiLevel' };
+    }
+    uiLevel = r.uiLevel as EstimatorInputs['uiLevel'];
   }
 
-  const platformsRaw = Array.isArray(r.platforms) ? r.platforms : [];
-  const platforms = platformsRaw.filter((p): p is string => typeof p === 'string' && PLATFORMS.includes(p as never));
-  if (platforms.length === 0) return { ok: false, error: 'Invalid platforms' };
-
-  const uiLevel = r.uiLevel;
-  if (typeof uiLevel !== 'string' || !QUALITY_LEVELS.includes(uiLevel as never)) {
-    return { ok: false, error: 'Invalid uiLevel' };
+  // qaLevel is shared by software_development/other AND erp_implementation/
+  // integrations (test rigor matters for all four) — only consulting skips it.
+  let qaLevel: EstimatorInputs['qaLevel'];
+  if (projectType !== 'consulting') {
+    if (typeof r.qaLevel !== 'string' || !QUALITY_LEVELS.includes(r.qaLevel as never)) {
+      return { ok: false, error: 'Invalid qaLevel' };
+    }
+    qaLevel = r.qaLevel as EstimatorInputs['qaLevel'];
   }
-  const qaLevel = r.qaLevel;
-  if (typeof qaLevel !== 'string' || !QUALITY_LEVELS.includes(qaLevel as never)) {
-    return { ok: false, error: 'Invalid qaLevel' };
+
+  let erpSystem: EstimatorInputs['erpSystem'];
+  let erpModules: EstimatorInputs['erpModules'];
+  let erpUsers: EstimatorInputs['erpUsers'];
+  let migrationNeeded: EstimatorInputs['migrationNeeded'];
+  if (projectType === 'erp_implementation') {
+    if (typeof r.erpSystem !== 'string' || !ERP_SYSTEMS.includes(r.erpSystem as never)) {
+      return { ok: false, error: 'Invalid erpSystem' };
+    }
+    erpSystem = r.erpSystem as EstimatorInputs['erpSystem'];
+
+    const erpModulesRaw = Array.isArray(r.erpModules) ? r.erpModules : [];
+    const erpModulesValue = erpModulesRaw.filter(
+      (m): m is string => typeof m === 'string' && ERP_MODULES.includes(m as never),
+    );
+    if (erpModulesValue.length === 0) return { ok: false, error: 'Invalid erpModules' };
+    erpModules = erpModulesValue as EstimatorInputs['erpModules'];
+
+    const erpUsersNum = Number(r.erpUsers);
+    erpUsers = Number.isFinite(erpUsersNum) && erpUsersNum > 0 ? Math.min(erpUsersNum, MAX_ERP_USERS) : undefined;
+    migrationNeeded = r.migrationNeeded === true;
+  }
+
+  let integrationSystems: EstimatorInputs['integrationSystems'];
+  let integrationDirection: EstimatorInputs['integrationDirection'];
+  let integrationFrequency: EstimatorInputs['integrationFrequency'];
+  if (projectType === 'integrations') {
+    const systemsRaw = Array.isArray(r.integrationSystems) ? r.integrationSystems : [];
+    integrationSystems = systemsRaw
+      .filter((s): s is string => typeof s === 'string' && s.trim().length > 0)
+      .slice(0, MAX_INTEGRATION_SYSTEMS)
+      .map((s) => s.trim().slice(0, MAX_INTEGRATION_SYSTEM_LENGTH));
+    if (integrationSystems.length === 0) return { ok: false, error: 'Invalid integrationSystems' };
+
+    if (typeof r.integrationDirection !== 'string' || !INTEGRATION_DIRECTIONS.includes(r.integrationDirection as never)) {
+      return { ok: false, error: 'Invalid integrationDirection' };
+    }
+    integrationDirection = r.integrationDirection as EstimatorInputs['integrationDirection'];
+
+    if (typeof r.integrationFrequency !== 'string' || !INTEGRATION_FREQUENCIES.includes(r.integrationFrequency as never)) {
+      return { ok: false, error: 'Invalid integrationFrequency' };
+    }
+    integrationFrequency = r.integrationFrequency as EstimatorInputs['integrationFrequency'];
+  }
+
+  let consultingScope: EstimatorInputs['consultingScope'];
+  let consultingEngagement: EstimatorInputs['consultingEngagement'];
+  if (projectType === 'consulting') {
+    const scopeRaw = Array.isArray(r.consultingScope) ? r.consultingScope : [];
+    const scopeValue = scopeRaw.filter(
+      (s): s is string => typeof s === 'string' && CONSULTING_SCOPE_ITEMS.includes(s as never),
+    );
+    if (scopeValue.length === 0) return { ok: false, error: 'Invalid consultingScope' };
+    consultingScope = scopeValue as EstimatorInputs['consultingScope'];
+
+    if (typeof r.consultingEngagement !== 'string' || !CONSULTING_ENGAGEMENTS.includes(r.consultingEngagement as never)) {
+      return { ok: false, error: 'Invalid consultingEngagement' };
+    }
+    consultingEngagement = r.consultingEngagement as EstimatorInputs['consultingEngagement'];
   }
 
   const timelineMode = r.timelineMode === 'phased' ? 'phased' : 'overall';
@@ -88,7 +170,6 @@ export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs
         projectType === 'other' && typeof r.projectTypeOther === 'string'
           ? r.projectTypeOther.trim().slice(0, 80)
           : undefined,
-      hourlyRate,
       projectDescription,
       businessDomain: businessDomain as EstimatorInputs['businessDomain'],
       businessDomainOther:
@@ -101,10 +182,19 @@ export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs
         roles.includes('other') && typeof r.rolesOther === 'string'
           ? r.rolesOther.trim().slice(0, 80)
           : undefined,
-      appSize: appSize as EstimatorInputs['appSize'],
-      platforms: platforms as EstimatorInputs['platforms'],
-      uiLevel: uiLevel as EstimatorInputs['uiLevel'],
-      qaLevel: qaLevel as EstimatorInputs['qaLevel'],
+      appSize,
+      platforms,
+      uiLevel,
+      qaLevel,
+      erpSystem,
+      erpModules,
+      erpUsers,
+      migrationNeeded,
+      integrationSystems,
+      integrationDirection,
+      integrationFrequency,
+      consultingScope,
+      consultingEngagement,
       timelineMode,
       timelineOverallMonths: clampMonths(r.timelineOverallMonths),
       timelinePhaseMvpMonths: clampMonths(r.timelinePhaseMvpMonths),

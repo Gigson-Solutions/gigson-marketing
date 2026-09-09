@@ -98,11 +98,81 @@ const LEVEL_LABEL: Record<string, string> = {
   polished: 'polished / fully custom',
 };
 
+const ERP_MODULE_LABEL: Record<string, string> = {
+  accounting: 'Accounting/invoicing',
+  inventory: 'Inventory/warehouse',
+  manufacturing: 'Manufacturing (MRP)',
+  crm: 'CRM/sales',
+  purchasing: 'Purchasing',
+  hr: 'HR',
+  pos: 'Point of sale',
+  other: 'Other',
+};
+
+const CONSULTING_SCOPE_LABEL: Record<string, string> = {
+  audit: 'Technical audit',
+  strategy: 'Strategy/roadmap',
+  architecture: 'Architecture review',
+  team_augmentation: 'Team augmentation / CTO as a service',
+  other: 'Other',
+};
+
 function projectTypeLine(inputs: EstimatorInputs): string {
   const label = inputs.projectType === 'other' && inputs.projectTypeOther
     ? inputs.projectTypeOther
     : PROJECT_TYPE_LABEL[inputs.projectType] ?? inputs.projectType;
   return `Project type: ${label}`;
+}
+
+/**
+ * Step 2/3 lines vary by project type — see types.ts for which fields
+ * belong to which type. Shared by both the full feature-list prompt and
+ * the single-feature ("add one more") prompt so they stay in sync.
+ */
+function typeSpecificLines(inputs: EstimatorInputs): (string | null)[] {
+  switch (inputs.projectType) {
+    case 'erp_implementation':
+      return [
+        `ERP system: ${inputs.erpSystem === 'other' ? 'other/unspecified' : inputs.erpSystem}`,
+        inputs.erpModules?.length
+          ? `Modules needed: ${inputs.erpModules.map((m) => ERP_MODULE_LABEL[m] ?? m).join(', ')}`
+          : null,
+        inputs.erpUsers ? `Number of users: ${inputs.erpUsers}` : null,
+        `Data migration from another system needed: ${inputs.migrationNeeded ? 'yes' : 'no'}`,
+        inputs.qaLevel ? `QA rigor level: ${LEVEL_LABEL[inputs.qaLevel] ?? inputs.qaLevel}` : null,
+      ];
+    case 'integrations':
+      return [
+        inputs.integrationSystems?.length
+          ? `Systems to connect: ${inputs.integrationSystems.join(', ')}`
+          : null,
+        inputs.integrationDirection
+          ? `Sync direction: ${inputs.integrationDirection === 'bidirectional' ? 'bidirectional' : 'one-way'}`
+          : null,
+        inputs.integrationFrequency
+          ? `Sync frequency: ${inputs.integrationFrequency === 'real_time' ? 'real-time' : 'periodic batch'}`
+          : null,
+        inputs.qaLevel ? `QA rigor level: ${LEVEL_LABEL[inputs.qaLevel] ?? inputs.qaLevel}` : null,
+      ];
+    case 'consulting':
+      return [
+        inputs.consultingScope?.length
+          ? `Consulting scope: ${inputs.consultingScope.map((s) => CONSULTING_SCOPE_LABEL[s] ?? s).join(', ')}`
+          : null,
+        inputs.consultingEngagement
+          ? `Engagement type: ${inputs.consultingEngagement === 'ongoing' ? 'ongoing/retainer' : 'one-off'}`
+          : null,
+      ];
+    case 'software_development':
+    case 'other':
+    default:
+      return [
+        inputs.appSize ? `Project scope: ${SIZE_LABEL[inputs.appSize] ?? inputs.appSize}` : null,
+        inputs.platforms?.length ? `Delivery format / where it will be used: ${inputs.platforms.join(', ')}` : null,
+        inputs.uiLevel ? `UI polish level: ${LEVEL_LABEL[inputs.uiLevel] ?? inputs.uiLevel}` : null,
+        inputs.qaLevel ? `QA rigor level: ${LEVEL_LABEL[inputs.qaLevel] ?? inputs.qaLevel}` : null,
+      ];
+  }
 }
 
 export function buildEstimatorSystemPrompt(): string {
@@ -135,12 +205,8 @@ export function buildEstimatorUserPrompt(inputs: EstimatorInputs): string {
     `Project description: ${inputs.projectDescription}`,
     inputs.competitors.length > 0 ? `Known competitors: ${inputs.competitors.join(', ')}` : null,
     `Who will use or benefit from the result: ${inputs.roles.join(', ')}${inputs.rolesOther ? ` (other: ${inputs.rolesOther})` : ''}`,
-    `Project scope: ${SIZE_LABEL[inputs.appSize] ?? inputs.appSize}`,
-    `Delivery format / where it will be used: ${inputs.platforms.join(', ')}`,
-    `UI polish level: ${LEVEL_LABEL[inputs.uiLevel] ?? inputs.uiLevel}`,
-    `QA rigor level: ${LEVEL_LABEL[inputs.qaLevel] ?? inputs.qaLevel}`,
+    ...typeSpecificLines(inputs),
     months ? `Target overall timeline: ~${months} months` : null,
-    `Assumed blended hourly rate: €${inputs.hourlyRate}/hour (for context only, do not include pricing in your output).`,
   ].filter(Boolean);
 
   return lines.join('\n');
@@ -170,10 +236,7 @@ export function buildSingleFeatureUserPrompt(
     projectTypeLine(inputs),
     `Project domain: ${domain}`,
     `Project description: ${inputs.projectDescription}`,
-    `Project scope: ${SIZE_LABEL[inputs.appSize] ?? inputs.appSize}`,
-    `Delivery format / where it will be used: ${inputs.platforms.join(', ')}`,
-    `UI polish level: ${LEVEL_LABEL[inputs.uiLevel] ?? inputs.uiLevel}`,
-    `QA rigor level: ${LEVEL_LABEL[inputs.qaLevel] ?? inputs.qaLevel}`,
+    ...typeSpecificLines(inputs),
     existingFeatureNames.length > 0
       ? `Use cases already in the estimate (avoid duplicating): ${existingFeatureNames.join(', ')}`
       : null,

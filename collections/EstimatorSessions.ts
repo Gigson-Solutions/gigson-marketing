@@ -56,10 +56,24 @@ export const EstimatorSessions: CollectionConfig = {
     { name: 'competitors', type: 'array', maxRows: 10, fields: [{ name: 'value', type: 'text' }] },
     { name: 'roles', type: 'text' }, // comma-separated (user,admin,other)
     { name: 'rolesOther', type: 'text' },
+    // software_development / other
     { name: 'appSize', type: 'text' },
     { name: 'platforms', type: 'text' }, // comma-separated
     { name: 'uiLevel', type: 'text' },
+    // shared by software_development/other AND erp_implementation/integrations
     { name: 'qaLevel', type: 'text' },
+    // erp_implementation
+    { name: 'erpSystem', type: 'text' },
+    { name: 'erpModules', type: 'text' }, // comma-separated
+    { name: 'erpUsers', type: 'number' },
+    { name: 'migrationNeeded', type: 'checkbox' },
+    // integrations
+    { name: 'integrationSystems', type: 'array', maxRows: 10, fields: [{ name: 'value', type: 'text' }] },
+    { name: 'integrationDirection', type: 'text' },
+    { name: 'integrationFrequency', type: 'text' },
+    // consulting
+    { name: 'consultingScope', type: 'text' }, // comma-separated
+    { name: 'consultingEngagement', type: 'text' },
     { name: 'timelineMode', type: 'text' },
     { name: 'timelineOverallMonths', type: 'number' },
     { name: 'timelinePhaseMvpMonths', type: 'number' },
@@ -98,5 +112,8 @@ export const EstimatorSessions: CollectionConfig = {
     { name: 'rgpd', type: 'checkbox', defaultValue: false },
     { name: 'leadCapturedAt', type: 'date' },
     { name: 'teamNotifiedAt', type: 'date', admin: { position: 'sidebar' } },
+
+    // ── Call booking gate (Step 6, hours stay blurred until this is set) ──
+    { name: 'callBookedAt', type: 'date', admin: { position: 'sidebar' } },
   ],
 };

@@ -13,11 +13,16 @@ const LEAD_EMAIL_CC = process.env.LEAD_EMAIL_CC ?? 'emmelin@gigsonsolutions.com'
 const LEAD_EMAIL_DISABLE = process.env.LEAD_EMAIL_DISABLE === 'true';
 
 // Email-capture gate on step 6: persists the lead, reveals the real
-// totalHours/totalBudget (previously withheld), and — best-effort, matching
+// totalBudget (previously withheld), and — best-effort, matching
 // app/api/chatbot/email/route.ts — notifies Gigson's team with the FULL
-// generated estimate so a human can personally follow up. This is what
-// reconciles "show the lead an instant AI estimate" with the original ask
-// of "leads send us info so we can contact them with the final result."
+// generated estimate (including totalHours) so a human can personally
+// follow up. This is what reconciles "show the lead an instant AI
+// estimate" with the original ask of "leads send us info so we can
+// contact them with the final result."
+//
+// totalHours is deliberately NOT sent to the client here — it stays
+// hidden (blurred in the UI) until the user also books a call via the
+// Cal.com embed further down Step 6; see book-confirmed/route.ts.
 export async function POST(req: Request, { params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
   let body: unknown;
@@ -29,7 +34,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
   const { email, name, company, rgpd, website } = (body as Record<string, unknown>) ?? {};
 
   if (typeof website === 'string' && website.trim().length > 0) {
-    return NextResponse.json({ ok: true, totals: { totalHours: 0, totalBudget: 0 } });
+    return NextResponse.json({ ok: true, totalBudget: 0 });
   }
 
   if (typeof email !== 'string' || !isValidEmail(email)) {
@@ -100,5 +105,5 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
     }
   }
 
-  return NextResponse.json({ ok: true, totals });
+  return NextResponse.json({ ok: true, totalBudget: totals.totalBudget });
 }
