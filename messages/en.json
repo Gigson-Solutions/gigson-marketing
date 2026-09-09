@@ -3655,60 +3655,206 @@
                 "title": "Specialists in connecting Holded with the tools you already use.",
                 "bullets": [
                     "We are an official Holded partner.",
-                    "Integrations for every industry.",
+                    "60+ integrations across every industry.",
                     "Advice before any integration."
                 ],
                 "link": "See use cases"
-            },
-            "whatsapp": {
-                "title": "Questions? Let's talk",
-                "cta": "Chat on WhatsApp"
             }
+        },
+        "stats": {
+            "items": [
+                {
+                    "value": "60+",
+                    "label": "tools already integrated with Holded"
+                },
+                {
+                    "value": "12",
+                    "label": "industries with their own integrations"
+                },
+                {
+                    "value": "2",
+                    "label": "ERPs we're an official partner of"
+                }
+            ]
         },
         "useCases": {
             "label": "USE CASES",
             "items": [
                 {
                     "title": "Electronic invoicing & VeriFactu",
-                    "description": "Automate VeriFactu compliance and electronic invoice issuance directly from Holded, without any manual work.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Automate VeriFactu compliance and electronic invoice issuance directly from Holded, without any manual work."
                 },
                 {
                     "title": "Sales, customer & payment sync",
-                    "description": "Connect your POS or e-commerce with Holded so orders, customers and payments sync in real time.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Connect your POS or e-commerce with Holded so orders, customers and payments sync in real time."
                 },
                 {
                     "title": "Sector-specific financial control",
-                    "description": "Integrate your sector-specific software (veterinary, clinic, construction…) with Holded to unify all financial data.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Integrate your sector-specific software (veterinary, clinic, construction…) with Holded to unify all financial data."
                 },
                 {
                     "title": "Advanced bank reconciliation",
-                    "description": "Automate bank reconciliation by connecting your bank with Holded and eliminate manual transaction entry.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Automate bank reconciliation by connecting your bank with Holded and eliminate manual transaction entry."
                 },
                 {
                     "title": "Employee productivity analysis",
-                    "description": "Connect HR and time management tools with Holded for full visibility into team performance.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Connect HR and time management tools with Holded for full visibility into team performance."
                 },
                 {
                     "title": "Advanced e-commerce synchronisation",
-                    "description": "Keep stock, prices and catalogue in sync between your online store (Shopify, WooCommerce, Amazon…) and Holded.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Keep stock, prices and catalogue in sync between your online store (Shopify, WooCommerce, Amazon…) and Holded."
                 },
                 {
                     "title": "Automatic lead registration in CRM",
-                    "description": "Connect your forms and email campaigns with Holded or your CRM so leads are registered automatically without manual intervention.",
-                    "cta": "TALK TO A HOLDED EXPERT"
+                    "description": "Connect your forms and email campaigns with Holded or your CRM so leads are registered automatically without manual intervention."
+                },
+                {
+                    "title": "Connected reporting & dashboards",
+                    "description": "We sync your Holded data with Google Sheets, Looker Studio or Power BI so you get centralised, always-up-to-date financial reporting."
+                }
+            ]
+        },
+        "edi": {
+            "eyebrow": "EDI & invoicing",
+            "title": "Purchase & sales documents connected to Holded",
+            "description": "We connect Holded with your suppliers' and customers' purchase-sale documents that already arrive in a structured format, to automate invoicing.",
+            "tags": ["VeriFactu", "XML", "EDIFACT (INVOIC)", "CSV"],
+            "features": [
+                {
+                    "title": "Automated supplier invoices",
+                    "description": "We receive your suppliers' invoices in a structured format and register them in Holded."
+                },
+                {
+                    "title": "Electronic invoicing to customers",
+                    "description": "Invoices are issued VeriFactu-compliant directly from the system you use to sell."
+                },
+                {
+                    "title": "Purchase orders",
+                    "description": "We sync purchase orders and delivery notes with your regular suppliers."
+                },
+                {
+                    "title": "Reconciliation against what was received",
+                    "description": "We match what was invoiced against what was actually delivered before closing the process."
+                }
+            ]
+        },
+        "shipping": {
+            "eyebrow": "Shipping",
+            "title": "Your shipping status, reflected in Holded",
+            "description": "Holded doesn't manage carriers directly — we sync your shipping status from the tool you already use into Holded, to close the invoicing and payment cycle.",
+            "tags": ["Your shipping platform", "Your POS", "Multi-carrier"],
+            "features": [
+                {
+                    "title": "Shipping status on the sale",
+                    "description": "Your shipping platform's tracking is reflected in Holded so you know what's invoiced and what's pending."
+                },
+                {
+                    "title": "Invoicing on delivery confirmation",
+                    "description": "We automate invoice generation when an order is marked as delivered."
+                },
+                {
+                    "title": "Shipping cost per order",
+                    "description": "We fold the real shipping cost into the margin of every sale."
+                },
+                {
+                    "title": "Several platforms, one Holded",
+                    "description": "If you use more than one shipping tool, we centralise all statuses in Holded."
+                }
+            ]
+        },
+        "ecommerce": {
+            "eyebrow": "Ecommerce",
+            "title": "Your online store, synced with Holded",
+            "description": "We sync your online store (or several) with Holded so you don't have to keep the books by hand.",
+            "tags": ["Shopify", "WooCommerce", "Amazon", "PrestaShop"],
+            "features": [
+                {
+                    "title": "Catalogue & pricing",
+                    "description": "We keep products and prices aligned between your store and Holded."
+                },
+                {
+                    "title": "Orders & customers",
+                    "description": "Every online sale automatically creates its customer record and document in Holded."
+                },
+                {
+                    "title": "Stock kept up to date",
+                    "description": "Stock is synced to avoid selling what you don't have."
+                },
+                {
+                    "title": "Automatic invoicing",
+                    "description": "The corresponding invoice or receipt is generated with no manual work."
+                }
+            ]
+        },
+        "howWeWork": {
+            "eyebrow": "How we work",
+            "h2a": "A clear process,",
+            "h2b": "start to finish.",
+            "lead": "This is how we move through every integration, whether it's with Odoo or Holded.",
+            "steps": [
+                {
+                    "title": "Initial diagnosis",
+                    "description": "We review your operations and the tools you already use to define what needs integrating, at no cost and with no commitment."
+                },
+                {
+                    "title": "Technical mapping",
+                    "description": "We document what data needs to move, how often, and in which format (API, EDI, CSV) between each system."
+                },
+                {
+                    "title": "Building in a staging environment",
+                    "description": "We build the integration in a staging environment, separate from your live operations."
+                },
+                {
+                    "title": "Validation",
+                    "description": "We test real cases — orders, invoices, stock — before touching production, including tests with your suppliers or external platforms when relevant."
+                },
+                {
+                    "title": "Go-live & support",
+                    "description": "We activate the integration in production and provide support to fine-tune whatever's needed."
                 }
             ]
         },
         "logos": {
-            "title": "More than 50 tools integrated with Holded",
+            "title": "60+ tools integrated with Holded",
             "subtitle": "Compatible software",
             "mainCta": "Start connecting Holded"
+        },
+        "faq": {
+            "title": "Frequently asked questions",
+            "items": [
+                {
+                    "question": "Can Holded receive supplier invoices or purchase orders over EDI?",
+                    "answer": "Yes, for purchase-sale documents (invoices, orders) as long as the supplier supports structured exchange (XML, CSV); Holded doesn't manage warehouse logistics."
+                },
+                {
+                    "question": "Can Holded automatically receive my shipping status?",
+                    "answer": "Yes, we sync tracking from your shipping platform or POS into Holded, to close the invoicing and payment cycle."
+                },
+                {
+                    "question": "Can Holded connect to several online stores at once?",
+                    "answer": "Yes, we centralise orders, stock and invoicing from several platforms into a single Holded account."
+                },
+                {
+                    "question": "Does the invoicing comply with VeriFactu?",
+                    "answer": "Yes, invoicing automated from external systems is generated VeriFactu-compliant."
+                },
+                {
+                    "question": "What happens if I switch shipping platform or online store?",
+                    "answer": "We adapt the integration to the new tool; it doesn't depend on a specific provider."
+                },
+                {
+                    "question": "Do I need technical knowledge for day-to-day operation?",
+                    "answer": "No, once the integration is live your team keeps working from Holded as usual."
+                },
+                {
+                    "question": "How long does a standard integration take?",
+                    "answer": "It depends on scope; it's defined during the initial diagnosis at no cost."
+                },
+                {
+                    "question": "Can I request a one-way sync only (e.g. from the store to Holded)?",
+                    "answer": "Yes, the direction of the data flow is defined during the technical diagnosis."
+                }
+            ]
         },
         "form": {
             "sectionTitle": "Integrations tailored to how you work.",
@@ -3745,23 +3891,6 @@
                         "Other"
                     ]
                 },
-                "flow": {
-                    "label": "In which direction?",
-                    "options": [
-                        {
-                            "value": "holded_to_tool",
-                            "label": "Holded → Tool"
-                        },
-                        {
-                            "value": "tool_to_holded",
-                            "label": "Tool → Holded"
-                        },
-                        {
-                            "value": "bidirectional",
-                            "label": "Bidirectional"
-                        }
-                    ]
-                },
                 "problem": {
                     "label": "Tell us about your problem or need",
                     "placeholder": "Describe what you want to automate or connect..."
@@ -3795,43 +3924,152 @@
                 "link": "See use cases"
             }
         },
+        "stats": {
+            "items": [
+                {
+                    "value": "20+",
+                    "label": "tools compatible with Odoo"
+                },
+                {
+                    "value": "2",
+                    "label": "ERPs we're an official partner of"
+                }
+            ]
+        },
         "useCases": {
             "label": "USE CASES",
             "items": [
                 {
                     "title": "Multi-company & multi-currency accounting",
-                    "description": "Set up Odoo Accounting to manage several companies, currencies and tax regimes from a single instance.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Set up Odoo Accounting to manage several companies, currencies and tax regimes from a single instance."
                 },
                 {
                     "title": "Inventory & warehouse management (WMS)",
-                    "description": "Configure Odoo Inventory as a full WMS: multi-warehouse, barcode scanning and automated replenishment rules.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Configure Odoo Inventory as a full WMS: multi-warehouse, barcode scanning and automated replenishment rules."
                 },
                 {
                     "title": "Manufacturing (MRP) & bill of materials",
-                    "description": "Model your production process in Odoo Manufacturing, from bill of materials to work orders and quality control.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Model your production process in Odoo Manufacturing, from bill of materials to work orders and quality control."
                 },
                 {
                     "title": "Sales, e-commerce & payment sync",
-                    "description": "Connect your online store or POS with Odoo so orders, customers and payments sync in real time.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Connect your online store or POS with Odoo so orders, customers and payments sync in real time."
                 },
                 {
                     "title": "CRM & sales pipeline automation",
-                    "description": "Centralise leads and opportunities in Odoo CRM, connected to your marketing and support tools.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Centralise leads and opportunities in Odoo CRM, connected to your marketing and support tools."
                 },
                 {
                     "title": "Sector-specific customisation",
-                    "description": "Adapt Odoo's modules to your sector's specific workflows instead of forcing a generic template.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Adapt Odoo's modules to your sector's specific workflows instead of forcing a generic template."
                 },
                 {
                     "title": "Migration from another ERP or spreadsheets",
-                    "description": "Move your data safely from Holded, SAP, Sage or spreadsheets into a properly configured Odoo.",
-                    "cta": "TALK TO AN ODOO EXPERT"
+                    "description": "Move your data safely from Holded, SAP, Sage or spreadsheets into a properly configured Odoo."
+                },
+                {
+                    "title": "EDI & B2B distributor integrations",
+                    "description": "We connect Odoo to your distributors' or retail partners' EDI platforms to automate purchase orders, invoices and shipping notices."
+                }
+            ]
+        },
+        "edi": {
+            "eyebrow": "EDI",
+            "title": "EDI integrations for Odoo",
+            "description": "We connect Odoo to your distributors', buying groups' or key accounts' EDI platforms, to automate the order-to-invoice cycle without leaving Odoo.",
+            "tags": ["EDIFACT", "X12 / ANSI", "AS2", "SFTP", "FTP"],
+            "features": [
+                {
+                    "title": "Automatic orders",
+                    "description": "A purchase order arriving via EDI turns into a sales order in Odoo with no manual entry."
+                },
+                {
+                    "title": "Electronic invoicing",
+                    "description": "The invoice is generated and sent in whichever format each trading partner requires."
+                },
+                {
+                    "title": "Shipment notice (ASN)",
+                    "description": "Generated automatically once delivery is confirmed, with the tracking data the partner requires."
+                },
+                {
+                    "title": "Error traceability",
+                    "description": "Every EDI document is confirmed or flagged as an error inside Odoo, with no external portal to check."
+                }
+            ]
+        },
+        "shipping": {
+            "eyebrow": "Logistics",
+            "title": "Odoo, connected to your carriers",
+            "description": "We adapt Odoo Inventory and Delivery to work with the carriers and logistics operators your company already uses.",
+            "tags": ["Domestic carriers", "International carriers", "3PL operators"],
+            "features": [
+                {
+                    "title": "Multi-carrier",
+                    "description": "We connect Odoo to several carriers at once, without relying on a single one."
+                },
+                {
+                    "title": "Real-time rates",
+                    "description": "We calculate shipping cost by weight, volume and destination before the order is confirmed."
+                },
+                {
+                    "title": "Labels & tracking",
+                    "description": "We generate labels and update the tracking number automatically on the delivery."
+                },
+                {
+                    "title": "3PL compatibility",
+                    "description": "If you work with an external logistics operator, we also sync their shipment and goods-received notices."
+                }
+            ]
+        },
+        "ecommerce": {
+            "eyebrow": "Ecommerce",
+            "title": "Odoo, the hub of your online operation",
+            "description": "We centralise catalogue, orders and stock from your online store (or several) inside Odoo.",
+            "tags": ["Shopify", "WooCommerce", "PrestaShop", "Marketplaces"],
+            "features": [
+                {
+                    "title": "Synced catalogue",
+                    "description": "Products, prices and variants stay identical between the store and Odoo."
+                },
+                {
+                    "title": "Real-time orders",
+                    "description": "Every online order enters Odoo and triggers the fulfilment and shipping process."
+                },
+                {
+                    "title": "Stock without overselling",
+                    "description": "Stock updates in both directions to avoid selling what you don't have."
+                },
+                {
+                    "title": "Centralised reporting",
+                    "description": "You use Odoo's reports to see sales, turnover and performance by channel."
+                }
+            ]
+        },
+        "howWeWork": {
+            "eyebrow": "How we work",
+            "h2a": "A clear process,",
+            "h2b": "start to finish.",
+            "lead": "This is how we move through every integration, whether it's with Odoo or Holded.",
+            "steps": [
+                {
+                    "title": "Initial diagnosis",
+                    "description": "We review your operations and the tools you already use to define what needs integrating, at no cost and with no commitment."
+                },
+                {
+                    "title": "Technical mapping",
+                    "description": "We document what data needs to move, how often, and in which format (API, EDI, CSV) between each system."
+                },
+                {
+                    "title": "Building in a staging environment",
+                    "description": "We build the integration in a staging environment, separate from your live operations."
+                },
+                {
+                    "title": "Validation",
+                    "description": "We test real cases — orders, invoices, stock — before touching production, including tests with your suppliers or external platforms when relevant."
+                },
+                {
+                    "title": "Go-live & support",
+                    "description": "We activate the integration in production and provide support to fine-tune whatever's needed."
                 }
             ]
         },
@@ -3839,6 +4077,43 @@
             "title": "Odoo connects with the tools you already use",
             "subtitle": "Compatible software",
             "mainCta": "Start implementing Odoo"
+        },
+        "faq": {
+            "title": "Frequently asked questions",
+            "items": [
+                {
+                    "question": "Can I connect Odoo with suppliers or customers who use EDI?",
+                    "answer": "Yes, adapting the order, invoice and shipping-notice flow to each partner's specifications, using protocols such as AS2, SFTP or FTP."
+                },
+                {
+                    "question": "Which EDI formats does the integration support?",
+                    "answer": "We work with common standards such as EDIFACT and X12/ANSI, plus XML or CSV when the partner requires it."
+                },
+                {
+                    "question": "Can Odoo calculate shipping rates and generate carrier labels?",
+                    "answer": "Yes, through the carrier connectors available for Odoo, adapted to your warehouse operations."
+                },
+                {
+                    "question": "What if my carrier or logistics provider has no standard connector?",
+                    "answer": "We build a custom integration against their API or file-exchange format."
+                },
+                {
+                    "question": "Can I sync several online stores into a single Odoo?",
+                    "answer": "Yes, Odoo lets you centralise catalogue, orders and stock from several platforms in a single instance."
+                },
+                {
+                    "question": "Do I need technical knowledge for day-to-day operation?",
+                    "answer": "No. The integration is set up so your team works from Odoo's own interface; the technical maintenance is on us."
+                },
+                {
+                    "question": "How long does a standard integration take?",
+                    "answer": "It depends on scope; we define it together during the initial diagnosis before giving any timeline."
+                },
+                {
+                    "question": "What happens if a trading partner changes their requirements?",
+                    "answer": "The configuration is updated as a one-off change request, without rebuilding the whole project."
+                }
+            ]
         },
         "form": {
             "sectionTitle": "An Odoo implementation tailored to how you work.",
