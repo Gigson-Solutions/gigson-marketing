@@ -140,7 +140,6 @@ export function buildEstimatorUserPrompt(inputs: EstimatorInputs): string {
     `UI polish level: ${LEVEL_LABEL[inputs.uiLevel] ?? inputs.uiLevel}`,
     `QA rigor level: ${LEVEL_LABEL[inputs.qaLevel] ?? inputs.qaLevel}`,
     months ? `Target overall timeline: ~${months} months` : null,
-    `Assumed blended hourly rate: €${inputs.hourlyRate}/hour (for context only, do not include pricing in your output).`,
   ].filter(Boolean);
 
   return lines.join('\n');

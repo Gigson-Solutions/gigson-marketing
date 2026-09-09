@@ -18,8 +18,6 @@ const MAX_COMPETITORS = 10;
 const MAX_COMPETITOR_LENGTH = 80;
 const MAX_FEATURES = 30;
 const MAX_HOURS_PER_ROLE = 400;
-const MIN_HOURLY_RATE = 5;
-const MAX_HOURLY_RATE = 500;
 const MAX_MONTHS = 36;
 
 export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs } | { ok: false; error: string } {
@@ -29,11 +27,6 @@ export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs
   const projectType = r.projectType;
   if (typeof projectType !== 'string' || !PROJECT_TYPES.includes(projectType as never)) {
     return { ok: false, error: 'Invalid projectType' };
-  }
-
-  const hourlyRate = Number(r.hourlyRate);
-  if (!Number.isFinite(hourlyRate) || hourlyRate < MIN_HOURLY_RATE || hourlyRate > MAX_HOURLY_RATE) {
-    return { ok: false, error: 'Invalid hourlyRate' };
   }
 
   const projectDescription = typeof r.projectDescription === 'string' ? r.projectDescription.trim() : '';
@@ -88,7 +81,6 @@ export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs
         projectType === 'other' && typeof r.projectTypeOther === 'string'
           ? r.projectTypeOther.trim().slice(0, 80)
           : undefined,
-      hourlyRate,
       projectDescription,
       businessDomain: businessDomain as EstimatorInputs['businessDomain'],
       businessDomainOther:

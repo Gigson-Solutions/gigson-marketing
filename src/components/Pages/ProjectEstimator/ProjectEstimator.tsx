@@ -32,7 +32,6 @@ type GenerationStatus = 'idle' | 'generating' | 'ready' | 'failed';
 
 const initialValues: EstimatorInputs = {
   projectType: 'software_development' as never, // placeholder, cleared below — no type pre-selected
-  hourlyRate: 50,
   projectDescription: '',
   businessDomain: 'ecommerce' as never, // placeholder, cleared below — no domain pre-selected
   competitors: [],
@@ -403,20 +402,6 @@ const Step1 = ({ t, values, errors, setField, clearError }: Step1Props) => (
         />
       )}
       {errors.projectType && <p className="pe-error">{t('step1.projectTypeError')}</p>}
-    </section>
-
-    <section className="pe-field">
-      <h3>{t('step1.rateLabel')}</h3>
-      <p className="pe-help">{t('step1.rateHelp')}</p>
-      <NumericStepper
-        value={values.hourlyRate}
-        onChange={(v) => setField('hourlyRate', v)}
-        min={5}
-        max={500}
-        step={5}
-        suffix={t('step1.rateSuffix')}
-        ariaLabel={t('step1.rateLabel')}
-      />
     </section>
 
     <section className="pe-field">

@@ -4,6 +4,7 @@ import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
 import { computeTotalBudget, sumRoleHours, totalHoursOf } from '@/lib/estimator/calc';
+import { ESTIMATOR_HOURLY_RATE } from '@/lib/estimator/config';
 import { featuresToPayload } from '@/lib/estimator/payloadMapping';
 import { buildEstimatorSystemPrompt, buildEstimatorUserPrompt, GENERATE_FEATURES_TOOL } from '@/lib/estimator/prompt';
 import { getClientIp, isRateLimited } from '@/lib/estimator/rateLimit';
@@ -64,7 +65,9 @@ export async function POST(req: Request) {
     pagePath: typeof pagePath === 'string' ? pagePath.slice(0, 256) : undefined,
     projectType: validated.value.projectType,
     projectTypeOther: validated.value.projectTypeOther,
-    hourlyRate: validated.value.hourlyRate,
+    // Server-controlled — never trust a client-supplied rate (removed from
+    // the estimator's Step 1 entirely; see src/lib/estimator/config.ts).
+    hourlyRate: ESTIMATOR_HOURLY_RATE,
     projectDescription: validated.value.projectDescription,
     businessDomain: validated.value.businessDomain,
     businessDomainOther: validated.value.businessDomainOther,
@@ -126,7 +129,7 @@ export async function POST(req: Request) {
 
     const roleHours = sumRoleHours(features);
     const totalHours = totalHoursOf(roleHours);
-    const totalBudget = computeTotalBudget(totalHours, validated.value.hourlyRate);
+    const totalBudget = computeTotalBudget(totalHours, ESTIMATOR_HOURLY_RATE);
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     await (payloadClient as any).update({

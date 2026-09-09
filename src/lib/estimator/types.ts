@@ -61,7 +61,6 @@ export type TimelineMode = 'overall' | 'phased';
 export interface EstimatorInputs {
   projectType: ProjectType;
   projectTypeOther?: string;
-  hourlyRate: number;
   projectDescription: string;
   businessDomain: BusinessDomain;
   businessDomainOther?: string;
