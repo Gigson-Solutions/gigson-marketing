@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation';
 import ChipSelect from '../../../shared/ui/ChipSelect';
 import NumericStepper from '../../../shared/ui/NumericStepper';
 import TagInput from '../../../shared/ui/TagInput';
+import BookCallGate from './BookCallGate';
 import FeatureModal from './FeatureModal';
 import LeadCaptureModal from './LeadCaptureModal';
 import {
@@ -107,7 +108,11 @@ const ProjectEstimator = () => {
 
   const [teamComposition, setTeamComposition] = useState<TeamComposition | null>(null);
   const [timeline, setTimeline] = useState<TimelineData | null>(null);
-  const [totals, setTotals] = useState<{ totalHours: number; totalBudget: number } | null>(null);
+  const [totals, setTotals] = useState<{ totalBudget: number } | null>(null);
+  // Second gate: totalHours stays null (blurred) even after totals/budget is
+  // revealed, until the user books a call through the Cal.com embed — see
+  // BookCallGate.tsx and /api/estimator/sessions/[token]/book-confirmed.
+  const [hoursRevealed, setHoursRevealed] = useState<number | null>(null);
 
   const [leadModalOpen, setLeadModalOpen] = useState(false);
   const [leadSubmitting, setLeadSubmitting] = useState(false);
@@ -242,13 +247,24 @@ const ProjectEstimator = () => {
         setLeadError(json.error ?? t('errors.generic'));
         return;
       }
-      setTotals(json.totals);
+      setTotals({ totalBudget: json.totalBudget });
       setLeadModalOpen(false);
     } catch (err) {
       console.error('[project-estimator] lead submit failed', err);
       setLeadError(t('errors.generic'));
     } finally {
       setLeadSubmitting(false);
+    }
+  };
+
+  const handleBookConfirmed = async () => {
+    if (!token || hoursRevealed !== null) return; // avoid double-firing on repeat bookingSuccessful events
+    try {
+      const res = await fetch(`/api/estimator/sessions/${token}/book-confirmed`, { method: 'POST' });
+      const json = await res.json();
+      if (res.ok) setHoursRevealed(json.totalHours ?? 0);
+    } catch (err) {
+      console.error('[project-estimator] book-confirmed failed', err);
     }
   };
 
@@ -264,6 +280,7 @@ const ProjectEstimator = () => {
     setTeamComposition(null);
     setTimeline(null);
     setTotals(null);
+    setHoursRevealed(null);
   };
 
   const sidebarSteps = [1, 2, 3, 4, 5, 6];
@@ -340,7 +357,9 @@ const ProjectEstimator = () => {
               teamComposition={teamComposition}
               timeline={timeline}
               totals={totals}
+              hoursRevealed={hoursRevealed}
               onOpenLeadModal={() => setLeadModalOpen(true)}
+              onBookConfirmed={handleBookConfirmed}
               onRestart={restart}
             />
           )}
@@ -993,12 +1012,23 @@ type Step6Props = {
   t: ReturnType<typeof useTranslations>;
   teamComposition: TeamComposition | null;
   timeline: TimelineData | null;
-  totals: { totalHours: number; totalBudget: number } | null;
+  totals: { totalBudget: number } | null;
+  hoursRevealed: number | null;
   onOpenLeadModal: () => void;
+  onBookConfirmed: () => void;
   onRestart: () => void;
 };
 
-const Step6 = ({ t, teamComposition, timeline, totals, onOpenLeadModal, onRestart }: Step6Props) => {
+const Step6 = ({
+  t,
+  teamComposition,
+  timeline,
+  totals,
+  hoursRevealed,
+  onOpenLeadModal,
+  onBookConfirmed,
+  onRestart,
+}: Step6Props) => {
   const roleLabel = (role: RoleKey) => t(`step6.role${capitalize(role === 'uiux' ? 'uiux' : role === 'bapm' ? 'bapm' : role)}`);
 
   return (
@@ -1055,7 +1085,9 @@ const Step6 = ({ t, teamComposition, timeline, totals, onOpenLeadModal, onRestar
           </div>
           <div>
             <span>{t('step6.totalHours')}</span>
-            <strong className={totals ? '' : 'is-blurred'}>{totals ? totals.totalHours : '---------'}</strong>
+            <strong className={hoursRevealed !== null ? '' : 'is-blurred'}>
+              {hoursRevealed !== null ? hoursRevealed : '---------'}
+            </strong>
           </div>
         </div>
 
@@ -1067,6 +1099,15 @@ const Step6 = ({ t, teamComposition, timeline, totals, onOpenLeadModal, onRestar
           <div className="pe-success">
             <h4>{t('step6.successTitle')}</h4>
             <p>{t('step6.successNote')}</p>
+
+            {hoursRevealed === null && (
+              <div className="pe-book-call-wrapper">
+                <h4 className="pe-eyebrow">{t('step6.bookCallTitle')}</h4>
+                <p className="pe-help">{t('step6.bookCallHelp')}</p>
+                <BookCallGate onBooked={onBookConfirmed} />
+              </div>
+            )}
+
             <button type="button" className="btn-secondary" onClick={onRestart}>
               {t('step6.restart')}
             </button>

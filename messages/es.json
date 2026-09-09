@@ -4969,6 +4969,8 @@
             },
             "successTitle": "¡Gracias! Aquí tienes tu estimación",
             "successNote": "Hemos enviado los detalles a nuestro equipo. Te contactaremos en menos de 24-48h para afinar juntos el resultado.",
+            "bookCallTitle": "RESERVA UNA LLAMADA PARA VER LAS HORAS ESTIMADAS",
+            "bookCallHelp": "El presupuesto ya es visible arriba. Para desbloquear también las horas estimadas, reserva una llamada de 30 minutos con nuestro equipo — así podemos revisar el resultado contigo.",
             "restart": "EMPEZAR OTRA ESTIMACIÓN"
         },
         "errors": {

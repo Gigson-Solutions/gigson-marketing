@@ -4951,6 +4951,8 @@
             },
             "successTitle": "Thanks! Here's your estimate",
             "successNote": "We've sent the details to our team. We'll reach out within 24-48h to fine-tune the result together.",
+            "bookCallTitle": "BOOK A CALL TO SEE THE ESTIMATED HOURS",
+            "bookCallHelp": "The budget above is already visible. To also unlock the estimated hours, book a 30-minute call with our team — so we can review the result together.",
             "restart": "START ANOTHER ESTIMATE"
         },
         "errors": {

@@ -617,6 +617,21 @@ textarea.pe-textarea {
   margin-bottom: var(--gs-space-4);
 }
 
+/* ── Call-booking gate (Cal.com embed) — hours stay blurred until this is
+   completed; see BookCallGate.tsx and Step6 in ProjectEstimator.tsx ──── */
+.pe-book-call-wrapper {
+  background: var(--gs-bg-1, #fff);
+  border-radius: var(--gs-radius-lg);
+  padding: var(--gs-space-5);
+  margin: var(--gs-space-5) 0;
+}
+.pe-book-call {
+  margin-top: var(--gs-space-3);
+  border-radius: var(--gs-radius-md, 12px);
+  overflow: hidden;
+  min-height: 480px;
+}
+
 /* ── Feature + lead modals (rendered via shared/ui/Dialog.tsx) ──── */
 .feature-modal,
 .lead-modal {
