@@ -58,6 +58,53 @@ export const QUALITY_LEVELS: QualityLevel[] = ['mvp', 'standard', 'polished'];
 
 export type TimelineMode = 'overall' | 'phased';
 
+// ── Type-specific fields (Step 2 / Step 3) ──────────────────────────────
+// Steps 2-3 used to ask the same appSize/platforms/uiLevel/qaLevel
+// questions to every project type. Only software_development (and the
+// "other" fallback) still do — erp_implementation/integrations/consulting
+// each ask their own, more relevant set instead. See validate.ts for which
+// fields are required per projectType.
+export type ErpSystem = 'odoo' | 'holded' | 'other';
+export const ERP_SYSTEMS: ErpSystem[] = ['odoo', 'holded', 'other'];
+
+export type ErpModule =
+  | 'accounting'
+  | 'inventory'
+  | 'manufacturing'
+  | 'crm'
+  | 'purchasing'
+  | 'hr'
+  | 'pos'
+  | 'other';
+export const ERP_MODULES: ErpModule[] = [
+  'accounting',
+  'inventory',
+  'manufacturing',
+  'crm',
+  'purchasing',
+  'hr',
+  'pos',
+  'other',
+];
+
+export type IntegrationDirection = 'one_way' | 'bidirectional';
+export const INTEGRATION_DIRECTIONS: IntegrationDirection[] = ['one_way', 'bidirectional'];
+
+export type IntegrationFrequency = 'real_time' | 'batch';
+export const INTEGRATION_FREQUENCIES: IntegrationFrequency[] = ['real_time', 'batch'];
+
+export type ConsultingScopeItem = 'audit' | 'strategy' | 'architecture' | 'team_augmentation' | 'other';
+export const CONSULTING_SCOPE_ITEMS: ConsultingScopeItem[] = [
+  'audit',
+  'strategy',
+  'architecture',
+  'team_augmentation',
+  'other',
+];
+
+export type ConsultingEngagement = 'one_off' | 'ongoing';
+export const CONSULTING_ENGAGEMENTS: ConsultingEngagement[] = ['one_off', 'ongoing'];
+
 export interface EstimatorInputs {
   projectType: ProjectType;
   projectTypeOther?: string;
@@ -67,10 +114,30 @@ export interface EstimatorInputs {
   competitors: string[];
   roles: AppRole[];
   rolesOther?: string;
-  appSize: AppSize;
-  platforms: Platform[];
-  uiLevel: QualityLevel;
-  qaLevel: QualityLevel;
+
+  // software_development / other
+  appSize?: AppSize;
+  platforms?: Platform[];
+  uiLevel?: QualityLevel;
+
+  // erp_implementation / integrations (shared)
+  qaLevel?: QualityLevel;
+
+  // erp_implementation only
+  erpSystem?: ErpSystem;
+  erpModules?: ErpModule[];
+  erpUsers?: number;
+  migrationNeeded?: boolean;
+
+  // integrations only
+  integrationSystems?: string[];
+  integrationDirection?: IntegrationDirection;
+  integrationFrequency?: IntegrationFrequency;
+
+  // consulting only
+  consultingScope?: ConsultingScopeItem[];
+  consultingEngagement?: ConsultingEngagement;
+
   timelineMode: TimelineMode;
   timelineOverallMonths?: number;
   timelinePhaseMvpMonths?: number;

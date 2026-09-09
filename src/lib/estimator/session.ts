@@ -24,6 +24,15 @@ export type EstimatorSessionDoc = {
   platforms?: string | null;
   uiLevel?: string | null;
   qaLevel?: string | null;
+  erpSystem?: string | null;
+  erpModules?: string | null;
+  erpUsers?: number | null;
+  migrationNeeded?: boolean | null;
+  integrationSystems?: Array<{ value?: string | null }> | null;
+  integrationDirection?: string | null;
+  integrationFrequency?: string | null;
+  consultingScope?: string | null;
+  consultingEngagement?: string | null;
   timelineMode?: string | null;
   timelineOverallMonths?: number | null;
   timelinePhaseMvpMonths?: number | null;
@@ -38,6 +47,8 @@ export type EstimatorSessionDoc = {
   totalHours?: number | null;
   totalBudget?: number | null;
   leadEmail?: string | null;
+  leadCapturedAt?: string | null;
+  callBookedAt?: string | null;
 };
 
 export async function getSessionByToken(

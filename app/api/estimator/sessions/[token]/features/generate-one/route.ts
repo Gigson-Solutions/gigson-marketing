@@ -70,10 +70,23 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
     competitors: (session.competitors ?? []).map((c) => c.value ?? '').filter(Boolean),
     roles: (session.roles ?? '').split(',').filter(Boolean) as EstimatorInputs['roles'],
     rolesOther: session.rolesOther ?? undefined,
-    appSize: (session.appSize ?? 'mvp') as EstimatorInputs['appSize'],
-    platforms: (session.platforms ?? '').split(',').filter(Boolean) as EstimatorInputs['platforms'],
-    uiLevel: (session.uiLevel ?? 'standard') as EstimatorInputs['uiLevel'],
-    qaLevel: (session.qaLevel ?? 'standard') as EstimatorInputs['qaLevel'],
+    appSize: (session.appSize ?? undefined) as EstimatorInputs['appSize'],
+    platforms: session.platforms ? (session.platforms.split(',').filter(Boolean) as EstimatorInputs['platforms']) : undefined,
+    uiLevel: (session.uiLevel ?? undefined) as EstimatorInputs['uiLevel'],
+    qaLevel: (session.qaLevel ?? undefined) as EstimatorInputs['qaLevel'],
+    erpSystem: (session.erpSystem ?? undefined) as EstimatorInputs['erpSystem'],
+    erpModules: session.erpModules
+      ? (session.erpModules.split(',').filter(Boolean) as EstimatorInputs['erpModules'])
+      : undefined,
+    erpUsers: session.erpUsers ?? undefined,
+    migrationNeeded: session.migrationNeeded ?? undefined,
+    integrationSystems: (session.integrationSystems ?? []).map((s) => s.value ?? '').filter(Boolean),
+    integrationDirection: (session.integrationDirection ?? undefined) as EstimatorInputs['integrationDirection'],
+    integrationFrequency: (session.integrationFrequency ?? undefined) as EstimatorInputs['integrationFrequency'],
+    consultingScope: session.consultingScope
+      ? (session.consultingScope.split(',').filter(Boolean) as EstimatorInputs['consultingScope'])
+      : undefined,
+    consultingEngagement: (session.consultingEngagement ?? undefined) as EstimatorInputs['consultingEngagement'],
     timelineMode: session.timelineMode === 'phased' ? 'phased' : 'overall',
     timelineOverallMonths: session.timelineOverallMonths ?? undefined,
   };

@@ -15,6 +15,12 @@ import {
   APP_ROLES,
   APP_SIZES,
   BUSINESS_DOMAINS,
+  CONSULTING_ENGAGEMENTS,
+  CONSULTING_SCOPE_ITEMS,
+  ERP_MODULES,
+  ERP_SYSTEMS,
+  INTEGRATION_DIRECTIONS,
+  INTEGRATION_FREQUENCIES,
   PLATFORMS,
   PROJECT_TYPES,
   QUALITY_LEVELS,
@@ -30,16 +36,18 @@ const TOTAL_STEPS = 6;
 
 type GenerationStatus = 'idle' | 'generating' | 'ready' | 'failed';
 
+// software_development and the "other" fallback keep the original generic
+// Step 2/3 questions (appSize/platforms/uiLevel/qaLevel); erp_implementation,
+// integrations and consulting each get their own set instead — see types.ts.
+const usesGenericAppFields = (projectType: EstimatorInputs['projectType'] | undefined) =>
+  !projectType || projectType === 'software_development' || projectType === 'other';
+
 const initialValues: EstimatorInputs = {
   projectType: 'software_development' as never, // placeholder, cleared below — no type pre-selected
   projectDescription: '',
   businessDomain: 'ecommerce' as never, // placeholder, cleared below — no domain pre-selected
   competitors: [],
   roles: [],
-  appSize: 'mvp' as never,
-  platforms: [],
-  uiLevel: 'standard' as never,
-  qaLevel: 'standard' as never,
   timelineMode: 'overall',
   timelineOverallMonths: undefined,
 };
@@ -47,9 +55,19 @@ const initialValues: EstimatorInputs = {
 const blankSelectFields = () => ({
   projectType: undefined as unknown as EstimatorInputs['projectType'],
   businessDomain: undefined as unknown as EstimatorInputs['businessDomain'],
-  appSize: undefined as unknown as EstimatorInputs['appSize'],
-  uiLevel: undefined as unknown as EstimatorInputs['uiLevel'],
-  qaLevel: undefined as unknown as EstimatorInputs['qaLevel'],
+  appSize: undefined,
+  platforms: undefined,
+  uiLevel: undefined,
+  qaLevel: undefined,
+  erpSystem: undefined,
+  erpModules: undefined,
+  erpUsers: undefined,
+  migrationNeeded: undefined,
+  integrationSystems: undefined,
+  integrationDirection: undefined,
+  integrationFrequency: undefined,
+  consultingScope: undefined,
+  consultingEngagement: undefined,
 });
 
 const ProjectEstimator = () => {
@@ -109,12 +127,32 @@ const ProjectEstimator = () => {
       if (!values.roles || values.roles.length === 0) next.roles = true;
     }
     if (n === 2) {
-      if (!values.appSize) next.appSize = true;
-      if (!values.platforms || values.platforms.length === 0) next.platforms = true;
+      if (usesGenericAppFields(values.projectType)) {
+        if (!values.appSize) next.appSize = true;
+        if (!values.platforms || values.platforms.length === 0) next.platforms = true;
+      } else if (values.projectType === 'erp_implementation') {
+        if (!values.erpSystem) next.erpSystem = true;
+        if (!values.erpModules || values.erpModules.length === 0) next.erpModules = true;
+      } else if (values.projectType === 'integrations') {
+        if (!values.integrationSystems || values.integrationSystems.length === 0) next.integrationSystems = true;
+        if (!values.integrationDirection) next.integrationDirection = true;
+        if (!values.integrationFrequency) next.integrationFrequency = true;
+      } else if (values.projectType === 'consulting') {
+        if (!values.consultingScope || values.consultingScope.length === 0) next.consultingScope = true;
+      }
     }
     if (n === 3) {
-      if (!values.uiLevel) next.uiLevel = true;
-      if (!values.qaLevel) next.qaLevel = true;
+      if (usesGenericAppFields(values.projectType)) {
+        if (!values.uiLevel) next.uiLevel = true;
+      }
+      if (values.projectType === 'erp_implementation' && values.migrationNeeded === undefined) {
+        next.migrationNeeded = true;
+      }
+      if (values.projectType === 'consulting') {
+        if (!values.consultingEngagement) next.consultingEngagement = true;
+      } else if (!values.qaLevel) {
+        next.qaLevel = true;
+      }
     }
     if (n === 4) {
       const hasTimeline =
@@ -493,8 +531,8 @@ type StepBasicProps = {
   setField: <K extends keyof EstimatorInputs>(key: K, value: EstimatorInputs[K]) => void;
 };
 
-const Step2 = ({ t, values, errors, setField }: StepBasicProps) => (
-  <div className="pe-step">
+const Step2Software = ({ t, values, errors, setField }: StepBasicProps) => (
+  <>
     <section className="pe-field">
       <h3>{t('step2.sizeLabel')}</h3>
       <ChipSelect
@@ -522,50 +560,229 @@ const Step2 = ({ t, values, errors, setField }: StepBasicProps) => (
           title: t(`step2.platform${capitalize(p)}Title`),
           description: t(`step2.platform${capitalize(p)}Desc`),
         }))}
-        value={values.platforms}
+        value={values.platforms ?? []}
         onChange={(next) => setField('platforms', next as EstimatorInputs['platforms'])}
       />
       {errors.platforms && <p className="pe-error">{t('step2.platformsError')}</p>}
     </section>
-  </div>
+  </>
 );
+
+const Step2Erp = ({ t, values, errors, setField }: StepBasicProps) => (
+  <>
+    <section className="pe-field">
+      <h3>{t('step2.erpSystemLabel')}</h3>
+      <ChipSelect
+        cardStyle
+        ariaLabel={t('step2.erpSystemLabel')}
+        options={ERP_SYSTEMS.map((s) => ({ value: s, title: t(`step2.erpSystem${capitalize(s)}`) }))}
+        value={values.erpSystem ? [values.erpSystem] : []}
+        onChange={([v]) => setField('erpSystem', v as EstimatorInputs['erpSystem'])}
+      />
+      {errors.erpSystem && <p className="pe-error">{t('step2.erpSystemError')}</p>}
+    </section>
+
+    <section className="pe-field">
+      <h3>{t('step2.erpModulesLabel')}</h3>
+      <ChipSelect
+        cardStyle
+        multiple
+        ariaLabel={t('step2.erpModulesLabel')}
+        options={ERP_MODULES.map((m) => ({ value: m, title: t(`step2.erpModule${capitalize(m)}`) }))}
+        value={values.erpModules ?? []}
+        onChange={(next) => setField('erpModules', next as EstimatorInputs['erpModules'])}
+      />
+      {errors.erpModules && <p className="pe-error">{t('step2.erpModulesError')}</p>}
+    </section>
+
+    <section className="pe-field">
+      <h3>{t('step2.erpUsersLabel')}</h3>
+      <p className="pe-help">{t('step2.erpUsersHelp')}</p>
+      <NumericStepper
+        value={values.erpUsers ?? ''}
+        onChange={(v) => setField('erpUsers', v)}
+        min={1}
+        max={100000}
+        ariaLabel={t('step2.erpUsersLabel')}
+      />
+    </section>
+  </>
+);
+
+const Step2Integrations = ({ t, values, errors, setField }: StepBasicProps) => (
+  <>
+    <section className="pe-field">
+      <h3>{t('step2.integrationSystemsLabel')}</h3>
+      <p className="pe-help">{t('step2.integrationSystemsHelp')}</p>
+      <TagInput
+        value={values.integrationSystems ?? []}
+        onChange={(next) => setField('integrationSystems', next)}
+        max={10}
+        placeholder={t('step2.integrationSystemsPlaceholder')}
+        ariaLabel={t('step2.integrationSystemsLabel')}
+      />
+      {errors.integrationSystems && <p className="pe-error">{t('step2.integrationSystemsError')}</p>}
+    </section>
+
+    <section className="pe-field">
+      <h3>{t('step2.integrationDirectionLabel')}</h3>
+      <ChipSelect
+        cardStyle
+        ariaLabel={t('step2.integrationDirectionLabel')}
+        options={INTEGRATION_DIRECTIONS.map((d) => ({
+          value: d,
+          title: t(`step2.integrationDirection${capitalize(d === 'one_way' ? 'oneWay' : d)}Title`),
+          description: t(`step2.integrationDirection${capitalize(d === 'one_way' ? 'oneWay' : d)}Desc`),
+        }))}
+        value={values.integrationDirection ? [values.integrationDirection] : []}
+        onChange={([v]) => setField('integrationDirection', v as EstimatorInputs['integrationDirection'])}
+      />
+      {errors.integrationDirection && <p className="pe-error">{t('step2.integrationDirectionError')}</p>}
+    </section>
+
+    <section className="pe-field">
+      <h3>{t('step2.integrationFrequencyLabel')}</h3>
+      <ChipSelect
+        cardStyle
+        ariaLabel={t('step2.integrationFrequencyLabel')}
+        options={INTEGRATION_FREQUENCIES.map((f) => ({
+          value: f,
+          title: t(`step2.integrationFrequency${capitalize(f === 'real_time' ? 'realTime' : f)}Title`),
+          description: t(`step2.integrationFrequency${capitalize(f === 'real_time' ? 'realTime' : f)}Desc`),
+        }))}
+        value={values.integrationFrequency ? [values.integrationFrequency] : []}
+        onChange={([v]) => setField('integrationFrequency', v as EstimatorInputs['integrationFrequency'])}
+      />
+      {errors.integrationFrequency && <p className="pe-error">{t('step2.integrationFrequencyError')}</p>}
+    </section>
+  </>
+);
+
+const Step2Consulting = ({ t, values, errors, setField }: StepBasicProps) => (
+  <section className="pe-field">
+    <h3>{t('step2.consultingScopeLabel')}</h3>
+    <ChipSelect
+      cardStyle
+      multiple
+      ariaLabel={t('step2.consultingScopeLabel')}
+      options={CONSULTING_SCOPE_ITEMS.map((s) => ({
+        value: s,
+        title: t(`step2.consultingScope${capitalize(s === 'team_augmentation' ? 'teamAugmentation' : s)}`),
+      }))}
+      value={values.consultingScope ?? []}
+      onChange={(next) => setField('consultingScope', next as EstimatorInputs['consultingScope'])}
+    />
+    {errors.consultingScope && <p className="pe-error">{t('step2.consultingScopeError')}</p>}
+  </section>
+);
+
+const Step2 = (props: StepBasicProps) => {
+  const { projectType } = props.values;
+  return (
+    <div className="pe-step">
+      {usesGenericAppFields(projectType) && <Step2Software {...props} />}
+      {projectType === 'erp_implementation' && <Step2Erp {...props} />}
+      {projectType === 'integrations' && <Step2Integrations {...props} />}
+      {projectType === 'consulting' && <Step2Consulting {...props} />}
+    </div>
+  );
+};
 
 // ─────────────────────────── Step 3 ───────────────────────────
-const Step3 = ({ t, values, errors, setField }: StepBasicProps) => (
-  <div className="pe-step">
-    <section className="pe-field">
-      <h3>{t('step3.uiLabel')}</h3>
-      <ChipSelect
-        cardStyle
-        ariaLabel={t('step3.uiLabel')}
-        options={QUALITY_LEVELS.map((l) => ({
-          value: l,
-          title: t(`step3.ui${capitalize(l)}Title`),
-          description: t(`step3.ui${capitalize(l)}Desc`),
-        }))}
-        value={values.uiLevel ? [values.uiLevel] : []}
-        onChange={([v]) => setField('uiLevel', v as EstimatorInputs['uiLevel'])}
-      />
-      {errors.uiLevel && <p className="pe-error">{t('step3.uiError')}</p>}
-    </section>
-
-    <section className="pe-field">
-      <h3>{t('step3.qaLabel')}</h3>
-      <ChipSelect
-        cardStyle
-        ariaLabel={t('step3.qaLabel')}
-        options={QUALITY_LEVELS.map((l) => ({
-          value: l,
-          title: t(`step3.qa${capitalize(l)}Title`),
-          description: t(`step3.qa${capitalize(l)}Desc`),
-        }))}
-        value={values.qaLevel ? [values.qaLevel] : []}
-        onChange={([v]) => setField('qaLevel', v as EstimatorInputs['qaLevel'])}
-      />
-      {errors.qaLevel && <p className="pe-error">{t('step3.qaError')}</p>}
-    </section>
-  </div>
+const QaField = ({ t, values, errors, setField }: StepBasicProps) => (
+  <section className="pe-field">
+    <h3>{t('step3.qaLabel')}</h3>
+    <ChipSelect
+      cardStyle
+      ariaLabel={t('step3.qaLabel')}
+      options={QUALITY_LEVELS.map((l) => ({
+        value: l,
+        title: t(`step3.qa${capitalize(l)}Title`),
+        description: t(`step3.qa${capitalize(l)}Desc`),
+      }))}
+      value={values.qaLevel ? [values.qaLevel] : []}
+      onChange={([v]) => setField('qaLevel', v as EstimatorInputs['qaLevel'])}
+    />
+    {errors.qaLevel && <p className="pe-error">{t('step3.qaError')}</p>}
+  </section>
 );
+
+const Step3Software = (props: StepBasicProps) => {
+  const { t, values, errors, setField } = props;
+  return (
+    <>
+      <section className="pe-field">
+        <h3>{t('step3.uiLabel')}</h3>
+        <ChipSelect
+          cardStyle
+          ariaLabel={t('step3.uiLabel')}
+          options={QUALITY_LEVELS.map((l) => ({
+            value: l,
+            title: t(`step3.ui${capitalize(l)}Title`),
+            description: t(`step3.ui${capitalize(l)}Desc`),
+          }))}
+          value={values.uiLevel ? [values.uiLevel] : []}
+          onChange={([v]) => setField('uiLevel', v as EstimatorInputs['uiLevel'])}
+        />
+        {errors.uiLevel && <p className="pe-error">{t('step3.uiError')}</p>}
+      </section>
+      <QaField {...props} />
+    </>
+  );
+};
+
+const Step3Erp = (props: StepBasicProps) => {
+  const { t, values, errors, setField } = props;
+  return (
+    <>
+      <section className="pe-field">
+        <h3>{t('step3.migrationNeededLabel')}</h3>
+        <ChipSelect
+          cardStyle
+          ariaLabel={t('step3.migrationNeededLabel')}
+          options={[
+            { value: 'yes', title: t('step3.migrationNeededYes') },
+            { value: 'no', title: t('step3.migrationNeededNo') },
+          ]}
+          value={values.migrationNeeded === undefined ? [] : [values.migrationNeeded ? 'yes' : 'no']}
+          onChange={([v]) => setField('migrationNeeded', v === 'yes')}
+        />
+        {errors.migrationNeeded && <p className="pe-error">{t('step3.migrationNeededError')}</p>}
+      </section>
+      <QaField {...props} />
+    </>
+  );
+};
+
+const Step3Consulting = ({ t, values, errors, setField }: StepBasicProps) => (
+  <section className="pe-field">
+    <h3>{t('step3.consultingEngagementLabel')}</h3>
+    <ChipSelect
+      cardStyle
+      ariaLabel={t('step3.consultingEngagementLabel')}
+      options={CONSULTING_ENGAGEMENTS.map((e) => ({
+        value: e,
+        title: t(`step3.consultingEngagement${capitalize(e === 'one_off' ? 'oneOff' : e)}Title`),
+        description: t(`step3.consultingEngagement${capitalize(e === 'one_off' ? 'oneOff' : e)}Desc`),
+      }))}
+      value={values.consultingEngagement ? [values.consultingEngagement] : []}
+      onChange={([v]) => setField('consultingEngagement', v as EstimatorInputs['consultingEngagement'])}
+    />
+    {errors.consultingEngagement && <p className="pe-error">{t('step3.consultingEngagementError')}</p>}
+  </section>
+);
+
+const Step3 = (props: StepBasicProps) => {
+  const { projectType } = props.values;
+  return (
+    <div className="pe-step">
+      {usesGenericAppFields(projectType) && <Step3Software {...props} />}
+      {projectType === 'erp_implementation' && <Step3Erp {...props} />}
+      {projectType === 'integrations' && <QaField {...props} />}
+      {projectType === 'consulting' && <Step3Consulting {...props} />}
+    </div>
+  );
+};
 
 // ─────────────────────────── Step 4 ───────────────────────────
 type Step4Props = StepBasicProps & { onGenerate: () => void; onSkip: () => void; busy: boolean };
