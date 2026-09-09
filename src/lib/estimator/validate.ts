@@ -54,15 +54,17 @@ export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs
     .slice(0, MAX_COMPETITORS)
     .map((c) => c.trim().slice(0, MAX_COMPETITOR_LENGTH));
 
+  // Steps 1-3 branch by projectType — see types.ts for which fields belong
+  // to which type. `software_development` and the `other` fallback keep the
+  // original competitors/roles (Step 1) and appSize/platforms/uiLevel(/qaLevel)
+  // (Steps 2-3) questions; erp/integrations/consulting skip competitors/roles
+  // entirely (no end-user concept for an ERP config, integration or
+  // consulting engagement) and get their own Step 2/3 fields instead.
+  const usesGenericAppFields = projectType === 'software_development' || projectType === 'other';
+
   const rolesRaw = Array.isArray(r.roles) ? r.roles : [];
   const roles = rolesRaw.filter((rr): rr is string => typeof rr === 'string' && APP_ROLES.includes(rr as never));
-  if (roles.length === 0) return { ok: false, error: 'Invalid roles' };
-
-  // Steps 2-3 branch by projectType — see types.ts for which fields belong
-  // to which type. `software_development` and the `other` fallback keep the
-  // original appSize/platforms/uiLevel(/qaLevel) questions; erp/integrations/
-  // consulting each get their own, more relevant set instead.
-  const usesGenericAppFields = projectType === 'software_development' || projectType === 'other';
+  if (usesGenericAppFields && roles.length === 0) return { ok: false, error: 'Invalid roles' };
 
   let appSize: EstimatorInputs['appSize'];
   let platforms: EstimatorInputs['platforms'];

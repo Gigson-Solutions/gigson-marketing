@@ -204,7 +204,9 @@ export function buildEstimatorUserPrompt(inputs: EstimatorInputs): string {
     `Business domain: ${domain}`,
     `Project description: ${inputs.projectDescription}`,
     inputs.competitors.length > 0 ? `Known competitors: ${inputs.competitors.join(', ')}` : null,
-    `Who will use or benefit from the result: ${inputs.roles.join(', ')}${inputs.rolesOther ? ` (other: ${inputs.rolesOther})` : ''}`,
+    inputs.roles.length > 0
+      ? `Who will use or benefit from the result: ${inputs.roles.join(', ')}${inputs.rolesOther ? ` (other: ${inputs.rolesOther})` : ''}`
+      : null,
     ...typeSpecificLines(inputs),
     months ? `Target overall timeline: ~${months} months` : null,
   ].filter(Boolean);
