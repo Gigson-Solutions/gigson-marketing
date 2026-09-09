@@ -21,6 +21,9 @@ const bgStyle = {
   backgroundSize: 'cover',
 };
 
+type FaqItem = { question: string; answer: string };
+type AiAgentsCta = { title: string; description: string; buttonText: string };
+
 const Logistics = () => {
   const t = useTranslations('cases-logistics');
 
@@ -30,6 +33,8 @@ const Logistics = () => {
   const improveAreas = t.raw('improveAreas') as Parameters<typeof ImproveAreas>[0];
   const howWeWork = t.raw('howWeWork') as Parameters<typeof HowWeWork>[0];
   const digitalProduct = t.raw('digitalProduct') as { buttonText: string };
+  const faq = t.raw('faq') as { title: string; items: FaqItem[] } | undefined;
+  const aiAgentsCta = t.raw('aiAgentsCta') as AiAgentsCta | undefined;
 
   return (
     <>
@@ -43,6 +48,14 @@ const Logistics = () => {
       <section className="flex justify-center py-14 lg:py-20 px-landing">
         <ButtonLink link="/contact" text={digitalProduct.buttonText} outlined />
       </section>
+      {faq && <ServiceFaq title={faq.title} faqs={faq.items} />}
+      {aiAgentsCta && (
+        <section className="flex flex-col items-center gap-4 py-14 lg:py-20 px-landing text-center">
+          <h2>{aiAgentsCta.title}</h2>
+          <p>{aiAgentsCta.description}</p>
+          <ButtonLink link="/ai-agents" text={aiAgentsCta.buttonText} />
+        </section>
+      )}
       <Brand />
     </>
   );

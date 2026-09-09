@@ -29,7 +29,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/contact`,
       },
     },
-    openGraph: { title: seo.title, description: seo.description, url: canonicalBase },
+    openGraph: { title: seo.title, description: seo.description, url: canonicalBase, images: ['/opengraph-image'] },
   };
 }
 

@@ -28,7 +28,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/iso-27001`,
       },
     },
-    openGraph: { title, description, url: canonical },
+    openGraph: { title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

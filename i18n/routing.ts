@@ -6,7 +6,6 @@ export const routing = defineRouting({
   localePrefix: 'as-needed',
   pathnames: {
     '/': '/',
-    '/services': { en: '/services', es: '/servicios' },
     '/logistics-technology': { en: '/logistics-technology', es: '/tecnologia-logistica' },
     '/retail-ecommerce-technology': {
       en: '/retail-ecommerce-technology',
@@ -15,6 +14,10 @@ export const routing = defineRouting({
     '/construction-technology': {
       en: '/construction-technology',
       es: '/tecnologia-construccion',
+    },
+    '/professional-services-technology': {
+      en: '/professional-services-technology',
+      es: '/servicios-profesionales',
     },
     '/cases': { en: '/cases', es: '/casos' },
     '/about': { en: '/about', es: '/sobre-nosotros' },
@@ -41,6 +44,9 @@ export const routing = defineRouting({
     '/gracias-iso27001': '/gracias-iso27001',
     '/about-claude-partner': { en: '/about-claude-partner', es: '/sobre-claude-partner' },
     '/integrations-holded': { en: '/integrations-holded', es: '/integraciones-holded' },
+    '/integrations-odoo': { en: '/integrations-odoo', es: '/integraciones-odoo' },
+    '/custom-erp': { en: '/custom-erp', es: '/erp-a-medida' },
+    '/project-estimator': { en: '/project-estimator', es: '/estimador-de-proyecto' },
     '/blog': '/blog',
     '/blog/[slug]': '/blog/[slug]',
   },

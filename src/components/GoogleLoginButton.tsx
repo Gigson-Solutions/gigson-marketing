@@ -1,6 +1,22 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
 // Payload admin UI component — se carga en la pantalla de login antes del formulario.
 // Plain <a> intencionado: next/link haría prefetch del endpoint OAuth y causaría errores 204.
+//
+// `?error=...` es lo que `payload-oauth2` añade al redirigir aquí tras un fallo
+// (dominio no permitido, code inválido, fallo de intercambio de token con Google...).
+// Antes este componente lo ignoraba por completo — el login fallaba en silencio,
+// sin ningún indicio visible de qué pasó ("no sucede nada" al hacer SSO).
 export default function GoogleLoginButton() {
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setError(params.get('error'));
+  }, []);
+
   return (
     <div
       style={{
@@ -11,6 +27,23 @@ export default function GoogleLoginButton() {
         marginBottom: '1.5rem',
       }}
     >
+      {error && (
+        <p
+          style={{
+            margin: 0,
+            padding: '0.6rem 0.9rem',
+            borderRadius: '4px',
+            background: '#fce8e6',
+            color: '#c5221f',
+            fontSize: '12px',
+            fontFamily: 'Roboto, Arial, sans-serif',
+            maxWidth: '320px',
+            textAlign: 'center',
+          }}
+        >
+          {error}
+        </p>
+      )}
       <a
         href="/api/users/oauth/authorize"
         style={{

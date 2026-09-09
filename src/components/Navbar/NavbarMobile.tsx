@@ -34,6 +34,7 @@ type MenuItem = {
   name: string;
   href?: NavPathname;
   children?: MenuItem[];
+  columns?: { title: string; items: MenuItem[] }[];
 };
 
 const NavbarMobile = ({ menu }: { menu: MenuItem[] }) => {
@@ -69,39 +70,61 @@ const NavbarMobile = ({ menu }: { menu: MenuItem[] }) => {
 
         <div className="border-nav" />
         <ul className="menu-items">
-          {menu.map(({ name, href, children }, index) => (
-            <li
-              key={index}
-              className={`menu-item ${children ? 'has-dropdown' : ''}`}
-              onClick={() => isMobileMenuOpen && toggleDropdown(index)}
-            >
-              {children ? (
-                <>
-                  <span className="flex items-center menu-item__link">
+          {menu.map(({ name, href, children, columns }, index) => {
+            const hasDropdown = Boolean(children || columns);
+            return (
+              <li
+                key={index}
+                className={`menu-item ${hasDropdown ? 'has-dropdown' : ''}`}
+                onClick={() => isMobileMenuOpen && toggleDropdown(index)}
+              >
+                {hasDropdown ? (
+                  <>
+                    <span className="flex items-center menu-item__link">
+                      {name}
+                      <ChevronDown />
+                    </span>
+                    <ul className={`dropdown ${activeDropdown === index ? 'visible' : ''}`}>
+                      {columns
+                        ? columns.map(({ title, items }, colIndex) => (
+                            <li className="dropdown-column" key={colIndex}>
+                              <span className="dropdown-column__title">{title}</span>
+                              <ul className="dropdown-column__items">
+                                {items.map(({ href: childHref, name: childName }, childIndex) => (
+                                  <li className="menu-item__child" key={childIndex}>
+                                    <Link
+                                      href={childHref ?? '/'}
+                                      className="menu-item__child__link"
+                                      onClick={closeMobileMenu}
+                                    >
+                                      {childName}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </li>
+                          ))
+                        : children!.map(({ href: childHref, name: childName }, childIndex) => (
+                            <li className="menu-item__child" key={childIndex}>
+                              <Link
+                                href={childHref ?? '/'}
+                                className="menu-item__child__link"
+                                onClick={closeMobileMenu}
+                              >
+                                {childName}
+                              </Link>
+                            </li>
+                          ))}
+                    </ul>
+                  </>
+                ) : (
+                  <Link href={href ?? '/'} className="menu-item__link" onClick={closeMobileMenu}>
                     {name}
-                    <ChevronDown />
-                  </span>
-                  <ul className={`dropdown ${activeDropdown === index ? 'visible' : ''}`}>
-                    {children.map(({ href: childHref, name: childName }, childIndex) => (
-                      <li className="menu-item__child" key={childIndex}>
-                        <Link
-                          href={childHref ?? '/'}
-                          className="menu-item__child__link"
-                          onClick={closeMobileMenu}
-                        >
-                          {childName}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : (
-                <Link href={href ?? '/'} className="menu-item__link" onClick={closeMobileMenu}>
-                  {name}
-                </Link>
-              )}
-            </li>
-          ))}
+                  </Link>
+                )}
+              </li>
+            );
+          })}
           <li className="flex items-center xl:ml-6">
             <LanguageSelector />
           </li>

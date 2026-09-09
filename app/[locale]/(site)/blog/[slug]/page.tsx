@@ -2,19 +2,27 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
 import BlogPost from '../../../../../src/components/Blog/BlogPost';
-import { getPostBySlug, getPostSlugs } from '../../../../../lib/posts';
+import { getPostBySlug, getPostSlugs, getRelatedPosts, type Post } from '../../../../../lib/posts';
 
 export const revalidate = 3600;
 
 const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
+/** Absolute canonical URL for a post, from its own `locale`/`slug` — used
+ * both for the post itself and for its `localizedVersion` sibling, which
+ * may have a different slug (translated slugs are more idiomatic for SEO
+ * than forcing the same one across languages). */
+function postUrl(post: Post): string {
+  return post.locale === 'es' ? `${ORIGIN}/es/blog/${post.slug}` : `${ORIGIN}/blog/${post.slug}`;
+}
+
 export async function generateStaticParams() {
-  const slugs = await getPostSlugs();
-  return slugs.flatMap((slug) => [
-    { locale: 'en', slug },
-    { locale: 'es', slug },
-  ]);
+  const [esSlugs, enSlugs] = await Promise.all([getPostSlugs('es'), getPostSlugs('en')]);
+  return [
+    ...esSlugs.map((slug) => ({ locale: 'es', slug })),
+    ...enSlugs.map((slug) => ({ locale: 'en', slug })),
+  ];
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
@@ -25,25 +33,29 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     slug
   } = params;
 
-  const post = await getPostBySlug(slug);
+  // Each post exists in exactly one locale (`Posts.locale` field) — filtering
+  // here means a request for the "wrong" locale 404s instead of silently
+  // rendering the same document twice with incorrect hreflang alternates.
+  const post = await getPostBySlug(slug, locale);
   if (!post) return {};
 
   const title = post.seoTitle ?? post.title;
   const description = post.seoDescription ?? post.excerpt ?? '';
-  const canonical = locale === 'es'
-    ? `${ORIGIN}/es/blog/${slug}`
-    : `${ORIGIN}/blog/${slug}`;
+  const canonical = postUrl(post);
+  const coverUrl = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
+
+  const sibling = post.localizedVersion && typeof post.localizedVersion === 'object' ? post.localizedVersion : null;
+  const languages: Record<string, string> = { 'x-default': canonical, [locale]: canonical };
+  if (sibling?.locale && sibling.slug) {
+    languages[sibling.locale] = postUrl(sibling);
+  }
 
   return {
     title,
     description,
     alternates: {
       canonical,
-      languages: {
-        en: `${ORIGIN}/blog/${slug}`,
-        es: `${ORIGIN}/es/blog/${slug}`,
-        'x-default': `${ORIGIN}/blog/${slug}`,
-      },
+      languages,
     },
     openGraph: {
       title,
@@ -52,7 +64,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       type: 'article',
       publishedTime: post.publishedAt,
       authors: post.author ? [post.author] : undefined,
-      images: post.coverImage ? [{ url: post.coverImage.url, alt: post.coverImage.alt }] : undefined,
+      images: coverUrl ? [{ url: coverUrl, alt: post.coverImage?.alt }] : ['/opengraph-image'],
     },
   };
 }
@@ -65,15 +77,19 @@ export default async function BlogPostPage(props: Props) {
     locale
   } = params;
 
-  const post = await getPostBySlug(slug);
+  const post = await getPostBySlug(slug, locale);
   if (!post) notFound();
+
+  const relatedPosts = await getRelatedPosts(post, 2);
+
+  const coverUrl = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.excerpt,
-    url: `${ORIGIN}${locale === 'es' ? '/es' : ''}/blog/${slug}`,
+    url: postUrl(post),
     datePublished: post.publishedAt,
     author: {
       '@type': 'Person',
@@ -84,7 +100,7 @@ export default async function BlogPostPage(props: Props) {
       name: 'Gigson Solutions',
       url: ORIGIN,
     },
-    ...(post.coverImage && { image: post.coverImage.url }),
+    ...(coverUrl && { image: coverUrl }),
   };
 
   return (
@@ -93,7 +109,7 @@ export default async function BlogPostPage(props: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <BlogPost post={post} />
+      <BlogPost post={post} relatedPosts={relatedPosts} />
     </>
   );
 }

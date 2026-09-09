@@ -25,7 +25,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       canonical,
       languages: { en: `${ORIGIN}/cybersecurity`, es: `${ORIGIN}/es/ciberseguridad`, 'x-default': `${ORIGIN}/cybersecurity` },
     },
-    openGraph: { title, description, url: canonical },
+    openGraph: { title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

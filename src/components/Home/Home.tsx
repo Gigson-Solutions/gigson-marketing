@@ -3,6 +3,7 @@
 import Bgcont from '../../assets/Group 33770.svg';
 import Form from '../Form';
 import { CtaServices } from './CtaServices';
+import { ErpSolutionsBadge } from './ErpSolutionsBadge';
 import Hero from './Hero';
 import HomeCases from './HomeCases';
 import HomeServices from './HomeServices';
@@ -16,6 +17,7 @@ const Home = () => {
       <Hero />
       <HomeServices />
       <PartnerBadge />
+      <ErpSolutionsBadge />
       <HomeCases />
       <CtaServices />
       <div className="wrapper">

@@ -39,7 +39,7 @@ function HomeServices() {
           <div className="home-services-text">
             <p className="home-services-p">{servicesP.p1}</p>
             <p className="home-services-p">{servicesP.p2}</p>
-            <Link href="/services" className="home-services-btn button-main">
+            <Link href="/contact" className="home-services-btn button-main">
               {t('servicesBtn')}
             </Link>
           </div>

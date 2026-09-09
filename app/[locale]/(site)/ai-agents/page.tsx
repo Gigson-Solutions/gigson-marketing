@@ -30,7 +30,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/ai-agents`,
       },
     },
-    openGraph: { title, description, url: canonical },
+    openGraph: { title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

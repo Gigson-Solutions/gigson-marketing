@@ -11,6 +11,7 @@
 - [Tecnología para Logística](https://gigsonsolutions.com/es/tecnologia-logistica)
 - [Tecnología para Retail](https://gigsonsolutions.com/es/tecnologia-retail-ecommerce)
 - [Tecnología para Construcción](https://gigsonsolutions.com/es/tecnologia-construccion)
+- [Tecnología para Servicios Profesionales](https://gigsonsolutions.com/es/servicios-profesionales)
 - [Ingeniería de Software](https://gigsonsolutions.com/es/ingenieria-software)
 - [Ciberseguridad](https://gigsonsolutions.com/es/ciberseguridad)
 - [Consultoría Tecnológica](https://gigsonsolutions.com/es/consultoria-tecnologica)
@@ -27,6 +28,7 @@
 - [Logistics Technology](https://gigsonsolutions.com/logistics-technology)
 - [Retail Technology](https://gigsonsolutions.com/retail-ecommerce-technology)
 - [Construction Technology](https://gigsonsolutions.com/construction-technology)
+- [Professional Services Technology](https://gigsonsolutions.com/professional-services-technology)
 - [Software Engineering](https://gigsonsolutions.com/software-engineering)
 - [Cybersecurity](https://gigsonsolutions.com/cybersecurity)
 - [Cases](https://gigsonsolutions.com/cases)
@@ -36,5 +38,5 @@
 
 Gigson Solutions es una empresa tecnológica española especializada en inteligencia artificial empresarial y transformación digital. Somos miembros de la Claude Partner Network — el programa oficial de Anthropic para empresas que entregan soluciones basadas en Claude a clientes empresariales. Nuestro equipo tiene la certificación Claude Certified Architect y acceso directo al canal de soporte técnico de Anthropic.
 
-Sectores que atendemos: logística, retail, construcción, software, ciberseguridad.
+Sectores que atendemos: logística, retail, construcción, servicios profesionales y legal, software, ciberseguridad.
 Servicios principales: implementación de agentes IA, CTO as a Service, integraciones de sistemas, ingeniería de software a medida, consultoría tecnológica, ciberseguridad.

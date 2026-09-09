@@ -18,6 +18,7 @@ type CaseItem = {
   subTitle?: string;
   challenge: string;
   features: string[];
+  results?: string[];
   solution: string;
   tools: string[];
   tags: string[];
@@ -36,6 +37,7 @@ const Cases = () => {
   const resetFiltersLabel = t('resetFilters');
   const solutionTitle = t('solutionTitle');
   const toolsTitle = t('toolsTitle');
+  const resultsTitle = t('resultsTitle');
   const cases = tRoot.raw('casesDropdown') as CaseItem[];
   const contact = tRoot('ctas.contact');
 
@@ -96,16 +98,18 @@ const Cases = () => {
 
       <div className="wrapper">
         <div className="accordions-container">
-          {filteredCases.map(({ title, subTitle, challenge, features, solution, tools }, i) => (
+          {filteredCases.map(({ title, subTitle, challenge, features, results, solution, tools }, i) => (
             <div key={i}>
               <Accordion
                 title={title}
                 subTitle={subTitle}
                 challenge={challenge}
                 features={features}
+                results={results}
                 solution={solution}
                 tools={tools}
                 featuresTitle={featuresTitle}
+                resultsTitle={resultsTitle}
                 solutionTitle={solutionTitle}
                 toolsTitle={toolsTitle}
                 isOpen={activeIndex === i}

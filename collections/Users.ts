@@ -9,6 +9,15 @@ export const Users: CollectionConfig = {
     disableLocalStrategy: true, // Solo Google SSO — sin email/contraseña
     tokenExpiration: 7200,      // 2h, alineado con la sesión de Google
   },
+  // The auth collection is *always* also the target of `payload-locked-documents`'
+  // `user` relationship (who currently holds a lock). Leaving `lockDocuments` at its
+  // default (true) here additionally lists `users` in that same collection's
+  // polymorphic `document.relationTo` — both relationships then collide on the same
+  // `users_id` join-table column, producing a malformed (parameter-count-mismatched)
+  // SQL query the moment Payload tries to check locks after login. Confirmed by
+  // reading `node_modules/payload/dist/locked-documents/config.js`: this broke every
+  // admin login on staging with a raw Postgres query error post-auth.
+  lockDocuments: false,
   admin: {
     useAsTitle: 'email',
   },

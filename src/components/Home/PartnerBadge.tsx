@@ -25,17 +25,26 @@ export const PartnerBadge = () => {
               <li key={i}>{item}</li>
             ))}
           </ul>
-          <Link href="/ai-agents" className="button-main partner-badge__cta-btn">
-            {t('cta')}
-          </Link>
+          <div className="partner-badge__ctas">
+            <Link href="/ai-agents" className="button-main partner-badge__cta-btn">
+              {t('cta')}
+            </Link>
+            {/* Text fallback: the card link (below) is hidden on mobile via
+                .partner-badge__visual, so this keeps /about-claude-partner
+                reachable from this section on every breakpoint. */}
+            <Link href="/about-claude-partner" className="partner-badge__cta-secondary">
+              {t('ctaSecondary')}
+            </Link>
+          </div>
         </div>
         <div className="partner-badge__visual">
-          <div className="partner-badge__card">
+          <Link href="/about-claude-partner" className="partner-badge__card" aria-label={t('ctaSecondary')}>
             <img src="/claude-logo.png" alt="Claude" className="partner-badge__card-claude" />
             <img src="/anthropic-logo.svg" alt="Anthropic" className="partner-badge__card-anthropic" />
             <span className="partner-badge__card-label">Official certification</span>
             <span className="partner-badge__card-name">Claude Partner Network</span>
-          </div>
+            <span className="partner-badge__card-link">{t('ctaSecondary')} →</span>
+          </Link>
         </div>
       </div>
     </div>

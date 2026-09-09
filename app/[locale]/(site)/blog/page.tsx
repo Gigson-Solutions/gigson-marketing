@@ -1,3 +1,4 @@
+import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import BlogList from '../../../../src/components/Blog/BlogList';
@@ -15,13 +16,13 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     locale
   } = params;
 
-  const title = 'Blog | Gigson Solutions';
-  const description = 'Insights, guides and case studies on AI, software engineering and technology consulting from the Gigson Solutions team.';
+  const t = await getTranslations({ locale, namespace: 'pageSeo' });
+  const seo = t.raw('blog') as { title: string; description: string };
   const canonical = locale === 'es' ? `${ORIGIN}/es/blog` : `${ORIGIN}/blog`;
 
   return {
-    title,
-    description,
+    title: seo.title,
+    description: seo.description,
     alternates: {
       canonical,
       languages: {
@@ -30,11 +31,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/blog`,
       },
     },
-    openGraph: { title, description, url: canonical },
+    openGraph: { title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 
-export default async function BlogPage() {
-  const posts = await getPosts();
+export default async function BlogPage(props: Props) {
+  const { locale } = await props.params;
+  const posts = await getPosts(locale);
   return <BlogList posts={posts} />;
 }

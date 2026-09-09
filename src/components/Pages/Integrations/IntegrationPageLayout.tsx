@@ -1,3 +1,4 @@
+import type { IntegrationLogo } from './data/integrationLogos';
 import IntegrationContactForm from './IntegrationContactForm';
 import IntegrationLogosGrid from './IntegrationLogosGrid';
 import IntegrationsHero from './IntegrationsHero';
@@ -9,6 +10,8 @@ type IntegrationPageLayoutProps = {
   formSubject: string;
   logoUrl?: string;
   showLogosGrid?: boolean;
+  logos?: IntegrationLogo[];
+  toolOptions?: string[];
 };
 
 const IntegrationPageLayout = ({
@@ -17,12 +20,19 @@ const IntegrationPageLayout = ({
   formSubject,
   logoUrl,
   showLogosGrid = false,
+  logos = [],
+  toolOptions = [],
 }: IntegrationPageLayoutProps) => (
   <>
     <IntegrationsHero namespace={namespace} logoUrl={logoUrl} />
     <IntegrationUseCases namespace={namespace} />
-    {showLogosGrid && <IntegrationLogosGrid />}
-    <IntegrationContactForm namespace={namespace} formEmail={formEmail} formSubject={formSubject} />
+    {showLogosGrid && <IntegrationLogosGrid namespace={namespace} logos={logos} />}
+    <IntegrationContactForm
+      namespace={namespace}
+      formEmail={formEmail}
+      formSubject={formSubject}
+      toolOptions={toolOptions}
+    />
   </>
 );
 

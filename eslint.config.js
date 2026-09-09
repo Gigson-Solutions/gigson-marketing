@@ -8,7 +8,20 @@ import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 
 export default defineConfig([
-  { ignores: ['dist/**', 'node_modules/**', 'app/**/importMap.js'] },
+  {
+    ignores: [
+      'dist/**',
+      'node_modules/**',
+      'app/**/importMap.js',
+      '.next/**',
+      '.vercel/**',
+      '.turbo/**',
+      'coverage/**',
+      'build/**',
+      'out/**',
+      'next-env.d.ts',
+    ],
+  },
   js.configs.recommended,
   reactPlugin.configs.flat.recommended,
 

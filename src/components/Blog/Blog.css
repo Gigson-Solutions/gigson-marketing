@@ -1,0 +1,94 @@
+/* Blog article body — overrides the global resets in src/App.css
+   (`li { list-style: none }`, `a { display: inline-block }`) that otherwise
+   break lists and inline links inside rendered post content. Intentionally
+   hand-written instead of `@tailwindcss/typography` (not installed, and its
+   default type scale would fight the DSM tokens in src/design-system/tokens.css). */
+
+.blog-prose {
+  color: var(--gs-ink, #3c3c3b);
+}
+
+.blog-prose > * + * {
+  margin-top: 1.25rem;
+}
+
+.blog-prose h2 {
+  font-size: var(--gs-text-lg, 32px);
+  line-height: var(--gs-lh-heading, 1.16);
+  font-weight: var(--gs-weight-regular, 400);
+  margin-top: 2.5rem;
+}
+
+.blog-prose h3 {
+  font-size: var(--gs-text-md, 24px);
+  line-height: 1.2;
+  font-weight: var(--gs-weight-regular, 400);
+  margin-top: 2rem;
+}
+
+.blog-prose p {
+  font-size: var(--gs-text-sm, 17px);
+  line-height: var(--gs-lh-body, 1.4);
+}
+
+.blog-prose strong {
+  font-weight: var(--gs-weight-medium, 500);
+}
+
+.blog-prose ul,
+.blog-prose ol {
+  padding-left: 1.25em;
+  margin-top: 1.25rem;
+}
+
+.blog-prose li {
+  list-style: revert;
+  margin-bottom: 0.5rem;
+}
+
+.blog-prose ul li {
+  list-style-type: disc;
+}
+
+.blog-prose ol li {
+  list-style-type: decimal;
+}
+
+.blog-prose a {
+  display: inline;
+  color: var(--gs-purple, #7874f4);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.blog-prose a:hover {
+  color: var(--gs-purple-deep, #9747ff);
+}
+
+.blog-prose blockquote {
+  border-left: var(--gs-hairline, 0.5px) solid var(--gs-purple, #7874f4);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  color: var(--gs-ink, #3c3c3b);
+}
+
+.blog-prose hr {
+  border: none;
+  border-top: var(--gs-hairline, 0.5px) solid var(--gs-divider, #d9d9d9);
+  margin: 2.5rem 0;
+}
+
+.blog-prose img {
+  width: 100%;
+  border-radius: var(--gs-radius-lg, 30px);
+}
+
+.blog-prose figure {
+  margin: 2.5rem 0;
+}
+
+.blog-prose figcaption {
+  font-size: var(--gs-text-xs, 14px);
+  color: var(--gs-graphite, #868685);
+  margin-top: 0.5rem;
+}

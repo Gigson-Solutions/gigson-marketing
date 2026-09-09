@@ -13,9 +13,11 @@ type Props = {
   subTitle?: string;
   challenge: string;
   features?: string[];
+  results?: string[];
   solution?: string;
   tools?: string[];
   featuresTitle?: string;
+  resultsTitle?: string;
   solutionTitle?: string;
   toolsTitle?: string;
   isOpen: boolean;
@@ -31,9 +33,11 @@ export const Accordion = ({
   title,
   challenge,
   features,
+  results,
   solution,
   tools,
   featuresTitle,
+  resultsTitle,
   solutionTitle,
   isOpen,
   onClick,
@@ -108,6 +112,20 @@ export const Accordion = ({
                 )
               )}
             </div>
+
+            {!inlineCTA && results && results.length > 0 && resultsTitle && (
+              <div className="cases-dropdown-results">
+                <h4>{resultsTitle}</h4>
+                <ul>
+                  {results.map((result, i) => (
+                    <div key={i}>
+                      <span />
+                      <li>{result}</li>
+                    </div>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {!inlineCTA && solution && solutionTitle && (
               <div className="cases-dropdown-solution">
