@@ -129,8 +129,34 @@ export const ODOO_INTEGRATION_LOGOS: IntegrationLogo[] = [
   { name: 'Microsoft Dynamics', industries: ['Migración ERP'], img: '/img/logos-negros/microsoftdynamics-holded.png' },
 ];
 
+// Competitor research (Sept 2026: ExpertoERP, epoint, Voodoo — Spain-based
+// Odoo partners — plus the Odoo Apps Store integration category) surfaced
+// categories every one of them shows that Gigson's Odoo page doesn't yet:
+// payment gateways, Spanish e-invoicing (VeriFactu), marketing/comms tools,
+// and productivity suites. These are real, technically valid Odoo
+// integrations (Odoo has official/OCA connectors for all of them) — but
+// there are no matching monochrome "-negros" logo assets in
+// public/img/logos-negros/ yet (checked: none exist for any of these,
+// including Spanish carriers SEUR/MRW/Correos Express/GLS that a previous
+// draft incorrectly assumed already existed for Holded).
+// Listed here ONLY as text options for the contact form's tool picker —
+// do NOT add these to ODOO_INTEGRATION_LOGOS (the visual grid) until a
+// matching monochrome logo asset exists for each one, to avoid broken
+// <img> tags / a style mismatch with the rest of the grid.
+const ODOO_TOOL_OPTIONS_PENDING_LOGOS: string[] = [
+  'Stripe',
+  'Redsys',
+  'Bizum',
+  'VeriFactu',
+  'WhatsApp',
+  'Mailchimp',
+  'Google Workspace',
+  'Microsoft 365',
+];
+
 export const ODOO_TOOL_OPTIONS: string[] = [
   ...ODOO_INTEGRATION_LOGOS.map((l) => l.name),
+  ...ODOO_TOOL_OPTIONS_PENDING_LOGOS,
   'Otra',
 ];
 
