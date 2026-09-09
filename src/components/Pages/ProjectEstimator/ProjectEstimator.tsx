@@ -60,10 +60,17 @@ const ProjectEstimator = () => {
 
   const [step, setStep] = useState(1);
   const mainRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
 
   // Scroll back to the top of the form on every step change — otherwise a
   // user who scrolled down to read step N lands mid-scroll on step N+1.
+  // Skip the very first run: effects fire on mount too, and scrolling to
+  // the wizard on load hides the intro hero above it (`.pe-header`).
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     mainRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [step]);
   const [values, setValues] = useState<EstimatorInputs>({
