@@ -123,13 +123,49 @@ const ProjectEstimator = () => {
 
   const clearError = (key: string) => setErrors((prev) => ({ ...prev, [key]: false }));
 
+  // Steps 1-3 all branch on projectType (see usesGenericAppFields and the
+  // Step2/Step3 variants below) — switching type mid-flow would otherwise
+  // leave stale answers from the previous type's fields lying around
+  // (e.g. picking "erp_implementation" after already answering
+  // competitors/roles for "software_development"). Reset every
+  // type-specific field whenever the type itself changes.
+  const handleProjectTypeChange = (projectType: EstimatorInputs['projectType']) => {
+    setValues((prev) => ({
+      ...prev,
+      projectType,
+      competitors: [],
+      roles: [],
+      rolesOther: undefined,
+      appSize: undefined,
+      platforms: undefined,
+      uiLevel: undefined,
+      qaLevel: undefined,
+      erpSystem: undefined,
+      erpModules: undefined,
+      erpUsers: undefined,
+      migrationNeeded: undefined,
+      integrationSystems: undefined,
+      integrationDirection: undefined,
+      integrationFrequency: undefined,
+      consultingScope: undefined,
+      consultingEngagement: undefined,
+    }));
+    clearError('projectType');
+  };
+
   const validateStep = (n: number): boolean => {
     const next: Record<string, boolean> = {};
     if (n === 1) {
       if (!values.projectType) next.projectType = true;
       if (!values.projectDescription.trim()) next.projectDescription = true;
       if (!values.businessDomain) next.businessDomain = true;
-      if (!values.roles || values.roles.length === 0) next.roles = true;
+      // competitors/roles only apply when building software with actual
+      // end users — doesn't make sense for an ERP implementation, an
+      // integration, or a consulting engagement (see Step1's conditional
+      // rendering below).
+      if (usesGenericAppFields(values.projectType) && (!values.roles || values.roles.length === 0)) {
+        next.roles = true;
+      }
     }
     if (n === 2) {
       if (usesGenericAppFields(values.projectType)) {
@@ -318,6 +354,7 @@ const ProjectEstimator = () => {
               errors={errors}
               setField={setField}
               clearError={clearError}
+              onProjectTypeChange={handleProjectTypeChange}
             />
           )}
           {step === 2 && <Step2 t={t} values={values} errors={errors} setField={setField} />}
@@ -420,6 +457,7 @@ type Step1Props = {
   errors: Record<string, boolean>;
   setField: <K extends keyof EstimatorInputs>(key: K, value: EstimatorInputs[K]) => void;
   clearError: (key: string) => void;
+  onProjectTypeChange: (projectType: EstimatorInputs['projectType']) => void;
 };
 
 // Maps each ProjectType value to its i18n key suffix (snake_case values
@@ -432,7 +470,7 @@ const PROJECT_TYPE_I18N_KEY: Record<string, string> = {
   other: 'Other',
 };
 
-const Step1 = ({ t, values, errors, setField, clearError }: Step1Props) => (
+const Step1 = ({ t, values, errors, setField, clearError, onProjectTypeChange }: Step1Props) => (
   <div className="pe-step">
     <section className="pe-field">
       <h3>{t('step1.projectTypeLabel')}</h3>
@@ -444,10 +482,7 @@ const Step1 = ({ t, values, errors, setField, clearError }: Step1Props) => (
           title: t(`step1.projectType${PROJECT_TYPE_I18N_KEY[pt]}`),
         }))}
         value={values.projectType ? [values.projectType] : []}
-        onChange={([v]) => {
-          setField('projectType', v as EstimatorInputs['projectType']);
-          clearError('projectType');
-        }}
+        onChange={([v]) => onProjectTypeChange(v as EstimatorInputs['projectType'])}
       />
       {values.projectType === 'other' && (
         <input
@@ -502,43 +537,47 @@ const Step1 = ({ t, values, errors, setField, clearError }: Step1Props) => (
       {errors.businessDomain && <p className="pe-error">{t('step1.domainError')}</p>}
     </section>
 
-    <section className="pe-field">
-      <h3>{t('step1.competitorsLabel')}</h3>
-      <p className="pe-help">{t('step1.competitorsHelp')}</p>
-      <TagInput
-        value={values.competitors}
-        onChange={(next) => setField('competitors', next)}
-        max={10}
-        placeholder={t('step1.competitorsPlaceholder')}
-        ariaLabel={t('step1.competitorsLabel')}
-      />
-    </section>
+    {usesGenericAppFields(values.projectType) && (
+      <>
+        <section className="pe-field">
+          <h3>{t('step1.competitorsLabel')}</h3>
+          <p className="pe-help">{t('step1.competitorsHelp')}</p>
+          <TagInput
+            value={values.competitors}
+            onChange={(next) => setField('competitors', next)}
+            max={10}
+            placeholder={t('step1.competitorsPlaceholder')}
+            ariaLabel={t('step1.competitorsLabel')}
+          />
+        </section>
 
-    <section className="pe-field">
-      <h3>{t('step1.rolesLabel')}</h3>
-      <p className="pe-help">{values.businessDomain ? t('step1.rolesHelp') : t('step1.rolesEmptyHelp')}</p>
-      <ChipSelect
-        ariaLabel={t('step1.rolesLabel')}
-        multiple
-        disabled={!values.businessDomain}
-        options={APP_ROLES.map((r) => ({ value: r, title: t(`step1.role${capitalize(r)}`) }))}
-        value={values.roles}
-        onChange={(next) => {
-          setField('roles', next as EstimatorInputs['roles']);
-          clearError('roles');
-        }}
-      />
-      {values.roles.includes('other') && (
-        <input
-          type="text"
-          className="pe-input"
-          placeholder={t('step1.domainOtherPlaceholder')}
-          value={values.rolesOther ?? ''}
-          onChange={(e) => setField('rolesOther', e.target.value)}
-        />
-      )}
-      {errors.roles && <p className="pe-error">{t('step1.rolesError')}</p>}
-    </section>
+        <section className="pe-field">
+          <h3>{t('step1.rolesLabel')}</h3>
+          <p className="pe-help">{values.businessDomain ? t('step1.rolesHelp') : t('step1.rolesEmptyHelp')}</p>
+          <ChipSelect
+            ariaLabel={t('step1.rolesLabel')}
+            multiple
+            disabled={!values.businessDomain}
+            options={APP_ROLES.map((r) => ({ value: r, title: t(`step1.role${capitalize(r)}`) }))}
+            value={values.roles}
+            onChange={(next) => {
+              setField('roles', next as EstimatorInputs['roles']);
+              clearError('roles');
+            }}
+          />
+          {values.roles.includes('other') && (
+            <input
+              type="text"
+              className="pe-input"
+              placeholder={t('step1.domainOtherPlaceholder')}
+              value={values.rolesOther ?? ''}
+              onChange={(e) => setField('rolesOther', e.target.value)}
+            />
+          )}
+          {errors.roles && <p className="pe-error">{t('step1.rolesError')}</p>}
+        </section>
+      </>
+    )}
   </div>
 );
 
