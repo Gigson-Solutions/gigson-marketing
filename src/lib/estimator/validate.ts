@@ -88,10 +88,12 @@ export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs
     uiLevel = r.uiLevel as EstimatorInputs['uiLevel'];
   }
 
-  // qaLevel is shared by software_development/other AND erp_implementation/
-  // integrations (test rigor matters for all four) — only consulting skips it.
+  // qaLevel applies to actual software being tested — software_development/
+  // other and integrations (data-integrity testing matters there); NOT
+  // erp_implementation (configuring an existing ERP, not building/testing
+  // custom software) or consulting.
   let qaLevel: EstimatorInputs['qaLevel'];
-  if (projectType !== 'consulting') {
+  if (usesGenericAppFields || projectType === 'integrations') {
     if (typeof r.qaLevel !== 'string' || !QUALITY_LEVELS.includes(r.qaLevel as never)) {
       return { ok: false, error: 'Invalid qaLevel' };
     }
@@ -116,7 +118,8 @@ export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs
     erpModules = erpModulesValue as EstimatorInputs['erpModules'];
 
     const erpUsersNum = Number(r.erpUsers);
-    erpUsers = Number.isFinite(erpUsersNum) && erpUsersNum > 0 ? Math.min(erpUsersNum, MAX_ERP_USERS) : undefined;
+    erpUsers =
+      Number.isFinite(erpUsersNum) && erpUsersNum > 0 ? Math.round(Math.min(erpUsersNum, MAX_ERP_USERS)) : undefined;
     migrationNeeded = r.migrationNeeded === true;
   }
 

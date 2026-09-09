@@ -32,8 +32,7 @@ export async function POST(req: Request) {
   if (!body || typeof body !== 'object') {
     return NextResponse.json({ error: 'Invalid payload' }, { status: 400 });
   }
-  const { inputs, locale, pagePath, website, skipGeneration } = body as Record<string, unknown>;
-  const skip = skipGeneration === true;
+  const { inputs, locale, pagePath, website } = body as Record<string, unknown>;
 
   // Honeypot — silently accept bots without doing any DB/LLM work.
   if (typeof website === 'string' && website.trim().length > 0) {
@@ -45,15 +44,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: validated.error }, { status: 400 });
   }
 
-  // Only the LLM-calling path is rate limited — "skip" is free (no AI call).
-  if (!skip) {
-    const ip = getClientIp(req);
-    if (isRateLimited(ip)) {
-      return NextResponse.json(
-        { error: 'Has generado demasiadas estimaciones. Inténtalo de nuevo en un rato.' },
-        { status: 429 },
-      );
-    }
+  const ip = getClientIp(req);
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: 'Has generado demasiadas estimaciones. Inténtalo de nuevo en un rato.' },
+      { status: 429 },
+    );
   }
 
   const token = crypto.randomUUID();
@@ -104,12 +100,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Could not start estimate. Please try again.' }, { status: 503 });
   }
 
-  if (skip) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    await (payloadClient as any).update({ collection: 'estimator-sessions', id: docId, data: { status: 'features_ready', features: [] } });
-    return NextResponse.json({ ok: true, token, status: 'features_ready', features: [] });
-  }
-
+  // We always attempt AI generation — there is no "skip AI, ship with zero
+  // use cases" path anymore. Step 4's "skip this step" button only bypasses
+  // the *timeline* being filled in (see ProjectEstimator.tsx's startSession);
+  // it does not skip generation. If generation genuinely fails or the model
+  // returns nothing usable, that's surfaced as a real failure below (status
+  // `generation_failed`), never as a silent empty "success".
   const anthropic = getClient();
   if (!anthropic) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
