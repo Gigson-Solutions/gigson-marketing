@@ -139,7 +139,6 @@ function typeSpecificLines(inputs: EstimatorInputs): (string | null)[] {
           : null,
         inputs.erpUsers ? `Number of users: ${inputs.erpUsers}` : null,
         `Data migration from another system needed: ${inputs.migrationNeeded ? 'yes' : 'no'}`,
-        inputs.qaLevel ? `QA rigor level: ${LEVEL_LABEL[inputs.qaLevel] ?? inputs.qaLevel}` : null,
       ];
     case 'integrations':
       return [

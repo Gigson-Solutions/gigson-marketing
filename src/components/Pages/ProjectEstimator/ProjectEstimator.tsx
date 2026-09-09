@@ -191,7 +191,13 @@ const ProjectEstimator = () => {
       }
       if (values.projectType === 'consulting') {
         if (!values.consultingEngagement) next.consultingEngagement = true;
-      } else if (!values.qaLevel) {
+      } else if (
+        // QA rigor is about testing software being built — applies to
+        // custom dev and data-sensitive integrations, not to configuring
+        // an existing ERP.
+        (usesGenericAppFields(values.projectType) || values.projectType === 'integrations') &&
+        !values.qaLevel
+      ) {
         next.qaLevel = true;
       }
     }
@@ -211,8 +217,13 @@ const ProjectEstimator = () => {
     setStep(to);
   };
 
-  const startSession = async (skipGeneration: boolean) => {
-    if (!validateStep(4) && !skipGeneration) return;
+  // `bypassTimelineValidation` only lets the user move on without having
+  // filled in a timeline (Step 4's "skip this step" button) — it does NOT
+  // skip AI generation. We always generate use cases; see the server route
+  // for why (a genuine generation failure is a real failure, not an
+  // intentional empty result).
+  const startSession = async (bypassTimelineValidation: boolean) => {
+    if (!validateStep(4) && !bypassTimelineValidation) return;
     setBusy(true);
     setGenerationStatus('generating');
     setStep(5);
@@ -220,12 +231,12 @@ const ProjectEstimator = () => {
       const res = await fetch('/api/estimator/sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ inputs: values, locale, pagePath, website, skipGeneration }),
+        body: JSON.stringify({ inputs: values, locale, pagePath, website }),
       });
       const data = await res.json();
       setToken(data.token ?? null);
       setFeatures(Array.isArray(data.features) ? data.features : []);
-      setGenerationStatus(data.status === 'features_ready' ? 'ready' : 'failed');
+      setGenerationStatus(data.status === 'features_ready' && data.features?.length > 0 ? 'ready' : 'failed');
     } catch (err) {
       console.error('[project-estimator] session creation failed', err);
       setGenerationStatus('failed');
@@ -661,6 +672,7 @@ const Step2Erp = ({ t, values, errors, setField }: StepBasicProps) => (
         onChange={(v) => setField('erpUsers', v)}
         min={1}
         max={100000}
+        integer
         ariaLabel={t('step2.erpUsersLabel')}
       />
     </section>
@@ -789,28 +801,26 @@ const Step3Software = (props: StepBasicProps) => {
   );
 };
 
-const Step3Erp = (props: StepBasicProps) => {
-  const { t, values, errors, setField } = props;
-  return (
-    <>
-      <section className="pe-field">
-        <h3>{t('step3.migrationNeededLabel')}</h3>
-        <ChipSelect
-          cardStyle
-          ariaLabel={t('step3.migrationNeededLabel')}
-          options={[
-            { value: 'yes', title: t('step3.migrationNeededYes') },
-            { value: 'no', title: t('step3.migrationNeededNo') },
-          ]}
-          value={values.migrationNeeded === undefined ? [] : [values.migrationNeeded ? 'yes' : 'no']}
-          onChange={([v]) => setField('migrationNeeded', v === 'yes')}
-        />
-        {errors.migrationNeeded && <p className="pe-error">{t('step3.migrationNeededError')}</p>}
-      </section>
-      <QaField {...props} />
-    </>
-  );
-};
+// QA rigor only applies to actual software being built (custom dev, or
+// data-integrity-sensitive integrations) — not to configuring an existing
+// ERP, which is why this doesn't render QaField (unlike Step3Software /
+// integrations' Step 3).
+const Step3Erp = ({ t, values, errors, setField }: StepBasicProps) => (
+  <section className="pe-field">
+    <h3>{t('step3.migrationNeededLabel')}</h3>
+    <ChipSelect
+      cardStyle
+      ariaLabel={t('step3.migrationNeededLabel')}
+      options={[
+        { value: 'yes', title: t('step3.migrationNeededYes') },
+        { value: 'no', title: t('step3.migrationNeededNo') },
+      ]}
+      value={values.migrationNeeded === undefined ? [] : [values.migrationNeeded ? 'yes' : 'no']}
+      onChange={([v]) => setField('migrationNeeded', v === 'yes')}
+    />
+    {errors.migrationNeeded && <p className="pe-error">{t('step3.migrationNeededError')}</p>}
+  </section>
+);
 
 const Step3Consulting = ({ t, values, errors, setField }: StepBasicProps) => (
   <section className="pe-field">
