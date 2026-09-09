@@ -19,15 +19,15 @@ const Footer = () => {
   // its own dedicated page) organized the same way as the Navbar's
   // Servicios dropdown, split into the two engagement-type columns.
   const consultingLinks = [
-    { name: t('ai_agents'), href: '/ai-agents' as NavPathname },
-    { name: t('erp_custom'), href: '/custom-erp' as NavPathname },
-    { name: t('software'), href: '/software-engineering' as NavPathname },
-  ];
-
-  const buildingLinks = [
     { name: t('CTO'), href: '/cto-as-service' as NavPathname },
     { name: t('tech_consulting'), href: '/technology-consulting' as NavPathname },
     { name: t('compliance'), href: '/iso-27001-certification' as NavPathname },
+  ];
+
+  const buildingLinks = [
+    { name: t('ai_agents'), href: '/ai-agents' as NavPathname },
+    { name: t('erp_custom'), href: '/custom-erp' as NavPathname },
+    { name: t('software'), href: '/software-engineering' as NavPathname },
     { name: t('erp_odoo'), href: '/integrations-odoo' as NavPathname },
     { name: t('erp_holded'), href: '/integrations-holded' as NavPathname },
   ];
