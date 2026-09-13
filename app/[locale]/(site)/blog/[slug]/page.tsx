@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 
 import BlogPost from '../../../../../src/components/Blog/BlogPost';
 import { getPostBySlug, getPostSlugs } from '../../../../../lib/posts';
@@ -65,6 +66,12 @@ export default async function BlogPostPage(props: Props) {
     slug,
     locale
   } = params;
+
+  // This route is static (`generateStaticParams` + `revalidate`), and `BlogPost`
+  // reads the locale and messages off the request config. Without this the read
+  // falls back to request headers — a dynamic API — which is what made every post
+  // page 500 before (see `hotfix/blog-500`).
+  setRequestLocale(locale);
 
   const post = await getPostBySlug(slug, locale);
   if (!post) notFound();

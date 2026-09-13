@@ -1,4 +1,8 @@
 {
+    "blog": {
+        "backToBlog": "← BACK TO BLOG",
+        "contentUnavailable": "Content unavailable."
+    },
     "book": {
         "title": "Book a meeting",
         "subtitle": "Choose a slot that works for you. Bookings sync with our calendars.",

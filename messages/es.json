@@ -1,4 +1,8 @@
 {
+    "blog": {
+        "backToBlog": "← VOLVER AL BLOG",
+        "contentUnavailable": "Contenido no disponible."
+    },
     "book": {
         "title": "Reservar cita",
         "subtitle": "Elige un hueco que te encaje. Las reservas se sincronizan con nuestro calendario.",

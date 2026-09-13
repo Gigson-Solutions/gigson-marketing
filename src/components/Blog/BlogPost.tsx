@@ -1,53 +1,68 @@
+import './Blog.css';
+
+import { getLocale, getTranslations } from 'next-intl/server';
+import { RichText } from '@payloadcms/richtext-lexical/react';
+
 import type { Post } from '../../../lib/posts';
 import { Link } from '../../../i18n/navigation';
+import { jsxConverters } from './richTextConverters';
 
-const formatDate = (iso?: string) => {
+const formatDate = (iso: string | undefined, locale: string) => {
   if (!iso) return '';
-  return new Date(iso).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+  return new Date(iso).toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-GB', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 };
 
 type Props = { post: Post };
 
-const BlogPost = ({ post }: Props) => (
-  <article className="px-landing mt-fixed-navbar pt-14 lg:pt-20 pb-20 lg:pb-32">
-    <div className="max-w-[52rem] mx-auto">
-      <Link href="/blog" className="inline-block mb-8 text-purple-accents text-button hover:opacity-70 transition">
-        ← Back to blog
-      </Link>
+const BlogPost = async ({ post }: Props) => {
+  const [t, locale] = await Promise.all([getTranslations('blog'), getLocale()]);
 
-      {post.coverImage?.url && (
-        <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-10 bg-[#f4f3ef]">
-          <img
-            src={post.coverImage.url}
-            alt={post.coverImage.alt ?? post.title}
-            className="w-full h-full object-cover"
+  return (
+    <article className="px-landing mt-fixed-navbar pt-14 lg:pt-20 pb-20 lg:pb-32">
+      <div className="max-w-[52rem] mx-auto">
+        <Link href="/blog" className="inline-block mb-8 text-purple-accents text-button hover:opacity-70 transition">
+          {t('backToBlog')}
+        </Link>
+
+        {post.coverImage?.url && (
+          <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-10 bg-[#f4f3ef]">
+            <img
+              src={post.coverImage.url}
+              alt={post.coverImage.alt ?? post.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+
+        <header className="mb-10">
+          {post.publishedAt && (
+            <time className="block text-smallTag text-dark-medium uppercase tracking-widest mb-4" dateTime={post.publishedAt}>
+              {formatDate(post.publishedAt, locale)}
+              {post.author && ` · ${post.author}`}
+            </time>
+          )}
+          <h1 className="text-h1 text-dark-primary leading-tight">{post.title}</h1>
+          {post.excerpt && (
+            <p className="mt-4 text-subtitle text-dark-medium">{post.excerpt}</p>
+          )}
+        </header>
+
+        {post.content ? (
+          <RichText
+            data={post.content as Parameters<typeof RichText>[0]['data']}
+            converters={jsxConverters}
+            className="blog-prose max-w-none"
           />
-        </div>
-      )}
-
-      <header className="mb-10">
-        {post.publishedAt && (
-          <time className="block text-smallTag text-dark-medium uppercase tracking-widest mb-4" dateTime={post.publishedAt}>
-            {formatDate(post.publishedAt)}
-            {post.author && ` · ${post.author}`}
-          </time>
+        ) : (
+          <p className="text-body text-dark-medium">{t('contentUnavailable')}</p>
         )}
-        <h1 className="text-h1 text-dark-primary leading-tight">{post.title}</h1>
-        {post.excerpt && (
-          <p className="mt-4 text-subtitle text-dark-medium">{post.excerpt}</p>
-        )}
-      </header>
-
-      {post.contentHtml ? (
-        <div
-          className="prose prose-lg max-w-none text-dark-medium"
-          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-        />
-      ) : (
-        <p className="text-body text-dark-medium">Content unavailable.</p>
-      )}
-    </div>
-  </article>
-);
+      </div>
+    </article>
+  );
+};
 
 export default BlogPost;

@@ -13,6 +13,11 @@ export type Post = {
   author?: string;
   seoTitle?: string;
   seoDescription?: string;
+  // Serialized Lexical editor state — rendered via `<RichText>` +
+  // `src/components/Blog/richTextConverters.tsx`, not pre-converted HTML.
+  content?: unknown;
+  // Legacy: pre-rendered HTML from the old `beforeChange` hook. Left in place
+  // so the column keeps deserializing, but no longer read when rendering.
   contentHtml?: string;
 };
 
