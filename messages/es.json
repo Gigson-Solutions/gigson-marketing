@@ -1,4 +1,10 @@
 {
+    "breadcrumb": {
+        "home": "Inicio"
+    },
+    "organization": {
+        "description": "Gigson Solutions es Partner Certificado de Anthropic (Certified Anthropic Claude Partner) en España. Diseñamos y desplegamos agentes de IA basados en Claude para empresas, además de CTO as a Service, integraciones de sistemas, ingeniería de software a medida y ciberseguridad."
+    },
     "book": {
         "title": "Reservar cita",
         "subtitle": "Elige un hueco que te encaje. Las reservas se sincronizan con nuestro calendario.",
@@ -350,6 +356,7 @@
     },
     "cases": {
         "heroH1": "¿Cómo podemos ayudarte a alcanzar tus objetivos?",
+        "pageH1": "Casos de éxito en tecnología, integraciones y agentes IA",
         "heroP": "Contesta las siguientes preguntas y observa las mejores soluciones para tu sector.",
         "tagTitle": "¿Cuál es tu sector?",
         "needTitle": "¿Cuál es tu necesidad actual?",
@@ -3619,6 +3626,7 @@
         },
         "contact": {
             "title": "Contacto | Gigson Solutions",
+            "h1": "Contacta con Gigson Solutions",
             "description": "Contacta con Gigson Solutions. Cuéntanos tu proyecto y te responderemos."
         },
         "book": {

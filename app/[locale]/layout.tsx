@@ -27,7 +27,9 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       languages: {
         'en': BASE_URL,
-        'es-ES': `${BASE_URL}/es`,
+        // Was 'es-ES' while every page declares 'es'; any route without its own
+        // `alternates` inherited the mismatched tag.
+        'es': `${BASE_URL}/es`,
         'x-default': BASE_URL,
       },
     },

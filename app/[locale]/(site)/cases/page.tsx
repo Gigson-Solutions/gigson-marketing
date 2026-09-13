@@ -2,8 +2,9 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import Cases from '../../../../src/components/Pages/Cases/Cases';
+import JsonLd from '../../../../src/shared/ui/JsonLd';
+import { ORIGIN, buildBreadcrumbSchema, localizedUrl } from '../../../../lib/schema';
 
-const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
@@ -42,11 +43,15 @@ export default async function CasesPage(props: Props) {
   const t = await getTranslations({ locale });
   const casesData = t.raw('casesDropdown') as { title: string; challenge: string }[];
 
+  const tCrumb = await getTranslations({ locale, namespace: 'breadcrumb' });
+  const tMenu = await getTranslations({ locale, namespace: 'menu' });
+
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Case Studies — Gigson Solutions',
-    url: `${ORIGIN}/cases`,
+    // Was hardcoded to the English path, so /es/casos advertised itself as /cases.
+    url: localizedUrl('/cases', locale),
     itemListElement: casesData.map((c, i) => ({
       '@type': 'ListItem',
       position: i + 1,
@@ -55,12 +60,18 @@ export default async function CasesPage(props: Props) {
     })),
   };
 
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    [
+      { name: tCrumb('home'), pathKey: '/' },
+      { name: tMenu('cases'), pathKey: '/cases' },
+    ],
+    locale,
+  );
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
-      />
+      <JsonLd data={itemListSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <Cases />
     </>
   );

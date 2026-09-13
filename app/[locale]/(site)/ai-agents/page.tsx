@@ -2,8 +2,15 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import AiAgents from '../../../../src/components/Pages/AiAgents/AiAgents';
-
-const ORIGIN = 'https://gigsonsolutions.com';
+import JsonLd from '../../../../src/shared/ui/JsonLd';
+import {
+  ORIGIN,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildServiceSchema,
+  breadcrumbLabel,
+  faqItemsFrom,
+} from '../../../../lib/schema';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -41,41 +48,34 @@ export default async function AiAgentsPage(props: Props) {
     locale
   } = params;
 
-  const t = await getTranslations({ locale, namespace: 'aiAgents' });
+  const [t, tCrumb] = await Promise.all([
+    getTranslations({ locale, namespace: 'aiAgents' }),
+    getTranslations({ locale, namespace: 'breadcrumb' }),
+  ]);
   const title = t('title');
   const description = t('metadescription');
-  const serviceUrl = locale === 'es' ? '/es/agentes-ia' : '/ai-agents';
-  const faqItems = (t.raw('faq') as { items?: { question: string; answer: string }[] } | undefined)?.items ?? [];
 
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
+  const serviceSchema = buildServiceSchema({
     name: title,
     description,
-    url: `${ORIGIN}${serviceUrl}`,
+    pathKey: '/ai-agents',
+    locale,
     serviceType: 'AI Agent Implementation',
-    areaServed: 'ES',
-    provider: { '@type': 'Organization', name: 'Gigson Solutions', url: ORIGIN },
-  };
-
-  const faqSchema = faqItems.length > 0
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: faqItems.map(({ question, answer }) => ({
-          '@type': 'Question',
-          name: question,
-          acceptedAnswer: { '@type': 'Answer', text: answer },
-        })),
-      }
-    : null;
+  });
+  const faqSchema = buildFaqSchema(faqItemsFrom(t.raw('faq')));
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    [
+      { name: tCrumb('home'), pathKey: '/' },
+      { name: breadcrumbLabel(title), pathKey: '/ai-agents' },
+    ],
+    locale,
+  );
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+      <JsonLd data={serviceSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
+      <JsonLd data={breadcrumbSchema} />
       <AiAgents />
     </>
   );
