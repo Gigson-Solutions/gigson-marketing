@@ -1,12 +1,13 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 import BlogPost from '../../../../../src/components/Blog/BlogPost';
+import JsonLd from '../../../../../src/shared/ui/JsonLd';
 import { getPostBySlug, getPostSlugs, getRelatedPosts, type Post } from '../../../../../lib/posts';
+import { ORIGIN, buildBreadcrumbSchema, organizationRef } from '../../../../../lib/schema';
 
 export const revalidate = 3600;
-
-const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
 /** Absolute canonical URL for a post, from its own `locale`/`slug` — used
@@ -95,20 +96,29 @@ export default async function BlogPostPage(props: Props) {
       '@type': 'Person',
       name: post.author ?? 'Gigson Solutions',
     },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Gigson Solutions',
-      url: ORIGIN,
-    },
+    // Points at the one Organization node declared on the home page
+    // (`lib/schema.ts`) instead of restating a partial copy of it here.
+    publisher: organizationRef,
     ...(coverUrl && { image: coverUrl }),
   };
 
+  const [tCrumb, tMenu] = await Promise.all([
+    getTranslations({ locale, namespace: 'breadcrumb' }),
+    getTranslations({ locale, namespace: 'menu' }),
+  ]);
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    [
+      { name: tCrumb('home'), pathKey: '/' },
+      { name: tMenu('blog'), pathKey: '/blog' },
+      { name: post.title, url: postUrl(post) },
+    ],
+    locale,
+  );
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <BlogPost post={post} relatedPosts={relatedPosts} />
     </>
   );

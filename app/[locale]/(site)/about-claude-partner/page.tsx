@@ -2,8 +2,16 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import ClaudePartner from '../../../../src/components/Pages/ClaudePartner/ClaudePartner';
-
-const ORIGIN = 'https://gigsonsolutions.com';
+import JsonLd from '../../../../src/shared/ui/JsonLd';
+import {
+  ORIGIN,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildOrganization,
+  buildServiceSchema,
+  faqItemsFrom,
+  localizedUrl,
+} from '../../../../lib/schema';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -16,8 +24,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   const t = await getTranslations({ locale, namespace: 'claudePartner' });
   const seo = t.raw('seo') as { title: string; description: string };
-  const canonical =
-    locale === 'es' ? `${ORIGIN}/es/sobre-claude-partner` : `${ORIGIN}/about-claude-partner`;
+  const canonical = localizedUrl('/about-claude-partner', locale);
 
   return {
     title: seo.title,
@@ -41,62 +48,36 @@ export default async function ClaudePartnerPage(props: Props) {
     locale
   } = params;
 
-  const t = await getTranslations({ locale, namespace: 'claudePartner' });
+  const [t, tOrg, tCrumb] = await Promise.all([
+    getTranslations({ locale, namespace: 'claudePartner' }),
+    getTranslations({ locale, namespace: 'organization' }),
+    getTranslations({ locale, namespace: 'breadcrumb' }),
+  ]);
   const seo = t.raw('seo') as { title: string; description: string };
-  const serviceUrl =
-    locale === 'es' ? '/es/sobre-claude-partner' : '/about-claude-partner';
-  const faqItems =
-    (t.raw('faq') as { items?: { question: string; answer: string }[] } | undefined)?.items ?? [];
 
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Gigson Solutions',
-    url: ORIGIN,
-    description: seo.description,
-    knowsAbout: ['Artificial Intelligence', 'Claude AI', 'Anthropic'],
-  };
-
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
+  const organizationSchema = buildOrganization(tOrg('description'));
+  const serviceSchema = buildServiceSchema({
     name: seo.title,
     description: seo.description,
-    url: `${ORIGIN}${serviceUrl}`,
+    pathKey: '/about-claude-partner',
+    locale,
     serviceType: 'AI Consulting',
-    areaServed: 'ES',
-    provider: { '@type': 'Organization', name: 'Gigson Solutions', url: ORIGIN },
-  };
-
-  const faqSchema =
-    faqItems.length > 0
-      ? {
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: faqItems.map(({ question, answer }) => ({
-            '@type': 'Question',
-            name: question,
-            acceptedAnswer: { '@type': 'Answer', text: answer },
-          })),
-        }
-      : null;
+  });
+  const faqSchema = buildFaqSchema(faqItemsFrom(t.raw('faq')));
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    [
+      { name: tCrumb('home'), pathKey: '/' },
+      { name: seo.title, pathKey: '/about-claude-partner' },
+    ],
+    locale,
+  );
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
+      <JsonLd data={organizationSchema} />
+      <JsonLd data={serviceSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
+      <JsonLd data={breadcrumbSchema} />
       <ClaudePartner />
     </>
   );

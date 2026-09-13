@@ -2,8 +2,8 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import Home from '../../../src/components/Home/Home';
-
-const ORIGIN = 'https://gigsonsolutions.com';
+import JsonLd from '../../../src/shared/ui/JsonLd';
+import { ORIGIN, buildOrganization, localizedUrl } from '../../../lib/schema';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -15,7 +15,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   } = params;
 
   const t = await getTranslations({ locale, namespace: 'home' });
-  const canonical = locale === 'es' ? `${ORIGIN}/es` : ORIGIN;
+  const canonical = localizedUrl('/', locale);
 
   return {
     title: t('title'),
@@ -39,33 +39,27 @@ export default async function HomePage(props: Props) {
     locale
   } = params;
 
-  const t = await getTranslations({ locale });
+  const tOrg = await getTranslations({ locale, namespace: 'organization' });
 
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Gigson Solutions',
-    url: ORIGIN,
-    logo: `${ORIGIN}/gigson-logo.svg`,
-    contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: 'hola@gigsonsolutions.com' },
-  };
+  // The canonical Organization node for the whole site. Other pages reference
+  // it by `@id` (see `lib/schema.ts`) rather than emitting their own copy.
+  const organizationSchema = buildOrganization(tOrg('description'));
 
   const webSiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Gigson Solutions',
     url: ORIGIN,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${ORIGIN}/blog?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
+    publisher: { '@id': organizationSchema['@id'] },
+    // No `potentialAction`/`SearchAction`: it used to advertise
+    // `/blog?q={search_term_string}`, but the blog listing reads no `q` param —
+    // there is no site search to point Google at.
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }} />
+      <JsonLd data={organizationSchema} />
+      <JsonLd data={webSiteSchema} />
       <Home />
     </>
   );

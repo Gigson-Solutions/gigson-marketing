@@ -10,13 +10,17 @@ gsap.registerPlugin(useGSAP);
 
 type Props = {
   title: string;
+  /** Heading level for `title`. The /cases page needs <h2> so its outline
+   *  doesn't jump straight from the <h1> to the <h3>s; on the home page this
+   *  block already sits under an <h2>, so it stays an <h3> there. */
+  headingAs?: 'h2' | 'h3';
   sectors: string[];
   selected: string[];
   onToggle: (sector: string) => void;
   centered?: boolean;
 };
 
-const SectorSelector = ({ title, sectors, selected, onToggle, centered = false }: Props) => {
+const SectorSelector = ({ title, sectors, selected, onToggle, centered = false, headingAs: Heading = 'h3' }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isFirstRender = useRef(true);
 
@@ -88,7 +92,7 @@ const SectorSelector = ({ title, sectors, selected, onToggle, centered = false }
       ref={containerRef}
       className={`sector-selector${centered ? ' sector-selector--centered' : ''}`}
     >
-      <h3 className="sector-selector__title">{title}</h3>
+      <Heading className="sector-selector__title">{title}</Heading>
       <div className="sector-selector__grid">
         {sectors.map((sector) => (
           <button

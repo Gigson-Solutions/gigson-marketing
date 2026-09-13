@@ -2,8 +2,16 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import Cibersecurity from '../../../../src/components/Pages/Cibersecurity/Cibersecurity';
+import JsonLd from '../../../../src/shared/ui/JsonLd';
+import {
+  ORIGIN,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildServiceSchema,
+  breadcrumbLabel,
+  faqItemsFrom,
+} from '../../../../lib/schema';
 
-const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
@@ -36,16 +44,34 @@ export default async function CybersecurityPage(props: Props) {
     locale
   } = params;
 
-  const t = await getTranslations({ locale, namespace: 'cibersecurity' });
-  const serviceSchema = {
-    '@context': 'https://schema.org', '@type': 'Service',
-    name: t('title'), description: t('metadescription'),
-    url: `${ORIGIN}/cybersecurity`, serviceType: 'Cybersecurity',
-    areaServed: 'ES', provider: { '@type': 'Organization', name: 'Gigson Solutions', url: ORIGIN },
-  };
+  const [t, tCrumb] = await Promise.all([
+    getTranslations({ locale, namespace: 'cibersecurity' }),
+    getTranslations({ locale, namespace: 'breadcrumb' }),
+  ]);
+  const title = t('title');
+  const description = t('metadescription');
+
+  const serviceSchema = buildServiceSchema({
+    name: title,
+    description,
+    pathKey: '/cybersecurity',
+    locale,
+    serviceType: 'Cybersecurity',
+  });
+  const faqSchema = buildFaqSchema(faqItemsFrom(t.raw('faq')));
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    [
+      { name: tCrumb('home'), pathKey: '/' },
+      { name: breadcrumbLabel(title), pathKey: '/cybersecurity' },
+    ],
+    locale,
+  );
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <JsonLd data={serviceSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
+      <JsonLd data={breadcrumbSchema} />
       <Cibersecurity />
     </>
   );

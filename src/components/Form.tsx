@@ -21,11 +21,17 @@ const SUBJECTS: Record<FormId, string> = {
 type FormProps = {
   customClass?: string;
   formId: FormId;
+  /** Heading level for the title. /contact has no other heading on the page, so
+   *  the form's title has to be its <h1>; the home page renders this form under
+   *  its own <h1> and keeps the default <h2>. */
+  titleAs?: 'h1' | 'h2';
+  /** Overrides the shared `form.title` copy (used by /contact). */
+  title?: string;
 };
 
-const Form = ({ customClass, formId }: FormProps) => {
+const Form = ({ customClass, formId, titleAs: Heading = 'h2', title: titleOverride }: FormProps) => {
   const t = useTranslations('form');
-  const title = t('title');
+  const title = titleOverride ?? t('title');
   const name = t.raw('name') as { label: string; placeholder: string };
   const service = t.raw('service') as { label: string; placeholder: string; services: string[] };
   const budget = t.raw('budget') as { label: string; placeholder: string };
@@ -36,7 +42,7 @@ const Form = ({ customClass, formId }: FormProps) => {
 
   return (
     <section className={`${customClass ?? ''} form-section`}>
-      <h2 className="form-h2">{title}</h2>
+      <Heading className="form-h2">{title}</Heading>
       <form
         className="form"
         action="https://formsubmit.co/jaume@somosgigson.com"

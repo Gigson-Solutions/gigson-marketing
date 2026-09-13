@@ -4,6 +4,14 @@ export const routing = defineRouting({
   locales: ['en', 'es'],
   defaultLocale: 'en',
   localePrefix: 'as-needed',
+  // The middleware's `Link:` alternates can't translate `/blog/[slug]`: the slug
+  // lives in Payload, not in `pathnames`, so it just strips the `/es` prefix and
+  // emits a 404 URL as the `en` and `x-default` alternate. It's a global flag, so
+  // it can't be disabled for the blog alone. Every page already declares correct
+  // hreflang in the HTML via `alternates.languages` in its `generateMetadata` —
+  // and the post page resolves the sibling slug through `localizedVersion`,
+  // which the middleware has no way of knowing about.
+  alternateLinks: false,
   pathnames: {
     '/': '/',
     '/logistics-technology': { en: '/logistics-technology', es: '/tecnologia-logistica' },

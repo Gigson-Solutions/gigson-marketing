@@ -29,7 +29,9 @@ const Cases = () => {
   const t = useTranslations('cases');
   const tRoot = useTranslations();
 
-  const heroH1 = t.raw('heroH1') as string;
+  // Own key: `heroH1` is shared with the home page's cases block, so the page
+  // H1 used to be the generic "¿Cómo podemos ayudarte…?" with no keywords.
+  const pageH1 = t.raw('pageH1') as string;
   const heroP = t('heroP');
   const featuresTitle = t('featuresTitle');
   const tagTitle = t('tagTitle');
@@ -72,12 +74,13 @@ const Cases = () => {
           alt=""
           className="absolute inset-0 h-full w-auto min-w-full object-cover opacity-[0.14] -z-10"
         />
-        <RichText as="h1" content={heroH1} className="hero-cases-h1" />
+        <RichText as="h1" content={pageH1} className="hero-cases-h1" />
         <p className="hero-cases-p">{heroP}</p>
       </section>
 
       <SectorSelector
         title={tagTitle}
+        headingAs="h2"
         sectors={uniqueTags}
         selected={selectedTags}
         onToggle={handleTagFilter}
@@ -86,6 +89,7 @@ const Cases = () => {
 
       <SectorSelector
         title={needTitle}
+        headingAs="h2"
         sectors={uniqueNeeds}
         selected={selectedNeeds}
         onToggle={handleNeedFilter}

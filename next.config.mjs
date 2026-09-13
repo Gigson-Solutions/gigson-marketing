@@ -32,6 +32,18 @@ const nextConfig = {
     { source: '/services', destination: '/', permanent: true },
     { source: '/es/servicios', destination: '/es', permanent: true },
   ],
+  // Belt and braces alongside `app/robots.ts`: a crawler that reaches a preview
+  // or staging URL without reading robots.txt still gets an explicit noindex.
+  // `VERCEL_ENV` is 'production' only on the production deployment.
+  headers: async () =>
+    process.env.VERCEL_ENV === 'production'
+      ? []
+      : [
+          {
+            source: '/:path*',
+            headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+          },
+        ],
 };
 
 export default withPayload(withNextIntl(nextConfig));
