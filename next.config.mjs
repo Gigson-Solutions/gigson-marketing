@@ -1,3 +1,5 @@
+import process from 'node:process';
+
 import createNextIntlPlugin from 'next-intl/plugin';
 import { withPayload } from '@payloadcms/next/withPayload';
 
