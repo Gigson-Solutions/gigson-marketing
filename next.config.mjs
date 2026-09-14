@@ -18,6 +18,14 @@ const nextConfig = {
   // Pages that used to be Vite SPA routes now live under app/[locale]/
   // Add 301 redirects for any legacy paths that changed during migration here.
   redirects: async () => [
+    // Domain migration: redirect all traffic from the legacy somosgigson.com
+    // domain (apex + www) to the Spanish homepage on gigsonsolutions.com.
+    {
+      source: '/:path*',
+      has: [{ type: 'host', value: '(www\\.)?somosgigson\\.com' }],
+      destination: 'https://gigsonsolutions.com/es',
+      permanent: true,
+    },
     // Standalone public pages live outside i18n routing — redirect locale-prefixed URLs to the canonical path
     { source: '/:locale(en|es)/apply-sdr', destination: '/apply-sdr', permanent: true },
     // Removed duplicate Ads landing page (/iso-27001-lp) — consolidated into the
