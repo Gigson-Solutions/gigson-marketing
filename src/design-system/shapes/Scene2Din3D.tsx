@@ -8,13 +8,28 @@ const PERSPECTIVE = 420;
 // Default camera. Off-axis so planes read as planes rather than flat outlines.
 const BASE_YAW = 0.5;
 
-export type ScenePreset = 'gyroscope' | 'carousel' | 'tunnel' | 'tumble' | 'constellation';
+export type ScenePreset =
+  | 'gyroscope'
+  | 'carousel'
+  | 'tunnel'
+  | 'tumble'
+  | 'constellation'
+  | 'cascade'
+  | 'spiralStair'
+  | 'bloom'
+  | 'fan'
+  | 'orbitals'
+  | 'field'
+  | 'vortex'
+  | 'dome'
+  | 'shuffle'
+  | 'ribbon';
 
 /**
  * Presets whose depth axis *is* the view axis. Rotating the camera would slide
  * them diagonally out of frame, so they're viewed straight down the barrel.
  */
-const AXIS_ALIGNED = new Set<ScenePreset>(['tunnel']);
+const AXIS_ALIGNED = new Set<ScenePreset>(['tunnel', 'bloom', 'vortex']);
 
 type Scene2Din3DProps = {
   preset: ScenePreset;
@@ -105,6 +120,136 @@ function buildFrame(preset: ScenePreset, t: number): Instance[] {
         points: place(flat, t * (0.3 + index * 0.12), t * (0.25 + index * 0.09), 0, 0.26, offset),
         scale: 1,
       }));
+    }
+
+    /** Horizontal squares stacked down the Y axis, each turned a little further. */
+    case 'cascade': {
+      const flat = outline('square');
+      const count = 5;
+      return Array.from({ length: count }, (_, index) => {
+        const k = index / (count - 1);
+        return { points: place(flat, Math.PI / 2.2, t * 0.35 + k * 0.5, 0, 0.55 - k * 0.1, { x: 0, y: 0.62 - k * 1.24, z: 0 }), scale: 1 };
+      });
+    }
+
+    /** Pentagons climbing a helix — a staircase that exists only in depth. */
+    case 'spiralStair': {
+      const flat = outline('pentagon');
+      const count = 7;
+      return Array.from({ length: count }, (_, index) => {
+        const k = index / count;
+        const a = t * 0.5 + k * Math.PI * 2;
+        return { points: place(flat, Math.PI / 2.4, a, 0, 0.3, { x: Math.cos(a) * 0.62, y: k * 1.5 - 0.75, z: Math.sin(a) * 0.62 }), scale: 1 };
+      });
+    }
+
+    /** Rings expanding from the centre and recycling — a ripple seen head-on. */
+    case 'bloom': {
+      const flat = outline('circle');
+      const count = 5;
+      return Array.from({ length: count }, (_, index) => {
+        const k = (((index / count + t * 0.25) % 1) + 1) % 1;
+        return { points: null, flat, scale: 0.12 + k * 0.9, centre: { x: 0, y: 0, z: 0 } };
+      });
+    }
+
+    /** Cards fanned around a vertical axis, each facing outward — a rolodex. */
+    case 'fan': {
+      const flat = outline('square');
+      const count = 8;
+      return Array.from({ length: count }, (_, index) => {
+        const a = t * 0.4 + (index / count) * Math.PI * 2;
+        return { points: place(flat, 0, a, 0, 0.42, { x: Math.cos(a) * 0.5, y: 0, z: Math.sin(a) * 0.5 }), scale: 1 };
+      });
+    }
+
+    /**
+     * Three orbits with a triangle riding each one. The rider is placed with
+     * the same rotation as its ring, so it sits exactly on the track.
+     */
+    case 'orbitals': {
+      const track = outline('circle');
+      const rider = outline('triangle');
+      const radii = [0.45, 0.72, 0.98];
+      const instances: Instance[] = radii.map((rr, index) => ({
+        points: place(track, Math.PI / 2, index * 0.6 + t * 0.12, 0, rr, { x: 0, y: 0, z: 0 }),
+        scale: 1,
+      }));
+      for (const [index, rr] of radii.entries()) {
+        const a = t * (0.9 - index * 0.22) + index * 2;
+        const spin = index * 0.6 + t * 0.12;
+        const centre = rotateXYZ({ x: Math.cos(a) * rr, y: Math.sin(a) * rr, z: 0 }, Math.PI / 2, spin, 0);
+        instances.push({ points: null, flat: rider, scale: 0.1, centre });
+      }
+      return instances;
+    }
+
+    /** A grid of small squares lying on one plane, breathing — a field. */
+    case 'field': {
+      const flat = outline('square');
+      const cells = 4;
+      const instances: Instance[] = [];
+      for (let i = 0; i < cells; i++) {
+        for (let j = 0; j < cells; j++) {
+          const x = (i / (cells - 1) - 0.5) * 1.5;
+          const z = (j / (cells - 1) - 0.5) * 1.5;
+          instances.push({
+            points: place(flat, Math.PI / 2, t * 0.15, 0, 0.16, { x, y: Math.sin(t + i * 0.8 + j * 0.5) * 0.12, z }),
+            scale: 1,
+          });
+        }
+      }
+      return instances;
+    }
+
+    /** Hexagons spiralling inward as they shrink and recede. */
+    case 'vortex': {
+      const flat = outline('hexagon');
+      const count = 10;
+      return Array.from({ length: count }, (_, index) => {
+        const k = (((index / count + t * 0.18) % 1) + 1) % 1;
+        const a = k * Math.PI * 3;
+        return { points: null, flat, scale: 0.06 + k * 0.22, centre: { x: Math.cos(a) * k * 0.9, y: Math.sin(a) * k * 0.9, z: 1 - k * 2 } };
+      });
+    }
+
+    /** Circles of decreasing radius stacked into a dome. */
+    case 'dome': {
+      const flat = outline('circle');
+      const count = 6;
+      return Array.from({ length: count }, (_, index) => {
+        const phi = ((index + 0.5) / count) * (Math.PI / 2);
+        return { points: place(flat, Math.PI / 2, t * 0.3, 0, Math.cos(phi), { x: 0, y: Math.sin(phi) - 0.35, z: 0 }), scale: 1 };
+      });
+    }
+
+    /** A stack of sheets that fans open and closes again — documents being sorted. */
+    case 'shuffle': {
+      const flat = outline('square');
+      const count = 6;
+      // Phase offset so the reduced-motion still frame lands mid-fan, not on a closed stack.
+      const spread = (1 - Math.cos(t * 0.8 + 1.2)) / 2;
+      return Array.from({ length: count }, (_, index) => {
+        const k = index / (count - 1) - 0.5;
+        return {
+          points: place(flat, Math.PI / 2.6, 0.4, k * spread * 1.6, 0.42, { x: k * spread * 1.1, y: index * 0.1 - 0.25, z: k * spread * 0.6 }),
+          scale: 1,
+        };
+      });
+    }
+
+    /** Squares threaded along a sine path that winds through depth. */
+    case 'ribbon': {
+      const flat = outline('square');
+      const count = 9;
+      return Array.from({ length: count }, (_, index) => {
+        const k = index / (count - 1);
+        const phase = t * 0.8 + k * Math.PI * 1.6;
+        return {
+          points: place(flat, 0, phase, 0, 0.2, { x: k * 1.7 - 0.85, y: Math.sin(phase) * 0.42, z: Math.cos(phase) * 0.42 }),
+          scale: 1,
+        };
+      });
     }
   }
 }

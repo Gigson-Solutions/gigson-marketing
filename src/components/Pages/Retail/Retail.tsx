@@ -39,7 +39,7 @@ const Retail = () => {
     <>
       <Hero {...hero} />
       <section style={bgStyle}>
-        <UseCases {...useCases} />
+        <UseCases {...useCases} industry="retail" />
         <ImproveAreas {...improveAreas} />
       </section>
       <SolutionsApplications {...solutionsApplications} />

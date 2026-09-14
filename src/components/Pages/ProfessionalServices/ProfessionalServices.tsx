@@ -40,7 +40,7 @@ const ProfessionalServices = () => {
     <>
       <Hero {...hero} />
       <section style={bgStyle}>
-        <UseCases {...useCases} />
+        <UseCases {...useCases} industry="professional-services" />
         <ImproveAreas {...improveAreas} />
       </section>
       <SolutionsApplications {...solutionsApplications} />

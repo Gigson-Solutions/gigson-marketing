@@ -1,16 +1,19 @@
 export { Collage, type CollageLayer } from './Collage';
 export {
   build2D,
+  cloudPoints,
   massPath,
   MESHES,
   sparklePaths,
   squigglePath,
+  type CloudName,
   type MassName,
   type MeshName,
   type OutlineName,
   type Shape2DName,
   type Shape2DParams,
 } from './geometry';
+export { PointCloud } from './PointCloud';
 export { Scene2Din3D, type ScenePreset } from './Scene2Din3D';
 export { Shape2D } from './Shape2D';
 export { useDrawOn } from './useDrawOn';

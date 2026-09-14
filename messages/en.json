@@ -2631,6 +2631,7 @@
                         "backButtonText": "Use cases",
                         "title": "Contract review without losing a whole afternoon",
                         "quote": "",
+                        "challengeText": "Challenge",
                         "challengeDescription": "A law firm with several offices spent hours of manual work every week reviewing clauses and extracting key data from incoming contracts before moving forward with each case. Manual review created bottlenecks and delays in responding to clients.",
                         "functionalitiesText": "Features",
                         "functionalities": [
@@ -2687,6 +2688,7 @@
                         "backButtonText": "Use cases",
                         "title": "Find the answer without interrupting a colleague",
                         "quote": "",
+                        "challengeText": "Challenge",
                         "challengeDescription": "At a consultancy with a distributed team, finding the internal policy or the criteria applied in a past case meant interrupting a colleague or digging through scattered folders and emails, at a real time cost for the whole team.",
                         "functionalitiesText": "Features",
                         "functionalities": [

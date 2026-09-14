@@ -39,7 +39,7 @@ const Construction = () => {
     <>
       <Hero {...hero} />
       <section style={bgStyle}>
-        <UseCases {...useCases} />
+        <UseCases {...useCases} industry="construction" />
         <ImproveAreas {...improveAreas} />
       </section>
       <SolutionsApplications {...solutionsApplications} />
