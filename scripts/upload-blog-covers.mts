@@ -9,6 +9,13 @@
  *   PAYLOAD_MIGRATING=true npm run covers:upload          # dry run — prints the target
  *   PAYLOAD_MIGRATING=true COVERS_CONFIRM=1 npm run covers:upload
  *
+ * `npm run covers:upload` reads .env.local. For another environment, point Node
+ * at that env file instead — note `vercel env pull` cannot decrypt DATABASE_URI
+ * or PAYLOAD_SECRET (they are sensitive), so write the file by hand:
+ *
+ *   PAYLOAD_MIGRATING=true node --env-file=.env.staging \
+ *     scripts/run-payload-script.mjs scripts/upload-blog-covers.mts
+ *
  * Re-running is safe: media is matched by filename and updated in place, and a
  * post whose cover is already correct is skipped.
  */
