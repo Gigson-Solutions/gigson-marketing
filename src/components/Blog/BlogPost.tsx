@@ -8,11 +8,11 @@ import { RichText } from '@payloadcms/richtext-lexical/react';
 import type { Post } from '../../../lib/posts';
 import { estimateReadingTime } from '../../../lib/readingTime';
 import { Link } from '../../../i18n/navigation';
+import PostCover from './PostCover';
 import { jsxConverters } from './richTextConverters';
 
 const RelatedPostCard = ({ post }: { post: Post }) => {
   const t = useTranslations('blog');
-  const coverUrl = post.coverImage?.sizes?.card?.url ?? post.coverImage?.url;
 
   return (
     <Link
@@ -20,15 +20,7 @@ const RelatedPostCard = ({ post }: { post: Post }) => {
       className="group block border border-ink/20 rounded-[24px] overflow-hidden hover:border-purple-accents transition-colors"
     >
       <div className="aspect-[16/9] overflow-hidden bg-cream">
-        {coverUrl ? (
-          <img
-            src={coverUrl}
-            alt={post.coverImage?.alt ?? post.title}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-purple-light to-purple" />
-        )}
+        <PostCover post={post} />
       </div>
       <div className="p-5">
         {post.category && (
@@ -55,7 +47,6 @@ const BlogPost = ({ post, relatedPosts = [] }: Props) => {
     : '';
 
   const readingTime = estimateReadingTime(post.content);
-  const coverUrl = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
 
   // `localizedVersion` may have a different slug than `post` — translated
   // slugs are more idiomatic for SEO than forcing the same one across
@@ -80,15 +71,9 @@ const BlogPost = ({ post, relatedPosts = [] }: Props) => {
           )}
         </div>
 
-        {coverUrl && (
-          <div className="aspect-[16/9] rounded-[30px] overflow-hidden mb-10 bg-cream">
-            <img
-              src={coverUrl}
-              alt={post.coverImage?.alt ?? post.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        )}
+        <div className="aspect-[16/9] rounded-[30px] overflow-hidden mb-10 bg-cream">
+          <PostCover post={post} variant="hero" />
+        </div>
 
         <header className="mb-10">
           {post.category && (

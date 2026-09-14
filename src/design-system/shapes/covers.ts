@@ -1,4 +1,4 @@
-import type { CollageLayer } from '../../../src/design-system/shapes';
+import type { CollageLayer } from './Collage';
 
 /**
  * Four mass slots plus a line colour. Both palettes fill the same slots, so
@@ -36,17 +36,34 @@ export const MONO: Palette = {
  */
 export const EDITORIAL: Palette = {
   bg: 'var(--gs-cream)',
-  m1: '#F2C879',
-  m2: '#7874F4',
-  m3: '#3AA79B',
-  m4: '#E9A23B',
+  m1: 'var(--gs-amber)',
+  m2: 'var(--gs-purple)',
+  m3: 'var(--gs-teal)',
+  m4: 'var(--gs-amber-deep)',
   line: 'var(--gs-cream)',
 };
 
-export type Cover = { title: string; note: string; build: (p: Palette) => CollageLayer[] };
+/**
+ * The frame every surface has to agree on: the blog cards, the lab preview and
+ * the PNG rasteriser. `Collage` defaults to the wider 1120/545 editorial ratio,
+ * but every cover box in the blog is 16/9 — change it here and all three follow.
+ */
+export const COVER_ASPECT = 16 / 9;
+
+/** Raster target for `public/img/blog-covers/*.png` — COVER_ASPECT × 900. */
+export const COVER_RASTER = { width: 1600, height: 900 } as const;
+
+/**
+ * Stable identifier for a composition. Used as the PNG filename and as the key
+ * anything outside the design system maps onto — `title` is copy and will drift.
+ */
+export type CoverId = 'agentes' | 'automatizar' | 'senal' | 'conocimiento';
+
+export type Cover = { id: CoverId; title: string; note: string; build: (p: Palette) => CollageLayer[] };
 
 export const COVERS: Cover[] = [
   {
+    id: 'agentes',
     title: 'Agentes de IA que trabajan solos',
     note: 'bubble + hexágono con grafo · sparkle',
     build: (p) => [
@@ -59,6 +76,7 @@ export const COVERS: Cover[] = [
     ],
   },
   {
+    id: 'automatizar',
     title: 'Automatizar el trabajo repetitivo',
     note: 'arco + retícula recortada · onda suelta',
     build: (p) => [
@@ -71,6 +89,7 @@ export const COVERS: Cover[] = [
     ],
   },
   {
+    id: 'senal',
     title: 'Leer la señal en los datos',
     note: 'círculo grande + lissajous · blob al corte',
     build: (p) => [
@@ -83,6 +102,7 @@ export const COVERS: Cover[] = [
     ],
   },
   {
+    id: 'conocimiento',
     title: 'Conocimiento que circula por el equipo',
     note: 'masas solapadas · el multiply crea el tercer color',
     build: (p) => [
@@ -94,3 +114,5 @@ export const COVERS: Cover[] = [
     ],
   },
 ];
+
+export const COVER_BY_ID = Object.fromEntries(COVERS.map((cover) => [cover.id, cover])) as Record<CoverId, Cover>;

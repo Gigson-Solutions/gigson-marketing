@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 
-import { build2D, Collage, type MeshName, Scene2Din3D, type ScenePreset, Shape2D, type Shape2DName, type Shape2DParams, Wireframe3D } from '../../../src/design-system/shapes';
-import { COVERS, EDITORIAL, MONO, type Palette } from './covers';
+import { build2D, Collage, COVER_ASPECT, COVERS, EDITORIAL, type MeshName, MONO, type Palette, Scene2Din3D, type ScenePreset, Shape2D, type Shape2DName, type Shape2DParams, Wireframe3D } from '../../../src/design-system/shapes';
 
 type FlatSpec = { name: Shape2DName; label: string; note: string; params?: Shape2DParams };
 type SolidSpec = { name: MeshName; label: string; note: string; speed?: number };
@@ -257,7 +256,7 @@ function CoverGallery({ palette }: { palette: Palette }) {
       {COVERS.map((cover) => (
         <figure key={cover.title} style={{ margin: 0 }}>
           <div style={{ borderRadius: 'var(--gs-radius-md)', overflow: 'hidden', border: '0.5px solid var(--gs-stroke-soft)' }}>
-            <Collage layers={cover.build(palette)} background={palette.bg} />
+            <Collage layers={cover.build(palette)} background={palette.bg} aspect={COVER_ASPECT} />
           </div>
           <figcaption style={{ marginTop: 'var(--gs-space-3)' }}>
             <p style={{ fontSize: 'var(--gs-text-base)', lineHeight: 'var(--gs-lh-heading)', margin: 0 }}>{cover.title}</p>
