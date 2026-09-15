@@ -34,7 +34,7 @@ export const CtaBlock: Block = {
         { label: 'Consultoría tecnológica', value: '/technology-consulting' },
         { label: 'Ingeniería de software', value: '/software-engineering' },
         { label: 'Ciberseguridad', value: '/cybersecurity' },
-        { label: 'Certificación ISO 27001', value: '/iso-27001-certification' },
+        { label: 'Certificación ISO 27001', value: '/iso-27001' },
         { label: 'Logística', value: '/logistics-technology' },
         { label: 'Retail / eCommerce', value: '/retail-ecommerce-technology' },
         { label: 'Construcción', value: '/construction-technology' },
