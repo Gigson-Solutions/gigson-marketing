@@ -153,12 +153,12 @@ const Services = () => {
     cta: { title: string; buttonText: string };
   };
 
-  const serviceLinks: Array<'/cto-as-service' | '/technology-consulting' | '/software-engineering' | '/ai-agents' | '/iso-27001-certification'> = [
+  const serviceLinks: Array<'/cto-as-service' | '/technology-consulting' | '/software-engineering' | '/ai-agents' | '/iso-27001'> = [
     '/cto-as-service',
     '/technology-consulting',
     '/software-engineering',
     '/ai-agents',
-    '/iso-27001-certification',
+    '/iso-27001',
   ];
 
   const serviceCardsRef = useRef<HTMLElement>(null);
