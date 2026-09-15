@@ -20,6 +20,12 @@ Web de [Gigson Solutions](https://gigsonsolutions.com) — Next.js (App Router) 
 git fetch && git rev-list --count origin/main..origin/staging
 ```
 
+Las PR hacia `main` **solo** se aceptan desde `staging` (una release) o desde una rama
+`hotfix/*`. Lo comprueba el workflow
+[`pr-source-guard`](.github/workflows/pr-source-guard.yml), que es un check requerido:
+una PR a `main` desde cualquier otra rama se queda bloqueada. El trabajo normal sale de
+`staging` y vuelve a `staging`.
+
 ## Desarrollo local
 
 ### 1. Dependencias
