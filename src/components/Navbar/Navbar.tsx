@@ -21,7 +21,7 @@ const Navbar = () => {
         { name: t('tech_consulting'), href: '/technology-consulting' as const },
         { name: t('ai_agents'), href: '/ai-agents' as const },
         { name: t('software'), href: '/software-engineering' as const },
-        { name: t('compliance'), href: '/iso-27001-certification' as const },
+        { name: t('compliance'), href: '/iso-27001' as const },
       ],
     },
     {
