@@ -44,7 +44,8 @@ type CardData = {
   title: string;
   supTitle: string;
   description: string;
-  buttonText: string;
+  /** Only the last card shows a labelled button; the rest show the arrow. */
+  buttonText?: string;
   dialog: DialogData;
 };
 
@@ -73,8 +74,9 @@ const Card = ({
       <div className="flex-1">
         <div className="flex items-center gap-2 justify-between mb-2">
           <p className="text-bigTag text-purple-accents">{supTitle}</p>
-          {!isLastCard && <ButtonIcon onClick={onOpen} />}
-          {isLastCard && <Button text={buttonText} onClick={onOpen} />}
+          {/* Without a label the button renders as an empty pill, so fall back
+              to the arrow the other cards use. */}
+          {isLastCard && buttonText ? <Button text={buttonText} onClick={onOpen} /> : <ButtonIcon onClick={onOpen} />}
         </div>
         <p className="text-body text-dark-medium">{description}</p>
       </div>
@@ -86,21 +88,24 @@ const DialogContent = ({
   backButtonText, title, shape, challengeText, challengeDescription, quote, technologiesText, technologies,
   functionalitiesText, functionalities, solutionText, solutionDescription, onClose,
 }: DialogData & { shape: UseCaseShape; onClose: () => void }) => (
-  <div className="flex flex-col pt-6 pb-10 md:px-6 text-dark-primary">
-    <div className="flex flex-col mb-6 md:mb-20">
-      <div className="flex flex-row flex-wrap items-start justify-between gap-x-10 gap-y-6 mb-6 md:mb-16">
+  <div className="flex flex-col pt-4 pb-8 md:px-6 text-dark-primary">
+    <div className="flex flex-col mb-6 md:mb-10">
+      <div className="flex flex-row flex-wrap items-start justify-between gap-x-10 gap-y-4 mb-4 md:mb-6">
         <p className="flex items-center gap-2 text-body text-dark-medium uppercase cursor-pointer hover:opacity-80" onClick={onClose}>
           <span><Arrow /></span>
           {backButtonText}
         </p>
-        <div className="hidden md:flex flex-col items-end gap-6 shrink-0 ml-auto">
+        <div className="hidden md:flex flex-col items-end gap-4 shrink-0 ml-auto">
+          {/* Drawn on mount: the panel is fixed, so the document never scrolls
+              past the figure and a ScrollTrigger would leave it blank. */}
           <Shape2D
             name={shape.name}
             params={shape.params}
-            size={168}
+            size={96}
             strokeWidth={1.25}
             duration={shape.duration}
             stagger={shape.stagger}
+            drawOnMount
             className="!block max-w-full h-auto"
           />
           {!!quote && (
@@ -111,15 +116,15 @@ const DialogContent = ({
           )}
         </div>
       </div>
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col md:flex-row gap-x-6 gap-y-8">
         <div className="flex-8/12 flex flex-col">
-          <h4 className="flex-auto text-h3 text-dark-primary max-w-[600px] mb-6 md:mb-16">{title}</h4>
+          <h4 className="text-h3 text-dark-primary max-w-[600px] mb-4 md:mb-6">{title}</h4>
           <div>
             {!!challengeText && <p className="text-purple-accents text-subtitle mb-1">{challengeText}</p>}
             <p className="text-body text-dark-medium max-w-[600px]">{challengeDescription}</p>
           </div>
         </div>
-        <div className="flex-4/12 justify-self-end flex flex-col justify-end">
+        <div className="flex-4/12 justify-self-end flex flex-col">
           <p className="text-purple-accents text-subtitle mb-1">{technologiesText}</p>
           <ul className="ml-6">
             {technologies.map(({ title, description }, index) => (
@@ -135,29 +140,34 @@ const DialogContent = ({
       </div>
     </div>
 
-    <div className="flex flex-col mb-6 md:mb-12">
-      <p className="text-body text-purple-accents uppercase mb-6">{functionalitiesText}</p>
-      <div className="flex flex-col md:grid md:grid-cols-3 md:gap-4">
+    <div className="flex flex-col mb-6 md:mb-10">
+      <p className="text-body text-purple-accents uppercase mb-4">{functionalitiesText}</p>
+      <div className="flex flex-col md:grid md:grid-cols-3 md:gap-x-4 md:gap-y-6">
         {functionalities.map(({ title, description }, index) => (
-          <div key={index} className="flex flex-col border-t pb-8">
+          <div key={index} className="flex flex-col border-t pb-6 md:pb-0">
             <span className="text-bigTag text-purple-accents">{getCardNr(index + 1)}</span>
-            <h4 className="text-h4 text-dark-primary mb-6 md:min-h-[120px]">{title}</h4>
-            <p className="hidden md:block text-body text-dark-medium">{description}</p>
+            {/* No min-height: the grid row already stretches every card to the
+                tallest one, and mt-auto lines the descriptions up along its
+                bottom — so short titles cost no empty space. */}
+            <h4 className="text-h4 text-dark-primary mb-3">{title}</h4>
+            <p className="hidden md:block mt-auto text-body text-dark-medium">{description}</p>
           </div>
         ))}
       </div>
     </div>
 
-    <div className="flex flex-col md:flex-row justify-center md:gap-x-10 border-t-2 border-t-purple-accents pt-6 md:pt-10">
+    <div className="flex flex-col md:flex-row md:items-start justify-center gap-4 md:gap-x-10 border-t-2 border-t-purple-accents pt-6 md:pt-8">
+      {/* shrink-0 keeps the flex row from squeezing the square figure into a
+          sliver and stretching it to the row height. */}
       <Shape2D
         name={shape.name}
         params={shape.params}
-        size={120}
+        size={96}
         strokeWidth={1.25}
         animate={false}
-        className="!block max-w-full h-auto ml-auto"
+        className="!block shrink-0 max-w-full h-auto ml-auto md:ml-0"
       />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-3">
         <p className="text-subtitle text-purple-accents">{solutionText}</p>
         <p className="text-body text-dark-primary">{solutionDescription}</p>
       </div>

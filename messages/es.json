@@ -1744,6 +1744,7 @@
                 {
                     "title": "Motor de presupuestos",
                     "supTitle": "Desafío",
+                    "buttonText": "Ver caso",
                     "description": "Sistema de presupuestos personalizados conectado por API a Holded para crear cotizaciones complejas con configuraciones y simulaciones en proyectos de construcción y logística.",
                     "dialog": {
                         "backButtonText": "Casos de uso",
@@ -2060,8 +2061,8 @@
                                 "description": "Métricas de satisfacción, tiempo de respuesta y temas recurrentes."
                             }
                         ],
-                        "solutionText": "Solution",
-                        "solutionDescription": "mplementamos un asistente con IA entrenado con los datos de producto, logística y políticas comerciales de la empresa. El chatbot está integrado en el portal de cliente y puede ofrecer respuestas específicas según cada pedido y su estado de entrega. Cuando es necesario, crea tickets para el equipo de soporte humano. Los tiempos de primera respuesta se redujeron en un 80% y el volumen de tickets bajó un 35%.",
+                        "solutionText": "Solución",
+                        "solutionDescription": "Implementamos un asistente con IA entrenado con los datos de producto, logística y políticas comerciales de la empresa. El chatbot está integrado en el portal de cliente y puede ofrecer respuestas específicas según cada pedido y su estado de entrega. Cuando es necesario, crea tickets para el equipo de soporte humano. Los tiempos de primera respuesta se redujeron en un 80% y el volumen de tickets bajó un 35%.",
                         "technologiesText": "Tecnologías",
                         "technologies": [
                             {

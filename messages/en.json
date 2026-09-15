@@ -1744,6 +1744,7 @@
                 {
                     "title": "Budget engine",
                     "supTitle": "Challenge",
+                    "buttonText": "View case",
                     "description": "A personalized quoting system connected via API to Holded for generating complex estimates with configurable simulations in construction and logistics projects.",
                     "dialog": {
                         "backButtonText": "Use Cases",
