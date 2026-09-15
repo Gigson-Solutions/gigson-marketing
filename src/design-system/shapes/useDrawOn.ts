@@ -16,6 +16,12 @@ type DrawOnOptions = {
   start?: string;
   /** Replay every time the figure re-enters the viewport. */
   repeat?: boolean;
+  /**
+   * Draw as soon as the figure mounts instead of waiting for a scroll
+   * position. Needed inside fixed-position UI (the use-case modal), where the
+   * document never scrolls to the figure and the ScrollTrigger never fires.
+   */
+  onMount?: boolean;
 };
 
 /**
@@ -30,6 +36,7 @@ export function useDrawOn<T extends SVGSVGElement>({
   stagger = 0.12,
   start = 'top 85%',
   repeat = false,
+  onMount = false,
 }: DrawOnOptions = {}) {
   const ref = useRef<T>(null);
 
@@ -46,14 +53,16 @@ export function useDrawOn<T extends SVGSVGElement>({
         gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
       }
 
+      const trigger = repeat
+        ? { trigger: ref.current, start, toggleActions: 'restart none none reset' }
+        : { trigger: ref.current, start, once: true };
+
       gsap.to(paths, {
         strokeDashoffset: 0,
         duration,
         stagger,
         ease: 'power2.inOut',
-        scrollTrigger: repeat
-          ? { trigger: ref.current, start, toggleActions: 'restart none none reset' }
-          : { trigger: ref.current, start, once: true },
+        ...(onMount ? {} : { scrollTrigger: trigger }),
       });
     },
     { scope: ref }
