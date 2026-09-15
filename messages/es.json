@@ -2635,6 +2635,7 @@
                         "backButtonText": "Casos de uso",
                         "title": "Revisión de contratos sin perder una tarde entera",
                         "quote": "",
+                        "challengeText": "Desafío",
                         "challengeDescription": "Un despacho con varias sedes dedicaba horas manuales cada semana a revisar cláusulas y extraer datos clave de los contratos entrantes antes de poder avanzar con cada expediente. La revisión manual generaba cuellos de botella y retrasos en la respuesta al cliente.",
                         "functionalitiesText": "Funcionalidades",
                         "functionalities": [
@@ -2691,6 +2692,7 @@
                         "backButtonText": "Casos de uso",
                         "title": "Encuentra la respuesta sin preguntar a un compañero",
                         "quote": "",
+                        "challengeText": "Desafío",
                         "challengeDescription": "En una consultora con equipo distribuido, encontrar la política interna o el criterio aplicado en un caso anterior implicaba interrumpir a un compañero o buscar entre carpetas y correos dispersos, con el consiguiente coste de tiempo para todo el equipo.",
                         "functionalitiesText": "Funcionalidades",
                         "functionalities": [

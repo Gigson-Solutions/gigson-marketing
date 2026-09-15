@@ -12,6 +12,10 @@ type Shape2DProps = {
   strokeWidth?: number;
   /** Draw the figure on with GSAP when it scrolls into view. */
   animate?: boolean;
+  /** Seconds per stroke — lets each figure draw on at its own pace. */
+  duration?: number;
+  /** Delay between consecutive strokes. */
+  stagger?: number;
   className?: string;
   params?: Shape2DParams;
 };
@@ -26,10 +30,12 @@ export function Shape2D({
   color = 'var(--gs-purple)',
   strokeWidth = 1,
   animate = true,
+  duration,
+  stagger,
   className,
   params,
 }: Shape2DProps) {
-  const ref = useDrawOn<SVGSVGElement>();
+  const ref = useDrawOn<SVGSVGElement>({ duration, stagger });
   const paths = build2D(name, size, params);
 
   return (

@@ -50,7 +50,17 @@ export type Shape2DName =
   | 'wave'
   | 'grid'
   | 'radial'
-  | 'lissajous';
+  | 'lissajous'
+  | 'star'
+  | 'rose'
+  | 'spirograph'
+  | 'superellipse'
+  | 'chord'
+  | 'contour'
+  | 'hexgrid'
+  | 'arcs'
+  | 'staircase'
+  | 'moire';
 
 export type Shape2DParams = {
   /** Sides for `polygon`, lines for `wave`/`grid`, rays for `radial`. */
@@ -63,8 +73,10 @@ export type Shape2DParams = {
   samples?: number;
   /** Base rotation in degrees. */
   rotation?: number;
-  /** Lissajous frequency ratio. */
+  /** Lissajous frequency ratio, rose petal count, chord step, superellipse exponent. */
   ratio?: number;
+  /** Waist of `star`, pen offset of `spirograph`. Fraction of the outer radius. */
+  inner?: number;
 };
 
 /**
@@ -73,7 +85,7 @@ export type Shape2DParams = {
  * animate its lines in sequence.
  */
 export function build2D(name: Shape2DName, size: number, params: Shape2DParams = {}): string[] {
-  const { sides = 5, rings = 3, turns = 3, samples = 180, rotation = 0, ratio = 3 } = params;
+  const { sides = 5, rings = 3, turns = 3, samples = 180, rotation = 0, ratio = 3, inner = 0.45 } = params;
 
   const cx = size / 2;
   const cy = size / 2;
@@ -158,6 +170,151 @@ export function build2D(name: Shape2DName, size: number, params: Shape2DParams =
         return { x: cx + r * Math.sin(ratio * t + rot), y: cy + r * Math.sin((ratio + 1) * t) };
       });
       return [polyline(points, true)];
+    }
+
+    /** n-pointed star. `inner` is the waist: 0.38 reads sharp, 0.7 blunt. */
+    case 'star': {
+      const points = Array.from({ length: sides * 2 }, (_, index) => {
+        const a = rot - Math.PI / 2 + (index / (sides * 2)) * TAU;
+        const rr = index % 2 === 0 ? r : r * inner;
+        return { x: cx + rr * Math.cos(a), y: cy + rr * Math.sin(a) };
+      });
+      return [polyline(points, true)];
+    }
+
+    /** Rhodonea rose, r = cos(ratio·theta). Odd ratio gives that many petals, even gives double. */
+    case 'rose': {
+      const span = Number.isInteger(ratio) ? (ratio % 2 === 1 ? Math.PI : TAU) : TAU * 2;
+      const points = Array.from({ length: samples + 1 }, (_, index) => {
+        const t = (index / samples) * span;
+        const rr = r * Math.cos(ratio * t);
+        return { x: cx + rr * Math.cos(t + rot), y: cy + rr * Math.sin(t + rot) };
+      });
+      return [polyline(points, true)];
+    }
+
+    /**
+     * Hypotrochoid — the spirograph curve. `ratio` is the gear ratio and
+     * `inner` the pen offset; the result is fitted to the box afterwards
+     * because those two together decide the real extent.
+     */
+    case 'spirograph': {
+      const rolling = 1 / Math.max(1.2, ratio);
+      const arm = (1 - rolling) / rolling;
+      const raw = Array.from({ length: samples * 2 + 1 }, (_, index) => {
+        const t = (index / (samples * 2)) * TAU * turns + rot;
+        return {
+          x: (1 - rolling) * Math.cos(t) + inner * Math.cos(arm * t),
+          y: (1 - rolling) * Math.sin(t) - inner * Math.sin(arm * t),
+        };
+      });
+      const max = Math.max(...raw.map((p) => Math.hypot(p.x, p.y))) || 1;
+      return [polyline(raw.map((p) => ({ x: cx + (p.x / max) * r, y: cy + (p.y / max) * r })))];
+    }
+
+    /** Lamé superellipse: ratio 2 is an ellipse, 4 a squircle, 8 nearly a square. */
+    case 'superellipse': {
+      const e = 2 / Math.max(0.5, ratio);
+      const cr = Math.cos(rot);
+      const sr = Math.sin(rot);
+      const points = Array.from({ length: samples }, (_, index) => {
+        const t = (index / samples) * TAU;
+        const px = r * Math.sign(Math.cos(t)) * Math.abs(Math.cos(t)) ** e;
+        const py = r * Math.sign(Math.sin(t)) * Math.abs(Math.sin(t)) ** e;
+        return { x: cx + px * cr - py * sr, y: cy + px * sr + py * cr };
+      });
+      return [polyline(points, true)];
+    }
+
+    /**
+     * Times-table chord diagram: node i joins node i·ratio around the rim.
+     * All chords share one path so the draw-on stays one continuous gesture
+     * instead of dozens of staggered ticks.
+     */
+    case 'chord': {
+      const nodes = sides;
+      const step = Math.max(2, Math.round(ratio));
+      const at = (index: number) => {
+        const a = rot - Math.PI / 2 + ((index % nodes) / nodes) * TAU;
+        return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
+      };
+      const chords = Array.from({ length: nodes }, (_, index) => {
+        const a = at(index);
+        const b = at(index * step);
+        return `M ${n(a.x)} ${n(a.y)} L ${n(b.x)} ${n(b.y)}`;
+      }).join(' ');
+      return [ellipse(cx, cy, r, r), chords];
+    }
+
+    /** Topographic contours. Sum of sines, so it is organic but deterministic. */
+    case 'contour':
+      return Array.from({ length: rings }, (_, index) => {
+        const level = (index + 1) / rings;
+        const points = Array.from({ length: 48 }, (_, i) => {
+          const a = rot + (i / 48) * TAU;
+          const wobble = 0.86 + 0.1 * Math.sin(a * 3 + index) + 0.06 * Math.sin(a * 5 - index * 1.7);
+          const rr = r * level * wobble;
+          return { x: cx + rr * Math.cos(a), y: cy + rr * Math.sin(a) };
+        });
+        return smoothClosed(points);
+      });
+
+    /** Hexagonal tiling. Rows overhang the box; the SVG viewport clips them. */
+    case 'hexgrid': {
+      const cols = sides;
+      const rad = size / (cols * Math.sqrt(3));
+      const stepX = Math.sqrt(3) * rad;
+      const stepY = 1.5 * rad;
+      const hex = (hx: number, hy: number) =>
+        polyline(
+          Array.from({ length: 6 }, (_, index) => {
+            const a = -Math.PI / 2 + (index / 6) * TAU;
+            return { x: hx + rad * Math.cos(a), y: hy + rad * Math.sin(a) };
+          }),
+          true
+        );
+      return Array.from({ length: Math.ceil(size / stepY) + 1 }, (_, row) =>
+        Array.from({ length: cols + 1 }, (_, col) => hex((row % 2 === 0 ? 0 : stepX / 2) + col * stepX, row * stepY)).join(' ')
+      );
+    }
+
+    /** Concentric arc segments, each with its own sweep and start angle. */
+    case 'arcs':
+      return Array.from({ length: rings }, (_, index) => {
+        const rr = r * ((index + 1) / rings);
+        const a0 = rot + index * 0.7;
+        const sweep = TAU * (0.28 + 0.5 * ((rings - index) / rings));
+        const a1 = a0 + sweep;
+        return `M ${n(cx + rr * Math.cos(a0))} ${n(cy + rr * Math.sin(a0))} A ${n(rr)} ${n(rr)} 0 ${sweep > Math.PI ? 1 : 0} 1 ${n(cx + rr * Math.cos(a1))} ${n(cy + rr * Math.sin(a1))}`;
+      });
+
+    /** Orthogonal staircase — reads as a process, or as a step chart. */
+    case 'staircase': {
+      const stepX = size / sides;
+      const stepY = size / sides;
+      const points = [{ x: 0, y: size }];
+      for (let index = 0; index < sides; index++) {
+        points.push({ x: index * stepX, y: size - (index + 1) * stepY }, { x: (index + 1) * stepX, y: size - (index + 1) * stepY });
+      }
+      return [polyline(points)];
+    }
+
+    /**
+     * Two families of parallel lines at a slight angle. The figure is the
+     * interference between them, not the lines — `rotation` is that angle.
+     */
+    case 'moire': {
+      const delta = rot || (Math.PI / 180) * 12;
+      const family = (angle: number) =>
+        Array.from({ length: sides }, (_, index) => {
+          const offset = (index / (sides - 1) - 0.5) * size * 1.4;
+          const nx = Math.cos(angle + Math.PI / 2) * offset;
+          const ny = Math.sin(angle + Math.PI / 2) * offset;
+          const dx = Math.cos(angle) * size;
+          const dy = Math.sin(angle) * size;
+          return `M ${n(cx + nx - dx)} ${n(cy + ny - dy)} L ${n(cx + nx + dx)} ${n(cy + ny + dy)}`;
+        }).join(' ');
+      return [family(0), family(delta)];
     }
   }
 }
@@ -293,6 +450,168 @@ export function sparklePaths(size: number, rays = 7, spread = Math.PI * 0.9): st
   });
 }
 
+/* ── POINT CLOUDS ───────────────────────────────────────────── */
+
+export type CloudName =
+  | 'sphere'
+  | 'ball'
+  | 'ring'
+  | 'disc'
+  | 'helix'
+  | 'plume'
+  | 'lattice'
+  | 'wave'
+  | 'edges'
+  | 'rim';
+
+/**
+ * The same linear congruential generator `HeroScene` uses. Seeded on purpose:
+ * a cloud that re-randomised on every render would flicker between the server
+ * and the client, and could not be art-directed.
+ */
+function seeded(seed: number) {
+  let state = seed;
+  return () => {
+    state = (state * 1_664_525 + 1_013_904_223) & 0xff_ff_ff_ff;
+    return (state >>> 0) / 0xff_ff_ff_ff;
+  };
+}
+
+/**
+ * A cloud of points, distributed so that the *distribution* is the figure.
+ * Coordinates sit inside the unit sphere; the renderer adds the drift.
+ */
+export function cloudPoints(name: CloudName, count = 260, seed = 42): Point3[] {
+  const rand = seeded(seed);
+  const points: Point3[] = [];
+
+  switch (name) {
+    /** Surface of a sphere — the hero's own distribution. */
+    case 'sphere':
+      for (let i = 0; i < count; i++) {
+        const phi = Math.acos(2 * rand() - 1);
+        const theta = TAU * rand();
+        points.push({ x: Math.sin(phi) * Math.cos(theta), y: Math.sin(phi) * Math.sin(theta), z: Math.cos(phi) });
+      }
+      return points;
+
+    /** Filled volume. The cube root keeps the density even instead of centre-heavy. */
+    case 'ball':
+      for (let i = 0; i < count; i++) {
+        const phi = Math.acos(2 * rand() - 1);
+        const theta = TAU * rand();
+        const rr = Math.cbrt(rand());
+        points.push({ x: rr * Math.sin(phi) * Math.cos(theta), y: rr * Math.sin(phi) * Math.sin(theta), z: rr * Math.cos(phi) });
+      }
+      return points;
+
+    /** Torus of dots. */
+    case 'ring': {
+      const major = 0.74;
+      const minor = 0.22;
+      for (let i = 0; i < count; i++) {
+        const u = TAU * rand();
+        const v = TAU * rand();
+        const tube = Math.sqrt(rand()) * minor;
+        const rr = major + tube * Math.cos(v);
+        points.push({ x: rr * Math.cos(u), y: tube * Math.sin(v), z: rr * Math.sin(u) });
+      }
+      return points;
+    }
+
+    /** Flat disc on the horizontal plane — the camera tilt turns it into an ellipse. */
+    case 'disc':
+      for (let i = 0; i < count; i++) {
+        const rr = Math.sqrt(rand()) * 0.95;
+        const a = TAU * rand();
+        points.push({ x: rr * Math.cos(a), y: (rand() - 0.5) * 0.06, z: rr * Math.sin(a) });
+      }
+      return points;
+
+    /** Dots strung along a helix, with enough jitter to read as a cloud. */
+    case 'helix':
+      for (let i = 0; i < count; i++) {
+        const t = i / count;
+        const a = t * 3 * TAU;
+        const jitter = () => (rand() - 0.5) * 0.09;
+        points.push({ x: 0.64 * Math.cos(a) + jitter(), y: t * 1.6 - 0.8 + jitter(), z: 0.64 * Math.sin(a) + jitter() });
+      }
+      return points;
+
+    /**
+     * Dense at the top, thinning and spreading as it falls — the plume under
+     * the hero's pentagon. The exponent on `k` is what keeps the head tight.
+     */
+    case 'plume':
+      for (let i = 0; i < count; i++) {
+        const k = rand() ** 1.7;
+        const a = TAU * rand();
+        const rr = Math.sqrt(rand()) * (0.14 + k * 0.68);
+        points.push({ x: rr * Math.cos(a), y: 0.76 - k * 1.58, z: rr * Math.sin(a) });
+      }
+      return points;
+
+    /** Points sitting on a 5×5×5 grid, loosened just enough to breathe. */
+    case 'lattice': {
+      const steps = 5;
+      const at = (v: number) => (v / (steps - 1)) * 1.22 - 0.61;
+      const jitter = () => (rand() - 0.5) * 0.06;
+      for (let i = 0; i < count; i++) {
+        const cell = i % steps ** 3;
+        points.push({
+          x: at(cell % steps) + jitter(),
+          y: at(Math.floor(cell / steps) % steps) + jitter(),
+          z: at(Math.floor(cell / (steps * steps))) + jitter(),
+        });
+      }
+      return points;
+    }
+
+    /** A sheet of dots riding a standing wave. */
+    case 'wave':
+      for (let i = 0; i < count; i++) {
+        const x = rand() * 1.44 - 0.72;
+        const z = rand() * 1.44 - 0.72;
+        points.push({ x, y: Math.sin(x * 3 + z * 1.6) * 0.3, z });
+      }
+      return points;
+
+    /** Scattered along the twelve edges of a cube — the solid implied, never drawn. */
+    case 'edges': {
+      const corners: Point3[] = [];
+      for (const x of [-0.6, 0.6]) for (const y of [-0.6, 0.6]) for (const z of [-0.6, 0.6]) corners.push({ x, y, z });
+      const pairs = edgesByProximity(corners);
+      for (let i = 0; i < count; i++) {
+        const [a, b] = pairs[i % pairs.length];
+        const t = rand();
+        points.push({
+          x: corners[a].x + (corners[b].x - corners[a].x) * t,
+          y: corners[a].y + (corners[b].y - corners[a].y) * t,
+          z: corners[a].z + (corners[b].z - corners[a].z) * t,
+        });
+      }
+      return points;
+    }
+
+    /** Dots tracing a pentagon rim, so the outline exists without a stroke. */
+    case 'rim': {
+      const sides = 5;
+      for (let i = 0; i < count; i++) {
+        const edge = i % sides;
+        const t = rand();
+        const a1 = -Math.PI / 2 + (edge / sides) * TAU;
+        const a2 = -Math.PI / 2 + ((edge + 1) / sides) * TAU;
+        points.push({
+          x: (Math.cos(a1) + (Math.cos(a2) - Math.cos(a1)) * t) * 0.92 + (rand() - 0.5) * 0.08,
+          y: (Math.sin(a1) + (Math.sin(a2) - Math.sin(a1)) * t) * 0.92 + (rand() - 0.5) * 0.08,
+          z: (rand() - 0.5) * 0.12,
+        });
+      }
+      return points;
+    }
+  }
+}
+
 /* ── 3D WIREFRAMES ──────────────────────────────────────────── */
 
 /** Connect every vertex pair sitting at the polyhedron's minimum edge length. */
@@ -410,6 +729,144 @@ function helix(turns = 3, samples = 120, radius = 0.75): Mesh {
   return { vertices, edges };
 }
 
+function tetrahedron(): Mesh {
+  const vertices: Point3[] = [
+    { x: 1, y: 1, z: 1 }, { x: 1, y: -1, z: -1 },
+    { x: -1, y: 1, z: -1 }, { x: -1, y: -1, z: 1 },
+  ];
+  return { vertices, edges: edgesByProximity(vertices) };
+}
+
+function dodecahedron(): Mesh {
+  const p = (1 + Math.sqrt(5)) / 2;
+  const q = 1 / p;
+  const vertices: Point3[] = [];
+  for (const x of [-1, 1]) for (const y of [-1, 1]) for (const z of [-1, 1]) vertices.push({ x, y, z });
+  for (const s1 of [-1, 1]) {
+    for (const s2 of [-1, 1]) {
+      vertices.push({ x: 0, y: s1 * q, z: s2 * p }, { x: s1 * q, y: s2 * p, z: 0 }, { x: s2 * p, y: 0, z: s1 * q });
+    }
+  }
+  return { vertices, edges: edgesByProximity(vertices) };
+}
+
+/** Cube and octahedron rectified into one — squares and triangles alternating. */
+function cuboctahedron(): Mesh {
+  const vertices: Point3[] = [];
+  for (const a of [-1, 1]) {
+    for (const b of [-1, 1]) {
+      vertices.push({ x: a, y: b, z: 0 }, { x: a, y: 0, z: b }, { x: 0, y: a, z: b });
+    }
+  }
+  return { vertices, edges: edgesByProximity(vertices) };
+}
+
+/** Latitude/longitude globe. Parallels plus meridians, closed at both poles. */
+function sphere(lats = 5, lons = 12): Mesh {
+  const vertices: Point3[] = [];
+  const edges: Edge[] = [];
+  for (let i = 0; i < lats; i++) {
+    const phi = ((i + 1) / (lats + 1)) * Math.PI;
+    vertices.push(...ring(lons, Math.sin(phi), Math.cos(phi)));
+  }
+  const north = vertices.push({ x: 0, y: 1, z: 0 }) - 1;
+  const south = vertices.push({ x: 0, y: -1, z: 0 }) - 1;
+  for (let i = 0; i < lats; i++) {
+    for (let j = 0; j < lons; j++) {
+      const current = i * lons + j;
+      edges.push([current, i * lons + ((j + 1) % lons)]);
+      if (i < lats - 1) edges.push([current, (i + 1) * lons + j]);
+    }
+  }
+  for (let j = 0; j < lons; j++) edges.push([north, j], [south, (lats - 1) * lons + j]);
+  return { vertices, edges };
+}
+
+/** (p,q) torus knot — a single closed strand that reads as woven. */
+function torusKnot(p = 2, q = 3, samples = 160): Mesh {
+  const vertices = Array.from({ length: samples }, (_, index) => {
+    const t = (index / samples) * TAU;
+    const rr = 2 + Math.cos(q * t);
+    return { x: rr * Math.cos(p * t), y: -Math.sin(q * t), z: rr * Math.sin(p * t) };
+  });
+  const edges = Array.from({ length: samples }, (_, index) => [index, (index + 1) % samples] as Edge);
+  return { vertices, edges };
+}
+
+/** Two counter-phased helices joined by rungs. */
+function doubleHelix(turns = 2, samples = 60, radius = 0.62): Mesh {
+  const vertices: Point3[] = [];
+  const edges: Edge[] = [];
+  for (let index = 0; index < samples; index++) {
+    const t = index / (samples - 1);
+    const a = t * turns * TAU;
+    const y = t * 2 - 1;
+    vertices.push(
+      { x: radius * Math.cos(a), y, z: radius * Math.sin(a) },
+      { x: radius * Math.cos(a + Math.PI), y, z: radius * Math.sin(a + Math.PI) }
+    );
+    if (index > 0) edges.push([(index - 1) * 2, index * 2], [(index - 1) * 2 + 1, index * 2 + 1]);
+    if (index % 5 === 0) edges.push([index * 2, index * 2 + 1]);
+  }
+  return { vertices, edges };
+}
+
+/** n-gonal prism — the faceted answer to the cylinder. */
+function prism(sides = 6): Mesh {
+  const vertices = [...ring(sides, 1, 1), ...ring(sides, 1, -1)];
+  const edges: Edge[] = [];
+  for (let index = 0; index < sides; index++) {
+    edges.push([index, (index + 1) % sides], [sides + index, sides + ((index + 1) % sides)], [index, sides + index]);
+  }
+  return { vertices, edges };
+}
+
+/** Antiprism — same two rings, half a step out of phase, laced with a zigzag. */
+function antiprism(sides = 6): Mesh {
+  const vertices = [...ring(sides, 1, 0.85), ...ring(sides, 1, -0.85, Math.PI / sides)];
+  const edges: Edge[] = [];
+  for (let index = 0; index < sides; index++) {
+    edges.push(
+      [index, (index + 1) % sides],
+      [sides + index, sides + ((index + 1) % sides)],
+      [index, sides + index],
+      [sides + index, (index + 1) % sides]
+    );
+  }
+  return { vertices, edges };
+}
+
+/** Cubic lattice. Proximity edges give exactly the axis-aligned struts. */
+function lattice(steps = 3): Mesh {
+  const vertices: Point3[] = [];
+  const at = (index: number) => (index / (steps - 1)) * 2 - 1;
+  for (let i = 0; i < steps; i++) {
+    for (let j = 0; j < steps; j++) {
+      for (let k = 0; k < steps; k++) vertices.push({ x: at(i), y: at(j), z: at(k) });
+    }
+  }
+  return { vertices, edges: edgesByProximity(vertices) };
+}
+
+/** Möbius band: two rails that swap sides at the seam, so it has one edge. */
+function mobius(samples = 48, width = 0.32): Mesh {
+  const vertices: Point3[] = [];
+  const edges: Edge[] = [];
+  for (let index = 0; index < samples; index++) {
+    const u = (index / samples) * TAU;
+    for (const v of [-width, width]) {
+      const rr = 1 + v * Math.cos(u / 2);
+      vertices.push({ x: rr * Math.cos(u), y: v * Math.sin(u / 2), z: rr * Math.sin(u) });
+    }
+    const a = index * 2;
+    const b = ((index + 1) % samples) * 2;
+    // The half twist means the last segment joins the rails crossed over.
+    const seam = index === samples - 1;
+    edges.push([a, seam ? b + 1 : b], [a + 1, seam ? b : b + 1], [a, a + 1]);
+  }
+  return { vertices, edges };
+}
+
 export const MESHES = {
   cube: cube(),
   cone: cone(),
@@ -419,6 +876,16 @@ export const MESHES = {
   cylinder: cylinder(),
   torus: torus(),
   helix: helix(),
+  tetrahedron: tetrahedron(),
+  dodecahedron: dodecahedron(),
+  cuboctahedron: cuboctahedron(),
+  sphere: sphere(),
+  torusKnot: torusKnot(),
+  doubleHelix: doubleHelix(),
+  prism: prism(),
+  antiprism: antiprism(),
+  lattice: lattice(),
+  mobius: mobius(),
 } satisfies Record<string, Mesh>;
 
 export type MeshName = keyof typeof MESHES;
