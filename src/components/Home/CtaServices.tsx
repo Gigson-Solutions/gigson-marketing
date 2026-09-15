@@ -23,7 +23,7 @@ export const CtaServices = () => {
         <div className="internal-cta-container">
           <div className="cta-button-container">
             <h2>{t('sth2')}</h2>
-            <Link href="/services" className="button-main cta-why-gigson-btn">
+            <Link href="/contact" className="button-main cta-why-gigson-btn">
               {t('slink')}
             </Link>
           </div>

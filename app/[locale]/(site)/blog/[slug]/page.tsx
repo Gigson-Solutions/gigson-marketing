@@ -1,14 +1,34 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 
 import BlogPost from '../../../../../src/components/Blog/BlogPost';
-import { getPostBySlug, getPostSlugs } from '../../../../../lib/posts';
+import JsonLd from '../../../../../src/shared/ui/JsonLd';
+import { coverImagePath } from '../../../../../lib/blogCovers';
+import { getPostBySlug, getPostSlugs, getRelatedPosts, type Post } from '../../../../../lib/posts';
+import { ORIGIN, buildBreadcrumbSchema, organizationRef } from '../../../../../lib/schema';
 
 export const revalidate = 3600;
-
-const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string; slug: string }> };
+
+/** Absolute canonical URL for a post, from its own `locale`/`slug` — used
+ * both for the post itself and for its `localizedVersion` sibling, which
+ * may have a different slug (translated slugs are more idiomatic for SEO
+ * than forcing the same one across languages). */
+function postUrl(post: Post): string {
+  return post.locale === 'es' ? `${ORIGIN}/es/blog/${post.slug}` : `${ORIGIN}/blog/${post.slug}`;
+}
+
+/** Absolute URL of the post's picture. An uploaded cover wins; otherwise this
+ * is the rasterised version of the same generated composition the page renders,
+ * so social previews and the Article schema always have a real image. */
+function articleImage(post: Post): string {
+  const uploaded = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
+  if (!uploaded) return `${ORIGIN}${coverImagePath(post)}`;
+  // Payload returns an absolute URL on Vercel Blob but a relative /api/media
+  // path on local disk storage, so absolutise defensively.
+  return uploaded.startsWith('http') ? uploaded : `${ORIGIN}${uploaded}`;
+}
 
 export async function generateStaticParams() {
   const [esSlugs, enSlugs] = await Promise.all([getPostSlugs('es'), getPostSlugs('en')]);
@@ -34,18 +54,21 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   const title = post.seoTitle ?? post.title;
   const description = post.seoDescription ?? post.excerpt ?? '';
-  const canonical = locale === 'es'
-    ? `${ORIGIN}/es/blog/${slug}`
-    : `${ORIGIN}/blog/${slug}`;
+  const canonical = postUrl(post);
+  const image = articleImage(post);
+
+  const sibling = post.localizedVersion && typeof post.localizedVersion === 'object' ? post.localizedVersion : null;
+  const languages: Record<string, string> = { 'x-default': canonical, [locale]: canonical };
+  if (sibling?.locale && sibling.slug) {
+    languages[sibling.locale] = postUrl(sibling);
+  }
 
   return {
     title,
     description,
     alternates: {
       canonical,
-      // Each post only exists at one locale path — no cross-locale twin to
-      // point hreflang at, so just mark this URL as the default.
-      languages: { 'x-default': canonical, [locale]: canonical },
+      languages,
     },
     openGraph: {
       title,
@@ -54,8 +77,11 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       type: 'article',
       publishedTime: post.publishedAt,
       authors: post.author ? [post.author] : undefined,
-      images: post.coverImage ? [{ url: post.coverImage.url, alt: post.coverImage.alt }] : undefined,
+      images: [{ url: image, alt: post.coverImage?.alt ?? post.title }],
     },
+    // Without an explicit card type X falls back to the small `summary` layout,
+    // which shows the cover as a thumbnail instead of a banner.
+    twitter: { card: 'summary_large_image', title, description, images: [image] },
   };
 }
 
@@ -67,41 +93,47 @@ export default async function BlogPostPage(props: Props) {
     locale
   } = params;
 
-  // This route is static (`generateStaticParams` + `revalidate`), and `BlogPost`
-  // reads the locale and messages off the request config. Without this the read
-  // falls back to request headers — a dynamic API — which is what made every post
-  // page 500 before (see `hotfix/blog-500`).
-  setRequestLocale(locale);
-
   const post = await getPostBySlug(slug, locale);
   if (!post) notFound();
+
+  const relatedPosts = await getRelatedPosts(post, 2);
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.excerpt,
-    url: `${ORIGIN}${locale === 'es' ? '/es' : ''}/blog/${slug}`,
+    url: postUrl(post),
     datePublished: post.publishedAt,
     author: {
       '@type': 'Person',
       name: post.author ?? 'Gigson Solutions',
     },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Gigson Solutions',
-      url: ORIGIN,
-    },
-    ...(post.coverImage && { image: post.coverImage.url }),
+    // Points at the one Organization node declared on the home page
+    // (`lib/schema.ts`) instead of restating a partial copy of it here.
+    publisher: organizationRef,
+    // Google's Article rich result wants an image; every post has one now.
+    image: articleImage(post),
   };
+
+  const [tCrumb, tMenu] = await Promise.all([
+    getTranslations({ locale, namespace: 'breadcrumb' }),
+    getTranslations({ locale, namespace: 'menu' }),
+  ]);
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    [
+      { name: tCrumb('home'), pathKey: '/' },
+      { name: tMenu('blog'), pathKey: '/blog' },
+      { name: post.title, url: postUrl(post) },
+    ],
+    locale,
+  );
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <BlogPost post={post} />
+      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <BlogPost post={post} relatedPosts={relatedPosts} />
     </>
   );
 }

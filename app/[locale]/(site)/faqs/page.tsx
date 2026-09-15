@@ -2,8 +2,9 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import Faqs from '../../../../src/components/Pages/Faqs/Faqs';
+import JsonLd from '../../../../src/shared/ui/JsonLd';
+import { ORIGIN, buildBreadcrumbSchema, buildFaqSchema } from '../../../../lib/schema';
 
-const ORIGIN = 'https://gigsonsolutions.com';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -29,7 +30,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/faqs`,
       },
     },
-    openGraph: { title: seo.title, description: seo.description, url: canonical },
+    openGraph: { title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 
@@ -44,23 +45,22 @@ export default async function FaqsPage(props: Props) {
   const faqsData = t.raw('faqsDropdown') as { question?: string; answer?: string }[];
   const validFaqs = faqsData.filter((f) => f.question && f.answer);
 
-  const faqSchema = validFaqs.length > 0
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: validFaqs.map(({ question, answer }) => ({
-          '@type': 'Question',
-          name: question,
-          acceptedAnswer: { '@type': 'Answer', text: answer },
-        })),
-      }
-    : null;
+  const tCrumb = await getTranslations({ locale, namespace: 'breadcrumb' });
+  const tMenu = await getTranslations({ locale, namespace: 'menu' });
+
+  const faqSchema = buildFaqSchema(validFaqs as { question: string; answer: string }[]);
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    [
+      { name: tCrumb('home'), pathKey: '/' },
+      { name: tMenu('faqs'), pathKey: '/faqs' },
+    ],
+    locale,
+  );
 
   return (
     <>
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+      {faqSchema && <JsonLd data={faqSchema} />}
+      <JsonLd data={breadcrumbSchema} />
       <Faqs />
     </>
   );

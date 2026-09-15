@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 
 import { ButtonLink } from '../../../shared/ui/Button';
+import { RichText } from '../../../shared/ui/RichText';
 
 const DEFAULT_HERO_IMAGE = '/img/conectar-holded.png';
 
@@ -27,9 +28,13 @@ const IntegrationsHero = ({ namespace, logoUrl = DEFAULT_HERO_IMAGE }: Props) =>
           <span className="inline-block text-purple-accents text-smallTag uppercase tracking-widest border border-purple-accents rounded-full px-4 py-1 mb-6">
             {hero.badge}
           </span>
-          <h1 className="text-h1 text-dark-primary mb-4">{hero.title}</h1>
-          <p className="text-h3 text-dark-primary mb-4">{hero.subtitle}</p>
-          <p className="text-subtitle text-dark-medium mb-8">{hero.description}</p>
+          <RichText as="h1" content={hero.title} className="text-h1 text-dark-primary mb-4" />
+          <RichText as="p" content={hero.subtitle} className="text-h3 text-dark-primary mb-4" />
+          <RichText
+            as="p"
+            content={hero.description}
+            className="text-subtitle text-dark-medium mb-8"
+          />
           <ButtonLink link="#contacto" text={hero.cta} className="mb-12" />
 
           <p className="text-h3 text-dark-primary mb-6">{hero.specialists.title}</p>

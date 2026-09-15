@@ -2,8 +2,15 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import CTO from '../../../../src/components/Pages/CTO/CTO';
-
-const ORIGIN = 'https://gigsonsolutions.com';
+import JsonLd from '../../../../src/shared/ui/JsonLd';
+import {
+  ORIGIN,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildServiceSchema,
+  breadcrumbLabel,
+  faqItemsFrom,
+} from '../../../../lib/schema';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -30,7 +37,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': canonical,
       },
     },
-    openGraph: { title, description, url: canonical },
+    openGraph: { title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 
@@ -41,40 +48,34 @@ export default async function CTOPage(props: Props) {
     locale
   } = params;
 
-  const t = await getTranslations({ locale, namespace: 'CTO' });
+  const [t, tCrumb] = await Promise.all([
+    getTranslations({ locale, namespace: 'CTO' }),
+    getTranslations({ locale, namespace: 'breadcrumb' }),
+  ]);
   const title = t('title');
   const description = t('metadescription');
-  const faqItems = (t.raw('faq') as { items?: { question: string; answer: string }[] } | undefined)?.items ?? [];
 
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
+  const serviceSchema = buildServiceSchema({
     name: title,
     description,
-    url: `${ORIGIN}/cto-as-service`,
+    pathKey: '/cto-as-service',
+    locale,
     serviceType: 'CTO as a Service',
-    areaServed: 'ES',
-    provider: { '@type': 'Organization', name: 'Gigson Solutions', url: ORIGIN },
-  };
-
-  const faqSchema = faqItems.length > 0
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: faqItems.map(({ question, answer }) => ({
-          '@type': 'Question',
-          name: question,
-          acceptedAnswer: { '@type': 'Answer', text: answer },
-        })),
-      }
-    : null;
+  });
+  const faqSchema = buildFaqSchema(faqItemsFrom(t.raw('faq')));
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    [
+      { name: tCrumb('home'), pathKey: '/' },
+      { name: breadcrumbLabel(title), pathKey: '/cto-as-service' },
+    ],
+    locale,
+  );
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
+      <JsonLd data={serviceSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
+      <JsonLd data={breadcrumbSchema} />
       <CTO />
     </>
   );

@@ -8,12 +8,12 @@ export const routing = defineRouting({
   // lives in Payload, not in `pathnames`, so it just strips the `/es` prefix and
   // emits a 404 URL as the `en` and `x-default` alternate. It's a global flag, so
   // it can't be disabled for the blog alone. Every page already declares correct
-  // hreflang in the HTML via `alternates.languages` in its `generateMetadata`,
-  // which is the signal we keep.
+  // hreflang in the HTML via `alternates.languages` in its `generateMetadata` —
+  // and the post page resolves the sibling slug through `localizedVersion`,
+  // which the middleware has no way of knowing about.
   alternateLinks: false,
   pathnames: {
     '/': '/',
-    '/services': { en: '/services', es: '/servicios' },
     '/logistics-technology': { en: '/logistics-technology', es: '/tecnologia-logistica' },
     '/retail-ecommerce-technology': {
       en: '/retail-ecommerce-technology',
@@ -22,6 +22,10 @@ export const routing = defineRouting({
     '/construction-technology': {
       en: '/construction-technology',
       es: '/tecnologia-construccion',
+    },
+    '/professional-services-technology': {
+      en: '/professional-services-technology',
+      es: '/servicios-profesionales',
     },
     '/cases': { en: '/cases', es: '/casos' },
     '/about': { en: '/about', es: '/sobre-nosotros' },
@@ -48,6 +52,9 @@ export const routing = defineRouting({
     '/gracias-iso27001': '/gracias-iso27001',
     '/about-claude-partner': { en: '/about-claude-partner', es: '/sobre-claude-partner' },
     '/integrations-holded': { en: '/integrations-holded', es: '/integraciones-holded' },
+    '/integrations-odoo': { en: '/integrations-odoo', es: '/integraciones-odoo' },
+    '/custom-erp': { en: '/custom-erp', es: '/erp-a-medida' },
+    '/project-estimator': { en: '/project-estimator', es: '/estimador-de-proyecto' },
     '/blog': '/blog',
     '/blog/[slug]': '/blog/[slug]',
   },

@@ -71,7 +71,10 @@ const HomeCases = () => {
         <div className="home-case-flex">
           <div className="home-hero-cases">
             <section className="home-hero-cases">
-              <RichText as="h1" content={tc.raw('heroH1') as string} className="home-hero-cases-h1" />
+              {/* A mid-page section, and the home's second <h1>. Demoted to <h2>;
+                  the heading also shares `cases.heroH1` with the /cases page, which
+                  now has its own key. */}
+              <RichText as="h2" content={tc.raw('heroH1') as string} className="home-hero-cases-h1" />
               <p className="home-hero-cases-p">{tc('heroP')}</p>
             </section>
           </div>

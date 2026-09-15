@@ -2,8 +2,8 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import Contact from '../../../../src/components/Pages/Contact';
-
-const ORIGIN = 'https://gigsonsolutions.com';
+import JsonLd from '../../../../src/shared/ui/JsonLd';
+import { ORIGIN, buildBreadcrumbSchema, buildOrganization, localizedUrl } from '../../../../lib/schema';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -16,7 +16,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   const t = await getTranslations({ locale, namespace: 'pageSeo' });
   const seo = t.raw('contact') as { title: string; description: string };
-  const canonicalBase = locale === 'es' ? `${ORIGIN}/es/contacto` : `${ORIGIN}/contact`;
+  const canonicalBase = localizedUrl('/contact', locale);
 
   return {
     title: seo.title,
@@ -29,27 +29,39 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/contact`,
       },
     },
-    openGraph: { title: seo.title, description: seo.description, url: canonicalBase },
+    openGraph: { title: seo.title, description: seo.description, url: canonicalBase, images: ['/opengraph-image'] },
   };
 }
 
-const orgSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Gigson Solutions',
-  url: ORIGIN,
-  logo: `${ORIGIN}/img/gigson-solutions-logo.png`,
-  email: 'emmelin@gigsonsolutions.com',
-  sameAs: ['https://www.linkedin.com/company/gigson-solutions'],
-};
+export default async function ContactPage(props: Props) {
+  const params = await props.params;
 
-export default function ContactPage() {
+  const {
+    locale
+  } = params;
+
+  const [tOrg, tCrumb, tMenu] = await Promise.all([
+    getTranslations({ locale, namespace: 'organization' }),
+    getTranslations({ locale, namespace: 'breadcrumb' }),
+    getTranslations({ locale, namespace: 'menu' }),
+  ]);
+
+  // This page used to declare its own Organization with a different logo path
+  // (/img/gigson-solutions-logo.png) and a different email (emmelin@) than the
+  // home page's. Both now come from the single node in `lib/schema.ts`.
+  const organizationSchema = buildOrganization(tOrg('description'));
+  const breadcrumbSchema = buildBreadcrumbSchema(
+    [
+      { name: tCrumb('home'), pathKey: '/' },
+      { name: tMenu('contact'), pathKey: '/contact' },
+    ],
+    locale,
+  );
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-      />
+      <JsonLd data={organizationSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <Contact />
     </>
   );

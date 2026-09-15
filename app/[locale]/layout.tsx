@@ -23,10 +23,13 @@ export function generateStaticParams() {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   return {
+    metadataBase: new URL(BASE_URL),
     alternates: {
       languages: {
         'en': BASE_URL,
-        'es-ES': `${BASE_URL}/es`,
+        // Was 'es-ES' while every page declares 'es'; any route without its own
+        // `alternates` inherited the mismatched tag.
+        'es': `${BASE_URL}/es`,
         'x-default': BASE_URL,
       },
     },
@@ -50,11 +53,11 @@ export default async function LocaleLayout(props: Props) {
 
   // Without this, every Server Component using next-intl's server APIs
   // (getTranslations, etc.) falls back to reading the locale from a request
-  // header, which opts every single page into fully dynamic rendering
-  // site-wide. Routes that also declare `generateStaticParams` + a numeric
-  // `revalidate` (like /blog/[slug]) can't be both static and dynamic at
-  // once — Next throws `DYNAMIC_SERVER_USAGE` and the request 500s. This is
-  // what caused every blog post page to fail in production.
+  // header (see node_modules/next-intl/dist/.../RequestLocale.js), which
+  // opts every single page into fully dynamic rendering site-wide. This
+  // call was present after the Next 15→16 migration (PR #111) but was lost
+  // at some point in this branch's history — see agent memory
+  // project_pr124_vercel_blob_build_fix.md for that merge.
   setRequestLocale(locale);
 
   const messages = await getMessages();

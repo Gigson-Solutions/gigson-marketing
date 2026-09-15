@@ -67,11 +67,13 @@ html {
    scroll-behavior: smooth;
 }
 
-/* Form-element reset lives in @layer base so Tailwind utility classes
-   (@layer utilities, which cascades later) can still override display /
-   font-size / color on form, input, button, etc. Unlayered, this reset
-   would beat every Tailwind utility on those elements — see the chatbot
-   widget, whose flex/text-xs/inline-flex utilities need to win here. */
+/* Form-element and anchor resets live in @layer base so Tailwind utility
+   classes (@layer utilities, which cascades later) can still override
+   display / font-size / color on form, input, button, a, etc. Unlayered,
+   these resets would beat every Tailwind utility on those elements — see
+   the chatbot widget (flex/text-xs/inline-flex) and the blog's featured
+   post `<Link>` (grid), both of which need their display utility to win
+   here. */
 @layer base {
    form,
    input,
@@ -86,10 +88,10 @@ html {
       display: block;
       color: inherit;
    }
-}
 
-a {
-   display: inline-block;
+   a {
+      display: inline-block;
+   }
 }
 
 svg {

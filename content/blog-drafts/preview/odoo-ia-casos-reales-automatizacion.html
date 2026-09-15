@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>[Vista previa] Odoo + IA: 3 casos reales</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+  :root{
+    --ink:#3C3C3B; --cream:#F4F3EF; --purple:#7874F4; --purple-deep:#9747FF;
+    --graphite:#868685; --lavender:#E3E1EE; --lavender-light:#C1BFF3;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--cream); color:var(--ink); font-family:"DM Sans", -apple-system, sans-serif; line-height:1.4;}
+  .preview-banner{background:var(--ink); color:var(--cream); text-align:center; padding:0.85rem; font-size:13px; letter-spacing:0.04em; text-transform:uppercase;}
+  .wrap{max-width:52rem; margin:0 auto; padding: 3rem 1.5rem 6rem;}
+  .back-link{display:inline-block; text-decoration:none; color:var(--purple); font-size:14px; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:2rem; border:0.5px solid var(--purple); border-radius:999px; padding:0.6rem 1.4rem;}
+  .cover{aspect-ratio:16/9; border-radius:30px; background:linear-gradient(135deg, var(--lavender) 0%, var(--cream) 100%); display:flex; align-items:center; justify-content:center; margin-bottom:2.5rem; border:1px dashed var(--purple); color:var(--graphite); font-size:14px; text-align:center; padding:1rem;}
+  time.meta{display:block; text-transform:uppercase; letter-spacing:0.04em; font-size:14px; color:var(--graphite); margin-bottom:1rem;}
+  h1{font-size:55px; line-height:1.1; font-weight:400; margin:0 0 1rem; letter-spacing:-0.01em;}
+  .excerpt{font-size:20px; line-height:1.3; color:var(--graphite); margin-bottom:2.5rem;}
+  article p{font-size:17px; line-height:1.4; margin:0 0 1.25rem;}
+  article h2{font-size:32px; line-height:1.16; margin:2.5rem 0 1rem; font-weight:400;}
+  article blockquote{border-left:2px solid var(--purple); margin:1.5rem 0; padding:0.25rem 0 0.25rem 1.5rem; font-size:17px; color:var(--ink);}
+  article a{color:var(--purple); text-decoration:underline;}
+  article strong{font-weight:700;}
+  figure{margin:2.5rem 0;}
+  .inline-image{width:100%; aspect-ratio:16/9; border-radius:30px; background:linear-gradient(135deg, var(--lavender-light) 0%, var(--cream) 100%); display:flex; align-items:center; justify-content:center; color:var(--graphite); font-size:14px; text-align:center; padding:1rem;}
+  figcaption{font-size:14px; color:var(--graphite); margin-top:0.5rem;}
+  .highlight-block{border-radius:30px; padding:3rem; margin:2.5rem 0; background:linear-gradient(180deg, rgba(120,116,244,0.7) 0%, rgba(120,116,244,0) 100%);}
+  .highlight-block p{font-size:24px; line-height:1.3; color:var(--cream); margin:0 0 0.5rem;}
+  .highlight-block .attribution{font-size:14px; color:var(--cream); opacity:0.85; text-transform:uppercase; letter-spacing:0.04em;}
+  .cta-block{border:0.5px solid var(--purple); border-radius:30px; padding:2.5rem; margin:2.5rem 0; background:var(--cream);}
+  .cta-block .cta-heading{font-size:24px; margin:0 0 1rem;}
+  .cta-button{display:inline-block; border:0.5px solid var(--purple); color:var(--purple); border-radius:110px; padding:0.9rem 2rem; text-decoration:none; text-transform:uppercase; font-size:14px; letter-spacing:0.06em;}
+</style>
+</head>
+<body>
+  <div class="preview-banner">Vista previa de maquetación — no es la web real — solo referencia visual</div>
+  <div class="wrap">
+    <a class="back-link" href="#">← Volver al blog</a>
+
+    <div class="cover">[coverImageBrief: tres formas 3D — esfera, cono, cubo — en morado sobre fondo crema, conectadas por líneas finas, sugiriendo tres casos convergiendo en Odoo]</div>
+
+    <time class="meta">13 de agosto de 2026 · Gigson Solutions</time>
+    <h1>Odoo + IA: 3 casos reales de automatización (fichajes, logística y presupuestos)</h1>
+    <p class="excerpt">Fichaje por WhatsApp, un orquestador de ecommerce y presupuestos dinámicos: 3 automatizaciones reales con Odoo, con resultados medibles.</p>
+
+    <article>
+      <p>¿Automatizar con IA suena bien en teoría, pero quieres ver casos reales antes de invertir? Aquí van tres, con resultados medibles, todos con Odoo como ERP de fondo.</p>
+
+      <h2>Caso 1: fichaje por WhatsApp, cero errores manuales</h2>
+      <p>Antes: fichajes en papel o apps que la plantilla no usaba bien, horas mal registradas, nóminas con incidencias cada mes.</p>
+      <p>Ahora: un bot de fichaje por WhatsApp con reconocimiento de ubicación, integrado directamente con nóminas y el ERP (Holded y Odoo, según el cliente). El trabajador ficha desde el canal que ya usa a diario, sin instalar nada nuevo.</p>
+      <blockquote>Resultado: cumplimiento de fichajes del 100% y fin de los errores manuales de introducción de horas.</blockquote>
+
+      <figure>
+        <div class="inline-image">[ejemplo: imagen inline dentro del cuerpo — disponible una vez se active UploadFeature en Payload, Fase 2]</div>
+        <figcaption>Ejemplo de imagen inline dentro del artículo (simulada en esta vista previa)</figcaption>
+      </figure>
+
+      <h2>Caso 2: un orquestador que conecta todo el ecommerce</h2>
+      <p>Un negocio de dropshipping y logística trabajaba con Odoo como ERP, Prestashop como tienda, Huboo como operador logístico (3PL) y Amazon como canal de venta — cuatro sistemas que no se hablaban entre sí de forma nativa.</p>
+      <p>La solución: un orquestador de API unificado que conecta los cuatro sistemas, sincronizando stock, pedidos y estados de envío automáticamente entre todos ellos.</p>
+      <blockquote>Resultado: gestión de extremo a extremo fluida, sin actualizar manualmente cuatro paneles distintos por cada pedido.</blockquote>
+
+      <h2>Caso 3: presupuestos dinámicos para construcción</h2>
+      <p>En construcción, un presupuesto no es un número fijo — depende de materiales, mano de obra, maquinaria y logística, y cada variable cambia de un proyecto a otro.</p>
+      <p>Se construyó una WebApp de configuración de presupuestos integrada con Odoo: presupuestos dinámicos, catálogos en tiempo real y simulación de escenarios, todo comunicado directamente al ERP.</p>
+
+      <div class="highlight-block">
+        <p>"Presupuestos más rápidos de generar, con datos siempre alineados con Odoo, sin hojas de cálculo paralelas."</p>
+        <div class="attribution">Caso real — gigson solutions</div>
+      </div>
+
+      <h2>Lo que tienen en común los tres casos</h2>
+      <p>Ninguno sustituye Odoo. Los tres construyen encima: agentes y automatizaciones que resuelven un problema real, conectados directamente al ERP que la empresa ya usa. En los tres casos, la automatización libera horas de trabajo manual y elimina una fuente de errores concreta.</p>
+
+      <div class="cta-block">
+        <p class="cta-heading">¿Tienes un proceso parecido conectado (o sin conectar) a Odoo?</p>
+        <a class="cta-button" href="/integrations-odoo">Habla con un experto en Odoo</a>
+      </div>
+    </article>
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* Dialog scroll container.
+
+   The panel used to carry `overflow-auto` itself, so the browser painted the
+   native scrollbar right on the rounded edge, clipped by the border radius —
+   it read as if the bar sat outside the modal. The panel is now a clipping
+   shell with its own small inset, and this class styles the inner scroller so
+   the bar lives inside the rounded area. */
+
+.gs-dialog-scroll {
+   /* Reserve the track so content does not shift when the bar appears. */
+   scrollbar-gutter: stable;
+
+   /* Firefox */
+   scrollbar-width: thin;
+   scrollbar-color: var(--gs-purple-30) transparent;
+}
+
+/* WebKit / Blink */
+.gs-dialog-scroll::-webkit-scrollbar {
+   width: 10px;
+}
+
+.gs-dialog-scroll::-webkit-scrollbar-track,
+.gs-dialog-scroll::-webkit-scrollbar-corner {
+   background: transparent;
+}
+
+.gs-dialog-scroll::-webkit-scrollbar-thumb {
+   background-color: var(--gs-purple-30);
+   border-radius: 999px;
+   /* Transparent border + padding-box clip shrinks the visible thumb and
+      insets it from the track edge, so it reads as part of the modal. */
+   border: 3px solid transparent;
+   background-clip: padding-box;
+   transition: background-color var(--gs-dur-base) var(--gs-ease-out);
+}
+
+.gs-dialog-scroll::-webkit-scrollbar-thumb:hover {
+   background-color: var(--gs-purple-70);
+}
+
+@media (prefers-reduced-motion: reduce) {
+   .gs-dialog-scroll::-webkit-scrollbar-thumb {
+      transition: none;
+   }
+}

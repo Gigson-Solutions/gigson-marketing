@@ -31,6 +31,7 @@ type MenuItem = {
   name: string;
   href?: NavPathname;
   children?: MenuItem[];
+  columns?: { title: string; items: MenuItem[] }[];
 };
 
 const NavbarDesktop = ({ menu }: { menu: MenuItem[] }) => {
@@ -40,11 +41,12 @@ const NavbarDesktop = ({ menu }: { menu: MenuItem[] }) => {
     <nav className="navbar-desktop">
       <div className="menu-box--desktop">
         <ul className="menu-items">
-          {menu.map(({ name, href, children }, index) => {
+          {menu.map(({ name, href, children, columns }, index) => {
+            const hasDropdown = Boolean(children || columns);
             const isActive = href ? pathname === href || pathname.startsWith(href + '/') : false;
             return (
-              <li key={index} className={`menu-item ${children ? 'has-dropdown' : ''}`}>
-                {children ? (
+              <li key={index} className={`menu-item ${hasDropdown ? 'has-dropdown' : ''}`}>
+                {hasDropdown ? (
                   <>
                     {href ? (
                       <Link
@@ -60,18 +62,40 @@ const NavbarDesktop = ({ menu }: { menu: MenuItem[] }) => {
                         <ChevronDown />
                       </span>
                     )}
-                    <ul className="dropdown">
-                      {children.map(({ href: childHref, name: childName }, childIndex) => (
-                        <li className="menu-item__child" key={childIndex}>
-                          <Link
-                            href={childHref ?? '/'}
-                            className="menu-item__child__link"
-                          >
-                            {childName}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                    {columns ? (
+                      <div className="dropdown dropdown--columns">
+                        {columns.map(({ title, items }, colIndex) => (
+                          <div className="dropdown-column" key={colIndex}>
+                            <span className="dropdown-column__title">{title}</span>
+                            <ul className="dropdown-column__items">
+                              {items.map(({ href: childHref, name: childName }, childIndex) => (
+                                <li className="menu-item__child" key={childIndex}>
+                                  <Link
+                                    href={childHref ?? '/'}
+                                    className="menu-item__child__link"
+                                  >
+                                    {childName}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <ul className="dropdown">
+                        {children!.map(({ href: childHref, name: childName }, childIndex) => (
+                          <li className="menu-item__child" key={childIndex}>
+                            <Link
+                              href={childHref ?? '/'}
+                              className="menu-item__child__link"
+                            >
+                              {childName}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </>
                 ) : (
                   <Link

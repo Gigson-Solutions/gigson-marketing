@@ -18,8 +18,13 @@ function Hero() {
         <HeroScene className="hero-scene-overlay" />
         <header className="hero-top-content">
           <div className="hero-text">
-            <h1 className="hero-p">{t('heroP')}</h1>
-            <RichText as="h2" content={t.raw('heroH1') as string} className="hero-h1" />
+            {/* `heroP` is the eyebrow ("CERTIFIED ANTHROPIC CLAUDE PARTNER · …",
+                English on both locales) and `heroH1` is the real headline — they
+                were rendered the other way round, so every Spanish home page had
+                an English <h1>. The classes already carry the intended styling,
+                so only the elements swap. Same shape as `src/shared/ui/Hero.tsx`. */}
+            <p className="hero-p">{t('heroP')}</p>
+            <RichText as="h1" content={t.raw('heroH1') as string} className="hero-h1" />
             <Link href="/contact" className="hero-btn button-main">
               {t('heroBtn')}
             </Link>

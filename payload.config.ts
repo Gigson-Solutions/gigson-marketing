@@ -3,11 +3,14 @@ import { fileURLToPath } from 'url';
 import { buildConfig } from 'payload';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
 import { postgresAdapter } from '@payloadcms/db-postgres';
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob';
 // @ts-ignore — sharp types incompatible with moduleResolution:bundler; safe at runtime
 import sharp from 'sharp';
 import { OAuth2Plugin } from 'payload-oauth2';
 
 import { ChatbotLeads } from './collections/ChatbotLeads';
+import { EstimatorSessions } from './collections/EstimatorSessions';
+import { Media } from './collections/Media';
 import { migrations } from './migrations';
 import { Posts } from './collections/Posts';
 import { Users } from './collections/Users';
@@ -28,7 +31,7 @@ export default buildConfig({
       beforeLogin: ['@/components/GoogleLoginButton#default'],
     },
   },
-  collections: [Posts, Users, ChatbotLeads],
+  collections: [Posts, Media, Users, ChatbotLeads, EstimatorSessions],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET ?? '',
   typescript: {
@@ -43,8 +46,6 @@ export default buildConfig({
     // `if (NODE_ENV === 'production' && this.prodMigrations) await this.migrate(...)`).
     // Local dev keeps using the automatic schema push (NODE_ENV=development),
     // so this only matters for Preview/Production deployments on Vercel.
-    // First migration ever run against this DB from `main` — see
-    // migrations/20260902_120000_add_posts_locale.ts for why it's safe.
     prodMigrations: migrations,
   }),
   sharp,
@@ -84,6 +85,17 @@ export default buildConfig({
         const msg = err instanceof Error ? err.message : 'Login failed';
         return `${serverURL}/admin/login?error=${encodeURIComponent(msg)}`;
       },
+    }),
+    // Vercel's filesystem is ephemeral/read-only in production, so uploads
+    // for the `media` collection are stored in Vercel Blob instead of disk.
+    // Requires a Blob store created in the Vercel project + BLOB_READ_WRITE_TOKEN.
+    // Only enabled when the token is present — without it, Payload falls back
+    // to local disk storage for `media`, so `next dev` still works locally
+    // before the Blob store is provisioned in Vercel.
+    vercelBlobStorage({
+      enabled: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+      collections: { media: true },
+      token: process.env.BLOB_READ_WRITE_TOKEN ?? '',
     }),
   ],
 });
