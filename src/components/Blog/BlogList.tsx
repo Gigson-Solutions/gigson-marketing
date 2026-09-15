@@ -6,6 +6,7 @@ import { useTranslations, useFormatter } from 'next-intl';
 import type { Post, PostCategory } from '../../../lib/posts';
 import { estimateReadingTime } from '../../../lib/readingTime';
 import { Link } from '../../../i18n/navigation';
+import PostCover from './PostCover';
 
 const CATEGORY_ORDER: PostCategory[] = [
   'agentes-ia',
@@ -55,7 +56,6 @@ const PostMeta = ({ post }: { post: Post }) => {
 
 const FeaturedPost = ({ post }: { post: Post }) => {
   const t = useTranslations('blog');
-  const coverUrl = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
 
   return (
     <Link
@@ -63,15 +63,7 @@ const FeaturedPost = ({ post }: { post: Post }) => {
       className="group grid grid-cols-1 lg:grid-cols-[0.7fr_1fr] gap-8 lg:gap-14 items-center border border-ink/20 rounded-[30px] p-6 lg:p-10 hover:border-purple-accents transition-colors"
     >
       <div className="aspect-[16/9] rounded-[22px] overflow-hidden bg-cream">
-        {coverUrl ? (
-          <img
-            src={coverUrl}
-            alt={post.coverImage?.alt ?? post.title}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-purple-light to-purple" />
-        )}
+        <PostCover post={post} variant="hero" />
       </div>
       <div className="flex flex-col gap-4">
         <PostMeta post={post} />
@@ -89,20 +81,11 @@ const FeaturedPost = ({ post }: { post: Post }) => {
 
 const PostCard = ({ post }: { post: Post }) => {
   const t = useTranslations('blog');
-  const coverUrl = post.coverImage?.sizes?.card?.url ?? post.coverImage?.url;
 
   return (
     <article className="flex flex-col gap-4 border border-ink/20 rounded-[30px] overflow-hidden hover:border-purple-accents transition-colors">
       <div className="aspect-[16/9] overflow-hidden bg-cream">
-        {coverUrl ? (
-          <img
-            src={coverUrl}
-            alt={post.coverImage?.alt ?? post.title}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-purple-light to-purple" />
-        )}
+        <PostCover post={post} />
       </div>
       <div className="flex flex-col gap-3 p-6 lg:p-8">
         <PostMeta post={post} />

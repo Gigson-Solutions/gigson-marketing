@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext js,jsx,ts,tsx --fix"
+    "lint": "eslint . --ext js,jsx,ts,tsx --fix",
+    "covers:generate": "tsx scripts/generate-blog-covers.mts",
+    "covers:upload": "node --env-file-if-exists=.env.local scripts/run-payload-script.mjs scripts/upload-blog-covers.mts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
@@ -53,6 +55,7 @@
     "eslint-plugin-unused-imports": "^4.2.0",
     "globals": "^16.3.0",
     "prettier": "^3.6.2",
+    "tsx": "^4.22.4",
     "typescript": "^5.4.0"
   }
 }

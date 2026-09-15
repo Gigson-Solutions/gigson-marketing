@@ -37,6 +37,12 @@
   --gs-mist:         #EEEDF0;   /* form section bg                 */
   --gs-mist-2:       #F4F0F0;   /* very faint wash                 */
 
+  /* Portadas editoriales — extensión split-complementary del morado, solo
+     para las composiciones generativas del blog (design-system/shapes/covers) */
+  --gs-amber:        #F2C879;   /* masa clara, ámbar desaturado    */
+  --gs-amber-deep:   #E9A23B;   /* acentos pequeños, sparkles      */
+  --gs-teal:         #3AA79B;   /* puente entre morado y ámbar     */
+
   /* Utility */
   --gs-lime:         #6EE96C;   /* sparingly — label dot           */
   --gs-error:        #FF1111;

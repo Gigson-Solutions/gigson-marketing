@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 
 import BlogPost from '../../../../../src/components/Blog/BlogPost';
 import JsonLd from '../../../../../src/shared/ui/JsonLd';
+import { coverImagePath } from '../../../../../lib/blogCovers';
 import { getPostBySlug, getPostSlugs, getRelatedPosts, type Post } from '../../../../../lib/posts';
 import { ORIGIN, buildBreadcrumbSchema, organizationRef } from '../../../../../lib/schema';
 
@@ -16,6 +17,17 @@ type Props = { params: Promise<{ locale: string; slug: string }> };
  * than forcing the same one across languages). */
 function postUrl(post: Post): string {
   return post.locale === 'es' ? `${ORIGIN}/es/blog/${post.slug}` : `${ORIGIN}/blog/${post.slug}`;
+}
+
+/** Absolute URL of the post's picture. An uploaded cover wins; otherwise this
+ * is the rasterised version of the same generated composition the page renders,
+ * so social previews and the Article schema always have a real image. */
+function articleImage(post: Post): string {
+  const uploaded = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
+  if (!uploaded) return `${ORIGIN}${coverImagePath(post)}`;
+  // Payload returns an absolute URL on Vercel Blob but a relative /api/media
+  // path on local disk storage, so absolutise defensively.
+  return uploaded.startsWith('http') ? uploaded : `${ORIGIN}${uploaded}`;
 }
 
 export async function generateStaticParams() {
@@ -43,7 +55,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const title = post.seoTitle ?? post.title;
   const description = post.seoDescription ?? post.excerpt ?? '';
   const canonical = postUrl(post);
-  const coverUrl = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
+  const image = articleImage(post);
 
   const sibling = post.localizedVersion && typeof post.localizedVersion === 'object' ? post.localizedVersion : null;
   const languages: Record<string, string> = { 'x-default': canonical, [locale]: canonical };
@@ -65,8 +77,11 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       type: 'article',
       publishedTime: post.publishedAt,
       authors: post.author ? [post.author] : undefined,
-      images: coverUrl ? [{ url: coverUrl, alt: post.coverImage?.alt }] : ['/opengraph-image'],
+      images: [{ url: image, alt: post.coverImage?.alt ?? post.title }],
     },
+    // Without an explicit card type X falls back to the small `summary` layout,
+    // which shows the cover as a thumbnail instead of a banner.
+    twitter: { card: 'summary_large_image', title, description, images: [image] },
   };
 }
 
@@ -83,8 +98,6 @@ export default async function BlogPostPage(props: Props) {
 
   const relatedPosts = await getRelatedPosts(post, 2);
 
-  const coverUrl = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
-
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -99,7 +112,8 @@ export default async function BlogPostPage(props: Props) {
     // Points at the one Organization node declared on the home page
     // (`lib/schema.ts`) instead of restating a partial copy of it here.
     publisher: organizationRef,
-    ...(coverUrl && { image: coverUrl }),
+    // Google's Article rich result wants an image; every post has one now.
+    image: articleImage(post),
   };
 
   const [tCrumb, tMenu] = await Promise.all([

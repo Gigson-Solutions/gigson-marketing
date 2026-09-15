@@ -1,4 +1,5 @@
 export { Collage, type CollageLayer } from './Collage';
+export { COVER_ASPECT, COVER_BY_ID, COVER_RASTER, COVERS, EDITORIAL, MONO, type Cover, type CoverId, type Palette } from './covers';
 export {
   build2D,
   massPath,
