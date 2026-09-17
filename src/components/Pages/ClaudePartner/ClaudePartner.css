@@ -117,7 +117,12 @@
 }
 
 /* ── VS TABLE ── */
+.cp-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .cp-table {
+  min-width: 520px;
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;

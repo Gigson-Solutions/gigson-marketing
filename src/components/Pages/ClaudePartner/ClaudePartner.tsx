@@ -84,24 +84,28 @@ const ClaudePartner = () => {
       <section className="cp-section cp-section--cream" style={bgStyle}>
         <div className="cp-inner wrapper">
           <h2>{vs.h2}</h2>
-          <table className="cp-table">
-            <thead>
-              <tr>
-                {vs.headers.map((h, i) => (
-                  <th key={i}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {vs.rows.map(({ feature, partner, standard }, i) => (
-                <tr key={i}>
-                  <td>{feature}</td>
-                  <td>{partner}</td>
-                  <td>{standard}</td>
+          {/* The comparison table has three columns of prose and cannot fit a
+              phone; let it scroll inside its own box instead of widening the page. */}
+          <div className="cp-table-scroll">
+            <table className="cp-table">
+              <thead>
+                <tr>
+                  {vs.headers.map((h, i) => (
+                    <th key={i}>{h}</th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {vs.rows.map(({ feature, partner, standard }, i) => (
+                  <tr key={i}>
+                    <td>{feature}</td>
+                    <td>{partner}</td>
+                    <td>{standard}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
