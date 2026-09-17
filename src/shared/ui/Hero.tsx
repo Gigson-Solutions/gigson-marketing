@@ -19,7 +19,7 @@ const Hero = ({ title, suptitle, description, buttonText, heroLink = '/contact' 
         <RichText
           as="h1"
           content={title}
-          className="text-h1 text-dark-primary text-center mb-4 md:mb-6"
+          className="text-h1 max-sm:text-[2.5rem] text-dark-primary text-center mb-4 md:mb-6 w-full break-words"
         />
         {description && (
           <RichText

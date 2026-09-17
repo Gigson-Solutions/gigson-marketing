@@ -84,24 +84,30 @@ const ClaudePartner = () => {
       <section className="cp-section cp-section--cream" style={bgStyle}>
         <div className="cp-inner wrapper">
           <h2>{vs.h2}</h2>
-          <table className="cp-table">
-            <thead>
-              <tr>
-                {vs.headers.map((h, i) => (
-                  <th key={i}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {vs.rows.map(({ feature, partner, standard }, i) => (
-                <tr key={i}>
-                  <td>{feature}</td>
-                  <td>{partner}</td>
-                  <td>{standard}</td>
+          {/* Three columns of prose cannot fit a phone: the table scrolls in its
+              own box, and below 600px it stacks into one card per row. */}
+          <div className="cp-table-scroll">
+            <table className="cp-table">
+              <thead>
+                <tr>
+                  {vs.headers.map((h, i) => (
+                    <th key={i}>{h}</th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {vs.rows.map(({ feature, partner, standard }, i) => (
+                  <tr key={i}>
+                    <td>{feature}</td>
+                    {/* data-label feeds the stacked card layout on phones,
+                        where the header row is hidden (ClaudePartner.css). */}
+                    <td data-label={vs.headers[1]}>{partner}</td>
+                    <td data-label={vs.headers[2]}>{standard}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 

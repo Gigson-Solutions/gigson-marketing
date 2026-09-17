@@ -117,13 +117,50 @@
 }
 
 /* ── VS TABLE ── */
-.cp-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-  margin-top: 1.5rem;
+.cp-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
-
+@media (max-width: 600px) {
+  /* One card per row instead of a table that has to be scrolled sideways. */
+  .cp-table-scroll {
+    overflow-x: visible;
+  }
+  .cp-table,
+  .cp-table tbody,
+  .cp-table tr,
+  .cp-table td {
+    display: block;
+    min-width: 0;
+  }
+  .cp-table thead {
+    display: none;
+  }
+  .cp-table tr {
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    background: #fff;
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .cp-table td {
+    border: 0;
+    padding: 0.35rem 0;
+  }
+  .cp-table td:first-child {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+  .cp-table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--gs-graphite);
+    margin-bottom: 0.1rem;
+  }
+}
 .cp-table th,
 .cp-table td {
   padding: 0.85rem 1rem;
