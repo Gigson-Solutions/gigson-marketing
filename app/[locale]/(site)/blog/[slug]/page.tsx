@@ -6,7 +6,7 @@ import BlogPost from '../../../../../src/components/Blog/BlogPost';
 import JsonLd from '../../../../../src/shared/ui/JsonLd';
 import { coverImagePath } from '../../../../../lib/blogCovers';
 import { getPostBySlug, getPostSlugs, getRelatedPosts, type Post } from '../../../../../lib/posts';
-import { ORIGIN, buildBreadcrumbSchema, organizationRef } from '../../../../../lib/schema';
+import { ORIGIN, buildBreadcrumbSchema, buildPersonSchema, organizationRef } from '../../../../../lib/schema';
 
 export const revalidate = 3600;
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -28,6 +28,26 @@ function articleImage(post: Post): string {
   // Payload returns an absolute URL on Vercel Blob but a relative /api/media
   // path on local disk storage, so absolutise defensively.
   return uploaded.startsWith('http') ? uploaded : `${ORIGIN}${uploaded}`;
+}
+
+/**
+ * The post's `author` node for its `Article`/`BlogPosting` JSON-LD. When a
+ * real `authorProfile` is linked, this is the full `Person` (shared `@id`
+ * with the author's own page — see `lib/schema.ts#buildPersonSchema`), so a
+ * crawler can resolve who wrote it beyond a bare name. Falls back to a
+ * name-only `Person` for posts written before `authorProfile` existed.
+ */
+function resolveAuthorPersonSchema(post: Post, locale: string) {
+  const profile = post.authorProfile && typeof post.authorProfile === 'object' ? post.authorProfile : null;
+  if (!profile) {
+    return { '@type': 'Person', name: post.author ?? 'Gigson Solutions' };
+  }
+  const jobTitle = locale === 'es' ? profile.jobTitle?.es ?? profile.jobTitle?.en : profile.jobTitle?.en ?? profile.jobTitle?.es;
+  const knowsAbout = (profile.knowsAbout ?? []).map((item) => item.text).filter(Boolean);
+  return buildPersonSchema(
+    { slug: profile.slug, name: profile.name, jobTitle, linkedin: profile.linkedin, knowsAbout },
+    locale,
+  );
 }
 
 export async function generateStaticParams() {
@@ -105,10 +125,7 @@ export default async function BlogPostPage(props: Props) {
     description: post.excerpt,
     url: postUrl(post),
     datePublished: post.publishedAt,
-    author: {
-      '@type': 'Person',
-      name: post.author ?? 'Gigson Solutions',
-    },
+    author: resolveAuthorPersonSchema(post, locale),
     // Points at the one Organization node declared on the home page
     // (`lib/schema.ts`) instead of restating a partial copy of it here.
     publisher: organizationRef,

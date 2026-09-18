@@ -63,6 +63,38 @@ export function buildOrganization(description: string) {
   };
 }
 
+/** Absolute URL of an author's page. Not in `routing.pathnames`/`StaticPathnames`
+ * on purpose — the same reason `/blog/[slug]` isn't: the segment is a slug
+ * from Payload (`Authors.slug`), not a static route `localizedUrl` can resolve. */
+export function authorUrl(slug: string, locale: string): string {
+  const path = locale === 'es' ? `/es/blog/autores/${slug}` : `/blog/authors/${slug}`;
+  return `${ORIGIN}${path}`;
+}
+
+/**
+ * Person schema for an author — emitted inline inside a post's `BlogPosting.author`
+ * *and* as the main entity of that author's own page. The `@id`
+ * (`${ORIGIN}/#person-<slug>`) is shared between both: that's what tells a
+ * crawler they're the same person, not text-matching the name. `sameAs` is
+ * only included when a real LinkedIn URL exists on the author's profile —
+ * never a placeholder, which would misidentify the entity.
+ */
+export function buildPersonSchema(
+  author: { slug: string; name: string; jobTitle?: string; linkedin?: string; knowsAbout?: string[] },
+  locale: string,
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${ORIGIN}/#person-${author.slug}`,
+    name: author.name,
+    url: authorUrl(author.slug, locale),
+    ...(author.jobTitle ? { jobTitle: author.jobTitle } : {}),
+    ...(author.knowsAbout && author.knowsAbout.length > 0 ? { knowsAbout: author.knowsAbout } : {}),
+    ...(author.linkedin ? { sameAs: [author.linkedin] } : {}),
+  };
+}
+
 export function buildServiceSchema({
   name,
   description,

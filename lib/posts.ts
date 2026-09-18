@@ -3,6 +3,10 @@ import type { Where } from 'payload';
 import { draftMode } from 'next/headers';
 import configPromise from '@payload-config';
 
+// Type-only: keeps this module the only one in the cycle with a runtime
+// import of Payload/the Postgres adapter (`lib/authors.ts` has its own).
+import type { Author } from './authors';
+
 export type PostCategory =
   | 'agentes-ia'
   | 'integraciones-erp'
@@ -29,7 +33,12 @@ export type Post = {
     };
   };
   publishedAt?: string;
+  // Deprecated free-text author — kept for posts written before the
+  // Authors collection existed. Prefer `authorProfile`.
   author?: string;
+  // Populated (depth >= 1) or a bare id/null. `null`/undefined for posts
+  // that still only have the legacy `author` text field set.
+  authorProfile?: Author | string | null;
   seoTitle?: string;
   seoDescription?: string;
   // Serialized Lexical editor state — rendered via `<RichText>` +
