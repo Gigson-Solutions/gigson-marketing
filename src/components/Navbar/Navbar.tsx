@@ -22,6 +22,7 @@ const Navbar = () => {
           items: [
             { name: t('CTO'), href: '/cto-as-service' as const },
             { name: t('tech_consulting'), href: '/technology-consulting' as const },
+            { name: t('cibersecurity'), href: '/cybersecurity' as const },
             { name: t('compliance'), href: '/iso-27001' as const },
           ],
         },
