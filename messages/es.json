@@ -23,7 +23,7 @@
         "legal": "Política legal",
         "cookies": "Política de cookies",
         "notice": "Aviso legal",
-        "ai_manifest": "AI Manifest",
+        "ai_manifest": "Manifiesto IA",
         "logistics": "Logística",
         "retail": "Retail",
         "CTO": "CTO as a service",
@@ -3420,7 +3420,7 @@
         }
     },
     "cibersecurity": {
-        "title": " Ciberseguridad para empresas y pymes | Gigson Solutions",
+        "title": "Ciberseguridad para empresas y pymes | Gigson Solutions",
         "metadescription": "Somos tus socios tecnológicos para prevenir y mitigar amenazas. Integramos la ciberseguridad como parte estructural del negocio",
         "hero": {
             "suptitle": "SERVICIOS",
@@ -3653,7 +3653,7 @@
             "description": "La página que buscas no existe o ha cambiado de ubicación."
         },
         "ai_manifest": {
-            "title": "AI Manifest | Gigson Solutions",
+            "title": "Manifiesto de IA | Gigson Solutions",
             "description": "Cómo Gigson Solutions utiliza la inteligencia artificial de forma responsable en sus procesos y entregas."
         }
     },
