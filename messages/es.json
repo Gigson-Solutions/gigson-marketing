@@ -54,6 +54,8 @@
         "relatedPosts": "Sigue leyendo",
         "readInEnglish": "Leer en inglés →",
         "readInSpanish": "Leer en español →",
+        "articlesAbout": "Artículos sobre {label}",
+        "viewService": "Ver la página de {label} →",
         "categories": {
             "agentes-ia": "Agentes IA",
             "integraciones-erp": "Integraciones ERP",

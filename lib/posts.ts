@@ -22,10 +22,12 @@ export type Post = {
   coverImage?: {
     url?: string;
     alt?: string;
+    width?: number;
+    height?: number;
     sizes?: {
-      thumbnail?: { url?: string };
-      card?: { url?: string };
-      hero?: { url?: string };
+      thumbnail?: { url?: string; width?: number; height?: number };
+      card?: { url?: string; width?: number; height?: number };
+      hero?: { url?: string; width?: number; height?: number };
     };
   };
   publishedAt?: string;

@@ -16,7 +16,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-type NavPathname = Exclude<AppPathnames, '/blog/[slug]'>;
+type NavPathname = Exclude<AppPathnames, '/blog/[slug]' | '/blog/category/[category]'>;
 
 const LandingFooter = () => {
   const t = useTranslations('menu');

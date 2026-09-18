@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import { getPostSlugs } from '../lib/posts';
+import { CATEGORY_SLUGS } from '../lib/blogCategories';
 
 const ORIGIN = 'https://gigsonsolutions.com';
 
@@ -73,7 +74,24 @@ async function getBlogEntries(): Promise<MetadataRoute.Sitemap> {
   }
 }
 
+// 7 categories × 2 locales. Indexable (Option A — hub of content with a
+// featured link to the matching service page, see lib/blogCategories.ts),
+// not `noindex`: the anti-cannibalization guard is the featured link + the
+// "Artículos sobre X" framing, not hiding the page from Google.
+function getCategoryEntries(): MetadataRoute.Sitemap {
+  return (Object.entries(CATEGORY_SLUGS) as [keyof typeof CATEGORY_SLUGS, { es: string; en: string }][]).map(
+    ([, slugs]) => {
+      const enUrl = `${ORIGIN}/blog/category/${slugs.en}`;
+      const esUrl = `${ORIGIN}/es/blog/categoria/${slugs.es}`;
+      return [
+        { url: enUrl, alternates: { languages: { en: enUrl, es: esUrl } }, priority: 0.5, changeFrequency: 'weekly' as const },
+        { url: esUrl, alternates: { languages: { en: enUrl, es: esUrl } }, priority: 0.5, changeFrequency: 'weekly' as const },
+      ];
+    },
+  ).flat();
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogEntries = await getBlogEntries();
-  return [...makeStaticEntries(), ...blogEntries];
+  return [...makeStaticEntries(), ...getCategoryEntries(), ...blogEntries];
 }

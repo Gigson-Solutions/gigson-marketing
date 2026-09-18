@@ -8,7 +8,7 @@ import logoFooter from '../../assets/LogoFooter.svg';
 import type { AppPathnames } from '../../../i18n/routing';
 import { Link } from '../../../i18n/navigation';
 
-type NavPathname = Exclude<AppPathnames, '/blog/[slug]'>;
+type NavPathname = Exclude<AppPathnames, '/blog/[slug]' | '/blog/category/[category]'>;
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 const Footer = () => {
