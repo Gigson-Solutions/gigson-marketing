@@ -21,6 +21,7 @@ const Footer = () => {
   const consultingLinks = [
     { name: t('CTO'), href: '/cto-as-service' as NavPathname },
     { name: t('tech_consulting'), href: '/technology-consulting' as NavPathname },
+    { name: t('cibersecurity'), href: '/cybersecurity' as NavPathname },
     { name: t('compliance'), href: '/iso-27001' as NavPathname },
   ];
 
