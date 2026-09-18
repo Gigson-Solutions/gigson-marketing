@@ -13,14 +13,24 @@ function extractText(node: LexicalNode | undefined): string {
   return `${own} ${children}`;
 }
 
-/** Estimates reading time from the real serialized Lexical content
- * (~200 words/min) instead of a hardcoded number — returns `null` when
- * there's no content to measure yet (e.g. a draft with only a title). */
-export function estimateReadingTime(content: unknown, wordsPerMinute = 200): number | null {
+/** Word count from the real serialized Lexical content — returns `null` when
+ * there's no content to measure yet (e.g. a draft with only a title). Note:
+ * `extractText` only walks `text`/`children`, so text living inside a block's
+ * `fields` (FAQ answers, CTA labels, a future Key Takeaways block) isn't
+ * counted. Acceptable for an approximate word count; not for anything that
+ * needs to be exact. */
+export function countWords(content: unknown): number | null {
   const root = (content as { root?: LexicalNode })?.root;
   if (!root) return null;
   const text = extractText(root).trim();
   if (!text) return null;
-  const words = text.split(/\s+/).filter(Boolean).length;
+  return text.split(/\s+/).filter(Boolean).length;
+}
+
+/** Estimates reading time from the word count (~200 words/min) instead of a
+ * hardcoded number. */
+export function estimateReadingTime(content: unknown, wordsPerMinute = 200): number | null {
+  const words = countWords(content);
+  if (words === null) return null;
   return Math.max(1, Math.round(words / wordsPerMinute));
 }

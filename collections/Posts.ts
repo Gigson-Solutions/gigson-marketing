@@ -10,6 +10,7 @@ import {
 import { CtaBlock } from './blocks/CtaBlock';
 import { HighlightBlock } from './blocks/HighlightBlock';
 import { FaqBlock } from './blocks/FaqBlock';
+import { KeyTakeawaysBlock } from './blocks/KeyTakeawaysBlock';
 
 /** Payload relationship fields store either a bare id or a populated doc
  * (depending on `depth`) — normalize to just the id for comparisons. */
@@ -199,7 +200,7 @@ export const Posts: CollectionConfig = {
           }),
           HorizontalRuleFeature(),
           FixedToolbarFeature(),
-          BlocksFeature({ blocks: [CtaBlock, HighlightBlock, FaqBlock] }),
+          BlocksFeature({ blocks: [CtaBlock, HighlightBlock, FaqBlock, KeyTakeawaysBlock] }),
         ],
       }),
     },

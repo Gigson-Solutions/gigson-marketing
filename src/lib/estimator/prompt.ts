@@ -8,16 +8,10 @@ const FEATURE_ITEM_SCHEMA = {
   type: 'object' as const,
   properties: {
     name: { type: 'string' as const, description: 'Short, specific use case name.' },
-    userStory: {
+    description: {
       type: 'string' as const,
-      description: 'Format: "As a [role], I want to [action] so that [benefit]."',
-    },
-    acceptanceCriteria: {
-      type: 'array' as const,
-      items: { type: 'string' as const },
-      minItems: 3,
-      maxItems: 6,
-      description: 'Numbered, testable acceptance criteria (without the leading number).',
+      description:
+        'Two to four sentences of plain business language describing what this use case covers and what the client gets out of it. Written for a prospective client, not for a delivery team: no user stories, no acceptance criteria, no bullet lists, no technical jargon unless the client used it themselves.',
     },
     thirdPartyServices: {
       type: 'string' as const,
@@ -25,18 +19,23 @@ const FEATURE_ITEM_SCHEMA = {
     },
     hours: {
       type: 'object' as const,
-      description: 'Estimated delivery hours this use case requires, broken down by role.',
+      description: 'Estimated delivery hours this use case requires, split between the two delivery roles.',
       properties: {
-        frontend: { type: 'number' as const },
-        qa: { type: 'number' as const },
-        backend: { type: 'number' as const },
-        uiux: { type: 'number' as const },
-        bapm: { type: 'number' as const },
+        consulting: {
+          type: 'number' as const,
+          description:
+            'Consulting hours: discovery, requirement analysis, process and solution design, architecture decisions, stakeholder workshops, project management, documentation and validation with the client.',
+        },
+        building: {
+          type: 'number' as const,
+          description:
+            'Building hours: hands-on implementation — development, ERP configuration/customization, integrations, data migration, UI work and testing.',
+        },
       },
-      required: ['frontend', 'qa', 'backend', 'uiux', 'bapm'],
+      required: ['consulting', 'building'],
     },
   },
-  required: ['name', 'userStory', 'acceptanceCriteria', 'thirdPartyServices', 'hours'],
+  required: ['name', 'description', 'thirdPartyServices', 'hours'],
 };
 
 export const GENERATE_FEATURES_TOOL = {
@@ -179,7 +178,8 @@ export function buildEstimatorSystemPrompt(): string {
     'You are a senior delivery estimator working for Gigson Solutions, a technology consultancy that does custom software development, ERP implementation/configuration (Odoo, Holded), integrations/connectors between systems, and technical consulting — not just app development.',
     'Given a prospective client\'s project brief AND its project type, you decompose it into a realistic, well-scoped list of use cases a delivery team could work from directly.',
     'Scope each use case appropriately to the project type: for custom software, a use case might be a screen or user flow ("user login", "checkout flow"); for an ERP implementation, a use case might be a configuration or process ("set up multi-currency invoicing in Odoo", "configure approval workflows"); for integrations, a use case might be a specific sync or data flow ("sync invoices from Holded to the internal ERP nightly"); for consulting, a use case might be a deliverable ("technology stack audit report", "12-month architecture roadmap").',
-    'Each use case must be concrete and specific to THIS project (not generic placeholders), with a clear user story, testable acceptance criteria, plausible third-party systems/services involved, and honest hour estimates per role (frontend, qa, backend, uiux, bapm — business analyst/project manager). For non-development-heavy project types (ERP configuration, consulting), it is normal and expected for backend/frontend/uiux hours to be low or zero and for bapm/qa hours to dominate instead — do not force a software-development-shaped hour split onto a project that isn\'t one.',
+    'Each use case must be concrete and specific to THIS project (not generic placeholders): a short name, a single plain-language description the client can read and recognise their own project in, the third-party systems/services it realistically involves, and honest hour estimates.',
+    'Hours are split between exactly two roles — `consulting` (discovery, analysis, process and solution design, architecture, workshops, project management, documentation, validation with the client) and `building` (hands-on implementation: development, ERP configuration, integrations, data migration, UI, testing). Every use case needs both numbers, and the balance between them must reflect the work: an ERP configuration or a consulting deliverable is consulting-heavy with little or no building, while a custom software feature is building-heavy with a smaller consulting share. Do not force a software-development-shaped split onto a project that isn\'t one.',
     'Calibrate total hours to the requested scope and quality levels: a "polished"/full-scope project should cost meaningfully more hours than a basic/pilot one for the same kind of use case.',
     'Always include foundational use cases implied by the project type (e.g. auth/permissions for software, data migration/testing for ERP or integration work, discovery/stakeholder interviews for consulting) even if not explicitly mentioned, plus the specific use cases the description calls for.',
     'Respond ONLY by calling the submit_features tool — no prose.',
@@ -217,7 +217,7 @@ export function buildSingleFeatureSystemPrompt(): string {
   return [
     'You are a senior delivery estimator working for Gigson Solutions, a technology consultancy that does custom software development, ERP implementation/configuration (Odoo, Holded), integrations/connectors between systems, and technical consulting.',
     "A prospective client is adding ONE more use case to their project estimate, described in their own plain words — they are not a developer and don't know about story points, acceptance criteria, or per-role hour breakdowns.",
-    'Rewrite their description into a single, properly scoped use case, matching the project type you are given (a software screen/flow, an ERP configuration item, an integration/sync, or a consulting deliverable — whichever fits): a clear user story, testable acceptance criteria, plausible third-party systems/services, and honest hour estimates per role (frontend, qa, backend, uiux, bapm), calibrated to the overall project context you are given (scope, quality levels). It is normal for non-development project types to have low/zero frontend or backend hours.',
+    'Rewrite their description into a single, properly scoped use case, matching the project type you are given (a software screen/flow, an ERP configuration item, an integration/sync, or a consulting deliverable — whichever fits): a short name, one plain-language description written for them (no user story, no acceptance criteria, no jargon), the third-party systems/services involved, and honest hour estimates split between `consulting` (discovery, analysis, design, project management, validation) and `building` (development, configuration, integrations, testing), calibrated to the overall project context you are given (scope, quality levels). It is normal for a consulting or ERP-configuration use case to carry few or no building hours.',
     'If their description is vague, make reasonable, conservative assumptions rather than asking questions — this is a one-shot, non-interactive tool.',
     'Do not duplicate a use case that (by name or clear intent) already exists in the project — if the description matches an existing one, scope it as the smallest sensible addition/variation instead.',
     'Respond ONLY by calling the submit_feature tool — no prose.',
