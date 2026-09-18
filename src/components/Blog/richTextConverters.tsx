@@ -2,13 +2,13 @@ import type { JSXConvertersFunction } from '@payloadcms/richtext-lexical/react';
 import type { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical';
 
 import { Link } from '../../../i18n/navigation';
-import type { AppPathnames } from '../../../i18n/routing';
+import type { StaticPathnames } from '../../../i18n/routing';
 import FaqAccordion from './FaqAccordion';
 
 // `/blog/[slug]` is a dynamic route pattern requiring params — the CTA
 // block only ever links to static service pages, so it's excluded here
 // (same pattern as `NavPathname` in Navbar/Footer).
-type CtaHref = Exclude<AppPathnames, '/blog/[slug]'>;
+type CtaHref = StaticPathnames;
 
 type CtaBlockFields = {
   blockType: 'cta';

@@ -21,7 +21,10 @@ const intlMiddleware = createMiddleware(routing);
 // index, which does exist in both locales.
 const blogPostMiddleware = createMiddleware({ ...routing, localeDetection: false });
 
-const UNPREFIXED_BLOG_POST = /^\/blog\/[^/]+/;
+// Anchored to exactly one segment after `/blog/` (optionally trailed by a
+// single slash) — unanchored, this used to also match `/blog/authors/…` or
+// `/blog/category/…`, which would then skip locale detection for those too.
+const UNPREFIXED_BLOG_POST = /^\/blog\/[^/]+\/?$/;
 
 export default function middleware(request: NextRequest) {
   const handle = UNPREFIXED_BLOG_POST.test(request.nextUrl.pathname)

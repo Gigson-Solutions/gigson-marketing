@@ -1,4 +1,4 @@
-import { routing, type AppPathnames } from '../i18n/routing';
+import { routing, type StaticPathnames } from '../i18n/routing';
 
 export const ORIGIN = 'https://gigsonsolutions.com';
 
@@ -22,7 +22,7 @@ type Locale = (typeof routing.locales)[number];
  * their `Service.url`, so `/es/tecnologia-logistica` advertised itself as
  * `/logistics-technology`.
  */
-export function localizedUrl(pathKey: AppPathnames, locale: string): string {
+export function localizedUrl(pathKey: StaticPathnames, locale: string): string {
   const entry = routing.pathnames[pathKey] as string | Record<Locale, string>;
   const path = typeof entry === 'string' ? entry : entry[locale as Locale] ?? entry.en;
   const prefix = locale === routing.defaultLocale ? '' : `/${locale}`;
@@ -73,7 +73,7 @@ export function buildServiceSchema({
 }: {
   name: string;
   description: string;
-  pathKey: AppPathnames;
+  pathKey: StaticPathnames;
   locale: string;
   serviceType: string;
   areaServed?: string;
@@ -121,7 +121,7 @@ export function faqItemsFrom(raw: unknown): FaqItem[] {
  * Payload), by an absolute URL.
  */
 export type BreadcrumbItem =
-  | { name: string; pathKey: AppPathnames }
+  | { name: string; pathKey: StaticPathnames }
   | { name: string; url: string };
 
 export function buildBreadcrumbSchema(items: BreadcrumbItem[], locale: string) {
