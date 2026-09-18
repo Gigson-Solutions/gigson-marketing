@@ -23,7 +23,7 @@
         "legal": "Política legal",
         "cookies": "Política de cookies",
         "notice": "Aviso legal",
-        "ai_manifest": "AI Manifest",
+        "ai_manifest": "Manifiesto IA",
         "logistics": "Logística",
         "retail": "Retail",
         "CTO": "CTO as a service",
@@ -714,8 +714,8 @@
         "btnInfo": "+INFO"
     },
     "cases-logistics": {
-        "title": "Tecnología para Empresas de Logística en España | Gigson Solutions",
-        "metadescription": "Optimiza tu cadena logística con tecnología a medida en España: trazabilidad, automatización y eficiencia operativa sin grandes integradores. Agentes IA + integraciones.",
+        "title": "Tecnología para Logística en España | Gigson Solutions",
+        "metadescription": "Optimiza tu cadena logística con tecnología a medida en España: trazabilidad, automatización y eficiencia operativa. Agentes IA + integraciones.",
         "hero": {
             "suptitle": "LOGÍSTICA Y FULFILLMENT",
             "title": "<span>Tecnología</span> para empresas de logística <br/> e <span>intralogística</span> en España",
@@ -1517,8 +1517,8 @@
         }
     },
     "cases-construction": {
-        "title": "Soluciones Tecnológicas para Construcción y Arquitectura | Gigson Solutions",
-        "metadescription": "Soluciones tecnológicas para empresas del sector de la construcción: gestión de proyectos, trazabilidad de recursos, integraciones ERP y digitalización adaptada al sector.",
+        "title": "Soluciones Tecnológicas para Construcción | Gigson Solutions",
+        "metadescription": "Soluciones tecnológicas para empresas de construcción: gestión de proyectos, trazabilidad de recursos, integraciones ERP y digitalización a medida.",
         "hero": {
             "suptitle": "ARQUITECTURA & CONSTRUCCIÓN",
             "title": "Consultoría tecnológica <br> <span> en construcción </span>",
@@ -2020,7 +2020,7 @@
         }
     },
     "cases-retail": {
-        "title": "Soluciones de software para retail o ecommerce | Gigson Solutions",
+        "title": "Software para Retail y eCommerce | Gigson Solutions",
         "metadescription": "Impulsa tu negocio ecommerce con la tecnología que necesitas. Integramos sistemas, automatizamos procesos y optimizamos tu gestión tecnológica",
         "hero": {
             "suptitle": "RETAIL & ECOMMERCE",
@@ -2615,7 +2615,7 @@
         }
     },
     "cases-professional-services": {
-        "title": "Tecnología y Agentes IA para Servicios Profesionales y Despachos en España | Gigson Solutions",
+        "title": "Agentes IA para Servicios Profesionales | Gigson Solutions",
         "metadescription": "Software a medida y agentes IA para despachos, consultoras y asesorías en España: gestión documental, CRM, facturación y automatización con IA.",
         "hero": {
             "suptitle": "SERVICIOS PROFESIONALES Y LEGAL",
@@ -3135,7 +3135,7 @@
         "chatMessage": "¡Hola soy Jaume de Gigson Solutions! ¿En qué puedo ayudarte?"
     },
     "software": {
-        "title": "Ingeniería y Desarrollo de software a medida | Gigson Solutions",
+        "title": "Desarrollo de Software a Medida | Gigson Solutions",
         "metadescription": "Ingeniería de software enfocada en soluciones a medida para empresas. Mucho más que desarrollo, impulsamos tu crecimiento tecnológico",
         "hero": {
             "suptitle": "SERVICIOS",
@@ -3420,7 +3420,7 @@
         }
     },
     "cibersecurity": {
-        "title": " Ciberseguridad para empresas y pymes | Gigson Solutions",
+        "title": "Ciberseguridad para empresas y pymes | Gigson Solutions",
         "metadescription": "Somos tus socios tecnológicos para prevenir y mitigar amenazas. Integramos la ciberseguridad como parte estructural del negocio",
         "hero": {
             "suptitle": "SERVICIOS",
@@ -3613,7 +3613,7 @@
     "pageSeo": {
         "about": {
             "title": "Sobre nosotros | Gigson Solutions",
-            "description": "Conoce al equipo de Gigson Solutions: ingenieros, arquitectos y diseñadores especializados en productos digitales y agentes IA. Anthropic Claude Partner certificado."
+            "description": "Conoce al equipo de Gigson Solutions: ingenieros, arquitectos y diseñadores de productos digitales y agentes IA. Anthropic Claude Partner certificado."
         },
         "cases": {
             "title": "Casos de éxito | Gigson Solutions",
@@ -3653,7 +3653,7 @@
             "description": "La página que buscas no existe o ha cambiado de ubicación."
         },
         "ai_manifest": {
-            "title": "AI Manifest | Gigson Solutions",
+            "title": "Manifiesto de IA | Gigson Solutions",
             "description": "Cómo Gigson Solutions utiliza la inteligencia artificial de forma responsable en sus procesos y entregas."
         }
     },
@@ -4499,7 +4499,7 @@
     },
     "iso27001Service": {
         "title": "Certificación ISO 27001 para empresas · Gigson Solutions",
-        "metadescription": "Implantamos tu SGSI ISO 27001 sobre tu operativa real. Controles técnicos reales, sistema mínimo viable sin burocracia. Para pymes, despachos y consultoras en España.",
+        "metadescription": "Implantamos tu SGSI ISO 27001 sobre tu operativa real. Controles técnicos reales, sistema mínimo viable sin burocracia. Para pymes y despachos en España.",
         "hero": {
             "suptitle": "ISO/IEC 27001:2022 · Seguridad de la información",
             "title": "Certificación <span>ISO 27001</span> para empresas que necesitan el certificado sin paralizar su negocio.",
@@ -4729,7 +4729,7 @@
     "projectEstimator": {
         "seo": {
             "title": "Estimador de proyecto con IA · Gigson Solutions",
-            "description": "Describe tu proyecto — desarrollo a medida, implantación ERP, integraciones o consultoría — y recibe en minutos un desglose de casos de uso, equipo, cronograma y presupuesto generado con IA. Sin compromiso."
+            "description": "Describe tu proyecto — desarrollo a medida, ERP, integraciones o consultoría — y recibe en minutos un desglose de casos de uso, equipo y presupuesto con IA."
         },
         "hero": {
             "eyebrow": "Estimador con IA",
@@ -4900,20 +4900,15 @@
                 "status4": "Calculando el cronograma"
             },
             "failedTitle": "No hemos podido generar tu estimación automáticamente",
-            "failedNote": "No pasa nada — puedes añadir casos de uso manualmente y seguir con el proceso.",
+            "failedNote": "No pasa nada — puedes añadir tus casos de uso uno a uno describiéndolos y seguir con el proceso.",
             "title": "REVISA LOS CASOS DE USO",
-            "subtitle": "Puedes editar, eliminar, mover o añadir casos de uso. El presupuesto se actualiza automáticamente.",
-            "colFeature": "Descripción del caso de uso",
-            "colSupporting": "Detalles de soporte",
-            "colFrontend": "Frontend",
-            "colQa": "QA",
-            "colBackend": "Backend",
-            "colUiux": "UI/UX",
-            "colBapm": "BA/PM",
+            "subtitle": "Puedes editar, eliminar o añadir casos de uso antes de ver tu estimación final.",
+            "colConsulting": "Consultoría",
+            "colBuilding": "Desarrollo",
             "featureName": "Nombre del caso de uso",
-            "acceptanceCriteria": "Criterios de aceptación",
+            "description": "Descripción",
             "thirdPartyServices": "Servicios de terceros",
-            "userStory": "Historia de usuario",
+            "hoursLocked": "Las horas estimadas se desbloquean al reservar una llamada con nuestro equipo.",
             "addFeature": "AÑADIR CASO DE USO",
             "seeFinalEstimate": "VER ESTIMACIÓN FINAL",
             "edit": "Editar",
@@ -4925,15 +4920,12 @@
                 "describeHelp": "Cuéntanos en pocas palabras qué necesitas — no hace falta que sepas de horas, roles o requisitos técnicos, nuestra IA lo convierte en un caso de uso completo.",
                 "describePlaceholder": "Ej: quiero que los usuarios puedan pagar con tarjeta desde la app",
                 "describeError": "No hemos podido generar este caso de uso. Inténtalo de nuevo.",
-                "addManually": "AÑADIR MANUALMENTE",
                 "generateWithAi": "GENERAR CON IA",
                 "generating": "GENERANDO…",
                 "reviewHint": "Esto es lo que ha generado la IA. Puedes ajustar cualquier campo antes de guardar.",
                 "nameLabel": "Nombre",
-                "userStoryLabel": "Historia de usuario",
-                "acceptanceCriteriaLabel": "Criterios de aceptación (uno por línea)",
+                "descriptionLabel": "Descripción",
                 "thirdPartyLabel": "Servicios de terceros",
-                "hoursLabel": "Horas estimadas por rol",
                 "save": "GUARDAR",
                 "cancel": "CANCELAR"
             },
@@ -4949,17 +4941,16 @@
             "subtitle": "Consulta el desglose a continuación.",
             "deliveryTeam": "EQUIPO DE ENTREGA",
             "teamMember": "persona a tiempo completo",
-            "roleFrontend": "Frontend",
-            "roleQa": "QA",
-            "roleBackend": "Backend",
-            "roleUiux": "UI/UX",
-            "roleBapm": "BA/PM",
+            "roleConsulting": "Consultoría",
+            "roleBuilding": "Desarrollo",
             "timelineTitle": "CRONOGRAMA DEL PROYECTO",
             "timelineWeek": "Semana {n}",
             "finalEstimateTitle": "ESTIMACIÓN FINAL",
             "finalEstimateNote": "Ya hemos preparado tu estimación final. Introduce tu email para verla al completo.",
             "totalBudget": "Presupuesto total",
             "totalHours": "Horas totales",
+            "hoursConsulting": "Horas de consultoría",
+            "hoursBuilding": "Horas de desarrollo",
             "gateCta": "OBTENER MI ESTIMACIÓN COMPLETA",
             "modal": {
                 "title": "OBTÉN TU ESTIMACIÓN COMPLETA",
@@ -4981,7 +4972,7 @@
             "successTitle": "¡Gracias! Aquí tienes tu estimación",
             "successNote": "Hemos enviado los detalles a nuestro equipo. Te contactaremos en menos de 24-48h para afinar juntos el resultado.",
             "bookCallTitle": "RESERVA UNA LLAMADA PARA VER LAS HORAS ESTIMADAS",
-            "bookCallHelp": "El presupuesto ya es visible arriba. Para desbloquear también las horas estimadas, reserva una llamada de 30 minutos con nuestro equipo — así podemos revisar el resultado contigo.",
+            "bookCallHelp": "El presupuesto ya es visible arriba. Para desbloquear también las horas estimadas — el total y su reparto entre consultoría y desarrollo — reserva una llamada de 30 minutos con nuestro equipo y revisamos el resultado contigo.",
             "restart": "EMPEZAR OTRA ESTIMACIÓN"
         },
         "errors": {

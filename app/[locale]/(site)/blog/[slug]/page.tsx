@@ -4,51 +4,56 @@ import { getTranslations } from 'next-intl/server';
 
 import BlogPost from '../../../../../src/components/Blog/BlogPost';
 import JsonLd from '../../../../../src/shared/ui/JsonLd';
-import { coverImagePath } from '../../../../../lib/blogCovers';
+import { collectBlockFields, type FaqBlockFields } from '../../../../../lib/lexical';
+import { countWords, estimateReadingTime } from '../../../../../lib/readingTime';
 import { getPostBySlug, getPostSlugs, getRelatedPosts, type Post } from '../../../../../lib/posts';
-import { ORIGIN, buildBreadcrumbSchema, organizationRef } from '../../../../../lib/schema';
+import {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  organizationMinimal,
+  postUrl,
+  articleImage,
+} from '../../../../../lib/schema';
 
 export const revalidate = 3600;
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
-/** Absolute canonical URL for a post, from its own `locale`/`slug` — used
- * both for the post itself and for its `localizedVersion` sibling, which
- * may have a different slug (translated slugs are more idiomatic for SEO
- * than forcing the same one across languages). */
-function postUrl(post: Post): string {
-  return post.locale === 'es' ? `${ORIGIN}/es/blog/${post.slug}` : `${ORIGIN}/blog/${post.slug}`;
+/** hreflang alternates for a post. `x-default` always resolves to the EN
+ * URL of the cluster when one exists — every other page on the site treats
+ * EN as the default — and only falls back to the post's own canonical when
+ * there is no EN sibling yet (a post published in ES only, ahead of its
+ * translation, must never declare an `x-default` that 404s). */
+function postLanguages(post: Post): Record<string, string> {
+  const canonical = postUrl(post);
+  const sibling = post.localizedVersion && typeof post.localizedVersion === 'object' ? post.localizedVersion : null;
+
+  if (post.locale === 'en') {
+    const languages: Record<string, string> = { 'x-default': canonical, en: canonical };
+    if (sibling?.locale && sibling.slug) languages[sibling.locale] = postUrl(sibling);
+    return languages;
+  }
+
+  const enUrl = sibling?.locale === 'en' && sibling.slug ? postUrl(sibling) : null;
+  return enUrl ? { 'x-default': enUrl, en: enUrl, es: canonical } : { 'x-default': canonical, es: canonical };
 }
 
-/** Absolute URL of the post's picture. An uploaded cover wins; otherwise this
- * is the rasterised version of the same generated composition the page renders,
- * so social previews and the Article schema always have a real image. */
-function articleImage(post: Post): string {
-  const uploaded = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
-  if (!uploaded) return `${ORIGIN}${coverImagePath(post)}`;
-  // Payload returns an absolute URL on Vercel Blob but a relative /api/media
-  // path on local disk storage, so absolutise defensively.
-  return uploaded.startsWith('http') ? uploaded : `${ORIGIN}${uploaded}`;
-}
+type PostSeo = { title: string; description: string; canonical: string; image: string; languages: Record<string, string> };
 
-// Local, minimal duplicate of the recursive block-collector added to
-// `lib/lexical.ts` by PR "seo/05-schema-posts" (not yet merged as of this
-// PR) — scoped to just the one block type this file needs. Once that PR
-// lands, replace this with `collectBlockFields(post.content, 'keyTakeaways')`.
-type LexicalNode = { type?: string; children?: LexicalNode[]; fields?: { blockType?: string; items?: { text: string }[] } };
-function collectKeyTakeaways(content: unknown): string[] {
-  const root = (content as { root?: LexicalNode })?.root;
-  if (!root) return [];
-  const items: string[] = [];
-  const walk = (node: LexicalNode | undefined) => {
-    if (!node) return;
-    if (node.type === 'block' && node.fields?.blockType === 'keyTakeaways') {
-      for (const item of node.fields.items ?? []) if (item.text) items.push(item.text);
-    }
-    node.children?.forEach(walk);
+/** Single source of truth for a post's SEO fields, consumed by both
+ * `generateMetadata` and the `Article`/`BlogPosting` JSON-LD below — they used
+ * to compute `description` differently (`seoDescription ?? excerpt` vs raw
+ * `excerpt`), which could silently drift apart. */
+function postSeo(post: Post): PostSeo {
+  return {
+    title: post.seoTitle ?? post.title,
+    description: post.seoDescription ?? post.excerpt ?? '',
+    canonical: postUrl(post),
+    image: articleImage(post),
+    languages: postLanguages(post),
   };
-  walk(root);
-  return items;
 }
+
+type KeyTakeawaysBlockFields = { blockType: 'keyTakeaways'; items: { text: string }[] };
 
 export async function generateStaticParams() {
   const [esSlugs, enSlugs] = await Promise.all([getPostSlugs('es'), getPostSlugs('en')]);
@@ -72,16 +77,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const post = await getPostBySlug(slug, locale);
   if (!post) return {};
 
-  const title = post.seoTitle ?? post.title;
-  const description = post.seoDescription ?? post.excerpt ?? '';
-  const canonical = postUrl(post);
-  const image = articleImage(post);
-
-  const sibling = post.localizedVersion && typeof post.localizedVersion === 'object' ? post.localizedVersion : null;
-  const languages: Record<string, string> = { 'x-default': canonical, [locale]: canonical };
-  if (sibling?.locale && sibling.slug) {
-    languages[sibling.locale] = postUrl(sibling);
-  }
+  const { title, description, canonical, image, languages } = postSeo(post);
 
   return {
     title,
@@ -117,40 +113,78 @@ export default async function BlogPostPage(props: Props) {
   if (!post) notFound();
 
   const relatedPosts = await getRelatedPosts(post, 2);
+  const seo = postSeo(post);
+
+  // `updatedAt` is a Payload timestamp on every doc regardless of the `Post`
+  // TS type declaring it — defensive guard in case a hook ever back-dates it
+  // relative to `publishedAt` (shouldn't happen, but a schema shouldn't claim
+  // a post was "modified" before it was published).
+  const dateModified =
+    post.updatedAt && post.publishedAt && post.updatedAt < post.publishedAt
+      ? post.publishedAt
+      : (post.updatedAt ?? post.publishedAt);
+
+  const [tCrumb, tMenu, tBlog] = await Promise.all([
+    getTranslations({ locale, namespace: 'breadcrumb' }),
+    getTranslations({ locale, namespace: 'menu' }),
+    getTranslations({ locale, namespace: 'blog' }),
+  ]);
+
+  const articleSection = post.category ? tBlog(`categories.${post.category}`) : undefined;
+  const wordCount = countWords(post.content) ?? undefined;
+  const readingMinutes = estimateReadingTime(post.content);
 
   // Feeds the post's "Key takeaways" block (if any) into the JSON-LD as a
   // machine-readable abstract — the same self-contained summary a reader
   // sees at the top of the article.
-  const takeaways = collectKeyTakeaways(post.content);
+  const takeaways = collectBlockFields<KeyTakeawaysBlockFields>(post.content, 'keyTakeaways')
+    .flatMap((block) => block.items ?? [])
+    .map((item) => item.text)
+    .filter(Boolean);
 
   const articleSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
+    '@id': `${seo.canonical}#article`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': seo.canonical },
     headline: post.title,
-    description: post.excerpt,
+    description: seo.description,
     abstract: takeaways.length > 0 ? takeaways.join(' ') : undefined,
-    url: postUrl(post),
+    url: seo.canonical,
     datePublished: post.publishedAt,
+    dateModified,
+    inLanguage: post.locale,
+    articleSection,
+    wordCount,
+    timeRequired: readingMinutes ? `PT${readingMinutes}M` : undefined,
     author: {
       '@type': 'Person',
       name: post.author ?? 'Gigson Solutions',
     },
-    // Points at the one Organization node declared on the home page
-    // (`lib/schema.ts`) instead of restating a partial copy of it here.
-    publisher: organizationRef,
+    // Inline minimal node (not just an `@id` reference): each post's JSON-LD
+    // is evaluated on its own, and Google's Article/BlogPosting rich result
+    // requires `publisher.name` — the shared `@id` still lets a crawler treat
+    // this as the same entity as the full Organization node on `/`, `/about`,
+    // `/contact` and `/about-claude-partner`.
+    publisher: organizationMinimal(),
     // Google's Article rich result wants an image; every post has one now.
-    image: articleImage(post),
+    image: seo.image,
   };
 
-  const [tCrumb, tMenu] = await Promise.all([
-    getTranslations({ locale, namespace: 'breadcrumb' }),
-    getTranslations({ locale, namespace: 'menu' }),
-  ]);
+  // Every `faq` block in the post's content, flattened into a single
+  // FAQPage — several `<script>` tags with `FAQPage` on the same URL would
+  // be duplicate markup, not additive.
+  const faqItems = collectBlockFields<FaqBlockFields>(post.content, 'faq')
+    .flatMap((block) => block.items ?? [])
+    .filter((item) => item.question?.trim() && item.answer?.trim());
+  const faqSchemaBase = buildFaqSchema(faqItems, `${seo.canonical}#faq`);
+  const faqSchema = faqSchemaBase ? { ...faqSchemaBase, isPartOf: { '@id': seo.canonical } } : null;
+
   const breadcrumbSchema = buildBreadcrumbSchema(
     [
       { name: tCrumb('home'), pathKey: '/' },
       { name: tMenu('blog'), pathKey: '/blog' },
-      { name: post.title, url: postUrl(post) },
+      { name: post.title, url: seo.canonical },
     ],
     locale,
   );
@@ -158,6 +192,7 @@ export default async function BlogPostPage(props: Props) {
   return (
     <>
       <JsonLd data={articleSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
       <JsonLd data={breadcrumbSchema} />
       <BlogPost post={post} relatedPosts={relatedPosts} />
     </>

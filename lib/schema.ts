@@ -1,4 +1,9 @@
 import { routing, type AppPathnames } from '../i18n/routing';
+import { coverImagePath } from './blogCovers';
+// Type-only: `lib/posts.ts` imports Payload and the Postgres adapter at
+// module top, and this module must stay reachable from client components
+// (same precaution `lib/blogCovers.ts` already documents).
+import type { Post } from './posts';
 
 export const ORIGIN = 'https://gigsonsolutions.com';
 
@@ -13,6 +18,23 @@ export const ORGANIZATION_ID = `${ORIGIN}/#organization`;
 
 /** Reference to the Organization above, for `provider`/`publisher` slots. */
 export const organizationRef = { '@id': ORGANIZATION_ID } as const;
+
+/**
+ * Minimal Organization node (name + logo) carrying the same `@id` as the full
+ * node from `buildOrganization()`. For pages that need `publisher.name` to
+ * satisfy Google's Article/BlogPosting requirements (blog posts, the blog
+ * index) but aren't themselves "about" the company — the shared `@id` is what
+ * tells a crawler this is the same entity, without re-declaring the
+ * description/foundingDate/etc. on every post.
+ */
+export function organizationMinimal() {
+  return {
+    '@type': 'Organization',
+    '@id': ORGANIZATION_ID,
+    name: 'Gigson Solutions',
+    logo: `${ORIGIN}/gigson-logo.svg`,
+  };
+}
 
 type Locale = (typeof routing.locales)[number];
 
@@ -92,18 +114,41 @@ export function buildServiceSchema({
 
 export type FaqItem = { question: string; answer: string };
 
-/** Returns null for an empty list so callers can render conditionally. */
-export function buildFaqSchema(items: FaqItem[] | undefined) {
+/** Returns null for an empty list so callers can render conditionally.
+ * `id` is optional and additive (existing callers are unaffected) — the blog
+ * post page passes one so its `FAQPage` can be addressed as
+ * `${postUrl(post)}#faq` and marked `isPartOf` the article. */
+export function buildFaqSchema(items: FaqItem[] | undefined, id?: string) {
   if (!items || items.length === 0) return null;
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    ...(id ? { '@id': id } : {}),
     mainEntity: items.map(({ question, answer }) => ({
       '@type': 'Question',
       name: question,
       acceptedAnswer: { '@type': 'Answer', text: answer },
     })),
   };
+}
+
+/** Absolute canonical URL for a post, from its own `locale`/`slug`. Lives here
+ * (not in the post page component) because the blog index, the author page
+ * and the category archives all need it too. */
+export function postUrl(post: Pick<Post, 'locale' | 'slug'>): string {
+  return post.locale === 'es' ? `${ORIGIN}/es/blog/${post.slug}` : `${ORIGIN}/blog/${post.slug}`;
+}
+
+/** Absolute URL of a post's picture. An uploaded cover wins; otherwise this is
+ * the rasterised version of the same generated composition the page renders,
+ * so social previews and the Article/BlogPosting schema always have a real
+ * image. */
+export function articleImage(post: Pick<Post, 'coverImage' | 'slug' | 'category'>): string {
+  const uploaded = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
+  if (!uploaded) return `${ORIGIN}${coverImagePath(post)}`;
+  // Payload returns an absolute URL on Vercel Blob but a relative /api/media
+  // path on local disk storage, so absolutise defensively.
+  return uploaded.startsWith('http') ? uploaded : `${ORIGIN}${uploaded}`;
 }
 
 /**

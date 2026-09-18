@@ -3,6 +3,7 @@ import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
 import { computeTeamComposition, computeTimeline, computeTotalBudget, resolveTotalMonths, sumRoleHours, totalHoursOf } from '@/lib/estimator/calc';
+import { mergeStoredHours } from '@/lib/estimator/features';
 import { featuresFromPayload, featuresToPayload } from '@/lib/estimator/payloadMapping';
 import { sanitizeFeatures } from '@/lib/estimator/validate';
 import { getSessionByToken, updateSession } from '@/lib/estimator/session';
@@ -27,10 +28,15 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
   const session = await getSessionByToken(payloadClient, token);
   if (!session) return NextResponse.json({ error: 'Session not found' }, { status: 404 });
 
+  // The client's list reflects Step 5 edits (renames, description tweaks,
+  // deletions) but carries no hours — those never left the server. Pair each
+  // use case back up with the hours we stored for it; anything we don't
+  // recognise contributes zero rather than whatever the client claims.
+  const storedFeatures = featuresFromPayload(session.features);
   const overrideFeatures = (body as Record<string, unknown>)?.features;
   const features = overrideFeatures
-    ? sanitizeFeatures(overrideFeatures, 'manual')
-    : featuresFromPayload(session.features);
+    ? mergeStoredHours(sanitizeFeatures(overrideFeatures, 'manual'), storedFeatures)
+    : storedFeatures;
   if (features.length === 0) {
     return NextResponse.json({ error: 'At least one feature is required' }, { status: 400 });
   }

@@ -3,6 +3,7 @@ import type { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext
 
 import { Link } from '../../../i18n/navigation';
 import type { AppPathnames } from '../../../i18n/routing';
+import type { FaqBlockFields } from '../../../lib/lexical';
 import FaqAccordion from './FaqAccordion';
 
 // `/blog/[slug]` is a dynamic route pattern requiring params — the CTA
@@ -21,12 +22,6 @@ type HighlightBlockFields = {
   blockType: 'highlight';
   text: string;
   attribution?: string;
-};
-
-type FaqBlockFields = {
-  blockType: 'faq';
-  heading?: string;
-  items: { question: string; answer: string }[];
 };
 
 type KeyTakeawaysBlockFields = {
