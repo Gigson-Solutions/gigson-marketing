@@ -30,6 +30,41 @@ function articleImage(post: Post): string {
   return uploaded.startsWith('http') ? uploaded : `${ORIGIN}${uploaded}`;
 }
 
+/** hreflang alternates for a post. `x-default` always resolves to the EN
+ * URL of the cluster when one exists — every other page on the site treats
+ * EN as the default — and only falls back to the post's own canonical when
+ * there is no EN sibling yet (a post published in ES only, ahead of its
+ * translation, must never declare an `x-default` that 404s). */
+function postLanguages(post: Post): Record<string, string> {
+  const canonical = postUrl(post);
+  const sibling = post.localizedVersion && typeof post.localizedVersion === 'object' ? post.localizedVersion : null;
+
+  if (post.locale === 'en') {
+    const languages: Record<string, string> = { 'x-default': canonical, en: canonical };
+    if (sibling?.locale && sibling.slug) languages[sibling.locale] = postUrl(sibling);
+    return languages;
+  }
+
+  const enUrl = sibling?.locale === 'en' && sibling.slug ? postUrl(sibling) : null;
+  return enUrl ? { 'x-default': enUrl, en: enUrl, es: canonical } : { 'x-default': canonical, es: canonical };
+}
+
+type PostSeo = { title: string; description: string; canonical: string; image: string; languages: Record<string, string> };
+
+/** Single source of truth for a post's SEO fields, consumed by both
+ * `generateMetadata` and the `Article`/`BlogPosting` JSON-LD below — they used
+ * to compute `description` differently (`seoDescription ?? excerpt` vs raw
+ * `excerpt`), which could silently drift apart. */
+function postSeo(post: Post): PostSeo {
+  return {
+    title: post.seoTitle ?? post.title,
+    description: post.seoDescription ?? post.excerpt ?? '',
+    canonical: postUrl(post),
+    image: articleImage(post),
+    languages: postLanguages(post),
+  };
+}
+
 export async function generateStaticParams() {
   const [esSlugs, enSlugs] = await Promise.all([getPostSlugs('es'), getPostSlugs('en')]);
   return [
@@ -52,16 +87,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const post = await getPostBySlug(slug, locale);
   if (!post) return {};
 
-  const title = post.seoTitle ?? post.title;
-  const description = post.seoDescription ?? post.excerpt ?? '';
-  const canonical = postUrl(post);
-  const image = articleImage(post);
-
-  const sibling = post.localizedVersion && typeof post.localizedVersion === 'object' ? post.localizedVersion : null;
-  const languages: Record<string, string> = { 'x-default': canonical, [locale]: canonical };
-  if (sibling?.locale && sibling.slug) {
-    languages[sibling.locale] = postUrl(sibling);
-  }
+  const { title, description, canonical, image, languages } = postSeo(post);
 
   return {
     title,
@@ -97,13 +123,14 @@ export default async function BlogPostPage(props: Props) {
   if (!post) notFound();
 
   const relatedPosts = await getRelatedPosts(post, 2);
+  const seo = postSeo(post);
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
-    description: post.excerpt,
-    url: postUrl(post),
+    description: seo.description,
+    url: seo.canonical,
     datePublished: post.publishedAt,
     author: {
       '@type': 'Person',
@@ -113,7 +140,7 @@ export default async function BlogPostPage(props: Props) {
     // (`lib/schema.ts`) instead of restating a partial copy of it here.
     publisher: organizationRef,
     // Google's Article rich result wants an image; every post has one now.
-    image: articleImage(post),
+    image: seo.image,
   };
 
   const [tCrumb, tMenu] = await Promise.all([
@@ -124,7 +151,7 @@ export default async function BlogPostPage(props: Props) {
     [
       { name: tCrumb('home'), pathKey: '/' },
       { name: tMenu('blog'), pathKey: '/blog' },
-      { name: post.title, url: postUrl(post) },
+      { name: post.title, url: seo.canonical },
     ],
     locale,
   );
