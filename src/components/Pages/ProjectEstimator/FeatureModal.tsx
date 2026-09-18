@@ -1,67 +1,57 @@
 'use client';
 
+import './ProjectEstimator.css';
+
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 import Dialog from '../../../shared/ui/Dialog';
-import type { EstimatorFeature } from '@/lib/estimator/types';
+import type { EstimatorFeaturePublic } from '@/lib/estimator/types';
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
-  onSave: (feature: EstimatorFeature) => void;
-  initial?: EstimatorFeature | null;
+  onSave: (feature: EstimatorFeaturePublic) => void;
+  initial?: EstimatorFeaturePublic | null;
   token: string | null;
   existingFeatureNames: string[];
 };
 
-const emptyFeature = (): EstimatorFeature => ({
+const emptyFeature = (): EstimatorFeaturePublic => ({
   clientId: `feat-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
   name: '',
-  userStory: '',
-  acceptanceCriteria: [],
+  description: '',
   thirdPartyServices: '-',
-  hours: { frontend: 0, qa: 0, backend: 0, uiux: 0, bapm: 0 },
   source: 'manual',
 });
 
 type Mode = 'describe' | 'review';
 
-// Creating a feature is AI-first: the user describes what they want in
-// plain language and Claude rewrites it into a properly scoped feature
-// (user story, acceptance criteria, 3rd-party services, hours per role) —
-// a regular lead has no reason to know what "BA/PM hours" means. Editing
-// an EXISTING (already-generated) feature still shows the full manual
-// fields, since that's for correcting the AI's output, not authoring it
-// from scratch.
+// Adding a use case always goes through the AI: the user describes what they
+// want in plain language and Claude rewrites it into a scoped use case (name,
+// description, 3rd-party services) and estimates its hours server-side. There
+// is no hand-authored path anymore — hours never reach the browser (see
+// lib/estimator/features.ts), so a manually typed use case could only ever be
+// a zero-hour one, silently understating the estimate. Editing an existing
+// use case still shows its text fields, for correcting the AI's wording.
 const FeatureModal = ({ isOpen, onClose, onSave, initial, token, existingFeatureNames }: Props) => {
   const t = useTranslations('projectEstimator.step5');
   const [mode, setMode] = useState<Mode>(initial ? 'review' : 'describe');
   const [description, setDescription] = useState('');
   const [generating, setGenerating] = useState(false);
   const [generateError, setGenerateError] = useState<string | null>(null);
-  const [draft, setDraft] = useState<EstimatorFeature>(initial ?? emptyFeature());
-  const [criteriaText, setCriteriaText] = useState((initial?.acceptanceCriteria ?? []).join('\n'));
+  const [draft, setDraft] = useState<EstimatorFeaturePublic>(initial ?? emptyFeature());
 
   useEffect(() => {
     setMode(initial ? 'review' : 'describe');
     setDescription('');
     setGenerateError(null);
     setDraft(initial ?? emptyFeature());
-    setCriteriaText((initial?.acceptanceCriteria ?? []).join('\n'));
   }, [initial, isOpen]);
 
   if (!isOpen) return null;
 
   const canSave = draft.name.trim().length > 0;
-
-  const roleFields: { key: keyof EstimatorFeature['hours']; label: string }[] = [
-    { key: 'frontend', label: t('colFrontend') },
-    { key: 'qa', label: t('colQa') },
-    { key: 'backend', label: t('colBackend') },
-    { key: 'uiux', label: t('colUiux') },
-    { key: 'bapm', label: t('colBapm') },
-  ];
 
   const handleGenerate = async () => {
     if (!description.trim() || !token) return;
@@ -71,16 +61,16 @@ const FeatureModal = ({ isOpen, onClose, onSave, initial, token, existingFeature
       const res = await fetch(`/api/estimator/sessions/${token}/features/generate-one`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ description, existingFeatureNames }),
+        // The server persists the generated use case (and its hours) under
+        // this clientId, so it has to be ours, not one it makes up.
+        body: JSON.stringify({ description, existingFeatureNames, clientId: draft.clientId }),
       });
       const data = await res.json();
       if (!res.ok || !data.feature) {
         setGenerateError(t('modal.describeError'));
         return;
       }
-      const generated: EstimatorFeature = { ...data.feature, clientId: draft.clientId, source: 'ai' };
-      setDraft(generated);
-      setCriteriaText(generated.acceptanceCriteria.join('\n'));
+      setDraft({ ...data.feature, clientId: draft.clientId, source: 'ai' });
       setMode('review');
     } catch (err) {
       console.error('[project-estimator] single feature generation failed', err);
@@ -109,8 +99,8 @@ const FeatureModal = ({ isOpen, onClose, onSave, initial, token, existingFeature
             </label>
             {generateError && <p className="pe-error">{generateError}</p>}
             <div className="feature-modal-actions">
-              <button type="button" className="btn-secondary" onClick={() => setMode('review')} disabled={generating}>
-                {t('modal.addManually')}
+              <button type="button" className="btn-secondary" onClick={onClose} disabled={generating}>
+                {t('modal.cancel')}
               </button>
               <button
                 type="button"
@@ -135,27 +125,10 @@ const FeatureModal = ({ isOpen, onClose, onSave, initial, token, existingFeature
             </label>
 
             <label className="feature-modal-field">
-              <span>{t('modal.userStoryLabel')}</span>
+              <span>{t('modal.descriptionLabel')}</span>
               <textarea
-                value={draft.userStory}
-                onChange={(e) => setDraft((d) => ({ ...d, userStory: e.target.value }))}
-              />
-            </label>
-
-            <label className="feature-modal-field">
-              <span>{t('modal.acceptanceCriteriaLabel')}</span>
-              <textarea
-                value={criteriaText}
-                onChange={(e) => setCriteriaText(e.target.value)}
-                onBlur={() =>
-                  setDraft((d) => ({
-                    ...d,
-                    acceptanceCriteria: criteriaText
-                      .split('\n')
-                      .map((line) => line.trim())
-                      .filter(Boolean),
-                  }))
-                }
+                value={draft.description}
+                onChange={(e) => setDraft((d) => ({ ...d, description: e.target.value }))}
               />
             </label>
 
@@ -168,27 +141,7 @@ const FeatureModal = ({ isOpen, onClose, onSave, initial, token, existingFeature
               />
             </label>
 
-            <div className="feature-modal-field">
-              <span>{t('modal.hoursLabel')}</span>
-              <div className="feature-modal-hours">
-                {roleFields.map(({ key, label }) => (
-                  <label key={key}>
-                    <span>{label}</span>
-                    <input
-                      type="number"
-                      min={0}
-                      value={draft.hours[key]}
-                      onChange={(e) =>
-                        setDraft((d) => ({
-                          ...d,
-                          hours: { ...d.hours, [key]: Math.max(0, Number(e.target.value) || 0) },
-                        }))
-                      }
-                    />
-                  </label>
-                ))}
-              </div>
-            </div>
+            <p className="pe-help">{t('hoursLocked')}</p>
 
             <div className="feature-modal-actions">
               <button type="button" className="btn-secondary" onClick={onClose}>
@@ -199,14 +152,7 @@ const FeatureModal = ({ isOpen, onClose, onSave, initial, token, existingFeature
                 className="btn"
                 disabled={!canSave}
                 onClick={() => {
-                  onSave({
-                    ...draft,
-                    acceptanceCriteria: criteriaText
-                      .split('\n')
-                      .map((line) => line.trim())
-                      .filter(Boolean),
-                    source: draft.source === 'ai' ? 'ai' : 'manual',
-                  });
+                  onSave(draft);
                   onClose();
                 }}
               >

@@ -29,8 +29,6 @@ export type Post = {
     };
   };
   publishedAt?: string;
-  // NOTE: also added independently by PR "seo/04-sitemap-hreflang" — expect a
-  // trivial overlap when both land on staging.
   updatedAt?: string;
   author?: string;
   seoTitle?: string;
@@ -156,7 +154,12 @@ export async function getRelatedPosts(post: Post, limit = 2): Promise<Post[]> {
   }
 }
 
-export async function getPostSlugs(locale?: string): Promise<string[]> {
+export type PostIndexEntry = { slug: string; updatedAt?: string; publishedAt?: string };
+
+/** Lightweight listing used by the sitemap: just enough per post to build a
+ * URL and a `lastModified` date, without pulling `content`/`coverImage`/etc.
+ * via the full `getPosts()`. */
+export async function getPostIndex(locale?: string): Promise<PostIndexEntry[]> {
   try {
     const payload = await getPayloadInstance();
     const conditions: Where[] = [{ status: { equals: 'published' } }];
@@ -167,11 +170,15 @@ export async function getPostSlugs(locale?: string): Promise<string[]> {
     const result = await payload.find({
       collection: 'posts',
       where,
-      select: { slug: true },
+      select: { slug: true, updatedAt: true, publishedAt: true },
       limit: 200,
     });
-    return result.docs.map((d) => (d as unknown as { slug: string }).slug);
+    return result.docs as unknown as PostIndexEntry[];
   } catch {
     return [];
   }
+}
+
+export async function getPostSlugs(locale?: string): Promise<string[]> {
+  return (await getPostIndex(locale)).map((p) => p.slug);
 }

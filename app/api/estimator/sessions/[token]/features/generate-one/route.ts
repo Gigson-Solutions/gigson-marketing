@@ -3,10 +3,12 @@ import Anthropic from '@anthropic-ai/sdk';
 import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
+import { toPublicFeature } from '@/lib/estimator/features';
+import { featuresFromPayload, featuresToPayload } from '@/lib/estimator/payloadMapping';
 import { buildSingleFeatureSystemPrompt, buildSingleFeatureUserPrompt, GENERATE_SINGLE_FEATURE_TOOL } from '@/lib/estimator/prompt';
 import { getClientIp, isFeatureGenRateLimited } from '@/lib/estimator/rateLimit';
 import { sanitizeFeatures } from '@/lib/estimator/validate';
-import { getSessionByToken } from '@/lib/estimator/session';
+import { getSessionByToken, updateSession } from '@/lib/estimator/session';
 import type { EstimatorInputs } from '@/lib/estimator/types';
 
 export const runtime = 'nodejs';
@@ -22,11 +24,15 @@ function getClient(): Anthropic | null {
   return client;
 }
 
-// Step 5's "add feature" flow, AI-first: the lead describes what they want
-// in plain language and this endpoint asks Claude to rewrite it into one
-// properly scoped feature (see FeatureModal.tsx). Reuses the session's
-// stored step 1-4 inputs as context so the estimate stays calibrated
-// (app size / UI-QA level) to the rest of the project.
+// Step 5's "add use case" flow: the lead describes what they want in plain
+// language and this endpoint asks Claude to rewrite it into one properly
+// scoped use case (see FeatureModal.tsx). Reuses the session's stored step
+// 1-4 inputs as context so the estimate stays calibrated (app size / UI-QA
+// level) to the rest of the project.
+//
+// The generated use case is persisted here rather than handed to the client
+// with its hours attached: the browser gets the text only, and /finalize
+// pairs it back up with these hours by clientId.
 export async function POST(req: Request, { params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
   let body: unknown;
@@ -35,7 +41,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
   } catch {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
   }
-  const { description, existingFeatureNames } = (body as Record<string, unknown>) ?? {};
+  const { description, existingFeatureNames, clientId } = (body as Record<string, unknown>) ?? {};
   const trimmedDescription = typeof description === 'string' ? description.trim().slice(0, MAX_DESCRIPTION_LENGTH) : '';
   if (!trimmedDescription) {
     return NextResponse.json({ error: 'Missing description' }, { status: 400 });
@@ -107,10 +113,18 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
     if (!toolUse) throw new Error('Model did not return a tool_use block');
 
     const featureInput = (toolUse.input as { feature?: unknown }).feature;
-    const [feature] = sanitizeFeatures([featureInput], 'ai');
+    const [feature] = sanitizeFeatures(
+      [{ ...(featureInput as Record<string, unknown>), clientId: typeof clientId === 'string' ? clientId : undefined }],
+      'ai',
+    );
     if (!feature) throw new Error('Model returned an invalid feature');
 
-    return NextResponse.json({ ok: true, feature });
+    // Persist before answering — the hours only exist here, so losing them
+    // would silently turn this use case into a 0-hour one at /finalize.
+    const stored = featuresFromPayload(session.features).filter((f) => f.clientId !== feature.clientId);
+    await updateSession(payloadClient, session.id, { features: featuresToPayload([...stored, feature]) });
+
+    return NextResponse.json({ ok: true, feature: toPublicFeature(feature) });
   } catch (err) {
     console.error('[estimator] single feature generation failed', err);
     return NextResponse.json({ error: 'Could not generate this feature. Please try again.' }, { status: 503 });
