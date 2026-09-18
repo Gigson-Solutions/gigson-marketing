@@ -5,6 +5,7 @@ import { NextResponse } from 'next/server';
 
 import { computeTotalBudget, sumRoleHours, totalHoursOf } from '@/lib/estimator/calc';
 import { ESTIMATOR_HOURLY_RATE } from '@/lib/estimator/config';
+import { toPublicFeatures } from '@/lib/estimator/features';
 import { featuresToPayload } from '@/lib/estimator/payloadMapping';
 import { buildEstimatorSystemPrompt, buildEstimatorUserPrompt, GENERATE_FEATURES_TOOL } from '@/lib/estimator/prompt';
 import { getClientIp, isRateLimited } from '@/lib/estimator/rateLimit';
@@ -148,7 +149,10 @@ export async function POST(req: Request) {
       },
     });
 
-    return NextResponse.json({ ok: true, token, status: 'features_ready', features });
+    // Hours stay server-side — the browser only ever gets the use cases'
+    // text, so the Step 5/6 blur can't be peeled off in devtools. They're
+    // released by the book-confirmed route once a call is booked.
+    return NextResponse.json({ ok: true, token, status: 'features_ready', features: toPublicFeatures(features) });
   } catch (err) {
     console.error('[estimator] feature generation failed', err);
     try {
