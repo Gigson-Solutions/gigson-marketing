@@ -4,31 +4,19 @@ import { getTranslations } from 'next-intl/server';
 
 import BlogPost from '../../../../../src/components/Blog/BlogPost';
 import JsonLd from '../../../../../src/shared/ui/JsonLd';
-import { coverImagePath } from '../../../../../lib/blogCovers';
-import { getPostBySlug, getPostSlugs, getRelatedPosts, type Post } from '../../../../../lib/posts';
-import { ORIGIN, buildBreadcrumbSchema, organizationRef } from '../../../../../lib/schema';
+import { collectBlockFields, type FaqBlockFields } from '../../../../../lib/lexical';
+import { countWords, estimateReadingTime } from '../../../../../lib/readingTime';
+import { getPostBySlug, getPostSlugs, getRelatedPosts } from '../../../../../lib/posts';
+import {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  organizationMinimal,
+  postUrl,
+  articleImage,
+} from '../../../../../lib/schema';
 
 export const revalidate = 3600;
 type Props = { params: Promise<{ locale: string; slug: string }> };
-
-/** Absolute canonical URL for a post, from its own `locale`/`slug` — used
- * both for the post itself and for its `localizedVersion` sibling, which
- * may have a different slug (translated slugs are more idiomatic for SEO
- * than forcing the same one across languages). */
-function postUrl(post: Post): string {
-  return post.locale === 'es' ? `${ORIGIN}/es/blog/${post.slug}` : `${ORIGIN}/blog/${post.slug}`;
-}
-
-/** Absolute URL of the post's picture. An uploaded cover wins; otherwise this
- * is the rasterised version of the same generated composition the page renders,
- * so social previews and the Article schema always have a real image. */
-function articleImage(post: Post): string {
-  const uploaded = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
-  if (!uploaded) return `${ORIGIN}${coverImagePath(post)}`;
-  // Payload returns an absolute URL on Vercel Blob but a relative /api/media
-  // path on local disk storage, so absolutise defensively.
-  return uploaded.startsWith('http') ? uploaded : `${ORIGIN}${uploaded}`;
-}
 
 export async function generateStaticParams() {
   const [esSlugs, enSlugs] = await Promise.all([getPostSlugs('es'), getPostSlugs('en')]);
@@ -98,33 +86,70 @@ export default async function BlogPostPage(props: Props) {
 
   const relatedPosts = await getRelatedPosts(post, 2);
 
+  const canonical = postUrl(post);
+  const description = post.seoDescription ?? post.excerpt ?? '';
+
+  // `updatedAt` is a Payload timestamp on every doc regardless of the `Post`
+  // TS type declaring it — defensive guard in case a hook ever back-dates it
+  // relative to `publishedAt` (shouldn't happen, but a schema shouldn't claim
+  // a post was "modified" before it was published).
+  const dateModified =
+    post.updatedAt && post.publishedAt && post.updatedAt < post.publishedAt
+      ? post.publishedAt
+      : (post.updatedAt ?? post.publishedAt);
+
+  const [tCrumb, tMenu, tBlog] = await Promise.all([
+    getTranslations({ locale, namespace: 'breadcrumb' }),
+    getTranslations({ locale, namespace: 'menu' }),
+    getTranslations({ locale, namespace: 'blog' }),
+  ]);
+
+  const articleSection = post.category ? tBlog(`categories.${post.category}`) : undefined;
+  const wordCount = countWords(post.content) ?? undefined;
+  const readingMinutes = estimateReadingTime(post.content);
+
   const articleSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
+    '@id': `${canonical}#article`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     headline: post.title,
-    description: post.excerpt,
-    url: postUrl(post),
+    description,
+    url: canonical,
     datePublished: post.publishedAt,
+    dateModified,
+    inLanguage: post.locale,
+    articleSection,
+    wordCount,
+    timeRequired: readingMinutes ? `PT${readingMinutes}M` : undefined,
     author: {
       '@type': 'Person',
       name: post.author ?? 'Gigson Solutions',
     },
-    // Points at the one Organization node declared on the home page
-    // (`lib/schema.ts`) instead of restating a partial copy of it here.
-    publisher: organizationRef,
+    // Inline minimal node (not just an `@id` reference): each post's JSON-LD
+    // is evaluated on its own, and Google's Article/BlogPosting rich result
+    // requires `publisher.name` — the shared `@id` still lets a crawler treat
+    // this as the same entity as the full Organization node on `/`, `/about`,
+    // `/contact` and `/about-claude-partner`.
+    publisher: organizationMinimal(),
     // Google's Article rich result wants an image; every post has one now.
     image: articleImage(post),
   };
 
-  const [tCrumb, tMenu] = await Promise.all([
-    getTranslations({ locale, namespace: 'breadcrumb' }),
-    getTranslations({ locale, namespace: 'menu' }),
-  ]);
+  // Every `faq` block in the post's content, flattened into a single
+  // FAQPage — several `<script>` tags with `FAQPage` on the same URL would
+  // be duplicate markup, not additive.
+  const faqItems = collectBlockFields<FaqBlockFields>(post.content, 'faq')
+    .flatMap((block) => block.items ?? [])
+    .filter((item) => item.question?.trim() && item.answer?.trim());
+  const faqSchemaBase = buildFaqSchema(faqItems, `${canonical}#faq`);
+  const faqSchema = faqSchemaBase ? { ...faqSchemaBase, isPartOf: { '@id': canonical } } : null;
+
   const breadcrumbSchema = buildBreadcrumbSchema(
     [
       { name: tCrumb('home'), pathKey: '/' },
       { name: tMenu('blog'), pathKey: '/blog' },
-      { name: post.title, url: postUrl(post) },
+      { name: post.title, url: canonical },
     ],
     locale,
   );
@@ -132,6 +157,7 @@ export default async function BlogPostPage(props: Props) {
   return (
     <>
       <JsonLd data={articleSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
       <JsonLd data={breadcrumbSchema} />
       <BlogPost post={post} relatedPosts={relatedPosts} />
     </>

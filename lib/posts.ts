@@ -29,6 +29,9 @@ export type Post = {
     };
   };
   publishedAt?: string;
+  // NOTE: also added independently by PR "seo/04-sitemap-hreflang" — expect a
+  // trivial overlap when both land on staging.
+  updatedAt?: string;
   author?: string;
   seoTitle?: string;
   seoDescription?: string;
