@@ -30,6 +30,26 @@ function articleImage(post: Post): string {
   return uploaded.startsWith('http') ? uploaded : `${ORIGIN}${uploaded}`;
 }
 
+// Local, minimal duplicate of the recursive block-collector added to
+// `lib/lexical.ts` by PR "seo/05-schema-posts" (not yet merged as of this
+// PR) — scoped to just the one block type this file needs. Once that PR
+// lands, replace this with `collectBlockFields(post.content, 'keyTakeaways')`.
+type LexicalNode = { type?: string; children?: LexicalNode[]; fields?: { blockType?: string; items?: { text: string }[] } };
+function collectKeyTakeaways(content: unknown): string[] {
+  const root = (content as { root?: LexicalNode })?.root;
+  if (!root) return [];
+  const items: string[] = [];
+  const walk = (node: LexicalNode | undefined) => {
+    if (!node) return;
+    if (node.type === 'block' && node.fields?.blockType === 'keyTakeaways') {
+      for (const item of node.fields.items ?? []) if (item.text) items.push(item.text);
+    }
+    node.children?.forEach(walk);
+  };
+  walk(root);
+  return items;
+}
+
 export async function generateStaticParams() {
   const [esSlugs, enSlugs] = await Promise.all([getPostSlugs('es'), getPostSlugs('en')]);
   return [
@@ -98,11 +118,17 @@ export default async function BlogPostPage(props: Props) {
 
   const relatedPosts = await getRelatedPosts(post, 2);
 
+  // Feeds the post's "Key takeaways" block (if any) into the JSON-LD as a
+  // machine-readable abstract — the same self-contained summary a reader
+  // sees at the top of the article.
+  const takeaways = collectKeyTakeaways(post.content);
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.excerpt,
+    abstract: takeaways.length > 0 ? takeaways.join(' ') : undefined,
     url: postUrl(post),
     datePublished: post.publishedAt,
     author: {
