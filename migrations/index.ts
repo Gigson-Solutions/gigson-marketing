@@ -5,6 +5,7 @@ import * as migration_20260903_100000_add_media_and_posts_category_localized_ver
 import * as migration_20260909_120000_add_estimator_sessions_type_specific_fields from './20260909_120000_add_estimator_sessions_type_specific_fields';
 import * as migration_20260909_120100_add_estimator_sessions_call_booked from './20260909_120100_add_estimator_sessions_call_booked';
 import * as migration_20260918_100000_estimator_features_description_and_two_roles from './20260918_100000_estimator_features_description_and_two_roles';
+import * as migration_20260918_130000_add_authors from './20260918_130000_add_authors';
 
 export const migrations = [
   {
@@ -47,5 +48,10 @@ export const migrations = [
     up: migration_20260918_100000_estimator_features_description_and_two_roles.up,
     down: migration_20260918_100000_estimator_features_description_and_two_roles.down,
     name: '20260918_100000_estimator_features_description_and_two_roles'
+  },
+  {
+    up: migration_20260918_130000_add_authors.up,
+    down: migration_20260918_130000_add_authors.down,
+    name: '20260918_130000_add_authors'
   },
 ];

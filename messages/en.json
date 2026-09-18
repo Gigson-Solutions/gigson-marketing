@@ -1,6 +1,7 @@
 {
     "breadcrumb": {
-        "home": "Home"
+        "home": "Home",
+        "authors": "Authors"
     },
     "organization": {
         "description": "Gigson Solutions is a Certified Anthropic Claude Partner in Spain. We design and deploy Claude-based AI agents for enterprises, alongside CTO as a Service, systems integration, custom software engineering and cybersecurity."
@@ -54,6 +55,10 @@
         "relatedPosts": "Keep reading",
         "readInEnglish": "Read in English →",
         "readInSpanish": "Read in Spanish →",
+        "updatedOn": "Updated on {date}",
+        "byAuthor": "By {name}",
+        "aboutTheAuthor": "About the author",
+        "moreFromAuthor": "More from {name}",
         "categories": {
             "agentes-ia": "AI Agents",
             "integraciones-erp": "ERP Integrations",
@@ -3618,6 +3623,10 @@
         "blog": {
             "title": "Blog | Gigson Solutions",
             "description": "Insights, guides and case studies on AI, software engineering and technology consulting from the Gigson Solutions team."
+        },
+        "blogAuthor": {
+            "title": "{name} | Gigson Solutions",
+            "description": "Articles by {name} on the Gigson Solutions blog."
         },
         "faqs": {
             "title": "FAQs | Gigson Solutions",

@@ -8,6 +8,7 @@ import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob';
 import sharp from 'sharp';
 import { OAuth2Plugin } from 'payload-oauth2';
 
+import { Authors } from './collections/Authors';
 import { ChatbotLeads } from './collections/ChatbotLeads';
 import { EstimatorSessions } from './collections/EstimatorSessions';
 import { Media } from './collections/Media';
@@ -31,7 +32,7 @@ export default buildConfig({
       beforeLogin: ['@/components/GoogleLoginButton#default'],
     },
   },
-  collections: [Posts, Media, Users, ChatbotLeads, EstimatorSessions],
+  collections: [Posts, Media, Users, ChatbotLeads, EstimatorSessions, Authors],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET ?? '',
   typescript: {

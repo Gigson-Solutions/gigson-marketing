@@ -57,6 +57,7 @@ export const routing = defineRouting({
     '/project-estimator': { en: '/project-estimator', es: '/estimador-de-proyecto' },
     '/blog': '/blog',
     '/blog/[slug]': '/blog/[slug]',
+    '/blog/authors/[author]': { en: '/blog/authors/[author]', es: '/blog/autores/[author]' },
   },
 });
 
