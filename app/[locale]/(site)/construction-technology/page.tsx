@@ -33,7 +33,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       canonical,
       languages: { en: `${ORIGIN}/construction-technology`, es: `${ORIGIN}/es/tecnologia-construccion`, 'x-default': `${ORIGIN}/construction-technology` },
     },
-    openGraph: { title, description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

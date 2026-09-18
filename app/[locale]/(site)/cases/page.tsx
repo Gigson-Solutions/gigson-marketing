@@ -29,7 +29,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/cases`,
       },
     },
-    openGraph: { title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { type: 'website', title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 
