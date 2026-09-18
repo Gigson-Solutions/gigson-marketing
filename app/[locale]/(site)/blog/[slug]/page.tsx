@@ -53,6 +53,8 @@ function postSeo(post: Post): PostSeo {
   };
 }
 
+type KeyTakeawaysBlockFields = { blockType: 'keyTakeaways'; items: { text: string }[] };
+
 export async function generateStaticParams() {
   const [esSlugs, enSlugs] = await Promise.all([getPostSlugs('es'), getPostSlugs('en')]);
   return [
@@ -132,6 +134,14 @@ export default async function BlogPostPage(props: Props) {
   const wordCount = countWords(post.content) ?? undefined;
   const readingMinutes = estimateReadingTime(post.content);
 
+  // Feeds the post's "Key takeaways" block (if any) into the JSON-LD as a
+  // machine-readable abstract — the same self-contained summary a reader
+  // sees at the top of the article.
+  const takeaways = collectBlockFields<KeyTakeawaysBlockFields>(post.content, 'keyTakeaways')
+    .flatMap((block) => block.items ?? [])
+    .map((item) => item.text)
+    .filter(Boolean);
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -139,6 +149,7 @@ export default async function BlogPostPage(props: Props) {
     mainEntityOfPage: { '@type': 'WebPage', '@id': seo.canonical },
     headline: post.title,
     description: seo.description,
+    abstract: takeaways.length > 0 ? takeaways.join(' ') : undefined,
     url: seo.canonical,
     datePublished: post.publishedAt,
     dateModified,

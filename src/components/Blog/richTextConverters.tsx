@@ -24,16 +24,22 @@ type HighlightBlockFields = {
   attribution?: string;
 };
 
+type KeyTakeawaysBlockFields = {
+  blockType: 'keyTakeaways';
+  heading?: string;
+  items: { text: string }[];
+};
+
 type NodeTypes =
   | DefaultNodeTypes
-  | SerializedBlockNode<CtaBlockFields | HighlightBlockFields | FaqBlockFields>;
+  | SerializedBlockNode<CtaBlockFields | HighlightBlockFields | FaqBlockFields | KeyTakeawaysBlockFields>;
 
 /**
  * Converts Payload's Lexical `content` field to JSX for `BlogPost.tsx`,
  * replacing the previous `contentHtml` (convertLexicalToHTML) pipeline.
- * Handles the three custom blocks (`cta`, `highlight`, `faq`) plus inline
- * uploaded images — none of which the generic HTML converter can render
- * on its own.
+ * Handles the four custom blocks (`cta`, `highlight`, `faq`, `keyTakeaways`)
+ * plus inline uploaded images — none of which the generic HTML converter can
+ * render on its own.
  */
 export const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) => ({
   ...defaultConverters,
@@ -65,5 +71,23 @@ export const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConvert
     faq: ({ node }) => (
       <FaqAccordion heading={node.fields.heading} items={node.fields.items ?? []} />
     ),
+    keyTakeaways: ({ node }) => {
+      const items = node.fields.items ?? [];
+      if (items.length === 0) return null;
+      return (
+        <div className="not-prose my-8 rounded-[20px] border border-purple-accents/30 bg-purple-accents/5 p-6 lg:p-8">
+          {node.fields.heading && (
+            <p className="text-h4 text-dark-primary mb-4">{node.fields.heading}</p>
+          )}
+          <ul className="flex flex-col gap-3 list-disc pl-5">
+            {items.map((item) => (
+              <li key={item.text} className="text-body text-dark-medium">
+                {item.text}
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    },
   },
 });
