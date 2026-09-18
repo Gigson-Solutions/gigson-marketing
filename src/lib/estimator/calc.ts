@@ -8,7 +8,7 @@ const HOURS_PER_WEEK_FTE = 40;
 const WEEKS_PER_MONTH = 4.33;
 
 export function sumRoleHours(features: EstimatorFeature[]): Record<RoleKey, number> {
-  const totals: Record<RoleKey, number> = { frontend: 0, qa: 0, backend: 0, uiux: 0, bapm: 0 };
+  const totals: Record<RoleKey, number> = { consulting: 0, building: 0 };
   for (const feature of features) {
     for (const role of ROLE_KEYS) {
       const value = feature.hours?.[role];
@@ -69,8 +69,8 @@ export function computeTeamComposition(
  * v1 approximation of a Gantt chart: each role's bar starts at week 1 and
  * runs for ceil(FTE * totalWeeks) weeks (min 1 week if the role has any
  * hours at all). This does not model a realistic staffing curve (e.g.
- * BA/PM-first, QA-last) — flagged as a v1.1 candidate once real project
- * data validates the FTE numbers.
+ * consulting front-loaded, building ramping up after it) — flagged as a
+ * v1.1 candidate once real project data validates the FTE numbers.
  */
 export function computeTimeline(composition: TeamComposition, totalMonths: number): TimelineData {
   const totalWeeks = Math.max(1, Math.round(totalMonths * WEEKS_PER_MONTH));

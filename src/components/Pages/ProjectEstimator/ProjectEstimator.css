@@ -481,13 +481,10 @@ textarea.pe-textarea {
   font-size: 16px;
   margin-bottom: var(--gs-space-3);
 }
-.pe-feature-main ol {
-  padding-left: 18px;
+.pe-feature-description {
   font-size: 13px;
   color: var(--gs-fg-2);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  line-height: 1.55;
 }
 .pe-feature-side p {
   font-size: 13px;
@@ -497,7 +494,7 @@ textarea.pe-textarea {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  min-width: 90px;
+  min-width: 110px;
 }
 .pe-feature-hours div {
   display: flex;
@@ -512,6 +509,22 @@ textarea.pe-textarea {
 .pe-feature-hours strong {
   font-size: 16px;
   color: var(--gs-purple-dark);
+}
+/* The per-use-case hours are never sent to the browser before the call is
+   booked (see ProjectEstimator.tsx Step 5) — this blurs the placeholder
+   that stands in for them. */
+.pe-feature-hours strong.is-blurred {
+  filter: blur(4px);
+  user-select: none;
+}
+/* Why the numbers above are blurred — shown once, above the use-case list. */
+.pe-hours-locked {
+  font-size: var(--gs-text-xs);
+  color: var(--gs-purple-dark);
+  background: var(--gs-lavender);
+  border-radius: var(--gs-radius-md);
+  padding: var(--gs-space-3) var(--gs-space-4);
+  margin-bottom: var(--gs-space-4);
 }
 
 @media (max-width: 900px) {
@@ -596,7 +609,8 @@ textarea.pe-textarea {
 }
 .pe-totals {
   display: flex;
-  gap: var(--gs-space-7);
+  flex-wrap: wrap;
+  gap: var(--gs-space-5) var(--gs-space-7);
   margin: var(--gs-space-4) 0 var(--gs-space-5);
 }
 .pe-totals span {
@@ -660,28 +674,6 @@ textarea.pe-textarea {
   padding: 10px 14px;
   font-family: inherit;
   font-size: var(--gs-text-sm);
-}
-.feature-modal-hours {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-}
-.feature-modal-hours label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 11px;
-  text-align: center;
-}
-.feature-modal-hours input {
-  /* Without these the inputs keep their intrinsic ~20ch width and push the
-     last columns out of a phone-width modal. */
-  width: 100%;
-  min-width: 0;
-  border: 1px solid var(--gs-stroke-soft);
-  border-radius: 8px;
-  padding: 6px;
-  text-align: center;
 }
 .feature-modal-actions {
   display: flex;
@@ -831,9 +823,6 @@ textarea.pe-textarea {
   .feature-modal,
   .lead-modal {
     padding: var(--gs-space-3);
-  }
-  .feature-modal-hours {
-    grid-template-columns: repeat(3, 1fr);
   }
   .feature-modal-actions > button {
     flex: 1 1 0;

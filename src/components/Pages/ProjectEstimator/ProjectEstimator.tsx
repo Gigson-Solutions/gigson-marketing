@@ -26,7 +26,7 @@ import {
   PROJECT_TYPES,
   QUALITY_LEVELS,
   ROLE_KEYS,
-  type EstimatorFeature,
+  type EstimatorFeaturePublic,
   type EstimatorInputs,
   type RoleKey,
   type TeamComposition,
@@ -99,20 +99,27 @@ const ProjectEstimator = () => {
   const [website, setWebsite] = useState(''); // honeypot for session creation
 
   const [token, setToken] = useState<string | null>(null);
-  const [features, setFeatures] = useState<EstimatorFeature[]>([]);
+  // Use cases as the browser knows them: text only. The estimated hours stay
+  // on the server until a call is booked (see lib/estimator/features.ts), so
+  // there is nothing here to un-blur with devtools.
+  const [features, setFeatures] = useState<EstimatorFeaturePublic[]>([]);
   const [generationStatus, setGenerationStatus] = useState<GenerationStatus>('idle');
   const [busy, setBusy] = useState(false);
 
   const [featureModalOpen, setFeatureModalOpen] = useState(false);
-  const [editingFeature, setEditingFeature] = useState<EstimatorFeature | null>(null);
+  const [editingFeature, setEditingFeature] = useState<EstimatorFeaturePublic | null>(null);
 
   const [teamComposition, setTeamComposition] = useState<TeamComposition | null>(null);
   const [timeline, setTimeline] = useState<TimelineData | null>(null);
   const [totals, setTotals] = useState<{ totalBudget: number } | null>(null);
-  // Second gate: totalHours stays null (blurred) even after totals/budget is
-  // revealed, until the user books a call through the Cal.com embed — see
-  // BookCallGate.tsx and /api/estimator/sessions/[token]/book-confirmed.
-  const [hoursRevealed, setHoursRevealed] = useState<number | null>(null);
+  // Second gate: every hour figure (the total and the consulting/building
+  // split) stays null — blurred in the UI and absent from the page — even
+  // after the budget is revealed, until the user books a call through the
+  // Cal.com embed. See BookCallGate.tsx and the book-confirmed API route.
+  const [revealedHours, setRevealedHours] = useState<{
+    total: number;
+    byRole: Record<RoleKey, number>;
+  } | null>(null);
 
   const [leadModalOpen, setLeadModalOpen] = useState(false);
   const [leadSubmitting, setLeadSubmitting] = useState(false);
@@ -245,7 +252,7 @@ const ProjectEstimator = () => {
     }
   };
 
-  const saveFeature = (feature: EstimatorFeature) => {
+  const saveFeature = (feature: EstimatorFeaturePublic) => {
     setFeatures((prev) => {
       const exists = prev.some((f) => f.clientId === feature.clientId);
       return exists ? prev.map((f) => (f.clientId === feature.clientId ? feature : f)) : [...prev, feature];
@@ -305,11 +312,19 @@ const ProjectEstimator = () => {
   };
 
   const handleBookConfirmed = async () => {
-    if (!token || hoursRevealed !== null) return; // avoid double-firing on repeat bookingSuccessful events
+    if (!token || revealedHours !== null) return; // avoid double-firing on repeat bookingSuccessful events
     try {
       const res = await fetch(`/api/estimator/sessions/${token}/book-confirmed`, { method: 'POST' });
       const json = await res.json();
-      if (res.ok) setHoursRevealed(json.totalHours ?? 0);
+      if (res.ok) {
+        setRevealedHours({
+          total: json.totalHours ?? 0,
+          byRole: {
+            consulting: json.roleHours?.consulting ?? 0,
+            building: json.roleHours?.building ?? 0,
+          },
+        });
+      }
     } catch (err) {
       console.error('[project-estimator] book-confirmed failed', err);
     }
@@ -327,7 +342,7 @@ const ProjectEstimator = () => {
     setTeamComposition(null);
     setTimeline(null);
     setTotals(null);
-    setHoursRevealed(null);
+    setRevealedHours(null);
   };
 
   const sidebarSteps = [1, 2, 3, 4, 5, 6];
@@ -405,7 +420,7 @@ const ProjectEstimator = () => {
               teamComposition={teamComposition}
               timeline={timeline}
               totals={totals}
-              hoursRevealed={hoursRevealed}
+              revealedHours={revealedHours}
               onOpenLeadModal={() => setLeadModalOpen(true)}
               onBookConfirmed={handleBookConfirmed}
               onRestart={restart}
@@ -941,9 +956,9 @@ const GENERATING_STATUS_KEYS = ['status1', 'status2', 'status3', 'status4'] as c
 type Step5Props = {
   t: ReturnType<typeof useTranslations>;
   generationStatus: GenerationStatus;
-  features: EstimatorFeature[];
+  features: EstimatorFeaturePublic[];
   onAdd: () => void;
-  onEdit: (f: EstimatorFeature) => void;
+  onEdit: (f: EstimatorFeaturePublic) => void;
   onDelete: (clientId: string) => void;
   onSeeFinalEstimate: () => void;
   busy: boolean;
@@ -982,7 +997,7 @@ const Step5 = ({ t, generationStatus, features, onAdd, onEdit, onDelete, onSeeFi
 
   const roleCols: { key: RoleKey; label: string }[] = ROLE_KEYS.map((key) => ({
     key,
-    label: t(`step5.col${capitalize(key === 'uiux' ? 'uiux' : key === 'bapm' ? 'bapm' : key)}`),
+    label: t(`step5.col${capitalize(key)}`),
   }));
 
   return (
@@ -995,6 +1010,7 @@ const Step5 = ({ t, generationStatus, features, onAdd, onEdit, onDelete, onSeeFi
       )}
       <h3>{t('step5.title')}</h3>
       <p className="pe-help">{t('step5.subtitle')}</p>
+      <p className="pe-hours-locked">🔒 {t('step5.hoursLocked')}</p>
 
       <div className="pe-feature-list">
         {features.map((f) => (
@@ -1010,32 +1026,26 @@ const Step5 = ({ t, generationStatus, features, onAdd, onEdit, onDelete, onSeeFi
             <div className="pe-feature-main">
               <span className="pe-feature-eyebrow">{t('step5.featureName')}</span>
               <h4>{f.name}</h4>
-              {f.acceptanceCriteria.length > 0 && (
+              {f.description && (
                 <>
-                  <span className="pe-feature-eyebrow">{t('step5.acceptanceCriteria')}</span>
-                  <ol>
-                    {f.acceptanceCriteria.map((c, i) => (
-                      <li key={i}>{c}</li>
-                    ))}
-                  </ol>
+                  <span className="pe-feature-eyebrow">{t('step5.description')}</span>
+                  <p className="pe-feature-description">{f.description}</p>
                 </>
               )}
             </div>
             <div className="pe-feature-side">
               <span className="pe-feature-eyebrow">{t('step5.thirdPartyServices')}</span>
               <p>{f.thirdPartyServices || '-'}</p>
-              {f.userStory && (
-                <>
-                  <span className="pe-feature-eyebrow">{t('step5.userStory')}</span>
-                  <p>{f.userStory}</p>
-                </>
-              )}
             </div>
-            <div className="pe-feature-hours">
+            {/* Placeholder, not the real numbers: hours are only served after
+                a call is booked (Step 6), so there is nothing to reveal here. */}
+            <div className="pe-feature-hours" title={t('step5.hoursLocked')}>
               {roleCols.map(({ key, label }) => (
                 <div key={key}>
                   <span>{label}</span>
-                  <strong>{f.hours[key]}</strong>
+                  <strong className="is-blurred" aria-hidden="true">
+                    00
+                  </strong>
                 </div>
               ))}
             </div>
@@ -1062,7 +1072,7 @@ type Step6Props = {
   teamComposition: TeamComposition | null;
   timeline: TimelineData | null;
   totals: { totalBudget: number } | null;
-  hoursRevealed: number | null;
+  revealedHours: { total: number; byRole: Record<RoleKey, number> } | null;
   onOpenLeadModal: () => void;
   onBookConfirmed: () => void;
   onRestart: () => void;
@@ -1073,12 +1083,12 @@ const Step6 = ({
   teamComposition,
   timeline,
   totals,
-  hoursRevealed,
+  revealedHours,
   onOpenLeadModal,
   onBookConfirmed,
   onRestart,
 }: Step6Props) => {
-  const roleLabel = (role: RoleKey) => t(`step6.role${capitalize(role === 'uiux' ? 'uiux' : role === 'bapm' ? 'bapm' : role)}`);
+  const roleLabel = (role: RoleKey) => t(`step6.role${capitalize(role)}`);
 
   return (
     <div className="pe-step">
@@ -1132,12 +1142,23 @@ const Step6 = ({
               {totals ? `€${totals.totalBudget.toLocaleString(undefined)}` : '---------'}
             </strong>
           </div>
+          {/* Hours — the total and the consulting/building split — are only
+              fetched once a call is booked, so the blur has nothing behind it
+              until then. */}
           <div>
             <span>{t('step6.totalHours')}</span>
-            <strong className={hoursRevealed !== null ? '' : 'is-blurred'}>
-              {hoursRevealed !== null ? hoursRevealed : '---------'}
+            <strong className={revealedHours ? '' : 'is-blurred'}>
+              {revealedHours ? revealedHours.total : '---------'}
             </strong>
           </div>
+          {ROLE_KEYS.map((role) => (
+            <div key={role}>
+              <span>{t(`step6.hours${capitalize(role)}`)}</span>
+              <strong className={revealedHours ? '' : 'is-blurred'}>
+                {revealedHours ? revealedHours.byRole[role] : '---------'}
+              </strong>
+            </div>
+          ))}
         </div>
 
         {!totals ? (
@@ -1149,7 +1170,7 @@ const Step6 = ({
             <h4>{t('step6.successTitle')}</h4>
             <p>{t('step6.successNote')}</p>
 
-            {hoursRevealed === null && (
+            {revealedHours === null && (
               <div className="pe-book-call-wrapper">
                 <h4 className="pe-eyebrow">{t('step6.bookCallTitle')}</h4>
                 <p className="pe-help">{t('step6.bookCallHelp')}</p>
