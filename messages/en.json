@@ -3618,7 +3618,7 @@
         },
         "cases": {
             "title": "Case studies | Gigson Solutions",
-            "description": "Examples of projects by sector and need: CRM, ERP, integrations, automation and custom software."
+            "description": "Real projects by sector: CRM, ERP, integrations, AI automation and custom software for logistics, retail, construction and professional services."
         },
         "blog": {
             "title": "Blog | Gigson Solutions",
@@ -3626,16 +3626,16 @@
         },
         "blogAuthor": {
             "title": "{name} | Gigson Solutions",
-            "description": "Articles by {name} on the Gigson Solutions blog."
+            "description": "Articles by {name} on AI agents, ERP integrations and technology for business, from the Gigson Solutions blog."
         },
         "faqs": {
             "title": "FAQs | Gigson Solutions",
-            "description": "Answers to common questions about our technology consulting, software development and integrations."
+            "description": "Clear answers on timelines, pricing and how we work: technology consulting, AI agents, custom development and integrations with your ERP."
         },
         "contact": {
             "title": "Contact | Gigson Solutions",
             "h1": "Contact Gigson Solutions",
-            "description": "Get in touch with Gigson Solutions. Tell us about your project and we will get back to you."
+            "description": "Tell us what you need and we'll suggest where to start: AI agents, systems integration, custom ERP and cybersecurity for companies in Spain."
         },
         "book": {
             "title": "Book a meeting | Gigson Solutions",
@@ -3659,7 +3659,7 @@
         },
         "ai_manifest": {
             "title": "AI Manifest | Gigson Solutions",
-            "description": "How Gigson Solutions uses artificial intelligence responsibly in its processes and deliverables."
+            "description": "How we use AI responsibly: human approval on every decision with economic or legal consequences, full traceability, and client data kept protected."
         }
     },
     "integrations-holded": {

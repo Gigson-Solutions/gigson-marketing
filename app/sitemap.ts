@@ -46,10 +46,19 @@ const STATIC_ROUTES: RouteConfig[] = [
   { en: '/cookies', es: '/cookies', priority: 0.3, changeFrequency: 'yearly' },
 ];
 
+/** Absolute URL for a route in one locale. The home route is `/` in both
+ * locales, which concatenated naively gives `https://gigsonsolutions.com/es/`
+ * — a URL that 308s to `/es`, and that Ahrefs reports as "3XX redirect in
+ * sitemap". Every page's canonical omits the trailing slash, so the sitemap
+ * has to match it exactly instead of advertising a URL that redirects. */
+function absoluteUrl(localePrefix: string, path: string): string {
+  return `${ORIGIN}${localePrefix}${path === '/' ? '' : path}`;
+}
+
 function makeStaticEntries(): MetadataRoute.Sitemap {
   return STATIC_ROUTES.flatMap(({ en, es, priority = 0.7, changeFrequency = 'monthly' }) => {
-    const enUrl = `${ORIGIN}${en}`;
-    const esUrl = `${ORIGIN}/es${es}`;
+    const enUrl = absoluteUrl('', en);
+    const esUrl = absoluteUrl('/es', es);
     const alternates = { languages: { en: enUrl, es: esUrl } };
     return [
       { url: enUrl, alternates, priority, changeFrequency },
