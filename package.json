@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext js,jsx,ts,tsx --fix",
+    "lint": "eslint . --fix",
     "covers:generate": "tsx scripts/generate-blog-covers.mts",
     "covers:upload": "node --env-file-if-exists=.env.local scripts/run-payload-script.mjs scripts/upload-blog-covers.mts"
   },
@@ -39,6 +39,7 @@
     "@types/react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^16.3.5",
     "@tailwindcss/postcss": "^4.0.12",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.12.0",
@@ -56,6 +57,7 @@
     "globals": "^16.3.0",
     "prettier": "^3.6.2",
     "tsx": "^4.22.4",
-    "typescript": "^5.4.0"
+    "typescript": "^5.4.0",
+    "typescript-eslint": "^8.70.0"
   }
 }

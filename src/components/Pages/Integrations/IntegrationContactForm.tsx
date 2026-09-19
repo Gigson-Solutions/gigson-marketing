@@ -98,6 +98,10 @@ const ToolMultiSelect = ({ placeholder, options }: { placeholder: string; option
               value={search}
               onChange={e => setSearch(e.target.value)}
               onClick={e => e.stopPropagation()}
+              // El input vive dentro del desplegable y solo se monta al abrirlo
+              // con un clic: el foco no salta al cargar la página, va donde el
+              // usuario acaba de pedir escribir.
+              // eslint-disable-next-line jsx-a11y/no-autofocus
               autoFocus
               style={{
                 display: 'block',

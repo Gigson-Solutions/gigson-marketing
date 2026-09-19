@@ -9,7 +9,9 @@ type LexicalNode = { type?: string; text?: string; children?: LexicalNode[] };
 function extractText(node: LexicalNode | undefined): string {
   if (!node) return '';
   const own = typeof node.text === 'string' ? node.text : '';
-  const children = Array.isArray(node.children) ? node.children.map(extractText).join(' ') : '';
+  const children = Array.isArray(node.children)
+    ? node.children.map((child) => extractText(child)).join(' ')
+    : '';
   return `${own} ${children}`;
 }
 
