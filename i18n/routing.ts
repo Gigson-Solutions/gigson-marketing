@@ -58,7 +58,19 @@ export const routing = defineRouting({
     '/blog': '/blog',
     '/blog/[slug]': '/blog/[slug]',
     '/blog/category/[category]': { en: '/blog/category/[category]', es: '/blog/categoria/[category]' },
+    '/blog/authors/[author]': { en: '/blog/authors/[author]', es: '/blog/autores/[author]' },
   },
 });
 
 export type AppPathnames = keyof typeof routing.pathnames;
+
+/**
+ * `AppPathnames` minus every dynamic pathname (currently just `/blog/[slug]`,
+ * which requires params a typed `Link`/`localizedUrl` call site can't supply).
+ * Before this existed, five files each hand-rolled their own
+ * `Exclude<AppPathnames, '/blog/[slug]'>` — a new dynamic pathname would only
+ * have needed updating in this one place instead of five.
+ */
+export type StaticPathnames = {
+  [K in AppPathnames]: K extends `${string}[${string}` ? never : K;
+}[AppPathnames];

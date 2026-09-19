@@ -3,13 +3,8 @@
 // `BlogList.tsx`. Do not import `lib/posts.ts` as a value here; see the
 // note in `lib/blogCovers.ts` for why.
 import { getPathname } from '../i18n/navigation';
-import type { AppPathnames } from '../i18n/routing';
+import type { StaticPathnames } from '../i18n/routing';
 import type { PostCategory } from './posts';
-
-// `AppPathnames` minus the dynamic pathnames — same pattern Navbar/Footer/etc.
-// use locally (`StaticPathnames` in `i18n/routing.ts` doesn't exist on this
-// branch; that's PR "seo/08-routing-prereq", independent of this one).
-type ServicePathname = Exclude<AppPathnames, '/blog/[slug]' | '/blog/category/[category]'>;
 
 /** URL slug per locale for each category archive — independent from the
  * Spanish-only `PostCategory` value stored in Payload, so the English
@@ -36,7 +31,7 @@ export const CATEGORY_SLUGS: Record<PostCategory, { es: string; en: string }> = 
  * `sectores` don't map cleanly onto one page (Odoo vs Holded vs custom ERP;
  * four different sector pages) — no featured link rather than a wrong guess.
  */
-export const CATEGORY_SERVICE_PAGE: Partial<Record<PostCategory, ServicePathname>> = {
+export const CATEGORY_SERVICE_PAGE: Partial<Record<PostCategory, StaticPathnames>> = {
   'agentes-ia': '/ai-agents',
   ciberseguridad: '/cybersecurity',
   'ingenieria-software': '/software-engineering',

@@ -1,4 +1,9 @@
-import { routing, type AppPathnames } from '../i18n/routing';
+import { routing, type StaticPathnames } from '../i18n/routing';
+import { coverImagePath } from './blogCovers';
+// Type-only: `lib/posts.ts` imports Payload and the Postgres adapter at
+// module top, and this module must stay reachable from client components
+// (same precaution `lib/blogCovers.ts` already documents).
+import type { Post } from './posts';
 
 export const ORIGIN = 'https://gigsonsolutions.com';
 
@@ -14,6 +19,23 @@ export const ORGANIZATION_ID = `${ORIGIN}/#organization`;
 /** Reference to the Organization above, for `provider`/`publisher` slots. */
 export const organizationRef = { '@id': ORGANIZATION_ID } as const;
 
+/**
+ * Minimal Organization node (name + logo) carrying the same `@id` as the full
+ * node from `buildOrganization()`. For pages that need `publisher.name` to
+ * satisfy Google's Article/BlogPosting requirements (blog posts, the blog
+ * index) but aren't themselves "about" the company — the shared `@id` is what
+ * tells a crawler this is the same entity, without re-declaring the
+ * description/foundingDate/etc. on every post.
+ */
+export function organizationMinimal() {
+  return {
+    '@type': 'Organization',
+    '@id': ORGANIZATION_ID,
+    name: 'Gigson Solutions',
+    logo: `${ORIGIN}/gigson-logo.svg`,
+  };
+}
+
 type Locale = (typeof routing.locales)[number];
 
 /**
@@ -22,7 +44,7 @@ type Locale = (typeof routing.locales)[number];
  * their `Service.url`, so `/es/tecnologia-logistica` advertised itself as
  * `/logistics-technology`.
  */
-export function localizedUrl(pathKey: AppPathnames, locale: string): string {
+export function localizedUrl(pathKey: StaticPathnames, locale: string): string {
   const entry = routing.pathnames[pathKey] as string | Record<Locale, string>;
   const path = typeof entry === 'string' ? entry : entry[locale as Locale] ?? entry.en;
   const prefix = locale === routing.defaultLocale ? '' : `/${locale}`;
@@ -63,6 +85,38 @@ export function buildOrganization(description: string) {
   };
 }
 
+/** Absolute URL of an author's page. Not in `routing.pathnames`/`StaticPathnames`
+ * on purpose — the same reason `/blog/[slug]` isn't: the segment is a slug
+ * from Payload (`Authors.slug`), not a static route `localizedUrl` can resolve. */
+export function authorUrl(slug: string, locale: string): string {
+  const path = locale === 'es' ? `/es/blog/autores/${slug}` : `/blog/authors/${slug}`;
+  return `${ORIGIN}${path}`;
+}
+
+/**
+ * Person schema for an author — emitted inline inside a post's `BlogPosting.author`
+ * *and* as the main entity of that author's own page. The `@id`
+ * (`${ORIGIN}/#person-<slug>`) is shared between both: that's what tells a
+ * crawler they're the same person, not text-matching the name. `sameAs` is
+ * only included when a real LinkedIn URL exists on the author's profile —
+ * never a placeholder, which would misidentify the entity.
+ */
+export function buildPersonSchema(
+  author: { slug: string; name: string; jobTitle?: string; linkedin?: string; knowsAbout?: string[] },
+  locale: string,
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${ORIGIN}/#person-${author.slug}`,
+    name: author.name,
+    url: authorUrl(author.slug, locale),
+    ...(author.jobTitle ? { jobTitle: author.jobTitle } : {}),
+    ...(author.knowsAbout && author.knowsAbout.length > 0 ? { knowsAbout: author.knowsAbout } : {}),
+    ...(author.linkedin ? { sameAs: [author.linkedin] } : {}),
+  };
+}
+
 export function buildServiceSchema({
   name,
   description,
@@ -73,7 +127,7 @@ export function buildServiceSchema({
 }: {
   name: string;
   description: string;
-  pathKey: AppPathnames;
+  pathKey: StaticPathnames;
   locale: string;
   serviceType: string;
   areaServed?: string;
@@ -92,18 +146,41 @@ export function buildServiceSchema({
 
 export type FaqItem = { question: string; answer: string };
 
-/** Returns null for an empty list so callers can render conditionally. */
-export function buildFaqSchema(items: FaqItem[] | undefined) {
+/** Returns null for an empty list so callers can render conditionally.
+ * `id` is optional and additive (existing callers are unaffected) — the blog
+ * post page passes one so its `FAQPage` can be addressed as
+ * `${postUrl(post)}#faq` and marked `isPartOf` the article. */
+export function buildFaqSchema(items: FaqItem[] | undefined, id?: string) {
   if (!items || items.length === 0) return null;
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    ...(id ? { '@id': id } : {}),
     mainEntity: items.map(({ question, answer }) => ({
       '@type': 'Question',
       name: question,
       acceptedAnswer: { '@type': 'Answer', text: answer },
     })),
   };
+}
+
+/** Absolute canonical URL for a post, from its own `locale`/`slug`. Lives here
+ * (not in the post page component) because the blog index, the author page
+ * and the category archives all need it too. */
+export function postUrl(post: Pick<Post, 'locale' | 'slug'>): string {
+  return post.locale === 'es' ? `${ORIGIN}/es/blog/${post.slug}` : `${ORIGIN}/blog/${post.slug}`;
+}
+
+/** Absolute URL of a post's picture. An uploaded cover wins; otherwise this is
+ * the rasterised version of the same generated composition the page renders,
+ * so social previews and the Article/BlogPosting schema always have a real
+ * image. */
+export function articleImage(post: Pick<Post, 'coverImage' | 'slug' | 'category'>): string {
+  const uploaded = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
+  if (!uploaded) return `${ORIGIN}${coverImagePath(post)}`;
+  // Payload returns an absolute URL on Vercel Blob but a relative /api/media
+  // path on local disk storage, so absolutise defensively.
+  return uploaded.startsWith('http') ? uploaded : `${ORIGIN}${uploaded}`;
 }
 
 /**
@@ -121,7 +198,7 @@ export function faqItemsFrom(raw: unknown): FaqItem[] {
  * Payload), by an absolute URL.
  */
 export type BreadcrumbItem =
-  | { name: string; pathKey: AppPathnames }
+  | { name: string; pathKey: StaticPathnames }
   | { name: string; url: string };
 
 export function buildBreadcrumbSchema(items: BreadcrumbItem[], locale: string) {

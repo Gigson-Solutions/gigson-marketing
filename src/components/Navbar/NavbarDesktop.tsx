@@ -2,10 +2,10 @@
 
 import './NavbarDesktop.css';
 
-import type { AppPathnames } from '../../../i18n/routing';
+import type { StaticPathnames } from '../../../i18n/routing';
 import { Link, usePathname } from '../../../i18n/navigation';
 
-type NavPathname = Exclude<AppPathnames, '/blog/[slug]' | '/blog/category/[category]'>;
+type NavPathname = StaticPathnames;
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 const ChevronDown = () => (

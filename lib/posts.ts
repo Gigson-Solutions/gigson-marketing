@@ -3,6 +3,10 @@ import type { Where } from 'payload';
 import { draftMode } from 'next/headers';
 import configPromise from '@payload-config';
 
+// Type-only: keeps this module the only one in the cycle with a runtime
+// import of Payload/the Postgres adapter (`lib/authors.ts` has its own).
+import type { Author } from './authors';
+
 export type PostCategory =
   | 'agentes-ia'
   | 'integraciones-erp'
@@ -31,7 +35,13 @@ export type Post = {
     };
   };
   publishedAt?: string;
+  updatedAt?: string;
+  // Deprecated free-text author — kept for posts written before the
+  // Authors collection existed. Prefer `authorProfile`.
   author?: string;
+  // Populated (depth >= 1) or a bare id/null. `null`/undefined for posts
+  // that still only have the legacy `author` text field set.
+  authorProfile?: Author | string | null;
   seoTitle?: string;
   seoDescription?: string;
   // Serialized Lexical editor state — rendered via `<RichText>` +
@@ -155,7 +165,12 @@ export async function getRelatedPosts(post: Post, limit = 2): Promise<Post[]> {
   }
 }
 
-export async function getPostSlugs(locale?: string): Promise<string[]> {
+export type PostIndexEntry = { slug: string; updatedAt?: string; publishedAt?: string };
+
+/** Lightweight listing used by the sitemap: just enough per post to build a
+ * URL and a `lastModified` date, without pulling `content`/`coverImage`/etc.
+ * via the full `getPosts()`. */
+export async function getPostIndex(locale?: string): Promise<PostIndexEntry[]> {
   try {
     const payload = await getPayloadInstance();
     const conditions: Where[] = [{ status: { equals: 'published' } }];
@@ -166,11 +181,15 @@ export async function getPostSlugs(locale?: string): Promise<string[]> {
     const result = await payload.find({
       collection: 'posts',
       where,
-      select: { slug: true },
+      select: { slug: true, updatedAt: true, publishedAt: true },
       limit: 200,
     });
-    return result.docs.map((d) => (d as unknown as { slug: string }).slug);
+    return result.docs as unknown as PostIndexEntry[];
   } catch {
     return [];
   }
+}
+
+export async function getPostSlugs(locale?: string): Promise<string[]> {
+  return (await getPostIndex(locale)).map((p) => p.slug);
 }
