@@ -3622,7 +3622,7 @@
         },
         "cases": {
             "title": "Casos de éxito | Gigson Solutions",
-            "description": "Ejemplos de proyectos por sector y necesidad: CRM, ERP, integraciones, automatización y software a medida."
+            "description": "Proyectos reales por sector: CRM, ERP, integraciones, automatización con IA y software a medida para logística, retail, construcción y despachos."
         },
         "blog": {
             "title": "Blog | Gigson Solutions",
@@ -3630,16 +3630,16 @@
         },
         "blogAuthor": {
             "title": "{name} | Gigson Solutions",
-            "description": "Artículos de {name} en el blog de Gigson Solutions."
+            "description": "Artículos de {name} sobre agentes de IA, integraciones de ERP y tecnología para empresas, en el blog de Gigson Solutions."
         },
         "faqs": {
             "title": "Preguntas frecuentes | Gigson Solutions",
-            "description": "Respuestas a dudas habituales sobre consultoría tecnológica, desarrollo de software e integraciones."
+            "description": "Respuestas claras sobre plazos, precios y cómo trabajamos: consultoría tecnológica, agentes de IA, desarrollo a medida e integraciones con tu ERP."
         },
         "contact": {
             "title": "Contacto | Gigson Solutions",
             "h1": "Contacta con Gigson Solutions",
-            "description": "Contacta con Gigson Solutions. Cuéntanos tu proyecto y te responderemos."
+            "description": "Cuéntanos qué necesitas y te proponemos por dónde empezar: agentes de IA, integraciones, ERP a medida y ciberseguridad para empresas en España."
         },
         "book": {
             "title": "Reservar reunión | Gigson Solutions",
@@ -3663,7 +3663,7 @@
         },
         "ai_manifest": {
             "title": "Manifiesto de IA | Gigson Solutions",
-            "description": "Cómo Gigson Solutions utiliza la inteligencia artificial de forma responsable en sus procesos y entregas."
+            "description": "Cómo usamos la IA de forma responsable: supervisión humana en toda decisión con consecuencia económica o legal, trazabilidad y datos de cliente protegidos."
         }
     },
     "integrations-holded": {
