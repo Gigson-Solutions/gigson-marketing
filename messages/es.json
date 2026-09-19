@@ -55,6 +55,8 @@
         "relatedPosts": "Sigue leyendo",
         "readInEnglish": "Leer en inglés →",
         "readInSpanish": "Leer en español →",
+        "articlesAbout": "Artículos sobre {label}",
+        "viewService": "Ver la página de {label} →",
         "updatedOn": "Actualizado el {date}",
         "byAuthor": "Por {name}",
         "aboutTheAuthor": "Sobre el autor",
