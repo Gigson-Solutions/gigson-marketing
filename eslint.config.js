@@ -119,9 +119,12 @@ const sharedRules = {
   'react/react-in-jsx-scope': 'off',
   'react/prop-types': 'off',
   // `terms: ['']` casaba con cualquier comentario del repo (904 avisos de ruido).
+  // `location: 'start'` y no 'anywhere' porque los comentarios de este repo
+  // están en castellano: con 'anywhere', la palabra "todo" marcaba frases
+  // normales ("forzar undefined iba contra todo el código").
   'no-warning-comments': [
     'warn',
-    { terms: ['todo', 'fixme', 'hack', 'xxx'], location: 'anywhere' },
+    { terms: ['todo', 'fixme', 'hack', 'xxx'], location: 'start' },
   ],
 };
 
