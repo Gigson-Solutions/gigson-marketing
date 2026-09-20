@@ -1,11 +1,17 @@
 import { routing, type StaticPathnames } from '../i18n/routing';
 import { coverImagePath } from './blogCovers';
+import { COMPANY } from './company';
 // Type-only: `lib/posts.ts` imports Payload and the Postgres adapter at
 // module top, and this module must stay reachable from client components
 // (same precaution `lib/blogCovers.ts` already documents).
 import type { Post } from './posts';
 
-export const ORIGIN = 'https://gigsonsolutions.com';
+/**
+ * Reexportado desde `lib/company.ts` para que los ~20 módulos que ya importan
+ * `ORIGIN` de aquí sigan funcionando sin tocarlos, y el dominio viva en un
+ * único sitio.
+ */
+export const ORIGIN = COMPANY.site.origin;
 
 /**
  * Stable node id for the one Organization entity. Every schema that refers to
@@ -51,21 +57,99 @@ export function localizedUrl(pathKey: StaticPathnames, locale: string): string {
   return path === '/' ? `${ORIGIN}${prefix || '/'}` : `${ORIGIN}${prefix}${path}`;
 }
 
+/** Stable node id for the entity logo, reused by `image` without repeating the URL. */
+const LOGO_ID = `${ORIGIN}/#logo`;
+
 /**
  * The full Organization node. Emit it on pages that are *about* the company
  * (home, about, contact, the Claude partner page); everywhere else use
  * `organizationRef`. `description` is localized, so it comes from the caller.
+ *
+ * The identity block (`legalName`, `alternateName`, `taxID`/`vatID`,
+ * `identifier`, `address`) is what ties the `Gigson Solutions` brand to
+ * Awesomely SL. Institutional citations — company registries, `.gob.es`
+ * directories, chambers of commerce, the Odoo partner listing — all use the
+ * registered name, so without these fields none of that authority reaches this
+ * entity: to a crawler they were simply two unrelated companies.
+ *
+ * Deliberately absent: `foundingDate`. Five different dates are in
+ * circulation (schema said 2021, the registry says 2025-05-30, Clutch says
+ * 2022 and "over 8 years", the site says "11 años") because the team predates
+ * the company. On a node that declares `legalName` and `vatID` the property
+ * describes the *company*, so anything but the registry date is wrong — and
+ * the registry date understates the team, which is the reason none of the
+ * five was picked. `Organization` has no required properties; saying nothing
+ * beats publishing a date that a company-registry lookup refutes. The team's
+ * track record stays as prose on `/about`, where it is attributed to the
+ * people and not to the entity.
  */
 export function buildOrganization(description: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': ORGANIZATION_ID,
-    name: 'Gigson Solutions',
+
+    name: COMPANY.brandName,
+    // Tells a crawler outright that all three strings denote one entity.
+    alternateName: [COMPANY.shortName, COMPANY.legalNameShort],
+    legalName: COMPANY.legalName,
     url: ORIGIN,
-    logo: `${ORIGIN}/gigson-logo.svg`,
     description,
-    foundingDate: '2021',
+
+    logo: {
+      '@type': 'ImageObject',
+      '@id': LOGO_ID,
+      // Both spellings: some consumers read `url`, others `contentUrl`.
+      url: `${ORIGIN}${COMPANY.logo.path}`,
+      contentUrl: `${ORIGIN}${COMPANY.logo.path}`,
+      width: COMPANY.logo.width,
+      height: COMPANY.logo.height,
+      caption: COMPANY.brandName,
+    },
+    image: { '@id': LOGO_ID },
+
+    // `vatID` carries the national prefix, `taxID` doesn't; `iso6523Code`
+    // is the machine-readable form of the same fact (ICD 9920 = AEAT).
+    taxID: COMPANY.taxId,
+    vatID: COMPANY.vatId,
+    iso6523Code: COMPANY.iso6523,
+    identifier: [
+      {
+        '@type': 'PropertyValue',
+        propertyID: 'EUID',
+        name: 'Identificador Único Europeo (BRIS)',
+        value: COMPANY.euid,
+      },
+      ...COMPANY.cnae.map((code) => ({
+        '@type': 'PropertyValue',
+        propertyID: 'CNAE-2009',
+        name: 'CNAE',
+        value: code,
+      })),
+    ],
+
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: COMPANY.address.streetAddress,
+      addressLocality: COMPANY.address.locality,
+      addressRegion: COMPANY.address.region,
+      postalCode: COMPANY.address.postalCode,
+      addressCountry: COMPANY.address.country,
+    },
+
+    telephone: COMPANY.phone,
+    email: COMPANY.email.general,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      // 'customer service' is a value from Google's list; the previous
+      // 'customer support' is not.
+      contactType: 'customer service',
+      email: COMPANY.email.general,
+      telephone: COMPANY.phone,
+      availableLanguage: ['es', 'en'],
+      areaServed: 'ES',
+    },
+
     areaServed: ['ES', 'MX', 'AR', 'PE'],
     knowsAbout: [
       'Artificial Intelligence',
@@ -76,12 +160,7 @@ export function buildOrganization(description: string) {
       'Software Engineering',
       'Cybersecurity',
     ],
-    sameAs: ['https://www.linkedin.com/company/gigson-solutions'],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'customer support',
-      email: 'hola@gigsonsolutions.com',
-    },
+    sameAs: [...COMPANY.profiles],
   };
 }
 
@@ -140,6 +219,45 @@ export function buildServiceSchema({
     url: localizedUrl(pathKey, locale),
     serviceType,
     areaServed,
+    provider: organizationRef,
+  };
+}
+
+/**
+ * A free-to-use tool hosted on the site, as opposed to a service we sell.
+ * `WebApplication` is what makes the estimator read as a citable tool rather
+ * than another service page — `Service` describes something you buy.
+ *
+ * `isAccessibleForFree` is a required judgement, not a default: the estimator
+ * keeps its result behind a form and a booked call, so it is declared `false`.
+ * Only pass `true` for a tool that yields something useful without a gate.
+ */
+export function buildWebApplicationSchema({
+  name,
+  description,
+  pathKey,
+  locale,
+  isAccessibleForFree,
+}: {
+  name: string;
+  description: string;
+  pathKey: StaticPathnames;
+  locale: string;
+  isAccessibleForFree: boolean;
+}) {
+  const url = localizedUrl(pathKey, locale);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    '@id': `${url}#app`,
+    name,
+    description,
+    url,
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript',
+    inLanguage: [...routing.locales],
+    isAccessibleForFree,
     provider: organizationRef,
   };
 }

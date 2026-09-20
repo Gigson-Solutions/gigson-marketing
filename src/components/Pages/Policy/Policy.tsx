@@ -4,8 +4,16 @@ import '../Policity.css';
 
 import { useTranslations } from 'next-intl';
 
+import { legalValues } from '../../../../lib/company';
+
 const Policy = () => {
-  const t = useTranslations('policity');
+  const translate = useTranslations('policity');
+  // Los textos legales llevan interpolados los datos de la empresa desde
+  // `lib/company.ts`, en lugar de tenerlos escritos dentro de la traducción.
+  // Se pasa la bolsa entera a todas las claves: ICU ignora en silencio los
+  // valores que un mensaje no referencia, así que añadir un `{placeholder}`
+  // nuevo no obliga a acordarse de venir aquí a pasarle su valor.
+  const t = (key: string) => translate(key, legalValues);
 
   return (
     <div className="wrapper">
