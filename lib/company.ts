@@ -74,11 +74,15 @@ export const COMPANY = {
 
   email: {
     /**
-     * Dirección pública canónica. El sitio llegó a exponer seis direcciones en
-     * tres dominios, dos de ellas dentro de JSON-LD de la misma entidad
-     * (`hola@` en el `Organization` de `/`, `info@` en el `FAQPage` de
-     * `/faqs`). Queda pendiente confirmar qué buzón se lee de verdad antes de
-     * unificar los formularios y el chatbot contra este valor.
+     * Dirección pública canónica: todo lo que el sitio *muestra* o publica
+     * (schema, FAQ, chatbot, llms.txt) sale de aquí. Llegó a haber seis
+     * direcciones en tres dominios, dos de ellas dentro del JSON-LD de la
+     * misma entidad (`hola@` en el `Organization` de `/`, `info@` en el
+     * `FAQPage` de `/faqs`).
+     *
+     * No confundir con los destinos de los formularios: a dónde *llegan* los
+     * leads es otra cosa y sigue en sus propios env vars, porque FormSubmit
+     * exige activar cada dirección antes de entregarle nada.
      */
     general: 'hola@gigsonsolutions.com',
     /**

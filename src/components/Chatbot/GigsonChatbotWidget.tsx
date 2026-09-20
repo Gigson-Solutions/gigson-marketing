@@ -7,6 +7,8 @@ import { getWelcomeMessage, type Locale } from '@/lib/gigson';
 
 import './chatbot.css';
 
+import { COMPANY } from '../../../lib/company';
+
 type Role = 'bot' | 'user';
 type Msg = { id: string; role: Role; text: string; suggestions?: string[] };
 
@@ -43,8 +45,7 @@ const STRINGS: Record<Locale, Record<string, string>> = {
     newConversation: 'Empezar nueva conversación',
     typing: 'Jaume está escribiendo',
     placeholder: 'Escribe tu mensaje…',
-    rateLimit:
-      'Has enviado muchos mensajes en poco tiempo. Espera un momento o escríbenos a info@gigsonsolutions.com.',
+    rateLimit: `Has enviado muchos mensajes en poco tiempo. Espera un momento o escríbenos a ${COMPANY.email.general}.`,
     networkError:
       'Ahora mismo he tenido un problema de conexión. Te dejo aquí el formulario para que te contactemos directamente.',
     leadTitle: 'Te contactamos',
@@ -69,8 +70,7 @@ const STRINGS: Record<Locale, Record<string, string>> = {
     newConversation: 'Start a new conversation',
     typing: 'Jaume is typing',
     placeholder: 'Type your message…',
-    rateLimit:
-      "You've sent too many messages in a short time. Wait a moment or email us at info@gigsonsolutions.com.",
+    rateLimit: `You've sent too many messages in a short time. Wait a moment or email us at ${COMPANY.email.general}.`,
     networkError:
       "I've hit a connection issue right now. Here's the contact form so we can reach out to you directly.",
     leadTitle: "We'll contact you",
