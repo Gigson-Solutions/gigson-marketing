@@ -3,35 +3,12 @@ import type { Metadata } from 'next';
 
 import BlogList from '../../../../src/components/Blog/BlogList';
 import JsonLd from '../../../../src/shared/ui/JsonLd';
-import { getPosts, type Post } from '../../../../lib/posts';
-import { ORIGIN, buildBreadcrumbSchema, localizedUrl } from '../../../../lib/schema';
+import { getPosts } from '../../../../lib/posts';
+import { ORIGIN, buildBreadcrumbSchema, localizedUrl, postUrl, articleImage, organizationMinimal } from '../../../../lib/schema';
 
 export const revalidate = 3600;
 
 type Props = { params: Promise<{ locale: string }> };
-
-// Local, minimal duplicates of `postUrl`/`articleImage`/`organizationMinimal`
-// added to `lib/schema.ts` by PR "seo/05-schema-posts" (not yet merged as of
-// this PR) — once that lands, this file should import them instead of
-// redefining them here.
-function postUrl(post: Pick<Post, 'locale' | 'slug'>): string {
-  return post.locale === 'es' ? `${ORIGIN}/es/blog/${post.slug}` : `${ORIGIN}/blog/${post.slug}`;
-}
-
-function articleImage(post: Pick<Post, 'coverImage'>): string | undefined {
-  const uploaded = post.coverImage?.sizes?.hero?.url ?? post.coverImage?.url;
-  if (!uploaded) return undefined;
-  return uploaded.startsWith('http') ? uploaded : `${ORIGIN}${uploaded}`;
-}
-
-function organizationMinimal() {
-  return {
-    '@type': 'Organization',
-    '@id': `${ORIGIN}/#organization`,
-    name: 'Gigson Solutions',
-    logo: `${ORIGIN}/gigson-logo.svg`,
-  };
-}
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
@@ -89,7 +66,7 @@ export default async function BlogPage(props: Props) {
         headline: post.title,
         url: postCanonical,
         datePublished: post.publishedAt,
-        dateModified: (post as { updatedAt?: string }).updatedAt ?? post.publishedAt,
+        dateModified: post.updatedAt ?? post.publishedAt,
         image: articleImage(post),
         author: { '@type': 'Person', name: post.author ?? 'Gigson Solutions' },
       };
@@ -108,7 +85,7 @@ export default async function BlogPage(props: Props) {
     <>
       <JsonLd data={blogSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <BlogList posts={posts} />
+      <BlogList posts={posts} locale={locale} />
     </>
   );
 }
