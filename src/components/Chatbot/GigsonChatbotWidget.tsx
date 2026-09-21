@@ -24,7 +24,7 @@ const INACTIVITY_RESET_MS = 30 * 60 * 1000;
 function detectLocale(override?: Locale): Locale {
   if (override === 'es' || override === 'en') return override;
   if (typeof window === 'undefined') return 'es';
-  const seg = window.location.pathname.split('/').filter(Boolean)[0];
+  const seg = window.location.pathname.split('/').find(Boolean);
   if (seg === 'es' || seg === 'en') return seg;
   const nav = (window.navigator.language || 'es').toLowerCase();
   return nav.startsWith('en') ? 'en' : 'es';

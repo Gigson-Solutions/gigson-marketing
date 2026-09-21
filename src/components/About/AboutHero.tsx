@@ -7,7 +7,6 @@ import { useTranslations } from 'next-intl';
 import circSvg from '../../assets/circunferencia1.svg';
 import cubeSvg from '../../assets/cubo1.svg';
 import heroCircleSvg from '../../assets/about-hero-circle.svg';
-import triaSvg from '../../assets/Trianguloycirculo.png';
 import piraSvg from '../../assets/tri1.svg';
 import { Link } from '../../../i18n/navigation';
 import { RichText } from '../../shared/ui/RichText';

@@ -42,6 +42,9 @@ const COVER_BY_CATEGORY: Record<PostCategory, CoverId> = {
 function bucket(seed: string, count: number): number {
   let hash = 2_166_136_261;
   for (let index = 0; index < seed.length; index++) {
+    // Este hash decide qué portada le toca a cada slug: cambiar a
+    // codePointAt() reasignaría las portadas de los posts ya publicados.
+    // eslint-disable-next-line unicorn/prefer-code-point
     hash ^= seed.charCodeAt(index);
     hash = Math.imul(hash, 16_777_619);
   }

@@ -161,8 +161,7 @@ function typeSpecificLines(inputs: EstimatorInputs): (string | null)[] {
           ? `Engagement type: ${inputs.consultingEngagement === 'ongoing' ? 'ongoing/retainer' : 'one-off'}`
           : null,
       ];
-    case 'software_development':
-    case 'other':
+    // 'software_development' y 'other' caen aquí, igual que cualquier tipo nuevo.
     default:
       return [
         inputs.appSize ? `Project scope: ${SIZE_LABEL[inputs.appSize] ?? inputs.appSize}` : null,

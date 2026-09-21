@@ -19,7 +19,7 @@ export function toPublicFeature(feature: EstimatorFeature): EstimatorFeaturePubl
 }
 
 export function toPublicFeatures(features: EstimatorFeature[]): EstimatorFeaturePublic[] {
-  return features.map(toPublicFeature);
+  return features.map((feature) => toPublicFeature(feature));
 }
 
 export function mergeStoredHours(
