@@ -1,3 +1,12 @@
+> **Documento histórico — no aplica a la web actual.**
+>
+> Describe la arquitectura anterior a la migración a Next.js: `src/router/publicRoutes.js`,
+> prerender con Playwright y despliegue en S3/CloudFront. Nada de eso existe ya. Hoy el sitio es
+> Next.js (App Router) sobre Vercel, con `app/sitemap.ts`, `app/robots.ts` y `app/llms.txt/route.ts`.
+>
+> Para el estado actual, ver [AUDIT_GEO_2026-09-21.md](AUDIT_GEO_2026-09-21.md) y
+> [PLAN_GEO_2026-09-21.md](PLAN_GEO_2026-09-21.md).
+
 # SEO — Fase 0 (línea base) y Fase 1 (entregado en código)
 
 ## Inventario de URLs indexables
