@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 import '../../../../src/components/Pages/Iso27001/Iso27001.css';
+import { ORIGIN } from '../../../../lib/schema';
 
-const ORIGIN = 'https://gigsonsolutions.com';
 
 export function generateMetadata(): Metadata {
   return {

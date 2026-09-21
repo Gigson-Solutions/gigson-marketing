@@ -6,7 +6,7 @@ import JsonLd from '../../../../src/shared/ui/JsonLd';
 import {
   ORIGIN,
   buildBreadcrumbSchema,
-  buildServiceSchema,
+  buildWebApplicationSchema,
   breadcrumbLabel,
 } from '../../../../lib/schema';
 
@@ -43,12 +43,16 @@ export default async function ProjectEstimatorPage(props: Props) {
 
   const tCrumb = await getTranslations({ locale, namespace: 'breadcrumb' });
 
-  const serviceSchema = buildServiceSchema({
+  // Es una herramienta alojada aquí, no un servicio que se vende, así que
+  // `WebApplication` en lugar de `Service`. `isAccessibleForFree: false`
+  // porque el presupuesto está tras el formulario de email y las horas tras
+  // una reunión reservada — declararlo gratuito sería falso.
+  const appSchema = buildWebApplicationSchema({
     name: title,
     description,
     pathKey: '/project-estimator',
     locale,
-    serviceType: 'Software Project Estimation',
+    isAccessibleForFree: false,
   });
   const breadcrumbSchema = buildBreadcrumbSchema(
     [
@@ -60,7 +64,7 @@ export default async function ProjectEstimatorPage(props: Props) {
 
   return (
     <>
-      <JsonLd data={serviceSchema} />
+      <JsonLd data={appSchema} />
       <JsonLd data={breadcrumbSchema} />
       <ProjectEstimator />
     </>

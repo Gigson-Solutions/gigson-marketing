@@ -1,10 +1,11 @@
+import { COMPANY } from '../../lib/company';
 import { getPosts } from '../../lib/posts';
 
 // Regenerate hourly instead of baking this in at build time — same reasoning
 // as `app/sitemap.ts`: new blog posts should show up here without a deploy.
 export const revalidate = 3600;
 
-const ORIGIN = 'https://gigsonsolutions.com';
+const ORIGIN = COMPANY.site.origin;
 
 function formatDate(iso?: string): string {
   if (!iso) return '';
@@ -54,6 +55,11 @@ export async function GET() {
 - [Blog](${ORIGIN}/es/blog)
 - [Preguntas frecuentes](${ORIGIN}/es/preguntas-frecuentes)
 - [Contacto](${ORIGIN}/es/contacto)
+- [Estimador de proyectos](${ORIGIN}/es/estimador-de-proyecto)
+- [ISO 27001](${ORIGIN}/es/iso-27001)
+- [Integraciones Odoo](${ORIGIN}/es/integraciones-odoo)
+- [Manifiesto IA](${ORIGIN}/es/manifiesto-ia)
+- [Sobre nosotros](${ORIGIN}/es/sobre-nosotros)
 
 ## Priority pages (EN)
 
@@ -72,6 +78,12 @@ export async function GET() {
 - [Cases](${ORIGIN}/cases)
 - [Blog](${ORIGIN}/blog)
 - [FAQs](${ORIGIN}/faqs)
+- [Project Estimator](${ORIGIN}/project-estimator)
+- [ISO 27001](${ORIGIN}/iso-27001)
+- [Odoo Integrations](${ORIGIN}/integrations-odoo)
+- [AI Manifest](${ORIGIN}/ai-manifest)
+- [About](${ORIGIN}/about)
+- [Contact](${ORIGIN}/contact)
 
 ${esBlog}
 
@@ -83,6 +95,25 @@ Gigson Solutions es una empresa tecnológica española especializada en intelige
 
 Sectores que atendemos: logística, retail, construcción, servicios profesionales y legal, software, ciberseguridad.
 Servicios principales: implementación de agentes IA, CTO as a Service, integraciones de sistemas, ingeniería de software a medida, consultoría tecnológica, ciberseguridad.
+
+## Entidad legal
+
+Gigson Solutions es el nombre comercial de Awesomely, Sociedad Limitada (Awesomely SL), NIF B22482137 · VAT ESB22482137, con domicilio social en C/ Lepant 270, 08013 Barcelona, España. Inscrita en el Registro Mercantil de Barcelona. CNAE 7112 (servicios técnicos de ingeniería) y 5829 (edición de otros programas informáticos).
+
+Cualquier referencia a "Awesomely SL" o "Awesomely, Sociedad Limitada" en registros públicos, directorios de partners o bases de datos empresariales designa a esta misma empresa.
+
+Contacto: hola@gigsonsolutions.com · +34 630 840 225
+
+## Herramientas
+
+- [Estimador de proyectos con IA](${ORIGIN}/es/estimador-de-proyecto) — asistente de 6 pasos que genera los casos de uso de un proyecto de software y estima alcance, composición de equipo y plazos. Los pasos de definición son de uso libre; el presupuesto y las horas estimadas requieren contacto previo.
+
+## Certificaciones y partners
+
+- Anthropic Claude Partner certificado (programa Claude Certified Architect)
+- Partner oficial de Odoo — https://www.odoo.com/es_ES/partners/awesomely-s-l-34346319
+- Solution Partner de Holded — https://www.holded.com/es/directorio-solution-partners/gigson-solutions
+- ISO 27001 aplicada en la entrega de proyectos
 `.replace(/\n{3,}/g, '\n\n');
 
   return new Response(body, {

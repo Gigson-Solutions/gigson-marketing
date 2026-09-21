@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { COMPANY } from '../lib/company';
 
 // Root layout — html/body live in app/[locale]/layout.tsx so lang can be set dynamically.
 // Next.js requires a root layout; this is a minimal pass-through.
@@ -15,7 +16,7 @@ import type { Metadata } from 'next';
 // reliably avoids the headers() fallback when it's a static export in the
 // outermost layout.
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gigsonsolutions.com'),
+  metadataBase: new URL(COMPANY.site.origin),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

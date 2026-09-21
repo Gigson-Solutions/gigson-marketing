@@ -132,6 +132,25 @@ const sharedRules = {
   'no-extra-semi': 'error',
   'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
   'unused-imports/no-unused-imports': 'error',
+
+  // El origin estaba escrito a mano en 14 sitios en vez de importarse, así que
+  // cambiar de dominio eran 14 ediciones y un olvido silencioso. Esto convierte
+  // el olvido en un fallo de CI. Cubre también los template literals, que es
+  // donde vivían las copias del prompt del chatbot.
+  // Solo marca URLs: los emails `@gigsonsolutions.com` son otra cosa.
+  'no-restricted-syntax': [
+    'error',
+    {
+      selector: String.raw`Literal[value=/https?:\/\/gigsonsolutions\.com/]`,
+      message:
+        'Importa ORIGIN de lib/schema.ts o COMPANY.site.origin de lib/company.ts en lugar de escribir el dominio.',
+    },
+    {
+      selector: String.raw`TemplateElement[value.raw=/https?:\/\/gigsonsolutions\.com/]`,
+      message:
+        'Interpola ${COMPANY.site.origin} en lugar de escribir el dominio dentro del template.',
+    },
+  ],
   'react/self-closing-comp': 'error',
   'react/jsx-boolean-value': ['error', 'never'],
   'react/jsx-curly-spacing': ['error', { when: 'never', children: true }],
@@ -222,5 +241,14 @@ export default defineConfig([
       'unicorn/prefer-top-level-await': 'off',
       'unicorn/prefer-dom-node-text-content': 'off',
     },
+  },
+
+  {
+    // Los tres sitios donde el dominio sí se escribe literal:
+    //  - `lib/company.ts` es la fuente de verdad, de ahí sale.
+    //  - `next.config.mjs` no puede importar un módulo TypeScript.
+    //  - `scripts/*.mjs` son restos de la era Vite, pendientes de borrado.
+    files: ['lib/company.ts', 'next.config.mjs', 'scripts/**'],
+    rules: { 'no-restricted-syntax': 'off' },
   },
 ]);

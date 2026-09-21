@@ -9,8 +9,9 @@ import AttributionCapture from '../../src/components/Analytics/AttributionCaptur
 import ConsentScripts from '../../src/components/Analytics/ConsentScripts';
 import PageViewTracker from '../../src/components/Analytics/PageViewTracker';
 import '../../src/App.css';
+import { COMPANY } from '../../lib/company';
 
-const BASE_URL = 'https://gigsonsolutions.com';
+const BASE_URL = COMPANY.site.origin;
 
 type Props = {
   children: React.ReactNode;

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import { getPostIndex, type PostIndexEntry } from '../lib/posts';
+import { ORIGIN } from '../lib/schema';
 import { CATEGORY_SLUGS } from '../lib/blogCategories';
 
 // Without this the sitemap is baked in at build time (Next defaults to a
@@ -8,7 +9,6 @@ import { CATEGORY_SLUGS } from '../lib/blogCategories';
 // show up in it until the next deploy.
 export const revalidate = 3600;
 
-const ORIGIN = 'https://gigsonsolutions.com';
 
 type RouteConfig = {
   en: string;
@@ -18,6 +18,9 @@ type RouteConfig = {
 };
 
 const STATIC_ROUTES: RouteConfig[] = [
+  // Aquí NO van `/book`, `/iso-27001-certification` ni `/gracias-iso27001`:
+  // las tres declaran `robots: { index: false }` en su propio `page.tsx`, y
+  // listarlas en el sitemap contradiría esa meta. No las "arregles" añadiéndolas.
   { en: '/', es: '/', priority: 1.0, changeFrequency: 'weekly' },
   { en: '/ai-agents', es: '/agentes-ia', priority: 0.9, changeFrequency: 'monthly' },
   { en: '/cto-as-service', es: '/cto-as-service', priority: 0.9, changeFrequency: 'monthly' },
