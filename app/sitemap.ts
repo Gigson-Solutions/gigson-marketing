@@ -105,7 +105,7 @@ function blogIndexEntries(esPosts: PostIndexEntry[], enPosts: PostIndexEntry[]):
 // not `noindex`: the anti-cannibalization guard is the featured link + the
 // "Artículos sobre X" framing, not hiding the page from Google.
 function getCategoryEntries(): MetadataRoute.Sitemap {
-  return (Object.entries(CATEGORY_SLUGS) as [keyof typeof CATEGORY_SLUGS, { es: string; en: string }][]).map(
+  return (Object.entries(CATEGORY_SLUGS) as [keyof typeof CATEGORY_SLUGS, { es: string; en: string }][]).flatMap(
     ([, slugs]) => {
       const enUrl = `${ORIGIN}/blog/category/${slugs.en}`;
       const esUrl = `${ORIGIN}/es/blog/categoria/${slugs.es}`;
@@ -114,7 +114,7 @@ function getCategoryEntries(): MetadataRoute.Sitemap {
         { url: esUrl, alternates: { languages: { en: enUrl, es: esUrl } }, priority: 0.5, changeFrequency: 'weekly' as const },
       ];
     },
-  ).flat();
+  );
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

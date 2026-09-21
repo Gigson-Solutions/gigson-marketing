@@ -191,5 +191,6 @@ export async function getPostIndex(locale?: string): Promise<PostIndexEntry[]> {
 }
 
 export async function getPostSlugs(locale?: string): Promise<string[]> {
-  return (await getPostIndex(locale)).map((p) => p.slug);
+  const index = await getPostIndex(locale);
+  return index.map((p) => p.slug);
 }

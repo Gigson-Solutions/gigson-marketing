@@ -33,7 +33,9 @@ export function collectBlockFields<T extends { blockType: string }>(
     if (node.type === 'block' && node.fields?.blockType === blockType) {
       results.push(node.fields as T);
     }
-    if (Array.isArray(node.children)) node.children.forEach(walk);
+    if (Array.isArray(node.children)) {
+      for (const child of node.children) walk(child);
+    }
   };
   walk(root);
   return results;
