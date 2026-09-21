@@ -20,6 +20,31 @@ export const ORGANIZATION_ID = `${ORIGIN}/#organization`;
 export const organizationRef = { '@id': ORGANIZATION_ID } as const;
 
 /**
+ * The company logo, as one constant because it is declared from two places
+ * (`organizationMinimal` and `buildOrganization`) and they had already drifted
+ * from the file that exists: both pointed at `/gigson-logo.svg`, which 404s in
+ * production — nothing has ever been served from there. Anything resolving the
+ * entity's logo (a knowledge panel, an answer card) got an error page.
+ *
+ * The PNG below is the file the site actually ships, and at 437×122 it clears
+ * Google's 112px minimum for `Organization.logo`.
+ */
+const LOGO_URL = `${ORIGIN}/img/gigson-solutions-logo.png`;
+
+/**
+ * Contact details, from the ones already published in the legal notice
+ * (`notice.pc_2_3`–`pc_2_7` in `messages/*.json`) — so the structured data and
+ * the page a visitor reads can't state different things.
+ *
+ * `email` was the one that did: this node advertised `hola@gigsonsolutions.com`
+ * while the messages, the chatbot prompt (`src/lib/gigson.ts`) and the FAQ all
+ * said `info@`. Contradictory contact details inside one domain read as a
+ * low-confidence entity, and an engine citing the wrong one is a lost lead.
+ */
+const CONTACT_EMAIL = 'info@gigsonsolutions.com';
+const CONTACT_PHONE = '+34630840225';
+
+/**
  * Minimal Organization node (name + logo) carrying the same `@id` as the full
  * node from `buildOrganization()`. For pages that need `publisher.name` to
  * satisfy Google's Article/BlogPosting requirements (blog posts, the blog
@@ -32,7 +57,7 @@ export function organizationMinimal() {
     '@type': 'Organization',
     '@id': ORGANIZATION_ID,
     name: 'Gigson Solutions',
-    logo: `${ORIGIN}/gigson-logo.svg`,
+    logo: LOGO_URL,
   };
 }
 
@@ -63,7 +88,7 @@ export function buildOrganization(description: string) {
     '@id': ORGANIZATION_ID,
     name: 'Gigson Solutions',
     url: ORIGIN,
-    logo: `${ORIGIN}/gigson-logo.svg`,
+    logo: LOGO_URL,
     description,
     foundingDate: '2021',
     areaServed: ['ES', 'MX', 'AR', 'PE'],
@@ -76,11 +101,47 @@ export function buildOrganization(description: string) {
       'Software Engineering',
       'Cybersecurity',
     ],
+    // A physical address is one of the strongest signals for disambiguating a
+    // company from every other one sharing its name, and it decides whether the
+    // entity can answer a "… in Barcelona / in Spain" question at all. Taken
+    // verbatim from the registered address in the legal notice.
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'C/ Lepant 270',
+      postalCode: '08013',
+      addressLocality: 'Barcelona',
+      addressCountry: 'ES',
+    },
+    telephone: CONTACT_PHONE,
+    email: CONTACT_EMAIL,
+    /**
+     * The Anthropic partnership is the company's main differentiator and it
+     * existed only as prose — a crawler could read the words on the page but
+     * had nothing to attach to the entity. `recognizedBy` is the part that
+     * carries the weight: it names who granted the credential, so the claim
+     * resolves against Anthropic rather than being self-asserted.
+     */
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Certified Anthropic Claude Partner',
+      credentialCategory: 'Partner certification',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Anthropic',
+        url: 'https://www.anthropic.com',
+      },
+    },
+    // Deliberately just the one profile. `sameAs` is how an engine confirms that
+    // the company on this site and the company others write about are the same
+    // entity, so every entry has to be a real profile — a guessed Crunchbase or
+    // GitHub URL that 404s breaks the confirmation it exists to provide.
     sameAs: ['https://www.linkedin.com/company/gigson-solutions'],
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',
-      email: 'hola@gigsonsolutions.com',
+      email: CONTACT_EMAIL,
+      telephone: CONTACT_PHONE,
+      availableLanguage: ['es', 'en'],
     },
   };
 }
