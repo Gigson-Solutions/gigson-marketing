@@ -21,13 +21,19 @@ const intlMiddleware = createMiddleware(routing);
 // index, which does exist in both locales.
 const blogPostMiddleware = createMiddleware({ ...routing, localeDetection: false });
 
-// Anchored to exactly one segment after `/blog/` (optionally trailed by a
+// Case studies are the same situation: one document per language
+// (`collections/Cases.ts`), each with its own slug, so an unprefixed
+// `/cases/<slug>` is English by definition too.
+//
+// Anchored to exactly one segment after the prefix (optionally trailed by a
 // single slash) — unanchored, this used to also match `/blog/authors/…` or
 // `/blog/category/…`, which would then skip locale detection for those too.
-const UNPREFIXED_BLOG_POST = /^\/blog\/[^/]+\/?$/;
+// The required segment is also what leaves the `/blog` and `/cases` indexes
+// alone, since both do exist in either locale.
+const UNPREFIXED_SLUG_ROUTE = /^\/(?:blog|cases)\/[^/]+\/?$/;
 
 export default function middleware(request: NextRequest) {
-  const handle = UNPREFIXED_BLOG_POST.test(request.nextUrl.pathname)
+  const handle = UNPREFIXED_SLUG_ROUTE.test(request.nextUrl.pathname)
     ? blogPostMiddleware
     : intlMiddleware;
 

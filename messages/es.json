@@ -372,7 +372,11 @@
         "featuresTitle": "Funcionalidades",
         "resultsTitle": "Resultados",
         "solutionTitle": "Solución",
-        "toolsTitle": "Especificaciones"
+        "toolsTitle": "Especificaciones",
+        "challengeTitle": "El reto",
+        "backToCases": "Ver todos los casos",
+        "readCase": "Ver el caso completo",
+        "detailCta": "¿Tienes un reto parecido?"
     },
     "casesctaacordion": {
         "pcasesctaacordion": "Este esquema te proporciona una base sólida para desarrollar un caso de estudio detallado que puedes adaptar y expandir según tus necesidades específicas.",

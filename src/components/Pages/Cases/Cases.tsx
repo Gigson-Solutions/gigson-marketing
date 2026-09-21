@@ -23,9 +23,19 @@ type CaseItem = {
   tools: string[];
   tags: string[];
   need: string[];
+  /** Present only for cases coming from Payload — the message-file copy has no
+   * slug, and a case without one simply renders without a link to its page. */
+  slug?: string;
 };
 
-const Cases = () => {
+/**
+ * `items` comes from the `cases` collection. It is optional, and the component
+ * falls back to the `casesDropdown` copy in the message files when the
+ * collection is empty, so the page keeps working unchanged between the deploy
+ * that creates the table and whoever runs the seed. Once the collection is
+ * populated the fallback stops being reachable and can go.
+ */
+const Cases = ({ items }: { items?: CaseItem[] }) => {
   const t = useTranslations('cases');
   const tRoot = useTranslations();
 
@@ -40,8 +50,9 @@ const Cases = () => {
   const solutionTitle = t('solutionTitle');
   const toolsTitle = t('toolsTitle');
   const resultsTitle = t('resultsTitle');
-  const cases = tRoot.raw('casesDropdown') as CaseItem[];
+  const cases = items && items.length > 0 ? items : (tRoot.raw('casesDropdown') as CaseItem[]);
   const contact = tRoot('ctas.contact');
+  const readCase = t('readCase');
 
   const [activeIndex, setActiveIndex] = useState<number | undefined>();
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -102,7 +113,7 @@ const Cases = () => {
 
       <div className="wrapper">
         <div className="accordions-container">
-          {filteredCases.map(({ title, subTitle, challenge, features, results, solution, tools }, i) => (
+          {filteredCases.map(({ title, subTitle, challenge, features, results, solution, tools, slug }, i) => (
             <div key={i}>
               <Accordion
                 title={title}
@@ -120,6 +131,14 @@ const Cases = () => {
                 onClick={() => setActiveIndex((prev) => (prev === i ? undefined : i))}
                 classContainer="accordions-container"
               />
+              {slug && (
+                <Link
+                  className="cases-read-case"
+                  href={{ pathname: '/cases/[slug]', params: { slug } }}
+                >
+                  {readCase}
+                </Link>
+              )}
             </div>
           ))}
         </div>

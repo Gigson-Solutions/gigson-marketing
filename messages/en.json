@@ -372,7 +372,11 @@
         "featuresTitle": "Features",
         "resultsTitle": "Results",
         "solutionTitle": "Solution",
-        "toolsTitle": "specifications"
+        "toolsTitle": "specifications",
+        "challengeTitle": "The challenge",
+        "backToCases": "See all case studies",
+        "readCase": "Read the full case",
+        "detailCta": "Facing something similar?"
     },
     "casesctaacordion": {
         "pcasesctaacordion": "This outline provides you with a solid foundation for developing a detailed case study that you can adapt and expand according to your specific needs.",

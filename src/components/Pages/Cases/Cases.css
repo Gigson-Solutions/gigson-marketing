@@ -81,3 +81,13 @@
       max-width: 35rem;
    }
 }
+
+/* Enlace a la página del caso, bajo cada acordeón del índice. Solo aparece en
+   los casos que vienen de Payload: los del fallback de messages no tienen slug. */
+.cases-read-case {
+   display: inline-block;
+   margin: 0.25rem 0 1.5rem;
+   font-size: 0.95rem;
+   color: var(--gs-purple);
+   text-decoration: underline;
+}

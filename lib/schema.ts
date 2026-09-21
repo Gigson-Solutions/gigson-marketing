@@ -250,6 +250,17 @@ export function postUrl(post: Pick<Post, 'locale' | 'slug'>): string {
   return post.locale === 'es' ? `${ORIGIN}/es/blog/${post.slug}` : `${ORIGIN}/blog/${post.slug}`;
 }
 
+/** Absolute URL of a case study. Hand-built for the same reason as `postUrl`
+ * and `authorUrl`: `localizedUrl` is a literal lookup in `routing.pathnames`
+ * and substitutes nothing, so `localizedUrl('/cases/[slug]', 'es')` would
+ * return `/es/casos/[slug]`. The ES path segment is `casos`, matching the
+ * `'/cases/[slug]'` entry in `i18n/routing.ts`. */
+export function caseUrl(caseStudy: { locale?: string; slug: string }): string {
+  return caseStudy.locale === 'es'
+    ? `${ORIGIN}/es/casos/${caseStudy.slug}`
+    : `${ORIGIN}/cases/${caseStudy.slug}`;
+}
+
 /** Absolute URL of a post's picture. An uploaded cover wins; otherwise this is
  * the rasterised version of the same generated composition the page renders,
  * so social previews and the Article/BlogPosting schema always have a real

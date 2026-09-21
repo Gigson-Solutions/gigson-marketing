@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import { getPostIndex, type PostIndexEntry } from '../lib/posts';
+import { getCaseIndex, type CaseIndexEntry } from '../lib/cases';
 import { CATEGORY_SLUGS } from '../lib/blogCategories';
 
 // Without this the sitemap is baked in at build time (Next defaults to a
@@ -118,11 +119,33 @@ function getCategoryEntries(): MetadataRoute.Sitemap {
   );
 }
 
+/** Case-study detail URLs. Same shape and same reasoning as `postEntries`:
+ * one document per locale, so each case lists only its own URL. */
+function caseEntries(locale: 'es' | 'en', cases: CaseIndexEntry[]): MetadataRoute.Sitemap {
+  return cases.map((caseStudy) => {
+    const dateStr = caseStudy.updatedAt ?? caseStudy.publishedAt;
+    return {
+      url:
+        locale === 'es'
+          ? `${ORIGIN}/es/casos/${caseStudy.slug}`
+          : `${ORIGIN}/cases/${caseStudy.slug}`,
+      lastModified: dateStr ? new Date(dateStr) : undefined,
+      priority: 0.7,
+      changeFrequency: 'monthly' as const,
+    };
+  });
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Each post exists in exactly one locale (`Posts.locale`), so only its own
   // URL is listed — no fabricated alternate for a language it was never
-  // published in.
-  const [esPosts, enPosts] = await Promise.all([getPostIndex('es'), getPostIndex('en')]);
+  // published in. Cases (`Cases.locale`) work the same way.
+  const [esPosts, enPosts, esCases, enCases] = await Promise.all([
+    getPostIndex('es'),
+    getPostIndex('en'),
+    getCaseIndex('es'),
+    getCaseIndex('en'),
+  ]);
 
   return [
     ...makeStaticEntries(),
@@ -130,5 +153,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...blogIndexEntries(esPosts, enPosts),
     ...postEntries('es', esPosts),
     ...postEntries('en', enPosts),
+    ...caseEntries('es', esCases),
+    ...caseEntries('en', enCases),
   ];
 }

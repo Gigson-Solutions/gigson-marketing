@@ -28,6 +28,7 @@ export const routing = defineRouting({
       es: '/servicios-profesionales',
     },
     '/cases': { en: '/cases', es: '/casos' },
+    '/cases/[slug]': { en: '/cases/[slug]', es: '/casos/[slug]' },
     '/about': { en: '/about', es: '/sobre-nosotros' },
     '/faqs': { en: '/faqs', es: '/preguntas-frecuentes' },
     '/contact': { en: '/contact', es: '/contacto' },
