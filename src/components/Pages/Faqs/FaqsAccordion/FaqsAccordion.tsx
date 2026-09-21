@@ -11,11 +11,10 @@ type Props = {
   isOpen: boolean;
   onClick: () => void;
   cta?: string;
-  isLast?: boolean;
   children?: React.ReactNode;
 };
 
-export const FaqsAccordion = ({ question, answer, isOpen, onClick, cta, isLast, children }: Props) => {
+export const FaqsAccordion = ({ question, answer, isOpen, onClick, cta, children }: Props) => {
   if (!question) return null;
 
   return (
@@ -27,7 +26,12 @@ export const FaqsAccordion = ({ question, answer, isOpen, onClick, cta, isLast, 
       <div className={`accordion-content ${isOpen ? 'accordion-show-content' : ''}`}>
         <div className="accordion-content-text">
           {children || answer}
-          {isLast && (
+          {/* Gated on the CTA's own copy, not on being the last item. It used to
+              be `isLast`, a positional test, so removing or reordering the final
+              entry handed the button to whichever question landed last — and if
+              that one carries no `cta`, the button still rendered, with an empty
+              label. */}
+          {cta && (
             <div className="faq-button-wrapper">
               <Link href="/contact" className="about-hero-btn button-main">
                 {cta}

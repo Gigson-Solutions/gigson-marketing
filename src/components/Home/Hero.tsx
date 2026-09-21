@@ -25,6 +25,12 @@ function Hero() {
                 so only the elements swap. Same shape as `src/shared/ui/Hero.tsx`. */}
             <p className="hero-p">{t('heroP')}</p>
             <RichText as="h1" content={t.raw('heroH1') as string} className="hero-h1" />
+            {/* The headline is a claim ("Tecnología para impulsar tu negocio"),
+                which leaves the page with nothing that says what this company
+                is. `heroSubhead` already existed in both locales and was
+                rendered nowhere, so the definition it carries never reached
+                either a reader or a crawler building its picture of the entity. */}
+            <p className="hero-lede">{t('heroSubhead')}</p>
             <Link href="/contact" className="hero-btn button-main">
               {t('heroBtn')}
             </Link>

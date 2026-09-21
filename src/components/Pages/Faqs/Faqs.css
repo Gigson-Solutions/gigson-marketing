@@ -54,6 +54,18 @@
    color: var(--gs-ink);
 }
 
+/* Cierre de la página, fuera del acordeón: antes era la última pregunta del
+   propio listado, lo que metía un CTA dentro del schema `FAQPage`. */
+.faqs-cta {
+   margin: 3rem 0 1rem;
+}
+.faqs-cta-text {
+   font-size: 1.25rem;
+   color: var(--gs-ink);
+   margin-bottom: 1.25rem;
+   text-wrap: pretty;
+}
+
 .faqs-container {
    border: none;
    border-radius: 0;
@@ -145,6 +157,15 @@
    .faqs-accordion-h2 {
       font-size: 2.1875rem;
       margin: 1rem 1rem 1rem 0;
+   }
+   /* Misma rejilla que `.faqs-accordion`, para que el cierre quede alineado con
+      la columna de preguntas y no bajo la de títulos. */
+   .faqs-cta {
+      display: grid;
+      grid-template-columns: 24rem auto;
+   }
+   .faqs-cta > * {
+      grid-column: 2;
    }
 }
 

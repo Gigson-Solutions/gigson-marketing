@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 import cono from '../../../assets/cone.svg';
 import pentagono from '../../../assets/pentagon.svg';
+import { Link } from '../../../../i18n/navigation';
 import { RichText } from '../../../shared/ui/RichText';
 import { FaqsAccordion } from './FaqsAccordion/FaqsAccordion';
 
@@ -63,13 +64,24 @@ const Faqs = () => {
                   answer={item.answer}
                   isOpen={activeIndex === index}
                   onClick={() => handleItemClick(index)}
-                  isLast={index === faqsData.length - 1}
                   cta={item.cta}
                 />
               ))}
             </div>
           </div>
         ))}
+
+        {/* The "anything we missed?" prompt used to be the last entry of
+            `faqsDropdown`, which meant a contact CTA was modelled as a
+            question-and-answer pair and went out inside the page's `FAQPage`
+            schema — an entry with no informational value for anyone reading the
+            structured data. It lives here instead, as what it is. */}
+        <div className="faqs-cta">
+          <p className="faqs-cta-text">{t('faqsCta.text')}</p>
+          <Link href="/contact" className="about-hero-btn button-main">
+            {t('faqsCta.button')}
+          </Link>
+        </div>
       </div>
     </section>
   );

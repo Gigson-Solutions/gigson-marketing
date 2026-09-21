@@ -77,12 +77,12 @@
         "metadescription": "Certified Anthropic Claude Partner. We design and deploy AI agents for companies in Spain in 4–8 weeks. CTO as a Service, integrations and cybersecurity.",
         "heroH1": "Making technology <span>boost</span> your business<span>.</span>",
         "heroP": "CERTIFIED ANTHROPIC CLAUDE PARTNER · AI AGENT IMPLEMENTATION",
-        "heroSubhead": "We design, build, and deploy AI agents powered by Claude - Anthropic's most capable model - alongside custom software, system integrations, and cybersecurity. Certified partner. Real delivery.",
+        "heroSubhead": "Gigson Solutions is a Spanish technology consultancy and a Certified Anthropic Claude Partner. We design, build and deploy Claude-based AI agents for mid-sized companies, and put them in production in 4-8 weeks. We also offer CTO as a Service, systems integration, custom software and cybersecurity.",
         "heroBtn": "CONTACT US",
         "heroScroll": "GO DOWN TO EXPLORE",
         "servicesTitle": "Tailored solutions for any business · AI Agent Implementation · Certified Anthropic <span>Claude</span> Partner · System Integrations · CTO as a Service · Cybersecurity · ",
         "servicesP": {
-            "p1": "We are focused to leverage the technology to  your business, connecting and making it secure to align needs and business goals.",
+            "p1": "For over 11 years we have been getting the most out of the software you already use: connecting your tools, securing them and aligning them with your real business goals. We work with logistics, retail, construction, professional services and software.",
             "p2": "And if your solution does not exist yet, let's build it together."
         },
         "servicesBtn": "DISCOVER OUR SERVICES"
@@ -590,11 +590,22 @@
             "answer": "It depends on complexity: from 8,000-15,000€ for basic cases (internal Q&A, document processing) up to 20,000-50,000€ for projects with multiple integrations. Contact us for a personalized estimate."
         },
         {
-            "question": "Have we left anything unanswered?",
-            "answer": "We'll be happy to address any other questions you may have. You can reach out to us at info@gigsonsolutions.com or through our contact form.",
-            "cta": "Shall we talk?"
+            "question": "What is an AI agent, and how is it different from an automation?",
+            "answer": "An agent is software that perceives context, reasons and acts: it connects to your tools, processes your data and carries out tasks without manual work. The difference from a classic automation is that an automation follows fixed rules, while an agent handles ambiguity and multi-step decisions. Reading an invoice that arrives in any format, understanding it and recording it in the ERP, for example."
+        },
+        {
+            "question": "Which systems can an AI agent integrate with?",
+            "answer": "The ones you already use. We have connected agents and automations to ERPs such as Odoo and Holded, CRMs such as HubSpot, project tools such as Asana, marketplaces such as Amazon and Shopify, and 3PL logistics operators, as well as email and document repositories. Integration happens over APIs against your current stack, without replacing it."
+        },
+        {
+            "question": "What happens if the agent gets something wrong?",
+            "answer": "Every agent ships with human approval points on critical actions and an audit log of everything it does. You stay in control: the agent proposes or executes according to what we define with you, and what it did and when is always traceable."
         }
     ],
+    "faqsCta": {
+        "text": "Have we left anything unanswered? Email us at info@gigsonsolutions.com or tell us through the form.",
+        "button": "Shall we talk?"
+    },
     "form": {
         "title": "Ready to help you",
         "name": {

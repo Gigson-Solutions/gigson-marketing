@@ -77,12 +77,12 @@
         "metadescription": "Partner certificado de Anthropic. Diseñamos agentes Claude para empresas en España en 4–8 semanas. CTO as a Service, integraciones y ciberseguridad.",
         "heroH1": "Tecnología<br>para <span>impulsar</span><br>tu negocio<span>.</span>",
         "heroP": "CERTIFIED ANTHROPIC CLAUDE PARTNER · AI AGENT IMPLEMENTATION",
-        "heroSubhead": "Diseñamos, construimos y desplegamos agentes de IA impulsados por Claude - el modelo más avanzado de Anthropic - junto con software a medida, integraciones de sistemas y ciberseguridad. Partner certificado. Entrega real.",
+        "heroSubhead": "Gigson Solutions es una consultora tecnológica española y Partner Certificado de Anthropic. Diseñamos, construimos y desplegamos agentes de IA basados en Claude para empresas medianas, y los ponemos en producción en 4-8 semanas. También CTO as a Service, integraciones de sistemas, software a medida y ciberseguridad.",
         "heroBtn": "CONTÁCTANOS",
         "heroScroll": "SEGUIR EXPLORANDO",
         "servicesTitle": "Soluciones a medida para cualquier negocio · AI Agent Implementation · Certified Anthropic <span>Claude</span> Partner · System Integrations · CTO as a Service · Ciberseguridad · ",
         "servicesP": {
-            "p1": "Nos dedicamos a aprovechar al máximo las herramientas de software que ya utilizas, conectándolas entre sí, optimizándolas para que rindan más y alineándolas con las necesidades reales de tu negocio.",
+            "p1": "Llevamos más de 11 años aprovechando al máximo las herramientas de software que ya utilizas: conectándolas entre sí, optimizándolas para que rindan más y alineándolas con las necesidades reales de tu negocio. Trabajamos con logística, retail, construcción, servicios profesionales y software.",
             "p2": "Y si lo que necesitas aún no existe... lo creamos para ti."
         },
         "servicesBtn": "NUESTROS SERVICIOS"
@@ -557,7 +557,7 @@
         },
         {
             "question": "¿Quién desarrollará mi solución?",
-            "answer": "En gigson solutions contamos con diferentes colaboradres especializados en cada parte del proceso para dar un servicio completo y adaptado a las necesidades del cliente como: desarrollo software, usabilidad, marketing y gráfico, legal etc."
+            "answer": "En gigson solutions contamos con diferentes colaboradores especializados en cada parte del proceso para dar un servicio completo y adaptado a las necesidades del cliente como: desarrollo software, usabilidad, marketing y gráfico, legal etc."
         },
         {
             "question": "¿Seré propietario de mi solución?",
@@ -590,11 +590,22 @@
             "answer": "Depende de la complejidad: desde 8.000-15.000€ para casos básicos (Q&A interno, procesamiento de documentos) hasta 20.000-50.000€ para proyectos con múltiples integraciones. Contáctanos para una estimación personalizada."
         },
         {
-            "question": "¿Nos hemos dejado algo por contestar?",
-            "answer": "Estaremos encantados de resolverte cualquier otra cuestión. Puedes contactarnos en info@gigsonsolutions.com o a través de nuestro formulario.",
-            "cta": "¿Hablamos?"
+            "question": "¿Qué es un agente de IA y en qué se diferencia de una automatización?",
+            "answer": "Un agente es software que percibe el contexto, razona y actúa: se conecta a tus herramientas, procesa tus datos y ejecuta tareas sin intervención manual. La diferencia con una automatización clásica es que esta sigue reglas fijas, mientras que un agente gestiona la ambigüedad y las decisiones de varios pasos. Por ejemplo, leer una factura que llega en cualquier formato, entenderla y registrarla en el ERP."
+        },
+        {
+            "question": "¿Con qué sistemas puede integrarse un agente de IA?",
+            "answer": "Con los que ya usas. Hemos conectado agentes y automatizaciones a ERPs como Odoo y Holded, CRMs como HubSpot, gestores de proyecto como Asana, marketplaces como Amazon y Shopify, y operadores logísticos 3PL, además de correo y repositorios de documentos. La integración se hace por API contra tu stack actual, sin sustituirlo."
+        },
+        {
+            "question": "¿Qué pasa si el agente se equivoca?",
+            "answer": "Cada agente se despliega con puntos de aprobación humana en las acciones críticas y con registro de auditoría de todo lo que hace. Tú mantienes el control: el agente propone o ejecuta según lo que hayamos definido contigo, y queda trazado qué hizo y cuándo."
         }
     ],
+    "faqsCta": {
+        "text": "¿Nos hemos dejado algo por contestar? Escríbenos a info@gigsonsolutions.com o cuéntanoslo por el formulario.",
+        "button": "¿Hablamos?"
+    },
     "form": {
         "title": "Estamos listos para ayudarte",
         "name": {

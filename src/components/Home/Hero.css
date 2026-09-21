@@ -42,6 +42,17 @@
 .hero-h1 span {
    color: var(--gs-purple);
 }
+/* Frase que define qué es la empresa, bajo el titular. Acotada a `.hero-text`
+   porque `.hero-h1` también está declarada en `src/components/Hero.css`. */
+.hero-lede {
+   max-width: 46rem;
+   margin: 0 auto 1.75rem;
+   font-size: 1rem;
+   line-height: 1.55;
+   color: var(--gs-graphite);
+   text-align: center;
+   text-wrap: pretty;
+}
 .hero-godown {
    position: absolute;
    width: 100%;
@@ -91,6 +102,14 @@
       font-size: 3.2em;
       line-height: 3.35rem;
       margin-bottom: 2.5rem;
+   }
+   /* Ese margen reservaba el hueco hasta el botón; ahora lo ocupa el lede. */
+   .hero-text .hero-h1 {
+      margin-bottom: 1.25rem;
+   }
+   .hero-lede {
+      font-size: 1.125rem;
+      margin-bottom: 2.25rem;
    }
    .hero-godown {
       font-size: 1.1em;
