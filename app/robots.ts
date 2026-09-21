@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next';
 
+import { COMPANY } from '../lib/company';
+
 /**
  * Only the real production deployment should be indexable. Preview and staging
  * deployments served the same `allow: /` to every crawler — including GPTBot and
@@ -32,6 +34,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: '*', allow: '/' },
       ...AI_CRAWLERS.map((userAgent) => ({ userAgent, allow: '/' })),
     ],
-    sitemap: 'https://gigsonsolutions.com/sitemap.xml',
+    sitemap: `${COMPANY.site.origin}/sitemap.xml`,
   };
 }

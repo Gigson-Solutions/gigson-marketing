@@ -2,8 +2,8 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import Iso27001 from '../../../../src/components/Pages/Iso27001/Iso27001';
+import { ORIGIN } from '../../../../lib/schema';
 
-const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata(props: Props): Promise<Metadata> {

@@ -2,8 +2,8 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import BookPage from '../../../../src/components/Pages/BookPage/BookPage';
+import { ORIGIN } from '../../../../lib/schema';
 
-const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata(props: Props): Promise<Metadata> {

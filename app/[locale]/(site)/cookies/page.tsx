@@ -2,8 +2,8 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import Cookies from '../../../../src/components/Pages/Cookies/Cookies';
+import { ORIGIN } from '../../../../lib/schema';
 
-const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata(props: Props): Promise<Metadata> {

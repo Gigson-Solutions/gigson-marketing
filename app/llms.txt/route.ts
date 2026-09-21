@@ -1,10 +1,11 @@
+import { COMPANY } from '../../lib/company';
 import { getPosts } from '../../lib/posts';
 
 // Regenerate hourly instead of baking this in at build time — same reasoning
 // as `app/sitemap.ts`: new blog posts should show up here without a deploy.
 export const revalidate = 3600;
 
-const ORIGIN = 'https://gigsonsolutions.com';
+const ORIGIN = COMPANY.site.origin;
 
 function formatDate(iso?: string): string {
   if (!iso) return '';

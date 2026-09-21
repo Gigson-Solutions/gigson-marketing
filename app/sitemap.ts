@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import { getPostIndex, type PostIndexEntry } from '../lib/posts';
+import { ORIGIN } from '../lib/schema';
 import { CATEGORY_SLUGS } from '../lib/blogCategories';
 
 // Without this the sitemap is baked in at build time (Next defaults to a
@@ -8,7 +9,6 @@ import { CATEGORY_SLUGS } from '../lib/blogCategories';
 // show up in it until the next deploy.
 export const revalidate = 3600;
 
-const ORIGIN = 'https://gigsonsolutions.com';
 
 type RouteConfig = {
   en: string;
