@@ -37,6 +37,7 @@ const Footer = () => {
   const generalLinks = [
     { name: t('estimator'), href: '/project-estimator' as NavPathname },
     { name: t('cases'), href: '/cases' as NavPathname },
+    { name: t('pricing'), href: '/pricing' as NavPathname },
     { name: t('blog'), href: '/blog' as NavPathname },
     { name: t('contact'), href: '/contact' as NavPathname },
     { name: t('claude_partner'), href: '/about-claude-partner' as NavPathname },

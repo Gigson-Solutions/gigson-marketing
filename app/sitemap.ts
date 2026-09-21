@@ -21,6 +21,7 @@ const STATIC_ROUTES: RouteConfig[] = [
   { en: '/', es: '/', priority: 1.0, changeFrequency: 'weekly' },
   { en: '/ai-agents', es: '/agentes-ia', priority: 0.9, changeFrequency: 'monthly' },
   { en: '/cto-as-service', es: '/cto-as-service', priority: 0.9, changeFrequency: 'monthly' },
+  { en: '/pricing', es: '/precios', priority: 0.9, changeFrequency: 'monthly' },
   { en: '/about-claude-partner', es: '/sobre-claude-partner', priority: 0.85, changeFrequency: 'monthly' },
   { en: '/technology-consulting', es: '/consultoria-tecnologica', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/software-engineering', es: '/ingenieria-software', priority: 0.8, changeFrequency: 'monthly' },

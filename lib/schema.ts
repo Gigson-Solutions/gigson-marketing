@@ -185,6 +185,7 @@ export function buildServiceSchema({
   locale,
   serviceType,
   areaServed = 'ES',
+  offers,
 }: {
   name: string;
   description: string;
@@ -192,6 +193,12 @@ export function buildServiceSchema({
   locale: string;
   serviceType: string;
   areaServed?: string;
+  /**
+   * Price range, for the services that publish one. Only ever pass figures the
+   * site states in its own copy: a price in the structured data that the page
+   * does not back up is the kind of thing an engine will quote at a buyer.
+   */
+  offers?: { lowPrice: number; highPrice: number; priceCurrency?: string; offerCount?: number };
 }) {
   return {
     '@context': 'https://schema.org',
@@ -202,6 +209,17 @@ export function buildServiceSchema({
     serviceType,
     areaServed,
     provider: organizationRef,
+    ...(offers
+      ? {
+          offers: {
+            '@type': 'AggregateOffer',
+            priceCurrency: offers.priceCurrency ?? 'EUR',
+            lowPrice: offers.lowPrice,
+            highPrice: offers.highPrice,
+            ...(offers.offerCount ? { offerCount: offers.offerCount } : {}),
+          },
+        }
+      : {}),
   };
 }
 

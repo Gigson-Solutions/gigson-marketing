@@ -20,6 +20,7 @@
         "blog": "BLOG",
         "about": "ABOUT",
         "faqs": "FAQs",
+        "pricing": "PRICING",
         "contact": "CONTACT US",
         "legal": "Legal Policy",
         "cookies": "Cookies Policy",
@@ -4375,6 +4376,83 @@
         },
         "sectorsCta": {
             "title": "Use cases by sector"
+        }
+    },
+    "pricing": {
+        "title": "Pricing: how much an AI agent costs | Gigson Solutions",
+        "metadescription": "An AI agent costs from 8,000-15,000€ for basic cases and 20,000-50,000€ with multiple integrations. Kickoff to production in 4-8 weeks. Pricing published openly.",
+        "hero": {
+            "suptitle": "PRICING",
+            "title": "What an <span>AI agent</span><br>actually costs",
+            "description": "We publish our ranges openly, because you should be able to get a sense of the numbers before sitting down with anyone. The final price depends on how complex the case is and how many systems have to be integrated.",
+            "buttonText": "GET AN ESTIMATE"
+        },
+        "stats": [
+            { "value": "8,000€", "label": "Entry point" },
+            { "value": "4-8 weeks", "label": "Kickoff to production" },
+            { "value": "Week 2-3", "label": "First results" }
+        ],
+        "tiers": {
+            "title": "Ranges by project type",
+            "lead": "Indicative ranges for a fixed-scope project. They do not include the monthly retainer, which is sized separately.",
+            "headers": {
+                "tier": "Project type",
+                "price": "Range",
+                "time": "Timeline",
+                "fit": "When it fits"
+            },
+            "rows": [
+                {
+                    "tier": "Basic agent",
+                    "price": "8,000 - 15,000€",
+                    "time": "4-8 weeks",
+                    "fit": "One scoped use case: document processing, internal Q&A over your knowledge base, or extracting data into a system."
+                },
+                {
+                    "tier": "Project with integrations",
+                    "price": "20,000 - 50,000€",
+                    "time": "10-16 weeks",
+                    "fit": "Several systems connected (ERP, CRM, marketplaces, 3PL), multi-step flows with approvals and escalations, or several use cases at once."
+                },
+                {
+                    "tier": "Monthly retainer",
+                    "price": "Scope-based",
+                    "time": "Ongoing",
+                    "fit": "Iteration on what is live, monitoring and model updates. Sized once the agent is in production."
+                }
+            ]
+        },
+        "included": {
+            "title": "What is always included",
+            "items": [
+                "A discovery session to map your flows and pick the highest-value case.",
+                "A working prototype connected to your real systems, not an isolated demo.",
+                "Production deployment with monitoring and an audit log.",
+                "Human approval points on critical actions.",
+                "GDPR compliance: your data is not used to train models.",
+                "The option to deploy on-premise or in a private cloud."
+            ]
+        },
+        "faq": {
+            "title": "Questions about price and timelines",
+            "items": [
+                {
+                    "question": "Why a range instead of a fixed price?",
+                    "answer": "Because the cost depends on how many systems have to be integrated and how well defined the process already is. Internal Q&A over documentation that is already organised sits at the low end; a flow touching ERP, CRM and a marketplace sits at the high end. After the discovery session we give you a fixed figure."
+                },
+                {
+                    "question": "What does the monthly retainer cover, and is it mandatory?",
+                    "answer": "It covers iteration on what is live, monitoring, and updates when new models ship. It is not mandatory: you can keep the agent as delivered. We recommend it because an agent in production benefits from being tuned against real data."
+                },
+                {
+                    "question": "When do we start seeing results?",
+                    "answer": "First results usually show in week 2-3, once the prototype is connected to your systems. Full production is 4-8 weeks on a standard project and 10-16 on one with several integrations."
+                },
+                {
+                    "question": "Do we need to invest in infrastructure to start?",
+                    "answer": "No. Agents connect over APIs to the tools you already use. If you would rather not leave your own infrastructure, we can deploy on-premise or in a private cloud."
+                }
+            ]
         }
     },
     "ai_manifest": {

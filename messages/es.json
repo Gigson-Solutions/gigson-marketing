@@ -20,6 +20,7 @@
         "cases": "CASOS",
         "blog": "BLOG",
         "faqs": "FAQs",
+        "pricing": "PRECIOS",
         "contact": "CONTÁCTANOS",
         "legal": "Política legal",
         "cookies": "Política de cookies",
@@ -4393,6 +4394,83 @@
         },
         "sectorsCta": {
             "title": "Casos de uso por sector"
+        }
+    },
+    "pricing": {
+        "title": "Precios: cuánto cuesta un agente de IA | Gigson Solutions",
+        "metadescription": "Un agente de IA cuesta desde 8.000-15.000 € en casos básicos y 20.000-50.000 € con varias integraciones. De kickoff a producción en 4-8 semanas. Precios públicos.",
+        "hero": {
+            "suptitle": "PRECIOS",
+            "title": "Cuánto cuesta<br>un <span>agente de IA</span>",
+            "description": "Publicamos nuestras horquillas en abierto porque creemos que deberías poder hacerte una idea antes de sentarte con nadie. El precio final depende de la complejidad del caso y de cuántos sistemas haya que integrar.",
+            "buttonText": "PEDIR ESTIMACIÓN"
+        },
+        "stats": [
+            { "value": "8.000 €", "label": "Punto de entrada" },
+            { "value": "4-8 semanas", "label": "De kickoff a producción" },
+            { "value": "Semana 2-3", "label": "Primeros resultados" }
+        ],
+        "tiers": {
+            "title": "Horquillas por tipo de proyecto",
+            "lead": "Rangos orientativos para un proyecto cerrado. No incluyen el retainer mensual, que se dimensiona aparte según el alcance.",
+            "headers": {
+                "tier": "Tipo de proyecto",
+                "price": "Rango",
+                "time": "Plazo",
+                "fit": "Cuándo encaja"
+            },
+            "rows": [
+                {
+                    "tier": "Agente básico",
+                    "price": "8.000 - 15.000 €",
+                    "time": "4-8 semanas",
+                    "fit": "Un caso de uso acotado: procesamiento de documentos, Q&A interno sobre vuestra base de conocimiento, o extracción de datos a un sistema."
+                },
+                {
+                    "tier": "Proyecto con integraciones",
+                    "price": "20.000 - 50.000 €",
+                    "time": "10-16 semanas",
+                    "fit": "Varios sistemas conectados (ERP, CRM, marketplaces, 3PL), flujos multi-paso con aprobaciones y escaladas, o varios casos de uso a la vez."
+                },
+                {
+                    "tier": "Retainer mensual",
+                    "price": "Según alcance",
+                    "time": "Continuo",
+                    "fit": "Iteración sobre lo desplegado, monitorización y actualizaciones de modelo. Se dimensiona una vez el agente está en producción."
+                }
+            ]
+        },
+        "included": {
+            "title": "Qué incluye siempre",
+            "items": [
+                "Sesión de discovery para mapear vuestros flujos y elegir el caso de mayor valor.",
+                "Prototipo funcional conectado a vuestros sistemas reales, no una demo aislada.",
+                "Despliegue en producción con monitorización y registro de auditoría.",
+                "Puntos de aprobación humana en las acciones críticas.",
+                "Cumplimiento RGPD: vuestros datos no se usan para entrenar modelos.",
+                "Opción de despliegue on-premise o en cloud privado."
+            ]
+        },
+        "faq": {
+            "title": "Preguntas sobre precio y plazos",
+            "items": [
+                {
+                    "question": "¿Por qué dais un rango y no un precio cerrado?",
+                    "answer": "Porque el coste depende de cuántos sistemas haya que integrar y de lo definido que esté el proceso. Un Q&A interno sobre documentación que ya está ordenada está en la parte baja del rango; un flujo que toca ERP, CRM y un marketplace, en la alta. Tras la sesión de discovery damos una cifra cerrada."
+                },
+                {
+                    "question": "¿Qué incluye el retainer mensual y es obligatorio?",
+                    "answer": "Cubre iteración sobre lo desplegado, monitorización y actualizaciones cuando salen modelos nuevos. No es obligatorio: podéis quedaros con el agente entregado. Lo recomendamos porque un agente en producción se beneficia de ajustarse con datos reales."
+                },
+                {
+                    "question": "¿Cuándo empezamos a ver resultados?",
+                    "answer": "Los primeros resultados suelen verse en la semana 2-3, cuando el prototipo ya está conectado a vuestros sistemas. La puesta en producción completa son 4-8 semanas en un proyecto estándar y 10-16 en uno con varias integraciones."
+                },
+                {
+                    "question": "¿Hay que invertir en infraestructura para empezar?",
+                    "answer": "No. Los agentes se conectan por API a las herramientas que ya usáis. Si preferís no salir de vuestra infraestructura, podemos desplegar on-premise o en cloud privado."
+                }
+            ]
         }
     },
     "ai_manifest": {
