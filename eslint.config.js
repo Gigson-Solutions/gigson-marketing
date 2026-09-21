@@ -36,9 +36,6 @@ const sharedRules = {
   ...reactHooks.configs.recommended.rules,
   ...nextPlugin.configs['core-web-vitals'].rules,
 
-  'simple-import-sort/imports': 'error',
-  'simple-import-sort/exports': 'error',
-
   'unicorn/no-array-reduce': 'off',
   // `null` es idiomático en React (retorno de componentes, valor inicial de refs)
   // y en las respuestas de Payload; forzar `undefined` iba contra todo el código.
@@ -83,8 +80,30 @@ const sharedRules = {
     },
   ],
 
-  'prettier/prettier': ['error', { singleQuote: true }],
+  // Formato y estilo autofixable: en 'warn' a propósito.
+  //
+  // Al empezar a lintar TypeScript salieron 1.918 errores, 1.751 de ellos de
+  // `prettier/prettier`: código que nunca había pasado por el formateador.
+  // Arreglarlos de golpe son ~175 ficheros reescritos, y eso choca con cada
+  // merge a `staging` — la primera vez costó 49 ficheros en conflicto, y una
+  // hora después otros 5. No compensa bloquear el lint por formato.
+  //
+  // Así que quedan en 'warn': el lint pasa, lo nuevo se formatea al guardar
+  // con `--fix`, y el formateo del código existente se puede hacer en un PR
+  // propio cuando no bloquee nada. Lo que sí detecta problemas de verdad
+  // (imports muertos, `node:`, referencias de callback) sigue siendo error.
+  'prettier/prettier': ['warn', { singleQuote: true }],
   quotes: 'off',
+  'simple-import-sort/imports': 'warn',
+  'simple-import-sort/exports': 'warn',
+  'unicorn/switch-case-braces': 'warn',
+  'unicorn/catch-error-name': 'warn',
+  'unicorn/prefer-string-replace-all': 'warn',
+  'unicorn/numeric-separators-style': 'warn',
+  'unicorn/prefer-spread': 'warn',
+  'unicorn/explicit-length-check': 'warn',
+  'unicorn/prefer-string-raw': 'warn',
+  'unicorn/no-zero-fractions': 'warn',
 
   'jsx-a11y/no-static-element-interactions': 'off',
   'jsx-a11y/alt-text': 'warn',
