@@ -10,6 +10,7 @@ import { OAuth2Plugin } from 'payload-oauth2';
 
 import { ChatbotLeads } from './collections/ChatbotLeads';
 import { EstimatorSessions } from './collections/EstimatorSessions';
+import { Leads } from './collections/Leads';
 import { Media } from './collections/Media';
 import { migrations } from './migrations';
 import { Posts } from './collections/Posts';
@@ -31,7 +32,7 @@ export default buildConfig({
       beforeLogin: ['@/components/GoogleLoginButton#default'],
     },
   },
-  collections: [Posts, Media, Users, ChatbotLeads, EstimatorSessions],
+  collections: [Posts, Media, Users, ChatbotLeads, EstimatorSessions, Leads],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET ?? '',
   typescript: {

@@ -3,6 +3,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
+import { shouldBlockAsBot } from '@/lib/botid';
 import { buildSingleFeatureSystemPrompt, buildSingleFeatureUserPrompt, GENERATE_SINGLE_FEATURE_TOOL } from '@/lib/estimator/prompt';
 import { getClientIp, isFeatureGenRateLimited } from '@/lib/estimator/rateLimit';
 import { sanitizeFeatures } from '@/lib/estimator/validate';
@@ -29,6 +30,12 @@ function getClient(): Anthropic | null {
 // (app size / UI-QA level) to the rest of the project.
 export async function POST(req: Request, { params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
+  // Bot check before any model call — these endpoints cost real money per
+  // request. Observe-only until BOTID_ENFORCE is turned on.
+  if (await shouldBlockAsBot('/api/estimator/sessions/[token]/features/generate-one')) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+  }
+
   let body: unknown;
   try {
     body = await req.json();

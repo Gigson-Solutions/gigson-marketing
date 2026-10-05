@@ -623,7 +623,12 @@
             "second": "política legal",
             "third": " y acepto el procesamiento de mi información personal."
         },
-        "send": "ENVIAR SOLICITUD"
+        "send": "ENVIAR SOLICITUD",
+        "sending": "ENVIANDO…",
+        "successTitle": "Hemos recibido tu solicitud",
+        "successBody": "Gracias por contactar con gigson solutions. Te respondemos en menos de 24 horas laborables.",
+        "error": "Algo ha fallado al enviar tu solicitud. Vuelve a intentarlo o escríbenos a info@gigsonsolutions.com.",
+        "errorRateLimit": "Has enviado demasiadas solicitudes seguidas. Espera unos minutos e inténtalo de nuevo."
     },
     "notFound": {
         "title": "<span>Oops... </span>",

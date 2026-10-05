@@ -2,6 +2,8 @@ import config from '@payload-config';
 import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
+import { shouldBlockAsBot } from '@/lib/botid';
+
 export const runtime = 'nodejs';
 
 const LEAD_EMAIL_TO = process.env.LEAD_EMAIL_TO ?? 'jaume@somosgigson.com';
@@ -41,6 +43,13 @@ export async function POST(req: Request) {
   // Honeypot: silently accept bots without saving anything.
   if (typeof website === 'string' && website.trim().length > 0) {
     return NextResponse.json({ ok: true, reference: '00000000' });
+  }
+
+  // Bot check. Placed after the honeypot so an obvious bot never reaches it,
+  // and observe-only until BOTID_ENFORCE is turned on — until then a wrong
+  // verdict about a real visitor is logged, not a lost lead.
+  if (await shouldBlockAsBot('/api/chatbot/email')) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   }
 
   if (
