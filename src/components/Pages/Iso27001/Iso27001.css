@@ -942,6 +942,11 @@
     grid-template-columns: 1fr 1fr;
     gap: 40px 20px;
   }
+  /* The 18px side padding is there to clear the connector line, which is
+     hidden below this width — keeping it pushed the right column off-screen. */
+  .iso27001 .step {
+    padding: 0;
+  }
   .iso27001 .steps::before {
     display: none;
   }

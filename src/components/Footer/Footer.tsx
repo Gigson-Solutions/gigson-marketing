@@ -5,10 +5,10 @@ import './Footer.css';
 import { useTranslations } from 'next-intl';
 
 import logoFooter from '../../assets/LogoFooter.svg';
-import type { AppPathnames } from '../../../i18n/routing';
+import type { StaticPathnames } from '../../../i18n/routing';
 import { Link } from '../../../i18n/navigation';
 
-type NavPathname = Exclude<AppPathnames, '/blog/[slug]'>;
+type NavPathname = StaticPathnames;
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 const Footer = () => {

@@ -48,6 +48,31 @@ const BlogPost = ({ post, relatedPosts = [] }: Props) => {
 
   const readingTime = estimateReadingTime(post.content);
 
+  const authorProfile =
+    post.authorProfile && typeof post.authorProfile === 'object' ? post.authorProfile : null;
+  const authorName = authorProfile?.name ?? post.author;
+  const authorHref = authorProfile
+    ? post.locale === 'es' ? `/es/blog/autores/${authorProfile.slug}` : `/blog/authors/${authorProfile.slug}`
+    : null;
+  const authorJobTitle = authorProfile
+    ? (post.locale === 'es' ? authorProfile.jobTitle?.es ?? authorProfile.jobTitle?.en : authorProfile.jobTitle?.en ?? authorProfile.jobTitle?.es)
+    : undefined;
+  const authorBio = authorProfile
+    ? (post.locale === 'es' ? authorProfile.bio?.es ?? authorProfile.bio?.en : authorProfile.bio?.en ?? authorProfile.bio?.es)
+    : undefined;
+  const authorPhoto = authorProfile?.photo?.sizes?.thumbnail?.url ?? authorProfile?.photo?.url;
+
+  // `updatedAt` isn't yet on the `Post` type on this branch (added
+  // independently by PR "seo/04-sitemap-hreflang") — defensive cast until
+  // that PR merges. Only shown when it meaningfully differs from the
+  // publish date, not on every edit-and-typo-fix.
+  const updatedAt = (post as { updatedAt?: string }).updatedAt;
+  const showUpdated =
+    updatedAt && post.publishedAt && Math.abs(new Date(updatedAt).getTime() - new Date(post.publishedAt).getTime()) > 24 * 60 * 60 * 1000;
+  const formattedUpdatedAt = showUpdated
+    ? format.dateTime(new Date(updatedAt as string), { year: 'numeric', month: 'long', day: 'numeric' })
+    : null;
+
   // `localizedVersion` may have a different slug than `post` — translated
   // slugs are more idiomatic for SEO than forcing the same one across
   // languages — so this is a plain relative href, not next-intl's typed
@@ -83,19 +108,38 @@ const BlogPost = ({ post, relatedPosts = [] }: Props) => {
           )}
           {(post.publishedAt || readingTime !== null) && (
             <div className="flex flex-wrap items-center gap-x-2 text-smallTag text-dark-medium uppercase tracking-widest">
-              {post.publishedAt && (
-                <time dateTime={post.publishedAt}>
-                  {formattedDate}
-                  {post.author && ` · ${post.author}`}
-                </time>
-              )}
+              {post.publishedAt && <time dateTime={post.publishedAt}>{formattedDate}</time>}
               {post.publishedAt && readingTime !== null && <span>&middot;</span>}
               {readingTime !== null && <span>{t('readingTime', { minutes: readingTime })}</span>}
+              {formattedUpdatedAt && (
+                <>
+                  <span>&middot;</span>
+                  <span>{t('updatedOn', { date: formattedUpdatedAt })}</span>
+                </>
+              )}
             </div>
           )}
           <h1 className="mt-4 text-h1 text-dark-primary leading-tight">{post.title}</h1>
           {post.excerpt && (
             <p className="mt-4 text-subtitle text-dark-medium">{post.excerpt}</p>
+          )}
+
+          {authorName && (
+            <div className="mt-6 flex items-center gap-3 not-prose">
+              {authorPhoto && (
+                <img src={authorPhoto} alt={authorName} className="w-10 h-10 rounded-full object-cover" />
+              )}
+              <div className="text-body text-dark-medium">
+                {authorHref ? (
+                  <a href={authorHref} rel="author" className="text-dark-primary font-medium hover:text-purple-accents transition-colors">
+                    {t('byAuthor', { name: authorName })}
+                  </a>
+                ) : (
+                  <span className="text-dark-primary font-medium">{t('byAuthor', { name: authorName })}</span>
+                )}
+                {authorJobTitle && <span className="block text-smallTag text-dark-medium">{authorJobTitle}</span>}
+              </div>
+            </div>
           )}
         </header>
 
@@ -107,6 +151,25 @@ const BlogPost = ({ post, relatedPosts = [] }: Props) => {
           />
         ) : (
           <p className="text-body text-dark-medium">{t('contentUnavailable')}</p>
+        )}
+
+        {authorProfile && authorBio && (
+          <div className="mt-12 pt-8 border-t border-ink/10 flex items-start gap-4 not-prose">
+            {authorPhoto && (
+              <img src={authorPhoto} alt={authorProfile.name} className="w-14 h-14 rounded-full object-cover shrink-0" />
+            )}
+            <div>
+              <p className="text-smallTag text-purple-accents uppercase tracking-widest mb-2">{t('aboutTheAuthor')}</p>
+              {authorHref ? (
+                <a href={authorHref} className="text-body text-dark-primary font-medium hover:text-purple-accents transition-colors">
+                  {authorProfile.name}
+                </a>
+              ) : (
+                <p className="text-body text-dark-primary font-medium">{authorProfile.name}</p>
+              )}
+              <p className="mt-1 text-body text-dark-medium">{authorBio}</p>
+            </div>
+          </div>
         )}
 
         {relatedPosts.length > 0 && (

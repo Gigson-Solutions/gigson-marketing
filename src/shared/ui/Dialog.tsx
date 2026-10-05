@@ -16,12 +16,14 @@ const sizeClass = { sm: 'max-w-xl', md: 'max-w-4xl', lg: 'max-w-7xl' };
 
 const Dialog = ({ isOpen, onClose, children, size = 'lg' }: Props) => {
   useEffect(() => {
+    // gs-dialog-open hides the floating chat launcher (Dialog.css), which
+    // otherwise sits on top of the modal's action buttons on phones.
     if (isOpen) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add('overflow-hidden', 'gs-dialog-open');
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove('overflow-hidden', 'gs-dialog-open');
     }
-    return () => document.body.classList.remove('overflow-hidden');
+    return () => document.body.classList.remove('overflow-hidden', 'gs-dialog-open');
   }, [isOpen]);
 
   if (!isOpen) return null;

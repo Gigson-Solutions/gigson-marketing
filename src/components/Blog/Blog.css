@@ -26,6 +26,15 @@
   margin-top: 2rem;
 }
 
+/* Headings get a slugified `id` (see richTextConverters.tsx) so a jump link
+   (TOC, external deep link, "share this section") lands the reader below the
+   fixed navbar (91px, see .mt-fixed-navbar in src/App.css) instead of having
+   the heading hidden behind it. */
+.blog-prose h2,
+.blog-prose h3 {
+  scroll-margin-top: 115px;
+}
+
 .blog-prose p {
   font-size: var(--gs-text-sm, 17px);
   line-height: var(--gs-lh-body, 1.4);

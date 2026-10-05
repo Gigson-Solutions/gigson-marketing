@@ -22,13 +22,13 @@ const IntegrationsHero = ({ namespace, logoUrl = DEFAULT_HERO_IMAGE }: Props) =>
 
   return (
     <section className="px-landing mt-fixed-navbar bg-[#f4f3ef]">
-      <div className="max-w-[88.875rem] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-center pt-14 lg:pt-20 pb-14 lg:pb-20">
+      <div className="max-w-[88.875rem] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch lg:items-center pt-14 lg:pt-20 pb-14 lg:pb-20">
         {/* Left column */}
         <div className="flex-1 flex flex-col items-start">
           <span className="inline-block text-purple-accents text-smallTag uppercase tracking-widest border border-purple-accents rounded-full px-4 py-1 mb-6">
             {hero.badge}
           </span>
-          <RichText as="h1" content={hero.title} className="text-h1 text-dark-primary mb-4" />
+          <RichText as="h1" content={hero.title} className="text-h1 max-sm:text-[2.5rem] text-dark-primary mb-4 break-words" />
           <RichText as="p" content={hero.subtitle} className="text-h3 text-dark-primary mb-4" />
           <RichText
             as="p"

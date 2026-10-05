@@ -8,7 +8,7 @@ const BookPage = () => {
   const t = useTranslations('book');
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-16">
+    <div className="mx-auto max-w-5xl px-6 pt-16 pb-16 mt-fixed-navbar">
       <h1 className="text-3xl font-bold text-[#3C3C3B]">{t('title')}</h1>
       <p className="mt-4 text-gray-600">{t('subtitle')}</p>
       <div className="mt-8 flex justify-center">

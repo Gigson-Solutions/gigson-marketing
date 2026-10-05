@@ -1,6 +1,12 @@
 import type { MetadataRoute } from 'next';
 
-import { getPostSlugs } from '../lib/posts';
+import { getPostIndex, type PostIndexEntry } from '../lib/posts';
+import { CATEGORY_SLUGS } from '../lib/blogCategories';
+
+// Without this the sitemap is baked in at build time (Next defaults to a
+// static route for a generator with no dynamic params) — new posts wouldn't
+// show up in it until the next deploy.
+export const revalidate = 3600;
 
 const ORIGIN = 'https://gigsonsolutions.com';
 
@@ -25,12 +31,15 @@ const STATIC_ROUTES: RouteConfig[] = [
   { en: '/construction-technology', es: '/tecnologia-construccion', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/professional-services-technology', es: '/servicios-profesionales', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/cases', es: '/casos', priority: 0.8, changeFrequency: 'monthly' },
-  { en: '/blog', es: '/blog', priority: 0.8, changeFrequency: 'weekly' },
+  // '/blog' index pages are handled separately in blogIndexEntries() below,
+  // so they can carry a real `lastModified` (max post date per locale)
+  // instead of a fabricated build-time date.
   { en: '/about', es: '/sobre-nosotros', priority: 0.7, changeFrequency: 'monthly' },
   { en: '/contact', es: '/contacto', priority: 0.7, changeFrequency: 'monthly' },
   { en: '/faqs', es: '/preguntas-frecuentes', priority: 0.6, changeFrequency: 'monthly' },
   { en: '/integrations-odoo', es: '/integraciones-odoo', priority: 0.75, changeFrequency: 'monthly' },
   { en: '/custom-erp', es: '/erp-a-medida', priority: 0.75, changeFrequency: 'monthly' },
+  { en: '/project-estimator', es: '/estimador-de-proyecto', priority: 0.75, changeFrequency: 'monthly' },
   { en: '/integrations-holded', es: '/integraciones-holded', priority: 0.5, changeFrequency: 'monthly' },
   { en: '/ai-manifest', es: '/manifiesto-ia', priority: 0.5, changeFrequency: 'monthly' },
   { en: '/policy', es: '/politica', priority: 0.3, changeFrequency: 'yearly' },
@@ -38,10 +47,19 @@ const STATIC_ROUTES: RouteConfig[] = [
   { en: '/cookies', es: '/cookies', priority: 0.3, changeFrequency: 'yearly' },
 ];
 
+/** Absolute URL for a route in one locale. The home route is `/` in both
+ * locales, which concatenated naively gives `https://gigsonsolutions.com/es/`
+ * — a URL that 308s to `/es`, and that Ahrefs reports as "3XX redirect in
+ * sitemap". Every page's canonical omits the trailing slash, so the sitemap
+ * has to match it exactly instead of advertising a URL that redirects. */
+function absoluteUrl(localePrefix: string, path: string): string {
+  return `${ORIGIN}${localePrefix}${path === '/' ? '' : path}`;
+}
+
 function makeStaticEntries(): MetadataRoute.Sitemap {
   return STATIC_ROUTES.flatMap(({ en, es, priority = 0.7, changeFrequency = 'monthly' }) => {
-    const enUrl = `${ORIGIN}${en}`;
-    const esUrl = `${ORIGIN}/es${es}`;
+    const enUrl = absoluteUrl('', en);
+    const esUrl = absoluteUrl('/es', es);
     const alternates = { languages: { en: enUrl, es: esUrl } };
     return [
       { url: enUrl, alternates, priority, changeFrequency },
@@ -50,30 +68,66 @@ function makeStaticEntries(): MetadataRoute.Sitemap {
   });
 }
 
-async function getBlogEntries(): Promise<MetadataRoute.Sitemap> {
-  try {
-    // Each post exists in exactly one locale (`Posts.locale`), so only its
-    // real URL is listed — no fabricated alternate for a language it was
-    // never published in.
-    const [esSlugs, enSlugs] = await Promise.all([getPostSlugs('es'), getPostSlugs('en')]);
-    return [
-      ...esSlugs.map((slug) => ({
-        url: `${ORIGIN}/es/blog/${slug}`,
-        priority: 0.7,
-        changeFrequency: 'monthly' as const,
-      })),
-      ...enSlugs.map((slug) => ({
-        url: `${ORIGIN}/blog/${slug}`,
-        priority: 0.7,
-        changeFrequency: 'monthly' as const,
-      })),
-    ];
-  } catch {
-    return [];
-  }
+/** Most recent `updatedAt` (falling back to `publishedAt`) across a set of
+ * posts, for the `/blog` index's own `lastModified` — undefined when there
+ * are no posts yet in that locale, so the entry falls back to no date rather
+ * than a fabricated one. */
+function mostRecentDate(posts: PostIndexEntry[]): Date | undefined {
+  const times = posts
+    .map((p) => p.updatedAt ?? p.publishedAt)
+    .filter((d): d is string => Boolean(d))
+    .map((d) => new Date(d).getTime())
+    .filter((t) => !Number.isNaN(t));
+  return times.length ? new Date(Math.max(...times)) : undefined;
+}
+
+function postEntries(locale: 'es' | 'en', posts: PostIndexEntry[]): MetadataRoute.Sitemap {
+  return posts.map((post) => {
+    const dateStr = post.updatedAt ?? post.publishedAt;
+    return {
+      url: locale === 'es' ? `${ORIGIN}/es/blog/${post.slug}` : `${ORIGIN}/blog/${post.slug}`,
+      lastModified: dateStr ? new Date(dateStr) : undefined,
+      priority: 0.7,
+      changeFrequency: 'monthly' as const,
+    };
+  });
+}
+
+function blogIndexEntries(esPosts: PostIndexEntry[], enPosts: PostIndexEntry[]): MetadataRoute.Sitemap {
+  return [
+    { url: `${ORIGIN}/blog`, lastModified: mostRecentDate(enPosts), priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: `${ORIGIN}/es/blog`, lastModified: mostRecentDate(esPosts), priority: 0.8, changeFrequency: 'weekly' as const },
+  ];
+}
+
+// 7 categories × 2 locales. Indexable (Option A — hub of content with a
+// featured link to the matching service page, see lib/blogCategories.ts),
+// not `noindex`: the anti-cannibalization guard is the featured link + the
+// "Artículos sobre X" framing, not hiding the page from Google.
+function getCategoryEntries(): MetadataRoute.Sitemap {
+  return (Object.entries(CATEGORY_SLUGS) as [keyof typeof CATEGORY_SLUGS, { es: string; en: string }][]).flatMap(
+    ([, slugs]) => {
+      const enUrl = `${ORIGIN}/blog/category/${slugs.en}`;
+      const esUrl = `${ORIGIN}/es/blog/categoria/${slugs.es}`;
+      return [
+        { url: enUrl, alternates: { languages: { en: enUrl, es: esUrl } }, priority: 0.5, changeFrequency: 'weekly' as const },
+        { url: esUrl, alternates: { languages: { en: enUrl, es: esUrl } }, priority: 0.5, changeFrequency: 'weekly' as const },
+      ];
+    },
+  );
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const blogEntries = await getBlogEntries();
-  return [...makeStaticEntries(), ...blogEntries];
+  // Each post exists in exactly one locale (`Posts.locale`), so only its own
+  // URL is listed — no fabricated alternate for a language it was never
+  // published in.
+  const [esPosts, enPosts] = await Promise.all([getPostIndex('es'), getPostIndex('en')]);
+
+  return [
+    ...makeStaticEntries(),
+    ...getCategoryEntries(),
+    ...blogIndexEntries(esPosts, enPosts),
+    ...postEntries('es', esPosts),
+    ...postEntries('en', enPosts),
+  ];
 }

@@ -145,21 +145,38 @@ export interface EstimatorInputs {
   timelinePhaseFutureMonths?: number;
 }
 
-// The five delivery roles used throughout the estimator (hours columns,
-// team composition, timeline bars). Order matters for display.
-export const ROLE_KEYS = ['frontend', 'qa', 'backend', 'uiux', 'bapm'] as const;
+// The estimate is split between exactly two delivery roles: `consulting`
+// (discovery, analysis, process/architecture design, project management,
+// validation with the client) and `building` (hands-on implementation:
+// development, ERP configuration, integrations, testing). Used for the
+// per-use-case hour split, team composition and timeline bars — order
+// matters for display.
+export const ROLE_KEYS = ['consulting', 'building'] as const;
 export type RoleKey = (typeof ROLE_KEYS)[number];
 
 export type FeatureHours = Record<RoleKey, number>;
 
-export interface EstimatorFeature {
+/**
+ * What a use case looks like to the browser: a name, one plain-language
+ * description (no user story / acceptance criteria — a prospect reading
+ * this is not a product owner) and the third-party systems involved.
+ *
+ * Hours are deliberately NOT part of this shape. They never leave the
+ * server until the lead books a call, so the Step 5 / Step 6 blur is a
+ * real gate and not just a CSS filter over numbers sitting in the DOM —
+ * see lib/estimator/features.ts and the book-confirmed API route.
+ */
+export interface EstimatorFeaturePublic {
   clientId: string;
   name: string;
-  userStory: string;
-  acceptanceCriteria: string[];
+  description: string;
   thirdPartyServices: string;
-  hours: FeatureHours;
   source: 'ai' | 'manual';
+}
+
+/** Server-side shape: the public fields plus the gated hour split. */
+export interface EstimatorFeature extends EstimatorFeaturePublic {
+  hours: FeatureHours;
 }
 
 export type TeamComposition = Record<RoleKey, number>; // FTE multiplier per role, e.g. 0.75

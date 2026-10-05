@@ -37,7 +37,7 @@ export default function GigsonChatLauncher() {
         aria-label={open ? t.close : t.open}
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
-        className="fixed bottom-6 right-6 z-[1000] inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#7874F4] text-white shadow-[0_10px_30px_-6px_rgba(120,116,244,0.6)] transition hover:bg-[#5E5BC6]"
+        className="gs-chat-launcher fixed bottom-6 right-6 z-[1000] inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#7874F4] text-white shadow-[0_10px_30px_-6px_rgba(120,116,244,0.6)] transition hover:bg-[#5E5BC6]"
       >
         {open ? <CloseIcon className="h-6 w-6" /> : <ChatIcon className="h-6 w-6" />}
       </button>
