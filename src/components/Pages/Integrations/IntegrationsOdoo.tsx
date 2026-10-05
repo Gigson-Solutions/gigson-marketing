@@ -15,9 +15,9 @@ import IntegrationUseCases from './IntegrationUseCases';
 
 type FaqItem = { question: string; answer: string };
 
-// Composed directly (not via IntegrationPageLayout) — same rationale as
-// /integrations-holded: enough dedicated sections now that the generic
-// layout's props would need too many one-off flags.
+// Composed directly rather than through a shared layout — same rationale as
+// /integrations-holded: enough dedicated sections now that generic props would
+// need too many one-off flags.
 const NAMESPACE = 'integrations-odoo';
 
 const IntegrationsOdoo = () => {
@@ -75,8 +75,7 @@ const IntegrationsOdoo = () => {
 
       <IntegrationContactForm
         namespace={NAMESPACE}
-        formEmail="jaume@somosgigson.com"
-        formSubject="Nueva consulta de integraciones Odoo"
+        formId="integrations-odoo"
         toolOptions={ODOO_TOOL_OPTIONS}
       />
     </>

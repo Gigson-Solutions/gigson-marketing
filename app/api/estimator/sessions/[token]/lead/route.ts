@@ -2,6 +2,7 @@ import config from '@payload-config';
 import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
+import { shouldBlockAsBot } from '@/lib/botid';
 import { featuresFromPayload } from '@/lib/estimator/payloadMapping';
 import { isValidEmail } from '@/lib/estimator/validate';
 import { getSessionByToken, updateSession } from '@/lib/estimator/session';
@@ -35,6 +36,13 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
 
   if (typeof website === 'string' && website.trim().length > 0) {
     return NextResponse.json({ ok: true, totalBudget: 0 });
+  }
+
+  // Bot check. Placed after the honeypot so an obvious bot never reaches it,
+  // and observe-only until BOTID_ENFORCE is turned on — until then a wrong
+  // verdict about a real visitor is logged, not a lost lead.
+  if (await shouldBlockAsBot('/api/estimator/sessions/[token]/lead')) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   }
 
   if (typeof email !== 'string' || !isValidEmail(email)) {

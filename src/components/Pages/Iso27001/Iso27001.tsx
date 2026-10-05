@@ -2,11 +2,12 @@
 
 import './Iso27001.css';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 
 import solutionsBg from '../../../assets/solutions-applications-bg-gradients-1.svg';
 import { getAttribution } from '../../../lib/attribution';
+import { submitLead } from '../../../lib/leads/submitLead';
 import { Link, useRouter } from '../../../../i18n/navigation';
 
 const TOTAL_STEPS = 3;
@@ -14,6 +15,7 @@ const bgSrc = typeof solutionsBg === 'string' ? solutionsBg : (solutionsBg as { 
 
 const Iso27001 = () => {
   const t = useTranslations('iso27001');
+  const locale = useLocale();
   const router = useRouter();
 
   const [step, setStep] = useState(1);
@@ -32,6 +34,10 @@ const Iso27001 = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(false);
   const [revealed, setRevealed] = useState(false);
+  // Antispam. This is a controlled wizard rather than a plain <form>, so it
+  // can't reuse <AttributionFields /> — these are the same two signals by hand.
+  const [honeypot, setHoneypot] = useState('');
+  const [renderedAt] = useState(() => Date.now());
 
   const stepsRef = useRef<HTMLDivElement>(null);
   const formCardRef = useRef<HTMLDivElement>(null);
@@ -99,31 +105,29 @@ const Iso27001 = () => {
     setSubmitError(false);
     setSubmitting(true);
     try {
-      const res = await fetch('https://formsubmit.co/ajax/jaume@somosgigson.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          nombre: values.nombre,
-          empresa: values.empresa,
+      const result = await submitLead({
+        form_id: 'iso27001',
+        locale: locale === 'en' ? 'en' : 'es',
+        page_path: window.location.pathname,
+        name: values.nombre,
+        company: values.empresa,
+        email: values.email,
+        phone: values.telefono,
+        fields: {
           sector: values.sector,
           cargo: values.cargo,
           necesitas: values.necesitas,
-          email: values.email,
-          telefono: values.telefono,
-          // This form posts JSON rather than form fields, so attribution goes
-          // in the body instead of as hidden inputs.
-          ...getAttribution(),
-          form_id: 'iso27001',
-          _subject: 'Lead · ISO 27001 · gigsonsolutions.com',
-          _cc: 'emmelin@gigsonsolutions.com,hello@gigsonsolutions.com',
-          _captcha: 'false',
-          _template: 'box',
-        }),
+        },
+        attribution: getAttribution(),
+        // The legal copy shown alongside step 3's submit button is the consent.
+        rgpd: true,
+        company_website: honeypot,
+        rendered_at: renderedAt,
       });
-      if (!res.ok) throw new Error(`FormSubmit responded ${res.status}`);
-      const data = await res.json();
-      if (data.success !== 'true') throw new Error('FormSubmit reported failure');
+      if (result !== 'sent') throw new Error(result);
       setSubmitted(true);
+      // Keep the redirect: /gracias-iso27001 is this campaign's Google Ads
+      // conversion action, counted off the page_view PageViewTracker fires.
       router.push('/gracias-iso27001');
     } catch (error) {
       console.error('ISO 27001 lead submit failed', error);
@@ -297,6 +301,19 @@ const Iso27001 = () => {
                 </div>
 
                 <form className="form wizard" autoComplete="on" noValidate onSubmit={handleSubmit} onKeyDown={handleKeyDown}>
+                  {/* Honeypot: /api/lead silently drops anything that arrives
+                      with this filled in. Bots fill every field they find; the
+                      visitor never sees it. */}
+                  <input
+                    type="text"
+                    name="company_website"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    style={{ display: 'none' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
                   {/* STEP 1 */}
                   <div className={`form-step${step === 1 ? ' is-active' : ''}`}>
                     <h3>{t('form.step1h3')}</h3>

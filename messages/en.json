@@ -630,7 +630,12 @@
             "second": "legal disclaimer",
             "third": " and agree to the processing of my personal data."
         },
-        "send": "SEND"
+        "send": "SEND",
+        "sending": "SENDING…",
+        "successTitle": "We've received your request",
+        "successBody": "Thanks for getting in touch with gigson solutions. We'll reply within 24 working hours.",
+        "error": "Something went wrong sending your request. Please try again, or email us at info@gigsonsolutions.com.",
+        "errorRateLimit": "You've sent too many requests in a row. Please wait a few minutes and try again."
     },
     "notFound": {
         "title": "<span>Oops... </span>",

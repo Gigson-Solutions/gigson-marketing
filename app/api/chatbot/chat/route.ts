@@ -1,6 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { NextResponse } from 'next/server';
 
+import { shouldBlockAsBot } from '@/lib/botid';
 import { composeSystemPrompt, LEAD_FORM_MARKER, type Locale } from '@/lib/gigson';
 
 export const runtime = 'nodejs';
@@ -36,6 +37,12 @@ function getClient(): Anthropic | null {
 }
 
 export async function POST(req: Request) {
+  // Bot check before any model call — these endpoints cost real money per
+  // request. Observe-only until BOTID_ENFORCE is turned on.
+  if (await shouldBlockAsBot('/api/chatbot/chat')) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+  }
+
   let payload: { message?: string; sessionId?: string; locale?: string; pagePath?: string };
   try {
     payload = await req.json();

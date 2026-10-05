@@ -15,12 +15,12 @@ import IntegrationUseCases from './IntegrationUseCases';
 
 type FaqItem = { question: string; answer: string };
 
-// namespace is composed directly (not via IntegrationPageLayout) because this
-// page has grown enough dedicated sections (stats, 3 topic deep-dives, a
-// process section, an FAQ) that threading them all through the generic
-// layout's props would turn it into a flag pile — see /integrations-odoo,
-// customErp and iso27001Service for the same "compose sections directly"
-// precedent already used elsewhere in this codebase.
+// Sections are composed directly rather than through a shared layout, because
+// this page has grown enough dedicated ones (stats, 3 topic deep-dives, a
+// process section, an FAQ) that threading them all through generic props would
+// turn it into a flag pile — see /integrations-odoo, customErp and
+// iso27001Service for the same precedent. (A generic IntegrationPageLayout did
+// exist for this; nothing ever imported it, so it was removed.)
 const NAMESPACE = 'integrations-holded';
 
 const Integrations = () => {
@@ -77,8 +77,7 @@ const Integrations = () => {
 
       <IntegrationContactForm
         namespace={NAMESPACE}
-        formEmail="jaume@somosgigson.com"
-        formSubject="Nueva consulta de integraciones Holded"
+        formId="integrations-holded"
         toolOptions={HOLDED_TOOL_OPTIONS}
       />
     </>

@@ -3,6 +3,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
+import { shouldBlockAsBot } from '@/lib/botid';
 import { computeTotalBudget, sumRoleHours, totalHoursOf } from '@/lib/estimator/calc';
 import { ESTIMATOR_HOURLY_RATE } from '@/lib/estimator/config';
 import { toPublicFeatures } from '@/lib/estimator/features';
@@ -24,6 +25,12 @@ function getClient(): Anthropic | null {
 }
 
 export async function POST(req: Request) {
+  // Bot check before any model call — these endpoints cost real money per
+  // request. Observe-only until BOTID_ENFORCE is turned on.
+  if (await shouldBlockAsBot('/api/estimator/sessions')) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+  }
+
   let body: unknown;
   try {
     body = await req.json();
