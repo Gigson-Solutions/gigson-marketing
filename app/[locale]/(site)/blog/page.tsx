@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import BlogList from '../../../../src/components/Blog/BlogList';
 import JsonLd from '../../../../src/shared/ui/JsonLd';
 import { getPosts } from '../../../../lib/posts';
-import { ORIGIN, buildBreadcrumbSchema, localizedUrl, postUrl, articleImage, organizationMinimal } from '../../../../lib/schema';
+import { ORIGIN, buildBreadcrumbSchema, localizedUrl, postUrl, articleImage, organizationMinimal, SITE_NAME } from '../../../../lib/schema';
 
 export const revalidate = 3600;
 
@@ -32,7 +32,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/blog`,
       },
     },
-    openGraph: { type: 'website', title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

@@ -13,7 +13,7 @@ import {
   categoryFromSlug,
   categorySlug,
 } from '../../../../../../lib/blogCategories';
-import { buildBreadcrumbSchema, categoryUrl, localizedUrl } from '../../../../../../lib/schema';
+import { buildBreadcrumbSchema, categoryUrl, localizedUrl, SITE_NAME } from '../../../../../../lib/schema';
 
 export const revalidate = 3600;
 type Props = { params: Promise<{ locale: string; category: string }> };
@@ -61,7 +61,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': enUrl,
       },
     },
-    openGraph: { type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

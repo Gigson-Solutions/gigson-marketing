@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import Cookies from '../../../../src/components/Pages/Cookies/Cookies';
+import { SITE_NAME } from '../../../../lib/schema';
 
 const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string }> };
@@ -28,7 +29,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/cookies`,
       },
     },
-    openGraph: { type: 'website', title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

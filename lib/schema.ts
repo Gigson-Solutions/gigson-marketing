@@ -8,6 +8,12 @@ import type { Post, PostCategory } from './posts';
 
 export const ORIGIN = 'https://gigsonsolutions.com';
 
+/** `og:site_name`. Next replaces `openGraph` wholesale per segment rather than
+ * merging it, so setting this once on the root layout would be silently dropped
+ * by every page that declares an `openGraph` of its own — i.e. all of them.
+ * Hence the constant, spread into each page's object. */
+export const SITE_NAME = 'Gigson Solutions';
+
 /**
  * Stable node id for the one Organization entity. Every schema that refers to
  * the company points here instead of inlining another copy — four pages used

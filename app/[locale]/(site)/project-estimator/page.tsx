@@ -8,6 +8,7 @@ import {
   buildBreadcrumbSchema,
   buildServiceSchema,
   breadcrumbLabel,
+  SITE_NAME,
 } from '../../../../lib/schema';
 
 
@@ -31,7 +32,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/project-estimator`,
       },
     },
-    openGraph: { type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

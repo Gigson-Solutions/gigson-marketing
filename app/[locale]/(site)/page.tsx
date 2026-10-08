@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 import Home from '../../../src/components/Home/Home';
 import JsonLd from '../../../src/shared/ui/JsonLd';
-import { ORIGIN, buildOrganization, localizedUrl } from '../../../lib/schema';
+import { ORIGIN, buildOrganization, localizedUrl, SITE_NAME } from '../../../lib/schema';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -28,7 +28,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': ORIGIN,
       },
     },
-    openGraph: { type: 'website', title: t('title'), description: t('metadescription'), url: canonical, images: ['/opengraph-image'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', title: t('title'), description: t('metadescription'), url: canonical, images: ['/opengraph-image'] },
   };
 }
 
