@@ -3,6 +3,7 @@ import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
 import { shouldBlockAsBot } from '@/lib/botid';
+import { sendLeadNotification } from '@/lib/email/sendLeadNotification';
 import { featuresFromPayload } from '@/lib/estimator/payloadMapping';
 import { isValidEmail } from '@/lib/estimator/validate';
 import { getSessionByToken, updateSession } from '@/lib/estimator/session';
@@ -82,18 +83,15 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
         )
         .join('\n');
 
-      const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(LEAD_EMAIL_TO)}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          _subject: `Nuevo lead del estimador de proyectos — ${name || email}`,
-          _cc: LEAD_EMAIL_CC,
-          _captcha: 'false',
-          _template: 'box',
-          _replyto: email,
-          Nombre: name || '—',
+      const sent = await sendLeadNotification({
+        to: LEAD_EMAIL_TO,
+        cc: [LEAD_EMAIL_CC].filter(Boolean),
+        replyTo: email,
+        subject: `Nuevo lead del estimador de proyectos — ${name || email}`,
+        fields: {
+          Nombre: typeof name === 'string' && name ? name : '—',
           Email: email,
-          Empresa: company || '—',
+          Empresa: typeof company === 'string' && company ? company : '—',
           'Descripción del proyecto': session.projectDescription ?? '—',
           Dominio: session.businessDomain ?? '—',
           'Tarifa asumida': `€${session.hourlyRate ?? '—'}/h`,
@@ -101,15 +99,16 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
           'Presupuesto total': `€${totals.totalBudget}`,
           Funcionalidades: featuresSummary || '(sin funcionalidades)',
           Origen: 'project-estimator',
-        }),
+        },
       });
-      if (!res.ok) {
-        console.warn('[estimator] FormSubmit returned non-ok:', res.status, await res.text().catch(() => ''));
-      } else {
+      if (sent.ok) {
         await updateSession(payloadClient, session.id, { teamNotifiedAt: new Date().toISOString() });
+      } else {
+        // error, not warn: teamNotifiedAt stays null and nobody has been told.
+        console.error('[estimator] notification failed:', sent.reason);
       }
     } catch (err) {
-      console.warn('[estimator] FormSubmit request failed (non-critical):', err);
+      console.error('[estimator] notification threw:', err);
     }
   }
 

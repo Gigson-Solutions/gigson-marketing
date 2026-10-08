@@ -3,6 +3,7 @@ import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
 import { shouldBlockAsBot } from '@/lib/botid';
+import { sendLeadNotification } from '@/lib/email/sendLeadNotification';
 
 export const runtime = 'nodejs';
 
@@ -105,34 +106,27 @@ export async function POST(req: Request) {
 
   // ── 2. Send email notification via FormSubmit (secondary / best-effort) ────
   if (!LEAD_EMAIL_DISABLE) {
-    const emailFields: Record<string, string> = {
-      _subject: `Nuevo lead del chatbot — ${lead.name}`,
-      _cc: LEAD_EMAIL_CC,
-      _captcha: 'false',
-      _template: 'box',
-      _replyto: lead.email,
-      Nombre: lead.name,
-      Email: lead.email,
-      Empresa: lead.company ?? '—',
-      Idioma: lead.locale,
-      Página: lead.pagePath ?? '—',
-      Mensaje: lead.message,
-      'Resumen de la conversación': lead.conversation || '(sin conversación previa)',
-      Origen: lead.source,
-    };
-
-    try {
-      const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(LEAD_EMAIL_TO)}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(emailFields),
-      });
-      if (!res.ok) {
-        console.warn('[gigson-chatbot] FormSubmit returned non-ok:', res.status, await res.text().catch(() => ''));
-      }
-    } catch (emailErr) {
-      // Email is best-effort: log but never fail the request because of it.
-      console.warn('[gigson-chatbot] FormSubmit request failed (non-critical):', emailErr);
+    const sent = await sendLeadNotification({
+      to: LEAD_EMAIL_TO,
+      cc: [LEAD_EMAIL_CC].filter(Boolean),
+      replyTo: lead.email,
+      subject: `Nuevo lead del chatbot — ${lead.name}`,
+      fields: {
+        Nombre: lead.name,
+        Email: lead.email,
+        Empresa: lead.company ?? '—',
+        Idioma: lead.locale,
+        'Página': lead.pagePath ?? '—',
+        Mensaje: lead.message,
+        'Resumen de la conversación': lead.conversation || '(sin conversación previa)',
+        Origen: lead.source,
+      },
+    });
+    if (sent.ok) {
+      console.log('[gigson-chatbot] lead notified:', sent.id);
+    } else {
+      // error, not warn: the lead is in the database and nobody has been told.
+      console.error('[gigson-chatbot] notification failed:', sent.reason);
     }
   }
 
