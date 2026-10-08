@@ -5,7 +5,7 @@ import { getTranslations } from 'next-intl/server';
 import JsonLd from '../../../../../../src/shared/ui/JsonLd';
 import CategoryNav from '../../../../../../src/components/Blog/CategoryNav';
 import { FeaturedPost, PostCard } from '../../../../../../src/components/Blog/BlogList';
-import { getPosts, type PostCategory } from '../../../../../../lib/posts';
+import { getPostCountsByCategory, getPosts, type PostCategory } from '../../../../../../lib/posts';
 import {
   CATEGORY_SLUGS,
   CATEGORY_SERVICE_PAGE,
@@ -13,7 +13,7 @@ import {
   categoryFromSlug,
   categorySlug,
 } from '../../../../../../lib/blogCategories';
-import { buildBreadcrumbSchema, localizedUrl } from '../../../../../../lib/schema';
+import { buildBreadcrumbSchema, categoryUrl, localizedUrl } from '../../../../../../lib/schema';
 
 export const revalidate = 3600;
 type Props = { params: Promise<{ locale: string; category: string }> };
@@ -33,11 +33,35 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   const tBlog = await getTranslations({ locale, namespace: 'blog' });
   const label = tBlog(`categories.${category}`);
-  const title = tBlog('articlesAbout', { label });
+  const title = `${tBlog('articlesAbout', { label })} | Gigson Solutions`;
+  const description = tBlog(`categoryDescriptions.${category}`);
+
+  const canonical = categoryUrl(category, locale);
+  const enUrl = categoryUrl(category, 'en');
+
+  // `routing.alternateLinks` is off, so a page that omits `alternates` inherits
+  // the root layout's — which point at the homepage. These 14 archives did, and
+  // Ahrefs read every one of them as a second page claiming `en`/`es`.
+  const counts = await getPostCountsByCategory(locale);
+  const hasPosts = (counts[category] ?? 0) > 0;
 
   return {
-    title: `${title} | Gigson Solutions`,
-    openGraph: { type: 'website', title: `${title} | Gigson Solutions` },
+    title,
+    description,
+    // An archive with no articles is ~120 words of chrome. Keep it out of the
+    // index until it has something to list; `follow` so the service link and
+    // the category nav still pass through. Flips back on its own with the
+    // first published post — see `getPostCountsByCategory`.
+    ...(hasPosts ? {} : { robots: { index: false, follow: true } }),
+    alternates: {
+      canonical,
+      languages: {
+        en: enUrl,
+        es: categoryUrl(category, 'es'),
+        'x-default': enUrl,
+      },
+    },
+    openGraph: { type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 
@@ -67,7 +91,9 @@ export default async function BlogCategoryPage(props: Props) {
     [
       { name: tCrumb('home'), pathKey: '/' },
       { name: tMenu('blog'), pathKey: '/blog' },
-      { name: label, url: localizedUrl('/blog', locale) },
+      // Was `localizedUrl('/blog', …)`, which made this crumb a duplicate of
+      // the one above it.
+      { name: label, url: categoryUrl(category, locale) },
     ],
     locale,
   );

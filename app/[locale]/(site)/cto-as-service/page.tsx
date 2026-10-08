@@ -32,9 +32,11 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical,
       languages: {
-        en: canonical,
+        // `canonical` is locale-dependent, so on /es both `en` and `x-default`
+        // used to resolve to the Spanish URL.
+        en: `${ORIGIN}/cto-as-service`,
         es: `${ORIGIN}/es/cto-as-service`,
-        'x-default': canonical,
+        'x-default': `${ORIGIN}/cto-as-service`,
       },
     },
     openGraph: { type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },

@@ -1,6 +1,7 @@
 import { getPayload } from 'payload';
 import type { Where } from 'payload';
 import { draftMode } from 'next/headers';
+import { cache } from 'react';
 import configPromise from '@payload-config';
 
 // Type-only: keeps this module the only one in the cycle with a runtime
@@ -165,7 +166,12 @@ export async function getRelatedPosts(post: Post, limit = 2): Promise<Post[]> {
   }
 }
 
-export type PostIndexEntry = { slug: string; updatedAt?: string; publishedAt?: string };
+export type PostIndexEntry = {
+  slug: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  category?: PostCategory;
+};
 
 /** Lightweight listing used by the sitemap: just enough per post to build a
  * URL and a `lastModified` date, without pulling `content`/`coverImage`/etc.
@@ -181,7 +187,7 @@ export async function getPostIndex(locale?: string): Promise<PostIndexEntry[]> {
     const result = await payload.find({
       collection: 'posts',
       where,
-      select: { slug: true, updatedAt: true, publishedAt: true },
+      select: { slug: true, updatedAt: true, publishedAt: true, category: true },
       limit: 200,
     });
     return result.docs as unknown as PostIndexEntry[];
@@ -189,6 +195,30 @@ export async function getPostIndex(locale?: string): Promise<PostIndexEntry[]> {
     return [];
   }
 }
+
+export type CategoryCounts = Partial<Record<PostCategory, number>>;
+
+/** Pure tally over an already-fetched index — the sitemap has one in hand and
+ * shouldn't pay for a second query to count it. */
+export function countByCategory(index: PostIndexEntry[]): CategoryCounts {
+  const counts: CategoryCounts = {};
+  for (const post of index) {
+    if (post.category) counts[post.category] = (counts[post.category] ?? 0) + 1;
+  }
+  return counts;
+}
+
+/** Published-post count per category, for callers without an index of their own.
+ * Drives two decisions that have to agree: whether a category archive is
+ * indexable (`generateMetadata`) and whether it is listed in the sitemap — an
+ * archive with no articles is a ~120-word shell, and ten of them were sitting
+ * in Google's index.
+ *
+ * On a DB failure `getPostIndex` yields `[]`, so every category reads as empty
+ * and stays out of the index — the safe direction to fail. */
+export const getPostCountsByCategory = cache(
+  async (locale?: string): Promise<CategoryCounts> => countByCategory(await getPostIndex(locale)),
+);
 
 export async function getPostSlugs(locale?: string): Promise<string[]> {
   const index = await getPostIndex(locale);
