@@ -86,5 +86,14 @@ export const ChatbotLeads: CollectionConfig = {
         description: 'El contacto aceptó la política de privacidad (LOPD/RGPD)',
       },
     },
+    {
+      name: 'notifiedAt',
+      type: 'date',
+      admin: {
+        position: 'sidebar',
+        description:
+          'Cuándo se envió el email de aviso. Vacío = el lead solo está aquí y nadie ha sido avisado.',
+      },
+    },
   ],
 };
