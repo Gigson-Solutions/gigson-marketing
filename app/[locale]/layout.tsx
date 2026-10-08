@@ -8,6 +8,7 @@ import { routing } from '../../i18n/routing';
 import AttributionCapture from '../../src/components/Analytics/AttributionCapture';
 import ConsentScripts from '../../src/components/Analytics/ConsentScripts';
 import PageViewTracker from '../../src/components/Analytics/PageViewTracker';
+import { GTM_CONTAINER_ID } from '../../src/lib/gtm';
 import '../../src/App.css';
 
 const BASE_URL = 'https://gigsonsolutions.com';
@@ -69,6 +70,20 @@ export default async function LocaleLayout(props: Props) {
         <ConsentScripts />
       </head>
       <body>
+        {/* Google Tag Manager fallback for visitors with JavaScript disabled.
+            Note this path cannot read the Consent Mode state — the iframe has no
+            dataLayer — so anything the container fires on page view runs here
+            unconsented. Harmless while the container is empty; revisit before
+            adding GA4 or Ads tags inside GTM. */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_CONTAINER_ID}`}
+            title="Google Tag Manager"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <AttributionCapture />
         <PageViewTracker />
         <NextIntlClientProvider messages={messages}>
