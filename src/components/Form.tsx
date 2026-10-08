@@ -2,21 +2,24 @@
 
 import './Form.css';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { useState } from 'react';
 
 import NextLink from 'next/link';
 
+import { getAttribution } from '../lib/attribution';
+import { submitLead } from '../lib/leads/submitLead';
+import type { LeadResult } from '../lib/leads/types';
 import Button from '../shared/ui/Button';
 import AttributionFields from './Analytics/AttributionFields';
 
 // This form is rendered on both the home page and /contact, so the id has to
-// come from the call site — otherwise every lead looks like a home lead.
+// come from the call site — otherwise every lead looks like a home lead. It
+// also selects the subject and recipients, which now live server-side in
+// src/lib/leads/forms.ts rather than in hidden inputs anyone could read.
 type FormId = 'home' | 'contact';
 
-const SUBJECTS: Record<FormId, string> = {
-  home: 'Lead · Home · gigsonsolutions.com',
-  contact: 'Lead · Contacto · gigsonsolutions.com',
-};
+type SubmitState = 'idle' | 'sending' | LeadResult;
 
 type FormProps = {
   customClass?: string;
@@ -31,6 +34,9 @@ type FormProps = {
 
 const Form = ({ customClass, formId, titleAs: Heading = 'h2', title: titleOverride }: FormProps) => {
   const t = useTranslations('form');
+  const locale = useLocale();
+  const [state, setState] = useState<SubmitState>('idle');
+
   const title = titleOverride ?? t('title');
   const name = t.raw('name') as { label: string; placeholder: string };
   const service = t.raw('service') as { label: string; placeholder: string; services: string[] };
@@ -40,14 +46,48 @@ const Form = ({ customClass, formId, titleAs: Heading = 'h2', title: titleOverri
   const send = t('send');
   const checkbox = t.raw('checkbox') as { first: string; second: string; third: string };
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setState('sending');
+
+    const data = new FormData(event.currentTarget);
+    const value = (field: string) => String(data.get(field) ?? '');
+
+    const result = await submitLead({
+      form_id: formId,
+      locale: locale === 'en' ? 'en' : 'es',
+      page_path: window.location.pathname,
+      name: value('name'),
+      email: value('email'),
+      message: value('description'),
+      fields: { service: value('service'), budget: value('budget') },
+      // Read at submit time, not at render: the visitor may have accepted
+      // cookies after the form mounted.
+      attribution: getAttribution(),
+      rgpd: data.get('rgpd') === 'on',
+      company_website: value('company_website'),
+      rendered_at: Number(data.get('rendered_at')) || undefined,
+    });
+
+    setState(result);
+  };
+
+  if (state === 'sent') {
+    return (
+      <section className={`${customClass ?? ''} form-section`}>
+        <Heading className="form-h2">{title}</Heading>
+        <div className="form-success" role="status" aria-live="polite">
+          <p className="form-success-title">{t('successTitle')}</p>
+          <p>{t('successBody')}</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className={`${customClass ?? ''} form-section`}>
       <Heading className="form-h2">{title}</Heading>
-      <form
-        className="form"
-        action="https://formsubmit.co/jaume@somosgigson.com"
-        method="POST"
-      >
+      <form className="form" onSubmit={handleSubmit}>
         <div className="form-container">
           <div className="input-container first">
             <label className="input-container-label">{name.label}</label>
@@ -91,7 +131,7 @@ const Form = ({ customClass, formId, titleAs: Heading = 'h2', title: titleOverri
             />
           </div>
           <div className="input-container form-check">
-            <input type="checkbox" required className="input-radio" />
+            <input type="checkbox" name="rgpd" required className="input-radio" />
             <label>
               {checkbox.first}
               <NextLink
@@ -105,13 +145,19 @@ const Form = ({ customClass, formId, titleAs: Heading = 'h2', title: titleOverri
               {checkbox.third}
             </label>
           </div>
-          <input type="hidden" name="_subject" value={SUBJECTS[formId]} />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="box" />
-          <input type="hidden" name="_cc" value="emmelin@gigsonsolutions.com" />
           <AttributionFields formId={formId} />
         </div>
-        <Button type="submit" name={send} classStyle="form-btn-send" />
+        {(state === 'error' || state === 'rateLimited') && (
+          <p className="form-error" role="alert">
+            {t(state === 'rateLimited' ? 'errorRateLimit' : 'error')}
+          </p>
+        )}
+        <Button
+          type="submit"
+          name={state === 'sending' ? t('sending') : send}
+          classStyle="form-btn-send"
+          disabled={state === 'sending'}
+        />
       </form>
     </section>
   );

@@ -2,6 +2,7 @@ import config from '@payload-config';
 import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
+import { shouldBlockAsBot } from '@/lib/botid';
 import { featuresFromPayload } from '@/lib/estimator/payloadMapping';
 import { isValidEmail } from '@/lib/estimator/validate';
 import { getSessionByToken, updateSession } from '@/lib/estimator/session';
@@ -20,9 +21,9 @@ const LEAD_EMAIL_DISABLE = process.env.LEAD_EMAIL_DISABLE === 'true';
 // estimate" with the original ask of "leads send us info so we can
 // contact them with the final result."
 //
-// totalHours is deliberately NOT sent to the client here — it stays
-// hidden (blurred in the UI) until the user also books a call via the
-// Cal.com embed further down Step 6; see book-confirmed/route.ts.
+// No hour figure is sent to the client here — hours stay hidden (blurred
+// in the UI) until the user also books a call via the Cal.com embed further
+// down Step 6; see book-confirmed/route.ts.
 export async function POST(req: Request, { params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
   let body: unknown;
@@ -35,6 +36,13 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
 
   if (typeof website === 'string' && website.trim().length > 0) {
     return NextResponse.json({ ok: true, totalBudget: 0 });
+  }
+
+  // Bot check. Placed after the honeypot so an obvious bot never reaches it,
+  // and observe-only until BOTID_ENFORCE is turned on — until then a wrong
+  // verdict about a real visitor is logged, not a lost lead.
+  if (await shouldBlockAsBot('/api/estimator/sessions/[token]/lead')) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   }
 
   if (typeof email !== 'string' || !isValidEmail(email)) {
@@ -70,7 +78,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
       const featuresSummary = features
         .map(
           (f, i) =>
-            `${i + 1}. ${f.name} — Frontend ${f.hours.frontend}h / Backend ${f.hours.backend}h / QA ${f.hours.qa}h / UI-UX ${f.hours.uiux}h / BA-PM ${f.hours.bapm}h`,
+            `${i + 1}. ${f.name} — Consultoría ${f.hours.consulting}h / Desarrollo ${f.hours.building}h`,
         )
         .join('\n');
 

@@ -46,8 +46,7 @@ const CustomErp = () => {
           third-party tool to connect) — no logos grid, no partner disclaimer. */}
       <IntegrationContactForm
         namespace="customErp"
-        formEmail="jaume@somosgigson.com"
-        formSubject="Nueva consulta de ERP a medida"
+        formId="custom-erp"
         toolOptions={CUSTOM_ERP_TOOL_OPTIONS}
       />
       {faq && <ServiceFaq title={faq.title} faqs={faq.items} />}

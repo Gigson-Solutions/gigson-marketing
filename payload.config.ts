@@ -1,5 +1,5 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { buildConfig } from 'payload';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
 import { postgresAdapter } from '@payloadcms/db-postgres';
@@ -8,8 +8,10 @@ import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob';
 import sharp from 'sharp';
 import { OAuth2Plugin } from 'payload-oauth2';
 
+import { Authors } from './collections/Authors';
 import { ChatbotLeads } from './collections/ChatbotLeads';
 import { EstimatorSessions } from './collections/EstimatorSessions';
+import { Leads } from './collections/Leads';
 import { Media } from './collections/Media';
 import { migrations } from './migrations';
 import { Posts } from './collections/Posts';
@@ -31,7 +33,7 @@ export default buildConfig({
       beforeLogin: ['@/components/GoogleLoginButton#default'],
     },
   },
-  collections: [Posts, Media, Users, ChatbotLeads, EstimatorSessions],
+  collections: [Posts, Media, Users, ChatbotLeads, EstimatorSessions, Authors, Leads],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET ?? '',
   typescript: {

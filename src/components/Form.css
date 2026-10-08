@@ -296,3 +296,38 @@ input[type="radio"]:checked + label {
       width: 49vw;
    }
 }
+
+/* ── Submit states ──────────────────────────────────────────────────────────
+   Shown by Form.tsx and IntegrationContactForm.tsx. These forms used to
+   navigate away to FormSubmit's own thank-you page on submit; now they post to
+   /api/lead and report the outcome in place. */
+
+.form-success {
+  padding: 1.25rem 1.5rem;
+  background: rgba(151, 71, 255, 0.08);
+  border-left: 2px solid var(--gs-purple-deep);
+  border-radius: 0.25rem;
+  color: var(--gs-ink);
+  line-height: 1.5;
+}
+
+.form-success-title {
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.form-error {
+  margin-top: 1rem;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #8a1c1c;
+  background: rgba(190, 40, 40, 0.08);
+  border-left: 2px solid #be2828;
+  border-radius: 0.25rem;
+}
+
+.form-btn-send:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

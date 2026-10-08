@@ -15,6 +15,12 @@
    scrollbar-color: var(--gs-purple-30) transparent;
 }
 
+/* The chat launcher is fixed bottom-right above everything (z-1000) and
+   covers the modal's primary button on phones. */
+body.gs-dialog-open .gs-chat-launcher {
+   display: none;
+}
+
 /* WebKit / Blink */
 .gs-dialog-scroll::-webkit-scrollbar {
    width: 10px;

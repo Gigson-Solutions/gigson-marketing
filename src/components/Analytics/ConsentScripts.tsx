@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { useEffect, useState } from 'react';
 
 import { COOKIE_CONSENT_EVENT, getConsent } from '../../lib/cookieConsent';
+import { GTM_CONTAINER_ID } from '../../lib/gtm';
 
 declare global {
   interface Window {
@@ -54,6 +55,20 @@ const GoogleConsentScripts = () => {
             ad_personalization: granted ? 'granted' : 'denied',
             wait_for_update: 500
           });
+        `}
+      </Script>
+
+      {/* Google Tag Manager. Deliberately inside its own beforeInteractive block
+          declared *after* `consent-default`, and not as an async <Script src>:
+          gtm.js must never reach the dataLayer before the consent default is on
+          it, or tags inside the container fire one page view unconsented. */}
+      <Script id="gtm-loader" strategy="beforeInteractive">
+        {`
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');
         `}
       </Script>
 

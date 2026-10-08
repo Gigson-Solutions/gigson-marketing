@@ -20,6 +20,7 @@ import {
 } from './types';
 
 const MAX_DESCRIPTION_LENGTH = 10000;
+const MAX_FEATURE_DESCRIPTION_LENGTH = 1500;
 const MAX_COMPETITORS = 10;
 const MAX_COMPETITOR_LENGTH = 80;
 const MAX_FEATURES = 30;
@@ -209,7 +210,15 @@ export function validateInputs(raw: unknown): { ok: true; value: EstimatorInputs
   };
 }
 
-/** Validates + clamps a features array, whether it came from the LLM or from a client PATCH (manual edits). */
+/**
+ * Validates + clamps a features array, whether it came from the LLM or from
+ * the client (edits made in Step 5).
+ *
+ * The client never holds hours (see types.ts), so a client-sent feature
+ * arrives without them and comes back out of here with zeros — callers that
+ * accept client input must run the result through `mergeStoredHours`
+ * (lib/estimator/features.ts) to restore the server's own numbers.
+ */
 export function sanitizeFeatures(raw: unknown, source: 'ai' | 'manual'): EstimatorFeature[] {
   if (!Array.isArray(raw)) return [];
   const out: EstimatorFeature[] = [];
@@ -218,13 +227,8 @@ export function sanitizeFeatures(raw: unknown, source: 'ai' | 'manual'): Estimat
     const f = item as Record<string, unknown>;
     const name = typeof f.name === 'string' ? f.name.trim().slice(0, 200) : '';
     if (!name) continue;
-    const userStory = typeof f.userStory === 'string' ? f.userStory.trim().slice(0, 500) : '';
-    const acceptanceCriteria = Array.isArray(f.acceptanceCriteria)
-      ? f.acceptanceCriteria
-          .filter((c): c is string => typeof c === 'string' && c.trim().length > 0)
-          .slice(0, 10)
-          .map((c) => c.trim().slice(0, 300))
-      : [];
+    const description =
+      typeof f.description === 'string' ? f.description.trim().slice(0, MAX_FEATURE_DESCRIPTION_LENGTH) : '';
     const thirdPartyServices =
       typeof f.thirdPartyServices === 'string' ? f.thirdPartyServices.trim().slice(0, 200) || '-' : '-';
 
@@ -239,7 +243,7 @@ export function sanitizeFeatures(raw: unknown, source: 'ai' | 'manual'): Estimat
       typeof f.clientId === 'string' && f.clientId ? f.clientId.slice(0, 100) : `feat-${out.length}-${Date.now()}`;
     const featureSource = f.source === 'manual' || f.source === 'ai' ? f.source : source;
 
-    out.push({ clientId, name, userStory, acceptanceCriteria, thirdPartyServices, hours, source: featureSource });
+    out.push({ clientId, name, description, thirdPartyServices, hours, source: featureSource });
   }
   return out;
 }

@@ -3,8 +3,10 @@ import Anthropic from '@anthropic-ai/sdk';
 import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
+import { shouldBlockAsBot } from '@/lib/botid';
 import { computeTotalBudget, sumRoleHours, totalHoursOf } from '@/lib/estimator/calc';
 import { ESTIMATOR_HOURLY_RATE } from '@/lib/estimator/config';
+import { toPublicFeatures } from '@/lib/estimator/features';
 import { featuresToPayload } from '@/lib/estimator/payloadMapping';
 import { buildEstimatorSystemPrompt, buildEstimatorUserPrompt, GENERATE_FEATURES_TOOL } from '@/lib/estimator/prompt';
 import { getClientIp, isRateLimited } from '@/lib/estimator/rateLimit';
@@ -23,6 +25,12 @@ function getClient(): Anthropic | null {
 }
 
 export async function POST(req: Request) {
+  // Bot check before any model call — these endpoints cost real money per
+  // request. Observe-only until BOTID_ENFORCE is turned on.
+  if (await shouldBlockAsBot('/api/estimator/sessions')) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+  }
+
   let body: unknown;
   try {
     body = await req.json();
@@ -148,7 +156,10 @@ export async function POST(req: Request) {
       },
     });
 
-    return NextResponse.json({ ok: true, token, status: 'features_ready', features });
+    // Hours stay server-side — the browser only ever gets the use cases'
+    // text, so the Step 5/6 blur can't be peeled off in devtools. They're
+    // released by the book-confirmed route once a call is booked.
+    return NextResponse.json({ ok: true, token, status: 'features_ready', features: toPublicFeatures(features) });
   } catch (err) {
     console.error('[estimator] feature generation failed', err);
     try {

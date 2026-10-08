@@ -222,7 +222,7 @@ textarea.pe-textarea {
 
 .gs-card-select {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: var(--gs-space-3);
 }
 .gs-card-option {
@@ -481,13 +481,10 @@ textarea.pe-textarea {
   font-size: 16px;
   margin-bottom: var(--gs-space-3);
 }
-.pe-feature-main ol {
-  padding-left: 18px;
+.pe-feature-description {
   font-size: 13px;
   color: var(--gs-fg-2);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  line-height: 1.55;
 }
 .pe-feature-side p {
   font-size: 13px;
@@ -497,7 +494,7 @@ textarea.pe-textarea {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  min-width: 90px;
+  min-width: 110px;
 }
 .pe-feature-hours div {
   display: flex;
@@ -513,10 +510,31 @@ textarea.pe-textarea {
   font-size: 16px;
   color: var(--gs-purple-dark);
 }
+/* The per-use-case hours are never sent to the browser before the call is
+   booked (see ProjectEstimator.tsx Step 5) — this blurs the placeholder
+   that stands in for them. */
+.pe-feature-hours strong.is-blurred {
+  filter: blur(4px);
+  user-select: none;
+}
+/* Why the numbers above are blurred — shown once, above the use-case list. */
+.pe-hours-locked {
+  font-size: var(--gs-text-xs);
+  color: var(--gs-purple-dark);
+  background: var(--gs-lavender);
+  border-radius: var(--gs-radius-md);
+  padding: var(--gs-space-3) var(--gs-space-4);
+  margin-bottom: var(--gs-space-4);
+}
 
 @media (max-width: 900px) {
   .pe-shell {
     flex-direction: column;
+    /* flex-start in a column shrink-wraps the card to its content, so wide
+       steps (timeline stepper, Cal.com embed) made the whole page scroll
+       sideways. Stretch pins it to the viewport width. */
+    align-items: stretch;
+    gap: var(--gs-space-5);
   }
   .pe-sidebar {
     position: static;
@@ -591,7 +609,8 @@ textarea.pe-textarea {
 }
 .pe-totals {
   display: flex;
-  gap: var(--gs-space-7);
+  flex-wrap: wrap;
+  gap: var(--gs-space-5) var(--gs-space-7);
   margin: var(--gs-space-4) 0 var(--gs-space-5);
 }
 .pe-totals span {
@@ -656,24 +675,6 @@ textarea.pe-textarea {
   font-family: inherit;
   font-size: var(--gs-text-sm);
 }
-.feature-modal-hours {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-}
-.feature-modal-hours label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 11px;
-  text-align: center;
-}
-.feature-modal-hours input {
-  border: 1px solid var(--gs-stroke-soft);
-  border-radius: 8px;
-  padding: 6px;
-  text-align: center;
-}
 .feature-modal-actions {
   display: flex;
   justify-content: flex-end;
@@ -682,10 +683,18 @@ textarea.pe-textarea {
 .lead-modal {
   position: relative;
 }
+.lead-modal h3 {
+  padding-right: 40px; /* keep the title clear of the close button */
+}
 .lead-modal-close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   border: none;
   background: none;
   font-size: 22px;
@@ -701,4 +710,121 @@ textarea.pe-textarea {
 .lead-modal-error {
   color: var(--gs-error);
   font-size: var(--gs-text-xs);
+}
+
+/* ── Phone layout ─────────────────────────────────────────────────
+   Kept at the end of the file so it wins over the step 5/6 rules above.
+   Page padding + card padding + nested panel padding left ~200px of usable
+   width on a 390px phone; this reclaims it. */
+.project-estimator button {
+  /* App.css sets `hyphens: auto` on every button, which split labels like
+     "SI-GUIENTE" once the columns got narrow. */
+  hyphens: manual;
+}
+
+@media (max-width: 900px) {
+  /* Compact stepper: numbers only, plus the label of the current step. */
+  .pe-sidebar ol {
+    justify-content: space-between;
+    gap: var(--gs-space-1, 4px);
+  }
+  .pe-sidebar li {
+    padding: 6px;
+    white-space: nowrap;
+  }
+  .pe-sidebar li.is-active {
+    padding-right: 14px;
+  }
+  .pe-sidebar li:not(.is-active) > span:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Not even the active label fits beside six numbers at phone width; the
+     card's "Paso X de 6" already names the step. */
+  .pe-sidebar li.is-active {
+    padding-right: 6px;
+  }
+  .pe-sidebar li.is-active > span:last-child {
+    display: none;
+  }
+  .pe-shell {
+    /* Let the card use most of the screen instead of the page gutter. */
+    margin-inline: calc(var(--gs-space-4) - var(--gs-padding-inline));
+  }
+  .pe-main {
+    padding: var(--gs-space-5) 20px;
+  }
+  .pe-field h3,
+  .pe-eyebrow {
+    font-size: 17px;
+  }
+
+  .pe-step-nav {
+    flex-wrap: wrap;
+  }
+  .pe-step-nav > button {
+    flex: 1 1 140px;
+  }
+  .project-estimator .btn,
+  .project-estimator .btn-secondary {
+    padding: 12px 20px;
+  }
+
+  .pe-tabs {
+    display: flex;
+  }
+  .pe-tabs button {
+    flex: 1 1 0;
+    padding: 8px 12px;
+  }
+  .pe-timeline-field {
+    flex-wrap: wrap;
+  }
+  .gs-numeric-stepper input {
+    width: 56px;
+  }
+
+  .pe-feature-card {
+    padding: var(--gs-space-4);
+    gap: var(--gs-space-4);
+  }
+  .pe-feature-main {
+    padding-right: 72px; /* clear the absolute edit/delete buttons */
+  }
+  .pe-feature-hours {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .pe-gantt-row {
+    grid-template-columns: 90px 1fr;
+  }
+
+  .pe-final-estimate {
+    /* Bleed into the card's padding: the Cal.com month view needs the room. */
+    margin-inline: -20px;
+    padding: var(--gs-space-5) 20px;
+  }
+  .pe-totals {
+    flex-wrap: wrap;
+    gap: var(--gs-space-5);
+  }
+  .pe-totals strong {
+    white-space: nowrap;
+  }
+  .pe-book-call-wrapper {
+    margin-inline: -20px;
+    padding: var(--gs-space-4) 12px;
+  }
+
+  .feature-modal,
+  .lead-modal {
+    padding: var(--gs-space-3);
+  }
+  .feature-modal-actions > button {
+    flex: 1 1 0;
+  }
 }

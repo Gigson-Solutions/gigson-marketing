@@ -21,7 +21,10 @@ const intlMiddleware = createMiddleware(routing);
 // index, which does exist in both locales.
 const blogPostMiddleware = createMiddleware({ ...routing, localeDetection: false });
 
-const UNPREFIXED_BLOG_POST = /^\/blog\/[^/]+/;
+// Anchored to exactly one segment after `/blog/` (optionally trailed by a
+// single slash) — unanchored, this used to also match `/blog/authors/…` or
+// `/blog/category/…`, which would then skip locale detection for those too.
+const UNPREFIXED_BLOG_POST = /^\/blog\/[^/]+\/?$/;
 
 export default function middleware(request: NextRequest) {
   const handle = UNPREFIXED_BLOG_POST.test(request.nextUrl.pathname)
@@ -38,6 +41,10 @@ export const config = {
     // live outside the [locale] segment, e.g. /shapes-lab), and file-convention
     // metadata routes (og/twitter images have no dot in their URL, so they need
     // an explicit exclusion here too).
-    '/((?!admin|api|_next/static|_next/image|fav\\.png|img|apply-sdr|opengraph-image|twitter-image|icon|shapes-lab|.*\\..*).*)',
+    // `149e9513-…` is the fixed prefix withBotId rewrites to Vercel's
+    // bot-protection API. It has no dot and doesn't start with `api`, so
+    // without naming it here next-intl would match it, prepend a locale and
+    // break every checkBotId() call in production.
+    '/((?!admin|api|149e9513-01fa-4fb0-aad4-566afd725d1b|_next/static|_next/image|fav\\.png|img|apply-sdr|opengraph-image|twitter-image|icon|shapes-lab|.*\\..*).*)',
   ],
 };

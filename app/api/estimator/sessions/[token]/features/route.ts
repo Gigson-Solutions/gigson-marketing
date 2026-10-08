@@ -3,7 +3,8 @@ import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
 import { computeTotalBudget, sumRoleHours, totalHoursOf } from '@/lib/estimator/calc';
-import { featuresToPayload } from '@/lib/estimator/payloadMapping';
+import { mergeStoredHours } from '@/lib/estimator/features';
+import { featuresFromPayload, featuresToPayload } from '@/lib/estimator/payloadMapping';
 import { sanitizeFeatures } from '@/lib/estimator/validate';
 import { getSessionByToken, updateSession } from '@/lib/estimator/session';
 
@@ -19,8 +20,8 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ token:
   } catch {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
   }
-  const features = sanitizeFeatures((body as Record<string, unknown>)?.features, 'manual');
-  if (features.length === 0) {
+  const clientFeatures = sanitizeFeatures((body as Record<string, unknown>)?.features, 'manual');
+  if (clientFeatures.length === 0) {
     return NextResponse.json({ error: 'At least one feature is required' }, { status: 400 });
   }
 
@@ -28,6 +29,9 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ token:
   const session = await getSessionByToken(payloadClient, token);
   if (!session) return NextResponse.json({ error: 'Session not found' }, { status: 404 });
 
+  // Same rule as /finalize: hours come from what we stored, never from the
+  // client (which doesn't have them in the first place).
+  const features = mergeStoredHours(clientFeatures, featuresFromPayload(session.features));
   const roleHours = sumRoleHours(features);
   const totalHours = totalHoursOf(roleHours);
   const totalBudget = computeTotalBudget(totalHours, session.hourlyRate ?? 0);

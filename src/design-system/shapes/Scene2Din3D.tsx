@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 
-import { outline, type OutlineName, type Point3, rotate, rotateXYZ } from './geometry';
+import { outline, type Point3, rotate, rotateXYZ } from './geometry';
 
 const PERSPECTIVE = 420;
 // Default camera. Off-axis so planes read as planes rather than flat outlines.

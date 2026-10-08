@@ -9,14 +9,14 @@ import '../../../src/components/Footer/LandingFooter.css';
 import logoImg from '../../../src/assets/Logo.svg';
 import logoFooter from '../../../src/assets/LogoFooter.svg';
 import CookieBanner from '../../../src/CookieBanner';
-import type { AppPathnames } from '../../../i18n/routing';
+import type { StaticPathnames } from '../../../i18n/routing';
 import { Link } from '../../../i18n/navigation';
 
 type Props = {
   children: React.ReactNode;
 };
 
-type NavPathname = Exclude<AppPathnames, '/blog/[slug]'>;
+type NavPathname = StaticPathnames;
 
 const LandingFooter = () => {
   const t = useTranslations('menu');

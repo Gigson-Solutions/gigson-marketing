@@ -2,6 +2,7 @@ import process from 'node:process';
 
 import createNextIntlPlugin from 'next-intl/plugin';
 import { withPayload } from '@payloadcms/next/withPayload';
+import { withBotId } from 'botid/next/config';
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
@@ -56,4 +57,9 @@ const nextConfig = {
         ],
 };
 
-export default withPayload(withNextIntl(nextConfig));
+// withBotId outermost: it contributes the `rewrites` that proxy BotID's
+// challenge, and nothing else in this chain defines any. Those rewrites live
+// under a fixed `/149e9513-.../` prefix which `middleware.ts` has to exclude
+// from the next-intl matcher — middleware runs before rewrites, so without
+// that exclusion the challenge gets a locale prefix and never resolves.
+export default withBotId(withPayload(withNextIntl(nextConfig)));

@@ -2,11 +2,14 @@
 
 import '../../Form.css';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 import Bgcont from '../../../assets/Group 33770.svg';
+import { getAttribution } from '../../../lib/attribution';
+import { submitLead } from '../../../lib/leads/submitLead';
+import type { LeadResult } from '../../../lib/leads/types';
 import Button from '../../../shared/ui/Button';
 import AttributionFields from '../../Analytics/AttributionFields';
 
@@ -98,6 +101,10 @@ const ToolMultiSelect = ({ placeholder, options }: { placeholder: string; option
               value={search}
               onChange={e => setSearch(e.target.value)}
               onClick={e => e.stopPropagation()}
+              // El input vive dentro del desplegable y solo se monta al abrirlo
+              // con un clic: el foco no salta al cargar la página, va donde el
+              // usuario acaba de pedir escribir.
+              // eslint-disable-next-line jsx-a11y/no-autofocus
               autoFocus
               style={{
                 display: 'block',
@@ -192,14 +199,57 @@ const CHECKBOX_STYLE: React.CSSProperties = {
 };
 
 /* ── Component ───────────────────────────────────────────────────── */
-type Props = { namespace: string; formEmail: string; formSubject: string; toolOptions: string[] };
+type SubmitState = 'idle' | 'sending' | LeadResult;
 
-const IntegrationContactForm = ({ namespace, formEmail, formSubject, toolOptions }: Props) => {
+/* `formId` replaces the old `formEmail`/`formSubject` pair: the recipient and
+   the subject now live in src/lib/leads/forms.ts, server-side, instead of being
+   hidden inputs that put the address in the public HTML. */
+type Props = { namespace: string; formId: string; toolOptions: string[] };
+
+const IntegrationContactForm = ({ namespace, formId, toolOptions }: Props) => {
   const t = useTranslations(namespace);
+  // Submit-state copy is shared by every lead form, so it lives in the root
+  // `form` namespace rather than being duplicated across the three
+  // integration namespaces.
+  const tStatus = useTranslations('form');
+  const locale = useLocale();
+  const [state, setState] = useState<SubmitState>('idle');
   const form = t.raw('form') as FormData;
   const { title, fields, send, checkbox, legalNotice } = form;
 
   const bgSrc = typeof Bgcont === 'string' ? Bgcont : (Bgcont as { src: string }).src;
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setState('sending');
+
+    const data = new FormData(event.currentTarget);
+    const value = (field: string) => String(data.get(field) ?? '');
+
+    // The data-type checkboxes are one input per option; collapse them back
+    // into the single comma-separated answer the notification reads.
+    const dataTypes = fields.dataTypes.options
+      .filter((option) => data.get(`data_${option.toLowerCase()}`))
+      .join(', ');
+
+    const result = await submitLead({
+      form_id: formId,
+      locale: locale === 'en' ? 'en' : 'es',
+      page_path: window.location.pathname,
+      name: value('name'),
+      email: value('email'),
+      phone: value('phone'),
+      company: value('company'),
+      message: value('problem'),
+      fields: { tool: value('tool'), data_types: dataTypes },
+      attribution: getAttribution(),
+      rgpd: data.get('rgpd') === 'on',
+      company_website: value('company_website'),
+      rendered_at: Number(data.get('rendered_at')) || undefined,
+    });
+
+    setState(result);
+  };
 
   return (
     <section
@@ -215,16 +265,14 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject, toolOptions
       <div className="max-w-[88.875rem] mx-auto">
         <section className="form-section">
           <h2 className="form-h2">{title}</h2>
-          <form
-            className="form"
-            action={`https://formsubmit.co/${formEmail}`}
-            method="POST"
-          >
-            <input type="hidden" name="_subject" value={formSubject} />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="box" />
-            <input type="hidden" name="_cc" value="emmelin@gigsonsolutions.com" />
-            <AttributionFields formId="integrations" />
+          {state === 'sent' ? (
+            <div className="form-success" role="status" aria-live="polite">
+              <p className="form-success-title">{tStatus('successTitle')}</p>
+              <p>{tStatus('successBody')}</p>
+            </div>
+          ) : (
+          <form className="form" onSubmit={handleSubmit}>
+            <AttributionFields formId={formId} />
 
             <div className="form-container">
               <div className="input-container">
@@ -284,6 +332,7 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject, toolOptions
               <div className="input-container form-check">
                 <input
                   type="checkbox"
+                  name="rgpd"
                   required
                   style={CHECKBOX_STYLE}
                 />
@@ -302,8 +351,20 @@ const IntegrationContactForm = ({ namespace, formEmail, formSubject, toolOptions
               </div>
             </div>
 
-            <Button type="submit" name={send} classStyle="form-btn-send" />
+            {(state === 'error' || state === 'rateLimited') && (
+              <p className="form-error" role="alert">
+                {tStatus(state === 'rateLimited' ? 'errorRateLimit' : 'error')}
+              </p>
+            )}
+
+            <Button
+              type="submit"
+              name={state === 'sending' ? tStatus('sending') : send}
+              classStyle="form-btn-send"
+              disabled={state === 'sending'}
+            />
           </form>
+          )}
         </section>
 
         {legalNotice && (

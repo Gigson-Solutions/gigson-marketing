@@ -80,27 +80,30 @@ export const EstimatorSessions: CollectionConfig = {
     { name: 'timelinePhase2Months', type: 'number' },
     { name: 'timelinePhaseFutureMonths', type: 'number' },
 
-    // ── Step 5: AI-generated / edited features ──
+    // ── Step 5: AI-generated / edited use cases ──
+    // A use case carries ONE plain-language `description` (no user story, no
+    // acceptance criteria — the prospect reading it is not a product owner),
+    // and its hours are split between just two roles: consulting and
+    // building. The pre-2026-09-18 columns (user_story, hours_frontend/qa/
+    // backend/uiux/bapm and the acceptance-criteria table) are intentionally
+    // left in the database holding the old sessions' data; they're simply no
+    // longer part of the schema. See the matching migration.
     {
       name: 'features',
       type: 'array',
       fields: [
         { name: 'clientId', type: 'text' },
         { name: 'name', type: 'text', required: true },
-        { name: 'userStory', type: 'text' },
-        { name: 'acceptanceCriteria', type: 'array', fields: [{ name: 'criterion', type: 'text' }] },
+        { name: 'description', type: 'textarea' },
         { name: 'thirdPartyServices', type: 'text' },
-        { name: 'hoursFrontend', type: 'number', defaultValue: 0 },
-        { name: 'hoursQa', type: 'number', defaultValue: 0 },
-        { name: 'hoursBackend', type: 'number', defaultValue: 0 },
-        { name: 'hoursUiux', type: 'number', defaultValue: 0 },
-        { name: 'hoursBapm', type: 'number', defaultValue: 0 },
+        { name: 'hoursConsulting', type: 'number', defaultValue: 0 },
+        { name: 'hoursBuilding', type: 'number', defaultValue: 0 },
         { name: 'source', type: 'select', options: ['ai', 'manual'], defaultValue: 'manual' },
       ],
     },
 
     // ── Step 6: deterministic outputs ──
-    { name: 'teamComposition', type: 'json' }, // { frontend, qa, backend, uiux, bapm } FTE
+    { name: 'teamComposition', type: 'json' }, // { consulting, building } FTE
     { name: 'timeline', type: 'json' }, // { totalWeeks, bars: [{ role, startWeek, endWeek }] }
     { name: 'totalHours', type: 'number' },
     { name: 'totalBudget', type: 'number' },

@@ -2,16 +2,18 @@ import config from '@payload-config';
 import { getPayload } from 'payload';
 import { NextResponse } from 'next/server';
 
+import { roleHoursFromPayloadFeatures } from '@/lib/estimator/payloadMapping';
 import { getSessionByToken, updateSession } from '@/lib/estimator/session';
 
 export const runtime = 'nodejs';
 
-// Second gate on Step 6: totalHours is withheld by /lead (see its comment)
-// and only released once the user completes a booking in the Cal.com embed
-// (BookCallGate.tsx), which fires this on Cal.com's `bookingSuccessful`
-// postMessage event. Requires a lead to already exist on the session —
-// booking without having gone through /lead first isn't a state the UI
-// allows, but we don't trust the client either way.
+// Second gate on Step 6: every hour figure (the total and the consulting /
+// building split) is withheld until the user completes a booking in the
+// Cal.com embed (BookCallGate.tsx), which fires this on Cal.com's
+// `bookingSuccessful` postMessage event. This route is the ONLY place the
+// estimator hands hours to the browser. Requires a lead to already exist on
+// the session — booking without having gone through /lead first isn't a
+// state the UI allows, but we don't trust the client either way.
 export async function POST(_req: Request, { params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
 
@@ -29,5 +31,9 @@ export async function POST(_req: Request, { params }: { params: Promise<{ token:
     return NextResponse.json({ error: 'Could not save your booking. Please try again.' }, { status: 503 });
   }
 
-  return NextResponse.json({ ok: true, totalHours: session.totalHours ?? 0 });
+  return NextResponse.json({
+    ok: true,
+    totalHours: session.totalHours ?? 0,
+    roleHours: roleHoursFromPayloadFeatures(session.features),
+  });
 }

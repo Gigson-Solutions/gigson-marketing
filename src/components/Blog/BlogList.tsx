@@ -1,22 +1,12 @@
 'use client';
 
-import { useMemo, useState } from 'react';
 import { useTranslations, useFormatter } from 'next-intl';
 
 import type { Post, PostCategory } from '../../../lib/posts';
 import { estimateReadingTime } from '../../../lib/readingTime';
 import { Link } from '../../../i18n/navigation';
+import CategoryNav from './CategoryNav';
 import PostCover from './PostCover';
-
-const CATEGORY_ORDER: PostCategory[] = [
-  'agentes-ia',
-  'integraciones-erp',
-  'casos-exito',
-  'sectores',
-  'ingenieria-software',
-  'consultoria-tecnologica',
-  'ciberseguridad',
-];
 
 const CategoryBadge = ({ category }: { category?: PostCategory }) => {
   const t = useTranslations('blog');
@@ -54,7 +44,7 @@ const PostMeta = ({ post }: { post: Post }) => {
   );
 };
 
-const FeaturedPost = ({ post }: { post: Post }) => {
+export const FeaturedPost = ({ post }: { post: Post }) => {
   const t = useTranslations('blog');
 
   return (
@@ -79,7 +69,7 @@ const FeaturedPost = ({ post }: { post: Post }) => {
   );
 };
 
-const PostCard = ({ post }: { post: Post }) => {
+export const PostCard = ({ post }: { post: Post }) => {
   const t = useTranslations('blog');
 
   return (
@@ -104,35 +94,19 @@ const PostCard = ({ post }: { post: Post }) => {
   );
 };
 
-type Props = { posts: Post[] };
+type Props = { posts: Post[]; locale: string };
 
-const BlogList = ({ posts }: Props) => {
+/**
+ * `/blog` always shows every post — picking a category in `CategoryNav` now
+ * navigates to that category's own archive page (`/blog/category/[category]`)
+ * instead of filtering this list client-side. That page is what's indexable
+ * per category; this index stays the single "everything, newest first" view.
+ */
+const BlogList = ({ posts, locale }: Props) => {
   const t = useTranslations('blog');
-  const [activeCategory, setActiveCategory] = useState<PostCategory | 'all'>('all');
 
-  const categories = useMemo(() => {
-    const present = CATEGORY_ORDER.filter((cat) => posts.some((p) => p.category === cat));
-    return [
-      { id: 'all' as const, label: t('allCategories'), count: posts.length },
-      ...present.map((cat) => ({
-        id: cat,
-        label: t(`categories.${cat}`),
-        count: posts.filter((p) => p.category === cat).length,
-      })),
-    ];
-  }, [posts, t]);
-
-  const filteredPosts = useMemo(
-    () => (activeCategory === 'all' ? posts : posts.filter((p) => p.category === activeCategory)),
-    [posts, activeCategory]
-  );
-
-  // Featured treatment for the most recent post only applies to the
-  // unfiltered view — filtering by category shows a plain grid instead,
-  // so "featured" never looks like it's competing with the active filter.
-  const showFeatured = activeCategory === 'all';
-  const featured = showFeatured ? filteredPosts[0] : undefined;
-  const rest = showFeatured ? filteredPosts.slice(1) : filteredPosts;
+  const featured = posts[0];
+  const rest = posts.slice(1);
 
   return (
     <div className="px-landing mt-fixed-navbar pt-14 lg:pt-20 pb-20 lg:pb-32">
@@ -143,27 +117,7 @@ const BlogList = ({ posts }: Props) => {
           <p className="text-subtitle text-dark-medium">{t('empty')}</p>
         ) : (
           <>
-            {categories.length > 1 && (
-              <div className="flex flex-wrap gap-3 mb-12 lg:mb-16">
-                {categories.map((cat) => {
-                  const isActive = cat.id === activeCategory;
-                  return (
-                    <button
-                      key={cat.id}
-                      type="button"
-                      onClick={() => setActiveCategory(cat.id)}
-                      className={`inline-flex items-center rounded-full border px-5 py-2 text-body transition-colors ${
-                        isActive
-                          ? 'bg-purple-accents border-purple-accents text-cream'
-                          : 'border-ink text-dark-primary hover:border-purple-accents hover:text-purple-accents'
-                      }`}
-                    >
-                      {cat.label} ({cat.count})
-                    </button>
-                  );
-                })}
-              </div>
-            )}
+            <CategoryNav posts={posts} locale={locale} />
 
             {featured && (
               <div className="mb-12 lg:mb-16">

@@ -11,7 +11,7 @@ const AiManifest = () => {
   return (
     <div className="wrapper">
       <div className="policity-main">
-        <h2 className="policity-h2">{t('h2_1')}</h2>
+        <h1 className="policity-h2">{t('h2_1')}</h1>
         <p className="p-comun">{t('pc_intro')}</p>
         <h3 className="policity-h3">{t('h3_1')}</h3>
         <p className="p-comun">{t('pc_1_1')}</p>
