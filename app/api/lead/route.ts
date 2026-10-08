@@ -7,6 +7,7 @@ import { BOTID_ENFORCE } from '@/lib/botid';
 import { LEAD_FORMS, type FormDefinition } from '@/lib/leads/forms';
 import { isAllowedOrigin } from '@/lib/leads/origin';
 import type { LeadRequest } from '@/lib/leads/types';
+import { sendLeadNotification } from '@/lib/email/sendLeadNotification';
 import { getClientIp, isLeadRateLimited } from '@/lib/rateLimit';
 
 export const runtime = 'nodejs';
@@ -184,18 +185,7 @@ export async function POST(req: Request) {
   // ── 2. Notify by email (best-effort) ──────────────────────────────────────
   let emailed = false;
   if (shouldEmail) {
-    const emailFields: Record<string, string> = {
-      _subject: def.subject,
-      _cc: [LEAD_EMAIL_CC, ...(def.cc ?? [])].filter(Boolean).join(','),
-      _template: 'box',
-      // Correct here in a way it never was in the page: this is a
-      // server-to-server call to a recipient the public can't see, and the
-      // bot checks above have already run. FormSubmit's own captcha would
-      // just fail an AJAX call from a server.
-      _captcha: 'false',
-      Formulario: body.form_id,
-    };
-    if (canonical.email) emailFields._replyto = canonical.email;
+    const emailFields: Record<string, string> = { Formulario: body.form_id };
     if (canonical.name) emailFields.Nombre = canonical.name;
     if (canonical.email) emailFields.Email = canonical.email;
     if (canonical.phone) emailFields['Teléfono'] = canonical.phone;
@@ -209,19 +199,17 @@ export async function POST(req: Request) {
     }
     emailFields['Página'] = str(body.page_path, 256) || '—';
 
-    try {
-      const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(LEAD_EMAIL_TO)}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(emailFields),
-      });
-      emailed = res.ok;
-      if (!res.ok) {
-        console.warn('[lead] FormSubmit non-ok:', res.status, await res.text().catch(() => ''));
-      }
-    } catch (emailErr) {
-      // Email is best-effort: the lead is already in the database.
-      console.warn('[lead] FormSubmit request failed (non-critical):', emailErr);
+    const sent = await sendLeadNotification({
+      to: LEAD_EMAIL_TO,
+      cc: [LEAD_EMAIL_CC, ...(def.cc ?? [])].filter(Boolean),
+      replyTo: canonical.email || undefined,
+      subject: def.subject,
+      fields: emailFields,
+    });
+    emailed = sent.ok;
+    if (!sent.ok) {
+      // error, not warn: the lead is saved but nobody has been told about it.
+      console.error('[lead] notification failed:', sent.reason);
     }
   }
 
