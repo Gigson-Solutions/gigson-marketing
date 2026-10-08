@@ -6,7 +6,7 @@ import JsonLd from '../../../../../../src/shared/ui/JsonLd';
 import PostCover from '../../../../../../src/components/Blog/PostCover';
 import { Link } from '../../../../../../i18n/navigation';
 import { getAuthorBySlug, getAuthorSlugs, getPostsByAuthor } from '../../../../../../lib/authors';
-import { buildBreadcrumbSchema, buildPersonSchema } from '../../../../../../lib/schema';
+import { buildBreadcrumbSchema, buildPersonSchema, SITE_NAME } from '../../../../../../lib/schema';
 
 export const revalidate = 3600;
 type Props = { params: Promise<{ locale: string; author: string }> };
@@ -36,7 +36,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   return {
     title,
     description,
-    openGraph: { type: 'profile', title, description },
+    openGraph: { siteName: SITE_NAME, type: 'profile', title, description },
   };
 }
 

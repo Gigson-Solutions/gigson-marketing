@@ -69,6 +69,15 @@
             "consultoria-tecnologica": "Consultoría tecnológica",
             "casos-exito": "Casos de éxito",
             "sectores": "Sectores"
+        },
+        "categoryDescriptions": {
+            "agentes-ia": "Artículos sobre agentes de IA conectados a tus sistemas: cómo diseñarlos, integrarlos con tu ERP y medir lo que de verdad ahorran.",
+            "integraciones-erp": "Guías de integración de Holded, Odoo y otros ERP: sincronización de datos, automatización de procesos y errores que salen caros.",
+            "ciberseguridad": "Ciberseguridad práctica para pymes: ISO 27001 sobre tu operativa real, gestión de riesgos y controles que aguantan el día a día.",
+            "ingenieria-software": "Ingeniería de software aplicada: arquitectura, calidad, despliegue continuo y las decisiones técnicas que marcan el coste de un producto.",
+            "consultoria-tecnologica": "Consultoría tecnológica y CTO as a Service: cómo priorizar la inversión en tecnología, elegir stack y gobernar un equipo técnico.",
+            "casos-exito": "Casos de éxito reales de Gigson Solutions: el problema de partida, qué construimos y qué resultados medimos después con cada cliente.",
+            "sectores": "Tecnología por sector: logística, retail y ecommerce, construcción y servicios profesionales, con los procesos propios de cada uno."
         }
     },
     "hero_link": "/es/contacto",
@@ -3654,15 +3663,15 @@
         },
         "policy": {
             "title": "Política de privacidad | Gigson Solutions",
-            "description": "Información sobre el tratamiento de datos personales por Gigson Solutions según la normativa aplicable."
+            "description": "Cómo recoge, usa y conserva Gigson Solutions (Awesomely SL) los datos personales, la base legal de cada finalidad y cómo ejercer tus derechos."
         },
         "notice": {
             "title": "Aviso legal | Gigson Solutions",
-            "description": "Información legal sobre el sitio web gigsonsolutions.com y condiciones de uso."
+            "description": "Aviso legal de gigsonsolutions.com: datos identificativos de Awesomely SL, condiciones de uso, propiedad intelectual y jurisdicción aplicable."
         },
         "cookies": {
             "title": "Política de cookies | Gigson Solutions",
-            "description": "Uso de cookies y tecnologías similares en nuestro sitio web."
+            "description": "Qué cookies instala gigsonsolutions.com, para qué sirve cada una, cuánto duran y cómo aceptarlas, rechazarlas o cambiar tu elección cuando quieras."
         },
         "notFound": {
             "title": "Página no encontrada | Gigson Solutions",

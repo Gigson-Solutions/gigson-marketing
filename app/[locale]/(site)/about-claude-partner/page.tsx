@@ -11,6 +11,7 @@ import {
   buildServiceSchema,
   faqItemsFrom,
   localizedUrl,
+  SITE_NAME,
 } from '../../../../lib/schema';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -37,7 +38,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/about-claude-partner`,
       },
     },
-    openGraph: { type: 'website', title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

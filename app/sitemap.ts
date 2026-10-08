@@ -1,7 +1,14 @@
 import type { MetadataRoute } from 'next';
 
-import { getPostIndex, type PostIndexEntry } from '../lib/posts';
+import {
+  countByCategory,
+  getPostIndex,
+  type CategoryCounts,
+  type PostCategory,
+  type PostIndexEntry,
+} from '../lib/posts';
 import { CATEGORY_SLUGS } from '../lib/blogCategories';
+import { categoryUrl } from '../lib/schema';
 
 // Without this the sitemap is baked in at build time (Next defaults to a
 // static route for a generator with no dynamic params) — new posts wouldn't
@@ -104,17 +111,28 @@ function blogIndexEntries(esPosts: PostIndexEntry[], enPosts: PostIndexEntry[]):
 // featured link to the matching service page, see lib/blogCategories.ts),
 // not `noindex`: the anti-cannibalization guard is the featured link + the
 // "Artículos sobre X" framing, not hiding the page from Google.
-function getCategoryEntries(): MetadataRoute.Sitemap {
-  return (Object.entries(CATEGORY_SLUGS) as [keyof typeof CATEGORY_SLUGS, { es: string; en: string }][]).flatMap(
-    ([, slugs]) => {
-      const enUrl = `${ORIGIN}/blog/category/${slugs.en}`;
-      const esUrl = `${ORIGIN}/es/blog/categoria/${slugs.es}`;
-      return [
-        { url: enUrl, alternates: { languages: { en: enUrl, es: esUrl } }, priority: 0.5, changeFrequency: 'weekly' as const },
-        { url: esUrl, alternates: { languages: { en: enUrl, es: esUrl } }, priority: 0.5, changeFrequency: 'weekly' as const },
-      ];
-    },
-  );
+//
+// An archive with zero posts is a separate question, and the answer is no: ten
+// of the fourteen listed nothing at all, so the page holds itself back with
+// `robots: noindex` and this skips it here. Both sides read the same counts, so
+// they can't drift. A category rejoins both the moment its first post ships.
+function getCategoryEntries(esCounts: CategoryCounts, enCounts: CategoryCounts): MetadataRoute.Sitemap {
+  return (Object.keys(CATEGORY_SLUGS) as PostCategory[]).flatMap((category) => {
+    const enUrl = categoryUrl(category, 'en');
+    const esUrl = categoryUrl(category, 'es');
+    const languages = { en: enUrl, es: esUrl };
+    const entry = (url: string) => ({
+      url,
+      alternates: { languages },
+      priority: 0.5,
+      changeFrequency: 'weekly' as const,
+    });
+
+    return [
+      ...((enCounts[category] ?? 0) > 0 ? [entry(enUrl)] : []),
+      ...((esCounts[category] ?? 0) > 0 ? [entry(esUrl)] : []),
+    ];
+  });
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -125,7 +143,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...makeStaticEntries(),
-    ...getCategoryEntries(),
+    ...getCategoryEntries(countByCategory(esPosts), countByCategory(enPosts)),
     ...blogIndexEntries(esPosts, enPosts),
     ...postEntries('es', esPosts),
     ...postEntries('en', enPosts),

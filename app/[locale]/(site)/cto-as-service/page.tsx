@@ -10,6 +10,7 @@ import {
   buildServiceSchema,
   breadcrumbLabel,
   faqItemsFrom,
+  SITE_NAME,
 } from '../../../../lib/schema';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -32,12 +33,14 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical,
       languages: {
-        en: canonical,
+        // `canonical` is locale-dependent, so on /es both `en` and `x-default`
+        // used to resolve to the Spanish URL.
+        en: `${ORIGIN}/cto-as-service`,
         es: `${ORIGIN}/es/cto-as-service`,
-        'x-default': canonical,
+        'x-default': `${ORIGIN}/cto-as-service`,
       },
     },
-    openGraph: { type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

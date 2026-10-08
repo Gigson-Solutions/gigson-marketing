@@ -9,6 +9,7 @@ import AttributionCapture from '../../src/components/Analytics/AttributionCaptur
 import ConsentScripts from '../../src/components/Analytics/ConsentScripts';
 import PageViewTracker from '../../src/components/Analytics/PageViewTracker';
 import { GTM_CONTAINER_ID } from '../../src/lib/gtm';
+import { SITE_NAME } from '../../lib/schema';
 import '../../src/App.css';
 
 const BASE_URL = 'https://gigsonsolutions.com';
@@ -25,6 +26,10 @@ export function generateStaticParams() {
 export async function generateMetadata(props: Props): Promise<Metadata> {
   return {
     metadataBase: new URL(BASE_URL),
+    // Only reaches routes that declare no `openGraph` of their own (not-found).
+    // Next replaces the key per segment instead of merging it, so every page
+    // with its own object repeats `siteName: SITE_NAME` — see lib/schema.ts.
+    openGraph: { siteName: SITE_NAME },
     alternates: {
       languages: {
         'en': BASE_URL,
