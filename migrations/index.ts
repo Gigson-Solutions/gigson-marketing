@@ -7,6 +7,7 @@ import * as migration_20260909_120100_add_estimator_sessions_call_booked from '.
 import * as migration_20260918_100000_estimator_features_description_and_two_roles from './20260918_100000_estimator_features_description_and_two_roles';
 import * as migration_20260918_130000_add_authors from './20260918_130000_add_authors';
 import * as migration_20261005_100000_add_leads from './20261005_100000_add_leads';
+import * as migration_20261008_200000_add_chatbot_leads_notified_at from './20261008_200000_add_chatbot_leads_notified_at';
 
 export const migrations = [
   {
@@ -59,5 +60,10 @@ export const migrations = [
     up: migration_20261005_100000_add_leads.up,
     down: migration_20261005_100000_add_leads.down,
     name: '20261005_100000_add_leads'
+  },
+  {
+    up: migration_20261008_200000_add_chatbot_leads_notified_at.up,
+    down: migration_20261008_200000_add_chatbot_leads_notified_at.down,
+    name: '20261008_200000_add_chatbot_leads_notified_at'
   },
 ];
