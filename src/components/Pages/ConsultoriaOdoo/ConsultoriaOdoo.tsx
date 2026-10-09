@@ -285,9 +285,9 @@ const ConsultoriaOdoo = () => {
       {/* ── Hero + formulario ─────────────────────────────────────── */}
       <section className="px-landing mt-fixed-navbar bg-[#f4f3ef]">
         <div className="max-w-[88.875rem] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch lg:items-start pt-14 lg:pt-20 pb-14 lg:pb-20">
-          <div className="flex-1 flex flex-col items-start">
+          <div className="flex-1 lg:flex-[1.2] flex flex-col items-start">
             <span className={`${PILL} mb-6`}>Partner oficial de Odoo</span>
-            <h1 className="text-h1 max-sm:text-[2.5rem] text-dark-primary mb-4 break-words">
+            <h1 className="codoo-h1 text-h1 max-sm:text-[2.5rem] text-dark-primary mb-4 break-words">
               Consultoría e implantación de Odoo. Desde cero o sobre el que ya tienes.
             </h1>
             <p className="text-subtitle text-dark-medium mb-8">
@@ -308,7 +308,7 @@ const ConsultoriaOdoo = () => {
 
           <form
             id="contacto"
-            className="codoo-form w-full lg:max-w-[33rem] bg-white rounded-[30px] p-6 lg:p-10 flex flex-col gap-6"
+            className="codoo-form w-full lg:flex-1 lg:max-w-[31rem] bg-white rounded-[30px] p-6 lg:p-10 flex flex-col gap-6"
             onSubmit={handleSubmit}
             autoComplete="on"
           >

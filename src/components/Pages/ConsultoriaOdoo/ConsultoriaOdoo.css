@@ -12,6 +12,16 @@
   scroll-margin-top: 110px;
 }
 
+/* Titular del hero. text-h1 vale 64px entre 1024 y 1439px, y con el
+   formulario al lado la columna se queda en ~500px: el título de siete
+   palabras se partía en ocho líneas. Se acota al h1 canónico del sistema
+   (55px, --gs-text-3xl a 1440+), como hacen la landing ISO y ProcessSteps. */
+@media (min-width: 1024px) {
+  .codoo .codoo-h1 {
+    font-size: clamp(40px, 4vw, 55px);
+  }
+}
+
 /* ── Formulario del hero ─────────────────────────────────────── */
 .codoo-fieldset {
   border: 0;
