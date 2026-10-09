@@ -1,7 +1,8 @@
 import type { CollectionConfig } from 'payload';
 
 /**
- * Leads from the site's own forms (home, contact, integrations, ISO 27001).
+ * Leads from the site's own forms (home, contact, integrations, ISO 27001,
+ * Odoo consulting).
  *
  * These forms used to POST straight to formsubmit.co from the browser, which
  * meant the recipient address sat in the public HTML and an email was the only
@@ -20,7 +21,7 @@ export const Leads: CollectionConfig = {
     useAsTitle: 'email',
     defaultColumns: ['email', 'name', 'company', 'formId', 'status', 'createdAt'],
     description:
-      'Leads de los formularios del sitio (home, contacto, integraciones, ISO 27001).',
+      'Leads de los formularios del sitio (home, contacto, integraciones, ISO 27001, consultoría Odoo).',
   },
   access: {
     // Created server-side by the API route, which does its own validation.

@@ -61,6 +61,12 @@ export const LEAD_FORMS: Record<string, FormDefinition> = {
     labels: INTEGRATION_LABELS,
   },
 
+  'consultoria-odoo': {
+    subject: 'Lead · Consultoría Odoo · gigsonsolutions.com',
+    required: ['name', 'email', 'phone', 'company'],
+    labels: { punto: 'Punto de partida' },
+  },
+
   iso27001: {
     subject: 'Lead · ISO 27001 · gigsonsolutions.com',
     cc: ['hello@gigsonsolutions.com'],

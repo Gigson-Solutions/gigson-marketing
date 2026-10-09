@@ -49,7 +49,12 @@ export const routing = defineRouting({
       en: '/iso-27001-certification',
       es: '/certificacion-iso-27001',
     },
-    '/gracias-iso27001': '/gracias-iso27001',
+    // Campaign landing, Spanish only (the unprefixed /consultoria-odoo URL is
+    // redirected to /es in next.config.mjs).
+    '/consultoria-odoo': '/consultoria-odoo',
+    // Shared thank-you page every lead form redirects to after /api/lead
+    // accepts the lead (noindex). Replaces the old /gracias-iso27001.
+    '/thank-you': { en: '/thank-you', es: '/gracias' },
     '/about-claude-partner': { en: '/about-claude-partner', es: '/sobre-claude-partner' },
     '/integrations-holded': { en: '/integrations-holded', es: '/integraciones-holded' },
     '/integrations-odoo': { en: '/integrations-odoo', es: '/integraciones-odoo' },
