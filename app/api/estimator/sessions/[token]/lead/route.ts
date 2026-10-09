@@ -4,9 +4,10 @@ import { NextResponse } from 'next/server';
 
 import { shouldBlockAsBot } from '@/lib/botid';
 import { sendLeadNotification } from '@/lib/email/sendLeadNotification';
+import { verifyEmail } from '@/lib/email/verifyEmail';
 import { featuresFromPayload } from '@/lib/estimator/payloadMapping';
-import { isValidEmail } from '@/lib/estimator/validate';
 import { getSessionByToken, updateSession } from '@/lib/estimator/session';
+import { isValidPhone, normalizePhone } from '@/lib/leads/phone';
 
 export const runtime = 'nodejs';
 
@@ -25,6 +26,22 @@ const LEAD_EMAIL_DISABLE = process.env.LEAD_EMAIL_DISABLE === 'true';
 // No hour figure is sent to the client here — hours stay hidden (blurred
 // in the UI) until the user also books a call via the Cal.com embed further
 // down Step 6; see book-confirmed/route.ts.
+//
+// Every 400 carries a stable `code` so the modal can show a translated
+// message (LeadCaptureModal maps codes → projectEstimator.step6.modal keys);
+// `error` is an English fallback for anything that isn't the modal.
+const MAX_FIELD = 200;
+
+function reject(code: string, error: string) {
+  return NextResponse.json({ error, code }, { status: 400 });
+}
+
+function requiredString(value: unknown): string | null {
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  return trimmed.length > 0 ? trimmed.slice(0, MAX_FIELD) : null;
+}
+
 export async function POST(req: Request, { params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
   let body: unknown;
@@ -33,7 +50,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
   } catch {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
   }
-  const { email, name, company, rgpd, website } = (body as Record<string, unknown>) ?? {};
+  const { email, name, company, phone, rgpd, website } = (body as Record<string, unknown>) ?? {};
 
   if (typeof website === 'string' && website.trim().length > 0) {
     return NextResponse.json({ ok: true, totalBudget: 0 });
@@ -46,12 +63,29 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
     return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   }
 
-  if (typeof email !== 'string' || !isValidEmail(email)) {
-    return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
+  // Same order as the client-side checks so a direct POST gets the same
+  // first error a visitor would.
+  const leadName = requiredString(name);
+  if (!leadName) return reject('name_required', 'Name is required');
+  const leadCompany = requiredString(company);
+  if (!leadCompany) return reject('company_required', 'Company is required');
+  if (typeof phone !== 'string' || !isValidPhone(phone)) {
+    return reject('phone_invalid', 'A valid phone number is required');
   }
-  if (!rgpd) {
-    return NextResponse.json({ error: 'RGPD consent required' }, { status: 400 });
+  const leadPhone = normalizePhone(phone).slice(0, 32);
+
+  if (typeof email !== 'string') return reject('email_invalid', 'Invalid email');
+  const leadEmail = email.trim().slice(0, MAX_FIELD);
+  const verdict = await verifyEmail(leadEmail);
+  if (!verdict.ok) {
+    if (verdict.reason === 'syntax') return reject('email_invalid', 'Invalid email');
+    if (verdict.reason === 'disposable') {
+      return reject('email_disposable', 'Disposable email addresses are not accepted');
+    }
+    return reject('email_no_mx', 'That email domain cannot receive mail');
   }
+
+  if (!rgpd) return reject('rgpd_required', 'RGPD consent required');
 
   const payloadClient = await getPayload({ config });
   const session = await getSessionByToken(payloadClient, token);
@@ -62,9 +96,10 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
   try {
     await updateSession(payloadClient, session.id, {
       status: 'completed',
-      leadEmail: email.slice(0, 200),
-      leadName: typeof name === 'string' ? name.slice(0, 200) : undefined,
-      leadCompany: typeof company === 'string' ? company.slice(0, 200) : undefined,
+      leadEmail,
+      leadName,
+      leadCompany,
+      leadPhone,
       rgpd: true,
       leadCapturedAt: new Date().toISOString(),
     });
@@ -86,12 +121,13 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
       const sent = await sendLeadNotification({
         to: LEAD_EMAIL_TO,
         cc: [LEAD_EMAIL_CC].filter(Boolean),
-        replyTo: email,
-        subject: `Nuevo lead del estimador de proyectos — ${name || email}`,
+        replyTo: leadEmail,
+        subject: `Nuevo lead del estimador de proyectos — ${leadName}`,
         fields: {
-          Nombre: typeof name === 'string' && name ? name : '—',
-          Email: email,
-          Empresa: typeof company === 'string' && company ? company : '—',
+          Nombre: leadName,
+          Email: leadEmail,
+          Teléfono: leadPhone,
+          Empresa: leadCompany,
           'Descripción del proyecto': session.projectDescription ?? '—',
           Dominio: session.businessDomain ?? '—',
           'Tarifa asumida': `€${session.hourlyRate ?? '—'}/h`,

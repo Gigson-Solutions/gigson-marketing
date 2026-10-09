@@ -47,6 +47,10 @@ export type EstimatorSessionDoc = {
   totalHours?: number | null;
   totalBudget?: number | null;
   leadEmail?: string | null;
+  leadName?: string | null;
+  leadCompany?: string | null;
+  leadPhone?: string | null;
+  rgpd?: boolean | null;
   leadCapturedAt?: string | null;
   callBookedAt?: string | null;
 };
