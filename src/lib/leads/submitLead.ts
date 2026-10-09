@@ -8,10 +8,11 @@ import type { LeadRequest, LeadResult } from './types';
  * the three Integrations forms and ISO 27001 at once. `form_id` rides along so a
  * GTM trigger can fire per form rather than all-or-nothing.
  *
- * Careful with iso27001: that form ALSO redirects to /gracias-iso27001, and that
- * page view is already its Google Ads conversion (see PageViewTracker). A tag on
- * `lead_submitted` that doesn't exclude `form_id === 'iso27001'` would count
- * those leads twice.
+ * Careful: after this event every form ALSO redirects to the shared thank-you
+ * page (/es/gracias, /thank-you), and that page view can be used as the Google
+ * Ads conversion (see PageViewTracker). Use one or the other for a given
+ * conversion action, never both, or each lead is counted twice. The event is
+ * the one to use when a conversion should only count a specific form_id.
  *
  * Fires only on a confirmed 200 — never on a rejected, rate-limited or failed
  * submission, so the event means "the lead was accepted", not "someone clicked".

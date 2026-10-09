@@ -1,0 +1,792 @@
+/* Landing de campaña: consultoría e implantación de Odoo (/es/consultoria-odoo).
+   Todo va bajo .codoo para no afectar al resto del
+   sitio. Los --gs-* vienen de design-system/tokens.css. */
+
+.codoo {
+  --codoo-purple: var(--gs-purple, #7874f4);
+  --codoo-purple-dark: var(--gs-purple-dark, #5e5bc6);
+  --codoo-purple-hover: #3f3c9e;
+  --codoo-ink: #2a2a29;
+  --codoo-text: var(--gs-ink, #3c3c3b);
+  --codoo-muted: #5f5e5b;
+  --codoo-subtle: #6b6a68;
+  --codoo-line: #e0dfdf;
+  --codoo-input-line: #d2d0cf;
+  --codoo-cream: var(--gs-cream, #f4f3ef);
+  --codoo-lilac: #e6e5fd;
+  --codoo-radius: 30px;
+
+  background: var(--codoo-cream);
+  color: var(--codoo-text);
+  font-family: var(--gs-font-sans);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.codoo *,
+.codoo *::before,
+.codoo *::after {
+  box-sizing: border-box;
+}
+
+.codoo a {
+  color: var(--codoo-purple-dark);
+}
+.codoo a:hover {
+  color: var(--codoo-purple-hover);
+}
+.codoo input,
+.codoo select,
+.codoo textarea,
+.codoo button {
+  font: inherit;
+}
+.codoo input:focus-visible,
+.codoo textarea:focus-visible,
+.codoo a:focus-visible,
+.codoo button:focus-visible,
+.codoo summary:focus-visible {
+  outline: 3px solid var(--codoo-purple);
+  outline-offset: 2px;
+}
+
+html:has(.codoo) {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.codoo) {
+    scroll-behavior: auto;
+  }
+}
+
+/* El header de la web es fijo: los anclajes no deben quedar debajo. */
+.codoo [id] {
+  scroll-margin-top: 130px;
+}
+
+/* ── Piezas comunes ─────────────────────────────────────────── */
+.codoo-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+.codoo-pill {
+  align-self: flex-start;
+  border: 1px solid var(--codoo-purple);
+  color: var(--codoo-purple-dark);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.codoo h1,
+.codoo h2,
+.codoo h3 {
+  margin: 0;
+  color: var(--codoo-ink);
+  font-weight: 800;
+}
+.codoo p {
+  margin: 0;
+}
+
+.codoo-h2 {
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.codoo-lead {
+  color: var(--codoo-muted);
+}
+
+.codoo-head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+}
+
+.codoo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--codoo-purple-dark);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.codoo a.codoo-btn,
+.codoo a.codoo-btn:hover {
+  color: #fff;
+}
+.codoo-btn:hover {
+  background: var(--codoo-purple-hover);
+}
+.codoo-btn[disabled] {
+  opacity: 0.7;
+  cursor: progress;
+}
+.codoo a.codoo-btn--light,
+.codoo a.codoo-btn--light:hover {
+  background: #fff;
+  color: var(--codoo-ink);
+}
+.codoo a.codoo-btn--light:hover {
+  background: var(--codoo-lilac);
+}
+.codoo a.codoo-btn--ghost {
+  background: #fff;
+  color: var(--codoo-ink);
+  border: 1px solid var(--codoo-input-line);
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 0 22px;
+}
+.codoo a.codoo-btn--ghost:hover {
+  background: var(--codoo-lilac);
+  color: var(--codoo-ink);
+}
+
+/* ── Hero + formulario ──────────────────────────────────────── */
+.codoo-hero {
+  /* El header de la web es fijo (~105px): el hero empieza por debajo. */
+  padding-top: 160px;
+  padding-bottom: 64px;
+}
+
+.codoo-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
+  grid-template-areas:
+    'copy form'
+    'extra form';
+  column-gap: 56px;
+  row-gap: 28px;
+  align-items: start;
+}
+.codoo-hero-copy {
+  grid-area: copy;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+.codoo-hero-form {
+  grid-area: form;
+}
+.codoo-hero-extra {
+  grid-area: extra;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.codoo-h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.9rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+.codoo-hero-sub {
+  font-size: clamp(17px, 1.6vw, 20px);
+  color: var(--codoo-muted);
+  max-width: 34em;
+}
+
+.codoo-checks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 16px;
+}
+.codoo-checks li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.codoo-checks svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.codoo-hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Tarjeta del formulario */
+.codoo-form {
+  background: #fff;
+  border-radius: var(--codoo-radius);
+  padding: clamp(22px, 4vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  width: 100%;
+}
+.codoo-form-title {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+.codoo-form-sub {
+  font-size: 15px;
+  color: var(--codoo-muted);
+}
+.codoo-form fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.codoo-form legend {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0;
+  margin-bottom: 8px;
+}
+.codoo-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--codoo-line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 15px;
+  cursor: pointer;
+  min-height: 48px;
+}
+.codoo-radio:has(input:checked) {
+  border-color: var(--codoo-purple);
+  background: #f7f7ff;
+}
+.codoo-radio input,
+.codoo-consent input {
+  accent-color: var(--codoo-purple-dark);
+  width: 18px;
+  height: 18px;
+  flex: none;
+  margin: 0;
+}
+.codoo-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+.codoo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 0;
+}
+.codoo-field input,
+.codoo-field textarea {
+  border: 1px solid var(--codoo-input-line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #fff;
+  color: var(--codoo-ink);
+  min-height: 48px;
+  width: 100%;
+}
+.codoo-field textarea {
+  resize: vertical;
+}
+.codoo-optional {
+  font-weight: 500;
+  color: var(--codoo-subtle);
+}
+.codoo-consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: var(--codoo-muted);
+}
+.codoo-consent input {
+  margin-top: 1px;
+}
+.codoo-submit {
+  min-height: 54px;
+  width: 100%;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+.codoo-form-note {
+  font-size: 13px;
+  color: var(--codoo-subtle);
+  text-align: center;
+}
+.codoo-form-error {
+  font-size: 14px;
+  color: #b42318;
+  background: #fef3f2;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+/* CTA fijo en móvil */
+.codoo-sticky {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .codoo-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'copy'
+      'form'
+      'extra';
+    row-gap: 24px;
+  }
+  .codoo a.codoo-sticky {
+    display: flex;
+    position: fixed;
+    /* A la izquierda del botón del chatbot de la web (56px, a 24px del borde),
+       en la misma línea, para no taparlo. */
+    left: 12px;
+    right: 92px;
+    bottom: calc(25px + env(safe-area-inset-bottom, 0px));
+    min-height: 54px;
+    z-index: 30;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    box-shadow: 0 10px 30px -8px rgba(94, 91, 198, 0.6);
+  }
+  .codoo {
+    padding-bottom: 96px;
+  }
+}
+
+/* ── Credenciales ───────────────────────────────────────────── */
+.codoo-creds-sec {
+  padding-bottom: 88px;
+}
+.codoo-creds {
+  background: #fff;
+  border-radius: var(--codoo-radius);
+  padding: 28px 36px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.codoo-creds div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.codoo-cred-value {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--codoo-ink);
+}
+.codoo-cred-label {
+  font-size: 14px;
+  color: var(--codoo-muted);
+}
+
+/* ── Dos puntos de partida ─────────────────────────────────── */
+.codoo-paths-sec {
+  padding-bottom: 104px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.codoo-paths-title {
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+.codoo-paths {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: stretch;
+}
+.codoo-path {
+  flex: 1 1 480px;
+  min-width: 0;
+  background: #fff;
+  border-radius: var(--codoo-radius);
+  padding: clamp(28px, 4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.codoo-path h3 {
+  font-size: 30px;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+.codoo-path ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.codoo-path li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px solid var(--codoo-line);
+  padding-top: 14px;
+}
+.codoo-path li strong {
+  font-size: 17px;
+  color: var(--codoo-ink);
+}
+.codoo-path li span {
+  font-size: 15px;
+  color: var(--codoo-muted);
+}
+.codoo-path .codoo-btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.codoo-path--dark {
+  background: var(--codoo-ink);
+  color: var(--codoo-cream);
+}
+.codoo-path--dark h3,
+.codoo-path--dark li strong {
+  color: #fff;
+}
+.codoo-path--dark p,
+.codoo-path--dark li span {
+  color: #cfcdc8;
+}
+.codoo-path--dark li {
+  border-top-color: #4a4a48;
+}
+.codoo-path--dark .codoo-pill {
+  border-color: #a9a6ff;
+  color: #c9c7ff;
+}
+
+/* ── Señales ───────────────────────────────────────────────── */
+.codoo-white {
+  background: #fff;
+}
+.codoo-signals {
+  padding-block: 88px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+.codoo-signals-head {
+  flex: 1 1 340px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.codoo-signals-grid {
+  flex: 2 1 560px;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+.codoo .codoo-quote {
+  background: var(--codoo-cream);
+  border-radius: 22px;
+  padding: 22px 24px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--codoo-ink);
+}
+
+/* ── Módulos ───────────────────────────────────────────────── */
+.codoo-section {
+  padding-block: 104px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.codoo-modules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.codoo-module {
+  background: #fff;
+  border-radius: var(--codoo-radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.codoo-module h3 {
+  font-size: 20px;
+}
+.codoo-module p {
+  font-size: 15px;
+  color: var(--codoo-muted);
+}
+
+/* ── Migración ─────────────────────────────────────────────── */
+.codoo-migration-sec {
+  padding-bottom: 104px;
+}
+.codoo-migration {
+  background: var(--codoo-lilac);
+  border-radius: var(--codoo-radius);
+  padding: clamp(32px, 5vw, 56px) clamp(24px, 4vw, 48px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+.codoo-migration-copy {
+  flex: 1 1 440px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.codoo-migration .codoo-pill {
+  border-color: var(--codoo-purple-dark);
+  color: #4a47b0;
+}
+.codoo-migration-copy p {
+  color: #4a4a48;
+}
+.codoo-chips {
+  flex: 1 1 360px;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.codoo-chips li {
+  background: #fff;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* ── Proceso ───────────────────────────────────────────────── */
+.codoo-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+.codoo-steps li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--codoo-cream);
+  border-radius: 26px;
+  padding: 26px;
+}
+.codoo-step-n {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--codoo-purple-dark);
+  line-height: 1;
+}
+.codoo-steps strong {
+  font-size: 18px;
+  color: var(--codoo-ink);
+}
+.codoo-steps li > span:last-child {
+  font-size: 15px;
+  color: var(--codoo-muted);
+}
+
+/* ── Integraciones ─────────────────────────────────────────── */
+.codoo-int-head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.codoo-int-head p {
+  font-size: 19px;
+  color: var(--codoo-subtle);
+}
+.codoo-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.codoo-filter {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #fff;
+  color: var(--codoo-text);
+  border: 1px solid var(--codoo-line);
+}
+.codoo-filter[aria-pressed='true'] {
+  background: var(--codoo-purple);
+  color: #fff;
+  border-color: var(--codoo-purple);
+}
+.codoo-tools {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: 16px;
+}
+.codoo-tools li {
+  background: #fff;
+  border-radius: 12px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  text-align: center;
+}
+.codoo .codoo-tools a {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--codoo-subtle);
+  text-decoration: none;
+}
+.codoo .codoo-tools a:hover {
+  color: var(--codoo-purple-dark);
+}
+.codoo-center {
+  align-self: center;
+}
+
+/* ── FAQ ───────────────────────────────────────────────────── */
+.codoo-faq {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 104px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.codoo-faq details {
+  border-top: 1px solid var(--codoo-line);
+  padding: 22px 0;
+}
+.codoo-faq details:last-child {
+  border-bottom: 1px solid var(--codoo-line);
+}
+.codoo-faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--codoo-ink);
+}
+.codoo-faq summary::-webkit-details-marker {
+  display: none;
+}
+.codoo-faq-plus {
+  font-size: 26px;
+  line-height: 1;
+  color: var(--codoo-purple-dark);
+  transition: transform 0.2s ease;
+}
+.codoo-faq details[open] .codoo-faq-plus {
+  transform: rotate(45deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .codoo-faq-plus {
+    transition: none;
+  }
+}
+.codoo-faq details p {
+  margin-top: 12px;
+  color: var(--codoo-muted);
+}
+
+/* ── CTA final ─────────────────────────────────────────────── */
+.codoo-final-sec {
+  padding-block: 104px;
+}
+.codoo-final {
+  background: var(--codoo-purple-dark);
+  border-radius: var(--codoo-radius);
+  padding: clamp(36px, 6vw, 64px) clamp(24px, 4vw, 48px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+.codoo-final-copy {
+  flex: 1 1 520px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.codoo-final h2 {
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+.codoo-final p {
+  color: var(--codoo-lilac);
+  font-size: 18px;
+}
+.codoo-final .codoo-btn {
+  min-height: 54px;
+  padding: 0 30px;
+  font-size: 14px;
+}
+
+/* ── Aviso legal Odoo ──────────────────────────────────────── */
+.codoo-disclaimer {
+  padding-bottom: 48px;
+}
+.codoo-disclaimer p {
+  max-width: 62em;
+  font-size: 13px;
+  color: var(--codoo-subtle);
+}

@@ -126,9 +126,10 @@ const Iso27001 = () => {
       });
       if (result !== 'sent') throw new Error(result);
       setSubmitted(true);
-      // Keep the redirect: /gracias-iso27001 is this campaign's Google Ads
-      // conversion action, counted off the page_view PageViewTracker fires.
-      router.push('/gracias-iso27001');
+      // Every lead form lands on the shared thank-you page (/es/gracias,
+      // /thank-you). A visit to it is what Google Ads can count as the
+      // conversion, off the page_view PageViewTracker fires.
+      router.push({ pathname: '/thank-you', query: { form: 'iso27001' } });
     } catch (error) {
       console.error('ISO 27001 lead submit failed', error);
       setSubmitError(true);
