@@ -247,7 +247,3 @@ export function sanitizeFeatures(raw: unknown, source: 'ai' | 'manual'): Estimat
   }
   return out;
 }
-
-export function isValidEmail(email: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
