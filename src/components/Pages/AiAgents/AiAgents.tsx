@@ -2,13 +2,13 @@
 
 import { useTranslations } from 'next-intl';
 import Brand from 'shared/Brand';
-import { ButtonLink } from 'shared/Button';
 import Hero from 'shared/Hero';
 import ProcessSteps from 'shared/ProcessSteps';
 import { ServiceFaq } from 'shared/ServiceFaq';
 import SolutionsApplications from 'shared/SolutionsApplications';
 
 import { Link } from '../../../../i18n/navigation';
+import Form from '../../Form';
 
 type FaqItem = { question: string; answer: string };
 
@@ -25,7 +25,6 @@ const AiAgents = () => {
   const hero = t.raw('hero') as { title: string; suptitle: string; description: string; buttonText: string };
   const solutionsApplications = t.raw('solutionsApplications') as { title: string; subTitle: string; containers: unknown[] };
   const howWeWork = t.raw('howWeWork') as { eyebrow?: string; h2a: string; h2b?: string; lead?: string; steps: { title: string; description: string }[] };
-  const digitalProduct = t.raw('digitalProduct') as { buttonText: string };
   const faq = t.raw('faq') as { title: string; items: FaqItem[] } | undefined;
   const sectorsCta = t.raw('sectorsCta') as { title: string } | undefined;
 
@@ -38,12 +37,12 @@ const AiAgents = () => {
 
   return (
     <>
-      <Hero {...hero} />
+      <Hero {...hero} heroLink="#contacto" />
       <SolutionsApplications {...(solutionsApplications as Parameters<typeof SolutionsApplications>[0])} />
       <ProcessSteps {...howWeWork} />
-      <section className="flex justify-center py-14 lg:py-20 px-landing">
-        <ButtonLink link="/contact" text={digitalProduct.buttonText} outlined />
-      </section>
+      <div className="wrapper">
+        <Form formId="service-ai-agents" defaultServiceIndex={1} />
+      </div>
       {faq && <ServiceFaq title={faq.title} faqs={faq.items} />}
       {sectorsCta && (
         <section className="flex flex-col items-center gap-4 py-10 px-landing text-center">
