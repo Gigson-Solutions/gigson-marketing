@@ -36,10 +36,11 @@
 .codoo a:hover {
   color: var(--codoo-purple-hover);
 }
-.codoo input,
-.codoo select,
-.codoo textarea,
-.codoo button {
+/* :where() deja la especificidad en (0,1,0), para que .codoo-btn,
+   .codoo-submit y .codoo-filter, declarados más abajo, puedan fijar su
+   propio tamaño y peso. Con selectores normales, `font: inherit` les
+   ganaba y el botón de envío salía en peso regular. */
+.codoo :where(input, select, textarea, button) {
   font: inherit;
 }
 .codoo input:focus-visible,
@@ -660,9 +661,10 @@ html:has(.codoo) {
   border: 1px solid var(--codoo-line);
 }
 .codoo-filter[aria-pressed='true'] {
-  background: var(--codoo-purple);
+  /* Morado oscuro: blanco sobre el morado claro daba 3,8:1, por debajo de AA. */
+  background: var(--codoo-purple-dark);
   color: #fff;
-  border-color: var(--codoo-purple);
+  border-color: var(--codoo-purple-dark);
 }
 .codoo-tools {
   margin: 0;

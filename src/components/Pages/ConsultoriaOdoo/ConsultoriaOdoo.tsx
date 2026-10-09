@@ -437,7 +437,7 @@ const ConsultoriaOdoo = () => {
               <p className="codoo-form-error" role="alert">
                 {submitError === 'rateLimited'
                   ? 'Has enviado varias solicitudes seguidas. Espera unos minutos y vuelve a intentarlo.'
-                  : 'No hemos podido enviar tu solicitud. Inténtalo de nuevo o escríbenos a hello@gigsonsolutions.com.'}
+                  : 'No hemos podido enviar tu solicitud. Inténtalo de nuevo o escríbenos a info@gigsonsolutions.com.'}
               </p>
             )}
 
