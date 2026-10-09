@@ -6,6 +6,8 @@ import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
+import { useRouter } from '../../../../i18n/navigation';
+
 import Bgcont from '../../../assets/Group 33770.svg';
 import { getAttribution } from '../../../lib/attribution';
 import { submitLead } from '../../../lib/leads/submitLead';
@@ -213,6 +215,7 @@ const IntegrationContactForm = ({ namespace, formId, toolOptions }: Props) => {
   // integration namespaces.
   const tStatus = useTranslations('form');
   const locale = useLocale();
+  const router = useRouter();
   const [state, setState] = useState<SubmitState>('idle');
   const form = t.raw('form') as FormData;
   const { title, fields, send, checkbox, legalNotice } = form;
@@ -249,6 +252,8 @@ const IntegrationContactForm = ({ namespace, formId, toolOptions }: Props) => {
     });
 
     setState(result);
+    // Shared thank-you page for every lead form (/es/gracias, /thank-you).
+    if (result === 'sent') router.push({ pathname: '/thank-you', query: { form: formId } });
   };
 
   return (

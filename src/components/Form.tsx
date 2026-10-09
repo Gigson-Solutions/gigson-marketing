@@ -5,7 +5,7 @@ import './Form.css';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
-import { Link } from '../../i18n/navigation';
+import { Link, useRouter } from '../../i18n/navigation';
 import { getAttribution } from '../lib/attribution';
 import type { LeadFormId } from '../lib/leads/forms';
 import { submitLead } from '../lib/leads/submitLead';
@@ -47,6 +47,7 @@ const Form = ({
 }: FormProps) => {
   const t = useTranslations('form');
   const locale = useLocale();
+  const router = useRouter();
   const [state, setState] = useState<SubmitState>('idle');
 
   const title = titleOverride ?? t('title');
@@ -84,6 +85,9 @@ const Form = ({
     });
 
     setState(result);
+    // Shared thank-you page for every lead form (/es/gracias, /thank-you). The
+    // success message above stays as a fallback while the navigation happens.
+    if (result === 'sent') router.push({ pathname: '/thank-you', query: { form: formId } });
   };
 
   if (state === 'sent') {

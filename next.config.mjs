@@ -37,6 +37,14 @@ const nextConfig = {
       destination: '/es/certificacion-iso-27001',
       permanent: true,
     },
+    // The Odoo consulting campaign landing only exists in Spanish. Without
+    // this, the unprefixed URL would render it under the English locale. Not
+    // permanent, in case an English version is added later.
+    { source: '/consultoria-odoo', destination: '/es/consultoria-odoo', permanent: false },
+    // The ISO 27001 thank-you page was replaced by the shared one (/es/gracias,
+    // /thank-you), which every lead form now redirects to.
+    { source: '/es/gracias-iso27001', destination: '/es/gracias', permanent: true },
+    { source: '/gracias-iso27001', destination: '/thank-you', permanent: true },
     // Removed the standalone /services (/servicios) overview page — every
     // individual service already has its own dedicated page, linked from
     // the Navbar dropdown and the footer's services directory.

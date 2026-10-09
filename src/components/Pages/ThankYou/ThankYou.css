@@ -1,0 +1,166 @@
+/* Página de gracias común a todos los formularios de leads (/es/gracias,
+   /thank-you). Todo va bajo .thankyou; los --gs-* vienen de
+   design-system/tokens.css. */
+
+.thankyou {
+  --ty-purple: var(--gs-purple, #7874f4);
+  --ty-purple-dark: var(--gs-purple-dark, #5e5bc6);
+  --ty-purple-hover: #3f3c9e;
+  --ty-ink: #2a2a29;
+  --ty-muted: #5f5e5b;
+  --ty-line: #e0dfdf;
+  --ty-lilac: #e6e5fd;
+
+  background: var(--gs-cream, #f4f3ef);
+  color: var(--gs-ink, #3c3c3b);
+  font-family: var(--gs-font-sans);
+  line-height: 1.55;
+  padding: 168px 20px clamp(64px, 8vw, 104px);
+  display: flex;
+  justify-content: center;
+}
+
+.thankyou *,
+.thankyou *::before,
+.thankyou *::after {
+  box-sizing: border-box;
+}
+
+.thankyou-card {
+  background: #fff;
+  border-radius: 30px;
+  padding: clamp(28px, 5vw, 56px);
+  max-width: 720px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.thankyou-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--ty-lilac);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thankyou-badge {
+  align-self: flex-start;
+  border: 1px solid var(--ty-purple);
+  color: var(--ty-purple-dark);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.thankyou h1 {
+  margin: 0;
+  color: var(--ty-ink);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.thankyou p {
+  margin: 0;
+}
+
+.thankyou-intro {
+  font-size: 18px;
+  color: var(--ty-muted);
+}
+
+.thankyou-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.thankyou-steps li {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  border-top: 1px solid var(--ty-line);
+  padding-block: 16px;
+}
+.thankyou-steps li > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.thankyou-step-n {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ty-purple-dark);
+  min-width: 24px;
+}
+.thankyou-steps strong {
+  font-size: 17px;
+  color: var(--ty-ink);
+}
+.thankyou-steps span {
+  font-size: 15px;
+  color: var(--ty-muted);
+}
+.thankyou-steps .thankyou-step-n {
+  font-size: 28px;
+  color: var(--ty-purple-dark);
+}
+
+.thankyou-hint {
+  font-size: 15px;
+  color: var(--ty-muted);
+}
+
+.thankyou-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.thankyou a.thankyou-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: var(--ty-purple-dark);
+  border: 1px solid var(--ty-purple-dark);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.thankyou a.thankyou-btn:hover {
+  background: var(--ty-purple-hover);
+  border-color: var(--ty-purple-hover);
+}
+.thankyou a.thankyou-btn--ghost {
+  background: #fff;
+  border-color: #d2d0cf;
+  color: var(--ty-ink);
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.thankyou a.thankyou-btn--ghost:hover {
+  background: var(--ty-lilac);
+  border-color: #d2d0cf;
+}
+.thankyou a.thankyou-btn:focus-visible {
+  outline: 3px solid var(--ty-purple);
+  outline-offset: 2px;
+}

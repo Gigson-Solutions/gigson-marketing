@@ -87,6 +87,12 @@ export const LEAD_FORMS: Record<string, FormDefinition> = {
   'industry-professional-services': genericForm('Servicios profesionales'),
   'claude-partner': genericForm('Claude Partner'),
 
+  'consultoria-odoo': {
+    subject: 'Lead · Consultoría Odoo · gigsonsolutions.com',
+    required: ['name', 'email', 'phone', 'company'],
+    labels: { punto: 'Punto de partida' },
+  },
+
   iso27001: {
     subject: 'Lead · ISO 27001 · gigsonsolutions.com',
     cc: ['hello@gigsonsolutions.com'],
