@@ -14,6 +14,7 @@ import {
   organizationMinimal,
   postUrl,
   articleImage,
+  SITE_NAME,
 } from '../../../../../lib/schema';
 
 export const revalidate = 3600;
@@ -108,6 +109,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       languages,
     },
     openGraph: {
+      siteName: SITE_NAME,
       title,
       description,
       url: canonical,

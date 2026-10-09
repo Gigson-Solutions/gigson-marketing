@@ -10,6 +10,7 @@ import {
   buildServiceSchema,
   breadcrumbLabel,
   faqItemsFrom,
+  SITE_NAME,
 } from '../../../../lib/schema';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -33,7 +34,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       canonical,
       languages: { en: `${ORIGIN}/technology-consulting`, es: `${ORIGIN}/es/consultoria-tecnologica`, 'x-default': `${ORIGIN}/technology-consulting` },
     },
-    openGraph: { type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

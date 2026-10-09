@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 import AboutHero from '../../../../src/components/About/AboutHero';
 import JsonLd from '../../../../src/shared/ui/JsonLd';
-import { ORIGIN, buildBreadcrumbSchema, buildOrganization, localizedUrl } from '../../../../lib/schema';
+import { ORIGIN, buildBreadcrumbSchema, buildOrganization, localizedUrl, SITE_NAME } from '../../../../lib/schema';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -25,7 +25,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       canonical,
       languages: { en: `${ORIGIN}/about`, es: `${ORIGIN}/es/sobre-nosotros`, 'x-default': `${ORIGIN}/about` },
     },
-    openGraph: { type: 'website', title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

@@ -80,9 +80,10 @@ export async function POST(req: Request) {
 
   // ── 1. Save to Payload / Neon (primary — source of truth) ──────────────────
   let savedToDb = false;
+  let leadId: number | string | null = null;
   try {
     const payloadClient = await getPayload({ config });
-    await payloadClient.create({
+    const created = await payloadClient.create({
       collection: 'chatbot-leads',
       data: {
         name: lead.name,
@@ -97,6 +98,7 @@ export async function POST(req: Request) {
         rgpd: lead.rgpd,
       },
     });
+    leadId = created.id;
     savedToDb = true;
     console.log('[gigson-chatbot] lead saved to DB:', { name: lead.name, email: lead.email, sessionId: lead.sessionId });
   } catch (dbErr) {
@@ -124,6 +126,21 @@ export async function POST(req: Request) {
     });
     if (sent.ok) {
       console.log('[gigson-chatbot] lead notified:', sent.id);
+      // Stamp it. Without this the admin cannot tell a delivered lead from a
+      // lost one — which is how EPICSA went unread for a month.
+      if (leadId !== null) {
+        try {
+          const payloadClient = await getPayload({ config });
+          await payloadClient.update({
+            collection: 'chatbot-leads',
+            id: leadId,
+            data: { notifiedAt: new Date().toISOString() },
+          });
+        } catch (stampErr) {
+          // Cosmetic only: the lead and the email both already went out.
+          console.warn('[gigson-chatbot] could not stamp notifiedAt:', stampErr);
+        }
+      }
     } else {
       // error, not warn: the lead is in the database and nobody has been told.
       console.error('[gigson-chatbot] notification failed:', sent.reason);

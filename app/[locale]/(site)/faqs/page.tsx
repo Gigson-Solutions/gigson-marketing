@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 import Faqs from '../../../../src/components/Pages/Faqs/Faqs';
 import JsonLd from '../../../../src/shared/ui/JsonLd';
-import { ORIGIN, buildBreadcrumbSchema, buildFaqSchema } from '../../../../lib/schema';
+import { ORIGIN, buildBreadcrumbSchema, buildFaqSchema, SITE_NAME } from '../../../../lib/schema';
 
 
 type Props = { params: Promise<{ locale: string }> };
@@ -30,7 +30,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
         'x-default': `${ORIGIN}/faqs`,
       },
     },
-    openGraph: { type: 'website', title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', title: seo.title, description: seo.description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 

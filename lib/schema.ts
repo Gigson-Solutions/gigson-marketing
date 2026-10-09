@@ -1,11 +1,18 @@
 import { routing, type StaticPathnames } from '../i18n/routing';
+import { categoryHref } from './blogCategories';
 import { coverImagePath } from './blogCovers';
 // Type-only: `lib/posts.ts` imports Payload and the Postgres adapter at
 // module top, and this module must stay reachable from client components
 // (same precaution `lib/blogCovers.ts` already documents).
-import type { Post } from './posts';
+import type { Post, PostCategory } from './posts';
 
 export const ORIGIN = 'https://gigsonsolutions.com';
+
+/** `og:site_name`. Next replaces `openGraph` wholesale per segment rather than
+ * merging it, so setting this once on the root layout would be silently dropped
+ * by every page that declares an `openGraph` of its own — i.e. all of them.
+ * Hence the constant, spread into each page's object. */
+export const SITE_NAME = 'Gigson Solutions';
 
 /**
  * Stable node id for the one Organization entity. Every schema that refers to
@@ -91,6 +98,15 @@ export function buildOrganization(description: string) {
 export function authorUrl(slug: string, locale: string): string {
   const path = locale === 'es' ? `/es/blog/autores/${slug}` : `/blog/authors/${slug}`;
   return `${ORIGIN}${path}`;
+}
+
+/** Absolute URL of a category archive. Same gap as `authorUrl`: the segment is
+ * a localized slug, so `localizedUrl` (typed against `StaticPathnames`) can't
+ * resolve it. Unlike `authorUrl` the path isn't hand-rolled here — `categoryHref`
+ * goes through `routing.pathnames`, which stays the one place that knows
+ * `/blog/category/` is `/blog/categoria/` in Spanish. */
+export function categoryUrl(category: PostCategory, locale: string): string {
+  return `${ORIGIN}${categoryHref(category, locale)}`;
 }
 
 /**

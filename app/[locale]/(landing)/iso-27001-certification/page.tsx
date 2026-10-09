@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 import Iso27001 from '../../../../src/components/Pages/Iso27001/Iso27001';
+import { SITE_NAME } from '../../../../lib/schema';
 
 const ORIGIN = 'https://gigsonsolutions.com';
 type Props = { params: Promise<{ locale: string }> };
@@ -27,7 +28,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical,
     },
-    openGraph: { type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
+    openGraph: { siteName: SITE_NAME, type: 'website', title, description, url: canonical, images: ['/opengraph-image'] },
   };
 }
 
