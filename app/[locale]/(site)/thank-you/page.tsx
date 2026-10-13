@@ -78,7 +78,7 @@ export default async function ThankYouPage(props: Props) {
           </ol>
 
           <p className="text-body text-dark-medium">{t('casesHint')}</p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex justify-center">
             <Link href="/cases" className={BTN_SOLID}>
               {t('casesCta')}
             </Link>
