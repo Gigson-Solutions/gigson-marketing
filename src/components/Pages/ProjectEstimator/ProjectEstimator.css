@@ -703,9 +703,16 @@ textarea.pe-textarea {
 }
 .lead-modal-checkbox {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   font-size: var(--gs-text-xs);
+}
+.lead-modal-checkbox input {
+  margin-top: 2px; /* optical alignment with the first line when the label wraps */
+}
+.lead-modal-checkbox a {
+  color: inherit;
+  text-decoration: underline;
 }
 .lead-modal-error {
   color: var(--gs-error);

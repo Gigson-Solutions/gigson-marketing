@@ -11,7 +11,7 @@ import NumericStepper from '../../../shared/ui/NumericStepper';
 import TagInput from '../../../shared/ui/TagInput';
 import BookCallGate from './BookCallGate';
 import FeatureModal from './FeatureModal';
-import LeadCaptureModal from './LeadCaptureModal';
+import LeadCaptureModal, { type LeadCaptureData } from './LeadCaptureModal';
 import {
   APP_ROLES,
   APP_SIZES,
@@ -286,7 +286,19 @@ const ProjectEstimator = () => {
     }
   };
 
-  const handleLeadSubmit = async (data: { name: string; company: string; email: string; rgpd: boolean }) => {
+  // Codes the lead route answers with on a 400, mapped to the modal's own
+  // translated copy; anything unexpected falls back to the generic error.
+  const LEAD_ERROR_KEYS: Record<string, string> = {
+    name_required: 'step6.modal.nameRequired',
+    company_required: 'step6.modal.companyRequired',
+    phone_invalid: 'step6.modal.phoneInvalid',
+    email_invalid: 'step6.modal.emailInvalid',
+    email_disposable: 'step6.modal.emailNotReal',
+    email_no_mx: 'step6.modal.emailNotReal',
+    rgpd_required: 'step6.modal.rgpdRequired',
+  };
+
+  const handleLeadSubmit = async (data: LeadCaptureData) => {
     if (!token) return;
     setLeadSubmitting(true);
     setLeadError(null);
@@ -298,7 +310,8 @@ const ProjectEstimator = () => {
       });
       const json = await res.json();
       if (!res.ok) {
-        setLeadError(json.error ?? t('errors.generic'));
+        const key = typeof json.code === 'string' ? LEAD_ERROR_KEYS[json.code] : undefined;
+        setLeadError(key ? t(key) : t('errors.generic'));
         return;
       }
       setTotals({ totalBudget: json.totalBudget });

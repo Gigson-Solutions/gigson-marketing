@@ -5,7 +5,7 @@ import './ClaudePartner.css';
 import { useTranslations } from 'next-intl';
 
 import solutionsBg from '../../../assets/solutions-applications-bg-gradients-1.svg';
-import { Link } from '../../../../i18n/navigation';
+import Form from '../../Form';
 import { RichText } from '../../../shared/ui/RichText';
 import { ServiceFaq } from '../../../shared/ui/ServiceFaq';
 
@@ -40,9 +40,9 @@ const ClaudePartner = () => {
         <p className="cp-eyebrow">{hero.eyebrow}</p>
         <RichText as="h1" content={hero.h1} />
         <p className="cp-hero-sub">{hero.sub}</p>
-        <Link href="/contact" className="button-main">
+        <a href="#contacto" className="button-main">
           {hero.cta}
-        </Link>
+        </a>
       </section>
 
       {/* WHAT IS + NETWORK */}
@@ -133,10 +133,11 @@ const ClaudePartner = () => {
       <section className="cp-cta-bottom">
         <h2>{ctaBottom.h2}</h2>
         <p className="cp-lead">{ctaBottom.p}</p>
-        <Link href="/contact" className="button-main">
-          {ctaBottom.cta}
-        </Link>
       </section>
+      <div className="wrapper">
+        {/* "Agentes IA" pre-selected: that is what the Claude partnership sells. */}
+        <Form formId="claude-partner" defaultServiceIndex={1} />
+      </div>
     </div>
   );
 };

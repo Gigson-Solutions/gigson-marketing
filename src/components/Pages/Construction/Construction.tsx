@@ -10,6 +10,7 @@ import ImproveAreas from '../../../shared/ui/ImproveAreas';
 import { ServiceFaq } from '../../../shared/ui/ServiceFaq';
 import SolutionsApplications from '../../../shared/ui/SolutionsApplications';
 import UseCases from '../../../shared/ui/UseCases';
+import Form from '../../Form';
 
 const bgSrc = typeof useCasesBgGradient === 'string' ? useCasesBgGradient : (useCasesBgGradient as { src: string }).src;
 
@@ -31,22 +32,21 @@ const Construction = () => {
   const useCases = t.raw('useCases') as Parameters<typeof UseCases>[0];
   const improveAreas = t.raw('improveAreas') as Parameters<typeof ImproveAreas>[0];
   const howWeWork = t.raw('howWeWork') as Parameters<typeof HowWeWork>[0];
-  const digitalProduct = t.raw('digitalProduct') as { buttonText: string };
   const faq = t.raw('faq') as { title: string; items: FaqItem[] } | undefined;
   const aiAgentsCta = t.raw('aiAgentsCta') as AiAgentsCta | undefined;
 
   return (
     <>
-      <Hero {...hero} />
+      <Hero {...hero} heroLink="#contacto" />
       <section style={bgStyle}>
         <UseCases {...useCases} industry="construction" />
         <ImproveAreas {...improveAreas} />
       </section>
       <SolutionsApplications {...solutionsApplications} />
       <HowWeWork {...howWeWork} />
-      <section className="flex justify-center py-14 lg:py-20 px-landing">
-        <ButtonLink link="/contact" text={digitalProduct.buttonText} outlined />
-      </section>
+      <div className="wrapper">
+        <Form formId="industry-construction" />
+      </div>
       {faq && <ServiceFaq title={faq.title} faqs={faq.items} />}
       {aiAgentsCta && (
         <section className="flex flex-col items-center gap-4 py-14 lg:py-20 px-landing text-center">

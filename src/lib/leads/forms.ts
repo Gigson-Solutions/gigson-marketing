@@ -33,6 +33,15 @@ const INTEGRATION_LABELS: Record<string, string> = {
 
 const INTEGRATION_REQUIRED: Requirement[] = ['name', 'email', 'phone', 'company'];
 
+/** Definition shared by every page that embeds the generic contact form. */
+function genericForm(page: string): FormDefinition {
+  return {
+    subject: `Lead · ${page} · gigsonsolutions.com`,
+    required: ['name', 'email'],
+    labels: { service: 'Servicio', budget: 'Presupuesto' },
+  };
+}
+
 export const LEAD_FORMS: Record<string, FormDefinition> = {
   home: {
     subject: 'Lead · Home · gigsonsolutions.com',
@@ -60,6 +69,23 @@ export const LEAD_FORMS: Record<string, FormDefinition> = {
     required: INTEGRATION_REQUIRED,
     labels: INTEGRATION_LABELS,
   },
+
+  // The generic contact form (src/components/Form.tsx) embedded at the bottom
+  // of every service and industry page. Same fields as home/contact; the id
+  // only changes the subject so the team can tell at a glance which page the
+  // lead came from (page_path is also stored, but the subject is what you
+  // see in the inbox).
+  'service-cto': genericForm('CTO as a Service'),
+  'service-technology-consulting': genericForm('Consultoría tecnológica'),
+  'service-cybersecurity': genericForm('Ciberseguridad'),
+  'service-iso-27001': genericForm('ISO 27001 (servicio)'),
+  'service-ai-agents': genericForm('Agentes IA'),
+  'service-software-engineering': genericForm('Ingeniería de software'),
+  'industry-logistics': genericForm('Logística'),
+  'industry-retail': genericForm('Retail y e-commerce'),
+  'industry-construction': genericForm('Construcción'),
+  'industry-professional-services': genericForm('Servicios profesionales'),
+  'claude-partner': genericForm('Claude Partner'),
 
   'consultoria-odoo': {
     subject: 'Lead · Consultoría Odoo · gigsonsolutions.com',
