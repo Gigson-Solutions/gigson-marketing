@@ -2,12 +2,19 @@
 
 import './ConsultoriaOdoo.css';
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import { Link, useRouter } from '../../../../i18n/navigation';
 import { getAttribution } from '../../../lib/attribution';
 import { submitLead } from '../../../lib/leads/submitLead';
+import { Button, ButtonLink } from '../../../shared/ui/Button';
+import FeatureGrid from '../../../shared/ui/FeatureGrid';
+import ProcessSteps from '../../../shared/ui/ProcessSteps';
+import { ServiceFaq } from '../../../shared/ui/ServiceFaq';
+import StatsBar from '../../../shared/ui/StatsBar';
+import { ODOO_INTEGRATION_LOGOS } from '../Integrations/data/integrationLogos';
+import IntegrationLogosGrid from '../Integrations/IntegrationLogosGrid';
 
 /*
  * Landing de campaña "Consultoría e implantación de Odoo".
@@ -15,6 +22,14 @@ import { submitLead } from '../../../lib/leads/submitLead';
  * página no tiene versión en inglés). El formulario envía a /api/lead con
  * form_id "consultoria-odoo" (ver src/lib/leads/forms.ts) y, si va bien,
  * redirige a la página de gracias común de la web (/es/gracias).
+ *
+ * Está montada con las mismas piezas que las páginas de servicio de la web
+ * (/es/integraciones-odoo, /es/erp-a-medida): StatsBar, FeatureGrid,
+ * ProcessSteps, ServiceFaq, IntegrationLogosGrid y los botones compartidos,
+ * más las utilidades Tailwind del tema (text-h1, text-subtitle, px-landing…).
+ * Así hereda tipografía, colores y espaciado del sistema de diseño en vez de
+ * redefinirlos. Lo único propio es el formulario del hero y el CTA fijo de
+ * móvil (ConsultoriaOdoo.css), ambos sobre tokens --gs-*.
  */
 
 const PUNTOS = [
@@ -25,21 +40,17 @@ const PUNTOS = [
 
 type Punto = (typeof PUNTOS)[number]['value'];
 
-const CHECK_ICON = (
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="#5E5BC6"
-    strokeWidth="2.4"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M5 12.5l4.5 4.5L19 7.5" />
-  </svg>
-);
+const STATS = [
+  { value: '+320', label: 'implantaciones de Odoo entregadas' },
+  { value: '+20', label: 'herramientas conectadas con Odoo' },
+  { value: '2', label: 'ERPs de los que somos partner oficial' },
+];
+
+const HERO_BULLETS = [
+  '+320 implantaciones de Odoo entregadas.',
+  'Partner oficial de Odoo y de Holded: conocemos los dos lados de la migración.',
+  'Equipo técnico propio para módulos a medida e integraciones.',
+];
 
 const NUEVO = [
   [
@@ -54,10 +65,7 @@ const NUEVO = [
     'Migración de datos',
     'Clientes, productos, stock e histórico contable desde Holded, Sage, SAP o Excel.',
   ],
-  [
-    'Integraciones',
-    'Tu tienda online, transportistas, CRM o plataformas EDI de tus clientes.',
-  ],
+  ['Integraciones', 'Tu tienda online, transportistas, CRM o plataformas EDI de tus clientes.'],
   [
     'Formación y arranque acompañado',
     'Formamos a cada área con sus propios casos y estamos contigo las primeras semanas.',
@@ -69,10 +77,7 @@ const EXISTENTE = [
     'Auditoría de tu instancia',
     'Revisamos configuración, desarrollos a medida y uso real para decidir qué se mantiene y qué se corrige.',
   ],
-  [
-    'Rescate de implantaciones atascadas',
-    'Retomamos el proyecto donde se quedó, sin empezar de nuevo.',
-  ],
+  ['Rescate de implantaciones atascadas', 'Retomamos el proyecto donde se quedó, sin empezar de nuevo.'],
   [
     'Cambio de partner',
     'Asumimos el soporte de tu Odoo con todo su histórico y documentamos lo que nadie documentó.',
@@ -95,35 +100,35 @@ const SENALES = [
 ];
 
 const MODULOS = [
-  [
-    'Contabilidad y facturación',
-    'Multiempresa, multidivisa, conciliación bancaria y localización española.',
-  ],
-  [
-    'Inventario y almacén',
-    'Multialmacén, códigos de barras, lotes y reglas de reabastecimiento.',
-  ],
-  [
-    'Fabricación (MRP)',
-    'Listas de materiales, órdenes de trabajo y control de calidad.',
-  ],
-  [
-    'Ventas y CRM',
-    'Pipeline, presupuestos y pedidos conectados con el resto del ERP.',
-  ],
-  ['Compras', 'Proveedores, acuerdos de precio y aprobaciones por importe.'],
-  [
-    'Ecommerce y TPV',
-    'Tienda propia o Shopify, WooCommerce y PrestaShop con stock sincronizado.',
-  ],
-  [
-    'Proyectos y partes de horas',
-    'Seguimiento de horas, rentabilidad por proyecto y facturación por hitos.',
-  ],
-  [
-    'Módulos a medida',
-    'Cuando el estándar no llega, lo desarrollamos sin romper las actualizaciones.',
-  ],
+  {
+    title: 'Contabilidad y facturación',
+    description: 'Multiempresa, multidivisa, conciliación bancaria y localización española.',
+  },
+  {
+    title: 'Inventario y almacén',
+    description: 'Multialmacén, códigos de barras, lotes y reglas de reabastecimiento.',
+  },
+  {
+    title: 'Fabricación (MRP)',
+    description: 'Listas de materiales, órdenes de trabajo y control de calidad.',
+  },
+  {
+    title: 'Ventas y CRM',
+    description: 'Pipeline, presupuestos y pedidos conectados con el resto del ERP.',
+  },
+  { title: 'Compras', description: 'Proveedores, acuerdos de precio y aprobaciones por importe.' },
+  {
+    title: 'Ecommerce y TPV',
+    description: 'Tienda propia o Shopify, WooCommerce y PrestaShop con stock sincronizado.',
+  },
+  {
+    title: 'Proyectos y partes de horas',
+    description: 'Seguimiento de horas, rentabilidad por proyecto y facturación por hitos.',
+  },
+  {
+    title: 'Módulos a medida',
+    description: 'Cuando el estándar no llega, lo desarrollamos sin romper las actualizaciones.',
+  },
 ];
 
 const ORIGENES = [
@@ -137,95 +142,87 @@ const ORIGENES = [
 ];
 
 const PASOS = [
-  [
-    'Diagnóstico o auditoría',
-    'Analizamos procesos, herramientas y, si ya tienes Odoo, su estado real. Sin coste.',
-  ],
-  [
-    'Diseño funcional y presupuesto',
-    'Documentamos cómo funcionará cada proceso en Odoo y lo dividimos en fases con alcance claro.',
-  ],
-  [
-    'Configuración en pruebas',
-    'Montamos Odoo, migramos datos y desarrollamos en un entorno separado de tu operativa.',
-  ],
-  [
-    'Validación y formación',
-    'Tu equipo prueba con pedidos, facturas y stock reales y aprende sobre su propio Odoo.',
-  ],
-  [
-    'Arranque y soporte',
-    'Pasamos a producción y seguimos contigo para ajustar lo que haga falta.',
-  ],
-];
-
-const FILTROS = [
-  'Todos',
-  'Retail',
-  'Logística',
-  'Servicios',
-  'RR.HH',
-  'Real State',
-  'Educación',
-  'Migración ERP',
-] as const;
-
-const HERRAMIENTAS: { name: string; cat: (typeof FILTROS)[number] }[] = [
-  { name: 'Shopify', cat: 'Retail' },
-  { name: 'WooCommerce', cat: 'Retail' },
-  { name: 'PrestaShop', cat: 'Retail' },
-  { name: 'Square', cat: 'Retail' },
-  { name: 'Sendcloud', cat: 'Logística' },
-  { name: 'ShipStation', cat: 'Logística' },
-  { name: 'EasyPost', cat: 'Logística' },
-  { name: 'Amazon Seller', cat: 'Retail' },
-  { name: 'HubSpot', cat: 'Servicios' },
-  { name: 'Pipedrive', cat: 'Servicios' },
-  { name: 'Sesame', cat: 'RR.HH' },
-  { name: 'Personio', cat: 'RR.HH' },
-  { name: 'Factorial', cat: 'RR.HH' },
-  { name: 'PayFit', cat: 'RR.HH' },
-  { name: 'Fotocasa', cat: 'Real State' },
-  { name: 'Idealista', cat: 'Real State' },
-  { name: 'Witei', cat: 'Real State' },
-  { name: 'Moodle', cat: 'Educación' },
-  { name: 'Teachable', cat: 'Educación' },
-  { name: 'Holded', cat: 'Migración ERP' },
-  { name: 'SAP Business One', cat: 'Migración ERP' },
-  { name: 'Sage', cat: 'Migración ERP' },
-  { name: 'Microsoft Dynamics 365', cat: 'Migración ERP' },
+  {
+    title: 'Diagnóstico o auditoría',
+    description:
+      'Analizamos procesos, herramientas y, si ya tienes Odoo, su estado real. Sin coste.',
+  },
+  {
+    title: 'Diseño funcional y presupuesto',
+    description:
+      'Documentamos cómo funcionará cada proceso en Odoo y lo dividimos en fases con alcance claro.',
+  },
+  {
+    title: 'Configuración en pruebas',
+    description:
+      'Montamos Odoo, migramos datos y desarrollamos en un entorno separado de tu operativa.',
+  },
+  {
+    title: 'Validación y formación',
+    description:
+      'Tu equipo prueba con pedidos, facturas y stock reales y aprende sobre su propio Odoo.',
+  },
+  {
+    title: 'Arranque y soporte',
+    description: 'Pasamos a producción y seguimos contigo para ajustar lo que haga falta.',
+  },
 ];
 
 const FAQS = [
-  [
-    '¿Cuánto cuesta implantar Odoo?',
-    'Depende de los módulos, el número de usuarios, la migración de datos y las integraciones. Tras el diagnóstico te damos un presupuesto por fases, para que sepas qué incluye cada una antes de empezar.',
-  ],
-  [
-    '¿Cuánto tarda una implantación?',
-    'Lo definimos en el diagnóstico según el alcance. Trabajar por fases permite tener en marcha lo más urgente, como facturación o almacén, sin esperar al proyecto completo.',
-  ],
-  [
-    '¿Os podéis hacer cargo de un Odoo que implantó otro partner?',
-    'Sí. Empezamos con una auditoría de la configuración y de los desarrollos a medida, y a partir de ahí asumimos el soporte y las mejoras.',
-  ],
-  [
-    '¿Se pierden datos al actualizar de versión o migrar desde otro ERP?',
-    'No. Hacemos la migración primero en un entorno de pruebas, la validas con tu equipo y solo entonces se pasa a producción.',
-  ],
-  [
-    '¿Odoo Community o Enterprise?',
-    'Depende de los módulos y de la localización fiscal que necesites. Te lo recomendamos en el diagnóstico con el coste de licencias de cada opción.',
-  ],
-  [
-    '¿Odoo cumple con la normativa fiscal española?',
-    'Configuramos la localización española: plan contable, impuestos, SII y facturación electrónica, incluida la adaptación a Verifactu.',
-  ],
+  {
+    question: '¿Cuánto cuesta implantar Odoo?',
+    answer:
+      'Depende de los módulos, el número de usuarios, la migración de datos y las integraciones. Tras el diagnóstico te damos un presupuesto por fases, para que sepas qué incluye cada una antes de empezar.',
+  },
+  {
+    question: '¿Cuánto tarda una implantación?',
+    answer:
+      'Lo definimos en el diagnóstico según el alcance. Trabajar por fases permite tener en marcha lo más urgente, como facturación o almacén, sin esperar al proyecto completo.',
+  },
+  {
+    question: '¿Os podéis hacer cargo de un Odoo que implantó otro partner?',
+    answer:
+      'Sí. Empezamos con una auditoría de la configuración y de los desarrollos a medida, y a partir de ahí asumimos el soporte y las mejoras.',
+  },
+  {
+    question: '¿Se pierden datos al actualizar de versión o migrar desde otro ERP?',
+    answer:
+      'No. Hacemos la migración primero en un entorno de pruebas, la validas con tu equipo y solo entonces se pasa a producción.',
+  },
+  {
+    question: '¿Odoo Community o Enterprise?',
+    answer:
+      'Depende de los módulos y de la localización fiscal que necesites. Te lo recomendamos en el diagnóstico con el coste de licencias de cada opción.',
+  },
+  {
+    question: '¿Odoo cumple con la normativa fiscal española?',
+    answer:
+      'Configuramos la localización española: plan contable, impuestos, SII y facturación electrónica, incluida la adaptación a Verifactu.',
+  },
 ];
+
+const DISCLAIMER =
+  'Gigson Solutions es una entidad independiente y no está afiliada ni forma parte de Odoo S.A. No representamos a Odoo ni actuamos en su nombre. Nuestra condición es exclusivamente la de partner oficial autorizado para la implementación y asesoramiento sobre sus productos y servicios.';
+
+// Misma etiqueta que el badge del hero y las pills de FeatureGrid.
+const PILL =
+  'inline-block text-purple-accents text-smallTag uppercase tracking-widest border border-purple-accents rounded-full px-4 py-1';
+
+const Bullet = ({ title, text }: { title?: string; text: string }) => (
+  <li className="flex items-start gap-3">
+    <span className="mt-2 w-2 h-2 rounded-full bg-purple-accents flex-shrink-0" aria-hidden="true" />
+    <span className="flex flex-col gap-1">
+      {title && <span className="text-body text-dark-primary">{title}</span>}
+      <span className={`text-body ${title ? 'text-dark-medium' : 'text-dark-primary'}`}>{text}</span>
+    </span>
+  </li>
+);
 
 const ConsultoriaOdoo = () => {
   const locale = useLocale();
   const router = useRouter();
+  // Estados de envío compartidos con el resto de formularios de la web.
+  const tForm = useTranslations('form');
 
   const [values, setValues] = useState({
     punto: 'nuevo' as Punto,
@@ -237,18 +234,13 @@ const ConsultoriaOdoo = () => {
     rgpd: false,
   });
   const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<
-    null | 'error' | 'rateLimited'
-  >(null);
+  const [submitError, setSubmitError] = useState<null | 'error' | 'rateLimited'>(null);
   // Antispam: honeypot + tiempo mínimo de rellenado (lo comprueba /api/lead).
   const [honeypot, setHoneypot] = useState('');
   const [renderedAt] = useState(() => Date.now());
-  const [filtro, setFiltro] = useState<(typeof FILTROS)[number]>('Todos');
 
-  const set = <K extends keyof typeof values>(
-    key: K,
-    value: (typeof values)[K]
-  ) => setValues((prev) => ({ ...prev, [key]: value }));
+  const set = <K extends keyof typeof values>(key: K, value: (typeof values)[K]) =>
+    setValues((prev) => ({ ...prev, [key]: value }));
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -266,8 +258,7 @@ const ConsultoriaOdoo = () => {
         phone: values.telefono,
         message: values.mensaje,
         fields: {
-          punto:
-            PUNTOS.find((p) => p.value === values.punto)?.label ?? values.punto,
+          punto: PUNTOS.find((p) => p.value === values.punto)?.label ?? values.punto,
         },
         attribution: getAttribution(),
         rgpd: values.rgpd,
@@ -291,25 +282,33 @@ const ConsultoriaOdoo = () => {
 
   return (
     <div className="codoo">
-      {/* Hero + formulario */}
-      <section className="codoo-wrap codoo-hero">
-        <div className="codoo-hero-grid">
-          <div className="codoo-hero-copy">
-            <span className="codoo-pill">Partner oficial de Odoo</span>
-            <h1 className="codoo-h1">
-              Consultoría e implantación de Odoo. Desde cero o sobre el que ya
-              tienes.
+      {/* ── Hero + formulario ─────────────────────────────────────── */}
+      <section className="px-landing mt-fixed-navbar bg-[#f4f3ef]">
+        <div className="max-w-[88.875rem] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch lg:items-start pt-14 lg:pt-20 pb-14 lg:pb-20">
+          <div className="flex-1 lg:flex-[1.2] flex flex-col items-start">
+            <span className={`${PILL} mb-6`}>Partner oficial de Odoo</span>
+            <h1 className="codoo-h1 text-h1 max-sm:text-[2.5rem] text-dark-primary mb-4 break-words">
+              Consultoría e implantación de Odoo. Desde cero o sobre el que ya tienes.
             </h1>
-            <p className="codoo-hero-sub">
-              Diseñamos Odoo alrededor de cómo trabaja tu empresa, migramos tus
-              datos y lo conectamos con tus herramientas. Si ya usas Odoo y no
-              rinde como esperabas, lo auditamos y lo ponemos a trabajar.
+            <p className="text-subtitle text-dark-medium mb-8">
+              Diseñamos Odoo alrededor de cómo trabaja tu empresa, migramos tus datos y lo
+              conectamos con tus herramientas. Si ya usas Odoo y no rinde como esperabas, lo
+              auditamos y lo ponemos a trabajar.
             </p>
+            <ul className="flex flex-col gap-4 mb-10">
+              {HERO_BULLETS.map((text) => (
+                <Bullet key={text} text={text} />
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-3">
+              <ButtonLink link="#nuevo" text="Ver proyecto nuevo" outlined className="uppercase" />
+              <ButtonLink link="#existente" text="Ver si ya tengo Odoo" outlined className="uppercase" />
+            </div>
           </div>
 
           <form
             id="contacto"
-            className="codoo-form codoo-hero-form"
+            className="codoo-form w-full lg:flex-1 lg:max-w-[31rem] bg-white rounded-[30px] p-6 lg:p-10 flex flex-col gap-6"
             onSubmit={handleSubmit}
             autoComplete="on"
           >
@@ -324,462 +323,327 @@ const ConsultoriaOdoo = () => {
               autoComplete="off"
               aria-hidden="true"
             />
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <h2 className="codoo-form-title">
-                Pide tu diagnóstico sin coste
-              </h2>
-              <p className="codoo-form-sub">
-                Un consultor de Odoo te llama en un día laborable.
-              </p>
+            <div className="flex flex-col gap-2">
+              <h2 className="text-h3 text-dark-primary">Pide tu diagnóstico sin coste</h2>
+              <p className="text-body text-dark-medium">Un consultor de Odoo te llama en un día laborable.</p>
             </div>
 
-            <fieldset>
-              <legend>¿En qué punto estás?</legend>
-              {PUNTOS.map((p) => (
-                <label key={p.value} className="codoo-radio">
-                  <input
-                    type="radio"
-                    name="punto"
-                    value={p.value}
-                    checked={values.punto === p.value}
-                    onChange={() => set('punto', p.value)}
-                  />
-                  <span>{p.label}</span>
-                </label>
-              ))}
+            <fieldset className="codoo-fieldset">
+              <legend className="text-body text-dark-primary mb-3">¿En qué punto estás?</legend>
+              <div className="flex flex-wrap gap-x-3 gap-y-2">
+                {PUNTOS.map((p) => (
+                  <div key={p.value} className="codoo-choice">
+                    <input
+                      type="radio"
+                      id={`punto-${p.value}`}
+                      name="punto"
+                      value={p.value}
+                      checked={values.punto === p.value}
+                      onChange={() => set('punto', p.value)}
+                    />
+                    <label htmlFor={`punto-${p.value}`}>{p.label}</label>
+                  </div>
+                ))}
+              </div>
             </fieldset>
 
-            <div className="codoo-fields">
-              <label className="codoo-field">
-                Nombre
+            <div className="flex flex-col gap-5">
+              <div className="codoo-field">
+                <label htmlFor="codoo-nombre">Nombre</label>
                 <input
+                  id="codoo-nombre"
                   type="text"
                   name="name"
                   autoComplete="name"
                   required
                   maxLength={200}
+                  placeholder="Tu nombre"
                   value={values.nombre}
                   onChange={(e) => set('nombre', e.target.value)}
                 />
-              </label>
-              <label className="codoo-field">
-                Empresa
+              </div>
+              <div className="codoo-field">
+                <label htmlFor="codoo-empresa">Empresa</label>
                 <input
+                  id="codoo-empresa"
                   type="text"
                   name="organization"
                   autoComplete="organization"
                   required
                   maxLength={200}
+                  placeholder="Nombre de tu empresa"
                   value={values.empresa}
                   onChange={(e) => set('empresa', e.target.value)}
                 />
-              </label>
-              <label className="codoo-field">
-                Email de empresa
+              </div>
+              <div className="codoo-field">
+                <label htmlFor="codoo-email">Email de empresa</label>
                 <input
+                  id="codoo-email"
                   type="email"
                   name="email"
                   autoComplete="email"
                   inputMode="email"
                   required
                   maxLength={320}
+                  placeholder="nombre@empresa.com"
                   value={values.email}
                   onChange={(e) => set('email', e.target.value)}
                 />
-              </label>
-              <label className="codoo-field">
-                Teléfono
+              </div>
+              <div className="codoo-field">
+                <label htmlFor="codoo-telefono">Teléfono</label>
                 <input
+                  id="codoo-telefono"
                   type="tel"
                   name="tel"
                   autoComplete="tel"
                   inputMode="tel"
                   required
                   maxLength={50}
+                  placeholder="+34 600 000 000"
                   value={values.telefono}
                   onChange={(e) => set('telefono', e.target.value)}
                 />
-              </label>
+              </div>
+              <div className="codoo-field codoo-field--stack">
+                <label htmlFor="codoo-mensaje">
+                  Qué necesitas resolver <span className="text-dark-medium">(opcional)</span>
+                </label>
+                <textarea
+                  id="codoo-mensaje"
+                  name="message"
+                  rows={2}
+                  maxLength={5000}
+                  placeholder="Por ejemplo: facturamos en Holded y el stock va en Excel"
+                  value={values.mensaje}
+                  onChange={(e) => set('mensaje', e.target.value)}
+                />
+              </div>
             </div>
 
-            <label className="codoo-field">
-              <span>
-                Qué necesitas resolver{' '}
-                <span className="codoo-optional">(opcional)</span>
-              </span>
-              <textarea
-                name="message"
-                rows={2}
-                maxLength={5000}
-                placeholder="Por ejemplo: facturamos en Holded y el stock va en Excel"
-                value={values.mensaje}
-                onChange={(e) => set('mensaje', e.target.value)}
-              />
-            </label>
-
-            <label className="codoo-consent">
+            <div className="codoo-consent">
               <input
                 type="checkbox"
+                id="codoo-rgpd"
                 name="rgpd"
                 required
                 checked={values.rgpd}
                 onChange={(e) => set('rgpd', e.target.checked)}
               />
-              <span>
+              <label htmlFor="codoo-rgpd" className="text-smallTag text-dark-primary">
                 He leído y acepto la{' '}
-                <Link href="/policy" target="_blank">
+                <Link
+                  href="/policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-accents"
+                >
                   política de privacidad
                 </Link>
-              </span>
-            </label>
+              </label>
+            </div>
 
             {submitError && (
               <p className="codoo-form-error" role="alert">
-                {submitError === 'rateLimited'
-                  ? 'Has enviado varias solicitudes seguidas. Espera unos minutos y vuelve a intentarlo.'
-                  : 'No hemos podido enviar tu solicitud. Inténtalo de nuevo o escríbenos a hello@gigsonsolutions.com.'}
+                {tForm(submitError === 'rateLimited' ? 'errorRateLimit' : 'error')}
               </p>
             )}
 
-            <button
+            <Button
               type="submit"
-              className="codoo-btn codoo-submit"
+              name={submitting ? tForm('sending') : 'SOLICITAR DIAGNÓSTICO'}
+              className="w-full disabled:opacity-60 disabled:cursor-not-allowed"
               disabled={submitting}
-            >
-              {submitting ? 'Enviando…' : 'Solicitar diagnóstico'}
-            </button>
-            <p className="codoo-form-note">
-              Sin compromiso. Solo usamos tus datos para responder a tu
-              solicitud.
+            />
+            <p className="text-smallTag text-dark-medium text-center">
+              Sin compromiso. Solo usamos tus datos para responder a tu solicitud.
             </p>
           </form>
-
-          <div className="codoo-hero-extra">
-            <ul className="codoo-checks">
-              <li>
-                {CHECK_ICON}
-                <span>
-                  <strong>+320 implantaciones de Odoo</strong> entregadas.
-                </span>
-              </li>
-              <li>
-                {CHECK_ICON}
-                <span>
-                  Partner oficial de Odoo y de Holded: conocemos los dos lados
-                  de la migración.
-                </span>
-              </li>
-              <li>
-                {CHECK_ICON}
-                <span>
-                  Equipo técnico propio para módulos a medida e integraciones.
-                </span>
-              </li>
-            </ul>
-            <div className="codoo-hero-links">
-              <a href="#nuevo" className="codoo-btn codoo-btn--ghost">
-                Ver proyecto nuevo
-              </a>
-              <a href="#existente" className="codoo-btn codoo-btn--ghost">
-                Ver si ya tengo Odoo
-              </a>
-            </div>
-          </div>
         </div>
       </section>
 
-      <a href="#contacto" className="codoo-btn codoo-sticky">
+      {/* CTA fijo en móvil (solo esta landing) */}
+      <a
+        href="#contacto"
+        className="codoo-sticky bg-purple-accents text-white text-button rounded-full uppercase hover:opacity-80 transition duration-200"
+      >
         Solicitar diagnóstico
       </a>
 
-      {/* Credenciales */}
-      <section aria-label="Credenciales" className="codoo-wrap codoo-creds-sec">
-        <div className="codoo-creds">
-          <div>
-            <span className="codoo-cred-value">Partner oficial</span>
-            <span className="codoo-cred-label">
-              de Odoo y de Holded en España
-            </span>
+      {/* ── Credenciales ─────────────────────────────────────────── */}
+      <StatsBar stats={STATS} />
+
+      {/* ── Dos puntos de partida ────────────────────────────────── */}
+      <section id="punto-de-partida" className="px-landing py-14 lg:py-20 bg-[#f4f3ef]">
+        <div className="max-w-[88.875rem] mx-auto">
+          <div className="max-w-[45rem] mb-10 lg:mb-14">
+            <p className="text-purple-accents text-smallTag uppercase tracking-widest mb-4">
+              Dos puntos de partida
+            </p>
+            <h2 className="text-h2 text-dark-primary mb-4">
+              Dos puntos de partida, el mismo objetivo: un Odoo que tu equipo use de verdad.
+            </h2>
+            <p className="text-subtitle text-dark-medium">
+              No es lo mismo empezar en blanco que heredar una instalación. Por eso el trabajo
+              arranca distinto en cada caso.
+            </p>
           </div>
-          <div>
-            <span className="codoo-cred-value">+20</span>
-            <span className="codoo-cred-label">
-              herramientas que ya conectamos con Odoo
-            </span>
-          </div>
-          <div>
-            <span className="codoo-cred-value">+320</span>
-            <span className="codoo-cred-label">
-              implantaciones de Odoo entregadas
-            </span>
-          </div>
-          <div>
-            <span className="codoo-cred-value">Equipo propio</span>
-            <span className="codoo-cred-label">
-              consultoría funcional y desarrollo
-            </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <article
+              id="nuevo"
+              className="bg-white rounded-[30px] p-8 lg:p-10 flex flex-col gap-6 border border-transparent hover:border-purple-accents transition duration-200"
+            >
+              <span className={`${PILL} self-start`}>Proyecto nuevo</span>
+              <h3 className="text-h3 text-dark-primary">Implantamos Odoo desde cero</h3>
+              <p className="text-subtitle text-dark-medium">
+                Para empresas que trabajan con varias herramientas sueltas, hojas de cálculo o un
+                ERP que se ha quedado pequeño.
+              </p>
+              <ul className="flex flex-col gap-4">
+                {NUEVO.map(([title, text]) => (
+                  <Bullet key={title} title={title} text={text} />
+                ))}
+              </ul>
+              <div className="mt-auto pt-2">
+                <ButtonLink
+                  link="#contacto"
+                  text="Quiero implantar Odoo"
+                  className="uppercase"
+                  onClick={() => set('punto', 'nuevo')}
+                />
+              </div>
+            </article>
+
+            <article
+              id="existente"
+              className="bg-white rounded-[30px] p-8 lg:p-10 flex flex-col gap-6 border border-transparent hover:border-purple-accents transition duration-200"
+            >
+              <span className={`${PILL} self-start`}>Ya tengo Odoo</span>
+              <h3 className="text-h3 text-dark-primary">Revisamos, rescatamos y hacemos crecer tu Odoo</h3>
+              <p className="text-subtitle text-dark-medium">
+                Para empresas con una implantación a medias, un partner que ya no responde o una
+                versión que se ha quedado atrás.
+              </p>
+              <ul className="flex flex-col gap-4">
+                {EXISTENTE.map(([title, text]) => (
+                  <Bullet key={title} title={title} text={text} />
+                ))}
+              </ul>
+              <div className="mt-auto pt-2">
+                <ButtonLink
+                  link="#contacto"
+                  text="Revisar mi Odoo"
+                  className="uppercase"
+                  onClick={() => set('punto', 'existente')}
+                />
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* Dos puntos de partida */}
-      <section id="punto-de-partida" className="codoo-wrap codoo-paths-sec">
-        <div className="codoo-head" style={{ maxWidth: 760 }}>
-          <h2 className="codoo-paths-title">
-            Dos puntos de partida, el mismo objetivo: un Odoo que tu equipo use
-            de verdad.
-          </h2>
-          <p className="codoo-lead" style={{ fontSize: 18 }}>
-            No es lo mismo empezar en blanco que heredar una instalación. Por
-            eso el trabajo arranca distinto en cada caso.
-          </p>
-        </div>
-        <div className="codoo-paths">
-          <article id="nuevo" className="codoo-path">
-            <span className="codoo-pill">Proyecto nuevo</span>
-            <h3>Implantamos Odoo desde cero</h3>
-            <p className="codoo-lead">
-              Para empresas que trabajan con varias herramientas sueltas, hojas
-              de cálculo o un ERP que se ha quedado pequeño.
+      {/* ── Señales ──────────────────────────────────────────────── */}
+      <section aria-labelledby="t-senales" className="px-landing py-14 lg:py-20 bg-white">
+        <div className="max-w-[88.875rem] mx-auto flex flex-col lg:flex-row lg:gap-20">
+          <div className="lg:w-[28rem] flex-shrink-0 mb-10 lg:mb-0">
+            <p className="text-purple-accents text-smallTag uppercase tracking-widest mb-4">
+              Señales
             </p>
-            <ul>
-              {NUEVO.map(([title, text]) => (
-                <li key={title}>
-                  <strong>{title}</strong>
-                  <span>{text}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href="#contacto"
-              className="codoo-btn"
-              onClick={() => set('punto', 'nuevo')}
-            >
-              Quiero implantar Odoo
-            </a>
-          </article>
-
-          <article id="existente" className="codoo-path codoo-path--dark">
-            <span className="codoo-pill">Ya tengo Odoo</span>
-            <h3>Revisamos, rescatamos y hacemos crecer tu Odoo</h3>
-            <p>
-              Para empresas con una implantación a medias, un partner que ya no
-              responde o una versión que se ha quedado atrás.
-            </p>
-            <ul>
-              {EXISTENTE.map(([title, text]) => (
-                <li key={title}>
-                  <strong>{title}</strong>
-                  <span>{text}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href="#contacto"
-              className="codoo-btn codoo-btn--light"
-              onClick={() => set('punto', 'existente')}
-            >
-              Revisar mi Odoo
-            </a>
-          </article>
-        </div>
-      </section>
-
-      {/* Señales */}
-      <section aria-labelledby="t-senales" className="codoo-white">
-        <div className="codoo-wrap codoo-signals">
-          <div className="codoo-signals-head">
-            <h2 id="t-senales" className="codoo-h2">
+            <h2 id="t-senales" className="text-h2 text-dark-primary mb-4">
               Si te reconoces en alguna de estas frases, hablemos.
             </h2>
-            <p className="codoo-lead">
+            <p className="text-subtitle text-dark-medium">
               Son las situaciones que más vemos en la primera llamada.
             </p>
           </div>
-          <div className="codoo-signals-grid">
+          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
             {SENALES.map((q) => (
-              <p key={q} className="codoo-quote">
+              <blockquote
+                key={q}
+                className="bg-[#f4f3ef] rounded-[30px] p-6 lg:p-8 text-h4 text-dark-primary m-0"
+              >
                 {q}
-              </p>
+              </blockquote>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Módulos */}
-      <section
+      {/* ── Módulos ──────────────────────────────────────────────── */}
+      <FeatureGrid
         id="modulos"
-        aria-labelledby="t-modulos"
-        className="codoo-wrap codoo-section"
-      >
-        <div className="codoo-head">
-          <h2 id="t-modulos" className="codoo-h2">
-            Los módulos que más implantamos
-          </h2>
-          <p className="codoo-lead">
-            Empezamos por los que más impacto tienen en tu operativa y añadimos
-            el resto por fases.
-          </p>
-        </div>
-        <div className="codoo-modules">
-          {MODULOS.map(([title, text]) => (
-            <div key={title} className="codoo-module">
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        eyebrow="Módulos"
+        title="Los módulos que más implantamos"
+        description="Empezamos por los que más impacto tienen en tu operativa y añadimos el resto por fases."
+        features={MODULOS}
+      />
 
-      {/* Migración */}
-      <section
-        id="migracion"
-        aria-labelledby="t-migracion"
-        className="codoo-wrap codoo-migration-sec"
-      >
-        <div className="codoo-migration">
-          <div className="codoo-migration-copy">
-            <span className="codoo-pill">Migración</span>
-            <h2 id="t-migracion" className="codoo-h2">
-              ¿Vienes de Holded u otro ERP? Te llevamos a Odoo sin perder
-              histórico.
+      {/* ── Migración ────────────────────────────────────────────── */}
+      <section id="migracion" aria-labelledby="t-migracion" className="px-landing py-14 lg:py-20 bg-white">
+        <div className="max-w-[88.875rem] mx-auto flex flex-col lg:flex-row lg:gap-20 lg:items-start">
+          <div className="flex-1 max-w-[45rem]">
+            <p className="text-purple-accents text-smallTag uppercase tracking-widest mb-4">
+              Migración
+            </p>
+            <h2 id="t-migracion" className="text-h2 text-dark-primary mb-4">
+              ¿Vienes de Holded u otro ERP? Te llevamos a Odoo sin perder histórico.
             </h2>
-            <p>
-              Somos partner de Holded y de Odoo, así que sabemos qué datos se
-              mueven tal cual, cuáles hay que transformar y qué conviene dejar
-              atrás. Cargamos primero en un entorno de prueba y validas tú antes
-              del cambio.
+            <p className="text-subtitle text-dark-medium">
+              Somos partner de Holded y de Odoo, así que sabemos qué datos se mueven tal cual,
+              cuáles hay que transformar y qué conviene dejar atrás. Cargamos primero en un
+              entorno de prueba y validas tú antes del cambio.
             </p>
           </div>
-          <ul className="codoo-chips">
+          <ul className="flex-1 flex flex-wrap gap-3 mt-8 lg:mt-0 lg:justify-end lg:pt-12 m-0 p-0">
             {ORIGENES.map((o) => (
-              <li key={o}>{o}</li>
+              <li key={o} className={PILL}>
+                {o}
+              </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* Proceso */}
-      <section id="proceso" aria-labelledby="t-proceso" className="codoo-white">
-        <div className="codoo-wrap codoo-section" style={{ gap: 44 }}>
-          <div className="codoo-head">
-            <h2 id="t-proceso" className="codoo-h2">
-              Cómo trabajamos un proyecto de Odoo
-            </h2>
-            <p className="codoo-lead">
-              El mismo método para un proyecto nuevo y para uno heredado. En los
-              heredados, el paso uno es una auditoría.
-            </p>
-          </div>
-          <ol className="codoo-steps">
-            {PASOS.map(([title, text], i) => (
-              <li key={title}>
-                <span className="codoo-step-n">{i + 1}</span>
-                <strong>{title}</strong>
-                <span>{text}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+      {/* ── Proceso ──────────────────────────────────────────────── */}
+      <div id="proceso">
+        <ProcessSteps
+          eyebrow="Cómo trabajamos"
+          h2a="Cómo trabajamos"
+          h2b="un proyecto de Odoo."
+          lead="El mismo método para un proyecto nuevo y para uno heredado. En los heredados, el paso uno es una auditoría."
+          steps={PASOS}
+        />
+      </div>
 
-      {/* Integraciones */}
-      <section
-        id="integraciones"
-        aria-labelledby="t-integraciones"
-        className="codoo-wrap codoo-section"
-        style={{ gap: 32 }}
-      >
-        <div className="codoo-int-head">
-          <h2 id="t-integraciones" className="codoo-h2">
-            Odoo se conecta con las herramientas que ya usas
+      {/* ── Integraciones: misma rejilla y datos que /es/integraciones-odoo ── */}
+      <div id="integraciones">
+        <IntegrationLogosGrid namespace="integrations-odoo" logos={ODOO_INTEGRATION_LOGOS} />
+      </div>
+
+      {/* ── FAQ ──────────────────────────────────────────────────── */}
+      <div id="faq">
+        <ServiceFaq title="Preguntas frecuentes" faqs={FAQS} />
+      </div>
+
+      {/* ── CTA final ────────────────────────────────────────────── */}
+      <section className="px-landing py-14 lg:py-20 bg-white">
+        <div className="max-w-[45rem] mx-auto flex flex-col items-center text-center gap-6">
+          <h2 className="text-h2 text-dark-primary">
+            Empieza con un diagnóstico de tu Odoo, nuevo o existente.
           </h2>
-          <p>Software compatible</p>
-        </div>
-        <div
-          role="group"
-          aria-label="Filtrar por sector"
-          className="codoo-filters"
-        >
-          {FILTROS.map((f) => (
-            <button
-              key={f}
-              type="button"
-              className="codoo-filter"
-              aria-pressed={filtro === f}
-              onClick={() => setFiltro(f)}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-        <ul className="codoo-tools">
-          {HERRAMIENTAS.filter(
-            (h) => filtro === 'Todos' || h.cat === filtro
-          ).map((h) => (
-            <li key={h.name}>
-              <a href="#contacto" title={`Conectar ${h.name}`}>
-                {h.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <a
-          href="#contacto"
-          className="codoo-btn codoo-center"
-          style={{ minHeight: 52, padding: '0 32px', fontSize: 15 }}
-        >
-          Empieza a implementar Odoo
-        </a>
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" aria-labelledby="t-faq" className="codoo-white">
-        <div className="codoo-faq">
-          <h2 id="t-faq" className="codoo-h2">
-            Preguntas frecuentes
-          </h2>
-          <div>
-            {FAQS.map(([q, a]) => (
-              <details key={q}>
-                <summary>
-                  {q}
-                  <span className="codoo-faq-plus" aria-hidden="true">
-                    +
-                  </span>
-                </summary>
-                <p>{a}</p>
-              </details>
-            ))}
-          </div>
+          <p className="text-subtitle text-dark-medium">
+            Sin coste ni compromiso. Sales de la llamada sabiendo qué harías primero.
+          </p>
+          <ButtonLink link="#contacto" text="Solicitar diagnóstico" className="uppercase" />
         </div>
       </section>
 
-      {/* CTA final */}
-      <section className="codoo-wrap codoo-final-sec">
-        <div className="codoo-final">
-          <div className="codoo-final-copy">
-            <h2>Empieza con un diagnóstico de tu Odoo, nuevo o existente.</h2>
-            <p>
-              Sin coste ni compromiso. Sales de la llamada sabiendo qué harías
-              primero.
-            </p>
-          </div>
-          <a href="#contacto" className="codoo-btn codoo-btn--light">
-            Solicitar diagnóstico
-          </a>
+      {/* ── Aviso de independencia respecto a Odoo S.A. ─────────── */}
+      <section className="px-landing bg-[#f4f3ef]">
+        <div className="max-w-[88.875rem] mx-auto">
+          <p className="text-smallTag text-dark-medium py-14 lg:py-20">{DISCLAIMER}</p>
         </div>
-      </section>
-
-      {/* Aviso de independencia respecto a Odoo S.A. */}
-      <section className="codoo-wrap codoo-disclaimer">
-        <p>
-          Gigson Solutions es una entidad independiente y no está afiliada ni
-          forma parte de Odoo S.A. No representamos a Odoo ni actuamos en su
-          nombre. Nuestra condición es exclusivamente la de partner oficial
-          autorizado para la implementación y asesoramiento sobre sus productos
-          y servicios.
-        </p>
       </section>
     </div>
   );

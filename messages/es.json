@@ -3869,8 +3869,8 @@
                 "CRM/ERP",
                 "Logística",
                 "Servicios",
-                "Real State",
-                "RR. HH"
+                "Inmobiliario",
+                "RR. HH."
             ]
         },
         "faq": {
@@ -5036,8 +5036,7 @@
                 "text": "Entendemos qué necesitas y te contamos cómo lo abordaríamos."
             }
         ],
-        "bookHint": "¿Prefieres elegir tú el momento? Reserva directamente una llamada en nuestra agenda.",
-        "bookCta": "Reservar una llamada",
+        "casesHint": "Mientras tanto, puedes ver cómo hemos trabajado con otras empresas.",
         "casesCta": "Ver casos de éxito"
     }
 }
