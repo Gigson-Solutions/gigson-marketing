@@ -41,13 +41,13 @@ const PUNTOS = [
 type Punto = (typeof PUNTOS)[number]['value'];
 
 const STATS = [
-  { value: '+320', label: 'implantaciones de Odoo entregadas' },
+  { value: '+80', label: 'implantaciones de Odoo entregadas' },
   { value: '+20', label: 'herramientas conectadas con Odoo' },
   { value: '2', label: 'ERPs de los que somos partner oficial' },
 ];
 
 const HERO_BULLETS = [
-  '+320 implantaciones de Odoo entregadas.',
+  '+80 implantaciones de Odoo entregadas.',
   'Partner oficial de Odoo y de Holded: conocemos los dos lados de la migración.',
   'Equipo técnico propio para módulos a medida e integraciones.',
 ];
