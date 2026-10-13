@@ -37,7 +37,6 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 // porque enlaza con next/link y estos destinos necesitan el Link localizado.
 const BTN = 'text-center text-button rounded-full py-3 px-6 hover:opacity-80 uppercase';
 const BTN_SOLID = `${BTN} text-white bg-purple-accents`;
-const BTN_OUTLINED = `${BTN} text-purple-accents border border-purple-accents transition duration-200 ease-linear hover:bg-[#e3e1ee] hover:text-purple-accents`;
 
 export default async function ThankYouPage(props: Props) {
   const { locale } = await props.params;
@@ -78,12 +77,9 @@ export default async function ThankYouPage(props: Props) {
             ))}
           </ol>
 
-          <p className="text-body text-dark-medium">{t('bookHint')}</p>
+          <p className="text-body text-dark-medium">{t('casesHint')}</p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/book" className={BTN_SOLID}>
-              {t('bookCta')}
-            </Link>
-            <Link href="/cases" className={BTN_OUTLINED}>
+            <Link href="/cases" className={BTN_SOLID}>
               {t('casesCta')}
             </Link>
           </div>
