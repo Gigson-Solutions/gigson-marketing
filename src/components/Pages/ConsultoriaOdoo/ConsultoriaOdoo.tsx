@@ -7,7 +7,8 @@ import { useState } from 'react';
 
 import { Link, useRouter } from '../../../../i18n/navigation';
 import { getAttribution } from '../../../lib/attribution';
-import { submitLead } from '../../../lib/leads/submitLead';
+import { LEAD_ERROR_KEYS, submitLead } from '../../../lib/leads/submitLead';
+import type { LeadResult } from '../../../lib/leads/types';
 import { Button, ButtonLink } from '../../../shared/ui/Button';
 import FeatureGrid from '../../../shared/ui/FeatureGrid';
 import ProcessSteps from '../../../shared/ui/ProcessSteps';
@@ -234,7 +235,7 @@ const ConsultoriaOdoo = () => {
     rgpd: false,
   });
   const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<null | 'error' | 'rateLimited'>(null);
+  const [submitError, setSubmitError] = useState<null | Exclude<LeadResult, 'sent'>>(null);
   // Antispam: honeypot + tiempo mínimo de rellenado (lo comprueba /api/lead).
   const [honeypot, setHoneypot] = useState('');
   const [renderedAt] = useState(() => Date.now());
@@ -446,7 +447,7 @@ const ConsultoriaOdoo = () => {
 
             {submitError && (
               <p className="codoo-form-error" role="alert">
-                {tForm(submitError === 'rateLimited' ? 'errorRateLimit' : 'error')}
+                {tForm(LEAD_ERROR_KEYS[submitError])}
               </p>
             )}
 
