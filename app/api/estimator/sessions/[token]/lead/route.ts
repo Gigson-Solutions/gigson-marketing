@@ -24,8 +24,8 @@ const LEAD_EMAIL_DISABLE = process.env.LEAD_EMAIL_DISABLE === 'true';
 // contact them with the final result."
 //
 // No hour figure is sent to the client here — hours stay hidden (blurred
-// in the UI) until the user also books a call via the Cal.com embed further
-// down Step 6; see book-confirmed/route.ts.
+// in the UI) for good. The team goes through them with the lead personally,
+// which is the point of capturing the lead in the first place.
 //
 // Every 400 carries a stable `code` so the modal can show a translated
 // message (LeadCaptureModal maps codes → projectEstimator.step6.modal keys);

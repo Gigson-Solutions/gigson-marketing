@@ -37,6 +37,12 @@ const nextConfig = {
       destination: '/es/certificacion-iso-27001',
       permanent: true,
     },
+    // Retired the standalone call-booking page (/book, /es/reservas): it put a
+    // slot in Jaume's calendar straight from the site, with nothing linking to
+    // it. Everything funnels through the contact form now.
+    { source: '/book', destination: '/contact', permanent: true },
+    { source: '/es/reservas', destination: '/es/contacto', permanent: true },
+    { source: '/reservas', destination: '/es/contacto', permanent: true },
     // The Odoo consulting campaign landing only exists in Spanish. Without
     // this, the unprefixed URL would render it under the English locale. Not
     // permanent, in case an English version is added later.
