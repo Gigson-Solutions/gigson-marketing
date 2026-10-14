@@ -1,0 +1,174 @@
+/* Landing de campaña: consultoría e implantación de Odoo (/es/consultoria-odoo).
+
+   Casi todo el estilo viene de los componentes compartidos y de las
+   utilidades Tailwind del tema (ver ConsultoriaOdoo.tsx). Aquí solo queda lo
+   que no tiene equivalente reutilizable: el formulario del hero, calcado de
+   Form.css (inputs subrayados, pastillas de opción, checkbox redondo) pero
+   acotado a .codoo-form para no depender de que Form.css esté cargado en esta
+   ruta, y el CTA fijo de móvil. Todo sobre tokens --gs-*. */
+
+/* El header de la web es fijo (91px): los anclajes no deben quedar debajo. */
+.codoo [id] {
+  scroll-margin-top: 110px;
+}
+
+/* Titular del hero. text-h1 vale 64px entre 1024 y 1439px, y con el
+   formulario al lado la columna se queda en ~500px: el título de siete
+   palabras se partía en ocho líneas. Se acota al h1 canónico del sistema
+   (55px, --gs-text-3xl a 1440+), como hacen la landing ISO y ProcessSteps. */
+@media (min-width: 1024px) {
+  .codoo .codoo-h1 {
+    font-size: clamp(40px, 4vw, 55px);
+  }
+}
+
+/* ── Formulario del hero ─────────────────────────────────────── */
+.codoo-fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.codoo-fieldset legend {
+  padding: 0;
+}
+
+/* Pastillas de opción — mismo patrón que .form-budget / .form-btn-budget */
+.codoo-choice input[type='radio'] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.codoo-choice label {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border: var(--gs-stroke-w) solid var(--gs-ink);
+  border-radius: var(--gs-radius-pill);
+  font-size: var(--gs-text-sm);
+  line-height: var(--gs-lh-button);
+  color: var(--gs-ink);
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.codoo-choice label:hover,
+.codoo-choice input[type='radio']:checked + label {
+  background: var(--gs-lavender);
+  color: var(--gs-purple);
+  border-color: var(--gs-purple);
+}
+.codoo-choice input[type='radio']:focus-visible + label {
+  outline: 2px solid var(--gs-purple);
+  outline-offset: 2px;
+}
+
+/* Campos — etiqueta a la izquierda e input subrayado, como .input-container */
+.codoo-field {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  min-width: 0;
+}
+.codoo-field--stack {
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+.codoo-field label {
+  flex-shrink: 0;
+  font-size: var(--gs-text-sm);
+  color: var(--gs-ink);
+  white-space: nowrap;
+}
+.codoo-field--stack label {
+  white-space: normal;
+}
+.codoo-field input,
+.codoo-field textarea {
+  all: unset;
+  display: block;
+  box-sizing: border-box;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  font-family: var(--gs-font-sans);
+  font-size: var(--gs-text-sm);
+  line-height: var(--gs-lh-body);
+  color: var(--gs-graphite);
+  border-bottom: var(--gs-stroke-w) solid var(--gs-ink);
+  padding: 0.3rem 0 0.2rem;
+}
+.codoo-field textarea {
+  resize: vertical;
+  min-height: 2.6rem;
+}
+.codoo-field input::placeholder,
+.codoo-field textarea::placeholder {
+  color: var(--gs-graphite);
+  opacity: 1;
+}
+.codoo-field input:focus-visible,
+.codoo-field textarea:focus-visible {
+  border-bottom-color: var(--gs-purple);
+}
+
+/* Consentimiento — checkbox redondo como el de Form.css */
+.codoo-consent {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+.codoo-consent input[type='checkbox'] {
+  all: unset;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 1rem;
+  height: 1rem;
+  appearance: none;
+  background-color: var(--gs-mist);
+  border: var(--gs-stroke-w) solid var(--gs-black);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.codoo-consent input[type='checkbox']:checked {
+  background-color: var(--gs-purple);
+}
+.codoo-consent input[type='checkbox']:focus-visible {
+  outline: 2px solid var(--gs-purple);
+  outline-offset: 2px;
+}
+
+/* Error de envío — igual que .form-error */
+.codoo-form-error {
+  padding: 0.625rem 0.875rem;
+  font-size: var(--gs-text-xs);
+  line-height: 1.4;
+  color: #8a1c1c;
+  background: rgba(190, 40, 40, 0.08);
+  border-left: 2px solid #be2828;
+  border-radius: 0.25rem;
+}
+
+/* ── CTA fijo en móvil ───────────────────────────────────────── */
+.codoo-sticky {
+  display: none;
+}
+@media (max-width: 900px) {
+  .codoo .codoo-sticky {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    /* A la izquierda del botón del chatbot de la web (56px, a 24px del borde),
+       en la misma línea, para no taparlo. */
+    left: 12px;
+    right: 92px;
+    bottom: calc(25px + env(safe-area-inset-bottom, 0px));
+    min-height: 54px;
+    z-index: 30;
+    box-shadow: var(--gs-shadow-soft);
+  }
+  .codoo {
+    padding-bottom: 96px;
+  }
+}

@@ -6,14 +6,8 @@
     "organization": {
         "description": "Gigson Solutions es Partner Certificado de Anthropic (Certified Anthropic Claude Partner) en España. Diseñamos y desplegamos agentes de IA basados en Claude para empresas, además de CTO as a Service, integraciones de sistemas, ingeniería de software a medida y ciberseguridad."
     },
-    "book": {
-        "title": "Reservar cita",
-        "subtitle": "Elige un hueco que te encaje. Las reservas se sincronizan con nuestro calendario.",
-        "iframeTitle": "Reservar cita con Gigson Solutions"
-    },
     "menu": {
         "about": "NOSOTROS",
-        "book": "RESERVAR",
         "services": "SERVICIOS",
         "news": "LANDING",
         "industries": "INDUSTRIAS",
@@ -644,7 +638,8 @@
         "successTitle": "Hemos recibido tu solicitud",
         "successBody": "Gracias por contactar con gigson solutions. Te respondemos en menos de 24 horas laborables.",
         "error": "Algo ha fallado al enviar tu solicitud. Vuelve a intentarlo o escríbenos a info@gigsonsolutions.com.",
-        "errorRateLimit": "Has enviado demasiadas solicitudes seguidas. Espera unos minutos e inténtalo de nuevo."
+        "errorRateLimit": "Has enviado demasiadas solicitudes seguidas. Espera unos minutos e inténtalo de nuevo.",
+        "errorInvalidContact": "Revisa tu email y tu teléfono: no hemos podido validarlos. Necesitamos datos reales para poder responderte."
     },
     "notFound": {
         "title": "<span>Oops... </span>",
@@ -3657,10 +3652,6 @@
             "h1": "Contacta con Gigson Solutions",
             "description": "Cuéntanos qué necesitas y te proponemos por dónde empezar: agentes de IA, integraciones, ERP a medida y ciberseguridad para empresas en España."
         },
-        "book": {
-            "title": "Reservar reunión | Gigson Solutions",
-            "description": "Agenda una llamada con nuestro equipo. Elige el hueco que mejor te encaje."
-        },
         "policy": {
             "title": "Política de privacidad | Gigson Solutions",
             "description": "Cómo recoge, usa y conserva Gigson Solutions (Awesomely SL) los datos personales, la base legal de cada finalidad y cómo ejercer tus derechos."
@@ -3869,8 +3860,8 @@
                 "CRM/ERP",
                 "Logística",
                 "Servicios",
-                "Real State",
-                "RR. HH"
+                "Inmobiliario",
+                "RR. HH."
             ]
         },
         "faq": {
@@ -4516,10 +4507,10 @@
             "submit": "Solicitar diagnóstico gratuito",
             "legal": "Al enviar este formulario aceptas que gigson solutions se ponga en contacto contigo en relación a tu solicitud. No compartimos tus datos con terceros. <a>Política de privacidad</a>.",
             "successTitle": "Recibido. Te enviamos el diagnóstico en 24 h.",
-            "successP": "Revisaremos tu situación y te enviaremos por escrito qué controles de ISO 27001 ya cumples sin saberlo. Si quieres, reserva ahora una llamada de 30 minutos para repasarlo y ver plazo, coste y cómo te afecta NIS2.",
-            "successCta": "Reservar llamada →",
-            "successSoft": "O espera nuestro correo - te respondemos antes de 24 horas laborables.",
-            "errorSubmit": "Algo ha fallado al enviar tu solicitud. Vuelve a intentarlo o escríbenos directamente."
+            "successP": "Revisaremos tu situación y te enviaremos por escrito qué controles de ISO 27001 ya cumples sin saberlo, con el plazo, el coste y cómo te afecta NIS2.",
+            "successSoft": "Te respondemos antes de 24 horas laborables.",
+            "errorSubmit": "Algo ha fallado al enviar tu solicitud. Vuelve a intentarlo o escríbenos directamente.",
+            "errorInvalidContact": "Revisa tu email y tu teléfono: no hemos podido validarlos. Necesitamos datos reales para poder responderte."
         }
     },
     "iso27001Service": {
@@ -4979,16 +4970,25 @@
             "gateCta": "OBTENER MI ESTIMACIÓN COMPLETA",
             "modal": {
                 "title": "OBTÉN TU ESTIMACIÓN COMPLETA",
-                "copy": "Introduce tu email para recibir tu estimación completa: presupuesto, horas y desglose de casos de uso. Nuestro equipo revisará el resultado contigo antes de confirmarlo.",
+                "copy": "Déjanos tus datos para recibir tu estimación completa: presupuesto, horas y desglose de casos de uso. Nuestro equipo revisará el resultado contigo antes de confirmarlo.",
                 "nameLabel": "Nombre",
                 "namePlaceholder": "Tu nombre",
+                "nameRequired": "Introduce tu nombre.",
                 "companyLabel": "Empresa",
-                "companyPlaceholder": "Nombre de tu empresa (opcional)",
+                "companyPlaceholder": "Nombre de tu empresa",
+                "companyRequired": "Introduce el nombre de tu empresa.",
+                "phoneLabel": "Teléfono",
+                "phonePlaceholder": "+34 600 000 000",
+                "phoneRequired": "Introduce un teléfono.",
+                "phoneInvalid": "Introduce un teléfono válido (mínimo 9 dígitos).",
                 "emailLabel": "Tu email",
                 "emailPlaceholder": "email@ejemplo.com",
                 "emailRequired": "Introduce un email.",
                 "emailInvalid": "Introduce un email válido.",
-                "rgpdLabel": "Acepto la política de privacidad",
+                "emailNotReal": "Ese email no parece válido. Usa una dirección real a la que podamos escribirte.",
+                "rgpdFirst": "He leído y acepto la ",
+                "rgpdLink": "política de privacidad",
+                "rgpdThird": "",
                 "rgpdRequired": "Debes aceptar la política de privacidad.",
                 "submit": "OBTENER ESTIMACIÓN",
                 "submitting": "ENVIANDO…",
@@ -4996,13 +4996,36 @@
             },
             "successTitle": "¡Gracias! Aquí tienes tu estimación",
             "successNote": "Hemos enviado los detalles a nuestro equipo. Te contactaremos en menos de 24-48h para afinar juntos el resultado.",
-            "bookCallTitle": "RESERVA UNA LLAMADA PARA VER LAS HORAS ESTIMADAS",
-            "bookCallHelp": "El presupuesto ya es visible arriba. Para desbloquear también las horas estimadas — el total y su reparto entre consultoría y desarrollo — reserva una llamada de 30 minutos con nuestro equipo y revisamos el resultado contigo.",
             "restart": "EMPEZAR OTRA ESTIMACIÓN"
         },
         "errors": {
             "generic": "Algo ha ido mal. Inténtalo de nuevo.",
             "rateLimited": "Has generado demasiadas estimaciones. Inténtalo de nuevo en un rato."
         }
+    },
+    "thankYou": {
+        "seo": {
+            "title": "Gracias · Gigson Solutions",
+            "description": "Hemos recibido tu solicitud. Nuestro equipo se pondrá en contacto contigo en un día laborable."
+        },
+        "badge": "Solicitud recibida",
+        "title": "Gracias. Ya tenemos tu solicitud.",
+        "intro": "Nuestro equipo la revisará y se pondrá en contacto contigo en un día laborable. Esto es lo que pasa ahora:",
+        "steps": [
+            {
+                "title": "Revisamos tu solicitud",
+                "text": "Una persona del equipo lee lo que nos has contado y prepara la conversación."
+            },
+            {
+                "title": "Te contactamos en un día laborable",
+                "text": "Por teléfono o por email, con los datos que nos has dejado."
+            },
+            {
+                "title": "Primera conversación sin compromiso",
+                "text": "Entendemos qué necesitas y te contamos cómo lo abordaríamos."
+            }
+        ],
+        "casesHint": "Mientras tanto, puedes ver cómo hemos trabajado con otras empresas.",
+        "casesCta": "Ver casos de éxito"
     }
 }

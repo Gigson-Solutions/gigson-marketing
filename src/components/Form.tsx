@@ -5,19 +5,21 @@ import './Form.css';
 import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
-import NextLink from 'next/link';
-
+import { Link, useRouter } from '../../i18n/navigation';
 import { getAttribution } from '../lib/attribution';
-import { submitLead } from '../lib/leads/submitLead';
+import type { LeadFormId } from '../lib/leads/forms';
+import { LEAD_ERROR_KEYS, submitLead } from '../lib/leads/submitLead';
 import type { LeadResult } from '../lib/leads/types';
 import Button from '../shared/ui/Button';
 import AttributionFields from './Analytics/AttributionFields';
 
-// This form is rendered on both the home page and /contact, so the id has to
-// come from the call site — otherwise every lead looks like a home lead. It
-// also selects the subject and recipients, which now live server-side in
-// src/lib/leads/forms.ts rather than in hidden inputs anyone could read.
-type FormId = 'home' | 'contact';
+// This form is rendered on the home page, /contact and at the bottom of every
+// service and industry page, so the id has to come from the call site —
+// otherwise every lead looks like a home lead. It also selects the subject and
+// recipients, which live server-side in src/lib/leads/forms.ts rather than in
+// hidden inputs anyone could read. Unknown ids are rejected by /api/lead, so
+// the type is derived from that table.
+type FormId = LeadFormId;
 
 type SubmitState = 'idle' | 'sending' | LeadResult;
 
@@ -30,11 +32,22 @@ type FormProps = {
   titleAs?: 'h1' | 'h2';
   /** Overrides the shared `form.title` copy (used by /contact). */
   title?: string;
+  /** Pre-selects the service when the form sits on a service page. An index
+   *  into `form.service.services[]` rather than a label, because the labels
+   *  (and therefore the submitted values) are translated per locale. */
+  defaultServiceIndex?: number;
 };
 
-const Form = ({ customClass, formId, titleAs: Heading = 'h2', title: titleOverride }: FormProps) => {
+const Form = ({
+  customClass,
+  formId,
+  titleAs: Heading = 'h2',
+  title: titleOverride,
+  defaultServiceIndex,
+}: FormProps) => {
   const t = useTranslations('form');
   const locale = useLocale();
+  const router = useRouter();
   const [state, setState] = useState<SubmitState>('idle');
 
   const title = titleOverride ?? t('title');
@@ -45,6 +58,8 @@ const Form = ({ customClass, formId, titleAs: Heading = 'h2', title: titleOverri
   const details = t.raw('details') as { label: string; placeholder: string };
   const send = t('send');
   const checkbox = t.raw('checkbox') as { first: string; second: string; third: string };
+  const defaultService =
+    defaultServiceIndex !== undefined ? (service.services[defaultServiceIndex] ?? '') : '';
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -70,6 +85,9 @@ const Form = ({ customClass, formId, titleAs: Heading = 'h2', title: titleOverri
     });
 
     setState(result);
+    // Shared thank-you page for every lead form (/es/gracias, /thank-you). The
+    // success message above stays as a fallback while the navigation happens.
+    if (result === 'sent') router.push({ pathname: '/thank-you', query: { form: formId } });
   };
 
   if (state === 'sent') {
@@ -85,7 +103,9 @@ const Form = ({ customClass, formId, titleAs: Heading = 'h2', title: titleOverri
   }
 
   return (
-    <section className={`${customClass ?? ''} form-section`}>
+    // `id="contacto"` lets a page's hero button scroll here instead of leaving
+    // for /contact (CustomErp already does this with IntegrationContactForm).
+    <section id="contacto" className={`${customClass ?? ''} form-section`}>
       <Heading className="form-h2">{title}</Heading>
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-container">
@@ -95,7 +115,7 @@ const Form = ({ customClass, formId, titleAs: Heading = 'h2', title: titleOverri
           </div>
           <div className="input-container second">
             <label className="input-container-label">{service.label}</label>
-            <select name="service" required>
+            <select name="service" required defaultValue={defaultService}>
               <option value="">{service.placeholder}</option>
               {service.services.map((s: string, i: number) => (
                 <option key={i} value={s}>{s}</option>
@@ -134,22 +154,22 @@ const Form = ({ customClass, formId, titleAs: Heading = 'h2', title: titleOverri
             <input type="checkbox" name="rgpd" required className="input-radio" />
             <label>
               {checkbox.first}
-              <NextLink
+              <Link
                 className="legal-policity-form"
                 href="/policy"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {checkbox.second}
-              </NextLink>
+              </Link>
               {checkbox.third}
             </label>
           </div>
           <AttributionFields formId={formId} />
         </div>
-        {(state === 'error' || state === 'rateLimited') && (
+        {(state === 'error' || state === 'rateLimited' || state === 'invalidContact') && (
           <p className="form-error" role="alert">
-            {t(state === 'rateLimited' ? 'errorRateLimit' : 'error')}
+            {t(LEAD_ERROR_KEYS[state])}
           </p>
         )}
         <Button

@@ -32,7 +32,12 @@ const Iso27001 = () => {
   const [contactHint, setContactHint] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
+  // Not a boolean: `invalidContact` (an email whose domain cannot receive mail,
+  // or a phone that could not be dialled) needs its own message, or the visitor
+  // reads "something went wrong" and gives up on a typo they could have fixed.
+  const [submitError, setSubmitError] = useState<
+    null | 'errorSubmit' | 'errorInvalidContact'
+  >(null);
   const [revealed, setRevealed] = useState(false);
   // Antispam. This is a controlled wizard rather than a plain <form>, so it
   // can't reuse <AttributionFields /> — these are the same two signals by hand.
@@ -102,7 +107,7 @@ const Iso27001 = () => {
       return;
     }
     setContactHint(false);
-    setSubmitError(false);
+    setSubmitError(null);
     setSubmitting(true);
     try {
       const result = await submitLead({
@@ -126,12 +131,17 @@ const Iso27001 = () => {
       });
       if (result !== 'sent') throw new Error(result);
       setSubmitted(true);
-      // Keep the redirect: /gracias-iso27001 is this campaign's Google Ads
-      // conversion action, counted off the page_view PageViewTracker fires.
-      router.push('/gracias-iso27001');
+      // Every lead form lands on the shared thank-you page (/es/gracias,
+      // /thank-you). A visit to it is what Google Ads can count as the
+      // conversion, off the page_view PageViewTracker fires.
+      router.push({ pathname: '/thank-you', query: { form: 'iso27001' } });
     } catch (error) {
       console.error('ISO 27001 lead submit failed', error);
-      setSubmitError(true);
+      setSubmitError(
+        error instanceof Error && error.message === 'invalidContact'
+          ? 'errorInvalidContact'
+          : 'errorSubmit'
+      );
     } finally {
       setSubmitting(false);
     }
@@ -418,7 +428,7 @@ const Iso27001 = () => {
                       <p className="contact-hint" dangerouslySetInnerHTML={{ __html: t.raw('form.contactHint') as string }} />
                     )}
                     {submitError && (
-                      <p className="contact-hint">{t('form.errorSubmit')}</p>
+                      <p className="contact-hint">{t(`form.${submitError}`)}</p>
                     )}
                     <div className="step-nav">
                       <button type="button" className="btn step-prev" onClick={() => setStep(2)} disabled={submitting}>{t('form.back')}</button>
@@ -445,9 +455,6 @@ const Iso27001 = () => {
                 </div>
                 <h3>{t('form.successTitle')}</h3>
                 <p>{t('form.successP')}</p>
-                <a href="https://calendar.app.google/ZAYNg9onVuqktmxH6" target="_blank" rel="noopener noreferrer" className="btn is-wide">
-                  {t('form.successCta')}
-                </a>
                 <p className="success-soft">{t('form.successSoft')}</p>
               </div>
             )}

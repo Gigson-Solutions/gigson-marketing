@@ -112,6 +112,7 @@ export const EstimatorSessions: CollectionConfig = {
     { name: 'leadEmail', type: 'email' },
     { name: 'leadName', type: 'text' },
     { name: 'leadCompany', type: 'text' },
+    { name: 'leadPhone', type: 'text' },
     { name: 'rgpd', type: 'checkbox', defaultValue: false },
     { name: 'leadCapturedAt', type: 'date' },
     { name: 'teamNotifiedAt', type: 'date', admin: { position: 'sidebar' } },

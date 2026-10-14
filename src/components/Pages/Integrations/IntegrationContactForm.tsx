@@ -6,9 +6,12 @@ import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
+import { useRouter } from '../../../../i18n/navigation';
+
 import Bgcont from '../../../assets/Group 33770.svg';
 import { getAttribution } from '../../../lib/attribution';
-import { submitLead } from '../../../lib/leads/submitLead';
+import type { LeadFormId } from '../../../lib/leads/forms';
+import { LEAD_ERROR_KEYS, submitLead } from '../../../lib/leads/submitLead';
 import type { LeadResult } from '../../../lib/leads/types';
 import Button from '../../../shared/ui/Button';
 import AttributionFields from '../../Analytics/AttributionFields';
@@ -204,7 +207,7 @@ type SubmitState = 'idle' | 'sending' | LeadResult;
 /* `formId` replaces the old `formEmail`/`formSubject` pair: the recipient and
    the subject now live in src/lib/leads/forms.ts, server-side, instead of being
    hidden inputs that put the address in the public HTML. */
-type Props = { namespace: string; formId: string; toolOptions: string[] };
+type Props = { namespace: string; formId: LeadFormId; toolOptions: string[] };
 
 const IntegrationContactForm = ({ namespace, formId, toolOptions }: Props) => {
   const t = useTranslations(namespace);
@@ -213,6 +216,7 @@ const IntegrationContactForm = ({ namespace, formId, toolOptions }: Props) => {
   // integration namespaces.
   const tStatus = useTranslations('form');
   const locale = useLocale();
+  const router = useRouter();
   const [state, setState] = useState<SubmitState>('idle');
   const form = t.raw('form') as FormData;
   const { title, fields, send, checkbox, legalNotice } = form;
@@ -249,6 +253,8 @@ const IntegrationContactForm = ({ namespace, formId, toolOptions }: Props) => {
     });
 
     setState(result);
+    // Shared thank-you page for every lead form (/es/gracias, /thank-you).
+    if (result === 'sent') router.push({ pathname: '/thank-you', query: { form: formId } });
   };
 
   return (
@@ -351,9 +357,11 @@ const IntegrationContactForm = ({ namespace, formId, toolOptions }: Props) => {
               </div>
             </div>
 
-            {(state === 'error' || state === 'rateLimited') && (
+            {(state === 'error' ||
+              state === 'rateLimited' ||
+              state === 'invalidContact') && (
               <p className="form-error" role="alert">
-                {tStatus(state === 'rateLimited' ? 'errorRateLimit' : 'error')}
+                {tStatus(LEAD_ERROR_KEYS[state])}
               </p>
             )}
 

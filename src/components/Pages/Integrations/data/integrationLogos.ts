@@ -73,18 +73,18 @@ export const HOLDED_INTEGRATION_LOGOS: IntegrationLogo[] = [
   { name: 'Pipedrive',          industries: ['Servicios'],    img: '/img/logos-negros/pipedrive-holded.png' },
   { name: 'FreshBooks',         industries: ['Servicios'],    img: '/img/logos-negros/freshbooks-holded.png' },
   { name: 'TemaLeader',         industries: ['Servicios'],    img: '/img/logos-negros/temaleader-holded.png' },
-  // Real State
-  { name: 'Fotocasa',           industries: ['Real State'],   img: '/img/logos-negros/fotocasa-holded.png' },
-  { name: 'Witei',              industries: ['Real State'],   img: '/img/logos-negros/witei-holded.png' },
-  { name: 'Tokko',              industries: ['Real State'],   img: '/img/logos-negros/tokko-holded.png' },
-  { name: 'InmoVilla',          industries: ['Real State'],   img: '/img/logos-negros/inmovilla-holded.png' },
-  { name: 'Idealista',          industries: ['Real State'],   img: '/img/logos-negros/idealista-holded.png' },
-  // RR.HH
-  { name: 'Sesame',             industries: ['RR.HH'],        img: '/img/logos-negros/sesame-holded.png' },
-  { name: 'Personio',           industries: ['RR.HH'],        img: '/img/logos-negros/personio-holded.png' },
-  { name: 'PayFit',             industries: ['RR.HH'],        img: '/img/logos-negros/payfit-holded.png' },
-  { name: 'Factorial',          industries: ['RR.HH'],        img: '/img/logos-negros/factorial-holded.png' },
-  { name: 'Bizneo',             industries: ['RR.HH'],        img: '/img/logos-negros/bizneo-holded.png' },
+  // Inmobiliario
+  { name: 'Fotocasa',           industries: ['Inmobiliario'],   img: '/img/logos-negros/fotocasa-holded.png' },
+  { name: 'Witei',              industries: ['Inmobiliario'],   img: '/img/logos-negros/witei-holded.png' },
+  { name: 'Tokko',              industries: ['Inmobiliario'],   img: '/img/logos-negros/tokko-holded.png' },
+  { name: 'InmoVilla',          industries: ['Inmobiliario'],   img: '/img/logos-negros/inmovilla-holded.png' },
+  { name: 'Idealista',          industries: ['Inmobiliario'],   img: '/img/logos-negros/idealista-holded.png' },
+  // RR. HH.
+  { name: 'Sesame',             industries: ['RR. HH.'],        img: '/img/logos-negros/sesame-holded.png' },
+  { name: 'Personio',           industries: ['RR. HH.'],        img: '/img/logos-negros/personio-holded.png' },
+  { name: 'PayFit',             industries: ['RR. HH.'],        img: '/img/logos-negros/payfit-holded.png' },
+  { name: 'Factorial',          industries: ['RR. HH.'],        img: '/img/logos-negros/factorial-holded.png' },
+  { name: 'Bizneo',             industries: ['RR. HH.'],        img: '/img/logos-negros/bizneo-holded.png' },
 ];
 
 export const HOLDED_TOOL_OPTIONS: string[] = [
@@ -110,15 +110,15 @@ export const ODOO_INTEGRATION_LOGOS: IntegrationLogo[] = [
   // CRM / Servicios
   { name: 'HubSpot',            industries: ['Servicios'],    img: '/img/logos-negros/hubspot-holded.png' },
   { name: 'Pipedrive',          industries: ['Servicios'],    img: '/img/logos-negros/pipedrive-holded.png' },
-  // RR.HH
-  { name: 'Sesame',             industries: ['RR.HH'],        img: '/img/logos-negros/sesame-holded.png' },
-  { name: 'Personio',           industries: ['RR.HH'],        img: '/img/logos-negros/personio-holded.png' },
-  { name: 'Factorial',          industries: ['RR.HH'],        img: '/img/logos-negros/factorial-holded.png' },
-  { name: 'PayFit',             industries: ['RR.HH'],        img: '/img/logos-negros/payfit-holded.png' },
-  // Real State
-  { name: 'Fotocasa',           industries: ['Real State'],   img: '/img/logos-negros/fotocasa-holded.png' },
-  { name: 'Idealista',          industries: ['Real State'],   img: '/img/logos-negros/idealista-holded.png' },
-  { name: 'Witei',              industries: ['Real State'],   img: '/img/logos-negros/witei-holded.png' },
+  // RR. HH.
+  { name: 'Sesame',             industries: ['RR. HH.'],        img: '/img/logos-negros/sesame-holded.png' },
+  { name: 'Personio',           industries: ['RR. HH.'],        img: '/img/logos-negros/personio-holded.png' },
+  { name: 'Factorial',          industries: ['RR. HH.'],        img: '/img/logos-negros/factorial-holded.png' },
+  { name: 'PayFit',             industries: ['RR. HH.'],        img: '/img/logos-negros/payfit-holded.png' },
+  // Inmobiliario
+  { name: 'Fotocasa',           industries: ['Inmobiliario'],   img: '/img/logos-negros/fotocasa-holded.png' },
+  { name: 'Idealista',          industries: ['Inmobiliario'],   img: '/img/logos-negros/idealista-holded.png' },
+  { name: 'Witei',              industries: ['Inmobiliario'],   img: '/img/logos-negros/witei-holded.png' },
   // Educación
   { name: 'Moodle',             industries: ['Educación'],    img: '/img/logos-negros/moodle-holded.png' },
   { name: 'Teachable',          industries: ['Educación'],    img: '/img/logos-negros/teachable-holded.png' },
