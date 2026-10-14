@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { Link, useRouter } from '../../i18n/navigation';
 import { getAttribution } from '../lib/attribution';
 import type { LeadFormId } from '../lib/leads/forms';
-import { submitLead } from '../lib/leads/submitLead';
+import { LEAD_ERROR_KEYS, submitLead } from '../lib/leads/submitLead';
 import type { LeadResult } from '../lib/leads/types';
 import Button from '../shared/ui/Button';
 import AttributionFields from './Analytics/AttributionFields';
@@ -167,9 +167,9 @@ const Form = ({
           </div>
           <AttributionFields formId={formId} />
         </div>
-        {(state === 'error' || state === 'rateLimited') && (
+        {(state === 'error' || state === 'rateLimited' || state === 'invalidContact') && (
           <p className="form-error" role="alert">
-            {t(state === 'rateLimited' ? 'errorRateLimit' : 'error')}
+            {t(LEAD_ERROR_KEYS[state])}
           </p>
         )}
         <Button

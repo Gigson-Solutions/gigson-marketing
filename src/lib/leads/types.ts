@@ -1,4 +1,5 @@
 import type { Attribution } from '../attribution';
+import type { LeadFormId } from './forms';
 
 /**
  * What every lead form posts to `/api/lead`.
@@ -10,8 +11,12 @@ import type { Attribution } from '../attribution';
  * bag for whatever a given form asks. The per-form rules live in `forms.ts`.
  */
 export type LeadRequest = {
-  /** Key into LEAD_FORMS. Decides subject, recipients and which fields are required. */
-  form_id: string;
+  /**
+   * Key into LEAD_FORMS. Decides subject, recipients and which fields are
+   * required. Type-only import, so the recipient addresses in forms.ts never
+   * reach the client bundle.
+   */
+  form_id: LeadFormId;
   locale?: 'es' | 'en';
   page_path?: string;
 
@@ -42,5 +47,13 @@ export type LeadRequest = {
   rendered_at?: number;
 };
 
-/** What `submitLead()` resolves to, and what the forms switch on. */
-export type LeadResult = 'sent' | 'error' | 'rateLimited';
+/**
+ * What `submitLead()` resolves to, and what the forms switch on.
+ *
+ * `invalidContact` is its own result rather than a plain `error`: the route
+ * rejects an email whose domain cannot receive mail and a phone that could not
+ * be dialled, and both are things the visitor can fix — but only if we say so.
+ * Shown as a generic failure it would read as "the site is broken" and the lead
+ * would be lost for good.
+ */
+export type LeadResult = 'sent' | 'error' | 'rateLimited' | 'invalidContact';

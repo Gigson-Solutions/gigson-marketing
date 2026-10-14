@@ -1,6 +1,17 @@
 import type { LeadRequest, LeadResult } from './types';
 
 /**
+ * Every failed result, mapped to its key in the shared `form` namespace, so
+ * the four forms that render a submission error all say the same thing for the
+ * same reason instead of each hand-rolling a ternary.
+ */
+export const LEAD_ERROR_KEYS: Record<Exclude<LeadResult, 'sent'>, string> = {
+  error: 'error',
+  rateLimited: 'errorRateLimit',
+  invalidContact: 'errorInvalidContact',
+};
+
+/**
  * Announces a successful lead to the GTM container (GTM-5GP9PB8B), which is the
  * only place a conversion tag can be wired without a deploy.
  *
@@ -47,7 +58,14 @@ export async function submitLead(payload: LeadRequest): Promise<LeadResult> {
     }
     if (res.status === 429) return 'rateLimited';
 
-    console.error('[lead] submit failed', res.status, await res.text().catch(() => ''));
+    const text = await res.text().catch(() => '');
+    console.error('[lead] submit failed', res.status, text);
+    // The route answers `invalid_contact` when the email's domain cannot
+    // receive mail or the phone could not be dialled. Both are the visitor's
+    // to fix, so they get their own result and their own message instead of
+    // the generic "something went wrong".
+    if (res.status === 400 && text.includes('"invalid_contact"'))
+      return 'invalidContact';
     return 'error';
   } catch (error) {
     console.error('[lead] submit failed', error);

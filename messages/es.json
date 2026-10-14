@@ -638,7 +638,8 @@
         "successTitle": "Hemos recibido tu solicitud",
         "successBody": "Gracias por contactar con gigson solutions. Te respondemos en menos de 24 horas laborables.",
         "error": "Algo ha fallado al enviar tu solicitud. Vuelve a intentarlo o escríbenos a info@gigsonsolutions.com.",
-        "errorRateLimit": "Has enviado demasiadas solicitudes seguidas. Espera unos minutos e inténtalo de nuevo."
+        "errorRateLimit": "Has enviado demasiadas solicitudes seguidas. Espera unos minutos e inténtalo de nuevo.",
+        "errorInvalidContact": "Revisa tu email y tu teléfono: no hemos podido validarlos. Necesitamos datos reales para poder responderte."
     },
     "notFound": {
         "title": "<span>Oops... </span>",
@@ -4508,7 +4509,8 @@
             "successTitle": "Recibido. Te enviamos el diagnóstico en 24 h.",
             "successP": "Revisaremos tu situación y te enviaremos por escrito qué controles de ISO 27001 ya cumples sin saberlo, con el plazo, el coste y cómo te afecta NIS2.",
             "successSoft": "Te respondemos antes de 24 horas laborables.",
-            "errorSubmit": "Algo ha fallado al enviar tu solicitud. Vuelve a intentarlo o escríbenos directamente."
+            "errorSubmit": "Algo ha fallado al enviar tu solicitud. Vuelve a intentarlo o escríbenos directamente.",
+            "errorInvalidContact": "Revisa tu email y tu teléfono: no hemos podido validarlos. Necesitamos datos reales para poder responderte."
         }
     },
     "iso27001Service": {

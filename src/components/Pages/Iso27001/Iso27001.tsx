@@ -32,7 +32,12 @@ const Iso27001 = () => {
   const [contactHint, setContactHint] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
+  // Not a boolean: `invalidContact` (an email whose domain cannot receive mail,
+  // or a phone that could not be dialled) needs its own message, or the visitor
+  // reads "something went wrong" and gives up on a typo they could have fixed.
+  const [submitError, setSubmitError] = useState<
+    null | 'errorSubmit' | 'errorInvalidContact'
+  >(null);
   const [revealed, setRevealed] = useState(false);
   // Antispam. This is a controlled wizard rather than a plain <form>, so it
   // can't reuse <AttributionFields /> — these are the same two signals by hand.
@@ -102,7 +107,7 @@ const Iso27001 = () => {
       return;
     }
     setContactHint(false);
-    setSubmitError(false);
+    setSubmitError(null);
     setSubmitting(true);
     try {
       const result = await submitLead({
@@ -132,7 +137,11 @@ const Iso27001 = () => {
       router.push({ pathname: '/thank-you', query: { form: 'iso27001' } });
     } catch (error) {
       console.error('ISO 27001 lead submit failed', error);
-      setSubmitError(true);
+      setSubmitError(
+        error instanceof Error && error.message === 'invalidContact'
+          ? 'errorInvalidContact'
+          : 'errorSubmit'
+      );
     } finally {
       setSubmitting(false);
     }
@@ -419,7 +428,7 @@ const Iso27001 = () => {
                       <p className="contact-hint" dangerouslySetInnerHTML={{ __html: t.raw('form.contactHint') as string }} />
                     )}
                     {submitError && (
-                      <p className="contact-hint">{t('form.errorSubmit')}</p>
+                      <p className="contact-hint">{t(`form.${submitError}`)}</p>
                     )}
                     <div className="step-nav">
                       <button type="button" className="btn step-prev" onClick={() => setStep(2)} disabled={submitting}>{t('form.back')}</button>

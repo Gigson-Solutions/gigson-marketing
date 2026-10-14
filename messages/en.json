@@ -638,7 +638,8 @@
         "successTitle": "We've received your request",
         "successBody": "Thanks for getting in touch with gigson solutions. We'll reply within 24 working hours.",
         "error": "Something went wrong sending your request. Please try again, or email us at info@gigsonsolutions.com.",
-        "errorRateLimit": "You've sent too many requests in a row. Please wait a few minutes and try again."
+        "errorRateLimit": "You've sent too many requests in a row. Please wait a few minutes and try again.",
+        "errorInvalidContact": "Please check your email and phone number — we couldn't validate them. We need details we can actually reach you on."
     },
     "notFound": {
         "title": "<span>Oops... </span>",
@@ -4490,7 +4491,8 @@
             "successTitle": "Received. We'll send you the diagnosis within 24h.",
             "successP": "We'll review your situation and send you in writing which ISO 27001 controls you already meet without knowing it, with the timeline, the cost, and how NIS2 affects you.",
             "successSoft": "We respond within 24 business hours.",
-            "errorSubmit": "Something went wrong sending your request. Please try again or write to us directly."
+            "errorSubmit": "Something went wrong sending your request. Please try again or write to us directly.",
+            "errorInvalidContact": "Please check your email and phone number — we couldn't validate them. We need details we can actually reach you on."
         }
     },
     "iso27001Service": {
