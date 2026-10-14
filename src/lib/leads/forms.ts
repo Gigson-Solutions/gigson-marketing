@@ -42,7 +42,7 @@ function genericForm(page: string): FormDefinition {
   };
 }
 
-export const LEAD_FORMS: Record<string, FormDefinition> = {
+export const LEAD_FORMS = {
   home: {
     subject: 'Lead · Home · gigsonsolutions.com',
     required: ['name', 'email'],
@@ -101,6 +101,24 @@ export const LEAD_FORMS: Record<string, FormDefinition> = {
     requireOneOf: ['email', 'phone'],
     labels: { sector: 'Sector', cargo: 'Cargo', necesitas: 'Necesita' },
   },
-};
+  // `satisfies` and not a `Record<string, FormDefinition>` annotation: the
+  // annotation would widen `keyof typeof LEAD_FORMS` to `string` and make
+  // `LeadFormId` below a type that checks nothing, so a mistyped `formId` at a
+  // call site would compile and only show up as a 400 the visitor reads as
+  // "something went wrong".
+} satisfies Record<string, FormDefinition>;
 
 export type LeadFormId = keyof typeof LEAD_FORMS;
+
+/**
+ * The only way to turn a request's `form_id` into a definition.
+ *
+ * `Object.hasOwn` and not a plain lookup, because that string comes from the
+ * body: `LEAD_FORMS['toString']` would otherwise hand back a function that
+ * passes a truthy check and then blows up on `def.required`.
+ */
+export function getFormDefinition(formId: unknown): FormDefinition | undefined {
+  if (typeof formId !== 'string' || !Object.hasOwn(LEAD_FORMS, formId))
+    return undefined;
+  return LEAD_FORMS[formId as LeadFormId];
+}

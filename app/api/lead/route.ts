@@ -4,10 +4,12 @@ import { NextResponse } from 'next/server';
 import { getPayload } from 'payload';
 
 import { BOTID_ENFORCE } from '@/lib/botid';
-import { LEAD_FORMS, type FormDefinition } from '@/lib/leads/forms';
+import { getFormDefinition, type FormDefinition } from '@/lib/leads/forms';
 import { isAllowedOrigin } from '@/lib/leads/origin';
+import { isValidPhone } from '@/lib/leads/phone';
 import type { LeadRequest } from '@/lib/leads/types';
 import { sendLeadNotification } from '@/lib/email/sendLeadNotification';
+import { verifyEmail } from '@/lib/email/verifyEmail';
 import { getClientIp, isLeadRateLimited } from '@/lib/rateLimit';
 
 export const runtime = 'nodejs';
@@ -19,6 +21,10 @@ const LEAD_EMAIL_DISABLE = process.env.LEAD_EMAIL_DISABLE === 'true';
 /** A real person needs longer than this to read and fill in a form. */
 const MIN_FILL_MS = 3000;
 
+// Cheap pre-filter only, run before the rate limiter so a mistyped address
+// costs nothing. The real check is verifyEmail() further down, which also
+// looks at disposable providers and whether the domain can receive mail at
+// all — but that one does DNS, so it waits until the submission has earned it.
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const str = (value: unknown, max: number): string =>
@@ -45,15 +51,27 @@ const ATTRIBUTION_COLUMNS: Record<string, string> = {
 
 type Canonical = { name: string; email: string; phone: string; company: string; message: string };
 
-function validate(def: FormDefinition, c: Canonical): string | null {
+type Rejection = { kind: 'fields' | 'contact'; detail: string };
+
+function validate(def: FormDefinition, c: Canonical): Rejection | null {
   for (const field of def.required) {
-    if (!c[field]) return `missing:${field}`;
+    if (!c[field]) return { kind: 'fields', detail: `missing:${field}` };
   }
   if (def.requireOneOf && !def.requireOneOf.some((field) => c[field])) {
-    return `missing_one_of:${def.requireOneOf.join('|')}`;
+    return {
+      kind: 'fields',
+      detail: `missing_one_of:${def.requireOneOf.join('|')}`,
+    };
   }
-  // Only validate the address when there is one — ISO 27001 allows phone only.
-  if (c.email && !EMAIL_RE.test(c.email)) return 'invalid:email';
+  // Both checks are "only when there is one": ISO 27001 takes an email OR a
+  // phone, so neither field is always present. A form that needs one has it in
+  // `required` and has already been turned away above if it is missing.
+  if (c.email && !EMAIL_RE.test(c.email))
+    return { kind: 'contact', detail: 'invalid:email' };
+  // A phone nobody can dial is worth as much as no phone at all on the forms
+  // that ask for one precisely so the team can call back.
+  if (c.phone && !isValidPhone(c.phone))
+    return { kind: 'contact', detail: 'invalid:phone' };
   return null;
 }
 
@@ -78,7 +96,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'invalid_json' }, { status: 400 });
   }
 
-  const def = LEAD_FORMS[body.form_id];
+  const def = getFormDefinition(body.form_id);
   if (!def) {
     return NextResponse.json({ error: 'unknown_form' }, { status: 400 });
   }
@@ -98,7 +116,14 @@ export async function POST(req: Request) {
 
   const invalid = validate(def, canonical);
   if (invalid) {
-    return NextResponse.json({ error: 'invalid_fields', detail: invalid }, { status: 400 });
+    return NextResponse.json(
+      {
+        error:
+          invalid.kind === 'contact' ? 'invalid_contact' : 'invalid_fields',
+        detail: invalid.detail,
+      },
+      { status: 400 }
+    );
   }
 
   // Rate limit only well-formed submissions. Counting rejected ones would mean
@@ -108,6 +133,20 @@ export async function POST(req: Request) {
   // the BotID call, the database write and the email.
   if (isLeadRateLimited(getClientIp(req))) {
     return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
+  }
+
+  // ── Is the address real? ──────────────────────────────────────────────────
+  // Behind the rate limiter because it does DNS, and ahead of checkBotId()
+  // because that one is billed per call. Fails open on a resolver error (see
+  // verifyEmail) — a lead refused because our DNS hiccupped is not recoverable.
+  if (canonical.email) {
+    const verdict = await verifyEmail(canonical.email);
+    if (!verdict.ok) {
+      return NextResponse.json(
+        { error: 'invalid_contact', detail: `email:${verdict.reason}` },
+        { status: 400 }
+      );
+    }
   }
 
   // ── Bot signals ───────────────────────────────────────────────────────────
