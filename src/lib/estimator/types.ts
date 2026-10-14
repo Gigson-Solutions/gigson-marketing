@@ -164,7 +164,7 @@ export type FeatureHours = Record<RoleKey, number>;
  * Hours are deliberately NOT part of this shape. They never leave the
  * server until the lead books a call, so the Step 5 / Step 6 blur is a
  * real gate and not just a CSS filter over numbers sitting in the DOM —
- * see lib/estimator/features.ts and the book-confirmed API route.
+ * see lib/estimator/features.ts.
  */
 export interface EstimatorFeaturePublic {
   clientId: string;

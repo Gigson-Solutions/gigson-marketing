@@ -455,9 +455,6 @@ const Iso27001 = () => {
                 </div>
                 <h3>{t('form.successTitle')}</h3>
                 <p>{t('form.successP')}</p>
-                <a href="https://calendar.app.google/ZAYNg9onVuqktmxH6" target="_blank" rel="noopener noreferrer" className="btn is-wide">
-                  {t('form.successCta')}
-                </a>
                 <p className="success-soft">{t('form.successSoft')}</p>
               </div>
             )}

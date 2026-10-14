@@ -158,7 +158,7 @@ export async function POST(req: Request) {
 
     // Hours stay server-side — the browser only ever gets the use cases'
     // text, so the Step 5/6 blur can't be peeled off in devtools. They're
-    // released by the book-confirmed route once a call is booked.
+    // never released to the browser; the team goes through them with the lead.
     return NextResponse.json({ ok: true, token, status: 'features_ready', features: toPublicFeatures(features) });
   } catch (err) {
     console.error('[estimator] feature generation failed', err);
