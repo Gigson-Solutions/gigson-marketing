@@ -23,7 +23,6 @@ const Navbar = () => {
             { name: t('CTO'), href: '/cto-as-service' as const },
             { name: t('tech_consulting'), href: '/technology-consulting' as const },
             { name: t('cibersecurity'), href: '/cybersecurity' as const },
-            { name: t('compliance'), href: '/iso-27001' as const },
           ],
         },
         {
@@ -34,6 +33,13 @@ const Navbar = () => {
             { name: t('software'), href: '/software-engineering' as const },
             { name: t('erp_odoo'), href: '/integrations-odoo' as const },
             { name: t('erp_holded'), href: '/integrations-holded' as const },
+          ],
+        },
+        {
+          title: t('complianceLabel'),
+          items: [
+            { name: t('iso27001'), href: '/iso-27001' as const },
+            { name: t('iso42001'), href: '/iso-42001' as const },
           ],
         },
       ],
