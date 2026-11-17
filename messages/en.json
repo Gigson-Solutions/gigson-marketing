@@ -28,7 +28,6 @@
         "software": "Software engineering",
         "cibersecurity": "Cybersecurity",
         "ai_agents": "AI Agents",
-        "compliance": "Compliance",
         "claude_partner": "Claude Partner",
         "erp_solutions": "ERP Solutions",
         "erp_odoo": "Odoo",
@@ -36,7 +35,10 @@
         "erp_holded": "Holded",
         "estimator": "Estimator",
         "consultingLabel": "Consulting",
-        "buildingLabel": "Building"
+        "buildingLabel": "Building",
+        "complianceLabel": "Compliance",
+        "iso27001": "ISO 27001",
+        "iso42001": "ISO 42001"
     },
     "blog": {
         "title": "Blog",
@@ -613,7 +615,8 @@
                 "Software Engineering",
                 "Technology Consulting",
                 "Cybersecurity",
-                "ISO 27001 Compliance"
+                "ISO 27001 Compliance",
+                "ISO 42001 Compliance"
             ]
         },
         "budget": {
@@ -4493,6 +4496,121 @@
             "successSoft": "We respond within 24 business hours.",
             "errorSubmit": "Something went wrong sending your request. Please try again or write to us directly.",
             "errorInvalidContact": "Please check your email and phone number — we couldn't validate them. We need details we can actually reach you on."
+        }
+    },
+    "iso42001Service": {
+        "title": "ISO 42001 AI management certification · Gigson Solutions",
+        "metadescription": "We implement your ISO 42001 AI management system: AI system inventory, risk assessment, AI policy and readiness for the EU AI Act.",
+        "hero": {
+            "suptitle": "ISO/IEC 42001:2023 · Artificial intelligence management",
+            "title": "<span>ISO 42001</span> certification to prove you govern your AI.",
+            "description": "Clients, investors and public bodies already ask how you use artificial intelligence, and the EU AI Act turns that into a requirement. We build your AI management system with the judgement of a team that builds agents and is a Claude Partner.",
+            "buttonText": "Request free diagnosis"
+        },
+        "solutionsApplications": {
+            "title": "Why now",
+            "subTitle": "AI is entering companies faster than the rules for using it.",
+            "containers": [
+                {
+                    "title": "Situations that call for it",
+                    "description": "What usually leads a company to put order into how it uses AI.",
+                    "type": "Cases",
+                    "cards": [
+                        {
+                            "title": "Your clients are asking",
+                            "description": "What your AI does with their data, who oversees it and what happens when it gets something wrong. It shows up more and more in contracts and supplier onboarding."
+                        },
+                        {
+                            "title": "The AI Act is already rolling out",
+                            "description": "Regulation (EU) 2024/1689 applies in phases depending on each system's risk, and the first obligations are already in force."
+                        },
+                        {
+                            "title": "Investors and due diligence",
+                            "description": "More and more investment and acquisition processes ask for an AI policy and an inventory of the systems the company uses."
+                        },
+                        {
+                            "title": "Shadow AI",
+                            "description": "Every department uses its own tool and nobody knows what data leaves the company. It is the most common risk and the easiest to fix."
+                        }
+                    ]
+                },
+                {
+                    "title": "Our approach",
+                    "description": "AI management done by people who build AI.",
+                    "type": "Methodology",
+                    "cards": [
+                        {
+                            "title": "We know how it works inside",
+                            "description": "We design and deploy AI agents for clients. We assess models, data and providers with technical judgement, not with a template."
+                        },
+                        {
+                            "title": "Integrated with your ISO 27001",
+                            "description": "Both standards share the same structure. If you already hold 27001, 42001 is built on top of it: one system and one audit calendar."
+                        },
+                        {
+                            "title": "Minimum viable system",
+                            "description": "The simplest system that passes the audit and that your team can maintain as new models and tools come in."
+                        },
+                        {
+                            "title": "Ready for the AI Act",
+                            "description": "We classify each system by risk level and tell you exactly which obligations apply to you, without alarmism."
+                        }
+                    ]
+                }
+            ]
+        },
+        "howWeWork": {
+            "eyebrow": "How we work",
+            "h2a": "Four phases,",
+            "h2b": "one certificate.",
+            "lead": "If you already hold ISO 27001, we reuse its structure and the path gets shorter.",
+            "steps": [
+                {
+                    "title": "Diagnosis",
+                    "description": "We map which AI you use or develop, with what data, and what is missing to meet the standard."
+                },
+                {
+                    "title": "Implementation",
+                    "description": "AI policy, risk and impact assessment, data and supplier controls, and team training."
+                },
+                {
+                    "title": "Internal audit",
+                    "description": "We review the system the way the auditor will and fix what is needed before the external audit."
+                },
+                {
+                    "title": "Certification",
+                    "description": "We coordinate the stage 1 and stage 2 audits with the certification body and support you through them."
+                }
+            ]
+        },
+        "faq": {
+            "title": "ISO 42001 frequently asked questions",
+            "items": [
+                {
+                    "question": "What is ISO 42001?",
+                    "answer": "It is the international standard for managing artificial intelligence responsibly. It certifies that your company knows the AI systems it uses or develops, assesses their risks and keeps them under control."
+                },
+                {
+                    "question": "Is it mandatory?",
+                    "answer": "No, it is voluntary. What is mandatory is the EU AI Act, and ISO 42001 is one of the most orderly ways to prepare for it and prove it to clients and investors."
+                },
+                {
+                    "question": "Does ISO 42001 make me AI Act compliant?",
+                    "answer": "Not automatically. It covers much of the risk management, documentation and oversight the law requires, and in the diagnosis we tell you which specific obligations would still be left to cover."
+                },
+                {
+                    "question": "We only use ChatGPT, Copilot or Claude. Does it apply to us?",
+                    "answer": "Yes. The standard covers both those who develop AI and those who use it. In your case the work focuses on the usage policy, data, providers and training."
+                },
+                {
+                    "question": "Do I need ISO 27001 first?",
+                    "answer": "It is not a requirement, but if you have it the project is shorter because much of the system is reused. We can also take on both at once."
+                },
+                {
+                    "question": "Who issues the certificate?",
+                    "answer": "An accredited, independent certification body. We implement the system and support you, but the audit and certification are always done by a third party."
+                }
+            ]
         }
     },
     "iso27001Service": {

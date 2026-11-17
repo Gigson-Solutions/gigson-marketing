@@ -17,12 +17,11 @@ const Footer = () => {
   // Real services directory (replaces a single flat "Servicios" link that
   // pointed at a since-removed overview page — every service already has
   // its own dedicated page) organized the same way as the Navbar's
-  // Servicios dropdown, split into the two engagement-type columns.
+  // Servicios dropdown: Consulting, Building and Compliance columns.
   const consultingLinks = [
     { name: t('CTO'), href: '/cto-as-service' as NavPathname },
     { name: t('tech_consulting'), href: '/technology-consulting' as NavPathname },
     { name: t('cibersecurity'), href: '/cybersecurity' as NavPathname },
-    { name: t('compliance'), href: '/iso-27001' as NavPathname },
   ];
 
   const buildingLinks = [
@@ -31,6 +30,11 @@ const Footer = () => {
     { name: t('software'), href: '/software-engineering' as NavPathname },
     { name: t('erp_odoo'), href: '/integrations-odoo' as NavPathname },
     { name: t('erp_holded'), href: '/integrations-holded' as NavPathname },
+  ];
+
+  const complianceLinks = [
+    { name: t('iso27001'), href: '/iso-27001' as NavPathname },
+    { name: t('iso42001'), href: '/iso-42001' as NavPathname },
   ];
 
   // Everything else that used to sit alongside "Servicios" in one flat list.
@@ -54,6 +58,7 @@ const Footer = () => {
   const groups = [
     { label: t('consultingLabel'), links: consultingLinks },
     { label: t('buildingLabel'), links: buildingLinks },
+    { label: t('complianceLabel'), links: complianceLinks },
     { label: null, links: generalLinks },
   ];
 

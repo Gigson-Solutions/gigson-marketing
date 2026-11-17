@@ -33,6 +33,7 @@ const STATIC_ROUTES: RouteConfig[] = [
   { en: '/software-engineering', es: '/ingenieria-software', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/cybersecurity', es: '/ciberseguridad', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/iso-27001', es: '/iso-27001', priority: 0.8, changeFrequency: 'monthly' },
+  { en: '/iso-42001', es: '/iso-42001', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/logistics-technology', es: '/tecnologia-logistica', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/retail-ecommerce-technology', es: '/tecnologia-retail-ecommerce', priority: 0.8, changeFrequency: 'monthly' },
   { en: '/construction-technology', es: '/tecnologia-construccion', priority: 0.8, changeFrequency: 'monthly' },
