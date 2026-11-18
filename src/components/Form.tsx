@@ -36,6 +36,11 @@ type FormProps = {
    *  into `form.service.services[]` rather than a label, because the labels
    *  (and therefore the submitted values) are translated per locale. */
   defaultServiceIndex?: number;
+  /** Extra values sent in `fields` (e.g. the ISO pages' self-assessment
+   *  result). Keys need a label in src/lib/leads/forms.ts for the email. */
+  extraFields?: Record<string, string>;
+  /** Short line shown above the fields, e.g. to say the quiz result is attached. */
+  notice?: string;
 };
 
 const Form = ({
@@ -44,6 +49,8 @@ const Form = ({
   titleAs: Heading = 'h2',
   title: titleOverride,
   defaultServiceIndex,
+  extraFields,
+  notice,
 }: FormProps) => {
   const t = useTranslations('form');
   const locale = useLocale();
@@ -75,7 +82,7 @@ const Form = ({
       name: value('name'),
       email: value('email'),
       message: value('description'),
-      fields: { service: value('service'), budget: value('budget') },
+      fields: { ...extraFields, service: value('service'), budget: value('budget') },
       // Read at submit time, not at render: the visitor may have accepted
       // cookies after the form mounted.
       attribution: getAttribution(),
@@ -107,6 +114,7 @@ const Form = ({
     // for /contact (CustomErp already does this with IntegrationContactForm).
     <section id="contacto" className={`${customClass ?? ''} form-section`}>
       <Heading className="form-h2">{title}</Heading>
+      {notice && <p className="form-notice">{notice}</p>}
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-container">
           <div className="input-container first">

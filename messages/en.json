@@ -4611,6 +4611,114 @@
                     "answer": "An accredited, independent certification body. We implement the system and support you, but the audit and certification are always done by a third party."
                 }
             ]
+        },
+        "selfAssessment": {
+            "eyebrow": "Self-assessment · 2 minutes",
+            "title": "How far is your company from ISO 42001?",
+            "lead": "Ten questions on how you use and govern AI today. Answer honestly: the result is just for you.",
+            "items": [
+                {
+                    "question": "Do you know which AI tools and systems are used across the company?",
+                    "gap": "AI system inventory"
+                },
+                {
+                    "question": "Is there an AI usage policy that has been approved and shared with the team?",
+                    "gap": "AI usage policy"
+                },
+                {
+                    "question": "Is it clear which data can and cannot be entered into AI tools?",
+                    "gap": "Rules on data in AI tools"
+                },
+                {
+                    "question": "Have you reviewed your AI providers' data usage terms?",
+                    "gap": "AI supplier assessment"
+                },
+                {
+                    "question": "Have you assessed the risks of each AI use (errors, bias, leaks)?",
+                    "gap": "AI risk assessment"
+                },
+                {
+                    "question": "Do you know which EU AI Act risk level each system falls under?",
+                    "gap": "EU AI Act classification"
+                },
+                {
+                    "question": "Does a person review AI outputs before relevant decisions are made?",
+                    "gap": "Human oversight"
+                },
+                {
+                    "question": "Do you tell customers or users when they are interacting with AI?",
+                    "gap": "Transparency towards users"
+                },
+                {
+                    "question": "Has the team been trained on responsible AI use?",
+                    "gap": "Team AI training"
+                },
+                {
+                    "question": "Do you already have a management system in place, such as ISO 27001?",
+                    "gap": "Management system foundation"
+                }
+            ],
+            "low": "Early starting point. The usual picture: lots of AI in use and few rules. It can be put in order quickly.",
+            "mid": "Solid base. Part of what you already do needs to be formalised and documented.",
+            "high": "You're close. Closing a few gaps and preparing for the audit is probably enough.",
+            "options": [
+                "Yes",
+                "Partly",
+                "No"
+            ],
+            "count": "{done} of {total} answered",
+            "empty": "Answer the questions to see your result.",
+            "gapsTitle": "Areas to strengthen",
+            "cta": "I want the full assessment",
+            "note": "Indicative result. In the free assessment, a consultant reviews your actual situation."
+        },
+        "selfAssessmentSummary": "{score}% · Areas to strengthen: {gaps}",
+        "selfAssessmentNoGaps": "none",
+        "selfAssessmentNotice": "We'll attach your self-assessment result ({score}%) to your request.",
+        "costs": {
+            "title": "ISO 42001 certification: cost and timeline",
+            "lead": "It mostly depends on how much AI you have and how critical it is.",
+            "cards": [
+                {
+                    "eyebrow": "Cost",
+                    "title": "What changes the budget",
+                    "items": [
+                        "Number of AI systems in scope",
+                        "Whether you only use third-party AI or also build your own",
+                        "The risk level of those systems",
+                        "Whether you already have ISO 27001 or another management system",
+                        "Company size and the processes involved"
+                    ],
+                    "note": "After the assessment you get a fixed consulting quote. Certification body fees are separate.",
+                    "cta": {
+                        "label": "Use the estimator",
+                        "href": "/project-estimator"
+                    }
+                },
+                {
+                    "eyebrow": "Timeline",
+                    "title": "What changes the schedule",
+                    "items": [
+                        "How organised your AI use is today",
+                        "Whether it is integrated with an existing ISO 27001",
+                        "How much time your team can commit",
+                        "The certification body's availability"
+                    ],
+                    "note": "In the assessment we set a phased plan with a target audit date.",
+                    "cta": {
+                        "label": "Get a timeline for my case",
+                        "href": "#contacto"
+                    }
+                }
+            ],
+            "aside": {
+                "title": "Already ISO 27001 certified?",
+                "text": "You start with much of the system already built. Scope, risk, internal audit and management review are shared: we set up a single integrated system.",
+                "cta": {
+                    "label": "See ISO 27001 consulting",
+                    "href": "/iso-27001"
+                }
+            }
         }
     },
     "iso27001Service": {
@@ -4721,6 +4829,106 @@
         },
         "digitalProduct": {
             "buttonText": "Request free diagnosis"
+        },
+        "selfAssessment": {
+            "eyebrow": "Self-assessment · 2 minutes",
+            "title": "How far is your company from ISO 27001?",
+            "lead": "Ten questions on what the auditor will check. Answer honestly: the result is just for you.",
+            "items": [
+                {
+                    "question": "Do you keep an up-to-date inventory of systems, data and suppliers?",
+                    "gap": "Asset and supplier inventory"
+                },
+                {
+                    "question": "Is there an information security policy approved by management?",
+                    "gap": "Approved security policy"
+                },
+                {
+                    "question": "Have you carried out a documented risk assessment in the last year?",
+                    "gap": "Documented risk assessment"
+                },
+                {
+                    "question": "Do email and critical tools require multi-factor authentication (MFA)?",
+                    "gap": "MFA on critical access"
+                },
+                {
+                    "question": "Do joiners and leavers follow a procedure that grants and revokes access?",
+                    "gap": "Joiner, leaver and access management"
+                },
+                {
+                    "question": "Do you make backups and have you tested restoring them?",
+                    "gap": "Tested backups"
+                },
+                {
+                    "question": "Do you patch systems and review vulnerabilities regularly?",
+                    "gap": "Patch and vulnerability management"
+                },
+                {
+                    "question": "Do you log and manage security incidents?",
+                    "gap": "Incident management"
+                },
+                {
+                    "question": "Do you review the security of suppliers that handle your data?",
+                    "gap": "Supplier security"
+                },
+                {
+                    "question": "Has the team received security training in the last year?",
+                    "gap": "Training and awareness"
+                }
+            ],
+            "low": "Early starting point. There's work to do, but it's a project we run all the time.",
+            "mid": "Solid base. Much of the work is organising and documenting what you already do.",
+            "high": "You're close. Closing a few specific gaps and preparing for the audit is probably enough.",
+            "options": [
+                "Yes",
+                "Partly",
+                "No"
+            ],
+            "count": "{done} of {total} answered",
+            "empty": "Answer the questions to see your result.",
+            "gapsTitle": "Areas to strengthen",
+            "cta": "I want the full assessment",
+            "note": "Indicative result. In the free assessment, a consultant reviews your actual situation."
+        },
+        "selfAssessmentSummary": "{score}% · Areas to strengthen: {gaps}",
+        "selfAssessmentNoGaps": "none",
+        "selfAssessmentNotice": "We'll attach your self-assessment result ({score}%) to your request.",
+        "costs": {
+            "title": "ISO 27001 certification: cost and timeline",
+            "lead": "The two questions everyone asks. This is what drives them in practice.",
+            "cards": [
+                {
+                    "eyebrow": "Cost",
+                    "title": "What changes the budget",
+                    "items": [
+                        "Number of people and sites in scope",
+                        "How many systems, data sets and suppliers the certificate covers",
+                        "What you already have in place and documented",
+                        "How many technical controls need to be implemented",
+                        "Whether you want us to handle maintenance afterwards"
+                    ],
+                    "note": "After the assessment you get a fixed consulting quote. Certification body fees are separate, and we help you request quotes.",
+                    "cta": {
+                        "label": "Use the estimator",
+                        "href": "/project-estimator"
+                    }
+                },
+                {
+                    "eyebrow": "Timeline",
+                    "title": "What changes the schedule",
+                    "items": [
+                        "Your security starting point",
+                        "How much time your team can commit each week",
+                        "Whether new technical controls need to be implemented",
+                        "The certification body's availability"
+                    ],
+                    "note": "In the assessment we set a phased plan with a target audit date.",
+                    "cta": {
+                        "label": "Get a timeline for my case",
+                        "href": "#contacto"
+                    }
+                }
+            ]
         }
     },
     "claudePartner": {
