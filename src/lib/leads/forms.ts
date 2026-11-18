@@ -38,7 +38,7 @@ function genericForm(page: string): FormDefinition {
   return {
     subject: `Lead · ${page} · gigsonsolutions.com`,
     required: ['name', 'email'],
-    labels: { service: 'Servicio', budget: 'Presupuesto' },
+    labels: { service: 'Servicio', budget: 'Presupuesto', autodiagnostico: 'Autodiagnóstico' },
   };
 }
 

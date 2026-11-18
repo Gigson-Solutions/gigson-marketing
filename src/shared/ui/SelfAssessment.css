@@ -1,0 +1,264 @@
+/* ─── SelfAssessment — 10-question readiness quiz (ISO pages) ─── */
+
+.self-assessment {
+  padding: 80px var(--gs-padding-inline, 1.25rem);
+  background: var(--gs-cream);
+  scroll-margin-top: 80px;
+}
+
+.sa-inner {
+  max-width: 88.875rem;
+  margin: 0 auto;
+}
+
+.sa-head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 980px;
+  margin-bottom: 40px;
+}
+
+.sa-eyebrow {
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gs-purple);
+}
+
+.self-assessment h2 {
+  font-family: var(--gs-font-display);
+  font-weight: 400;
+  font-size: clamp(30px, 4vw, 55px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--gs-ink);
+  overflow-wrap: break-word;
+}
+
+.sa-lead {
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.4;
+  color: var(--gs-ink);
+}
+
+.sa-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  background: var(--gs-white);
+  border-radius: 24px;
+  padding: 24px 20px;
+}
+
+/* ── Questions ── */
+.sa-questions {
+  min-width: 0;
+}
+
+.sa-question {
+  border: 0;
+  margin: 0;
+  padding: 20px 0;
+  min-width: 0;
+  border-top: 1px solid var(--gs-divider);
+}
+
+.sa-question:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.sa-question legend {
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin-bottom: 14px;
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: var(--gs-ink);
+}
+
+.sa-num {
+  flex: none;
+  color: var(--gs-purple);
+  font-weight: 400;
+}
+
+.sa-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sa-option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.sa-option label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 72px;
+  padding: 0 18px;
+  border: 1px solid var(--gs-stroke-soft);
+  border-radius: 999px;
+  font-size: 16px;
+  color: var(--gs-ink);
+  cursor: pointer;
+  transition: background-color 150ms, border-color 150ms, color 150ms;
+}
+
+.sa-option label:hover {
+  border-color: var(--gs-purple);
+}
+
+/* Same selected style as the budget chips in the site's lead form. */
+.self-assessment .sa-option input:checked + label {
+  background: var(--gs-lavender);
+  border-color: var(--gs-purple);
+  color: var(--gs-purple);
+}
+
+.sa-option input:focus-visible + label {
+  outline: 2px solid var(--gs-purple);
+  outline-offset: 2px;
+}
+
+/* ── Result ── */
+.sa-result {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-self: start;
+  background: var(--gs-cream);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.sa-count {
+  font-size: 14px;
+  color: var(--gs-graphite);
+}
+
+.sa-score {
+  font-size: clamp(48px, 6vw, 72px);
+  line-height: 1;
+  color: var(--gs-purple);
+}
+
+.sa-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--gs-lavender);
+  overflow: hidden;
+}
+
+.sa-bar i {
+  display: block;
+  height: 100%;
+  background: var(--gs-purple);
+  border-radius: inherit;
+  transition: width 300ms var(--gs-ease-out, ease-out);
+}
+
+.sa-verdict {
+  font-size: 17px;
+  line-height: 1.45;
+  color: var(--gs-ink);
+}
+
+.sa-gaps p {
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gs-graphite);
+  margin-bottom: 8px;
+}
+
+.sa-gaps ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sa-gaps li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--gs-ink);
+}
+
+.sa-gaps li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gs-purple);
+}
+
+.sa-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: var(--gs-purple);
+  color: var(--gs-white);
+  text-align: center;
+  font-size: 17px;
+}
+
+.sa-cta:hover {
+  opacity: 0.85;
+}
+
+.sa-note {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--gs-graphite);
+}
+
+@media (min-width: 64rem) {
+  .self-assessment {
+    padding-block: 120px;
+  }
+
+  .sa-card {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+    gap: 56px;
+    padding: 48px;
+  }
+
+  /* Desktop keeps the score in view while answering. On mobile the result
+     sits right after question 10, so it is the next thing you read. */
+  .sa-result {
+    position: sticky;
+    top: 120px;
+  }
+}
+
+/* Mobile: let the white card use more of the screen than the section's
+   text column, so the answer pills don't wrap onto a second line. */
+@media (max-width: 63.99rem) {
+  .sa-card {
+    margin-inline: calc(16px - var(--gs-padding-inline));
+  }
+}
+
+/* App.css sets `hyphens: auto` on form, label, a… which split words mid-line. */
+.self-assessment,
+.self-assessment * {
+  hyphens: manual;
+}
