@@ -8,7 +8,6 @@ import { useRef, useState } from 'react';
 import chevronDownIcon from '../../assets/chevron-down.svg';
 import solutionsApplicationsBgGradient from '../../assets/solutions-applications-bg-gradients-1.svg';
 import { RichText } from './RichText';
-import { useBreakpoint } from './hooks/useBreakpoint';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -71,7 +70,6 @@ type SolutionsApplicationsProps = {
 };
 
 const SolutionsApplications = ({ title, subTitle, containers }: SolutionsApplicationsProps) => {
-  const { isMobile } = useBreakpoint();
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -126,10 +124,12 @@ const SolutionsApplications = ({ title, subTitle, containers }: SolutionsApplica
                   <p className="hidden md:block text-bigTag md:mt-10">{description}</p>
                   <div className="flex flex-col md:flex-row gap-6">
                     {initialTwoCards.map(({ title: t, description: d }, i) => (
+                      // Both variants are rendered and CSS picks one (`md:hidden` /
+                      // `hidden md:flex`). Choosing in JS from the viewport width made
+                      // the server and client HTML differ: a hydration error on mobile.
                       <div key={i} className="flex-1">
-                        {isMobile
-                          ? <CardMobile title={t} description={d} cardNr={getCardNr(i + 1)} />
-                          : <Card title={t} description={d} cardNr={getCardNr(i + 1)} />}
+                        <CardMobile title={t} description={d} cardNr={getCardNr(i + 1)} />
+                        <Card title={t} description={d} cardNr={getCardNr(i + 1)} />
                       </div>
                     ))}
                   </div>
