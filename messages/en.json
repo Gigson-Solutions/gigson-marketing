@@ -28,7 +28,6 @@
         "software": "Software engineering",
         "cibersecurity": "Cybersecurity",
         "ai_agents": "AI Agents",
-        "compliance": "Compliance",
         "claude_partner": "Claude Partner",
         "erp_solutions": "ERP Solutions",
         "erp_odoo": "Odoo",
@@ -36,7 +35,10 @@
         "erp_holded": "Holded",
         "estimator": "Estimator",
         "consultingLabel": "Consulting",
-        "buildingLabel": "Building"
+        "buildingLabel": "Building",
+        "complianceLabel": "Compliance",
+        "iso27001": "ISO 27001",
+        "iso42001": "ISO 42001"
     },
     "blog": {
         "title": "Blog",
@@ -613,7 +615,8 @@
                 "Software Engineering",
                 "Technology Consulting",
                 "Cybersecurity",
-                "ISO 27001 Compliance"
+                "ISO 27001 Compliance",
+                "ISO 42001 Compliance"
             ]
         },
         "budget": {
@@ -4495,6 +4498,229 @@
             "errorInvalidContact": "Please check your email and phone number — we couldn't validate them. We need details we can actually reach you on."
         }
     },
+    "iso42001Service": {
+        "title": "ISO 42001 AI management certification · Gigson Solutions",
+        "metadescription": "We implement your ISO 42001 AI management system: AI system inventory, risk assessment, AI policy and readiness for the EU AI Act.",
+        "hero": {
+            "suptitle": "ISO/IEC 42001:2023 · Artificial intelligence management",
+            "title": "<span>ISO 42001</span> certification to prove you govern your AI.",
+            "description": "Clients, investors and public bodies already ask how you use artificial intelligence, and the EU AI Act turns that into a requirement. We build your AI management system with the judgement of a team that builds agents and is a Claude Partner.",
+            "buttonText": "Request free diagnosis"
+        },
+        "solutionsApplications": {
+            "title": "Why now",
+            "subTitle": "AI is entering companies faster than the rules for using it.",
+            "containers": [
+                {
+                    "title": "Situations that call for it",
+                    "description": "What usually leads a company to put order into how it uses AI.",
+                    "type": "Cases",
+                    "cards": [
+                        {
+                            "title": "Your clients are asking",
+                            "description": "What your AI does with their data, who oversees it and what happens when it gets something wrong. It shows up more and more in contracts and supplier onboarding."
+                        },
+                        {
+                            "title": "The AI Act is already rolling out",
+                            "description": "Regulation (EU) 2024/1689 applies in phases depending on each system's risk, and the first obligations are already in force."
+                        },
+                        {
+                            "title": "Investors and due diligence",
+                            "description": "More and more investment and acquisition processes ask for an AI policy and an inventory of the systems the company uses."
+                        },
+                        {
+                            "title": "Shadow AI",
+                            "description": "Every department uses its own tool and nobody knows what data leaves the company. It is the most common risk and the easiest to fix."
+                        }
+                    ]
+                },
+                {
+                    "title": "Our approach",
+                    "description": "AI management done by people who build AI.",
+                    "type": "Methodology",
+                    "cards": [
+                        {
+                            "title": "We know how it works inside",
+                            "description": "We design and deploy AI agents for clients. We assess models, data and providers with technical judgement, not with a template."
+                        },
+                        {
+                            "title": "Integrated with your ISO 27001",
+                            "description": "Both standards share the same structure. If you already hold 27001, 42001 is built on top of it: one system and one audit calendar."
+                        },
+                        {
+                            "title": "Minimum viable system",
+                            "description": "The simplest system that passes the audit and that your team can maintain as new models and tools come in."
+                        },
+                        {
+                            "title": "Ready for the AI Act",
+                            "description": "We classify each system by risk level and tell you exactly which obligations apply to you, without alarmism."
+                        }
+                    ]
+                }
+            ]
+        },
+        "howWeWork": {
+            "eyebrow": "How we work",
+            "h2a": "Four phases,",
+            "h2b": "one certificate.",
+            "lead": "If you already hold ISO 27001, we reuse its structure and the path gets shorter.",
+            "steps": [
+                {
+                    "title": "Diagnosis",
+                    "description": "We map which AI you use or develop, with what data, and what is missing to meet the standard."
+                },
+                {
+                    "title": "Implementation",
+                    "description": "AI policy, risk and impact assessment, data and supplier controls, and team training."
+                },
+                {
+                    "title": "Internal audit",
+                    "description": "We review the system the way the auditor will and fix what is needed before the external audit."
+                },
+                {
+                    "title": "Certification",
+                    "description": "We coordinate the stage 1 and stage 2 audits with the certification body and support you through them."
+                }
+            ]
+        },
+        "faq": {
+            "title": "ISO 42001 frequently asked questions",
+            "items": [
+                {
+                    "question": "What is ISO 42001?",
+                    "answer": "It is the international standard for managing artificial intelligence responsibly. It certifies that your company knows the AI systems it uses or develops, assesses their risks and keeps them under control."
+                },
+                {
+                    "question": "Is it mandatory?",
+                    "answer": "No, it is voluntary. What is mandatory is the EU AI Act, and ISO 42001 is one of the most orderly ways to prepare for it and prove it to clients and investors."
+                },
+                {
+                    "question": "Does ISO 42001 make me AI Act compliant?",
+                    "answer": "Not automatically. It covers much of the risk management, documentation and oversight the law requires, and in the diagnosis we tell you which specific obligations would still be left to cover."
+                },
+                {
+                    "question": "We only use ChatGPT, Copilot or Claude. Does it apply to us?",
+                    "answer": "Yes. The standard covers both those who develop AI and those who use it. In your case the work focuses on the usage policy, data, providers and training."
+                },
+                {
+                    "question": "Do I need ISO 27001 first?",
+                    "answer": "It is not a requirement, but if you have it the project is shorter because much of the system is reused. We can also take on both at once."
+                },
+                {
+                    "question": "Who issues the certificate?",
+                    "answer": "An accredited, independent certification body. We implement the system and support you, but the audit and certification are always done by a third party."
+                }
+            ]
+        },
+        "selfAssessment": {
+            "eyebrow": "Self-assessment · 2 minutes",
+            "title": "How far is your company from ISO 42001?",
+            "lead": "Ten questions on how you use and govern AI today. Answer honestly: the result is just for you.",
+            "items": [
+                {
+                    "question": "Do you know which AI tools and systems are used across the company?",
+                    "gap": "AI system inventory"
+                },
+                {
+                    "question": "Is there an AI usage policy that has been approved and shared with the team?",
+                    "gap": "AI usage policy"
+                },
+                {
+                    "question": "Is it clear which data can and cannot be entered into AI tools?",
+                    "gap": "Rules on data in AI tools"
+                },
+                {
+                    "question": "Have you reviewed your AI providers' data usage terms?",
+                    "gap": "AI supplier assessment"
+                },
+                {
+                    "question": "Have you assessed the risks of each AI use (errors, bias, leaks)?",
+                    "gap": "AI risk assessment"
+                },
+                {
+                    "question": "Do you know which EU AI Act risk level each system falls under?",
+                    "gap": "EU AI Act classification"
+                },
+                {
+                    "question": "Does a person review AI outputs before relevant decisions are made?",
+                    "gap": "Human oversight"
+                },
+                {
+                    "question": "Do you tell customers or users when they are interacting with AI?",
+                    "gap": "Transparency towards users"
+                },
+                {
+                    "question": "Has the team been trained on responsible AI use?",
+                    "gap": "Team AI training"
+                },
+                {
+                    "question": "Do you already have a management system in place, such as ISO 27001?",
+                    "gap": "Management system foundation"
+                }
+            ],
+            "low": "Early starting point. The usual picture: lots of AI in use and few rules. It can be put in order quickly.",
+            "mid": "Solid base. Part of what you already do needs to be formalised and documented.",
+            "high": "You're close. Closing a few gaps and preparing for the audit is probably enough.",
+            "options": [
+                "Yes",
+                "Partly",
+                "No"
+            ],
+            "count": "{done} of {total} answered",
+            "empty": "Answer the questions to see your result.",
+            "gapsTitle": "Areas to strengthen",
+            "cta": "I want the full assessment",
+            "note": "Indicative result. In the free assessment, a consultant reviews your actual situation."
+        },
+        "selfAssessmentSummary": "{score}% · Areas to strengthen: {gaps}",
+        "selfAssessmentNoGaps": "none",
+        "selfAssessmentNotice": "We'll attach your self-assessment result ({score}%) to your request.",
+        "costs": {
+            "title": "ISO 42001 certification: cost and timeline",
+            "lead": "It mostly depends on how much AI you have and how critical it is.",
+            "cards": [
+                {
+                    "eyebrow": "Cost",
+                    "title": "What changes the budget",
+                    "items": [
+                        "Number of AI systems in scope",
+                        "Whether you only use third-party AI or also build your own",
+                        "The risk level of those systems",
+                        "Whether you already have ISO 27001 or another management system",
+                        "Company size and the processes involved"
+                    ],
+                    "note": "After the assessment you get a fixed consulting quote. Certification body fees are separate.",
+                    "cta": {
+                        "label": "Use the estimator",
+                        "href": "/project-estimator"
+                    }
+                },
+                {
+                    "eyebrow": "Timeline",
+                    "title": "What changes the schedule",
+                    "items": [
+                        "How organised your AI use is today",
+                        "Whether it is integrated with an existing ISO 27001",
+                        "How much time your team can commit",
+                        "The certification body's availability"
+                    ],
+                    "note": "In the assessment we set a phased plan with a target audit date.",
+                    "cta": {
+                        "label": "Get a timeline for my case",
+                        "href": "#contacto"
+                    }
+                }
+            ],
+            "aside": {
+                "title": "Already ISO 27001 certified?",
+                "text": "You start with much of the system already built. Scope, risk, internal audit and management review are shared: we set up a single integrated system.",
+                "cta": {
+                    "label": "See ISO 27001 consulting",
+                    "href": "/iso-27001"
+                }
+            }
+        }
+    },
     "iso27001Service": {
         "title": "ISO 27001 Certification for businesses · Gigson Solutions",
         "metadescription": "We implement your ISO 27001 ISMS on your real operations. Real technical controls, minimum viable system, no bureaucracy. For SMEs and law firms in Spain.",
@@ -4603,6 +4829,106 @@
         },
         "digitalProduct": {
             "buttonText": "Request free diagnosis"
+        },
+        "selfAssessment": {
+            "eyebrow": "Self-assessment · 2 minutes",
+            "title": "How far is your company from ISO 27001?",
+            "lead": "Ten questions on what the auditor will check. Answer honestly: the result is just for you.",
+            "items": [
+                {
+                    "question": "Do you keep an up-to-date inventory of systems, data and suppliers?",
+                    "gap": "Asset and supplier inventory"
+                },
+                {
+                    "question": "Is there an information security policy approved by management?",
+                    "gap": "Approved security policy"
+                },
+                {
+                    "question": "Have you carried out a documented risk assessment in the last year?",
+                    "gap": "Documented risk assessment"
+                },
+                {
+                    "question": "Do email and critical tools require multi-factor authentication (MFA)?",
+                    "gap": "MFA on critical access"
+                },
+                {
+                    "question": "Do joiners and leavers follow a procedure that grants and revokes access?",
+                    "gap": "Joiner, leaver and access management"
+                },
+                {
+                    "question": "Do you make backups and have you tested restoring them?",
+                    "gap": "Tested backups"
+                },
+                {
+                    "question": "Do you patch systems and review vulnerabilities regularly?",
+                    "gap": "Patch and vulnerability management"
+                },
+                {
+                    "question": "Do you log and manage security incidents?",
+                    "gap": "Incident management"
+                },
+                {
+                    "question": "Do you review the security of suppliers that handle your data?",
+                    "gap": "Supplier security"
+                },
+                {
+                    "question": "Has the team received security training in the last year?",
+                    "gap": "Training and awareness"
+                }
+            ],
+            "low": "Early starting point. There's work to do, but it's a project we run all the time.",
+            "mid": "Solid base. Much of the work is organising and documenting what you already do.",
+            "high": "You're close. Closing a few specific gaps and preparing for the audit is probably enough.",
+            "options": [
+                "Yes",
+                "Partly",
+                "No"
+            ],
+            "count": "{done} of {total} answered",
+            "empty": "Answer the questions to see your result.",
+            "gapsTitle": "Areas to strengthen",
+            "cta": "I want the full assessment",
+            "note": "Indicative result. In the free assessment, a consultant reviews your actual situation."
+        },
+        "selfAssessmentSummary": "{score}% · Areas to strengthen: {gaps}",
+        "selfAssessmentNoGaps": "none",
+        "selfAssessmentNotice": "We'll attach your self-assessment result ({score}%) to your request.",
+        "costs": {
+            "title": "ISO 27001 certification: cost and timeline",
+            "lead": "The two questions everyone asks. This is what drives them in practice.",
+            "cards": [
+                {
+                    "eyebrow": "Cost",
+                    "title": "What changes the budget",
+                    "items": [
+                        "Number of people and sites in scope",
+                        "How many systems, data sets and suppliers the certificate covers",
+                        "What you already have in place and documented",
+                        "How many technical controls need to be implemented",
+                        "Whether you want us to handle maintenance afterwards"
+                    ],
+                    "note": "After the assessment you get a fixed consulting quote. Certification body fees are separate, and we help you request quotes.",
+                    "cta": {
+                        "label": "Use the estimator",
+                        "href": "/project-estimator"
+                    }
+                },
+                {
+                    "eyebrow": "Timeline",
+                    "title": "What changes the schedule",
+                    "items": [
+                        "Your security starting point",
+                        "How much time your team can commit each week",
+                        "Whether new technical controls need to be implemented",
+                        "The certification body's availability"
+                    ],
+                    "note": "In the assessment we set a phased plan with a target audit date.",
+                    "cta": {
+                        "label": "Get a timeline for my case",
+                        "href": "#contacto"
+                    }
+                }
+            ]
         }
     },
     "claudePartner": {

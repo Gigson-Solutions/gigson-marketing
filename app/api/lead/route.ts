@@ -14,7 +14,9 @@ import { getClientIp, isLeadRateLimited } from '@/lib/rateLimit';
 
 export const runtime = 'nodejs';
 
-const LEAD_EMAIL_TO = process.env.LEAD_EMAIL_TO ?? 'leads@gigsonsolutions.com';
+// Same fallback as the chatbot and estimator routes, so an environment
+// without LEAD_EMAIL_TO (staging) still reaches the inbox that reads leads.
+const LEAD_EMAIL_TO = process.env.LEAD_EMAIL_TO ?? 'jaume@somosgigson.com';
 const LEAD_EMAIL_CC = process.env.LEAD_EMAIL_CC ?? 'emmelin@gigsonsolutions.com';
 const LEAD_EMAIL_DISABLE = process.env.LEAD_EMAIL_DISABLE === 'true';
 

@@ -38,7 +38,7 @@ function genericForm(page: string): FormDefinition {
   return {
     subject: `Lead · ${page} · gigsonsolutions.com`,
     required: ['name', 'email'],
-    labels: { service: 'Servicio', budget: 'Presupuesto' },
+    labels: { service: 'Servicio', budget: 'Presupuesto', autodiagnostico: 'Autodiagnóstico' },
   };
 }
 
@@ -79,6 +79,7 @@ export const LEAD_FORMS = {
   'service-technology-consulting': genericForm('Consultoría tecnológica'),
   'service-cybersecurity': genericForm('Ciberseguridad'),
   'service-iso-27001': genericForm('ISO 27001 (servicio)'),
+  'service-iso-42001': genericForm('ISO 42001 (servicio)'),
   'service-ai-agents': genericForm('Agentes IA'),
   'service-software-engineering': genericForm('Ingeniería de software'),
   'industry-logistics': genericForm('Logística'),

@@ -9,7 +9,7 @@ gigson solutions diseña, construye y despliega:
 - **Software a medida** para procesos específicos de negocio
 - **Integraciones de sistemas** (ERP, CRM, marketplaces, herramientas operativas)
 - **CTO as a Service** para empresas sin liderazgo técnico interno
-- **Ciberseguridad** y **Compliance ISO 27001**
+- **Ciberseguridad** y **Compliance** (ISO 27001 e ISO 42001)
 
 Datos clave:
 - **Partner Certificado de Anthropic** — uno de los pocos en España. Acceso directo a soporte técnico de Anthropic y a los últimos modelos Claude. El equipo tiene la certificación Claude Certified Architect.
@@ -58,6 +58,9 @@ Evaluación de seguridad (análisis de vulnerabilidades, informe de remediación
 
 ### Compliance ISO 27001
 Acompañamiento en certificación y cumplimiento de ISO 27001 (seguridad de la información). También certificación de productos siguiendo GDPR, SOC2 o HIPAA.
+
+### Compliance ISO 42001
+Implantación del sistema de gestión de la inteligencia artificial según ISO/IEC 42001:2023: inventario de sistemas de IA, política de IA, evaluación de riesgos e impacto, revisión de proveedores de IA y formación. Prepara para la Ley de IA europea (Reglamento (UE) 2024/1689), aunque no equivale a cumplirla automáticamente. Aplica tanto a quien desarrolla IA como a quien solo la usa (ChatGPT, Copilot, Claude). Si la empresa ya tiene ISO 27001, se integra en un único sistema. Mismo proceso en cuatro fases (diagnóstico gratuito, implantación, auditoría interna, certificación); quien certifica es siempre una entidad acreditada independiente. Página: https://gigsonsolutions.com/es/iso-42001
 
 ## INDUSTRIAS Y CASOS REALES
 
