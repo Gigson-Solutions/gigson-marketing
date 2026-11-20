@@ -1,0 +1,109 @@
+/* Landings de campaña ISO 27001 / ISO 42001 (/es/consultoria-iso-*).
+   El formulario del hero y el CTA fijo de móvil vienen de ConsultoriaOdoo.css
+   (clases .codoo-*). Aquí solo lo propio de estas páginas, sobre tokens --gs-*. */
+
+.ciso-chip {
+  font-size: var(--gs-text-xs);
+  color: var(--gs-graphite);
+  border: var(--gs-stroke-w) solid #cfcdc8;
+  border-radius: var(--gs-radius-pill);
+  padding: 0.3rem 0.9rem;
+}
+
+/* Aviso de que el resultado del test se adjunta a la solicitud */
+.ciso-quiz-notice {
+  margin: 0;
+  padding: 0.625rem 0.875rem;
+  font-size: var(--gs-text-xs);
+  line-height: 1.4;
+  color: var(--gs-purple);
+  background: var(--gs-lavender);
+  border-radius: 0.5rem;
+}
+
+/* Items numerados del bloque "Enfoque", con la raya superior de la web */
+.ciso-numbered {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: var(--gs-stroke-w) solid var(--gs-ink);
+  padding-top: 0.75rem;
+}
+
+/* Panel visual de ejemplo (preparación 27001 / inventario de IA 42001) */
+.ciso-panel {
+  background: #fff;
+  border-radius: 30px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: var(--gs-shadow-soft);
+}
+.ciso-tag {
+  font-size: var(--gs-text-xs);
+  color: var(--gs-purple);
+  background: var(--gs-lavender);
+  border-radius: var(--gs-radius-pill);
+  padding: 0.15rem 0.7rem;
+  white-space: nowrap;
+}
+.ciso-big {
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  color: var(--gs-ink);
+}
+.ciso-bar {
+  display: block;
+  height: 8px;
+  border-radius: 99px;
+  background: #eceae6;
+  overflow: hidden;
+}
+.ciso-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: var(--gs-purple);
+}
+.ciso-system {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid #e2e0dc;
+}
+.ciso-system:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.ciso-risk {
+  font-size: var(--gs-text-xs);
+  border-radius: var(--gs-radius-pill);
+  padding: 0.15rem 0.7rem;
+  white-space: nowrap;
+}
+.ciso-risk--hi {
+  background: #fde3d3;
+  color: #8a3a0b;
+}
+.ciso-risk--mid {
+  background: #fff1c2;
+  color: #6b4e00;
+}
+.ciso-risk--lo {
+  background: #ddf3e4;
+  color: #1e5b33;
+}
+
+/* Cifra grande de las tarjetas de alcance */
+.ciso-figure {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  color: var(--gs-purple);
+}
