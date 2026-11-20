@@ -47,6 +47,8 @@ const nextConfig = {
     // this, the unprefixed URL would render it under the English locale. Not
     // permanent, in case an English version is added later.
     { source: '/consultoria-odoo', destination: '/es/consultoria-odoo', permanent: false },
+    { source: '/consultoria-iso-27001', destination: '/es/consultoria-iso-27001', permanent: false },
+    { source: '/consultoria-iso-42001', destination: '/es/consultoria-iso-42001', permanent: false },
     // The ISO 27001 thank-you page was replaced by the shared one (/es/gracias,
     // /thank-you), which every lead form now redirects to.
     { source: '/es/gracias-iso27001', destination: '/es/gracias', permanent: true },
