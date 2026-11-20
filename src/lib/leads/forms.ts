@@ -94,6 +94,18 @@ export const LEAD_FORMS = {
     labels: { punto: 'Punto de partida' },
   },
 
+  // Landings de campaña ISO (/es/consultoria-iso-27001 y -42001).
+  'consultoria-iso-27001': {
+    subject: 'Lead · Consultoría ISO 27001 (landing) · gigsonsolutions.com',
+    required: ['name', 'email', 'phone', 'company'],
+    labels: { punto: 'Punto de partida', autodiagnostico: 'Autodiagnóstico' },
+  },
+  'consultoria-iso-42001': {
+    subject: 'Lead · Consultoría ISO 42001 (landing) · gigsonsolutions.com',
+    required: ['name', 'email', 'phone', 'company'],
+    labels: { punto: 'Uso de la IA', autodiagnostico: 'Autodiagnóstico' },
+  },
+
   iso27001: {
     subject: 'Lead · ISO 27001 · gigsonsolutions.com',
     cc: ['hello@gigsonsolutions.com'],
