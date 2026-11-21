@@ -135,12 +135,6 @@
 }
 
 @media (max-width: 47.99rem) {
-  /* Cards use more of the screen than the text column on phones. */
-  .ct-cards,
-  .ct-aside {
-    margin-inline: calc(16px - var(--gs-padding-inline));
-  }
-
   .ct-card,
   .ct-aside {
     padding: 24px 20px;
