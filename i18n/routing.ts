@@ -52,8 +52,9 @@ export const routing = defineRouting({
     // Campaign landing, Spanish only (the unprefixed /consultoria-odoo URL is
     // redirected to /es in next.config.mjs).
     '/consultoria-odoo': '/consultoria-odoo',
-    // Campaign landings ISO, Spanish only (same set-up as /consultoria-odoo).
-    '/consultoria-iso-27001': '/consultoria-iso-27001',
+    // Campaign landing ISO 42001, Spanish only (same set-up as /consultoria-odoo).
+    // The ISO 27001 one keeps the URL the Ads already point to:
+    // /iso-27001-certification (es: /certificacion-iso-27001), above.
     '/consultoria-iso-42001': '/consultoria-iso-42001',
     // Shared thank-you page every lead form redirects to after /api/lead
     // accepts the lead (noindex). Replaces the old /gracias-iso27001.

@@ -3,7 +3,7 @@ import type { ConsultoriaIsoContent } from './types';
 const OPTIONS: [string, string, string] = ['Sí', 'En parte', 'No'];
 
 export const ISO27001: ConsultoriaIsoContent = {
-  formId: 'consultoria-iso-27001',
+  formId: 'iso27001',
   pill: 'ISO/IEC 27001:2022',
   title: 'Certificación ISO 27001 sin paralizar tu negocio.',
   subtitle:

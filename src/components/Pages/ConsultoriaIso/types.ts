@@ -4,7 +4,7 @@ import type { SelfAssessmentCopy } from '../../../shared/ui/SelfAssessment';
 
 /**
  * Todo el texto de una landing de campaña ISO. Las dos landings
- * (/es/consultoria-iso-27001 y /es/consultoria-iso-42001) comparten maqueta
+ * (/es/certificacion-iso-27001 y /es/consultoria-iso-42001) comparten maqueta
  * (ConsultoriaIso.tsx) y solo cambia este objeto.
  */
 export type ConsultoriaIsoContent = {

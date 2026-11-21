@@ -5,13 +5,14 @@ import ConsultoriaIso from '../../../../src/components/Pages/ConsultoriaIso/Cons
 import { ISO27001 } from '../../../../src/components/Pages/ConsultoriaIso/content27001';
 
 const ORIGIN = 'https://gigsonsolutions.com';
-const CANONICAL = `${ORIGIN}/es/consultoria-iso-27001`;
+const CANONICAL = `${ORIGIN}/es/certificacion-iso-27001`;
 
 const TITLE = 'Certificación ISO 27001 para pymes | Gigson Solutions';
 const DESCRIPTION =
   'Consultoría ISO 27001 para pymes de 10 a 250 personas. Implantamos controles reales sobre tu operativa, no documentación que nadie usa, y coordinamos la auditoría con la certificadora. Diagnóstico sin coste.';
 
-// Landing de campaña (Google Ads), montada como /es/consultoria-odoo. noindex,
+// Landing de campaña de Google Ads en la URL que ya usan los anuncios
+// (/es/certificacion-iso-27001), montada como /es/consultoria-odoo. noindex,
 // para no competir en buscadores con la página de servicio /es/iso-27001.
 export function generateMetadata(): Metadata {
   return {

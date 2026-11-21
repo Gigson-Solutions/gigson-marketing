@@ -287,7 +287,7 @@ export const ISO42001: ConsultoriaIsoContent = {
       text: 'Alcance, riesgos, auditoría interna y revisión por la dirección se comparten. Montamos un único sistema integrado.',
       cta: {
         label: 'Ver consultoría ISO 27001',
-        href: '/consultoria-iso-27001',
+        href: '/iso-27001-certification',
       },
     },
   },
