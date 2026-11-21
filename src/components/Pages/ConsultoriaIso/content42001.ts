@@ -21,7 +21,7 @@ export const ISO42001: ConsultoriaIsoContent = {
 
   form: {
     title: 'Pide tu diagnóstico ISO 42001 sin coste',
-    puntoLegend: '¿Cómo usáis la IA?',
+    puntoLegend: '¿Cómo usas la IA?',
     puntos: [
       { value: 'uso', label: 'Usamos herramientas de IA' },
       { value: 'producto', label: 'Desarrollamos productos con IA' },
@@ -131,7 +131,7 @@ export const ISO42001: ConsultoriaIsoContent = {
     panel: {
       title: 'Inventario de sistemas de IA',
       caption:
-        'El primer entregable: todo lo que usáis o construís con IA, con su responsable y su nivel de riesgo según la Ley de IA.',
+        'El primer entregable: todo lo que usas o construyes con IA, con su responsable y su nivel de riesgo según la Ley de IA.',
       systems: [
         {
           name: 'Asistente de atención al cliente',
@@ -160,12 +160,12 @@ export const ISO42001: ConsultoriaIsoContent = {
   selfAssessment: {
     eyebrow: 'Autodiagnóstico · 2 minutos',
     title: '¿Cuánto le falta a tu empresa para la ISO 42001?',
-    lead: 'Diez preguntas sobre cómo usáis y gestionáis la IA. El resultado es orientativo y solo lo ves tú.',
+    lead: 'Diez preguntas sobre cómo usas y gestionas la IA. El resultado es orientativo y solo lo ves tú.',
     options: OPTIONS,
     items: [
       {
         question:
-          '¿Sabéis qué herramientas y sistemas de IA se usan en la empresa?',
+          '¿Sabes qué herramientas y sistemas de IA se usan en la empresa?',
         gap: 'Inventario de sistemas de IA',
       },
       {
@@ -180,17 +180,17 @@ export const ISO42001: ConsultoriaIsoContent = {
       },
       {
         question:
-          '¿Habéis revisado las condiciones de uso de datos de vuestros proveedores de IA?',
+          '¿Has revisado las condiciones de uso de datos de tus proveedores de IA?',
         gap: 'Evaluación de proveedores de IA',
       },
       {
         question:
-          '¿Habéis evaluado los riesgos de cada uso de IA (errores, sesgos, filtraciones)?',
+          '¿Has evaluado los riesgos de cada uso de IA (errores, sesgos, filtraciones)?',
         gap: 'Evaluación de riesgos de IA',
       },
       {
         question:
-          '¿Sabéis en qué nivel de riesgo de la Ley de IA cae cada sistema?',
+          '¿Sabes en qué nivel de riesgo de la Ley de IA cae cada sistema?',
         gap: 'Clasificación según la Ley de IA',
       },
       {
@@ -199,7 +199,7 @@ export const ISO42001: ConsultoriaIsoContent = {
         gap: 'Supervisión humana',
       },
       {
-        question: '¿Informáis a clientes o usuarios cuando interactúan con IA?',
+        question: '¿Informas a clientes o usuarios cuando interactúan con IA?',
         gap: 'Transparencia ante usuarios',
       },
       {
@@ -209,15 +209,15 @@ export const ISO42001: ConsultoriaIsoContent = {
       },
       {
         question:
-          '¿Tenéis un sistema de gestión ya implantado, como ISO 27001?',
+          '¿Tienes un sistema de gestión ya implantado, como ISO 27001?',
         gap: 'Base de sistema de gestión',
       },
     ],
     count: '{done} de {total} respondidas',
     empty: 'Responde las preguntas para ver tu resultado.',
     low: 'Punto de partida inicial. Lo habitual: mucha IA en uso y pocas reglas. Se ordena rápido.',
-    mid: 'Buena base. Falta formalizar y documentar parte de lo que ya hacéis.',
-    high: 'Estáis cerca. Probablemente baste con cerrar huecos y preparar la auditoría.',
+    mid: 'Buena base. Falta formalizar y documentar parte de lo que ya haces.',
+    high: 'Estás cerca. Probablemente baste con cerrar huecos y preparar la auditoría.',
     gapsTitle: 'Puntos a reforzar',
     cta: 'Quiero el diagnóstico completo',
     note: 'Resultado orientativo. Al pedir el diagnóstico gratuito, lo adjuntamos a tu solicitud.',
@@ -232,7 +232,7 @@ export const ISO42001: ConsultoriaIsoContent = {
       {
         title: 'Diagnóstico',
         description:
-          'Mapeamos qué IA usáis o desarrolláis, con qué datos y qué falta para la norma. Sin coste.',
+          'Mapeamos qué IA usas o desarrollas, con qué datos y qué falta para la norma. Sin coste.',
       },
       {
         title: 'Implantación',
@@ -261,9 +261,9 @@ export const ISO42001: ConsultoriaIsoContent = {
         title: 'Qué hace variar el presupuesto',
         items: [
           'Número de sistemas de IA dentro del alcance',
-          'Si solo usáis IA de terceros o también la desarrolláis',
+          'Si solo usas IA de terceros o también la desarrollas',
           'El nivel de riesgo de esos sistemas',
-          'Si ya tenéis ISO 27001 u otro sistema de gestión',
+          'Si ya tienes ISO 27001 u otro sistema de gestión',
           'Tamaño de la empresa y procesos implicados',
         ],
         note: 'Tras el diagnóstico recibes un presupuesto cerrado de consultoría. Los honorarios de la entidad certificadora van aparte.',
@@ -311,7 +311,7 @@ export const ISO42001: ConsultoriaIsoContent = {
     {
       question: 'Solo usamos ChatGPT, Copilot o Claude. ¿Nos aplica?',
       answer:
-        'Sí. La norma cubre tanto a quien desarrolla IA como a quien la usa. En vuestro caso el trabajo se centra en política de uso, datos, proveedores y formación.',
+        'Sí. La norma cubre tanto a quien desarrolla IA como a quien la usa. En tu caso el trabajo se centra en política de uso, datos, proveedores y formación.',
     },
     {
       question: '¿Necesito tener antes la ISO 27001?',

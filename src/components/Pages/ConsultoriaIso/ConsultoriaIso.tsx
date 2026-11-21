@@ -7,7 +7,7 @@ import '../ConsultoriaOdoo/ConsultoriaOdoo.css';
 import './ConsultoriaIso.css';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Link, useRouter } from '../../../../i18n/navigation';
 import { getAttribution } from '../../../lib/attribution';
@@ -68,6 +68,21 @@ const ConsultoriaIso = ({ content: c }: { content: ConsultoriaIsoContent }) => {
   // Antispam: honeypot + tiempo mínimo de rellenado (lo comprueba /api/lead).
   const [honeypot, setHoneypot] = useState('');
   const [renderedAt] = useState(() => Date.now());
+
+  // El CTA fijo de móvil solo aparece una vez pasado el formulario del hero:
+  // en la primera pantalla tapaba el texto de presentación y repetía un
+  // formulario que ya está a la vista.
+  const formRef = useRef<HTMLFormElement>(null);
+  const [showSticky, setShowSticky] = useState(false);
+  useEffect(() => {
+    const form = formRef.current;
+    if (!form || !('IntersectionObserver' in globalThis)) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      setShowSticky(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+    });
+    observer.observe(form);
+    return () => observer.disconnect();
+  }, []);
 
   const set = <K extends keyof typeof values>(
     key: K,
@@ -155,6 +170,7 @@ const ConsultoriaIso = ({ content: c }: { content: ConsultoriaIsoContent }) => {
           </div>
 
           <form
+            ref={formRef}
             id="contacto"
             className="codoo-form w-full lg:flex-1 lg:max-w-[31rem] bg-white rounded-[30px] p-6 lg:p-10 flex flex-col gap-6"
             onSubmit={handleSubmit}
@@ -329,7 +345,9 @@ const ConsultoriaIso = ({ content: c }: { content: ConsultoriaIsoContent }) => {
       {/* CTA fijo en móvil */}
       <a
         href="#contacto"
-        className="codoo-sticky bg-purple-accents text-white text-button rounded-full uppercase hover:opacity-80 transition duration-200"
+        aria-hidden={!showSticky}
+        tabIndex={showSticky ? undefined : -1}
+        className={`codoo-sticky${showSticky ? '' : ' is-hidden'} bg-purple-accents text-white text-button rounded-full uppercase hover:opacity-80 transition duration-200`}
       >
         Solicitar diagnóstico
       </a>

@@ -107,3 +107,27 @@
   letter-spacing: -0.04em;
   color: var(--gs-purple);
 }
+
+/* CTA fijo de móvil: oculto mientras el formulario del hero está en pantalla
+   o por debajo (ver showSticky en ConsultoriaIso.tsx). */
+.ciso .codoo-sticky {
+  transition: opacity 200ms, transform 200ms;
+}
+.ciso .codoo-sticky.is-hidden {
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+}
+
+/* Formulario del hero en móvil: etiqueta encima del campo, para que los
+   placeholders (p. ej. "nombre@empresa.com") se lean enteros. */
+@media (max-width: 900px) {
+  .ciso .codoo-field {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+  }
+  .ciso .codoo-field label {
+    white-space: normal;
+  }
+}
