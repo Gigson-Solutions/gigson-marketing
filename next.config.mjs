@@ -31,7 +31,7 @@ const nextConfig = {
     { source: '/:locale(en|es)/apply-sdr', destination: '/apply-sdr', permanent: true },
     // Removed duplicate Ads landing page (/iso-27001-lp) — consolidated into the
     // live campaign landing at /iso-27001-certification (es: /certificacion-iso-27001)
-    { source: '/iso-27001-lp', destination: '/iso-27001-certification', permanent: true },
+    { source: '/iso-27001-lp', destination: '/es/certificacion-iso-27001', permanent: true },
     {
       source: '/es/certificacion-iso-27001-lp',
       destination: '/es/certificacion-iso-27001',
@@ -47,6 +47,13 @@ const nextConfig = {
     // this, the unprefixed URL would render it under the English locale. Not
     // permanent, in case an English version is added later.
     { source: '/consultoria-odoo', destination: '/es/consultoria-odoo', permanent: false },
+    // The ISO 27001 Ads landing is Spanish only: the English URL of the old
+    // landing goes to the Spanish one. /consultoria-iso-27001 was its URL in
+    // review (#201) before it moved to the one the Ads already use.
+    { source: '/iso-27001-certification', destination: '/es/certificacion-iso-27001', permanent: false },
+    { source: '/consultoria-iso-27001', destination: '/es/certificacion-iso-27001', permanent: true },
+    { source: '/es/consultoria-iso-27001', destination: '/es/certificacion-iso-27001', permanent: true },
+    { source: '/consultoria-iso-42001', destination: '/es/consultoria-iso-42001', permanent: false },
     // The ISO 27001 thank-you page was replaced by the shared one (/es/gracias,
     // /thank-you), which every lead form now redirects to.
     { source: '/es/gracias-iso27001', destination: '/es/gracias', permanent: true },
