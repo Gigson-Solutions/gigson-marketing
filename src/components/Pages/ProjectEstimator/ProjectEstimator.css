@@ -708,12 +708,6 @@ textarea.pe-textarea {
    Kept at the end of the file so it wins over the step 5/6 rules above.
    Page padding + card padding + nested panel padding left ~200px of usable
    width on a 390px phone; this reclaims it. */
-.project-estimator button {
-  /* App.css sets `hyphens: auto` on every button, which split labels like
-     "SI-GUIENTE" once the columns got narrow. */
-  hyphens: manual;
-}
-
 @media (max-width: 900px) {
   /* Compact stepper: numbers only, plus the label of the current step. */
   .pe-sidebar ol {
