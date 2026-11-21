@@ -149,7 +149,7 @@ export const ISO27001: ConsultoriaIsoContent = {
     items: [
       {
         question:
-          '¿Tenéis un inventario actualizado de sistemas, datos y proveedores?',
+          '¿Tienes un inventario actualizado de sistemas, datos y proveedores?',
         gap: 'Inventario de activos y proveedores',
       },
       {
@@ -159,7 +159,7 @@ export const ISO27001: ConsultoriaIsoContent = {
       },
       {
         question:
-          '¿Habéis hecho un análisis de riesgos documentado en el último año?',
+          '¿Has hecho un análisis de riesgos documentado en el último año?',
         gap: 'Análisis de riesgos documentado',
       },
       {
@@ -174,21 +174,21 @@ export const ISO27001: ConsultoriaIsoContent = {
       },
       {
         question:
-          '¿Hacéis copias de seguridad y habéis probado a restaurarlas?',
+          '¿Haces copias de seguridad y has probado a restaurarlas?',
         gap: 'Copias de seguridad probadas',
       },
       {
         question:
-          '¿Aplicáis parches y revisáis vulnerabilidades de forma periódica?',
+          '¿Aplicas parches y revisas vulnerabilidades de forma periódica?',
         gap: 'Gestión de parches y vulnerabilidades',
       },
       {
-        question: '¿Registráis y gestionáis los incidentes de seguridad?',
+        question: '¿Registras y gestionas los incidentes de seguridad?',
         gap: 'Gestión de incidentes',
       },
       {
         question:
-          '¿Revisáis la seguridad de los proveedores que tratan vuestros datos?',
+          '¿Revisas la seguridad de los proveedores que tratan tus datos?',
         gap: 'Seguridad de proveedores',
       },
       {
@@ -200,8 +200,8 @@ export const ISO27001: ConsultoriaIsoContent = {
     count: '{done} de {total} respondidas',
     empty: 'Responde las preguntas para ver tu resultado.',
     low: 'Punto de partida inicial. Hay trabajo, pero es un proyecto habitual para nosotros.',
-    mid: 'Buena base. Gran parte del trabajo es ordenar y documentar lo que ya hacéis.',
-    high: 'Estáis cerca. Probablemente baste con cerrar huecos concretos y preparar la auditoría.',
+    mid: 'Buena base. Gran parte del trabajo es ordenar y documentar lo que ya haces.',
+    high: 'Estás cerca. Probablemente baste con cerrar huecos concretos y preparar la auditoría.',
     gapsTitle: 'Puntos a reforzar',
     cta: 'Quiero el diagnóstico completo',
     note: 'Resultado orientativo. Al pedir el diagnóstico gratuito, lo adjuntamos a tu solicitud.',
@@ -246,9 +246,9 @@ export const ISO27001: ConsultoriaIsoContent = {
         items: [
           'Número de personas y sedes dentro del alcance',
           'Cuántos sistemas, datos y proveedores entran en el certificado',
-          'Lo que ya tengáis implantado y documentado',
+          'Lo que ya tengas implantado y documentado',
           'Cuántos controles técnicos hay que poner en marcha',
-          'Si queréis que llevemos el mantenimiento después',
+          'Si quieres que llevemos el mantenimiento después',
         ],
         note: 'Tras el diagnóstico recibes un presupuesto cerrado de consultoría. Los honorarios de la entidad certificadora van aparte y te ayudamos a pedir ofertas.',
         cta: { label: 'Calcular con el estimador', href: '/project-estimator' },
