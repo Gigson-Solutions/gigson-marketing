@@ -179,9 +179,3 @@
     padding-block: 120px;
   }
 }
-
-/* App.css sets `hyphens: auto` on form, label, a… which split words mid-line. */
-.costs-timeline,
-.costs-timeline * {
-  hyphens: manual;
-}

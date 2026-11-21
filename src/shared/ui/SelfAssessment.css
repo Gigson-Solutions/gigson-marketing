@@ -256,9 +256,3 @@
     margin-inline: calc(16px - var(--gs-padding-inline));
   }
 }
-
-/* App.css sets `hyphens: auto` on form, label, a… which split words mid-line. */
-.self-assessment,
-.self-assessment * {
-  hyphens: manual;
-}
