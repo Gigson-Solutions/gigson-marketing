@@ -94,13 +94,21 @@ export const LEAD_FORMS = {
     labels: { punto: 'Punto de partida' },
   },
 
+  // Landing de campaña ISO 42001 (/es/consultoria-iso-42001).
+  'consultoria-iso-42001': {
+    subject: 'Lead · Consultoría ISO 42001 (landing) · gigsonsolutions.com',
+    required: ['name', 'email', 'phone', 'company'],
+    labels: { punto: 'Uso de la IA', autodiagnostico: 'Autodiagnóstico' },
+  },
+
+  // Landing de campaña ISO 27001 (/es/certificacion-iso-27001). Mantiene el
+  // id, el asunto y el CC de la landing anterior para no romper filtros de
+  // correo ni conversiones que dependan de /gracias?form=iso27001.
   iso27001: {
     subject: 'Lead · ISO 27001 · gigsonsolutions.com',
     cc: ['hello@gigsonsolutions.com'],
-    required: ['name', 'company'],
-    // The wizard lets a visitor leave either a phone or an email, not both.
-    requireOneOf: ['email', 'phone'],
-    labels: { sector: 'Sector', cargo: 'Cargo', necesitas: 'Necesita' },
+    required: ['name', 'email', 'phone', 'company'],
+    labels: { punto: 'Punto de partida', autodiagnostico: 'Autodiagnóstico' },
   },
   // `satisfies` and not a `Record<string, FormDefinition>` annotation: the
   // annotation would widen `keyof typeof LEAD_FORMS` to `string` and make

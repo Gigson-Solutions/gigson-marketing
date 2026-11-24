@@ -48,7 +48,9 @@
   gap: 32px;
   background: var(--gs-white);
   border-radius: 24px;
-  padding: 24px 20px;
+  /* Aligned with the header's text column on mobile; tight padding keeps
+     the three answer pills on one line at 320px. */
+  padding: 20px 16px;
 }
 
 /* ── Questions ── */
@@ -105,8 +107,8 @@
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  min-width: 72px;
-  padding: 0 18px;
+  min-width: 64px;
+  padding: 0 16px;
   border: 1px solid var(--gs-stroke-soft);
   border-radius: 999px;
   font-size: 16px;
@@ -139,7 +141,7 @@
   align-self: start;
   background: var(--gs-cream);
   border-radius: 20px;
-  padding: 24px;
+  padding: 20px;
 }
 
 .sa-count {
@@ -247,18 +249,4 @@
     position: sticky;
     top: 120px;
   }
-}
-
-/* Mobile: let the white card use more of the screen than the section's
-   text column, so the answer pills don't wrap onto a second line. */
-@media (max-width: 63.99rem) {
-  .sa-card {
-    margin-inline: calc(16px - var(--gs-padding-inline));
-  }
-}
-
-/* App.css sets `hyphens: auto` on form, label, a… which split words mid-line. */
-.self-assessment,
-.self-assessment * {
-  hyphens: manual;
 }
